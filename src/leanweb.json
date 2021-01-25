@@ -1,0 +1,11 @@
+{
+  "name": "ui",
+  "version": "0.9.8",
+  "components": [
+    "root"
+  ],
+  "imports": [],
+  "resources": [
+    "resources/"
+  ]
+}
