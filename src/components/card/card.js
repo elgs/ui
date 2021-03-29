@@ -1,10 +1,12 @@
 import LWElement from './../../lib/lw-element.js';
 import ast from './ast.js';
+// import a from './a.scss';
 
 customElements.define('ui-card',
    class extends LWElement {  // LWElement extends HTMLElement
       constructor() {
          super(ast);
+         // super.applyStyles(a);
       }
 
       // derived from LWElement

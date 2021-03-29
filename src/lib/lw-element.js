@@ -105,8 +105,7 @@ export default class LWElement extends HTMLElement {
       leanweb.builderVersion = ast.builderVersion;
 
       const node = document.createElement('template');
-      node.innerHTML = '<style>' + ast.globalCss + '</style>' +
-         '<style>' + ast.css + '</style>' +
+      node.innerHTML = '<style>' + ast.css + '</style>' +
          ast.html;
       this.attachShadow({ mode: 'open' }).appendChild(node.content);
 
@@ -337,7 +336,10 @@ export default class LWElement extends HTMLElement {
             }
          }
       } else {
-         modelNode.value = parsed[0] ?? '';
+         const newValue = parsed[0] ?? '';
+         if (modelNode.value !== newValue) {
+            modelNode.value = newValue;
+         }
       }
    }
 
