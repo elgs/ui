@@ -1,4 +1,4 @@
-.pp {
+.ppwui {
   box-sizing: border-box;
   appearance: none;
 
@@ -39,8 +39,6 @@
   --white-dark: hsl(0, 0%, 98%);
   --white: hsl(0, 0%, 100%);
 
-  --orange: hsl(14, 100%, 53%);
-
   --yellow-darker: hsl(44, 100%, 49%);
   --yellow-dark: hsl(44, 100%, 63%);
   --yellow: hsl(44, 100%, 77%);
@@ -49,17 +47,12 @@
   --green-dark: hsl(153, 53%, 46%);
   --green: hsl(153, 53%, 53%);
 
-  --turquoise: hsl(171, 100%, 41%);
-  --cyan: hsl(207, 61%, 53%);
-
   --blue-darker: hsl(229, 53%, 39%);
   --blue-dark: hsl(229, 53%, 46%);
   --blue: hsl(229, 53%, 53%);
 
-  --purple: hsl(271, 100%, 71%);
-
   --red-darker: hsl(348, 86%, 40%);
-  --red-dark: hsl(348, 86%, 54%);
+  --red-dark: hsl(348, 86%, 47%);
   --red: hsl(348, 86%, 61%);
 
   --size-1: 3rem;
@@ -71,7 +64,7 @@
   --size-7: 0.75rem;
 }
 
-.pp {
+.ppwui {
   &.button {
     background-color: var(--white);
     color: #363636;
@@ -203,7 +196,7 @@
       opacity: 0.8;
 
       &::after {
-        animation: spinAround 500ms infinite linear;
+        animation: spinAround 750ms infinite linear;
         border: 2px solid #dbdbdb;
         border-radius: 9999px;
         border-right-color: transparent;
@@ -270,7 +263,7 @@
   }
 }
 
-.pp {
+.ppwui {
   &.card {
     background-color: #fff;
     border-radius: 3px;
@@ -283,7 +276,7 @@
   }
 }
 
-.pp {
+.ppwui {
   &.close {
     user-select: none;
     background-color: rgba(10, 10, 10, 0.2);
@@ -368,7 +361,7 @@
   }
 }
 
-.pp {
+.ppwui {
   &.input {
     margin: 0;
     align-items: center;
