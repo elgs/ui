@@ -6,6 +6,6 @@
   "author": "Qian Chen",
   "license": "MIT",
   "devDependencies": {
-    "@babel/runtime": "^7.17.0"
+    "@babel/runtime": "^7.17.2"
   }
 }
