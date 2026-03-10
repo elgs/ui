@@ -863,134 +863,12 @@
    Dialog / Modal
    ============================================ */
 
-.ui-dialog-backdrop {
-  position: fixed;
-  inset: 0;
-  background: var(--ui-overlay);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity var(--ui-transition), visibility var(--ui-transition);
-
-  &.open {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  & > .ui-dialog {
-    background: var(--ui-surface);
-    border-radius: var(--ui-radius-lg);
-    box-shadow: var(--ui-shadow-xl);
-    width: min(28rem, calc(100vw - 2rem));
-    max-height: calc(100vh - 4rem);
-    display: flex;
-    flex-direction: column;
-    transform: translateY(8px) scale(0.98);
-    transition: transform var(--ui-transition);
-
-    .open > & {
-      transform: translateY(0) scale(1);
-    }
-
-    & > .ui-dialog-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1rem 1.25rem;
-      border-bottom: 1px solid var(--ui-border);
-
-      & > .ui-dialog-title {
-        font-family: var(--ui-font);
-        font-size: 1.125rem;
-        font-weight: 600;
-        color: var(--ui-text);
-        margin: 0;
-      }
-
-      & > .ui-dialog-close {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 2rem;
-        height: 2rem;
-        background: none;
-        border: none;
-        border-radius: var(--ui-radius);
-        color: var(--ui-text-muted);
-        cursor: pointer;
-        font-size: 1.25rem;
-        transition: background var(--ui-transition), color var(--ui-transition);
-
-        &:hover {
-          background: var(--ui-bg-subtle);
-          color: var(--ui-text);
-        }
-      }
-    }
-
-    & > .ui-dialog-body {
-      padding: 1.25rem;
-      overflow-y: auto;
-      font-family: var(--ui-font);
-      font-size: var(--ui-font-size);
-      color: var(--ui-text);
-      line-height: var(--ui-line-height);
-    }
-
-    & > .ui-dialog-footer {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 0.5rem;
-      padding: 0.75rem 1.25rem;
-      border-top: 1px solid var(--ui-border);
-    }
-
-    /* Size variants */
-
-    &.sm {
-      width: min(20rem, calc(100vw - 2rem));
-    }
-
-    &.lg {
-      width: min(40rem, calc(100vw - 2rem));
-    }
-
-    &.full {
-      width: calc(100vw - 2rem);
-      height: calc(100vh - 4rem);
-    }
-  }
-}
-
-/* Native <dialog> support */
-
-dialog.ui-dialog {
-  border: none;
-  padding: 0;
+.ui-dialog {
   background: var(--ui-surface);
   border-radius: var(--ui-radius-lg);
   box-shadow: var(--ui-shadow-xl);
   width: min(28rem, calc(100vw - 2rem));
   max-height: calc(100vh - 4rem);
-
-  &[open] {
-    display: flex;
-    flex-direction: column;
-  }
-
-  &::backdrop {
-    background: var(--ui-overlay);
-  }
-
-  & > .ui-dialog-header,
-  & > .ui-dialog-body,
-  & > .ui-dialog-footer {
-    /* inherits same styles as div-based dialog children above */
-  }
 
   & > .ui-dialog-header {
     display: flex;
@@ -1044,6 +922,64 @@ dialog.ui-dialog {
     gap: 0.5rem;
     padding: 0.75rem 1.25rem;
     border-top: 1px solid var(--ui-border);
+  }
+
+  &.sm {
+    width: min(20rem, calc(100vw - 2rem));
+  }
+
+  &.lg {
+    width: min(40rem, calc(100vw - 2rem));
+  }
+
+  &.full {
+    width: calc(100vw - 2rem);
+    height: calc(100vh - 4rem);
+  }
+}
+
+.ui-dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  background: var(--ui-overlay);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--ui-transition), visibility var(--ui-transition);
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  & > .ui-dialog {
+    display: flex;
+    flex-direction: column;
+    transform: translateY(8px) scale(0.98);
+    transition: transform var(--ui-transition);
+
+    .open > & {
+      transform: translateY(0) scale(1);
+    }
+  }
+}
+
+/* Native <dialog> support */
+
+dialog.ui-dialog {
+  border: none;
+  padding: 0;
+
+  &[open] {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &::backdrop {
+    background: var(--ui-overlay);
   }
 }
 
