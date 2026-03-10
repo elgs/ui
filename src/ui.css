@@ -635,14 +635,14 @@
     border-radius: 50%;
 
     &::after {
-      top: 50%;
-      left: 50%;
-      width: 0.4375rem;
-      height: 0.4375rem;
+      inset: 0;
+      margin: auto;
+      width: 0.5rem;
+      height: 0.5rem;
       border: none;
       border-radius: 50%;
       background: transparent;
-      transform: translate(-50%, -50%) scale(0);
+      transform: scale(0);
     }
   }
 
@@ -652,22 +652,18 @@
 
     &::after {
       background: #fff;
-      transform: translate(-50%, -50%) scale(1);
+      transform: scale(1);
     }
   }
 
   &.sm .ui-check-box::after {
     width: 0.3125rem;
     height: 0.3125rem;
-    top: 50%;
-    left: 50%;
   }
 
   &.lg .ui-check-box::after {
-    width: 0.5625rem;
-    height: 0.5625rem;
-    top: 50%;
-    left: 50%;
+    width: 0.625rem;
+    height: 0.625rem;
   }
 }
 
