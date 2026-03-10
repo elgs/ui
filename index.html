@@ -6,6 +6,7 @@
   <title>UI Library Demo</title>
   <link rel="icon" type="image/svg+xml" href="src/favicon.svg">
   <link rel="stylesheet" href="src/ui.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <style>
 
     body {
@@ -380,12 +381,68 @@
         <summary>Show code</summary>
         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 <pre>&lt;button class="ui-btn pill"&gt;Pill button&lt;/button&gt;
+&lt;button class="ui-btn pill outline secondary"&gt;Pill outline&lt;/button&gt;
 
 &lt;div class="ui-btn-group"&gt;
   &lt;button class="ui-btn outline"&gt;Left&lt;/button&gt;
   &lt;button class="ui-btn outline"&gt;Center&lt;/button&gt;
   &lt;button class="ui-btn outline"&gt;Right&lt;/button&gt;
 &lt;/div&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>With icons</h3>
+      <div class="ui-row">
+        <button class="ui-btn"><i class="bi bi-plus-lg"></i> Add item</button>
+        <button class="ui-btn outline secondary"><i class="bi bi-pencil"></i> Edit</button>
+        <button class="ui-btn danger"><i class="bi bi-trash"></i> Delete</button>
+        <button class="ui-btn ghost"><i class="bi bi-download"></i> Download</button>
+        <button class="ui-btn success"><i class="bi bi-check-lg"></i> Approve</button>
+        <button class="ui-btn outline icon" title="Settings"><i class="bi bi-gear"></i></button>
+        <button class="ui-btn icon" title="Search"><i class="bi bi-search"></i></button>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;button class="ui-btn"&gt;&lt;i class="bi bi-plus-lg"&gt;&lt;/i&gt; Add item&lt;/button&gt;
+&lt;button class="ui-btn outline secondary"&gt;&lt;i class="bi bi-pencil"&gt;&lt;/i&gt; Edit&lt;/button&gt;
+&lt;button class="ui-btn danger"&gt;&lt;i class="bi bi-trash"&gt;&lt;/i&gt; Delete&lt;/button&gt;
+&lt;button class="ui-btn ghost"&gt;&lt;i class="bi bi-download"&gt;&lt;/i&gt; Download&lt;/button&gt;
+&lt;button class="ui-btn success"&gt;&lt;i class="bi bi-check-lg"&gt;&lt;/i&gt; Approve&lt;/button&gt;
+&lt;button class="ui-btn outline icon" title="Settings"&gt;&lt;i class="bi bi-gear"&gt;&lt;/i&gt;&lt;/button&gt;
+&lt;button class="ui-btn icon" title="Search"&gt;&lt;i class="bi bi-search"&gt;&lt;/i&gt;&lt;/button&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Loading state</h3>
+      <div class="ui-row">
+        <button class="ui-btn loading">Saving</button>
+        <button class="ui-btn secondary loading">Loading</button>
+        <button class="ui-btn outline loading">Submit</button>
+        <button class="ui-btn ghost loading">Fetch</button>
+        <button class="ui-btn danger loading">Delete</button>
+        <button class="ui-btn sm loading">Small</button>
+        <button class="ui-btn lg loading">Large</button>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;button class="ui-btn loading"&gt;Saving&lt;/button&gt;
+&lt;button class="ui-btn secondary loading"&gt;Loading&lt;/button&gt;
+&lt;button class="ui-btn outline loading"&gt;Submit&lt;/button&gt;
+&lt;button class="ui-btn ghost loading"&gt;Fetch&lt;/button&gt;
+&lt;button class="ui-btn danger loading"&gt;Delete&lt;/button&gt;
+&lt;button class="ui-btn sm loading"&gt;Small&lt;/button&gt;
+&lt;button class="ui-btn lg loading"&gt;Large&lt;/button&gt;
+
+&lt;!-- Toggle loading via JS --&gt;
+&lt;script&gt;
+const btn = document.querySelector('.ui-btn');
+btn.classList.add('loading');    // start
+btn.classList.remove('loading'); // stop
+&lt;/script&gt;</pre>
       </details>
     </div>
   </div>
@@ -1127,9 +1184,9 @@
     </div>
   </div>
 
-  <!-- Badges & Alerts -->
+  <!-- Badges, Tags & Alerts -->
   <div class="demo-section">
-    <h2>Badges & Alerts</h2>
+    <h2>Badges, Tags & Alerts</h2>
 
     <div class="demo-subsection">
       <h3>Badges</h3>
@@ -1152,6 +1209,88 @@
     </div>
 
     <div class="demo-subsection">
+      <h3>Badge styles</h3>
+      <div class="ui-stack sm">
+        <div class="ui-row sm">
+          <span class="ui-badge solid">Solid</span>
+          <span class="ui-badge solid success">Success</span>
+          <span class="ui-badge solid danger">Danger</span>
+          <span class="ui-badge solid warning">Warning</span>
+        </div>
+        <div class="ui-row sm">
+          <span class="ui-badge outline">Outline</span>
+          <span class="ui-badge outline success">Success</span>
+          <span class="ui-badge outline danger">Danger</span>
+          <span class="ui-badge outline warning">Warning</span>
+        </div>
+        <div class="ui-row sm">
+          <span class="ui-badge dot">With dot</span>
+          <span class="ui-badge dot success">Online</span>
+          <span class="ui-badge dot danger">Offline</span>
+        </div>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-row sm"&gt;
+  &lt;span class="ui-badge solid"&gt;Solid&lt;/span&gt;
+  &lt;span class="ui-badge solid success"&gt;Success&lt;/span&gt;
+  &lt;span class="ui-badge solid danger"&gt;Danger&lt;/span&gt;
+  &lt;span class="ui-badge solid warning"&gt;Warning&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="ui-row sm"&gt;
+  &lt;span class="ui-badge outline"&gt;Outline&lt;/span&gt;
+  &lt;span class="ui-badge outline success"&gt;Success&lt;/span&gt;
+  &lt;span class="ui-badge outline danger"&gt;Danger&lt;/span&gt;
+  &lt;span class="ui-badge outline warning"&gt;Warning&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="ui-row sm"&gt;
+  &lt;span class="ui-badge dot"&gt;With dot&lt;/span&gt;
+  &lt;span class="ui-badge dot success"&gt;Online&lt;/span&gt;
+  &lt;span class="ui-badge dot danger"&gt;Offline&lt;/span&gt;
+&lt;/div&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Tags (dismissible)</h3>
+      <div class="ui-row sm">
+        <span class="ui-tag">Default <button class="ui-tag-close" onclick="this.parentElement.remove()">&times;</button></span>
+        <span class="ui-tag primary">Primary <button class="ui-tag-close" onclick="this.parentElement.remove()">&times;</button></span>
+        <span class="ui-tag success">Success <button class="ui-tag-close" onclick="this.parentElement.remove()">&times;</button></span>
+        <span class="ui-tag danger">Danger <button class="ui-tag-close" onclick="this.parentElement.remove()">&times;</button></span>
+        <span class="ui-tag warning">Warning <button class="ui-tag-close" onclick="this.parentElement.remove()">&times;</button></span>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;span class="ui-tag"&gt;Default &lt;button class="ui-tag-close" onclick="this.parentElement.remove()"&gt;&amp;times;&lt;/button&gt;&lt;/span&gt;
+&lt;span class="ui-tag primary"&gt;Primary &lt;button class="ui-tag-close" onclick="this.parentElement.remove()"&gt;&amp;times;&lt;/button&gt;&lt;/span&gt;
+&lt;span class="ui-tag success"&gt;Success &lt;button class="ui-tag-close" onclick="this.parentElement.remove()"&gt;&amp;times;&lt;/button&gt;&lt;/span&gt;
+&lt;span class="ui-tag danger"&gt;Danger &lt;button class="ui-tag-close" onclick="this.parentElement.remove()"&gt;&amp;times;&lt;/button&gt;&lt;/span&gt;
+&lt;span class="ui-tag warning"&gt;Warning &lt;button class="ui-tag-close" onclick="this.parentElement.remove()"&gt;&amp;times;&lt;/button&gt;&lt;/span&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Tag sizes</h3>
+      <div class="ui-row sm">
+        <span class="ui-tag sm">Small <button class="ui-tag-close" onclick="this.parentElement.remove()">&times;</button></span>
+        <span class="ui-tag">Default <button class="ui-tag-close" onclick="this.parentElement.remove()">&times;</button></span>
+        <span class="ui-tag lg">Large <button class="ui-tag-close" onclick="this.parentElement.remove()">&times;</button></span>
+        <span class="ui-tag">No close button</span>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;span class="ui-tag sm"&gt;Small &lt;button class="ui-tag-close" onclick="this.parentElement.remove()"&gt;&amp;times;&lt;/button&gt;&lt;/span&gt;
+&lt;span class="ui-tag"&gt;Default &lt;button class="ui-tag-close" onclick="this.parentElement.remove()"&gt;&amp;times;&lt;/button&gt;&lt;/span&gt;
+&lt;span class="ui-tag lg"&gt;Large &lt;button class="ui-tag-close" onclick="this.parentElement.remove()"&gt;&amp;times;&lt;/button&gt;&lt;/span&gt;
+&lt;span class="ui-tag"&gt;No close button&lt;/span&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
       <h3>Alerts</h3>
       <div class="ui-stack sm">
         <div class="ui-alert">This is an informational alert.</div>
@@ -1166,6 +1305,105 @@
 &lt;div class="ui-alert success"&gt;Operation completed successfully.&lt;/div&gt;
 &lt;div class="ui-alert warning"&gt;Please review your changes before saving.&lt;/div&gt;
 &lt;div class="ui-alert danger"&gt;An error occurred while processing your request.&lt;/div&gt;</pre>
+      </details>
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="demo-section">
+    <h2>Tabs</h2>
+
+    <div class="demo-subsection">
+      <h3>Default tabs</h3>
+      <div class="ui-tabs" id="demo-tabs-1">
+        <div class="ui-tab-list">
+          <button class="ui-tab active" onclick="switchTab('demo-tabs-1', 0)">Overview</button>
+          <button class="ui-tab" onclick="switchTab('demo-tabs-1', 1)">Features</button>
+          <button class="ui-tab" onclick="switchTab('demo-tabs-1', 2)">Pricing</button>
+          <button class="ui-tab" disabled>Disabled</button>
+        </div>
+        <div class="ui-tab-panel active">This is the overview panel. Tabs organize content into separate views where only one is visible at a time.</div>
+        <div class="ui-tab-panel">Features include responsive design, dark mode support, and configurable colors via CSS custom properties.</div>
+        <div class="ui-tab-panel">Pricing plans are available for teams of all sizes. Contact us for enterprise options.</div>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-tabs" id="demo-tabs-1"&gt;
+  &lt;div class="ui-tab-list"&gt;
+    &lt;button class="ui-tab active" onclick="switchTab('demo-tabs-1', 0)"&gt;Overview&lt;/button&gt;
+    &lt;button class="ui-tab" onclick="switchTab('demo-tabs-1', 1)"&gt;Features&lt;/button&gt;
+    &lt;button class="ui-tab" onclick="switchTab('demo-tabs-1', 2)"&gt;Pricing&lt;/button&gt;
+    &lt;button class="ui-tab" disabled&gt;Disabled&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="ui-tab-panel active"&gt;This is the overview panel. Tabs organize content into separate views where only one is visible at a time.&lt;/div&gt;
+  &lt;div class="ui-tab-panel"&gt;Features include responsive design, dark mode support, and configurable colors via CSS custom properties.&lt;/div&gt;
+  &lt;div class="ui-tab-panel"&gt;Pricing plans are available for teams of all sizes. Contact us for enterprise options.&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+function switchTab(tabsId, index) {
+  const tabs = document.getElementById(tabsId);
+  tabs.querySelectorAll('.ui-tab-list .ui-tab').forEach((t, i) =&gt; t.classList.toggle('active', i === index));
+  tabs.querySelectorAll('.ui-tab-panel').forEach((p, i) =&gt; p.classList.toggle('active', i === index));
+}
+&lt;/script&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Pill tabs</h3>
+      <div class="ui-tabs" id="demo-tabs-2">
+        <div class="ui-tab-list pills">
+          <button class="ui-tab active" onclick="switchTab('demo-tabs-2', 0)">All</button>
+          <button class="ui-tab" onclick="switchTab('demo-tabs-2', 1)">Active</button>
+          <button class="ui-tab" onclick="switchTab('demo-tabs-2', 2)">Archived</button>
+        </div>
+        <div class="ui-tab-panel active">Showing all items in the list.</div>
+        <div class="ui-tab-panel">Showing only active items.</div>
+        <div class="ui-tab-panel">Showing archived items.</div>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-tabs" id="demo-tabs-2"&gt;
+  &lt;div class="ui-tab-list pills"&gt;
+    &lt;button class="ui-tab active" onclick="switchTab('demo-tabs-2', 0)"&gt;All&lt;/button&gt;
+    &lt;button class="ui-tab" onclick="switchTab('demo-tabs-2', 1)"&gt;Active&lt;/button&gt;
+    &lt;button class="ui-tab" onclick="switchTab('demo-tabs-2', 2)"&gt;Archived&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="ui-tab-panel active"&gt;Showing all items in the list.&lt;/div&gt;
+  &lt;div class="ui-tab-panel"&gt;Showing only active items.&lt;/div&gt;
+  &lt;div class="ui-tab-panel"&gt;Showing archived items.&lt;/div&gt;
+&lt;/div&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Boxed tabs</h3>
+      <div class="ui-tabs" id="demo-tabs-3">
+        <div class="ui-tab-list boxed">
+          <button class="ui-tab active" onclick="switchTab('demo-tabs-3', 0)">HTML</button>
+          <button class="ui-tab" onclick="switchTab('demo-tabs-3', 1)">CSS</button>
+          <button class="ui-tab" onclick="switchTab('demo-tabs-3', 2)">JavaScript</button>
+        </div>
+        <div class="ui-tab-panel active">HTML provides the structure and content of a webpage.</div>
+        <div class="ui-tab-panel">CSS handles the visual presentation and layout.</div>
+        <div class="ui-tab-panel">JavaScript adds interactivity and dynamic behavior.</div>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-tabs" id="demo-tabs-3"&gt;
+  &lt;div class="ui-tab-list boxed"&gt;
+    &lt;button class="ui-tab active" onclick="switchTab('demo-tabs-3', 0)"&gt;HTML&lt;/button&gt;
+    &lt;button class="ui-tab" onclick="switchTab('demo-tabs-3', 1)"&gt;CSS&lt;/button&gt;
+    &lt;button class="ui-tab" onclick="switchTab('demo-tabs-3', 2)"&gt;JavaScript&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="ui-tab-panel active"&gt;HTML provides the structure and content of a webpage.&lt;/div&gt;
+  &lt;div class="ui-tab-panel"&gt;CSS handles the visual presentation and layout.&lt;/div&gt;
+  &lt;div class="ui-tab-panel"&gt;JavaScript adds interactivity and dynamic behavior.&lt;/div&gt;
+&lt;/div&gt;</pre>
       </details>
     </div>
   </div>
@@ -1347,6 +1585,34 @@
   --ui-radius: 8px;
 }
 &lt;/style&gt;</pre>
+    </details>
+  </div>
+
+  <!-- Dark mode -->
+  <div class="demo-section">
+    <h2>Dark Mode</h2>
+    <p style="font-size:0.875rem; color:var(--ui-text-muted); margin:0 0 1rem;">
+      Toggle dark mode by setting <code>data-theme="dark"</code> on <code>&lt;html&gt;</code>. The library includes a full set of dark-appropriate variables.
+    </p>
+    <details class="demo-code" open>
+      <summary>Show code</summary>
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;!-- Enable dark mode via data attribute --&gt;
+&lt;html data-theme="dark"&gt;
+
+&lt;!-- Toggle with JavaScript --&gt;
+&lt;script&gt;
+function toggleDarkMode() {
+  const html = document.documentElement;
+  const isDark = html.getAttribute('data-theme') === 'dark';
+  html.setAttribute('data-theme', isDark ? '' : 'dark');
+}
+
+// Or detect system preference
+if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  document.documentElement.setAttribute('data-theme', 'dark');
+}
+&lt;/script&gt;</pre>
     </details>
   </div>
 
@@ -1566,6 +1832,13 @@
     resetTheme();
   });
 
+  // Tab switcher
+  function switchTab(tabsId, index) {
+    const tabs = document.getElementById(tabsId);
+    tabs.querySelectorAll('.ui-tab-list .ui-tab').forEach((t, i) => t.classList.toggle('active', i === index));
+    tabs.querySelectorAll('.ui-tab-panel').forEach((p, i) => p.classList.toggle('active', i === index));
+  }
+
   // Set indeterminate checkbox
   const indCb = document.getElementById('indeterminate-cb');
   if (indCb) indCb.indeterminate = true;
@@ -1743,7 +2016,7 @@
     const prev = details && details.previousElementSibling;
     const liveTargetId = details && details.getAttribute('data-live-target');
     const liveTargetEl = liveTargetId ? document.getElementById(liveTargetId) : null;
-    const demoTarget = !liveTargetId && prev && prev.matches('.ui-row, .ui-stack, .ui-panel, .grid-2') ? prev : null;
+    const demoTarget = !liveTargetId && prev && prev.matches('.ui-row, .ui-stack, .ui-panel, .ui-tabs, .grid-2') ? prev : null;
 
     // Make editable with syntax highlighting
     pre.contentEditable = 'true';
