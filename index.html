@@ -1110,54 +1110,98 @@
   <!-- Dialogs -->
   <div class="demo-section">
     <h2>Dialogs</h2>
-    <div class="ui-row">
-      <button class="ui-btn" onclick="openDialog('demo-dialog')">Open Dialog</button>
-      <button class="ui-btn secondary" onclick="openDialog('demo-dialog-lg')">Large Dialog</button>
-      <button class="ui-btn outline" onclick="document.getElementById('native-dialog').showModal()">Native &lt;dialog&gt;</button>
-    </div>
-    <details class="demo-code">
-      <summary>Show code</summary>
-      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;!-- Div-based dialog --&gt;
-&lt;div class="ui-dialog-backdrop" id="my-dialog"&gt;
+
+    <div class="demo-subsection">
+      <h3>Default dialog</h3>
+      <div class="ui-row">
+        <button class="ui-btn" onclick="openDialog('demo-dialog')">Open Dialog</button>
+      </div>
+      <details class="demo-code" data-live-target="demo-dialog">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-dialog-backdrop" id="demo-dialog"&gt;
   &lt;div class="ui-dialog"&gt;
     &lt;div class="ui-dialog-header"&gt;
-      &lt;h3 class="ui-dialog-title"&gt;Title&lt;/h3&gt;
-      &lt;button class="ui-dialog-close" onclick="closeDialog('my-dialog')"&gt;&amp;times;&lt;/button&gt;
+      &lt;h3 class="ui-dialog-title"&gt;Confirm action&lt;/h3&gt;
+      &lt;button class="ui-dialog-close" onclick="closeDialog('demo-dialog')"&gt;&amp;times;&lt;/button&gt;
     &lt;/div&gt;
     &lt;div class="ui-dialog-body"&gt;
-      Dialog content here.
+      &lt;p style="margin:0;"&gt;Are you sure you want to proceed? This action cannot be undone.&lt;/p&gt;
     &lt;/div&gt;
     &lt;div class="ui-dialog-footer"&gt;
-      &lt;button class="ui-btn ghost secondary" onclick="closeDialog('my-dialog')"&gt;Cancel&lt;/button&gt;
-      &lt;button class="ui-btn"&gt;Confirm&lt;/button&gt;
+      &lt;button class="ui-btn ghost secondary" onclick="closeDialog('demo-dialog')"&gt;Cancel&lt;/button&gt;
+      &lt;button class="ui-btn danger" onclick="closeDialog('demo-dialog')"&gt;Delete&lt;/button&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;
+&lt;/div&gt;</pre>
+      </details>
+    </div>
 
-&lt;!-- Sizes: .sm, (default), .lg, .full --&gt;
-&lt;div class="ui-dialog lg"&gt;...&lt;/div&gt;
+    <div class="demo-subsection">
+      <h3>Large dialog</h3>
+      <div class="ui-row">
+        <button class="ui-btn secondary" onclick="openDialog('demo-dialog-lg')">Large Dialog</button>
+      </div>
+      <details class="demo-code" data-live-target="demo-dialog-lg">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-dialog-backdrop" id="demo-dialog-lg"&gt;
+  &lt;div class="ui-dialog lg"&gt;
+    &lt;div class="ui-dialog-header"&gt;
+      &lt;h3 class="ui-dialog-title"&gt;Edit profile&lt;/h3&gt;
+      &lt;button class="ui-dialog-close" onclick="closeDialog('demo-dialog-lg')"&gt;&amp;times;&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class="ui-dialog-body"&gt;
+      &lt;div class="ui-stack sm"&gt;
+        &lt;div class="ui-field"&gt;
+          &lt;label&gt;Display name&lt;/label&gt;
+          &lt;input class="ui-input" type="text" value="Jane Doe"&gt;
+        &lt;/div&gt;
+        &lt;div class="ui-field"&gt;
+          &lt;label&gt;Bio&lt;/label&gt;
+          &lt;textarea class="ui-textarea" placeholder="Tell us about yourself..."&gt;&lt;/textarea&gt;
+        &lt;/div&gt;
+        &lt;div class="ui-field"&gt;
+          &lt;label&gt;Role&lt;/label&gt;
+          &lt;select class="ui-select"&gt;
+            &lt;option&gt;Developer&lt;/option&gt;
+            &lt;option&gt;Designer&lt;/option&gt;
+            &lt;option&gt;Manager&lt;/option&gt;
+          &lt;/select&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="ui-dialog-footer"&gt;
+      &lt;button class="ui-btn ghost secondary" onclick="closeDialog('demo-dialog-lg')"&gt;Cancel&lt;/button&gt;
+      &lt;button class="ui-btn" onclick="closeDialog('demo-dialog-lg')"&gt;Save changes&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+      </details>
+    </div>
 
-&lt;!-- Open / close --&gt;
-&lt;script&gt;
-function openDialog(id) {
-  document.getElementById(id).classList.add('open');
-}
-function closeDialog(id) {
-  document.getElementById(id).classList.remove('open');
-}
-&lt;/script&gt;
-
-&lt;!-- Native &lt;dialog&gt; element --&gt;
-&lt;dialog class="ui-dialog" id="native-dialog"&gt;
-  &lt;div class="ui-dialog-header"&gt;...&lt;/div&gt;
-  &lt;div class="ui-dialog-body"&gt;...&lt;/div&gt;
-  &lt;div class="ui-dialog-footer"&gt;...&lt;/div&gt;
-&lt;/dialog&gt;
-&lt;script&gt;
-document.getElementById('native-dialog').showModal();
-&lt;/script&gt;</pre>
-    </details>
+    <div class="demo-subsection">
+      <h3>Native &lt;dialog&gt; element</h3>
+      <div class="ui-row">
+        <button class="ui-btn outline" onclick="document.getElementById('native-dialog').showModal()">Native &lt;dialog&gt;</button>
+      </div>
+      <details class="demo-code" data-live-target="native-dialog">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;dialog class="ui-dialog" id="native-dialog"&gt;
+  &lt;div class="ui-dialog-header"&gt;
+    &lt;h3 class="ui-dialog-title"&gt;Native Dialog&lt;/h3&gt;
+    &lt;button class="ui-dialog-close" onclick="closeNativeDialog()"&gt;&amp;times;&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="ui-dialog-body"&gt;
+    &lt;p style="margin:0;"&gt;This uses the native &amp;lt;dialog&amp;gt; element with showModal(). It gets a browser-provided backdrop and focus trapping for free.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="ui-dialog-footer"&gt;
+    &lt;button class="ui-btn" onclick="closeNativeDialog()"&gt;Close&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/dialog&gt;</pre>
+      </details>
+    </div>
   </div>
 
   <!-- Layout utilities -->
@@ -1299,13 +1343,13 @@ document.getElementById('native-dialog').showModal();
 <dialog class="ui-dialog" id="native-dialog">
   <div class="ui-dialog-header">
     <h3 class="ui-dialog-title">Native Dialog</h3>
-    <button class="ui-dialog-close" onclick="document.getElementById('native-dialog').close()">&times;</button>
+    <button class="ui-dialog-close" onclick="closeNativeDialog()">&times;</button>
   </div>
   <div class="ui-dialog-body">
     <p style="margin:0;">This uses the native <code>&lt;dialog&gt;</code> element with <code>showModal()</code>. It gets a browser-provided backdrop and focus trapping for free.</p>
   </div>
   <div class="ui-dialog-footer">
-    <button class="ui-btn" onclick="document.getElementById('native-dialog').close()">Close</button>
+    <button class="ui-btn" onclick="closeNativeDialog()">Close</button>
   </div>
 </dialog>
 
@@ -1338,10 +1382,23 @@ document.getElementById('native-dialog').showModal();
       document.querySelectorAll('.ui-dialog-backdrop.open').forEach(b => b.classList.remove('open'));
     }
   });
+  // Native dialog helpers
+  function closeNativeDialog() {
+    document.getElementById('native-dialog').close();
+  }
+  // Native dialog: close on backdrop click
+  document.getElementById('native-dialog').addEventListener('click', e => {
+    const d = e.currentTarget;
+    const rect = d.getBoundingClientRect();
+    if (e.clientX < rect.left || e.clientX > rect.right ||
+        e.clientY < rect.top || e.clientY > rect.bottom) {
+      d.close();
+    }
+  });
 
   // Theme configurator
   const defaults = {
-    primary: '#6366f1',
+    primary: '#2095f3',
     secondary: '#8590a2',
     success: '#34c379',
     danger: '#f06272',
@@ -1519,7 +1576,9 @@ document.getElementById('native-dialog').showModal();
     const raw = pre.textContent;
     const details = pre.closest('.demo-code');
     const prev = details && details.previousElementSibling;
-    const demoTarget = prev && prev.matches('.ui-row, .ui-stack, .ui-panel, .grid-2') ? prev : null;
+    const liveTargetId = details && details.getAttribute('data-live-target');
+    const liveTargetEl = liveTargetId ? document.getElementById(liveTargetId) : null;
+    const demoTarget = !liveTargetId && prev && prev.matches('.ui-row, .ui-stack, .ui-panel, .grid-2') ? prev : null;
 
     // Make editable with syntax highlighting
     pre.contentEditable = 'true';
@@ -1534,6 +1593,9 @@ document.getElementById('native-dialog').showModal();
       _restoreCursor(pre, pos);
       if (demoTarget) {
         demoTarget.innerHTML = _sanitize(text);
+      } else if (liveTargetId) {
+        const el = document.getElementById(liveTargetId);
+        if (el) el.outerHTML = _sanitize(text);
       }
     });
 
