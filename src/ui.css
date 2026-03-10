@@ -5,26 +5,29 @@
 :root {
   /* --- Color palette --- */
   --ui-primary: #2095f3;
-  --ui-primary-hover: #1a84da;
-  --ui-primary-active: #1573c1;
-  --ui-primary-light: #e8f4fe;
+  --ui-primary-hover: color-mix(in srgb, var(--ui-primary) 80%, #000);
+  --ui-primary-active: color-mix(in srgb, var(--ui-primary) 65%, #000);
+  --ui-primary-light: color-mix(in srgb, var(--ui-primary) 15%, #fff);
 
   --ui-secondary: #8590a2;
-  --ui-secondary-hover: #6b7a90;
-  --ui-secondary-active: #556578;
-  --ui-secondary-light: #f4f6f8;
+  --ui-secondary-hover: color-mix(in srgb, var(--ui-secondary) 80%, #000);
+  --ui-secondary-active: color-mix(in srgb, var(--ui-secondary) 65%, #000);
+  --ui-secondary-light: color-mix(in srgb, var(--ui-secondary) 12%, #fff);
 
   --ui-success: #34c379;
-  --ui-success-hover: #2aab6a;
-  --ui-success-light: #edfcf3;
+  --ui-success-hover: color-mix(in srgb, var(--ui-success) 80%, #000);
+  --ui-success-active: color-mix(in srgb, var(--ui-success) 65%, #000);
+  --ui-success-light: color-mix(in srgb, var(--ui-success) 12%, #fff);
 
   --ui-danger: #f06272;
-  --ui-danger-hover: #e04858;
-  --ui-danger-light: #fef0f1;
+  --ui-danger-hover: color-mix(in srgb, var(--ui-danger) 80%, #000);
+  --ui-danger-active: color-mix(in srgb, var(--ui-danger) 65%, #000);
+  --ui-danger-light: color-mix(in srgb, var(--ui-danger) 12%, #fff);
 
   --ui-warning: #f5a623;
-  --ui-warning-hover: #e0941a;
-  --ui-warning-light: #fff8eb;
+  --ui-warning-hover: color-mix(in srgb, var(--ui-warning) 80%, #000);
+  --ui-warning-active: color-mix(in srgb, var(--ui-warning) 65%, #000);
+  --ui-warning-light: color-mix(in srgb, var(--ui-warning) 12%, #fff);
 
   /* --- Neutrals --- */
   --ui-bg: #ffffff;
@@ -178,7 +181,7 @@
     color: var(--ui-primary);
 
     &:hover {
-      background: var(--ui-primary-light);
+      background: color-mix(in srgb, var(--ui-primary) 8%, transparent);
     }
 
     &.secondary {
