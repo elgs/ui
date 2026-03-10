@@ -82,6 +82,52 @@
 }
 
 /* ============================================
+   Dark mode
+   ============================================ */
+
+[data-theme="dark"] {
+  --ui-primary: #4dabf7;
+  --ui-primary-hover: color-mix(in srgb, var(--ui-primary) 80%, #fff);
+  --ui-primary-active: color-mix(in srgb, var(--ui-primary) 65%, #fff);
+  --ui-primary-light: color-mix(in srgb, var(--ui-primary) 15%, #000);
+
+  --ui-secondary: #8590a2;
+  --ui-secondary-hover: color-mix(in srgb, var(--ui-secondary) 80%, #fff);
+  --ui-secondary-active: color-mix(in srgb, var(--ui-secondary) 65%, #fff);
+  --ui-secondary-light: color-mix(in srgb, var(--ui-secondary) 12%, #000);
+
+  --ui-success: #51cf96;
+  --ui-success-hover: color-mix(in srgb, var(--ui-success) 80%, #fff);
+  --ui-success-active: color-mix(in srgb, var(--ui-success) 65%, #fff);
+  --ui-success-light: color-mix(in srgb, var(--ui-success) 12%, #000);
+
+  --ui-danger: #ff7b8a;
+  --ui-danger-hover: color-mix(in srgb, var(--ui-danger) 80%, #fff);
+  --ui-danger-active: color-mix(in srgb, var(--ui-danger) 65%, #fff);
+  --ui-danger-light: color-mix(in srgb, var(--ui-danger) 12%, #000);
+
+  --ui-warning: #ffc048;
+  --ui-warning-hover: color-mix(in srgb, var(--ui-warning) 80%, #fff);
+  --ui-warning-active: color-mix(in srgb, var(--ui-warning) 65%, #fff);
+  --ui-warning-light: color-mix(in srgb, var(--ui-warning) 12%, #000);
+
+  --ui-bg: #1a1d26;
+  --ui-bg-subtle: #12141a;
+  --ui-surface: #22252e;
+  --ui-border: #333842;
+  --ui-border-focus: var(--ui-primary);
+  --ui-text: #e4e6eb;
+  --ui-text-muted: #8590a2;
+  --ui-text-inverse: #1a1d26;
+  --ui-overlay: rgba(0, 0, 0, 0.6);
+
+  --ui-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --ui-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
+  --ui-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+  --ui-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+}
+
+/* ============================================
    Base reset for library elements
    ============================================ */
 

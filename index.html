@@ -282,6 +282,11 @@
       </div>
     </div>
     <button class="ui-btn sm ghost secondary" onclick="resetTheme()">Reset to defaults</button>
+    <label class="ui-toggle" style="margin-left: 1rem;">
+      <input type="checkbox" id="dark-mode-toggle">
+      <span class="ui-toggle-track"></span>
+      Dark mode
+    </label>
   </div>
 
   <!-- Buttons -->
@@ -1488,7 +1493,7 @@
   });
 
   // Theme configurator
-  const defaults = {
+  const lightDefaults = {
     primary: '#2095f3',
     secondary: '#8590a2',
     success: '#34c379',
@@ -1497,6 +1502,18 @@
     bg: '#ffffff',
     text: '#1a1d26',
   };
+
+  const darkDefaults = {
+    primary: '#4dabf7',
+    secondary: '#8590a2',
+    success: '#51cf96',
+    danger: '#ff7b8a',
+    warning: '#ffc048',
+    bg: '#1a1d26',
+    text: '#e4e6eb',
+  };
+
+  let defaults = lightDefaults;
 
   function applyColor(name, hex) {
     document.documentElement.style.setProperty(`--ui-${name}`, hex);
@@ -1512,24 +1529,42 @@
     const root = document.documentElement.style;
     root.setProperty('--ui-bg', e.target.value);
     root.setProperty('--ui-surface', e.target.value);
+    root.setProperty('--ui-bg-subtle', adjustBgSubtle(e.target.value));
   });
 
   document.getElementById('cfg-text').addEventListener('input', e => {
     document.documentElement.style.setProperty('--ui-text', e.target.value);
   });
 
+  function adjustBgSubtle(bgHex) {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    // Make bg-subtle slightly lighter/darker than bg
+    const r = parseInt(bgHex.slice(1,3), 16);
+    const g = parseInt(bgHex.slice(3,5), 16);
+    const b = parseInt(bgHex.slice(5,7), 16);
+    const shift = isDark ? -12 : 8;
+    const clamp = v => Math.max(0, Math.min(255, v - shift));
+    return '#' + [r,g,b].map(v => clamp(v).toString(16).padStart(2,'0')).join('');
+  }
+
   function resetTheme() {
     const root = document.documentElement.style;
     Object.entries(defaults).forEach(([name, hex]) => {
       document.getElementById(`cfg-${name}`).value = hex;
-      if (['primary', 'secondary', 'success', 'danger', 'warning'].includes(name)) {
-        applyColor(name, hex);
-      }
+      root.setProperty(`--ui-${name}`, hex);
     });
-    root.setProperty('--ui-bg', defaults.bg);
     root.setProperty('--ui-surface', defaults.bg);
-    root.setProperty('--ui-text', defaults.text);
+    root.setProperty('--ui-bg-subtle', adjustBgSubtle(defaults.bg));
   }
+
+  // Dark mode toggle
+  const darkToggle = document.getElementById('dark-mode-toggle');
+  darkToggle.addEventListener('change', () => {
+    const isDark = darkToggle.checked;
+    document.documentElement.setAttribute('data-theme', isDark ? 'dark' : '');
+    defaults = isDark ? darkDefaults : lightDefaults;
+    resetTheme();
+  });
 
   // Set indeterminate checkbox
   const indCb = document.getElementById('indeterminate-cb');
@@ -1644,22 +1679,52 @@
     );
   }
 
-  // Source dialog
-  let sourceLoaded = false;
+  // Source dialog — always reflects current custom colors
+  let sourceCssOriginal = null;
   function openSourceDialog() {
     const dialog = document.getElementById('source-dialog');
     dialog.showModal();
-    if (!sourceLoaded) {
+    const render = css => {
+      const patched = patchCssWithCurrentColors(css);
+      document.getElementById('source-pre').innerHTML = highlightCSS(patched);
+    };
+    if (sourceCssOriginal) {
+      render(sourceCssOriginal);
+    } else {
       fetch('src/ui.css')
         .then(r => r.text())
         .then(css => {
-          document.getElementById('source-pre').innerHTML = highlightCSS(css);
-          sourceLoaded = true;
+          sourceCssOriginal = css;
+          render(css);
         })
         .catch(() => {
           document.getElementById('source-pre').textContent = 'Failed to load ui.css';
         });
     }
+  }
+
+  function patchCssWithCurrentColors(css) {
+    const colorMap = {
+      '--ui-primary': document.getElementById('cfg-primary').value,
+      '--ui-secondary': document.getElementById('cfg-secondary').value,
+      '--ui-success': document.getElementById('cfg-success').value,
+      '--ui-danger': document.getElementById('cfg-danger').value,
+      '--ui-warning': document.getElementById('cfg-warning').value,
+      '--ui-bg': document.getElementById('cfg-bg').value,
+      '--ui-text': document.getElementById('cfg-text').value,
+    };
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const blockRegex = isDark
+      ? /(\[data-theme="dark"\]\s*\{[\s\S]*?\n\})/
+      : /(:root\s*\{[\s\S]*?\n\})/;
+    return css.replace(blockRegex, (block) => {
+      let patched = block;
+      for (const [prop, val] of Object.entries(colorMap)) {
+        const regex = new RegExp(`(${prop.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})(?=[:\\s]):\\s*#[0-9a-fA-F]{3,8}(?![\\w-])`, 'g');
+        patched = patched.replace(regex, `$1: ${val}`);
+      }
+      return patched;
+    });
   }
   // Source dialog: close on backdrop click
   document.getElementById('source-dialog').addEventListener('click', e => {
