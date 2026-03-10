@@ -1,5 +1,26 @@
 /* ============================================
    UI Library — Configurable via CSS Custom Properties
+   ============================================
+
+   To customize, override any of these in your own stylesheet:
+
+   :root {
+     --ui-primary:   #2095f3;
+     --ui-secondary: #8590a2;
+     --ui-success:   #34c379;
+     --ui-danger:    #f06272;
+     --ui-warning:   #f5a623;
+
+     --ui-bg:        #ffffff;
+     --ui-text:      #1a1d26;
+     --ui-border:    #e8ecf1;
+
+     --ui-radius:    6px;
+     --ui-font:      system-ui, sans-serif;
+   }
+
+   Hover, active, and light variants are derived automatically
+   via color-mix() — no need to set them manually.
    ============================================ */
 
 :root {
