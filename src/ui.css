@@ -1,0 +1,872 @@
+/* ============================================
+   UI Library — Configurable via CSS Custom Properties
+   ============================================ */
+
+:root {
+  /* --- Color palette --- */
+  --ui-primary: #6366f1;
+  --ui-primary-hover: #5457e5;
+  --ui-primary-active: #4346d0;
+  --ui-primary-light: #eef0ff;
+
+  --ui-secondary: #8590a2;
+  --ui-secondary-hover: #6b7a90;
+  --ui-secondary-active: #556578;
+  --ui-secondary-light: #f4f6f8;
+
+  --ui-success: #34c379;
+  --ui-success-hover: #2aab6a;
+  --ui-success-light: #edfcf3;
+
+  --ui-danger: #f06272;
+  --ui-danger-hover: #e04858;
+  --ui-danger-light: #fef0f1;
+
+  --ui-warning: #f5a623;
+  --ui-warning-hover: #e0941a;
+  --ui-warning-light: #fff8eb;
+
+  /* --- Neutrals --- */
+  --ui-bg: #ffffff;
+  --ui-bg-subtle: #f7f8fb;
+  --ui-surface: #ffffff;
+  --ui-border: #e8ecf1;
+  --ui-border-focus: var(--ui-primary);
+  --ui-text: #1a1d26;
+  --ui-text-muted: #8590a2;
+  --ui-text-inverse: #ffffff;
+  --ui-overlay: rgba(16, 20, 34, 0.4);
+
+  /* --- Sizing / Radius / Shadows --- */
+  --ui-radius-sm: 4px;
+  --ui-radius: 6px;
+  --ui-radius-lg: 10px;
+  --ui-radius-full: 9999px;
+  --ui-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --ui-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --ui-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --ui-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+
+  /* --- Typography --- */
+  --ui-font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --ui-font-mono: ui-monospace, "Cascadia Code", "Fira Code", monospace;
+  --ui-font-size: 0.875rem;
+  --ui-line-height: 1.5;
+
+  /* --- Transitions --- */
+  --ui-transition: 150ms ease;
+}
+
+/* ============================================
+   Base reset for library elements
+   ============================================ */
+
+.ui-btn,
+.ui-input,
+.ui-select,
+.ui-textarea {
+  font-family: var(--ui-font);
+  font-size: var(--ui-font-size);
+  line-height: var(--ui-line-height);
+  box-sizing: border-box;
+}
+
+/* ============================================
+   Buttons
+   ============================================ */
+
+.ui-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  padding: 0.5rem 1rem;
+  border: 1px solid transparent;
+  border-radius: var(--ui-radius);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background var(--ui-transition), border-color var(--ui-transition),
+    box-shadow var(--ui-transition), opacity var(--ui-transition);
+  user-select: none;
+  white-space: nowrap;
+  text-decoration: none;
+
+  /* Default: primary solid */
+  background: var(--ui-primary);
+  color: var(--ui-text-inverse);
+
+  &:hover {
+    background: var(--ui-primary-hover);
+  }
+
+  &:active {
+    background: var(--ui-primary-active);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--ui-primary);
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  /* --- Variants --- */
+
+  &.secondary {
+    background: var(--ui-secondary);
+
+    &:hover {
+      background: var(--ui-secondary-hover);
+    }
+
+    &:active {
+      background: var(--ui-secondary-active);
+    }
+
+    &:focus-visible {
+      outline-color: var(--ui-secondary);
+    }
+  }
+
+  &.success {
+    background: var(--ui-success);
+
+    &:hover {
+      background: var(--ui-success-hover);
+    }
+
+    &:focus-visible {
+      outline-color: var(--ui-success);
+    }
+  }
+
+  &.danger {
+    background: var(--ui-danger);
+
+    &:hover {
+      background: var(--ui-danger-hover);
+    }
+
+    &:focus-visible {
+      outline-color: var(--ui-danger);
+    }
+  }
+
+  &.warning {
+    background: var(--ui-warning);
+    color: var(--ui-text);
+
+    &:hover {
+      background: var(--ui-warning-hover);
+      color: var(--ui-text-inverse);
+    }
+
+    &:focus-visible {
+      outline-color: var(--ui-warning);
+    }
+  }
+
+  /* --- Outline style --- */
+
+  &.outline {
+    background: transparent;
+    border-color: var(--ui-primary);
+    color: var(--ui-primary);
+
+    &:hover {
+      background: var(--ui-primary-light);
+    }
+
+    &.secondary {
+      border-color: var(--ui-secondary);
+      color: var(--ui-secondary);
+
+      &:hover {
+        background: var(--ui-secondary-light);
+      }
+    }
+
+    &.danger {
+      border-color: var(--ui-danger);
+      color: var(--ui-danger);
+
+      &:hover {
+        background: var(--ui-danger-light);
+      }
+    }
+
+    &.success {
+      border-color: var(--ui-success);
+      color: var(--ui-success);
+
+      &:hover {
+        background: var(--ui-success-light);
+      }
+    }
+  }
+
+  /* --- Ghost style --- */
+
+  &.ghost {
+    background: transparent;
+    color: var(--ui-primary);
+
+    &:hover {
+      background: var(--ui-primary-light);
+    }
+
+    &.secondary {
+      color: var(--ui-secondary);
+
+      &:hover {
+        background: var(--ui-secondary-light);
+      }
+    }
+
+    &.danger {
+      color: var(--ui-danger);
+
+      &:hover {
+        background: var(--ui-danger-light);
+      }
+    }
+  }
+
+  /* --- Sizes --- */
+
+  &.sm {
+    padding: 0.25rem 0.75rem;
+    font-size: 0.8125rem;
+    border-radius: var(--ui-radius-sm);
+  }
+
+  &.lg {
+    padding: 0.625rem 1.5rem;
+    font-size: 1rem;
+    border-radius: var(--ui-radius);
+  }
+
+  /* --- Pill shape --- */
+
+  &.pill {
+    border-radius: var(--ui-radius-full);
+  }
+
+  /* --- Full width --- */
+
+  &.block {
+    width: 100%;
+  }
+
+  /* --- Icon-only --- */
+
+  &.icon {
+    padding: 0.5rem;
+    aspect-ratio: 1;
+  }
+}
+
+/* ============================================
+   Button group
+   ============================================ */
+
+.ui-btn-group {
+  display: inline-flex;
+
+  & > .ui-btn {
+    border-radius: 0;
+
+    &:first-child {
+      border-radius: var(--ui-radius) 0 0 var(--ui-radius);
+    }
+
+    &:last-child {
+      border-radius: 0 var(--ui-radius) var(--ui-radius) 0;
+    }
+
+    & + .ui-btn {
+      margin-left: -1px;
+    }
+  }
+}
+
+/* ============================================
+   Toggle button
+   ============================================ */
+
+.ui-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+  font-family: var(--ui-font);
+  font-size: var(--ui-font-size);
+
+  & input[type="checkbox"] {
+    display: none;
+  }
+
+  & .ui-toggle-track {
+    position: relative;
+    width: 2.5rem;
+    height: 1.375rem;
+    background: var(--ui-border);
+    border-radius: var(--ui-radius-full);
+    transition: background var(--ui-transition);
+    flex-shrink: 0;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0.1875rem;
+      left: 0.1875rem;
+      width: 1rem;
+      height: 1rem;
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: var(--ui-shadow-sm);
+      transition: transform var(--ui-transition), background var(--ui-transition);
+    }
+  }
+
+  & input:checked + .ui-toggle-track {
+    background: var(--ui-primary);
+
+    &::after {
+      transform: translateX(1.125rem);
+    }
+  }
+
+  &:hover .ui-toggle-track {
+    filter: brightness(0.95);
+  }
+
+  /* Variants */
+  &.success input:checked + .ui-toggle-track { background: var(--ui-success); }
+  &.danger  input:checked + .ui-toggle-track { background: var(--ui-danger); }
+  &.warning input:checked + .ui-toggle-track { background: var(--ui-warning); }
+
+  /* Sizes */
+  &.sm {
+    font-size: 0.8125rem;
+
+    & .ui-toggle-track {
+      width: 1.875rem;
+      height: 1.0625rem;
+
+      &::after {
+        width: 0.6875rem;
+        height: 0.6875rem;
+        top: 0.1875rem;
+        left: 0.1875rem;
+      }
+    }
+
+    & input:checked + .ui-toggle-track::after {
+      transform: translateX(0.8125rem);
+    }
+  }
+
+  &.lg {
+    font-size: 1rem;
+
+    & .ui-toggle-track {
+      width: 3.25rem;
+      height: 1.75rem;
+
+      &::after {
+        width: 1.25rem;
+        height: 1.25rem;
+        top: 0.25rem;
+        left: 0.25rem;
+      }
+    }
+
+    & input:checked + .ui-toggle-track::after {
+      transform: translateX(1.5rem);
+    }
+  }
+
+  /* Disabled */
+  &:has(input:disabled) {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+/* ============================================
+   Inputs
+   ============================================ */
+
+.ui-input,
+.ui-select,
+.ui-textarea {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  background: var(--ui-bg);
+  border: 1px solid var(--ui-border);
+  border-radius: var(--ui-radius);
+  color: var(--ui-text);
+  transition: border-color var(--ui-transition), box-shadow var(--ui-transition);
+
+  &::placeholder {
+    color: var(--ui-text-muted);
+  }
+
+  &:hover {
+    border-color: var(--ui-secondary);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: var(--ui-border-focus);
+    box-shadow: 0 0 0 3px var(--ui-primary-light);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: var(--ui-bg-subtle);
+  }
+
+  &.error {
+    border-color: var(--ui-danger);
+
+    &:focus {
+      box-shadow: 0 0 0 3px var(--ui-danger-light);
+    }
+  }
+
+  &.sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8125rem;
+  }
+
+  &.lg {
+    padding: 0.625rem 1rem;
+    font-size: 1rem;
+  }
+}
+
+.ui-textarea {
+  min-height: 5rem;
+  resize: vertical;
+}
+
+.ui-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2364748b' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  padding-right: 2.25rem;
+}
+
+/* --- Form field wrapper --- */
+
+.ui-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+
+  & > label,
+  & > .ui-label {
+    font-family: var(--ui-font);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--ui-text);
+  }
+
+  & > .ui-hint {
+    font-size: 0.75rem;
+    color: var(--ui-text-muted);
+  }
+
+  & > .ui-error-text {
+    font-size: 0.75rem;
+    color: var(--ui-danger);
+  }
+}
+
+/* --- Checkbox / Radio --- */
+
+.ui-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--ui-font);
+  font-size: var(--ui-font-size);
+  cursor: pointer;
+
+  & input[type="checkbox"],
+  & input[type="radio"] {
+    width: 1rem;
+    height: 1rem;
+    accent-color: var(--ui-primary);
+    cursor: pointer;
+  }
+}
+
+/* ============================================
+   Panels / Cards
+   ============================================ */
+
+.ui-panel {
+  background: var(--ui-surface);
+  border: 1px solid var(--ui-border);
+  border-radius: var(--ui-radius-lg);
+  box-shadow: var(--ui-shadow-sm);
+  overflow: hidden;
+
+  & > .ui-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--ui-border);
+    font-family: var(--ui-font);
+
+    & > .ui-panel-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--ui-text);
+      margin: 0;
+    }
+
+    & > .ui-panel-actions {
+      display: flex;
+      gap: 0.5rem;
+    }
+  }
+
+  & > .ui-panel-body {
+    padding: 1.25rem;
+    font-family: var(--ui-font);
+    font-size: var(--ui-font-size);
+    color: var(--ui-text);
+    line-height: var(--ui-line-height);
+  }
+
+  & > .ui-panel-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    border-top: 1px solid var(--ui-border);
+    background: var(--ui-bg-subtle);
+  }
+
+  /* --- Variants --- */
+
+  &.flat {
+    box-shadow: none;
+  }
+
+  &.raised {
+    box-shadow: var(--ui-shadow-lg);
+  }
+
+  &.borderless {
+    border: none;
+    box-shadow: var(--ui-shadow);
+  }
+}
+
+/* ============================================
+   Dialog / Modal
+   ============================================ */
+
+.ui-dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  background: var(--ui-overlay);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--ui-transition), visibility var(--ui-transition);
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  & > .ui-dialog {
+    background: var(--ui-surface);
+    border-radius: var(--ui-radius-lg);
+    box-shadow: var(--ui-shadow-xl);
+    width: min(28rem, calc(100vw - 2rem));
+    max-height: calc(100vh - 4rem);
+    display: flex;
+    flex-direction: column;
+    transform: translateY(8px) scale(0.98);
+    transition: transform var(--ui-transition);
+
+    .open > & {
+      transform: translateY(0) scale(1);
+    }
+
+    & > .ui-dialog-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--ui-border);
+
+      & > .ui-dialog-title {
+        font-family: var(--ui-font);
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: var(--ui-text);
+        margin: 0;
+      }
+
+      & > .ui-dialog-close {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2rem;
+        height: 2rem;
+        background: none;
+        border: none;
+        border-radius: var(--ui-radius);
+        color: var(--ui-text-muted);
+        cursor: pointer;
+        font-size: 1.25rem;
+        transition: background var(--ui-transition), color var(--ui-transition);
+
+        &:hover {
+          background: var(--ui-bg-subtle);
+          color: var(--ui-text);
+        }
+      }
+    }
+
+    & > .ui-dialog-body {
+      padding: 1.25rem;
+      overflow-y: auto;
+      font-family: var(--ui-font);
+      font-size: var(--ui-font-size);
+      color: var(--ui-text);
+      line-height: var(--ui-line-height);
+    }
+
+    & > .ui-dialog-footer {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 0.5rem;
+      padding: 0.75rem 1.25rem;
+      border-top: 1px solid var(--ui-border);
+    }
+
+    /* Size variants */
+
+    &.sm {
+      width: min(20rem, calc(100vw - 2rem));
+    }
+
+    &.lg {
+      width: min(40rem, calc(100vw - 2rem));
+    }
+
+    &.full {
+      width: calc(100vw - 2rem);
+      height: calc(100vh - 4rem);
+    }
+  }
+}
+
+/* Native <dialog> support */
+
+dialog.ui-dialog {
+  border: none;
+  padding: 0;
+  background: var(--ui-surface);
+  border-radius: var(--ui-radius-lg);
+  box-shadow: var(--ui-shadow-xl);
+  width: min(28rem, calc(100vw - 2rem));
+  max-height: calc(100vh - 4rem);
+  display: flex;
+  flex-direction: column;
+
+  &::backdrop {
+    background: var(--ui-overlay);
+  }
+
+  & > .ui-dialog-header,
+  & > .ui-dialog-body,
+  & > .ui-dialog-footer {
+    /* inherits same styles as div-based dialog children above */
+  }
+
+  & > .ui-dialog-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--ui-border);
+
+    & > .ui-dialog-title {
+      font-family: var(--ui-font);
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--ui-text);
+      margin: 0;
+    }
+
+    & > .ui-dialog-close {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2rem;
+      height: 2rem;
+      background: none;
+      border: none;
+      border-radius: var(--ui-radius);
+      color: var(--ui-text-muted);
+      cursor: pointer;
+      font-size: 1.25rem;
+      transition: background var(--ui-transition), color var(--ui-transition);
+
+      &:hover {
+        background: var(--ui-bg-subtle);
+        color: var(--ui-text);
+      }
+    }
+  }
+
+  & > .ui-dialog-body {
+    padding: 1.25rem;
+    overflow-y: auto;
+    font-family: var(--ui-font);
+    font-size: var(--ui-font-size);
+    color: var(--ui-text);
+    line-height: var(--ui-line-height);
+  }
+
+  & > .ui-dialog-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    border-top: 1px solid var(--ui-border);
+  }
+}
+
+/* ============================================
+   Badges / Tags
+   ============================================ */
+
+.ui-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25em;
+  padding: 0.125rem 0.5rem;
+  font-family: var(--ui-font);
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: var(--ui-radius-full);
+  background: var(--ui-primary-light);
+  color: var(--ui-primary);
+
+  &.secondary {
+    background: var(--ui-secondary-light);
+    color: var(--ui-secondary);
+  }
+
+  &.success {
+    background: var(--ui-success-light);
+    color: var(--ui-success);
+  }
+
+  &.danger {
+    background: var(--ui-danger-light);
+    color: var(--ui-danger);
+  }
+
+  &.warning {
+    background: var(--ui-warning-light);
+    color: var(--ui-warning);
+  }
+}
+
+/* ============================================
+   Alerts
+   ============================================ */
+
+.ui-alert {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.875rem 1rem;
+  border-radius: var(--ui-radius);
+  font-family: var(--ui-font);
+  font-size: var(--ui-font-size);
+  line-height: var(--ui-line-height);
+  background: var(--ui-primary-light);
+  color: var(--ui-primary-active, var(--ui-primary));
+  border: 1px solid var(--ui-primary);
+
+  &.success {
+    background: var(--ui-success-light);
+    color: var(--ui-success);
+    border-color: var(--ui-success);
+  }
+
+  &.danger {
+    background: var(--ui-danger-light);
+    color: var(--ui-danger);
+    border-color: var(--ui-danger);
+  }
+
+  &.warning {
+    background: var(--ui-warning-light);
+    color: var(--ui-warning);
+    border-color: var(--ui-warning);
+  }
+
+  &.secondary {
+    background: var(--ui-secondary-light);
+    color: var(--ui-secondary);
+    border-color: var(--ui-secondary);
+  }
+}
+
+/* ============================================
+   Utility: spacing helpers
+   ============================================ */
+
+.ui-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  &.sm { gap: 0.5rem; }
+  &.lg { gap: 1.5rem; }
+}
+
+.ui-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+
+  &.sm { gap: 0.5rem; }
+  &.lg { gap: 1.5rem; }
+}
+
+.ui-divider {
+  border: none;
+  border-top: 1px solid var(--ui-border);
+  margin: 1rem 0;
+}
