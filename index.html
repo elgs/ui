@@ -391,6 +391,211 @@
     </details>
   </div>
 
+  <!-- Checkboxes & Radios -->
+  <div class="demo-section">
+    <h2>Checkboxes & Radios</h2>
+
+    <div class="grid-2">
+      <div>
+        <div class="demo-subsection">
+          <h3>Checkboxes</h3>
+          <div class="ui-stack sm">
+            <label class="ui-checkbox">
+              <input type="checkbox" checked>
+              <span class="ui-check-box"></span>
+              Checked
+            </label>
+            <label class="ui-checkbox">
+              <input type="checkbox">
+              <span class="ui-check-box"></span>
+              Unchecked
+            </label>
+            <label class="ui-checkbox">
+              <input type="checkbox" id="indeterminate-cb">
+              <span class="ui-check-box"></span>
+              Indeterminate
+            </label>
+            <label class="ui-checkbox">
+              <input type="checkbox" checked disabled>
+              <span class="ui-check-box"></span>
+              Disabled (checked)
+            </label>
+            <label class="ui-checkbox">
+              <input type="checkbox" disabled>
+              <span class="ui-check-box"></span>
+              Disabled (unchecked)
+            </label>
+          </div>
+        </div>
+
+        <div class="demo-subsection">
+          <h3>Checkbox colors</h3>
+          <div class="ui-row">
+            <label class="ui-checkbox">
+              <input type="checkbox" checked>
+              <span class="ui-check-box"></span>
+              Primary
+            </label>
+            <label class="ui-checkbox success">
+              <input type="checkbox" checked>
+              <span class="ui-check-box"></span>
+              Success
+            </label>
+            <label class="ui-checkbox danger">
+              <input type="checkbox" checked>
+              <span class="ui-check-box"></span>
+              Danger
+            </label>
+            <label class="ui-checkbox warning">
+              <input type="checkbox" checked>
+              <span class="ui-check-box"></span>
+              Warning
+            </label>
+          </div>
+        </div>
+
+        <div class="demo-subsection">
+          <h3>Checkbox sizes</h3>
+          <div class="ui-row">
+            <label class="ui-checkbox sm">
+              <input type="checkbox" checked>
+              <span class="ui-check-box"></span>
+              Small
+            </label>
+            <label class="ui-checkbox">
+              <input type="checkbox" checked>
+              <span class="ui-check-box"></span>
+              Default
+            </label>
+            <label class="ui-checkbox lg">
+              <input type="checkbox" checked>
+              <span class="ui-check-box"></span>
+              Large
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="demo-subsection">
+          <h3>Radio buttons</h3>
+          <div class="ui-stack sm">
+            <label class="ui-radio">
+              <input type="radio" name="demo-radio-1" checked>
+              <span class="ui-check-box"></span>
+              Option one
+            </label>
+            <label class="ui-radio">
+              <input type="radio" name="demo-radio-1">
+              <span class="ui-check-box"></span>
+              Option two
+            </label>
+            <label class="ui-radio">
+              <input type="radio" name="demo-radio-1">
+              <span class="ui-check-box"></span>
+              Option three
+            </label>
+            <label class="ui-radio">
+              <input type="radio" name="demo-radio-disabled" disabled>
+              <span class="ui-check-box"></span>
+              Disabled
+            </label>
+          </div>
+        </div>
+
+        <div class="demo-subsection">
+          <h3>Radio colors</h3>
+          <div class="ui-row">
+            <label class="ui-radio">
+              <input type="radio" name="demo-radio-color" checked>
+              <span class="ui-check-box"></span>
+              Primary
+            </label>
+            <label class="ui-radio success">
+              <input type="radio" name="demo-radio-color-s" checked>
+              <span class="ui-check-box"></span>
+              Success
+            </label>
+            <label class="ui-radio danger">
+              <input type="radio" name="demo-radio-color-d" checked>
+              <span class="ui-check-box"></span>
+              Danger
+            </label>
+            <label class="ui-radio warning">
+              <input type="radio" name="demo-radio-color-w" checked>
+              <span class="ui-check-box"></span>
+              Warning
+            </label>
+          </div>
+        </div>
+
+        <div class="demo-subsection">
+          <h3>Radio sizes</h3>
+          <div class="ui-row">
+            <label class="ui-radio sm">
+              <input type="radio" name="demo-radio-sz-s" checked>
+              <span class="ui-check-box"></span>
+              Small
+            </label>
+            <label class="ui-radio">
+              <input type="radio" name="demo-radio-sz" checked>
+              <span class="ui-check-box"></span>
+              Default
+            </label>
+            <label class="ui-radio lg">
+              <input type="radio" name="demo-radio-sz-l" checked>
+              <span class="ui-check-box"></span>
+              Large
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <details class="demo-code">
+      <summary>Show code</summary>
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;!-- Checkbox --&gt;
+&lt;label class="ui-checkbox"&gt;
+  &lt;input type="checkbox" checked&gt;
+  &lt;span class="ui-check-box"&gt;&lt;/span&gt;
+  Label text
+&lt;/label&gt;
+
+&lt;!-- Radio --&gt;
+&lt;label class="ui-radio"&gt;
+  &lt;input type="radio" name="group" checked&gt;
+  &lt;span class="ui-check-box"&gt;&lt;/span&gt;
+  Option one
+&lt;/label&gt;
+&lt;label class="ui-radio"&gt;
+  &lt;input type="radio" name="group"&gt;
+  &lt;span class="ui-check-box"&gt;&lt;/span&gt;
+  Option two
+&lt;/label&gt;
+
+&lt;!-- Color variants: .success, .danger, .warning --&gt;
+&lt;label class="ui-checkbox success"&gt;...&lt;/label&gt;
+&lt;label class="ui-radio danger"&gt;...&lt;/label&gt;
+
+&lt;!-- Sizes: .sm, (default), .lg --&gt;
+&lt;label class="ui-checkbox sm"&gt;...&lt;/label&gt;
+&lt;label class="ui-radio lg"&gt;...&lt;/label&gt;
+
+&lt;!-- Disabled --&gt;
+&lt;label class="ui-checkbox"&gt;
+  &lt;input type="checkbox" disabled&gt;
+  &lt;span class="ui-check-box"&gt;&lt;/span&gt;
+  Disabled
+&lt;/label&gt;
+
+&lt;!-- Indeterminate (set via JS) --&gt;
+&lt;script&gt;
+document.getElementById('my-cb').indeterminate = true;
+&lt;/script&gt;</pre>
+    </details>
+  </div>
+
   <!-- Inputs -->
   <div class="demo-section">
     <h2>Inputs</h2>
@@ -430,19 +635,27 @@
           <textarea class="ui-textarea" placeholder="Write something..."></textarea>
         </div>
         <div class="ui-row sm">
-          <label class="ui-check">
-            <input type="checkbox" checked> Remember me
+          <label class="ui-checkbox">
+            <input type="checkbox" checked>
+            <span class="ui-check-box"></span>
+            Remember me
           </label>
-          <label class="ui-check">
-            <input type="checkbox"> Subscribe
+          <label class="ui-checkbox">
+            <input type="checkbox">
+            <span class="ui-check-box"></span>
+            Subscribe
           </label>
         </div>
         <div class="ui-row sm">
-          <label class="ui-check">
-            <input type="radio" name="radio-demo" checked> Option A
+          <label class="ui-radio">
+            <input type="radio" name="radio-demo" checked>
+            <span class="ui-check-box"></span>
+            Option A
           </label>
-          <label class="ui-check">
-            <input type="radio" name="radio-demo"> Option B
+          <label class="ui-radio">
+            <input type="radio" name="radio-demo">
+            <span class="ui-check-box"></span>
+            Option B
           </label>
         </div>
       </div>
@@ -475,11 +688,15 @@
 &lt;textarea class="ui-textarea" placeholder="Write something..."&gt;&lt;/textarea&gt;
 
 &lt;!-- Checkbox & Radio --&gt;
-&lt;label class="ui-check"&gt;
-  &lt;input type="checkbox" checked&gt; Remember me
+&lt;label class="ui-checkbox"&gt;
+  &lt;input type="checkbox" checked&gt;
+  &lt;span class="ui-check-box"&gt;&lt;/span&gt;
+  Remember me
 &lt;/label&gt;
-&lt;label class="ui-check"&gt;
-  &lt;input type="radio" name="group"&gt; Option A
+&lt;label class="ui-radio"&gt;
+  &lt;input type="radio" name="group"&gt;
+  &lt;span class="ui-check-box"&gt;&lt;/span&gt;
+  Option A
 &lt;/label&gt;
 
 &lt;!-- Sizes: sm, (default), lg --&gt;
@@ -926,6 +1143,10 @@ document.getElementById('native-dialog').showModal();
     root.setProperty('--ui-text', defaults.text);
     root.setProperty('--ui-text-muted', '#8590a2');
   }
+
+  // Set indeterminate checkbox
+  const indCb = document.getElementById('indeterminate-cb');
+  if (indCb) indCb.indeterminate = true;
 </script>
 
 </body>
