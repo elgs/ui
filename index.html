@@ -130,6 +130,25 @@
       background: rgba(255,255,255,0.2);
       color: #e2e8f0;
     }
+    /* Syntax highlighting */
+    .demo-code pre .hl-tag { color: #7dd3fc; }
+    .demo-code pre .hl-atn { color: #c4b5fd; }
+    .demo-code pre .hl-atv { color: #86efac; }
+    .demo-code pre .hl-cmt { color: #64748b; font-style: italic; }
+    .demo-code pre .hl-bkt { color: #94a3b8; }
+    /* Editable code */
+    .demo-code pre[contenteditable] {
+      outline: none;
+      border: 1px solid transparent;
+      transition: border-color 0.15s;
+      cursor: text;
+    }
+    .demo-code pre[contenteditable]:focus {
+      border-color: rgba(99, 102, 241, 0.5);
+    }
+    .demo-code pre[contenteditable]:hover:not(:focus) {
+      border-color: rgba(255,255,255,0.1);
+    }
   </style>
 </head>
 <body>
@@ -298,6 +317,20 @@
           Disabled
         </label>
       </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;label class="ui-toggle"&gt;
+  &lt;input type="checkbox" checked&gt;
+  &lt;span class="ui-toggle-track"&gt;&lt;/span&gt;
+  Enabled
+&lt;/label&gt;
+&lt;label class="ui-toggle"&gt;
+  &lt;input type="checkbox"&gt;
+  &lt;span class="ui-toggle-track"&gt;&lt;/span&gt;
+  Disabled
+&lt;/label&gt;</pre>
+      </details>
     </div>
 
     <div class="demo-subsection">
@@ -324,6 +357,30 @@
           Warning
         </label>
       </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;label class="ui-toggle"&gt;
+  &lt;input type="checkbox" checked&gt;
+  &lt;span class="ui-toggle-track"&gt;&lt;/span&gt;
+  Primary
+&lt;/label&gt;
+&lt;label class="ui-toggle success"&gt;
+  &lt;input type="checkbox" checked&gt;
+  &lt;span class="ui-toggle-track"&gt;&lt;/span&gt;
+  Success
+&lt;/label&gt;
+&lt;label class="ui-toggle danger"&gt;
+  &lt;input type="checkbox" checked&gt;
+  &lt;span class="ui-toggle-track"&gt;&lt;/span&gt;
+  Danger
+&lt;/label&gt;
+&lt;label class="ui-toggle warning"&gt;
+  &lt;input type="checkbox" checked&gt;
+  &lt;span class="ui-toggle-track"&gt;&lt;/span&gt;
+  Warning
+&lt;/label&gt;</pre>
+      </details>
     </div>
 
     <div class="demo-subsection">
@@ -345,6 +402,25 @@
           Large
         </label>
       </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;label class="ui-toggle sm"&gt;
+  &lt;input type="checkbox" checked&gt;
+  &lt;span class="ui-toggle-track"&gt;&lt;/span&gt;
+  Small
+&lt;/label&gt;
+&lt;label class="ui-toggle"&gt;
+  &lt;input type="checkbox" checked&gt;
+  &lt;span class="ui-toggle-track"&gt;&lt;/span&gt;
+  Default
+&lt;/label&gt;
+&lt;label class="ui-toggle lg"&gt;
+  &lt;input type="checkbox" checked&gt;
+  &lt;span class="ui-toggle-track"&gt;&lt;/span&gt;
+  Large
+&lt;/label&gt;</pre>
+      </details>
     </div>
 
     <div class="demo-subsection">
@@ -361,35 +437,21 @@
           On (disabled)
         </label>
       </div>
-    </div>
-
-    <details class="demo-code">
-      <summary>Show code</summary>
-      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 <pre>&lt;label class="ui-toggle"&gt;
-  &lt;input type="checkbox" checked&gt;
-  &lt;span class="ui-toggle-track"&gt;&lt;/span&gt;
-  Label text
-&lt;/label&gt;
-
-&lt;!-- Color variants: .success, .danger, .warning --&gt;
-&lt;label class="ui-toggle success"&gt;
-  &lt;input type="checkbox" checked&gt;
-  &lt;span class="ui-toggle-track"&gt;&lt;/span&gt;
-  Success
-&lt;/label&gt;
-
-&lt;!-- Sizes: .sm, (default), .lg --&gt;
-&lt;label class="ui-toggle sm"&gt;...&lt;/label&gt;
-&lt;label class="ui-toggle lg"&gt;...&lt;/label&gt;
-
-&lt;!-- Disabled --&gt;
-&lt;label class="ui-toggle"&gt;
   &lt;input type="checkbox" disabled&gt;
   &lt;span class="ui-toggle-track"&gt;&lt;/span&gt;
-  Disabled
+  Off (disabled)
+&lt;/label&gt;
+&lt;label class="ui-toggle"&gt;
+  &lt;input type="checkbox" checked disabled&gt;
+  &lt;span class="ui-toggle-track"&gt;&lt;/span&gt;
+  On (disabled)
 &lt;/label&gt;</pre>
-    </details>
+      </details>
+    </div>
   </div>
 
   <!-- Checkboxes & Radios -->
@@ -427,6 +489,35 @@
               Disabled (unchecked)
             </label>
           </div>
+          <details class="demo-code">
+            <summary>Show code</summary>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;label class="ui-checkbox"&gt;
+  &lt;input type="checkbox" checked&gt;
+  &lt;span class="ui-check-box"&gt;&lt;/span&gt;
+  Checked
+&lt;/label&gt;
+&lt;label class="ui-checkbox"&gt;
+  &lt;input type="checkbox"&gt;
+  &lt;span class="ui-check-box"&gt;&lt;/span&gt;
+  Unchecked
+&lt;/label&gt;
+&lt;label class="ui-checkbox"&gt;
+  &lt;input type="checkbox" id="indeterminate-cb"&gt;
+  &lt;span class="ui-check-box"&gt;&lt;/span&gt;
+  Indeterminate
+&lt;/label&gt;
+&lt;label class="ui-checkbox"&gt;
+  &lt;input type="checkbox" checked disabled&gt;
+  &lt;span class="ui-check-box"&gt;&lt;/span&gt;
+  Disabled (checked)
+&lt;/label&gt;
+&lt;label class="ui-checkbox"&gt;
+  &lt;input type="checkbox" disabled&gt;
+  &lt;span class="ui-check-box"&gt;&lt;/span&gt;
+  Disabled (unchecked)
+&lt;/label&gt;</pre>
+          </details>
         </div>
 
         <div class="demo-subsection">
@@ -453,6 +544,30 @@
               Warning
             </label>
           </div>
+          <details class="demo-code">
+            <summary>Show code</summary>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;label class="ui-checkbox"&gt;
+  &lt;input type="checkbox" checked&gt;
+  &lt;span class="ui-check-box"&gt;&lt;/span&gt;
+  Primary
+&lt;/label&gt;
+&lt;label class="ui-checkbox success"&gt;
+  &lt;input type="checkbox" checked&gt;
+  &lt;span class="ui-check-box"&gt;&lt;/span&gt;
+  Success
+&lt;/label&gt;
+&lt;label class="ui-checkbox danger"&gt;
+  &lt;input type="checkbox" checked&gt;
+  &lt;span class="ui-check-box"&gt;&lt;/span&gt;
+  Danger
+&lt;/label&gt;
+&lt;label class="ui-checkbox warning"&gt;
+  &lt;input type="checkbox" checked&gt;
+  &lt;span class="ui-check-box"&gt;&lt;/span&gt;
+  Warning
+&lt;/label&gt;</pre>
+          </details>
         </div>
 
         <div class="demo-subsection">
@@ -474,6 +589,25 @@
               Large
             </label>
           </div>
+          <details class="demo-code">
+            <summary>Show code</summary>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;label class="ui-checkbox sm"&gt;
+  &lt;input type="checkbox" checked&gt;
+  &lt;span class="ui-check-box"&gt;&lt;/span&gt;
+  Small
+&lt;/label&gt;
+&lt;label class="ui-checkbox"&gt;
+  &lt;input type="checkbox" checked&gt;
+  &lt;span class="ui-check-box"&gt;&lt;/span&gt;
+  Default
+&lt;/label&gt;
+&lt;label class="ui-checkbox lg"&gt;
+  &lt;input type="checkbox" checked&gt;
+  &lt;span class="ui-check-box"&gt;&lt;/span&gt;
+  Large
+&lt;/label&gt;</pre>
+          </details>
         </div>
       </div>
 
@@ -502,6 +636,30 @@
               Disabled
             </label>
           </div>
+          <details class="demo-code">
+            <summary>Show code</summary>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;label class="ui-radio"&gt;
+  &lt;input type="radio" name="demo-radio-1" checked&gt;
+  &lt;span class="ui-check-box"&gt;&lt;/span&gt;
+  Option one
+&lt;/label&gt;
+&lt;label class="ui-radio"&gt;
+  &lt;input type="radio" name="demo-radio-1"&gt;
+  &lt;span class="ui-check-box"&gt;&lt;/span&gt;
+  Option two
+&lt;/label&gt;
+&lt;label class="ui-radio"&gt;
+  &lt;input type="radio" name="demo-radio-1"&gt;
+  &lt;span class="ui-check-box"&gt;&lt;/span&gt;
+  Option three
+&lt;/label&gt;
+&lt;label class="ui-radio"&gt;
+  &lt;input type="radio" name="demo-radio-disabled" disabled&gt;
+  &lt;span class="ui-check-box"&gt;&lt;/span&gt;
+  Disabled
+&lt;/label&gt;</pre>
+          </details>
         </div>
 
         <div class="demo-subsection">
@@ -528,6 +686,30 @@
               Warning
             </label>
           </div>
+          <details class="demo-code">
+            <summary>Show code</summary>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;label class="ui-radio"&gt;
+  &lt;input type="radio" name="demo-radio-color" checked&gt;
+  &lt;span class="ui-check-box"&gt;&lt;/span&gt;
+  Primary
+&lt;/label&gt;
+&lt;label class="ui-radio success"&gt;
+  &lt;input type="radio" name="demo-radio-color-s" checked&gt;
+  &lt;span class="ui-check-box"&gt;&lt;/span&gt;
+  Success
+&lt;/label&gt;
+&lt;label class="ui-radio danger"&gt;
+  &lt;input type="radio" name="demo-radio-color-d" checked&gt;
+  &lt;span class="ui-check-box"&gt;&lt;/span&gt;
+  Danger
+&lt;/label&gt;
+&lt;label class="ui-radio warning"&gt;
+  &lt;input type="radio" name="demo-radio-color-w" checked&gt;
+  &lt;span class="ui-check-box"&gt;&lt;/span&gt;
+  Warning
+&lt;/label&gt;</pre>
+          </details>
         </div>
 
         <div class="demo-subsection">
@@ -549,59 +731,37 @@
               Large
             </label>
           </div>
+          <details class="demo-code">
+            <summary>Show code</summary>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;label class="ui-radio sm"&gt;
+  &lt;input type="radio" name="demo-radio-sz-s" checked&gt;
+  &lt;span class="ui-check-box"&gt;&lt;/span&gt;
+  Small
+&lt;/label&gt;
+&lt;label class="ui-radio"&gt;
+  &lt;input type="radio" name="demo-radio-sz" checked&gt;
+  &lt;span class="ui-check-box"&gt;&lt;/span&gt;
+  Default
+&lt;/label&gt;
+&lt;label class="ui-radio lg"&gt;
+  &lt;input type="radio" name="demo-radio-sz-l" checked&gt;
+  &lt;span class="ui-check-box"&gt;&lt;/span&gt;
+  Large
+&lt;/label&gt;</pre>
+          </details>
         </div>
       </div>
     </div>
-
-    <details class="demo-code">
-      <summary>Show code</summary>
-      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;!-- Checkbox --&gt;
-&lt;label class="ui-checkbox"&gt;
-  &lt;input type="checkbox" checked&gt;
-  &lt;span class="ui-check-box"&gt;&lt;/span&gt;
-  Label text
-&lt;/label&gt;
-
-&lt;!-- Radio --&gt;
-&lt;label class="ui-radio"&gt;
-  &lt;input type="radio" name="group" checked&gt;
-  &lt;span class="ui-check-box"&gt;&lt;/span&gt;
-  Option one
-&lt;/label&gt;
-&lt;label class="ui-radio"&gt;
-  &lt;input type="radio" name="group"&gt;
-  &lt;span class="ui-check-box"&gt;&lt;/span&gt;
-  Option two
-&lt;/label&gt;
-
-&lt;!-- Color variants: .success, .danger, .warning --&gt;
-&lt;label class="ui-checkbox success"&gt;...&lt;/label&gt;
-&lt;label class="ui-radio danger"&gt;...&lt;/label&gt;
-
-&lt;!-- Sizes: .sm, (default), .lg --&gt;
-&lt;label class="ui-checkbox sm"&gt;...&lt;/label&gt;
-&lt;label class="ui-radio lg"&gt;...&lt;/label&gt;
-
-&lt;!-- Disabled --&gt;
-&lt;label class="ui-checkbox"&gt;
-  &lt;input type="checkbox" disabled&gt;
-  &lt;span class="ui-check-box"&gt;&lt;/span&gt;
-  Disabled
-&lt;/label&gt;
-
-&lt;!-- Indeterminate (set via JS) --&gt;
-&lt;script&gt;
-document.getElementById('my-cb').indeterminate = true;
-&lt;/script&gt;</pre>
-    </details>
   </div>
 
   <!-- Inputs -->
   <div class="demo-section">
     <h2>Inputs</h2>
-    <div class="grid-2">
-      <div class="ui-stack sm">
+
+    <div class="demo-subsection">
+      <h3>Text inputs</h3>
+      <div class="ui-stack sm" style="max-width:24rem;">
         <div class="ui-field">
           <label>Name</label>
           <input class="ui-input" type="text" placeholder="Jane Doe">
@@ -621,8 +781,33 @@ document.getElementById('my-cb').indeterminate = true;
           <input class="ui-input" type="text" value="Can't edit this" disabled>
         </div>
       </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-field"&gt;
+  &lt;label&gt;Name&lt;/label&gt;
+  &lt;input class="ui-input" type="text" placeholder="Jane Doe"&gt;
+&lt;/div&gt;
+&lt;div class="ui-field"&gt;
+  &lt;label&gt;Email&lt;/label&gt;
+  &lt;input class="ui-input" type="email" placeholder="jane@example.com"&gt;
+  &lt;span class="ui-hint"&gt;We'll never share your email.&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="ui-field"&gt;
+  &lt;label&gt;Password (error state)&lt;/label&gt;
+  &lt;input class="ui-input error" type="password" value="short"&gt;
+  &lt;span class="ui-error-text"&gt;Password must be at least 8 characters.&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="ui-field"&gt;
+  &lt;label&gt;Disabled&lt;/label&gt;
+  &lt;input class="ui-input" type="text" value="Can't edit this" disabled&gt;
+&lt;/div&gt;</pre>
+      </details>
+    </div>
 
-      <div class="ui-stack sm">
+    <div class="demo-subsection">
+      <h3>Select &amp; Textarea</h3>
+      <div class="ui-stack sm" style="max-width:24rem;">
         <div class="ui-field">
           <label>Select</label>
           <select class="ui-select">
@@ -635,6 +820,28 @@ document.getElementById('my-cb').indeterminate = true;
           <label>Textarea</label>
           <textarea class="ui-textarea" placeholder="Write something..."></textarea>
         </div>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-field"&gt;
+  &lt;label&gt;Select&lt;/label&gt;
+  &lt;select class="ui-select"&gt;
+    &lt;option&gt;Option one&lt;/option&gt;
+    &lt;option&gt;Option two&lt;/option&gt;
+    &lt;option&gt;Option three&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/div&gt;
+&lt;div class="ui-field"&gt;
+  &lt;label&gt;Textarea&lt;/label&gt;
+  &lt;textarea class="ui-textarea" placeholder="Write something..."&gt;&lt;/textarea&gt;
+&lt;/div&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Inline checkboxes &amp; radios</h3>
+      <div class="ui-stack sm" style="max-width:24rem;">
         <div class="ui-row sm">
           <label class="ui-checkbox">
             <input type="checkbox" checked>
@@ -660,58 +867,50 @@ document.getElementById('my-cb').indeterminate = true;
           </label>
         </div>
       </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-row sm"&gt;
+  &lt;label class="ui-checkbox"&gt;
+    &lt;input type="checkbox" checked&gt;
+    &lt;span class="ui-check-box"&gt;&lt;/span&gt;
+    Remember me
+  &lt;/label&gt;
+  &lt;label class="ui-checkbox"&gt;
+    &lt;input type="checkbox"&gt;
+    &lt;span class="ui-check-box"&gt;&lt;/span&gt;
+    Subscribe
+  &lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="ui-row sm"&gt;
+  &lt;label class="ui-radio"&gt;
+    &lt;input type="radio" name="radio-demo" checked&gt;
+    &lt;span class="ui-check-box"&gt;&lt;/span&gt;
+    Option A
+  &lt;/label&gt;
+  &lt;label class="ui-radio"&gt;
+    &lt;input type="radio" name="radio-demo"&gt;
+    &lt;span class="ui-check-box"&gt;&lt;/span&gt;
+    Option B
+  &lt;/label&gt;
+&lt;/div&gt;</pre>
+      </details>
     </div>
 
-    <details class="demo-code">
-      <summary>Show code</summary>
-      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;!-- Text input with label and hint --&gt;
-&lt;div class="ui-field"&gt;
-  &lt;label&gt;Email&lt;/label&gt;
-  &lt;input class="ui-input" type="email" placeholder="jane@example.com"&gt;
-  &lt;span class="ui-hint"&gt;We'll never share your email.&lt;/span&gt;
-&lt;/div&gt;
-
-&lt;!-- Error state --&gt;
-&lt;div class="ui-field"&gt;
-  &lt;label&gt;Password&lt;/label&gt;
-  &lt;input class="ui-input error" type="password"&gt;
-  &lt;span class="ui-error-text"&gt;Must be at least 8 characters.&lt;/span&gt;
-&lt;/div&gt;
-
-&lt;!-- Select --&gt;
-&lt;select class="ui-select"&gt;
-  &lt;option&gt;Option one&lt;/option&gt;
-  &lt;option&gt;Option two&lt;/option&gt;
-&lt;/select&gt;
-
-&lt;!-- Textarea --&gt;
-&lt;textarea class="ui-textarea" placeholder="Write something..."&gt;&lt;/textarea&gt;
-
-&lt;!-- Checkbox & Radio --&gt;
-&lt;label class="ui-checkbox"&gt;
-  &lt;input type="checkbox" checked&gt;
-  &lt;span class="ui-check-box"&gt;&lt;/span&gt;
-  Remember me
-&lt;/label&gt;
-&lt;label class="ui-radio"&gt;
-  &lt;input type="radio" name="group"&gt;
-  &lt;span class="ui-check-box"&gt;&lt;/span&gt;
-  Option A
-&lt;/label&gt;
-
-&lt;!-- Sizes: sm, (default), lg --&gt;
-&lt;input class="ui-input sm" placeholder="Small"&gt;
-&lt;input class="ui-input lg" placeholder="Large"&gt;</pre>
-    </details>
-
-    <div class="demo-subsection" style="margin-top:1rem;">
+    <div class="demo-subsection">
       <h3>Input sizes</h3>
       <div class="ui-stack sm" style="max-width:24rem;">
         <input class="ui-input sm" placeholder="Small input">
         <input class="ui-input" placeholder="Default input">
         <input class="ui-input lg" placeholder="Large input">
       </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;input class="ui-input sm" placeholder="Small input"&gt;
+&lt;input class="ui-input" placeholder="Default input"&gt;
+&lt;input class="ui-input lg" placeholder="Large input"&gt;</pre>
+      </details>
     </div>
   </div>
 
@@ -720,75 +919,121 @@ document.getElementById('my-cb').indeterminate = true;
     <h2>Panels</h2>
     <div class="grid-2">
 
-      <div class="ui-panel">
-        <div class="ui-panel-header">
-          <h3 class="ui-panel-title">Default Panel</h3>
-          <div class="ui-panel-actions">
-            <button class="ui-btn sm ghost secondary">Edit</button>
+      <div>
+        <div class="demo-subsection">
+          <h3>Default Panel</h3>
+          <div class="ui-panel">
+            <div class="ui-panel-header">
+              <h3 class="ui-panel-title">Default Panel</h3>
+              <div class="ui-panel-actions">
+                <button class="ui-btn sm ghost secondary">Edit</button>
+              </div>
+            </div>
+            <div class="ui-panel-body">
+              Panels group related content with a header, body, and optional footer. This is the default style with a subtle shadow.
+            </div>
+            <div class="ui-panel-footer">
+              <button class="ui-btn sm ghost secondary">Cancel</button>
+              <button class="ui-btn sm">Save</button>
+            </div>
           </div>
-        </div>
-        <div class="ui-panel-body">
-          Panels group related content with a header, body, and optional footer. This is the default style with a subtle shadow.
-        </div>
-        <div class="ui-panel-footer">
-          <button class="ui-btn sm ghost secondary">Cancel</button>
-          <button class="ui-btn sm">Save</button>
-        </div>
-      </div>
-
-      <div class="ui-panel raised">
-        <div class="ui-panel-header">
-          <h3 class="ui-panel-title">Raised Panel</h3>
-        </div>
-        <div class="ui-panel-body">
-          This panel uses the <code>.raised</code> modifier for a more pronounced shadow, making it appear elevated from the page.
-        </div>
-      </div>
-
-      <div class="ui-panel borderless">
-        <div class="ui-panel-header">
-          <h3 class="ui-panel-title">Borderless Panel</h3>
-        </div>
-        <div class="ui-panel-body">
-          The <code>.borderless</code> variant removes the border and relies solely on shadow for separation.
-        </div>
-      </div>
-
-      <div class="ui-panel flat">
-        <div class="ui-panel-header">
-          <h3 class="ui-panel-title">Flat Panel</h3>
-        </div>
-        <div class="ui-panel-body">
-          The <code>.flat</code> variant removes the shadow entirely, keeping only the border for a minimal look.
-        </div>
-      </div>
-
-    </div>
-
-    <details class="demo-code">
-      <summary>Show code</summary>
-      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+          <details class="demo-code">
+            <summary>Show code</summary>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 <pre>&lt;div class="ui-panel"&gt;
   &lt;div class="ui-panel-header"&gt;
-    &lt;h3 class="ui-panel-title"&gt;Panel Title&lt;/h3&gt;
+    &lt;h3 class="ui-panel-title"&gt;Default Panel&lt;/h3&gt;
     &lt;div class="ui-panel-actions"&gt;
       &lt;button class="ui-btn sm ghost secondary"&gt;Edit&lt;/button&gt;
     &lt;/div&gt;
   &lt;/div&gt;
   &lt;div class="ui-panel-body"&gt;
-    Panel content goes here.
+    Panels group related content with a header, body, and optional footer. This is the default style with a subtle shadow.
   &lt;/div&gt;
   &lt;div class="ui-panel-footer"&gt;
     &lt;button class="ui-btn sm ghost secondary"&gt;Cancel&lt;/button&gt;
     &lt;button class="ui-btn sm"&gt;Save&lt;/button&gt;
   &lt;/div&gt;
-&lt;/div&gt;
+&lt;/div&gt;</pre>
+          </details>
+        </div>
 
-&lt;!-- Variants: .raised, .borderless, .flat --&gt;
-&lt;div class="ui-panel raised"&gt;...&lt;/div&gt;
-&lt;div class="ui-panel borderless"&gt;...&lt;/div&gt;
-&lt;div class="ui-panel flat"&gt;...&lt;/div&gt;</pre>
-    </details>
+        <div class="demo-subsection">
+          <h3>Borderless Panel</h3>
+          <div class="ui-panel borderless">
+            <div class="ui-panel-header">
+              <h3 class="ui-panel-title">Borderless Panel</h3>
+            </div>
+            <div class="ui-panel-body">
+              The <code>.borderless</code> variant removes the border and relies solely on shadow for separation.
+            </div>
+          </div>
+          <details class="demo-code">
+            <summary>Show code</summary>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-panel borderless"&gt;
+  &lt;div class="ui-panel-header"&gt;
+    &lt;h3 class="ui-panel-title"&gt;Borderless Panel&lt;/h3&gt;
+  &lt;/div&gt;
+  &lt;div class="ui-panel-body"&gt;
+    The .borderless variant removes the border and relies solely on shadow for separation.
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+          </details>
+        </div>
+      </div>
+
+      <div>
+        <div class="demo-subsection">
+          <h3>Raised Panel</h3>
+          <div class="ui-panel raised">
+            <div class="ui-panel-header">
+              <h3 class="ui-panel-title">Raised Panel</h3>
+            </div>
+            <div class="ui-panel-body">
+              This panel uses the <code>.raised</code> modifier for a more pronounced shadow, making it appear elevated from the page.
+            </div>
+          </div>
+          <details class="demo-code">
+            <summary>Show code</summary>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-panel raised"&gt;
+  &lt;div class="ui-panel-header"&gt;
+    &lt;h3 class="ui-panel-title"&gt;Raised Panel&lt;/h3&gt;
+  &lt;/div&gt;
+  &lt;div class="ui-panel-body"&gt;
+    This panel uses the .raised modifier for a more pronounced shadow, making it appear elevated from the page.
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+          </details>
+        </div>
+
+        <div class="demo-subsection">
+          <h3>Flat Panel</h3>
+          <div class="ui-panel flat">
+            <div class="ui-panel-header">
+              <h3 class="ui-panel-title">Flat Panel</h3>
+            </div>
+            <div class="ui-panel-body">
+              The <code>.flat</code> variant removes the shadow entirely, keeping only the border for a minimal look.
+            </div>
+          </div>
+          <details class="demo-code">
+            <summary>Show code</summary>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-panel flat"&gt;
+  &lt;div class="ui-panel-header"&gt;
+    &lt;h3 class="ui-panel-title"&gt;Flat Panel&lt;/h3&gt;
+  &lt;/div&gt;
+  &lt;div class="ui-panel-body"&gt;
+    The .flat variant removes the shadow entirely, keeping only the border for a minimal look.
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+          </details>
+        </div>
+      </div>
+
+    </div>
   </div>
 
   <!-- Badges & Alerts -->
@@ -826,10 +1071,10 @@ document.getElementById('my-cb').indeterminate = true;
       <details class="demo-code">
         <summary>Show code</summary>
         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;div class="ui-alert"&gt;Informational alert.&lt;/div&gt;
-&lt;div class="ui-alert success"&gt;Operation completed.&lt;/div&gt;
-&lt;div class="ui-alert warning"&gt;Review your changes.&lt;/div&gt;
-&lt;div class="ui-alert danger"&gt;An error occurred.&lt;/div&gt;</pre>
+<pre>&lt;div class="ui-alert"&gt;This is an informational alert.&lt;/div&gt;
+&lt;div class="ui-alert success"&gt;Operation completed successfully.&lt;/div&gt;
+&lt;div class="ui-alert warning"&gt;Please review your changes before saving.&lt;/div&gt;
+&lt;div class="ui-alert danger"&gt;An error occurred while processing your request.&lt;/div&gt;</pre>
       </details>
     </div>
   </div>
@@ -917,20 +1162,26 @@ document.getElementById('native-dialog').showModal();
       <details class="demo-code">
         <summary>Show code</summary>
         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;!-- Vertical stack (gap: sm, default, lg) --&gt;
-&lt;div class="ui-stack sm"&gt;
-  &lt;div&gt;Item 1&lt;/div&gt;
-  &lt;div&gt;Item 2&lt;/div&gt;
+<pre>&lt;div class="ui-panel flat"&gt;
+  &lt;div class="ui-panel-header"&gt;&lt;h3 class="ui-panel-title"&gt;.ui-stack&lt;/h3&gt;&lt;/div&gt;
+  &lt;div class="ui-panel-body"&gt;
+    &lt;div class="ui-stack sm"&gt;
+      &lt;div class="ui-alert" style="margin:0;"&gt;Item 1&lt;/div&gt;
+      &lt;div class="ui-alert" style="margin:0;"&gt;Item 2&lt;/div&gt;
+      &lt;div class="ui-alert" style="margin:0;"&gt;Item 3&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;!-- Horizontal row --&gt;
-&lt;div class="ui-row"&gt;
-  &lt;span&gt;Left&lt;/span&gt;
-  &lt;span&gt;Right&lt;/span&gt;
-&lt;/div&gt;
-
-&lt;!-- Divider --&gt;
-&lt;hr class="ui-divider"&gt;</pre>
+&lt;div class="ui-panel flat"&gt;
+  &lt;div class="ui-panel-header"&gt;&lt;h3 class="ui-panel-title"&gt;.ui-row&lt;/h3&gt;&lt;/div&gt;
+  &lt;div class="ui-panel-body"&gt;
+    &lt;div class="ui-row sm"&gt;
+      &lt;span class="ui-badge"&gt;Tag 1&lt;/span&gt;
+      &lt;span class="ui-badge secondary"&gt;Tag 2&lt;/span&gt;
+      &lt;span class="ui-badge success"&gt;Tag 3&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
       </details>
     </div>
   </div>
@@ -1148,6 +1399,130 @@ document.getElementById('native-dialog').showModal();
   // Set indeterminate checkbox
   const indCb = document.getElementById('indeterminate-cb');
   if (indCb) indCb.indeterminate = true;
+
+  // ── Syntax highlighting & live editor ──
+
+  const _esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+  function highlightHTML(raw) {
+    let out = '', i = 0;
+    while (i < raw.length) {
+      if (raw.startsWith('<!--', i)) {
+        const end = raw.indexOf('-->', i + 4);
+        const j = end < 0 ? raw.length : end + 3;
+        out += '<span class="hl-cmt">' + _esc(raw.slice(i, j)) + '</span>';
+        i = j;
+      } else if (raw.startsWith('<!', i)) {
+        const end = raw.indexOf('>', i);
+        const j = end < 0 ? raw.length : end + 1;
+        out += '<span class="hl-cmt">' + _esc(raw.slice(i, j)) + '</span>';
+        i = j;
+      } else if (raw[i] === '<') {
+        const end = raw.indexOf('>', i);
+        const j = end < 0 ? raw.length : end + 1;
+        out += _hlTag(raw.slice(i, j));
+        i = j;
+      } else {
+        const next = raw.indexOf('<', i);
+        const j = next < 0 ? raw.length : next;
+        out += _esc(raw.slice(i, j));
+        i = j;
+      }
+    }
+    return out;
+  }
+
+  function _hlTag(tag) {
+    const m = tag.match(/^(<\/?)(\w[\w-]*)([^]*?)(\/?>)$/s);
+    if (!m) return _esc(tag);
+    let r = '<span class="hl-bkt">' + _esc(m[1]) + '</span>';
+    r += '<span class="hl-tag">' + _esc(m[2]) + '</span>';
+    r += m[3].replace(/([\w-:]+)(\s*=\s*"([^"]*)")?/g, (_, name, eq, val) => {
+      let s = '<span class="hl-atn">' + _esc(name) + '</span>';
+      if (eq !== undefined) s += '=<span class="hl-atv">"' + _esc(val) + '"</span>';
+      return s;
+    });
+    r += '<span class="hl-bkt">' + _esc(m[4]) + '</span>';
+    return r;
+  }
+
+  function _saveCursor(el) {
+    const sel = window.getSelection();
+    if (!sel.rangeCount) return 0;
+    const range = sel.getRangeAt(0);
+    const pre = range.cloneRange();
+    pre.selectNodeContents(el);
+    pre.setEnd(range.startContainer, range.startOffset);
+    return pre.toString().length;
+  }
+
+  function _restoreCursor(el, offset) {
+    const range = document.createRange();
+    const sel = window.getSelection();
+    let cur = 0;
+    const walk = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    let node;
+    while (node = walk.nextNode()) {
+      if (cur + node.length >= offset) {
+        range.setStart(node, offset - cur);
+        range.collapse(true);
+        sel.removeAllRanges();
+        sel.addRange(range);
+        return;
+      }
+      cur += node.length;
+    }
+    range.selectNodeContents(el);
+    range.collapse(false);
+    sel.removeAllRanges();
+    sel.addRange(range);
+  }
+
+  function _sanitize(html) {
+    return html
+      .replace(/<script[\s\S]*?<\/script>/gi, '')
+      .replace(/<style[\s\S]*?<\/style>/gi, '')
+      .replace(/<link[^>]*>/gi, '')
+      .replace(/<!--[\s\S]*?-->/g, '');
+  }
+
+  // Initialize all code blocks
+  document.querySelectorAll('.demo-code pre').forEach(pre => {
+    const raw = pre.textContent;
+    const details = pre.closest('.demo-code');
+    const prev = details && details.previousElementSibling;
+    const demoTarget = prev && prev.matches('.ui-row, .ui-stack, .ui-panel, .grid-2') ? prev : null;
+
+    // Make editable with syntax highlighting
+    pre.contentEditable = 'true';
+    pre.spellcheck = false;
+    pre.innerHTML = highlightHTML(raw);
+
+    // Re-highlight on edit, update demo components above
+    pre.addEventListener('input', () => {
+      const text = pre.textContent;
+      const pos = _saveCursor(pre);
+      pre.innerHTML = highlightHTML(text);
+      _restoreCursor(pre, pos);
+      if (demoTarget) {
+        demoTarget.innerHTML = _sanitize(text);
+      }
+    });
+
+    // Paste as plain text
+    pre.addEventListener('paste', e => {
+      e.preventDefault();
+      document.execCommand('insertText', false, e.clipboardData.getData('text/plain'));
+    });
+
+    // Tab inserts spaces
+    pre.addEventListener('keydown', e => {
+      if (e.key === 'Tab') {
+        e.preventDefault();
+        document.execCommand('insertText', false, '  ');
+      }
+    });
+  });
 </script>
 
 </body>
