@@ -7,6 +7,14 @@
   <link rel="icon" type="image/svg+xml" href="src/favicon.svg">
   <link rel="stylesheet" href="src/ui.css">
   <style>
+
+:root {
+  --ui-primary: #2095f3;
+  --ui-primary-hover: #1978c8;
+  --ui-primary-active: #145ea8;
+  --ui-primary-light: #f3effa;
+}
+
     body {
       margin: 0;
       background: var(--ui-bg-subtle);
@@ -63,12 +71,32 @@
       gap: 0.5rem;
     }
     .color-swatch input[type="color"] {
+      -webkit-appearance: none;
+      appearance: none;
       width: 2rem;
       height: 2rem;
-      border: 1px solid var(--ui-border);
-      border-radius: var(--ui-radius);
+      border: 2px solid var(--ui-border);
+      border-radius: 50%;
       cursor: pointer;
       padding: 0;
+      background: none;
+      overflow: hidden;
+      transition: border-color 0.15s, transform 0.15s;
+    }
+    .color-swatch input[type="color"]::-webkit-color-swatch-wrapper {
+      padding: 0;
+    }
+    .color-swatch input[type="color"]::-webkit-color-swatch {
+      border: none;
+      border-radius: 50%;
+    }
+    .color-swatch input[type="color"]::-moz-color-swatch {
+      border: none;
+      border-radius: 50%;
+    }
+    .color-swatch input[type="color"]:hover {
+      border-color: var(--ui-primary);
+      transform: scale(1.15);
     }
     .color-swatch label {
       font-size: 0.8125rem;
@@ -167,7 +195,7 @@
     <p style="font-size:0.875rem; color:var(--ui-text-muted); margin:0 0 1rem;">Pick colors to live-update the entire page.</p>
     <div class="theme-controls">
       <div class="color-swatch">
-        <input type="color" id="cfg-primary" value="#6366f1">
+        <input type="color" id="cfg-primary" value="#2095f3">
         <label for="cfg-primary">Primary</label>
       </div>
       <div class="color-swatch">

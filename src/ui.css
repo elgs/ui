@@ -4,10 +4,10 @@
 
 :root {
   /* --- Color palette --- */
-  --ui-primary: #6366f1;
-  --ui-primary-hover: #5457e5;
-  --ui-primary-active: #4346d0;
-  --ui-primary-light: #eef0ff;
+  --ui-primary: #2095f3;
+  --ui-primary-hover: #1a84da;
+  --ui-primary-active: #1573c1;
+  --ui-primary-light: #e8f4fe;
 
   --ui-secondary: #8590a2;
   --ui-secondary-hover: #6b7a90;
