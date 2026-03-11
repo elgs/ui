@@ -348,23 +348,12 @@
   }
 
   /* --- Icons inside buttons --- */
-
-  & .bi {
-    font-size: 1.125em;
-    line-height: 0;
-    flex-shrink: 0;
-
-    &::before {
-      vertical-align: middle;
-    }
-  }
-
   &.sm .bi {
-    font-size: 1em;
+    font-size: 0.875em;
   }
 
   &.lg .bi {
-    font-size: 1.25em;
+    font-size: 1em;
   }
 
   /* --- Loading state --- */
