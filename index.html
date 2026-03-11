@@ -9,19 +9,92 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <style>
 
+    *, *::before, *::after { box-sizing: border-box; }
+
     body {
       margin: 0;
       background: var(--ui-bg-subtle);
       font-family: var(--ui-font);
       color: var(--ui-text);
     }
-    .demo-layout {
-      max-width: 64rem;
-      margin: 0 auto;
-      padding: 2rem 1.5rem;
+
+    /* Layout: sidebar nav + main content */
+    .demo-page {
+      display: flex;
+      min-height: 100vh;
     }
+    .demo-sidebar {
+      position: sticky;
+      top: 0;
+      width: 13rem;
+      height: 100vh;
+      overflow-y: auto;
+      padding: 1.5rem 0 1.5rem 1.25rem;
+      flex-shrink: 0;
+      border-right: 1px solid var(--ui-border);
+      background: var(--ui-bg);
+    }
+    .demo-sidebar-title {
+      font-size: 0.875rem;
+      font-weight: 700;
+      margin: 0 0 1rem;
+      padding: 0 0.5rem;
+      color: var(--ui-text);
+    }
+    .demo-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 0.0625rem;
+    }
+    .demo-nav a {
+      display: block;
+      padding: 0.3125rem 0.5rem;
+      font-size: 0.8125rem;
+      color: var(--ui-text-muted);
+      text-decoration: none;
+      border-radius: var(--ui-radius-sm);
+      transition: color 0.15s, background 0.15s;
+    }
+    .demo-nav a:hover {
+      color: var(--ui-text);
+      background: var(--ui-bg-subtle);
+    }
+    .demo-nav a.active {
+      color: var(--ui-primary);
+      background: var(--ui-primary-light);
+      font-weight: 500;
+    }
+    .demo-nav-divider {
+      height: 0;
+      border: none;
+      border-top: 1px solid var(--ui-border);
+      margin: 0.5rem 0.5rem;
+    }
+    .demo-nav-label {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      color: var(--ui-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.5rem 0.5rem 0.25rem;
+    }
+    .demo-main {
+      flex: 1;
+      min-width: 0;
+    }
+    .demo-layout {
+      max-width: 56rem;
+      margin: 0 auto;
+      padding: 2rem 2.5rem;
+    }
+    @media (max-width: 860px) {
+      .demo-sidebar { display: none; }
+      .demo-layout { padding: 1.5rem 1.25rem; }
+    }
+
+    /* Header */
     .demo-header {
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
     }
     .demo-header h1 {
       font-size: 1.75rem;
@@ -31,31 +104,43 @@
     .demo-header p {
       color: var(--ui-text-muted);
       margin: 0;
+      font-size: 0.9375rem;
     }
+
+    /* Sections */
     .demo-section {
-      margin-bottom: 2.5rem;
+      margin-bottom: 3rem;
+      scroll-margin-top: 1.5rem;
     }
     .demo-section h2 {
       font-size: 1.125rem;
       font-weight: 600;
-      margin: 0 0 1rem;
-      padding-bottom: 0.5rem;
+      margin: 0 0 1.25rem;
+      padding-bottom: 0.625rem;
       border-bottom: 1px solid var(--ui-border);
     }
+
+    /* Subsections in cards */
     .demo-subsection {
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
+      padding: 1rem 1.25rem;
+      background: var(--ui-surface);
+      border: 1px solid var(--ui-border);
+      border-radius: var(--ui-radius-lg);
     }
     .demo-subsection h3 {
-      font-size: 0.8125rem;
+      font-size: 0.75rem;
       font-weight: 500;
       color: var(--ui-text-muted);
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      margin: 0 0 0.5rem;
+      margin: 0 0 0.75rem;
     }
+
+    /* Theme controls */
     .theme-controls {
       display: flex;
-      gap: 0.5rem;
+      gap: 0.75rem;
       flex-wrap: wrap;
       margin-bottom: 1rem;
     }
@@ -67,8 +152,8 @@
     .color-swatch input[type="color"] {
       -webkit-appearance: none;
       appearance: none;
-      width: 2rem;
-      height: 2rem;
+      width: 1.75rem;
+      height: 1.75rem;
       border: 2px solid var(--ui-border);
       border-radius: 50%;
       cursor: pointer;
@@ -90,7 +175,7 @@
     }
     .color-swatch input[type="color"]:hover {
       border-color: var(--ui-primary);
-      transform: scale(1.15);
+      transform: scale(1.1);
     }
     .color-swatch label {
       font-size: 0.8125rem;
@@ -106,6 +191,8 @@
     }
     .demo-code {
       margin-top: 0.75rem;
+      padding-top: 0.625rem;
+      border-top: 1px solid var(--ui-border);
       position: relative;
     }
     .demo-code summary {
@@ -114,17 +201,17 @@
       color: var(--ui-text-muted);
       cursor: pointer;
       user-select: none;
-      padding: 0.25rem 0;
+      padding: 0.125rem 0;
     }
     .demo-code summary:hover {
       color: var(--ui-primary);
     }
     .demo-code pre {
-      margin: 0.5rem 0 0;
-      padding: 0.875rem 1rem;
+      margin: 0.5rem -1.25rem -1rem;
+      padding: 0.875rem 1.25rem;
       background: #1e293b;
       color: #e2e8f0;
-      border-radius: var(--ui-radius);
+      border-radius: 0 0 var(--ui-radius-lg) var(--ui-radius-lg);
       font-family: var(--ui-font-mono);
       font-size: 0.8125rem;
       line-height: 1.6;
@@ -253,7 +340,43 @@
 </head>
 <body>
 
-<div class="demo-layout">
+<div class="demo-page">
+
+  <!-- Sidebar navigation -->
+  <nav class="demo-sidebar">
+    <div class="demo-sidebar-title">UI Library</div>
+    <div class="demo-nav" id="demo-nav">
+      <a href="#theme">Theme</a>
+      <hr class="demo-nav-divider">
+      <div class="demo-nav-label">Components</div>
+      <a href="#buttons">Buttons</a>
+      <a href="#toggles">Toggles</a>
+      <a href="#checkboxes">Checkboxes & Radios</a>
+      <a href="#inputs">Inputs</a>
+      <a href="#dropdowns">Dropdowns</a>
+      <hr class="demo-nav-divider">
+      <div class="demo-nav-label">Data display</div>
+      <a href="#panels">Panels</a>
+      <a href="#badges">Badges, Tags & Alerts</a>
+      <a href="#dots">Status Dots</a>
+      <a href="#numbered-badge">Numbered Badge</a>
+      <a href="#tooltips">Tooltips</a>
+      <hr class="demo-nav-divider">
+      <div class="demo-nav-label">Navigation</div>
+      <a href="#tabs">Tabs</a>
+      <a href="#pagination">Pagination</a>
+      <hr class="demo-nav-divider">
+      <div class="demo-nav-label">Overlay</div>
+      <a href="#dialogs">Dialogs</a>
+      <hr class="demo-nav-divider">
+      <a href="#layout">Layout Utilities</a>
+      <a href="#config">Configuration</a>
+      <a href="#dark-mode">Dark Mode</a>
+    </div>
+  </nav>
+
+  <div class="demo-main">
+  <div class="demo-layout">
 
   <!-- Header -->
   <div class="demo-header">
@@ -262,49 +385,53 @@
   </div>
 
   <!-- Theme Configurator -->
-  <div class="demo-section">
+  <div class="demo-section" id="theme">
     <h2>Theme Configurator</h2>
-    <p style="font-size:0.875rem; color:var(--ui-text-muted); margin:0 0 1rem;">Pick colors to live-update the entire page.</p>
-    <div class="theme-controls">
-      <div class="color-swatch">
-        <input type="color" id="cfg-primary" value="#2095f3">
-        <label for="cfg-primary">Primary</label>
+    <div class="demo-subsection">
+      <h3>Pick colors to live-update the entire page</h3>
+      <div class="theme-controls">
+        <div class="color-swatch">
+          <input type="color" id="cfg-primary" value="#2095f3">
+          <label for="cfg-primary">Primary</label>
+        </div>
+        <div class="color-swatch">
+          <input type="color" id="cfg-secondary" value="#8590a2">
+          <label for="cfg-secondary">Secondary</label>
+        </div>
+        <div class="color-swatch">
+          <input type="color" id="cfg-success" value="#34c379">
+          <label for="cfg-success">Success</label>
+        </div>
+        <div class="color-swatch">
+          <input type="color" id="cfg-danger" value="#f06272">
+          <label for="cfg-danger">Danger</label>
+        </div>
+        <div class="color-swatch">
+          <input type="color" id="cfg-warning" value="#f5a623">
+          <label for="cfg-warning">Warning</label>
+        </div>
+        <div class="color-swatch">
+          <input type="color" id="cfg-bg" value="#ffffff">
+          <label for="cfg-bg">Background</label>
+        </div>
+        <div class="color-swatch">
+          <input type="color" id="cfg-text" value="#1a1d26">
+          <label for="cfg-text">Text</label>
+        </div>
       </div>
-      <div class="color-swatch">
-        <input type="color" id="cfg-secondary" value="#8590a2">
-        <label for="cfg-secondary">Secondary</label>
-      </div>
-      <div class="color-swatch">
-        <input type="color" id="cfg-success" value="#34c379">
-        <label for="cfg-success">Success</label>
-      </div>
-      <div class="color-swatch">
-        <input type="color" id="cfg-danger" value="#f06272">
-        <label for="cfg-danger">Danger</label>
-      </div>
-      <div class="color-swatch">
-        <input type="color" id="cfg-warning" value="#f5a623">
-        <label for="cfg-warning">Warning</label>
-      </div>
-      <div class="color-swatch">
-        <input type="color" id="cfg-bg" value="#ffffff">
-        <label for="cfg-bg">Background</label>
-      </div>
-      <div class="color-swatch">
-        <input type="color" id="cfg-text" value="#1a1d26">
-        <label for="cfg-text">Text</label>
+      <div class="ui-row sm">
+        <button class="ui-btn sm ghost secondary" onclick="resetTheme()">Reset to defaults</button>
+        <label class="ui-toggle">
+          <input type="checkbox" id="dark-mode-toggle">
+          <span class="ui-toggle-track"></span>
+          Dark mode
+        </label>
       </div>
     </div>
-    <button class="ui-btn sm ghost secondary" onclick="resetTheme()">Reset to defaults</button>
-    <label class="ui-toggle" style="margin-left: 1rem;">
-      <input type="checkbox" id="dark-mode-toggle">
-      <span class="ui-toggle-track"></span>
-      Dark mode
-    </label>
   </div>
 
   <!-- Buttons -->
-  <div class="demo-section">
+  <div class="demo-section" id="buttons">
     <h2>Buttons</h2>
 
     <div class="demo-subsection">
@@ -461,7 +588,7 @@ btn.classList.remove('loading'); // stop
   </div>
 
   <!-- Toggles -->
-  <div class="demo-section">
+  <div class="demo-section" id="toggles">
     <h2>Toggle Buttons</h2>
 
     <div class="demo-subsection">
@@ -616,7 +743,7 @@ btn.classList.remove('loading'); // stop
   </div>
 
   <!-- Checkboxes & Radios -->
-  <div class="demo-section">
+  <div class="demo-section" id="checkboxes">
     <h2>Checkboxes & Radios</h2>
 
     <div class="grid-2">
@@ -917,7 +1044,7 @@ btn.classList.remove('loading'); // stop
   </div>
 
   <!-- Inputs -->
-  <div class="demo-section">
+  <div class="demo-section" id="inputs">
     <h2>Inputs</h2>
 
     <div class="demo-subsection">
@@ -1076,7 +1203,7 @@ btn.classList.remove('loading'); // stop
   </div>
 
   <!-- Panels -->
-  <div class="demo-section">
+  <div class="demo-section" id="panels">
     <h2>Panels</h2>
     <div class="grid-2">
 
@@ -1198,7 +1325,7 @@ btn.classList.remove('loading'); // stop
   </div>
 
   <!-- Dropdowns -->
-  <div class="demo-section">
+  <div class="demo-section" id="dropdowns">
     <h2>Dropdowns</h2>
 
     <div class="demo-subsection">
@@ -1619,7 +1746,7 @@ document.addEventListener('click', e =&gt; {
   </div>
 
   <!-- Badges, Tags & Alerts -->
-  <div class="demo-section">
+  <div class="demo-section" id="badges">
     <h2>Badges, Tags & Alerts</h2>
 
     <div class="demo-subsection">
@@ -1760,7 +1887,7 @@ document.addEventListener('click', e =&gt; {
   </div>
 
   <!-- Tabs -->
-  <div class="demo-section">
+  <div class="demo-section" id="tabs">
     <h2>Tabs</h2>
 
     <div class="demo-subsection">
@@ -1875,7 +2002,7 @@ function switchTab(tabsId, index) {
   </div>
 
   <!-- Dialogs -->
-  <div class="demo-section">
+  <div class="demo-section" id="dialogs">
     <h2>Dialogs</h2>
 
     <div class="demo-subsection">
@@ -2025,7 +2152,7 @@ document.getElementById('native-dialog').addEventListener('click', e =&gt; {
   </div>
 
   <!-- Status Dots -->
-  <div class="demo-section">
+  <div class="demo-section" id="dots">
     <h2>Status Dots</h2>
 
     <div class="demo-subsection">
@@ -2084,7 +2211,7 @@ document.getElementById('native-dialog').addEventListener('click', e =&gt; {
   </div>
 
   <!-- Pagination -->
-  <div class="demo-section">
+  <div class="demo-section" id="pagination">
     <h2>Pagination</h2>
 
     <div class="demo-subsection">
@@ -2183,7 +2310,7 @@ document.getElementById('native-dialog').addEventListener('click', e =&gt; {
   </div>
 
   <!-- Tooltips -->
-  <div class="demo-section">
+  <div class="demo-section" id="tooltips">
     <h2>Tooltips</h2>
 
     <div class="demo-subsection">
@@ -2241,7 +2368,7 @@ document.getElementById('native-dialog').addEventListener('click', e =&gt; {
   </div>
 
   <!-- Numbered Badge (Corner Badge) -->
-  <div class="demo-section">
+  <div class="demo-section" id="numbered-badge">
     <h2>Numbered Badge</h2>
 
     <div class="demo-subsection">
@@ -2392,7 +2519,7 @@ document.getElementById('native-dialog').addEventListener('click', e =&gt; {
   </div>
 
   <!-- Layout utilities -->
-  <div class="demo-section">
+  <div class="demo-section" id="layout">
     <h2>Layout Utilities</h2>
     <div class="demo-subsection">
       <h3>Stack & Row</h3>
@@ -2446,11 +2573,13 @@ document.getElementById('native-dialog').addEventListener('click', e =&gt; {
   </div>
 
   <!-- Color configuration -->
-  <div class="demo-section">
+  <div class="demo-section" id="config">
     <h2>Color Configuration</h2>
-    <details class="demo-code" open>
-      <summary>Show code</summary>
-      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+    <div class="demo-subsection">
+      <h3>Override via CSS custom properties</h3>
+      <details class="demo-code" open style="border-top:none; padding-top:0;">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 <pre>&lt;!-- Include the stylesheet --&gt;
 &lt;link rel="stylesheet" href="src/ui.css"&gt;
 
@@ -2472,16 +2601,19 @@ document.getElementById('native-dialog').addEventListener('click', e =&gt; {
   --ui-radius: 8px;
 }
 &lt;/style&gt;</pre>
-    </details>
+      </details>
+    </div>
   </div>
 
   <!-- Dark mode -->
-  <div class="demo-section">
+  <div class="demo-section" id="dark-mode">
     <h2>Dark Mode</h2>
-    <p style="font-size:0.875rem; color:var(--ui-text-muted); margin:0 0 1rem;">
-      Toggle dark mode by setting <code>data-theme="dark"</code> on <code>&lt;html&gt;</code>. The library includes a full set of dark-appropriate variables.
-    </p>
-    <details class="demo-code" open>
+    <div class="demo-subsection">
+      <h3>Toggle with data-theme attribute</h3>
+      <p style="font-size:0.8125rem; color:var(--ui-text-muted); margin:0 0 0.75rem;">
+        Set <code style="font-size:inherit;">data-theme="dark"</code> on <code style="font-size:inherit;">&lt;html&gt;</code>. The library includes a full set of dark-appropriate variables.
+      </p>
+      <details class="demo-code" open style="border-top:none; padding-top:0;">
       <summary>Show code</summary>
       <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 <pre>&lt;!-- Enable dark mode via data attribute --&gt;
@@ -2500,9 +2632,12 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
   document.documentElement.setAttribute('data-theme', 'dark');
 }
 &lt;/script&gt;</pre>
-    </details>
+      </details>
+    </div>
   </div>
 
+</div>
+</div>
 </div>
 
 <!-- Dialog instances -->
@@ -3181,6 +3316,33 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
           }
         }
       }
+    });
+  });
+
+  // Scroll spy for sidebar nav
+  const navLinks = document.querySelectorAll('.demo-nav a[href^="#"]');
+  const sections = [...navLinks].map(a => document.getElementById(a.getAttribute('href').slice(1))).filter(Boolean);
+
+  function updateActiveNav() {
+    let current = '';
+    for (const section of sections) {
+      if (section.getBoundingClientRect().top <= 100) {
+        current = section.id;
+      }
+    }
+    navLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  }
+  window.addEventListener('scroll', updateActiveNav, { passive: true });
+  updateActiveNav();
+
+  // Smooth scroll for nav links
+  navLinks.forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.getElementById(a.getAttribute('href').slice(1));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
 </script>
