@@ -883,6 +883,30 @@
     left: auto;
     right: 0;
   }
+
+  &.sm {
+    & .ui-dropdown-toggle {
+      padding: 0.25rem 0.5rem;
+      font-size: 0.8125rem;
+    }
+
+    & .ui-dropdown-item {
+      padding: 0.3125rem 0.5rem;
+      font-size: 0.8125rem;
+    }
+  }
+
+  &.lg {
+    & .ui-dropdown-toggle {
+      padding: 0.625rem 1rem;
+      font-size: 1rem;
+    }
+
+    & .ui-dropdown-item {
+      padding: 0.5625rem 0.75rem;
+      font-size: 1rem;
+    }
+  }
 }
 
 .ui-dropdown-item {
@@ -995,6 +1019,38 @@
 
   &.open .ui-autocomplete-menu {
     display: block;
+  }
+
+  &.sm {
+    & .ui-autocomplete-input {
+      padding: 0.25rem 0.625rem 0.25rem 1.75rem;
+      font-size: 0.8125rem;
+    }
+
+    & .ui-autocomplete-icon {
+      font-size: 0.75rem;
+    }
+
+    & .ui-dropdown-item {
+      padding: 0.3125rem 0.5rem;
+      font-size: 0.8125rem;
+    }
+  }
+
+  &.lg {
+    & .ui-autocomplete-input {
+      padding: 0.625rem 1rem 0.625rem 2.25rem;
+      font-size: 1rem;
+    }
+
+    & .ui-autocomplete-icon {
+      font-size: 1rem;
+    }
+
+    & .ui-dropdown-item {
+      padding: 0.5625rem 0.75rem;
+      font-size: 1rem;
+    }
   }
 }
 
@@ -1260,6 +1316,18 @@ dialog.ui-dialog {
     &.success   { border-color: var(--ui-success); color: var(--ui-success); }
     &.danger    { border-color: var(--ui-danger); color: var(--ui-danger); }
     &.warning   { border-color: var(--ui-warning); color: var(--ui-warning); }
+  }
+
+  /* --- Sizes --- */
+
+  &.sm {
+    font-size: 0.6875rem;
+    padding: 0.0625rem 0.375rem;
+  }
+
+  &.lg {
+    font-size: 0.875rem;
+    padding: 0.25rem 0.625rem;
   }
 
   /* --- Dot indicator --- */

@@ -1271,7 +1271,30 @@ btn.classList.remove('loading'); // stop
     &lt;button class="ui-dropdown-item" onclick="selectDropdownItem(this)"&gt;Name A–Z&lt;/button&gt;
     &lt;button class="ui-dropdown-item" onclick="selectDropdownItem(this)"&gt;Name Z–A&lt;/button&gt;
   &lt;/div&gt;
-&lt;/div&gt;</pre>
+&lt;/div&gt;
+
+&lt;script&gt;
+function toggleDropdown(id) {
+  const dd = document.getElementById(id);
+  document.querySelectorAll('.ui-dropdown.open').forEach(d =&gt; {
+    if (d.id !== id) d.classList.remove('open');
+  });
+  dd.classList.toggle('open');
+}
+
+// Close on outside click
+document.addEventListener('click', e =&gt; {
+  if (!e.target.closest('.ui-dropdown')) {
+    document.querySelectorAll('.ui-dropdown.open').forEach(d =&gt; d.classList.remove('open'));
+  }
+});
+
+// Activate a single item (radio-style)
+function selectDropdownItem(btn) {
+  btn.closest('.ui-dropdown-menu').querySelectorAll('.ui-dropdown-item').forEach(i =&gt; i.classList.remove('active'));
+  btn.classList.add('active');
+}
+&lt;/script&gt;</pre>
       </details>
     </div>
 
@@ -1410,6 +1433,189 @@ document.addEventListener('click', e =&gt; {
 &lt;/script&gt;</pre>
       </details>
     </div>
+
+    <div class="demo-subsection">
+      <h3>Searchable dropdown sizes</h3>
+      <div class="ui-stack sm" style="max-width:20rem;">
+        <div class="ui-autocomplete sm" id="demo-ac-sm">
+          <i class="bi bi-search ui-autocomplete-icon"></i>
+          <input class="ui-autocomplete-input" type="text" placeholder="Small..." oninput="filterAutocomplete('demo-ac-sm')" onfocus="this.closest('.ui-autocomplete').classList.add('open')">
+          <div class="ui-autocomplete-menu">
+            <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">Australia</button>
+            <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">Brazil</button>
+            <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">Canada</button>
+            <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">France</button>
+            <span class="ui-autocomplete-empty">No results found</span>
+          </div>
+        </div>
+        <div class="ui-autocomplete" id="demo-ac-def">
+          <i class="bi bi-search ui-autocomplete-icon"></i>
+          <input class="ui-autocomplete-input" type="text" placeholder="Default..." oninput="filterAutocomplete('demo-ac-def')" onfocus="this.closest('.ui-autocomplete').classList.add('open')">
+          <div class="ui-autocomplete-menu">
+            <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">Australia</button>
+            <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">Brazil</button>
+            <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">Canada</button>
+            <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">France</button>
+            <span class="ui-autocomplete-empty">No results found</span>
+          </div>
+        </div>
+        <div class="ui-autocomplete lg" id="demo-ac-lg">
+          <i class="bi bi-search ui-autocomplete-icon"></i>
+          <input class="ui-autocomplete-input" type="text" placeholder="Large..." oninput="filterAutocomplete('demo-ac-lg')" onfocus="this.closest('.ui-autocomplete').classList.add('open')">
+          <div class="ui-autocomplete-menu">
+            <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">Australia</button>
+            <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">Brazil</button>
+            <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">Canada</button>
+            <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">France</button>
+            <span class="ui-autocomplete-empty">No results found</span>
+          </div>
+        </div>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-autocomplete sm" id="my-ac-sm"&gt;
+  &lt;i class="bi bi-search ui-autocomplete-icon"&gt;&lt;/i&gt;
+  &lt;input class="ui-autocomplete-input" type="text" placeholder="Small..." oninput="filterAutocomplete('my-ac-sm')" onfocus="this.closest('.ui-autocomplete').classList.add('open')"&gt;
+  &lt;div class="ui-autocomplete-menu"&gt;
+    &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;Australia&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;Brazil&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;Canada&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;France&lt;/button&gt;
+    &lt;span class="ui-autocomplete-empty"&gt;No results found&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="ui-autocomplete" id="my-ac"&gt;
+  &lt;i class="bi bi-search ui-autocomplete-icon"&gt;&lt;/i&gt;
+  &lt;input class="ui-autocomplete-input" type="text" placeholder="Default..." oninput="filterAutocomplete('my-ac')" onfocus="this.closest('.ui-autocomplete').classList.add('open')"&gt;
+  &lt;div class="ui-autocomplete-menu"&gt;
+    &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;Australia&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;Brazil&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;Canada&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;France&lt;/button&gt;
+    &lt;span class="ui-autocomplete-empty"&gt;No results found&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="ui-autocomplete lg" id="my-ac-lg"&gt;
+  &lt;i class="bi bi-search ui-autocomplete-icon"&gt;&lt;/i&gt;
+  &lt;input class="ui-autocomplete-input" type="text" placeholder="Large..." oninput="filterAutocomplete('my-ac-lg')" onfocus="this.closest('.ui-autocomplete').classList.add('open')"&gt;
+  &lt;div class="ui-autocomplete-menu"&gt;
+    &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;Australia&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;Brazil&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;Canada&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;France&lt;/button&gt;
+    &lt;span class="ui-autocomplete-empty"&gt;No results found&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+function filterAutocomplete(id) {
+  const ac = document.getElementById(id);
+  const query = ac.querySelector('.ui-autocomplete-input').value.toLowerCase();
+  const items = ac.querySelectorAll('.ui-dropdown-item');
+  let visible = 0;
+  items.forEach(item =&gt; {
+    const match = item.textContent.toLowerCase().includes(query);
+    item.classList.toggle('hidden', !match);
+    if (match) visible++;
+  });
+  ac.querySelector('.ui-autocomplete-empty').style.display = visible === 0 ? 'block' : 'none';
+  ac.classList.add('open');
+}
+
+function pickAutocomplete(btn) {
+  const ac = btn.closest('.ui-autocomplete');
+  ac.querySelector('.ui-autocomplete-input').value = btn.textContent.trim();
+  ac.classList.remove('open');
+}
+
+// Close on outside click
+document.addEventListener('click', e =&gt; {
+  if (!e.target.closest('.ui-autocomplete')) {
+    document.querySelectorAll('.ui-autocomplete.open').forEach(ac =&gt; ac.classList.remove('open'));
+  }
+});
+&lt;/script&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Sizes</h3>
+      <div class="ui-row">
+        <div class="ui-dropdown sm" id="demo-dd-sm">
+          <button class="ui-dropdown-toggle" onclick="toggleDropdown('demo-dd-sm')">Small</button>
+          <div class="ui-dropdown-menu">
+            <button class="ui-dropdown-item" onclick="toggleDropdown('demo-dd-sm')">Option one</button>
+            <button class="ui-dropdown-item" onclick="toggleDropdown('demo-dd-sm')">Option two</button>
+            <button class="ui-dropdown-item" onclick="toggleDropdown('demo-dd-sm')">Option three</button>
+          </div>
+        </div>
+        <div class="ui-dropdown" id="demo-dd-md">
+          <button class="ui-dropdown-toggle" onclick="toggleDropdown('demo-dd-md')">Default</button>
+          <div class="ui-dropdown-menu">
+            <button class="ui-dropdown-item" onclick="toggleDropdown('demo-dd-md')">Option one</button>
+            <button class="ui-dropdown-item" onclick="toggleDropdown('demo-dd-md')">Option two</button>
+            <button class="ui-dropdown-item" onclick="toggleDropdown('demo-dd-md')">Option three</button>
+          </div>
+        </div>
+        <div class="ui-dropdown lg" id="demo-dd-lg">
+          <button class="ui-dropdown-toggle" onclick="toggleDropdown('demo-dd-lg')">Large</button>
+          <div class="ui-dropdown-menu">
+            <button class="ui-dropdown-item" onclick="toggleDropdown('demo-dd-lg')">Option one</button>
+            <button class="ui-dropdown-item" onclick="toggleDropdown('demo-dd-lg')">Option two</button>
+            <button class="ui-dropdown-item" onclick="toggleDropdown('demo-dd-lg')">Option three</button>
+          </div>
+        </div>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-dropdown sm" id="my-dropdown-sm"&gt;
+  &lt;button class="ui-dropdown-toggle" onclick="toggleDropdown('my-dropdown-sm')"&gt;Small&lt;/button&gt;
+  &lt;div class="ui-dropdown-menu"&gt;
+    &lt;button class="ui-dropdown-item" onclick="toggleDropdown('my-dropdown-sm')"&gt;Option one&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="toggleDropdown('my-dropdown-sm')"&gt;Option two&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="toggleDropdown('my-dropdown-sm')"&gt;Option three&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="ui-dropdown" id="my-dropdown"&gt;
+  &lt;button class="ui-dropdown-toggle" onclick="toggleDropdown('my-dropdown')"&gt;Default&lt;/button&gt;
+  &lt;div class="ui-dropdown-menu"&gt;
+    &lt;button class="ui-dropdown-item" onclick="toggleDropdown('my-dropdown')"&gt;Option one&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="toggleDropdown('my-dropdown')"&gt;Option two&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="toggleDropdown('my-dropdown')"&gt;Option three&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="ui-dropdown lg" id="my-dropdown-lg"&gt;
+  &lt;button class="ui-dropdown-toggle" onclick="toggleDropdown('my-dropdown-lg')"&gt;Large&lt;/button&gt;
+  &lt;div class="ui-dropdown-menu"&gt;
+    &lt;button class="ui-dropdown-item" onclick="toggleDropdown('my-dropdown-lg')"&gt;Option one&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="toggleDropdown('my-dropdown-lg')"&gt;Option two&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="toggleDropdown('my-dropdown-lg')"&gt;Option three&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+function toggleDropdown(id) {
+  const dd = document.getElementById(id);
+  document.querySelectorAll('.ui-dropdown.open').forEach(d =&gt; {
+    if (d.id !== id) d.classList.remove('open');
+  });
+  dd.classList.toggle('open');
+}
+
+document.addEventListener('click', e =&gt; {
+  if (!e.target.closest('.ui-dropdown')) {
+    document.querySelectorAll('.ui-dropdown.open').forEach(d =&gt; d.classList.remove('open'));
+  }
+});
+&lt;/script&gt;</pre>
+      </details>
+    </div>
   </div>
 
   <!-- Badges, Tags & Alerts -->
@@ -1477,6 +1683,22 @@ document.addEventListener('click', e =&gt; {
   &lt;span class="ui-badge dot success"&gt;Online&lt;/span&gt;
   &lt;span class="ui-badge dot danger"&gt;Offline&lt;/span&gt;
 &lt;/div&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Badge sizes</h3>
+      <div class="ui-row sm">
+        <span class="ui-badge sm">Small</span>
+        <span class="ui-badge">Default</span>
+        <span class="ui-badge lg">Large</span>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;span class="ui-badge sm"&gt;Small&lt;/span&gt;
+&lt;span class="ui-badge"&gt;Default&lt;/span&gt;
+&lt;span class="ui-badge lg"&gt;Large&lt;/span&gt;</pre>
       </details>
     </div>
 
@@ -1603,7 +1825,15 @@ function switchTab(tabsId, index) {
   &lt;div class="ui-tab-panel active"&gt;Showing all items in the list.&lt;/div&gt;
   &lt;div class="ui-tab-panel"&gt;Showing only active items.&lt;/div&gt;
   &lt;div class="ui-tab-panel"&gt;Showing archived items.&lt;/div&gt;
-&lt;/div&gt;</pre>
+&lt;/div&gt;
+
+&lt;script&gt;
+function switchTab(tabsId, index) {
+  const tabs = document.getElementById(tabsId);
+  tabs.querySelectorAll('.ui-tab-list .ui-tab').forEach((t, i) =&gt; t.classList.toggle('active', i === index));
+  tabs.querySelectorAll('.ui-tab-panel').forEach((p, i) =&gt; p.classList.toggle('active', i === index));
+}
+&lt;/script&gt;</pre>
       </details>
     </div>
 
@@ -1631,7 +1861,15 @@ function switchTab(tabsId, index) {
   &lt;div class="ui-tab-panel active"&gt;HTML provides the structure and content of a webpage.&lt;/div&gt;
   &lt;div class="ui-tab-panel"&gt;CSS handles the visual presentation and layout.&lt;/div&gt;
   &lt;div class="ui-tab-panel"&gt;JavaScript adds interactivity and dynamic behavior.&lt;/div&gt;
-&lt;/div&gt;</pre>
+&lt;/div&gt;
+
+&lt;script&gt;
+function switchTab(tabsId, index) {
+  const tabs = document.getElementById(tabsId);
+  tabs.querySelectorAll('.ui-tab-list .ui-tab').forEach((t, i) =&gt; t.classList.toggle('active', i === index));
+  tabs.querySelectorAll('.ui-tab-panel').forEach((p, i) =&gt; p.classList.toggle('active', i === index));
+}
+&lt;/script&gt;</pre>
       </details>
     </div>
   </div>
@@ -1662,7 +1900,31 @@ function switchTab(tabsId, index) {
       &lt;button class="ui-btn danger" onclick="closeDialog('demo-dialog')"&gt;Delete&lt;/button&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</pre>
+&lt;/div&gt;
+
+&lt;script&gt;
+function openDialog(id) {
+  document.getElementById(id).classList.add('open');
+}
+
+function closeDialog(id) {
+  document.getElementById(id).classList.remove('open');
+}
+
+// Close on backdrop click
+document.querySelectorAll('.ui-dialog-backdrop').forEach(backdrop =&gt; {
+  backdrop.addEventListener('click', e =&gt; {
+    if (e.target === backdrop) backdrop.classList.remove('open');
+  });
+});
+
+// Close on Escape
+document.addEventListener('keydown', e =&gt; {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.ui-dialog-backdrop.open').forEach(b =&gt; b.classList.remove('open'));
+  }
+});
+&lt;/script&gt;</pre>
       </details>
     </div>
 
@@ -1705,7 +1967,17 @@ function switchTab(tabsId, index) {
       &lt;button class="ui-btn" onclick="closeDialog('demo-dialog-lg')"&gt;Save changes&lt;/button&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</pre>
+&lt;/div&gt;
+
+&lt;script&gt;
+function openDialog(id) {
+  document.getElementById(id).classList.add('open');
+}
+
+function closeDialog(id) {
+  document.getElementById(id).classList.remove('open');
+}
+&lt;/script&gt;</pre>
       </details>
     </div>
 
@@ -1728,7 +2000,26 @@ function switchTab(tabsId, index) {
   &lt;div class="ui-dialog-footer"&gt;
     &lt;button class="ui-btn" onclick="closeNativeDialog()"&gt;Close&lt;/button&gt;
   &lt;/div&gt;
-&lt;/dialog&gt;</pre>
+&lt;/dialog&gt;
+
+&lt;script&gt;
+// Open with showModal() for browser-native focus trapping + backdrop
+document.getElementById('native-dialog').showModal();
+
+function closeNativeDialog() {
+  document.getElementById('native-dialog').close();
+}
+
+// Close on backdrop click
+document.getElementById('native-dialog').addEventListener('click', e =&gt; {
+  const d = e.currentTarget;
+  const rect = d.getBoundingClientRect();
+  if (e.clientX &lt; rect.left || e.clientX &gt; rect.right ||
+      e.clientY &lt; rect.top  || e.clientY &gt; rect.bottom) {
+    d.close();
+  }
+});
+&lt;/script&gt;</pre>
       </details>
     </div>
   </div>
