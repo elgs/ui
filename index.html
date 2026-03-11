@@ -2024,6 +2024,373 @@ document.getElementById('native-dialog').addEventListener('click', e =&gt; {
     </div>
   </div>
 
+  <!-- Status Dots -->
+  <div class="demo-section">
+    <h2>Status Dots</h2>
+
+    <div class="demo-subsection">
+      <h3>Colors</h3>
+      <div class="ui-row sm">
+        <span class="ui-dot"></span>
+        <span class="ui-dot primary"></span>
+        <span class="ui-dot success"></span>
+        <span class="ui-dot danger"></span>
+        <span class="ui-dot warning"></span>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;span class="ui-dot"&gt;&lt;/span&gt;
+&lt;span class="ui-dot primary"&gt;&lt;/span&gt;
+&lt;span class="ui-dot success"&gt;&lt;/span&gt;
+&lt;span class="ui-dot danger"&gt;&lt;/span&gt;
+&lt;span class="ui-dot warning"&gt;&lt;/span&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Sizes</h3>
+      <div class="ui-row sm" style="align-items:center">
+        <span class="ui-dot success sm"></span>
+        <span class="ui-dot success"></span>
+        <span class="ui-dot success lg"></span>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;span class="ui-dot success sm"&gt;&lt;/span&gt;
+&lt;span class="ui-dot success"&gt;&lt;/span&gt;
+&lt;span class="ui-dot success lg"&gt;&lt;/span&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>With text &amp; pulse</h3>
+      <div class="ui-stack sm">
+        <div class="ui-row sm"><span class="ui-dot success"></span> Online</div>
+        <div class="ui-row sm"><span class="ui-dot danger pulse"></span> Recording</div>
+        <div class="ui-row sm"><span class="ui-dot warning"></span> Away</div>
+        <div class="ui-row sm"><span class="ui-dot"></span> Offline</div>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-row sm"&gt;&lt;span class="ui-dot success"&gt;&lt;/span&gt; Online&lt;/div&gt;
+&lt;div class="ui-row sm"&gt;&lt;span class="ui-dot danger pulse"&gt;&lt;/span&gt; Recording&lt;/div&gt;
+&lt;div class="ui-row sm"&gt;&lt;span class="ui-dot warning"&gt;&lt;/span&gt; Away&lt;/div&gt;
+&lt;div class="ui-row sm"&gt;&lt;span class="ui-dot"&gt;&lt;/span&gt; Offline&lt;/div&gt;</pre>
+      </details>
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <div class="demo-section">
+    <h2>Pagination</h2>
+
+    <div class="demo-subsection">
+      <h3>Default</h3>
+      <nav class="ui-pagination">
+        <button class="ui-page" disabled>&lsaquo;</button>
+        <button class="ui-page active">1</button>
+        <button class="ui-page">2</button>
+        <button class="ui-page">3</button>
+        <span class="ui-page ellipsis">&hellip;</span>
+        <button class="ui-page">12</button>
+        <button class="ui-page">&rsaquo;</button>
+      </nav>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;nav class="ui-pagination"&gt;
+  &lt;button class="ui-page" disabled&gt;&amp;lsaquo;&lt;/button&gt;
+  &lt;button class="ui-page active"&gt;1&lt;/button&gt;
+  &lt;button class="ui-page"&gt;2&lt;/button&gt;
+  &lt;button class="ui-page"&gt;3&lt;/button&gt;
+  &lt;span class="ui-page ellipsis"&gt;&amp;hellip;&lt;/span&gt;
+  &lt;button class="ui-page"&gt;12&lt;/button&gt;
+  &lt;button class="ui-page"&gt;&amp;rsaquo;&lt;/button&gt;
+&lt;/nav&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Outlined</h3>
+      <nav class="ui-pagination outline">
+        <button class="ui-page" disabled>&lsaquo;</button>
+        <button class="ui-page">1</button>
+        <button class="ui-page active">2</button>
+        <button class="ui-page">3</button>
+        <button class="ui-page">4</button>
+        <button class="ui-page">5</button>
+        <button class="ui-page">&rsaquo;</button>
+      </nav>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;nav class="ui-pagination outline"&gt;
+  &lt;button class="ui-page" disabled&gt;&amp;lsaquo;&lt;/button&gt;
+  &lt;button class="ui-page"&gt;1&lt;/button&gt;
+  &lt;button class="ui-page active"&gt;2&lt;/button&gt;
+  &lt;button class="ui-page"&gt;3&lt;/button&gt;
+  &lt;button class="ui-page"&gt;4&lt;/button&gt;
+  &lt;button class="ui-page"&gt;5&lt;/button&gt;
+  &lt;button class="ui-page"&gt;&amp;rsaquo;&lt;/button&gt;
+&lt;/nav&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Sizes</h3>
+      <div class="ui-stack sm">
+        <nav class="ui-pagination sm">
+          <button class="ui-page" disabled>&lsaquo;</button>
+          <button class="ui-page active">1</button>
+          <button class="ui-page">2</button>
+          <button class="ui-page">3</button>
+          <button class="ui-page">&rsaquo;</button>
+        </nav>
+        <nav class="ui-pagination">
+          <button class="ui-page" disabled>&lsaquo;</button>
+          <button class="ui-page active">1</button>
+          <button class="ui-page">2</button>
+          <button class="ui-page">3</button>
+          <button class="ui-page">&rsaquo;</button>
+        </nav>
+        <nav class="ui-pagination lg">
+          <button class="ui-page" disabled>&lsaquo;</button>
+          <button class="ui-page active">1</button>
+          <button class="ui-page">2</button>
+          <button class="ui-page">3</button>
+          <button class="ui-page">&rsaquo;</button>
+        </nav>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;nav class="ui-pagination sm"&gt;
+  &lt;button class="ui-page" disabled&gt;&amp;lsaquo;&lt;/button&gt;
+  &lt;button class="ui-page active"&gt;1&lt;/button&gt;
+  &lt;button class="ui-page"&gt;2&lt;/button&gt;
+  &lt;button class="ui-page"&gt;3&lt;/button&gt;
+  &lt;button class="ui-page"&gt;&amp;rsaquo;&lt;/button&gt;
+&lt;/nav&gt;
+
+&lt;nav class="ui-pagination"&gt;...&lt;/nav&gt;
+
+&lt;nav class="ui-pagination lg"&gt;...&lt;/nav&gt;</pre>
+      </details>
+    </div>
+  </div>
+
+  <!-- Tooltips -->
+  <div class="demo-section">
+    <h2>Tooltips</h2>
+
+    <div class="demo-subsection">
+      <h3>Positions</h3>
+      <div class="ui-row" style="padding: 2rem 0;">
+        <span class="ui-tooltip" data-tooltip="Tooltip on top"><button class="ui-btn sm outline">Top</button></span>
+        <span class="ui-tooltip bottom" data-tooltip="Tooltip on bottom"><button class="ui-btn sm outline">Bottom</button></span>
+        <span class="ui-tooltip left" data-tooltip="Tooltip on left"><button class="ui-btn sm outline">Left</button></span>
+        <span class="ui-tooltip right" data-tooltip="Tooltip on right"><button class="ui-btn sm outline">Right</button></span>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;span class="ui-tooltip" data-tooltip="Tooltip on top"&gt;
+  &lt;button class="ui-btn sm outline"&gt;Top&lt;/button&gt;
+&lt;/span&gt;
+
+&lt;span class="ui-tooltip bottom" data-tooltip="Tooltip on bottom"&gt;
+  &lt;button class="ui-btn sm outline"&gt;Bottom&lt;/button&gt;
+&lt;/span&gt;
+
+&lt;span class="ui-tooltip left" data-tooltip="Tooltip on left"&gt;
+  &lt;button class="ui-btn sm outline"&gt;Left&lt;/button&gt;
+&lt;/span&gt;
+
+&lt;span class="ui-tooltip right" data-tooltip="Tooltip on right"&gt;
+  &lt;button class="ui-btn sm outline"&gt;Right&lt;/button&gt;
+&lt;/span&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>On different elements</h3>
+      <div class="ui-row" style="padding: 1rem 0;">
+        <span class="ui-tooltip" data-tooltip="Edit this item"><button class="ui-btn icon sm"><i class="bi bi-pencil"></i></button></span>
+        <span class="ui-tooltip" data-tooltip="5 new messages"><span class="ui-badge solid">Inbox</span></span>
+        <span class="ui-tooltip bottom" data-tooltip="Click to copy"><code style="padding:0.25rem 0.5rem; background:var(--ui-bg-subtle); border-radius:var(--ui-radius-sm); font-size:0.8125rem; cursor:pointer;">npm install ui</code></span>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;span class="ui-tooltip" data-tooltip="Edit this item"&gt;
+  &lt;button class="ui-btn icon sm"&gt;&lt;i class="bi bi-pencil"&gt;&lt;/i&gt;&lt;/button&gt;
+&lt;/span&gt;
+
+&lt;span class="ui-tooltip" data-tooltip="5 new messages"&gt;
+  &lt;span class="ui-badge solid"&gt;Inbox&lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span class="ui-tooltip bottom" data-tooltip="Click to copy"&gt;
+  &lt;code&gt;npm install ui&lt;/code&gt;
+&lt;/span&gt;</pre>
+      </details>
+    </div>
+  </div>
+
+  <!-- Numbered Badge (Corner Badge) -->
+  <div class="demo-section">
+    <h2>Numbered Badge</h2>
+
+    <div class="demo-subsection">
+      <h3>On buttons</h3>
+      <div class="ui-row">
+        <span class="ui-badge-corner">
+          <button class="ui-btn outline"><i class="bi bi-bell"></i> Notifications</button>
+          <span class="ui-count">3</span>
+        </span>
+        <span class="ui-badge-corner">
+          <button class="ui-btn outline secondary"><i class="bi bi-envelope"></i> Mail</button>
+          <span class="ui-count primary">12</span>
+        </span>
+        <span class="ui-badge-corner">
+          <button class="ui-btn outline"><i class="bi bi-cart"></i> Cart</button>
+          <span class="ui-count success">99+</span>
+        </span>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;!-- Single digit = circle, multi-digit = pill --&gt;
+&lt;span class="ui-badge-corner"&gt;
+  &lt;button class="ui-btn outline"&gt;&lt;i class="bi bi-bell"&gt;&lt;/i&gt; Notifications&lt;/button&gt;
+  &lt;span class="ui-count"&gt;3&lt;/span&gt;
+&lt;/span&gt;
+
+&lt;!-- Multi-digit: pill shape (default) --&gt;
+&lt;span class="ui-badge-corner"&gt;
+  &lt;button class="ui-btn outline secondary"&gt;&lt;i class="bi bi-envelope"&gt;&lt;/i&gt; Mail&lt;/button&gt;
+  &lt;span class="ui-count primary"&gt;12&lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span class="ui-badge-corner"&gt;
+  &lt;button class="ui-btn outline"&gt;&lt;i class="bi bi-cart"&gt;&lt;/i&gt; Cart&lt;/button&gt;
+  &lt;span class="ui-count success"&gt;99+&lt;/span&gt;
+&lt;/span&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>On icon buttons &amp; corner positions</h3>
+      <div class="ui-row lg">
+        <span class="ui-badge-corner">
+          <button class="ui-btn icon outline"><i class="bi bi-bell"></i></button>
+          <span class="ui-count">5</span>
+        </span>
+        <span class="ui-badge-corner">
+          <button class="ui-btn icon outline secondary"><i class="bi bi-chat"></i></button>
+          <span class="ui-count top-left primary">2</span>
+        </span>
+        <span class="ui-badge-corner">
+          <button class="ui-btn icon outline"><i class="bi bi-heart"></i></button>
+          <span class="ui-count bottom-right success">8</span>
+        </span>
+        <span class="ui-badge-corner">
+          <button class="ui-btn icon outline secondary"><i class="bi bi-gear"></i></button>
+          <span class="ui-count dot"></span>
+        </span>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;!-- Top-right (default) --&gt;
+&lt;span class="ui-badge-corner"&gt;
+  &lt;button class="ui-btn icon outline"&gt;&lt;i class="bi bi-bell"&gt;&lt;/i&gt;&lt;/button&gt;
+  &lt;span class="ui-count"&gt;5&lt;/span&gt;
+&lt;/span&gt;
+
+&lt;!-- Top-left --&gt;
+&lt;span class="ui-badge-corner"&gt;
+  &lt;button class="ui-btn icon outline secondary"&gt;&lt;i class="bi bi-chat"&gt;&lt;/i&gt;&lt;/button&gt;
+  &lt;span class="ui-count top-left primary"&gt;2&lt;/span&gt;
+&lt;/span&gt;
+
+&lt;!-- Bottom-right --&gt;
+&lt;span class="ui-badge-corner"&gt;
+  &lt;button class="ui-btn icon outline"&gt;&lt;i class="bi bi-heart"&gt;&lt;/i&gt;&lt;/button&gt;
+  &lt;span class="ui-count bottom-right success"&gt;8&lt;/span&gt;
+&lt;/span&gt;
+
+&lt;!-- Dot-only (no number) --&gt;
+&lt;span class="ui-badge-corner"&gt;
+  &lt;button class="ui-btn icon outline secondary"&gt;&lt;i class="bi bi-gear"&gt;&lt;/i&gt;&lt;/button&gt;
+  &lt;span class="ui-count dot"&gt;&lt;/span&gt;
+&lt;/span&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Color variants</h3>
+      <div class="ui-row lg">
+        <span class="ui-badge-corner">
+          <button class="ui-btn icon outline"><i class="bi bi-bell"></i></button>
+          <span class="ui-count">3</span>
+        </span>
+        <span class="ui-badge-corner">
+          <button class="ui-btn icon outline"><i class="bi bi-bell"></i></button>
+          <span class="ui-count primary">3</span>
+        </span>
+        <span class="ui-badge-corner">
+          <button class="ui-btn icon outline"><i class="bi bi-bell"></i></button>
+          <span class="ui-count success">3</span>
+        </span>
+        <span class="ui-badge-corner">
+          <button class="ui-btn icon outline"><i class="bi bi-bell"></i></button>
+          <span class="ui-count warning">3</span>
+        </span>
+        <span class="ui-badge-corner">
+          <button class="ui-btn icon outline"><i class="bi bi-bell"></i></button>
+          <span class="ui-count secondary">3</span>
+        </span>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;!-- danger (default) --&gt;
+&lt;span class="ui-badge-corner"&gt;
+  &lt;button class="ui-btn icon outline"&gt;&lt;i class="bi bi-bell"&gt;&lt;/i&gt;&lt;/button&gt;
+  &lt;span class="ui-count"&gt;3&lt;/span&gt;
+&lt;/span&gt;
+
+&lt;!-- primary --&gt;
+&lt;span class="ui-badge-corner"&gt;
+  &lt;button class="ui-btn icon outline"&gt;&lt;i class="bi bi-bell"&gt;&lt;/i&gt;&lt;/button&gt;
+  &lt;span class="ui-count primary"&gt;3&lt;/span&gt;
+&lt;/span&gt;
+
+&lt;!-- success --&gt;
+&lt;span class="ui-badge-corner"&gt;
+  &lt;button class="ui-btn icon outline"&gt;&lt;i class="bi bi-bell"&gt;&lt;/i&gt;&lt;/button&gt;
+  &lt;span class="ui-count success"&gt;3&lt;/span&gt;
+&lt;/span&gt;
+
+&lt;!-- warning --&gt;
+&lt;span class="ui-badge-corner"&gt;
+  &lt;button class="ui-btn icon outline"&gt;&lt;i class="bi bi-bell"&gt;&lt;/i&gt;&lt;/button&gt;
+  &lt;span class="ui-count warning"&gt;3&lt;/span&gt;
+&lt;/span&gt;
+
+&lt;!-- secondary --&gt;
+&lt;span class="ui-badge-corner"&gt;
+  &lt;button class="ui-btn icon outline"&gt;&lt;i class="bi bi-bell"&gt;&lt;/i&gt;&lt;/button&gt;
+  &lt;span class="ui-count secondary"&gt;3&lt;/span&gt;
+&lt;/span&gt;</pre>
+      </details>
+    </div>
+  </div>
+
   <!-- Layout utilities -->
   <div class="demo-section">
     <h2>Layout Utilities</h2>
@@ -2703,38 +3070,116 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
     const prev = details && details.previousElementSibling;
     const liveTargetId = details && details.getAttribute('data-live-target');
     const liveTargetEl = liveTargetId ? document.getElementById(liveTargetId) : null;
-    const demoTarget = !liveTargetId && prev && prev.matches('.ui-row, .ui-stack, .ui-panel, .ui-tabs, .grid-2') ? prev : null;
+    const demoTarget = !liveTargetId && prev && prev.matches('.ui-row, .ui-stack, .ui-panel, .ui-tabs, .grid-2, .ui-pagination, .ui-badge-corner, .ui-tooltip, nav') ? prev : null;
 
     // Make editable with syntax highlighting
     pre.contentEditable = 'true';
     pre.spellcheck = false;
     pre.innerHTML = highlightHTML(raw);
 
-    // Re-highlight on edit, update demo components above
-    pre.addEventListener('input', () => {
-      const text = pre.textContent;
-      const pos = _saveCursor(pre);
-      pre.innerHTML = highlightHTML(text);
-      _restoreCursor(pre, pos);
+    // Manual undo/redo stack (innerHTML replacement kills browser undo)
+    // Each entry: { text, cursor }
+    const undoStack = [{ text: raw, cursor: 0 }];
+    let undoIdx = 0;
+
+    function updateDemo(text) {
       if (demoTarget) {
         demoTarget.innerHTML = _sanitize(text);
       } else if (liveTargetId) {
         const el = document.getElementById(liveTargetId);
         if (el) el.outerHTML = _sanitize(text);
       }
+    }
+
+    function setContent(entry) {
+      pre.innerHTML = highlightHTML(entry.text);
+      _restoreCursor(pre, entry.cursor);
+      updateDemo(entry.text);
+    }
+
+    // Debounced re-highlight
+    let hlTimer = null;
+    function scheduleHighlight() {
+      clearTimeout(hlTimer);
+      hlTimer = setTimeout(() => {
+        const text = pre.textContent.replace(/\u200b/g, '');
+        const pos = _saveCursor(pre);
+        pre.innerHTML = highlightHTML(text);
+        _restoreCursor(pre, pos);
+      }, 500);
+    }
+
+    pre.addEventListener('input', () => {
+      const text = pre.textContent.replace(/\u200b/g, '');
+      const cursor = _saveCursor(pre);
+      // Push to undo stack
+      undoIdx++;
+      undoStack.length = undoIdx;
+      undoStack.push({ text, cursor });
+      // Update demo immediately
+      updateDemo(text);
+      // Defer syntax re-highlight
+      scheduleHighlight();
     });
 
     // Paste as plain text
     pre.addEventListener('paste', e => {
       e.preventDefault();
-      document.execCommand('insertText', false, e.clipboardData.getData('text/plain'));
+      const text = e.clipboardData.getData('text/plain');
+      const sel = window.getSelection();
+      if (!sel.rangeCount) return;
+      const range = sel.getRangeAt(0);
+      range.deleteContents();
+      range.insertNode(document.createTextNode(text));
+      range.collapse(false);
+      sel.removeAllRanges();
+      sel.addRange(range);
+      pre.dispatchEvent(new Event('input', { bubbles: true }));
     });
 
-    // Tab inserts spaces
+    // Keyboard handling
     pre.addEventListener('keydown', e => {
       if (e.key === 'Tab') {
         e.preventDefault();
-        document.execCommand('insertText', false, '  ');
+        const sel = window.getSelection();
+        if (!sel.rangeCount) return;
+        const range = sel.getRangeAt(0);
+        range.deleteContents();
+        range.insertNode(document.createTextNode('  '));
+        range.collapse(false);
+        sel.removeAllRanges();
+        sel.addRange(range);
+        pre.dispatchEvent(new Event('input', { bubbles: true }));
+      } else if (e.key === 'Enter') {
+        e.preventDefault();
+        const sel = window.getSelection();
+        if (!sel.rangeCount) return;
+        const range = sel.getRangeAt(0);
+        range.deleteContents();
+        // Insert \n + zero-width space so trailing newlines render in <pre>
+        const nl = document.createTextNode('\n\u200b');
+        range.insertNode(nl);
+        // Position cursor between the \n and the zwsp
+        range.setStart(nl, 1);
+        range.collapse(true);
+        sel.removeAllRanges();
+        sel.addRange(range);
+        pre.dispatchEvent(new Event('input', { bubbles: true }));
+      } else if ((e.metaKey || e.ctrlKey) && e.key === 'z') {
+        e.preventDefault();
+        if (e.shiftKey) {
+          // Redo
+          if (undoIdx < undoStack.length - 1) {
+            undoIdx++;
+            setContent(undoStack[undoIdx]);
+          }
+        } else {
+          // Undo
+          if (undoIdx > 0) {
+            undoIdx--;
+            setContent(undoStack[undoIdx]);
+          }
+        }
       }
     });
   });
