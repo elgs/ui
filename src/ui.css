@@ -4,6 +4,13 @@
 
    To customize, override any of these in your own stylesheet:
 
+   For Shadow DOM components, use :host instead of :root:
+
+   :host {
+     --ui-primary:   #2095f3;
+     --ui-secondary: #8590a2;
+   }
+
    :root {
      --ui-primary:   #2095f3;
      --ui-secondary: #8590a2;
@@ -23,6 +30,7 @@
    via color-mix() — no need to set them manually.
    ============================================ */
 
+/* Use :root for document-level themes, or :host inside a Shadow DOM component. */
 :root {
   /* --- Color palette --- */
   --ui-primary: #2095f3;

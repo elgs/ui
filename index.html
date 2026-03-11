@@ -158,6 +158,19 @@
     .demo-code pre .hl-atv { color: #86efac; }
     .demo-code pre .hl-cmt { color: #64748b; font-style: italic; }
     .demo-code pre .hl-bkt { color: #94a3b8; }
+    .demo-code pre .hl-key { color: #f9a8d4; }
+    .demo-code pre .hl-js-str { color: #86efac; }
+    .demo-code pre .hl-num { color: #fbbf24; }
+    .demo-code pre .hl-fn { color: #93c5fd; }
+    .demo-code pre .hl-prop { color: #c4b5fd; }
+    .demo-code pre .hl-op { color: #94a3b8; }
+    .demo-code pre .hl-punc { color: #94a3b8; }
+    .demo-code pre .hl-sel { color: #7dd3fc; }
+    .demo-code pre .hl-val { color: #86efac; }
+    .demo-code pre .hl-brace { color: #94a3b8; }
+    .demo-code pre .hl-at { color: #f9a8d4; }
+    .demo-code pre .hl-unit { color: #fbbf24; }
+    .demo-code pre .hl-str { color: #86efac; }
     /* Editable code */
     .demo-code pre[contenteditable] {
       outline: none;
@@ -1570,6 +1583,7 @@ function switchTab(tabsId, index) {
 
 &lt;!-- Override colors via CSS custom properties --&gt;
 &lt;style&gt;
+/* Use :root for the page, or :host inside a Shadow DOM component. */
 :root {
   --ui-primary: #7c5cbf;
   --ui-primary-hover: #6a4daa;
@@ -1860,6 +1874,46 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
         const j = end < 0 ? raw.length : end + 1;
         out += '<span class="hl-cmt">' + _esc(raw.slice(i, j)) + '</span>';
         i = j;
+      } else if (/^<script\b/i.test(raw.slice(i))) {
+        const openEnd = raw.indexOf('>', i);
+        if (openEnd < 0) {
+          out += _esc(raw.slice(i));
+          break;
+        }
+        const contentStart = openEnd + 1;
+        const closeStart = raw.slice(contentStart).search(/<\/script\s*>/i);
+        const contentEnd = closeStart < 0 ? raw.length : contentStart + closeStart;
+        const closeEnd = closeStart < 0 ? contentEnd : raw.indexOf('>', contentEnd) + 1;
+
+        out += _hlTag(raw.slice(i, contentStart));
+        out += highlightJS(raw.slice(contentStart, contentEnd));
+
+        if (closeStart >= 0) {
+          out += _hlTag(raw.slice(contentEnd, closeEnd));
+          i = closeEnd;
+        } else {
+          i = contentEnd;
+        }
+      } else if (/^<style\b/i.test(raw.slice(i))) {
+        const openEnd = raw.indexOf('>', i);
+        if (openEnd < 0) {
+          out += _esc(raw.slice(i));
+          break;
+        }
+        const contentStart = openEnd + 1;
+        const closeStart = raw.slice(contentStart).search(/<\/style\s*>/i);
+        const contentEnd = closeStart < 0 ? raw.length : contentStart + closeStart;
+        const closeEnd = closeStart < 0 ? contentEnd : raw.indexOf('>', contentEnd) + 1;
+
+        out += _hlTag(raw.slice(i, contentStart));
+        out += highlightCSS(raw.slice(contentStart, contentEnd));
+
+        if (closeStart >= 0) {
+          out += _hlTag(raw.slice(contentEnd, closeEnd));
+          i = closeEnd;
+        } else {
+          i = contentEnd;
+        }
       } else if (raw[i] === '<') {
         const end = raw.indexOf('>', i);
         const j = end < 0 ? raw.length : end + 1;
@@ -1887,6 +1941,40 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
     });
     r += '<span class="hl-bkt">' + _esc(m[4]) + '</span>';
     return r;
+  }
+
+  function highlightJS(raw) {
+    const pattern = /(\/\*[\s\S]*?\*\/|\/\/[^\n]*|`(?:\\.|[^`])*`|"(?:\\.|[^"])*"|'(?:\\.|[^'])*'|\b(?:const|let|var|function|return|if|else|for|while|do|switch|case|break|continue|new|class|extends|try|catch|finally|throw|typeof|instanceof|in|of|await|async|import|from|export|default|true|false|null|undefined|this)\b|\b\d+(?:\.\d+)?\b|\b[A-Za-z_$][\w$]*(?=\s*\()|(?<=\.)[A-Za-z_$][\w$]*|=>|===|!==|==|!=|<=|>=|&&|\|\||\?\?|[+\-*/%=&|^!<>]+|[{}()[\].,;:?])/g;
+    let out = '';
+    let last = 0;
+
+    raw.replace(pattern, (token, _group, offset) => {
+      out += _esc(raw.slice(last, offset));
+
+      if (token.startsWith('/*') || token.startsWith('//')) {
+        out += '<span class="hl-cmt">' + _esc(token) + '</span>';
+      } else if (token.startsWith('`') || token.startsWith('"') || token.startsWith("'")) {
+        out += '<span class="hl-js-str">' + _esc(token) + '</span>';
+      } else if (/^(const|let|var|function|return|if|else|for|while|do|switch|case|break|continue|new|class|extends|try|catch|finally|throw|typeof|instanceof|in|of|await|async|import|from|export|default|true|false|null|undefined|this)$/.test(token)) {
+        out += '<span class="hl-key">' + token + '</span>';
+      } else if (/^\d/.test(token)) {
+        out += '<span class="hl-num">' + token + '</span>';
+      } else if (/^[A-Za-z_$][\w$]*$/.test(token)) {
+        out += '<span class="hl-fn">' + token + '</span>';
+      } else if (/^[+\-*/%=&|^!<>?]+$|^=>$/.test(token)) {
+        out += '<span class="hl-op">' + _esc(token) + '</span>';
+      } else if (/^[{}()[\].,;:]$/.test(token)) {
+        out += '<span class="hl-punc">' + _esc(token) + '</span>';
+      } else {
+        out += '<span class="hl-prop">' + token + '</span>';
+      }
+
+      last = offset + token.length;
+      return token;
+    });
+
+    out += _esc(raw.slice(last));
+    return out;
   }
 
   function _saveCursor(el) {
