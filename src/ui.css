@@ -1800,13 +1800,32 @@ dialog.ui-dialog {
   user-select: none;
   text-decoration: none;
 
-  &:hover {
-    background: var(--ui-bg-subtle);
+  @media (pointer: coarse) {
+    min-height: 2.75rem;
+    min-width: 2.75rem;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background: var(--ui-primary-light);
+    }
+
+    &.active:hover {
+      background: var(--ui-primary-hover);
+    }
+  }
+
+  &:active:not(:disabled) {
+    background: color-mix(in srgb, var(--ui-primary) 25%, transparent);
   }
 
   &.active {
     background: var(--ui-primary);
     color: var(--ui-primary-text);
+
+    &:active {
+      background: var(--ui-primary-active);
+    }
   }
 
   &:focus-visible {
@@ -1833,6 +1852,16 @@ dialog.ui-dialog {
 .ui-pagination.success .ui-page.active { background: var(--ui-success); color: var(--ui-success-text); }
 .ui-pagination.danger  .ui-page.active { background: var(--ui-danger); color: var(--ui-danger-text); }
 .ui-pagination.secondary .ui-page.active { background: var(--ui-secondary); color: var(--ui-secondary-text); }
+
+@media (hover: hover) {
+  .ui-pagination.success .ui-page.active:hover { background: var(--ui-success-hover); }
+  .ui-pagination.danger  .ui-page.active:hover { background: var(--ui-danger-hover); }
+  .ui-pagination.secondary .ui-page.active:hover { background: var(--ui-secondary-hover); }
+}
+
+.ui-pagination.success .ui-page.active:active { background: var(--ui-success-active); }
+.ui-pagination.danger  .ui-page.active:active { background: var(--ui-danger-active); }
+.ui-pagination.secondary .ui-page.active:active { background: var(--ui-secondary-active); }
 
 /* Outlined variant */
 .ui-pagination.outline .ui-page {
@@ -2208,17 +2237,15 @@ dialog.ui-dialog {
   flex-shrink: 0;
   cursor: pointer;
   user-select: none;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  transition: background var(--ui-transition);
 
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    background: color-mix(in srgb, var(--ui-primary) 20%, var(--ui-primary-light));
+  @media (hover: hover) {
+    &:hover {
+      background: color-mix(in srgb, var(--ui-primary) 20%, var(--ui-primary-light));
+    }
   }
 
   &:active {
-    transform: translateY(0) scale(0.95);
-    box-shadow: none;
     background: color-mix(in srgb, var(--ui-primary) 30%, var(--ui-primary-light));
   }
 
