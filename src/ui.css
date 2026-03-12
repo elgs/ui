@@ -88,6 +88,8 @@
   --ui-tooltip-bg: #4b5563;
   --ui-tooltip-text: #fff;
 
+  --ui-select-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2364748b' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+
   /* --- Typography --- */
   --ui-font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --ui-font-mono: ui-monospace, "Cascadia Code", "Fira Code", monospace;
@@ -150,6 +152,8 @@
 
   --ui-tooltip-bg: #e4e6eb;
   --ui-tooltip-text: #1a1d26;
+
+  --ui-select-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%238590a2' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
 }
 
 /* ============================================
@@ -332,6 +336,19 @@
         background: color-mix(in srgb, var(--ui-success) 20%, transparent);
       }
     }
+
+    &.warning {
+      border-color: var(--ui-warning);
+      color: var(--ui-warning);
+
+      &:hover {
+        background: var(--ui-warning-light);
+      }
+
+      &:active {
+        background: color-mix(in srgb, var(--ui-warning) 20%, transparent);
+      }
+    }
   }
 
   /* --- Ghost style --- */
@@ -360,6 +377,18 @@
       }
     }
 
+    &.success {
+      color: var(--ui-success);
+
+      &:hover {
+        background: var(--ui-success-light);
+      }
+
+      &:active {
+        background: color-mix(in srgb, var(--ui-success) 30%, transparent);
+      }
+    }
+
     &.danger {
       color: var(--ui-danger);
 
@@ -369,6 +398,18 @@
 
       &:active {
         background: color-mix(in srgb, var(--ui-danger) 30%, transparent);
+      }
+    }
+
+    &.warning {
+      color: var(--ui-warning);
+
+      &:hover {
+        background: var(--ui-warning-light);
+      }
+
+      &:active {
+        background: color-mix(in srgb, var(--ui-warning) 30%, transparent);
       }
     }
   }
@@ -660,7 +701,7 @@
 
 .ui-select {
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2364748b' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-image: var(--ui-select-arrow);
   background-repeat: no-repeat;
   background-position: right 0.75rem center;
   padding-right: 2.25rem;
@@ -853,7 +894,7 @@
       border-color: var(--ui-primary);
 
       &::after {
-        border-color: #fff;
+        border-color: var(--ui-primary-text);
         transform: translate(-50%, -60%) rotate(45deg) scale(1);
       }
     }
@@ -872,7 +913,7 @@
         width: 0.5rem;
         height: 0;
         border-width: 0 0 2px 0;
-        border-color: #fff;
+        border-color: var(--ui-primary-text);
         transform: translate(-50%, -50%) scale(1);
       }
     }
@@ -1398,8 +1439,6 @@
   & tbody {
 
     & tr {
-      transition: background var(--ui-transition);
-
       &:not(:last-child) > td {
         border-bottom: 1px solid var(--ui-border);
       }
@@ -1450,8 +1489,10 @@
       transition: opacity var(--ui-transition), transform var(--ui-transition);
     }
 
-    &:hover .sort-icon {
-      opacity: 0.6;
+    @media (hover: hover) {
+      &:hover .sort-icon {
+        opacity: 0.6;
+      }
     }
 
     &.asc .sort-icon,
@@ -1468,6 +1509,8 @@
   /* --- Hoverable rows --- */
 
   &.hoverable tbody tr {
+    transition: background var(--ui-transition);
+
     @media (hover: hover) {
       &:hover {
         background: var(--ui-primary-light);
@@ -2128,7 +2171,7 @@ dialog.ui-dialog {
   }
 
   &:disabled {
-    opacity: 0.4;
+    opacity: 0.5;
     cursor: not-allowed;
     pointer-events: none;
   }

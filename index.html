@@ -634,160 +634,6 @@ btn.classList.remove('loading'); // stop
     </div>
   </div>
 
-  <div class="demo-section" id="toggles">
-    <h2>Toggle Buttons</h2>
-
-    <div class="demo-subsection">
-      <h3>Default</h3>
-      <div class="ui-row">
-        <label class="ui-toggle">
-          <input type="checkbox" checked>
-          <span class="ui-toggle-track"></span>
-          Enabled
-        </label>
-        <label class="ui-toggle">
-          <input type="checkbox">
-          <span class="ui-toggle-track"></span>
-          Disabled
-        </label>
-      </div>
-      <details class="demo-code">
-        <summary>Show code</summary>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;label class="ui-toggle"&gt;
-  &lt;input type="checkbox" checked&gt;
-  &lt;span class="ui-toggle-track"&gt;&lt;/span&gt;
-  Enabled
-&lt;/label&gt;
-&lt;label class="ui-toggle"&gt;
-  &lt;input type="checkbox"&gt;
-  &lt;span class="ui-toggle-track"&gt;&lt;/span&gt;
-  Disabled
-&lt;/label&gt;</pre>
-      </details>
-    </div>
-
-    <div class="demo-subsection">
-      <h3>Color variants</h3>
-      <div class="ui-row">
-        <label class="ui-toggle">
-          <input type="checkbox" checked>
-          <span class="ui-toggle-track"></span>
-          Primary
-        </label>
-        <label class="ui-toggle success">
-          <input type="checkbox" checked>
-          <span class="ui-toggle-track"></span>
-          Success
-        </label>
-        <label class="ui-toggle danger">
-          <input type="checkbox" checked>
-          <span class="ui-toggle-track"></span>
-          Danger
-        </label>
-        <label class="ui-toggle warning">
-          <input type="checkbox" checked>
-          <span class="ui-toggle-track"></span>
-          Warning
-        </label>
-      </div>
-      <details class="demo-code">
-        <summary>Show code</summary>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;label class="ui-toggle"&gt;
-  &lt;input type="checkbox" checked&gt;
-  &lt;span class="ui-toggle-track"&gt;&lt;/span&gt;
-  Primary
-&lt;/label&gt;
-&lt;label class="ui-toggle success"&gt;
-  &lt;input type="checkbox" checked&gt;
-  &lt;span class="ui-toggle-track"&gt;&lt;/span&gt;
-  Success
-&lt;/label&gt;
-&lt;label class="ui-toggle danger"&gt;
-  &lt;input type="checkbox" checked&gt;
-  &lt;span class="ui-toggle-track"&gt;&lt;/span&gt;
-  Danger
-&lt;/label&gt;
-&lt;label class="ui-toggle warning"&gt;
-  &lt;input type="checkbox" checked&gt;
-  &lt;span class="ui-toggle-track"&gt;&lt;/span&gt;
-  Warning
-&lt;/label&gt;</pre>
-      </details>
-    </div>
-
-    <div class="demo-subsection">
-      <h3>Sizes</h3>
-      <div class="ui-row">
-        <label class="ui-toggle sm">
-          <input type="checkbox" checked>
-          <span class="ui-toggle-track"></span>
-          Small
-        </label>
-        <label class="ui-toggle">
-          <input type="checkbox" checked>
-          <span class="ui-toggle-track"></span>
-          Default
-        </label>
-        <label class="ui-toggle lg">
-          <input type="checkbox" checked>
-          <span class="ui-toggle-track"></span>
-          Large
-        </label>
-      </div>
-      <details class="demo-code">
-        <summary>Show code</summary>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;label class="ui-toggle sm"&gt;
-  &lt;input type="checkbox" checked&gt;
-  &lt;span class="ui-toggle-track"&gt;&lt;/span&gt;
-  Small
-&lt;/label&gt;
-&lt;label class="ui-toggle"&gt;
-  &lt;input type="checkbox" checked&gt;
-  &lt;span class="ui-toggle-track"&gt;&lt;/span&gt;
-  Default
-&lt;/label&gt;
-&lt;label class="ui-toggle lg"&gt;
-  &lt;input type="checkbox" checked&gt;
-  &lt;span class="ui-toggle-track"&gt;&lt;/span&gt;
-  Large
-&lt;/label&gt;</pre>
-      </details>
-    </div>
-
-    <div class="demo-subsection">
-      <h3>Disabled state</h3>
-      <div class="ui-row">
-        <label class="ui-toggle">
-          <input type="checkbox" disabled>
-          <span class="ui-toggle-track"></span>
-          Off (disabled)
-        </label>
-        <label class="ui-toggle">
-          <input type="checkbox" checked disabled>
-          <span class="ui-toggle-track"></span>
-          On (disabled)
-        </label>
-      </div>
-      <details class="demo-code">
-        <summary>Show code</summary>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;label class="ui-toggle"&gt;
-  &lt;input type="checkbox" disabled&gt;
-  &lt;span class="ui-toggle-track"&gt;&lt;/span&gt;
-  Off (disabled)
-&lt;/label&gt;
-&lt;label class="ui-toggle"&gt;
-  &lt;input type="checkbox" checked disabled&gt;
-  &lt;span class="ui-toggle-track"&gt;&lt;/span&gt;
-  On (disabled)
-&lt;/label&gt;</pre>
-      </details>
-    </div>
-  </div>
-
   <div class="demo-section" id="checkboxes">
     <h2>Checkboxes</h2>
 
@@ -919,382 +765,6 @@ document.getElementById('indeterminate-cb').indeterminate = true;
   &lt;input type="checkbox" checked&gt;
   Large
 &lt;/label&gt;</pre>
-      </details>
-    </div>
-  </div>
-
-  <div class="demo-section" id="radios">
-    <h2>Radios</h2>
-
-    <div class="demo-subsection">
-      <h3>Default</h3>
-      <div class="ui-stack sm">
-        <label class="ui-radio">
-          <input type="radio" name="demo-radio-1" checked>
-          Option one
-        </label>
-        <label class="ui-radio">
-          <input type="radio" name="demo-radio-1">
-          Option two
-        </label>
-        <label class="ui-radio">
-          <input type="radio" name="demo-radio-1">
-          Option three
-        </label>
-        <label class="ui-radio">
-          <input type="radio" name="demo-radio-disabled" disabled>
-          Disabled
-        </label>
-      </div>
-      <details class="demo-code">
-        <summary>Show code</summary>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;label class="ui-radio"&gt;
-  &lt;input type="radio" name="demo-radio-1" checked&gt;
-  Option one
-&lt;/label&gt;
-&lt;label class="ui-radio"&gt;
-  &lt;input type="radio" name="demo-radio-1"&gt;
-  Option two
-&lt;/label&gt;
-&lt;label class="ui-radio"&gt;
-  &lt;input type="radio" name="demo-radio-1"&gt;
-  Option three
-&lt;/label&gt;
-&lt;label class="ui-radio"&gt;
-  &lt;input type="radio" name="demo-radio-disabled" disabled&gt;
-  Disabled
-&lt;/label&gt;</pre>
-      </details>
-    </div>
-
-    <div class="demo-subsection">
-      <h3>Colors</h3>
-      <div class="ui-row">
-        <label class="ui-radio">
-          <input type="radio" name="demo-radio-color" checked>
-          Primary
-        </label>
-        <label class="ui-radio success">
-          <input type="radio" name="demo-radio-color-s" checked>
-          Success
-        </label>
-        <label class="ui-radio danger">
-          <input type="radio" name="demo-radio-color-d" checked>
-          Danger
-        </label>
-        <label class="ui-radio warning">
-          <input type="radio" name="demo-radio-color-w" checked>
-          Warning
-        </label>
-      </div>
-      <details class="demo-code">
-        <summary>Show code</summary>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;label class="ui-radio"&gt;
-  &lt;input type="radio" name="demo-radio-color" checked&gt;
-  Primary
-&lt;/label&gt;
-&lt;label class="ui-radio success"&gt;
-  &lt;input type="radio" name="demo-radio-color-s" checked&gt;
-  Success
-&lt;/label&gt;
-&lt;label class="ui-radio danger"&gt;
-  &lt;input type="radio" name="demo-radio-color-d" checked&gt;
-  Danger
-&lt;/label&gt;
-&lt;label class="ui-radio warning"&gt;
-  &lt;input type="radio" name="demo-radio-color-w" checked&gt;
-  Warning
-&lt;/label&gt;</pre>
-      </details>
-    </div>
-
-    <div class="demo-subsection">
-      <h3>Sizes</h3>
-      <div class="ui-row">
-        <label class="ui-radio sm">
-          <input type="radio" name="demo-radio-sz-s" checked>
-          Small
-        </label>
-        <label class="ui-radio">
-          <input type="radio" name="demo-radio-sz" checked>
-          Default
-        </label>
-        <label class="ui-radio lg">
-          <input type="radio" name="demo-radio-sz-l" checked>
-          Large
-        </label>
-      </div>
-      <details class="demo-code">
-        <summary>Show code</summary>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;label class="ui-radio sm"&gt;
-  &lt;input type="radio" name="demo-radio-sz-s" checked&gt;
-  Small
-&lt;/label&gt;
-&lt;label class="ui-radio"&gt;
-  &lt;input type="radio" name="demo-radio-sz" checked&gt;
-  Default
-&lt;/label&gt;
-&lt;label class="ui-radio lg"&gt;
-  &lt;input type="radio" name="demo-radio-sz-l" checked&gt;
-  Large
-&lt;/label&gt;</pre>
-      </details>
-    </div>
-  </div>
-
-  <div class="demo-section" id="inputs">
-    <h2>Inputs</h2>
-
-    <div class="demo-subsection">
-      <h3>Text inputs</h3>
-      <div class="ui-stack sm" style="max-width:24rem;">
-        <div class="ui-field">
-          <label>Name</label>
-          <input class="ui-input" type="text" placeholder="Jane Doe">
-        </div>
-        <div class="ui-field">
-          <label>Email</label>
-          <input class="ui-input" type="email" placeholder="jane@example.com">
-          <span class="ui-hint">We'll never share your email.</span>
-        </div>
-        <div class="ui-field">
-          <label>Password (error state)</label>
-          <input class="ui-input error" type="password" value="short">
-          <span class="ui-error-text">Password must be at least 8 characters.</span>
-        </div>
-        <div class="ui-field">
-          <label>Disabled</label>
-          <input class="ui-input" type="text" value="Can't edit this" disabled>
-        </div>
-      </div>
-      <details class="demo-code">
-        <summary>Show code</summary>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;div class="ui-field"&gt;
-  &lt;label&gt;Name&lt;/label&gt;
-  &lt;input class="ui-input" type="text" placeholder="Jane Doe"&gt;
-&lt;/div&gt;
-&lt;div class="ui-field"&gt;
-  &lt;label&gt;Email&lt;/label&gt;
-  &lt;input class="ui-input" type="email" placeholder="jane@example.com"&gt;
-  &lt;span class="ui-hint"&gt;We'll never share your email.&lt;/span&gt;
-&lt;/div&gt;
-&lt;div class="ui-field"&gt;
-  &lt;label&gt;Password (error state)&lt;/label&gt;
-  &lt;input class="ui-input error" type="password" value="short"&gt;
-  &lt;span class="ui-error-text"&gt;Password must be at least 8 characters.&lt;/span&gt;
-&lt;/div&gt;
-&lt;div class="ui-field"&gt;
-  &lt;label&gt;Disabled&lt;/label&gt;
-  &lt;input class="ui-input" type="text" value="Can't edit this" disabled&gt;
-&lt;/div&gt;</pre>
-      </details>
-    </div>
-
-    <div class="demo-subsection">
-      <h3>Select &amp; Textarea</h3>
-      <div class="ui-stack sm" style="max-width:24rem;">
-        <div class="ui-field">
-          <label>Select</label>
-          <select class="ui-select">
-            <option>Option one</option>
-            <option>Option two</option>
-            <option>Option three</option>
-          </select>
-        </div>
-        <div class="ui-field">
-          <label>Textarea</label>
-          <textarea class="ui-textarea" placeholder="Write something..."></textarea>
-        </div>
-      </div>
-      <details class="demo-code">
-        <summary>Show code</summary>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;div class="ui-field"&gt;
-  &lt;label&gt;Select&lt;/label&gt;
-  &lt;select class="ui-select"&gt;
-    &lt;option&gt;Option one&lt;/option&gt;
-    &lt;option&gt;Option two&lt;/option&gt;
-    &lt;option&gt;Option three&lt;/option&gt;
-  &lt;/select&gt;
-&lt;/div&gt;
-&lt;div class="ui-field"&gt;
-  &lt;label&gt;Textarea&lt;/label&gt;
-  &lt;textarea class="ui-textarea" placeholder="Write something..."&gt;&lt;/textarea&gt;
-&lt;/div&gt;</pre>
-      </details>
-    </div>
-
-    <div class="demo-subsection">
-      <h3>Inline checkboxes &amp; radios</h3>
-      <div class="ui-stack sm" style="max-width:24rem;">
-        <div class="ui-row sm">
-          <label class="ui-checkbox">
-            <input type="checkbox" checked>
-            Remember me
-          </label>
-          <label class="ui-checkbox">
-            <input type="checkbox">
-            Subscribe
-          </label>
-        </div>
-        <div class="ui-row sm">
-          <label class="ui-radio">
-            <input type="radio" name="radio-demo" checked>
-            Option A
-          </label>
-          <label class="ui-radio">
-            <input type="radio" name="radio-demo">
-            Option B
-          </label>
-        </div>
-      </div>
-      <details class="demo-code">
-        <summary>Show code</summary>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;div class="ui-row sm"&gt;
-  &lt;label class="ui-checkbox"&gt;
-    &lt;input type="checkbox" checked&gt;
-      Remember me
-  &lt;/label&gt;
-  &lt;label class="ui-checkbox"&gt;
-    &lt;input type="checkbox"&gt;
-      Subscribe
-  &lt;/label&gt;
-&lt;/div&gt;
-&lt;div class="ui-row sm"&gt;
-  &lt;label class="ui-radio"&gt;
-    &lt;input type="radio" name="radio-demo" checked&gt;
-      Option A
-  &lt;/label&gt;
-  &lt;label class="ui-radio"&gt;
-    &lt;input type="radio" name="radio-demo"&gt;
-      Option B
-  &lt;/label&gt;
-&lt;/div&gt;</pre>
-      </details>
-    </div>
-
-    <div class="demo-subsection">
-      <h3>Input sizes</h3>
-      <div class="ui-stack sm" style="max-width:24rem;">
-        <input class="ui-input sm" placeholder="Small input">
-        <input class="ui-input" placeholder="Default input">
-        <input class="ui-input lg" placeholder="Large input">
-      </div>
-      <details class="demo-code">
-        <summary>Show code</summary>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;input class="ui-input sm" placeholder="Small input"&gt;
-&lt;input class="ui-input" placeholder="Default input"&gt;
-&lt;input class="ui-input lg" placeholder="Large input"&gt;</pre>
-      </details>
-    </div>
-
-    <div class="demo-subsection">
-      <h3>Inputs with icons</h3>
-      <div class="ui-stack sm" style="max-width:24rem;">
-        <div class="ui-field">
-          <label>Search</label>
-          <div class="ui-input-icon">
-            <i class="bi bi-search"></i>
-            <input class="ui-input" type="search" placeholder="Search...">
-          </div>
-        </div>
-        <div class="ui-field">
-          <label>Email</label>
-          <div class="ui-input-icon">
-            <i class="bi bi-envelope"></i>
-            <input class="ui-input" type="email" placeholder="jane@example.com">
-          </div>
-        </div>
-        <div class="ui-field">
-          <label>Password</label>
-          <div class="ui-input-icon">
-            <i class="bi bi-lock"></i>
-            <input class="ui-input" type="password" placeholder="Enter password">
-            <button class="ui-input-icon-right" onclick="const i=this.previousElementSibling;i.type=i.type==='password'?'text':'password';this.querySelector('i').className=i.type==='password'?'bi bi-eye':'bi bi-eye-slash'"><i class="bi bi-eye"></i></button>
-          </div>
-        </div>
-        <div class="ui-field">
-          <label>Website</label>
-          <div class="ui-input-icon">
-            <i class="bi bi-globe"></i>
-            <input class="ui-input" type="url" placeholder="https://example.com">
-            <span class="ui-input-icon-right"><i class="bi bi-box-arrow-up-right"></i></span>
-          </div>
-        </div>
-      </div>
-      <details class="demo-code">
-        <summary>Show code</summary>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;div class="ui-field"&gt;
-  &lt;label&gt;Search&lt;/label&gt;
-  &lt;div class="ui-input-icon"&gt;
-    &lt;i class="bi bi-search"&gt;&lt;/i&gt;
-    &lt;input class="ui-input" type="search" placeholder="Search..."&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="ui-field"&gt;
-  &lt;label&gt;Email&lt;/label&gt;
-  &lt;div class="ui-input-icon"&gt;
-    &lt;i class="bi bi-envelope"&gt;&lt;/i&gt;
-    &lt;input class="ui-input" type="email" placeholder="jane@example.com"&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="ui-field"&gt;
-  &lt;label&gt;Password&lt;/label&gt;
-  &lt;div class="ui-input-icon"&gt;
-    &lt;i class="bi bi-lock"&gt;&lt;/i&gt;
-    &lt;input class="ui-input" type="password" placeholder="Enter password"&gt;
-    &lt;button class="ui-input-icon-right"&gt;&lt;i class="bi bi-eye"&gt;&lt;/i&gt;&lt;/button&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="ui-field"&gt;
-  &lt;label&gt;Website&lt;/label&gt;
-  &lt;div class="ui-input-icon"&gt;
-    &lt;i class="bi bi-globe"&gt;&lt;/i&gt;
-    &lt;input class="ui-input" type="url" placeholder="https://example.com"&gt;
-    &lt;span class="ui-input-icon-right"&gt;&lt;i class="bi bi-box-arrow-up-right"&gt;&lt;/i&gt;&lt;/span&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</pre>
-      </details>
-    </div>
-
-    <div class="demo-subsection">
-      <h3>Icon input sizes</h3>
-      <div class="ui-stack sm" style="max-width:24rem;">
-        <div class="ui-input-icon sm">
-          <i class="bi bi-search"></i>
-          <input class="ui-input sm" type="search" placeholder="Small">
-        </div>
-        <div class="ui-input-icon">
-          <i class="bi bi-search"></i>
-          <input class="ui-input" type="search" placeholder="Default">
-        </div>
-        <div class="ui-input-icon lg">
-          <i class="bi bi-search"></i>
-          <input class="ui-input lg" type="search" placeholder="Large">
-        </div>
-      </div>
-      <details class="demo-code">
-        <summary>Show code</summary>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;div class="ui-input-icon sm"&gt;
-  &lt;i class="bi bi-search"&gt;&lt;/i&gt;
-  &lt;input class="ui-input sm" type="search" placeholder="Small"&gt;
-&lt;/div&gt;
-&lt;div class="ui-input-icon"&gt;
-  &lt;i class="bi bi-search"&gt;&lt;/i&gt;
-  &lt;input class="ui-input" type="search" placeholder="Default"&gt;
-&lt;/div&gt;
-&lt;div class="ui-input-icon lg"&gt;
-  &lt;i class="bi bi-search"&gt;&lt;/i&gt;
-  &lt;input class="ui-input lg" type="search" placeholder="Large"&gt;
-&lt;/div&gt;</pre>
       </details>
     </div>
   </div>
@@ -1719,6 +1189,382 @@ document.addEventListener('click', e =&gt; {
     </div>
   </div>
 
+  <div class="demo-section" id="inputs">
+    <h2>Inputs</h2>
+
+    <div class="demo-subsection">
+      <h3>Text inputs</h3>
+      <div class="ui-stack sm" style="max-width:24rem;">
+        <div class="ui-field">
+          <label>Name</label>
+          <input class="ui-input" type="text" placeholder="Jane Doe">
+        </div>
+        <div class="ui-field">
+          <label>Email</label>
+          <input class="ui-input" type="email" placeholder="jane@example.com">
+          <span class="ui-hint">We'll never share your email.</span>
+        </div>
+        <div class="ui-field">
+          <label>Password (error state)</label>
+          <input class="ui-input error" type="password" value="short">
+          <span class="ui-error-text">Password must be at least 8 characters.</span>
+        </div>
+        <div class="ui-field">
+          <label>Disabled</label>
+          <input class="ui-input" type="text" value="Can't edit this" disabled>
+        </div>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-field"&gt;
+  &lt;label&gt;Name&lt;/label&gt;
+  &lt;input class="ui-input" type="text" placeholder="Jane Doe"&gt;
+&lt;/div&gt;
+&lt;div class="ui-field"&gt;
+  &lt;label&gt;Email&lt;/label&gt;
+  &lt;input class="ui-input" type="email" placeholder="jane@example.com"&gt;
+  &lt;span class="ui-hint"&gt;We'll never share your email.&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="ui-field"&gt;
+  &lt;label&gt;Password (error state)&lt;/label&gt;
+  &lt;input class="ui-input error" type="password" value="short"&gt;
+  &lt;span class="ui-error-text"&gt;Password must be at least 8 characters.&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="ui-field"&gt;
+  &lt;label&gt;Disabled&lt;/label&gt;
+  &lt;input class="ui-input" type="text" value="Can't edit this" disabled&gt;
+&lt;/div&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Select &amp; Textarea</h3>
+      <div class="ui-stack sm" style="max-width:24rem;">
+        <div class="ui-field">
+          <label>Select</label>
+          <select class="ui-select">
+            <option>Option one</option>
+            <option>Option two</option>
+            <option>Option three</option>
+          </select>
+        </div>
+        <div class="ui-field">
+          <label>Textarea</label>
+          <textarea class="ui-textarea" placeholder="Write something..."></textarea>
+        </div>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-field"&gt;
+  &lt;label&gt;Select&lt;/label&gt;
+  &lt;select class="ui-select"&gt;
+    &lt;option&gt;Option one&lt;/option&gt;
+    &lt;option&gt;Option two&lt;/option&gt;
+    &lt;option&gt;Option three&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/div&gt;
+&lt;div class="ui-field"&gt;
+  &lt;label&gt;Textarea&lt;/label&gt;
+  &lt;textarea class="ui-textarea" placeholder="Write something..."&gt;&lt;/textarea&gt;
+&lt;/div&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Inline checkboxes &amp; radios</h3>
+      <div class="ui-stack sm" style="max-width:24rem;">
+        <div class="ui-row sm">
+          <label class="ui-checkbox">
+            <input type="checkbox" checked>
+            Remember me
+          </label>
+          <label class="ui-checkbox">
+            <input type="checkbox">
+            Subscribe
+          </label>
+        </div>
+        <div class="ui-row sm">
+          <label class="ui-radio">
+            <input type="radio" name="radio-demo" checked>
+            Option A
+          </label>
+          <label class="ui-radio">
+            <input type="radio" name="radio-demo">
+            Option B
+          </label>
+        </div>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-row sm"&gt;
+  &lt;label class="ui-checkbox"&gt;
+    &lt;input type="checkbox" checked&gt;
+      Remember me
+  &lt;/label&gt;
+  &lt;label class="ui-checkbox"&gt;
+    &lt;input type="checkbox"&gt;
+      Subscribe
+  &lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="ui-row sm"&gt;
+  &lt;label class="ui-radio"&gt;
+    &lt;input type="radio" name="radio-demo" checked&gt;
+      Option A
+  &lt;/label&gt;
+  &lt;label class="ui-radio"&gt;
+    &lt;input type="radio" name="radio-demo"&gt;
+      Option B
+  &lt;/label&gt;
+&lt;/div&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Input sizes</h3>
+      <div class="ui-stack sm" style="max-width:24rem;">
+        <input class="ui-input sm" placeholder="Small input">
+        <input class="ui-input" placeholder="Default input">
+        <input class="ui-input lg" placeholder="Large input">
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;input class="ui-input sm" placeholder="Small input"&gt;
+&lt;input class="ui-input" placeholder="Default input"&gt;
+&lt;input class="ui-input lg" placeholder="Large input"&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Inputs with icons</h3>
+      <div class="ui-stack sm" style="max-width:24rem;">
+        <div class="ui-field">
+          <label>Search</label>
+          <div class="ui-input-icon">
+            <i class="bi bi-search"></i>
+            <input class="ui-input" type="search" placeholder="Search...">
+          </div>
+        </div>
+        <div class="ui-field">
+          <label>Email</label>
+          <div class="ui-input-icon">
+            <i class="bi bi-envelope"></i>
+            <input class="ui-input" type="email" placeholder="jane@example.com">
+          </div>
+        </div>
+        <div class="ui-field">
+          <label>Password</label>
+          <div class="ui-input-icon">
+            <i class="bi bi-lock"></i>
+            <input class="ui-input" type="password" placeholder="Enter password">
+            <button class="ui-input-icon-right" onclick="const i=this.previousElementSibling;i.type=i.type==='password'?'text':'password';this.querySelector('i').className=i.type==='password'?'bi bi-eye':'bi bi-eye-slash'"><i class="bi bi-eye"></i></button>
+          </div>
+        </div>
+        <div class="ui-field">
+          <label>Website</label>
+          <div class="ui-input-icon">
+            <i class="bi bi-globe"></i>
+            <input class="ui-input" type="url" placeholder="https://example.com">
+            <span class="ui-input-icon-right"><i class="bi bi-box-arrow-up-right"></i></span>
+          </div>
+        </div>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-field"&gt;
+  &lt;label&gt;Search&lt;/label&gt;
+  &lt;div class="ui-input-icon"&gt;
+    &lt;i class="bi bi-search"&gt;&lt;/i&gt;
+    &lt;input class="ui-input" type="search" placeholder="Search..."&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="ui-field"&gt;
+  &lt;label&gt;Email&lt;/label&gt;
+  &lt;div class="ui-input-icon"&gt;
+    &lt;i class="bi bi-envelope"&gt;&lt;/i&gt;
+    &lt;input class="ui-input" type="email" placeholder="jane@example.com"&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="ui-field"&gt;
+  &lt;label&gt;Password&lt;/label&gt;
+  &lt;div class="ui-input-icon"&gt;
+    &lt;i class="bi bi-lock"&gt;&lt;/i&gt;
+    &lt;input class="ui-input" type="password" placeholder="Enter password"&gt;
+    &lt;button class="ui-input-icon-right"&gt;&lt;i class="bi bi-eye"&gt;&lt;/i&gt;&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="ui-field"&gt;
+  &lt;label&gt;Website&lt;/label&gt;
+  &lt;div class="ui-input-icon"&gt;
+    &lt;i class="bi bi-globe"&gt;&lt;/i&gt;
+    &lt;input class="ui-input" type="url" placeholder="https://example.com"&gt;
+    &lt;span class="ui-input-icon-right"&gt;&lt;i class="bi bi-box-arrow-up-right"&gt;&lt;/i&gt;&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Icon input sizes</h3>
+      <div class="ui-stack sm" style="max-width:24rem;">
+        <div class="ui-input-icon sm">
+          <i class="bi bi-search"></i>
+          <input class="ui-input sm" type="search" placeholder="Small">
+        </div>
+        <div class="ui-input-icon">
+          <i class="bi bi-search"></i>
+          <input class="ui-input" type="search" placeholder="Default">
+        </div>
+        <div class="ui-input-icon lg">
+          <i class="bi bi-search"></i>
+          <input class="ui-input lg" type="search" placeholder="Large">
+        </div>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-input-icon sm"&gt;
+  &lt;i class="bi bi-search"&gt;&lt;/i&gt;
+  &lt;input class="ui-input sm" type="search" placeholder="Small"&gt;
+&lt;/div&gt;
+&lt;div class="ui-input-icon"&gt;
+  &lt;i class="bi bi-search"&gt;&lt;/i&gt;
+  &lt;input class="ui-input" type="search" placeholder="Default"&gt;
+&lt;/div&gt;
+&lt;div class="ui-input-icon lg"&gt;
+  &lt;i class="bi bi-search"&gt;&lt;/i&gt;
+  &lt;input class="ui-input lg" type="search" placeholder="Large"&gt;
+&lt;/div&gt;</pre>
+      </details>
+    </div>
+  </div>
+
+  <div class="demo-section" id="radios">
+    <h2>Radios</h2>
+
+    <div class="demo-subsection">
+      <h3>Default</h3>
+      <div class="ui-stack sm">
+        <label class="ui-radio">
+          <input type="radio" name="demo-radio-1" checked>
+          Option one
+        </label>
+        <label class="ui-radio">
+          <input type="radio" name="demo-radio-1">
+          Option two
+        </label>
+        <label class="ui-radio">
+          <input type="radio" name="demo-radio-1">
+          Option three
+        </label>
+        <label class="ui-radio">
+          <input type="radio" name="demo-radio-disabled" disabled>
+          Disabled
+        </label>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;label class="ui-radio"&gt;
+  &lt;input type="radio" name="demo-radio-1" checked&gt;
+  Option one
+&lt;/label&gt;
+&lt;label class="ui-radio"&gt;
+  &lt;input type="radio" name="demo-radio-1"&gt;
+  Option two
+&lt;/label&gt;
+&lt;label class="ui-radio"&gt;
+  &lt;input type="radio" name="demo-radio-1"&gt;
+  Option three
+&lt;/label&gt;
+&lt;label class="ui-radio"&gt;
+  &lt;input type="radio" name="demo-radio-disabled" disabled&gt;
+  Disabled
+&lt;/label&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Colors</h3>
+      <div class="ui-row">
+        <label class="ui-radio">
+          <input type="radio" name="demo-radio-color" checked>
+          Primary
+        </label>
+        <label class="ui-radio success">
+          <input type="radio" name="demo-radio-color-s" checked>
+          Success
+        </label>
+        <label class="ui-radio danger">
+          <input type="radio" name="demo-radio-color-d" checked>
+          Danger
+        </label>
+        <label class="ui-radio warning">
+          <input type="radio" name="demo-radio-color-w" checked>
+          Warning
+        </label>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;label class="ui-radio"&gt;
+  &lt;input type="radio" name="demo-radio-color" checked&gt;
+  Primary
+&lt;/label&gt;
+&lt;label class="ui-radio success"&gt;
+  &lt;input type="radio" name="demo-radio-color-s" checked&gt;
+  Success
+&lt;/label&gt;
+&lt;label class="ui-radio danger"&gt;
+  &lt;input type="radio" name="demo-radio-color-d" checked&gt;
+  Danger
+&lt;/label&gt;
+&lt;label class="ui-radio warning"&gt;
+  &lt;input type="radio" name="demo-radio-color-w" checked&gt;
+  Warning
+&lt;/label&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Sizes</h3>
+      <div class="ui-row">
+        <label class="ui-radio sm">
+          <input type="radio" name="demo-radio-sz-s" checked>
+          Small
+        </label>
+        <label class="ui-radio">
+          <input type="radio" name="demo-radio-sz" checked>
+          Default
+        </label>
+        <label class="ui-radio lg">
+          <input type="radio" name="demo-radio-sz-l" checked>
+          Large
+        </label>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;label class="ui-radio sm"&gt;
+  &lt;input type="radio" name="demo-radio-sz-s" checked&gt;
+  Small
+&lt;/label&gt;
+&lt;label class="ui-radio"&gt;
+  &lt;input type="radio" name="demo-radio-sz" checked&gt;
+  Default
+&lt;/label&gt;
+&lt;label class="ui-radio lg"&gt;
+  &lt;input type="radio" name="demo-radio-sz-l" checked&gt;
+  Large
+&lt;/label&gt;</pre>
+      </details>
+    </div>
+  </div>
+
   <div class="demo-section" id="sliders">
     <h2>Sliders</h2>
 
@@ -1760,6 +1606,745 @@ document.addEventListener('click', e =&gt; {
 
   <!-- ═══ Data Display ═══ -->
 
+  <div class="demo-section" id="toggles">
+    <h2>Toggle Buttons</h2>
+
+    <div class="demo-subsection">
+      <h3>Default</h3>
+      <div class="ui-row">
+        <label class="ui-toggle">
+          <input type="checkbox" checked>
+          <span class="ui-toggle-track"></span>
+          Enabled
+        </label>
+        <label class="ui-toggle">
+          <input type="checkbox">
+          <span class="ui-toggle-track"></span>
+          Disabled
+        </label>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;label class="ui-toggle"&gt;
+  &lt;input type="checkbox" checked&gt;
+  &lt;span class="ui-toggle-track"&gt;&lt;/span&gt;
+  Enabled
+&lt;/label&gt;
+&lt;label class="ui-toggle"&gt;
+  &lt;input type="checkbox"&gt;
+  &lt;span class="ui-toggle-track"&gt;&lt;/span&gt;
+  Disabled
+&lt;/label&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Color variants</h3>
+      <div class="ui-row">
+        <label class="ui-toggle">
+          <input type="checkbox" checked>
+          <span class="ui-toggle-track"></span>
+          Primary
+        </label>
+        <label class="ui-toggle success">
+          <input type="checkbox" checked>
+          <span class="ui-toggle-track"></span>
+          Success
+        </label>
+        <label class="ui-toggle danger">
+          <input type="checkbox" checked>
+          <span class="ui-toggle-track"></span>
+          Danger
+        </label>
+        <label class="ui-toggle warning">
+          <input type="checkbox" checked>
+          <span class="ui-toggle-track"></span>
+          Warning
+        </label>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;label class="ui-toggle"&gt;
+  &lt;input type="checkbox" checked&gt;
+  &lt;span class="ui-toggle-track"&gt;&lt;/span&gt;
+  Primary
+&lt;/label&gt;
+&lt;label class="ui-toggle success"&gt;
+  &lt;input type="checkbox" checked&gt;
+  &lt;span class="ui-toggle-track"&gt;&lt;/span&gt;
+  Success
+&lt;/label&gt;
+&lt;label class="ui-toggle danger"&gt;
+  &lt;input type="checkbox" checked&gt;
+  &lt;span class="ui-toggle-track"&gt;&lt;/span&gt;
+  Danger
+&lt;/label&gt;
+&lt;label class="ui-toggle warning"&gt;
+  &lt;input type="checkbox" checked&gt;
+  &lt;span class="ui-toggle-track"&gt;&lt;/span&gt;
+  Warning
+&lt;/label&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Sizes</h3>
+      <div class="ui-row">
+        <label class="ui-toggle sm">
+          <input type="checkbox" checked>
+          <span class="ui-toggle-track"></span>
+          Small
+        </label>
+        <label class="ui-toggle">
+          <input type="checkbox" checked>
+          <span class="ui-toggle-track"></span>
+          Default
+        </label>
+        <label class="ui-toggle lg">
+          <input type="checkbox" checked>
+          <span class="ui-toggle-track"></span>
+          Large
+        </label>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;label class="ui-toggle sm"&gt;
+  &lt;input type="checkbox" checked&gt;
+  &lt;span class="ui-toggle-track"&gt;&lt;/span&gt;
+  Small
+&lt;/label&gt;
+&lt;label class="ui-toggle"&gt;
+  &lt;input type="checkbox" checked&gt;
+  &lt;span class="ui-toggle-track"&gt;&lt;/span&gt;
+  Default
+&lt;/label&gt;
+&lt;label class="ui-toggle lg"&gt;
+  &lt;input type="checkbox" checked&gt;
+  &lt;span class="ui-toggle-track"&gt;&lt;/span&gt;
+  Large
+&lt;/label&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Disabled state</h3>
+      <div class="ui-row">
+        <label class="ui-toggle">
+          <input type="checkbox" disabled>
+          <span class="ui-toggle-track"></span>
+          Off (disabled)
+        </label>
+        <label class="ui-toggle">
+          <input type="checkbox" checked disabled>
+          <span class="ui-toggle-track"></span>
+          On (disabled)
+        </label>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;label class="ui-toggle"&gt;
+  &lt;input type="checkbox" disabled&gt;
+  &lt;span class="ui-toggle-track"&gt;&lt;/span&gt;
+  Off (disabled)
+&lt;/label&gt;
+&lt;label class="ui-toggle"&gt;
+  &lt;input type="checkbox" checked disabled&gt;
+  &lt;span class="ui-toggle-track"&gt;&lt;/span&gt;
+  On (disabled)
+&lt;/label&gt;</pre>
+      </details>
+    </div>
+  </div>
+
+  <div class="demo-section" id="accordions">
+    <h2>Accordions</h2>
+
+    <div class="demo-subsection">
+      <h3>Collapsible sections</h3>
+      <div class="ui-accordion">
+        <details open>
+          <summary>What is this UI library?</summary>
+          <div class="ui-accordion-body">A lightweight, CSS-first component library using custom properties for theming. No JavaScript framework required.</div>
+        </details>
+        <details>
+          <summary>How do I customize colors?</summary>
+          <div class="ui-accordion-body">Override the CSS custom properties (e.g., <code>--ui-primary</code>) on your root element, or use the theme configurator on this page.</div>
+        </details>
+        <details>
+          <summary>Does it support dark mode?</summary>
+          <div class="ui-accordion-body">Yes. Add <code>data-theme="dark"</code> to your <code>&lt;html&gt;</code> element, or use the system preference toggle.</div>
+        </details>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-accordion"&gt;
+  &lt;details open&gt;
+    &lt;summary&gt;What is this UI library?&lt;/summary&gt;
+    &lt;div class="ui-accordion-body"&gt;A lightweight, CSS-first component library using custom properties for theming. No JavaScript framework required.&lt;/div&gt;
+  &lt;/details&gt;
+  &lt;details&gt;
+    &lt;summary&gt;How do I customize colors?&lt;/summary&gt;
+    &lt;div class="ui-accordion-body"&gt;Override the CSS custom properties (e.g., --ui-primary) on your root element, or use the theme configurator on this page.&lt;/div&gt;
+  &lt;/details&gt;
+  &lt;details&gt;
+    &lt;summary&gt;Does it support dark mode?&lt;/summary&gt;
+    &lt;div class="ui-accordion-body"&gt;Yes. Add data-theme="dark" to your html element, or use the system preference toggle.&lt;/div&gt;
+  &lt;/details&gt;
+&lt;/div&gt;</pre>
+      </details>
+    </div>
+  </div>
+
+  <!-- ═══ Navigation ═══ -->
+
+  <div class="demo-section" id="avatars">
+    <h2>Avatars</h2>
+
+    <div class="demo-subsection">
+      <h3>Sizes & types</h3>
+      <div class="ui-row">
+        <div class="ui-avatar sm">S</div>
+        <div class="ui-avatar">AB</div>
+        <div class="ui-avatar lg">CD</div>
+        <div class="ui-avatar xl">EF</div>
+        <div class="ui-avatar square lg">SQ</div>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-avatar sm"&gt;S&lt;/div&gt;
+&lt;div class="ui-avatar"&gt;AB&lt;/div&gt;
+&lt;div class="ui-avatar lg"&gt;CD&lt;/div&gt;
+&lt;div class="ui-avatar xl"&gt;EF&lt;/div&gt;
+&lt;div class="ui-avatar square lg"&gt;SQ&lt;/div&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Status indicators</h3>
+      <div class="ui-row">
+        <div class="ui-avatar">JD<span class="ui-avatar-status online"></span></div>
+        <div class="ui-avatar">AK<span class="ui-avatar-status away"></span></div>
+        <div class="ui-avatar">MR<span class="ui-avatar-status busy"></span></div>
+        <div class="ui-avatar">LS<span class="ui-avatar-status offline"></span></div>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-avatar"&gt;JD&lt;span class="ui-avatar-status online"&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div class="ui-avatar"&gt;AK&lt;span class="ui-avatar-status away"&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div class="ui-avatar"&gt;MR&lt;span class="ui-avatar-status busy"&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div class="ui-avatar"&gt;LS&lt;span class="ui-avatar-status offline"&gt;&lt;/span&gt;&lt;/div&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Avatar group</h3>
+      <div class="ui-avatar-group">
+        <div class="ui-avatar">A</div>
+        <div class="ui-avatar">B</div>
+        <div class="ui-avatar">C</div>
+        <div class="ui-avatar">D</div>
+        <div class="ui-avatar" style="background:var(--ui-bg-subtle); color:var(--ui-text-muted);">+3</div>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-avatar-group"&gt;
+  &lt;div class="ui-avatar"&gt;A&lt;/div&gt;
+  &lt;div class="ui-avatar"&gt;B&lt;/div&gt;
+  &lt;div class="ui-avatar"&gt;C&lt;/div&gt;
+  &lt;div class="ui-avatar"&gt;D&lt;/div&gt;
+  &lt;div class="ui-avatar" style="background:var(--ui-bg-subtle); color:var(--ui-text-muted);"&gt;+3&lt;/div&gt;
+&lt;/div&gt;</pre>
+      </details>
+    </div>
+  </div>
+
+  <div class="demo-section" id="badges">
+    <h2>Badges</h2>
+
+    <div class="demo-subsection">
+      <h3>Default</h3>
+      <div class="ui-row sm">
+        <span class="ui-badge">Primary</span>
+        <span class="ui-badge secondary">Secondary</span>
+        <span class="ui-badge success">Success</span>
+        <span class="ui-badge danger">Danger</span>
+        <span class="ui-badge warning">Warning</span>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;span class="ui-badge"&gt;Primary&lt;/span&gt;
+&lt;span class="ui-badge secondary"&gt;Secondary&lt;/span&gt;
+&lt;span class="ui-badge success"&gt;Success&lt;/span&gt;
+&lt;span class="ui-badge danger"&gt;Danger&lt;/span&gt;
+&lt;span class="ui-badge warning"&gt;Warning&lt;/span&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Styles</h3>
+      <div class="ui-stack sm">
+        <div class="ui-row sm">
+          <span class="ui-badge solid">Solid</span>
+          <span class="ui-badge solid success">Success</span>
+          <span class="ui-badge solid danger">Danger</span>
+          <span class="ui-badge solid warning">Warning</span>
+        </div>
+        <div class="ui-row sm">
+          <span class="ui-badge outline">Outline</span>
+          <span class="ui-badge outline success">Success</span>
+          <span class="ui-badge outline danger">Danger</span>
+          <span class="ui-badge outline warning">Warning</span>
+        </div>
+        <div class="ui-row sm">
+          <span class="ui-badge dot">With dot</span>
+          <span class="ui-badge dot success">Online</span>
+          <span class="ui-badge dot danger">Offline</span>
+        </div>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-row sm"&gt;
+  &lt;span class="ui-badge solid"&gt;Solid&lt;/span&gt;
+  &lt;span class="ui-badge solid success"&gt;Success&lt;/span&gt;
+  &lt;span class="ui-badge solid danger"&gt;Danger&lt;/span&gt;
+  &lt;span class="ui-badge solid warning"&gt;Warning&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="ui-row sm"&gt;
+  &lt;span class="ui-badge outline"&gt;Outline&lt;/span&gt;
+  &lt;span class="ui-badge outline success"&gt;Success&lt;/span&gt;
+  &lt;span class="ui-badge outline danger"&gt;Danger&lt;/span&gt;
+  &lt;span class="ui-badge outline warning"&gt;Warning&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="ui-row sm"&gt;
+  &lt;span class="ui-badge dot"&gt;With dot&lt;/span&gt;
+  &lt;span class="ui-badge dot success"&gt;Online&lt;/span&gt;
+  &lt;span class="ui-badge dot danger"&gt;Offline&lt;/span&gt;
+&lt;/div&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Sizes</h3>
+      <div class="ui-row sm">
+        <span class="ui-badge sm">Small</span>
+        <span class="ui-badge">Default</span>
+        <span class="ui-badge lg">Large</span>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;span class="ui-badge sm"&gt;Small&lt;/span&gt;
+&lt;span class="ui-badge"&gt;Default&lt;/span&gt;
+&lt;span class="ui-badge lg"&gt;Large&lt;/span&gt;</pre>
+      </details>
+    </div>
+  </div>
+
+  <div class="demo-section" id="cards">
+    <h2>Cards</h2>
+
+    <div class="demo-subsection">
+      <h3>Card variants</h3>
+      <div class="grid-3">
+        <div class="ui-card">
+          <div class="ui-card-body">
+            <h4 class="ui-card-title">Simple card</h4>
+            <p class="ui-card-text">A basic card with just a body. Good for small content blocks.</p>
+          </div>
+        </div>
+
+        <div class="ui-card">
+          <div class="ui-card-header">Featured</div>
+          <div class="ui-card-body">
+            <h4 class="ui-card-title">With header</h4>
+            <p class="ui-card-text">Cards can have a header section for labels or titles.</p>
+          </div>
+          <div class="ui-card-footer">
+            <button class="ui-btn sm ghost">Cancel</button>
+            <button class="ui-btn sm">Save</button>
+          </div>
+        </div>
+
+        <div class="ui-card elevated">
+          <div class="ui-card-body">
+            <h4 class="ui-card-title">Elevated</h4>
+            <p class="ui-card-text">Uses shadow instead of border for a lifted look.</p>
+          </div>
+        </div>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-card"&gt;
+  &lt;div class="ui-card-body"&gt;
+    &lt;h4 class="ui-card-title"&gt;Simple card&lt;/h4&gt;
+    &lt;p class="ui-card-text"&gt;A basic card with just a body. Good for small content blocks.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="ui-card"&gt;
+  &lt;div class="ui-card-header"&gt;Featured&lt;/div&gt;
+  &lt;div class="ui-card-body"&gt;
+    &lt;h4 class="ui-card-title"&gt;With header&lt;/h4&gt;
+    &lt;p class="ui-card-text"&gt;Cards can have a header section for labels or titles.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="ui-card-footer"&gt;
+    &lt;button class="ui-btn sm ghost"&gt;Cancel&lt;/button&gt;
+    &lt;button class="ui-btn sm"&gt;Save&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="ui-card elevated"&gt;
+  &lt;div class="ui-card-body"&gt;
+    &lt;h4 class="ui-card-title"&gt;Elevated&lt;/h4&gt;
+    &lt;p class="ui-card-text"&gt;Uses shadow instead of border for a lifted look.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+      </details>
+    </div>
+  </div>
+
+  <!-- Badges, Tags & Alerts -->
+  <div class="demo-section" id="numbered-badge">
+    <h2>Numbered Badge</h2>
+
+    <div class="demo-subsection">
+      <h3>On buttons</h3>
+      <div class="ui-row">
+        <span class="ui-badge-corner">
+          <button class="ui-btn outline"><i class="bi bi-bell"></i> Notifications</button>
+          <span class="ui-count">3</span>
+        </span>
+        <span class="ui-badge-corner">
+          <button class="ui-btn outline secondary"><i class="bi bi-envelope"></i> Mail</button>
+          <span class="ui-count primary">12</span>
+        </span>
+        <span class="ui-badge-corner">
+          <button class="ui-btn outline"><i class="bi bi-cart"></i> Cart</button>
+          <span class="ui-count success">99+</span>
+        </span>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;!-- Single digit = circle, multi-digit = pill --&gt;
+&lt;span class="ui-badge-corner"&gt;
+  &lt;button class="ui-btn outline"&gt;&lt;i class="bi bi-bell"&gt;&lt;/i&gt; Notifications&lt;/button&gt;
+  &lt;span class="ui-count"&gt;3&lt;/span&gt;
+&lt;/span&gt;
+
+&lt;!-- Multi-digit: pill shape (default) --&gt;
+&lt;span class="ui-badge-corner"&gt;
+  &lt;button class="ui-btn outline secondary"&gt;&lt;i class="bi bi-envelope"&gt;&lt;/i&gt; Mail&lt;/button&gt;
+  &lt;span class="ui-count primary"&gt;12&lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span class="ui-badge-corner"&gt;
+  &lt;button class="ui-btn outline"&gt;&lt;i class="bi bi-cart"&gt;&lt;/i&gt; Cart&lt;/button&gt;
+  &lt;span class="ui-count success"&gt;99+&lt;/span&gt;
+&lt;/span&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>On icon buttons &amp; corner positions</h3>
+      <div class="ui-row lg">
+        <span class="ui-badge-corner">
+          <button class="ui-btn icon outline"><i class="bi bi-bell"></i></button>
+          <span class="ui-count">5</span>
+        </span>
+        <span class="ui-badge-corner">
+          <button class="ui-btn icon outline secondary"><i class="bi bi-chat"></i></button>
+          <span class="ui-count top-left primary">2</span>
+        </span>
+        <span class="ui-badge-corner">
+          <button class="ui-btn icon outline"><i class="bi bi-heart"></i></button>
+          <span class="ui-count bottom-right success">8</span>
+        </span>
+        <span class="ui-badge-corner">
+          <button class="ui-btn icon outline secondary"><i class="bi bi-gear"></i></button>
+          <span class="ui-count dot"></span>
+        </span>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;!-- Top-right (default) --&gt;
+&lt;span class="ui-badge-corner"&gt;
+  &lt;button class="ui-btn icon outline"&gt;&lt;i class="bi bi-bell"&gt;&lt;/i&gt;&lt;/button&gt;
+  &lt;span class="ui-count"&gt;5&lt;/span&gt;
+&lt;/span&gt;
+
+&lt;!-- Top-left --&gt;
+&lt;span class="ui-badge-corner"&gt;
+  &lt;button class="ui-btn icon outline secondary"&gt;&lt;i class="bi bi-chat"&gt;&lt;/i&gt;&lt;/button&gt;
+  &lt;span class="ui-count top-left primary"&gt;2&lt;/span&gt;
+&lt;/span&gt;
+
+&lt;!-- Bottom-right --&gt;
+&lt;span class="ui-badge-corner"&gt;
+  &lt;button class="ui-btn icon outline"&gt;&lt;i class="bi bi-heart"&gt;&lt;/i&gt;&lt;/button&gt;
+  &lt;span class="ui-count bottom-right success"&gt;8&lt;/span&gt;
+&lt;/span&gt;
+
+&lt;!-- Dot-only (no number) --&gt;
+&lt;span class="ui-badge-corner"&gt;
+  &lt;button class="ui-btn icon outline secondary"&gt;&lt;i class="bi bi-gear"&gt;&lt;/i&gt;&lt;/button&gt;
+  &lt;span class="ui-count dot"&gt;&lt;/span&gt;
+&lt;/span&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Color variants</h3>
+      <div class="ui-row lg">
+        <span class="ui-badge-corner">
+          <button class="ui-btn icon outline"><i class="bi bi-bell"></i></button>
+          <span class="ui-count">3</span>
+        </span>
+        <span class="ui-badge-corner">
+          <button class="ui-btn icon outline"><i class="bi bi-bell"></i></button>
+          <span class="ui-count primary">3</span>
+        </span>
+        <span class="ui-badge-corner">
+          <button class="ui-btn icon outline"><i class="bi bi-bell"></i></button>
+          <span class="ui-count success">3</span>
+        </span>
+        <span class="ui-badge-corner">
+          <button class="ui-btn icon outline"><i class="bi bi-bell"></i></button>
+          <span class="ui-count warning">3</span>
+        </span>
+        <span class="ui-badge-corner">
+          <button class="ui-btn icon outline"><i class="bi bi-bell"></i></button>
+          <span class="ui-count secondary">3</span>
+        </span>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;!-- danger (default) --&gt;
+&lt;span class="ui-badge-corner"&gt;
+  &lt;button class="ui-btn icon outline"&gt;&lt;i class="bi bi-bell"&gt;&lt;/i&gt;&lt;/button&gt;
+  &lt;span class="ui-count"&gt;3&lt;/span&gt;
+&lt;/span&gt;
+
+&lt;!-- primary --&gt;
+&lt;span class="ui-badge-corner"&gt;
+  &lt;button class="ui-btn icon outline"&gt;&lt;i class="bi bi-bell"&gt;&lt;/i&gt;&lt;/button&gt;
+  &lt;span class="ui-count primary"&gt;3&lt;/span&gt;
+&lt;/span&gt;
+
+&lt;!-- success --&gt;
+&lt;span class="ui-badge-corner"&gt;
+  &lt;button class="ui-btn icon outline"&gt;&lt;i class="bi bi-bell"&gt;&lt;/i&gt;&lt;/button&gt;
+  &lt;span class="ui-count success"&gt;3&lt;/span&gt;
+&lt;/span&gt;
+
+&lt;!-- warning --&gt;
+&lt;span class="ui-badge-corner"&gt;
+  &lt;button class="ui-btn icon outline"&gt;&lt;i class="bi bi-bell"&gt;&lt;/i&gt;&lt;/button&gt;
+  &lt;span class="ui-count warning"&gt;3&lt;/span&gt;
+&lt;/span&gt;
+
+&lt;!-- secondary --&gt;
+&lt;span class="ui-badge-corner"&gt;
+  &lt;button class="ui-btn icon outline"&gt;&lt;i class="bi bi-bell"&gt;&lt;/i&gt;&lt;/button&gt;
+  &lt;span class="ui-count secondary"&gt;3&lt;/span&gt;
+&lt;/span&gt;</pre>
+      </details>
+    </div>
+  </div>
+
+  <div class="demo-section" id="panels">
+    <h2>Panels</h2>
+    <div class="grid-2">
+
+      <div>
+        <div class="demo-subsection">
+          <h3>Default Panel</h3>
+          <div class="ui-panel">
+            <div class="ui-panel-header">
+              <h3 class="ui-panel-title">Default Panel</h3>
+              <div class="ui-panel-actions">
+                <button class="ui-btn sm ghost secondary">Edit</button>
+              </div>
+            </div>
+            <div class="ui-panel-body">
+              Panels group related content with a header, body, and optional footer. This is the default style with a subtle shadow.
+            </div>
+            <div class="ui-panel-footer">
+              <button class="ui-btn sm ghost secondary">Cancel</button>
+              <button class="ui-btn sm">Save</button>
+            </div>
+          </div>
+          <details class="demo-code">
+            <summary>Show code</summary>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-panel"&gt;
+  &lt;div class="ui-panel-header"&gt;
+    &lt;h3 class="ui-panel-title"&gt;Default Panel&lt;/h3&gt;
+    &lt;div class="ui-panel-actions"&gt;
+      &lt;button class="ui-btn sm ghost secondary"&gt;Edit&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="ui-panel-body"&gt;
+    Panels group related content with a header, body, and optional footer. This is the default style with a subtle shadow.
+  &lt;/div&gt;
+  &lt;div class="ui-panel-footer"&gt;
+    &lt;button class="ui-btn sm ghost secondary"&gt;Cancel&lt;/button&gt;
+    &lt;button class="ui-btn sm"&gt;Save&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+          </details>
+        </div>
+
+        <div class="demo-subsection">
+          <h3>Borderless Panel</h3>
+          <div class="ui-panel borderless">
+            <div class="ui-panel-header">
+              <h3 class="ui-panel-title">Borderless Panel</h3>
+            </div>
+            <div class="ui-panel-body">
+              The <code>.borderless</code> variant removes the border and relies solely on shadow for separation.
+            </div>
+          </div>
+          <details class="demo-code">
+            <summary>Show code</summary>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-panel borderless"&gt;
+  &lt;div class="ui-panel-header"&gt;
+    &lt;h3 class="ui-panel-title"&gt;Borderless Panel&lt;/h3&gt;
+  &lt;/div&gt;
+  &lt;div class="ui-panel-body"&gt;
+    The .borderless variant removes the border and relies solely on shadow for separation.
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+          </details>
+        </div>
+      </div>
+
+      <div>
+        <div class="demo-subsection">
+          <h3>Raised Panel</h3>
+          <div class="ui-panel raised">
+            <div class="ui-panel-header">
+              <h3 class="ui-panel-title">Raised Panel</h3>
+            </div>
+            <div class="ui-panel-body">
+              This panel uses the <code>.raised</code> modifier for a more pronounced shadow, making it appear elevated from the page.
+            </div>
+          </div>
+          <details class="demo-code">
+            <summary>Show code</summary>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-panel raised"&gt;
+  &lt;div class="ui-panel-header"&gt;
+    &lt;h3 class="ui-panel-title"&gt;Raised Panel&lt;/h3&gt;
+  &lt;/div&gt;
+  &lt;div class="ui-panel-body"&gt;
+    This panel uses the .raised modifier for a more pronounced shadow, making it appear elevated from the page.
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+          </details>
+        </div>
+
+        <div class="demo-subsection">
+          <h3>Flat Panel</h3>
+          <div class="ui-panel flat">
+            <div class="ui-panel-header">
+              <h3 class="ui-panel-title">Flat Panel</h3>
+            </div>
+            <div class="ui-panel-body">
+              The <code>.flat</code> variant removes the shadow entirely, keeping only the border for a minimal look.
+            </div>
+          </div>
+          <details class="demo-code">
+            <summary>Show code</summary>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-panel flat"&gt;
+  &lt;div class="ui-panel-header"&gt;
+    &lt;h3 class="ui-panel-title"&gt;Flat Panel&lt;/h3&gt;
+  &lt;/div&gt;
+  &lt;div class="ui-panel-body"&gt;
+    The .flat variant removes the shadow entirely, keeping only the border for a minimal look.
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+          </details>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="demo-section" id="dots">
+    <h2>Status Dots</h2>
+
+    <div class="demo-subsection">
+      <h3>Colors</h3>
+      <div class="ui-row sm">
+        <span class="ui-dot"></span>
+        <span class="ui-dot primary"></span>
+        <span class="ui-dot success"></span>
+        <span class="ui-dot danger"></span>
+        <span class="ui-dot warning"></span>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;span class="ui-dot"&gt;&lt;/span&gt;
+&lt;span class="ui-dot primary"&gt;&lt;/span&gt;
+&lt;span class="ui-dot success"&gt;&lt;/span&gt;
+&lt;span class="ui-dot danger"&gt;&lt;/span&gt;
+&lt;span class="ui-dot warning"&gt;&lt;/span&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Sizes</h3>
+      <div class="ui-row sm" style="align-items:center">
+        <span class="ui-dot success sm"></span>
+        <span class="ui-dot success"></span>
+        <span class="ui-dot success lg"></span>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;span class="ui-dot success sm"&gt;&lt;/span&gt;
+&lt;span class="ui-dot success"&gt;&lt;/span&gt;
+&lt;span class="ui-dot success lg"&gt;&lt;/span&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>With text &amp; pulse</h3>
+      <div class="ui-stack sm">
+        <div class="ui-row sm"><span class="ui-dot success"></span> Online</div>
+        <div class="ui-row sm"><span class="ui-dot danger pulse"></span> Recording</div>
+        <div class="ui-row sm"><span class="ui-dot warning"></span> Away</div>
+        <div class="ui-row sm"><span class="ui-dot"></span> Offline</div>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-row sm"&gt;&lt;span class="ui-dot success"&gt;&lt;/span&gt; Online&lt;/div&gt;
+&lt;div class="ui-row sm"&gt;&lt;span class="ui-dot danger pulse"&gt;&lt;/span&gt; Recording&lt;/div&gt;
+&lt;div class="ui-row sm"&gt;&lt;span class="ui-dot warning"&gt;&lt;/span&gt; Away&lt;/div&gt;
+&lt;div class="ui-row sm"&gt;&lt;span class="ui-dot"&gt;&lt;/span&gt; Offline&lt;/div&gt;</pre>
+      </details>
+    </div>
+  </div>
+
+  <!-- Numbered Badge (Corner Badge) -->
   <div class="demo-section" id="tables">
     <h2>Tables</h2>
 
@@ -2363,276 +2948,6 @@ document.addEventListener('click', e =&gt; {
     </div>
   </div>
 
-  <div class="demo-section" id="panels">
-    <h2>Panels</h2>
-    <div class="grid-2">
-
-      <div>
-        <div class="demo-subsection">
-          <h3>Default Panel</h3>
-          <div class="ui-panel">
-            <div class="ui-panel-header">
-              <h3 class="ui-panel-title">Default Panel</h3>
-              <div class="ui-panel-actions">
-                <button class="ui-btn sm ghost secondary">Edit</button>
-              </div>
-            </div>
-            <div class="ui-panel-body">
-              Panels group related content with a header, body, and optional footer. This is the default style with a subtle shadow.
-            </div>
-            <div class="ui-panel-footer">
-              <button class="ui-btn sm ghost secondary">Cancel</button>
-              <button class="ui-btn sm">Save</button>
-            </div>
-          </div>
-          <details class="demo-code">
-            <summary>Show code</summary>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;div class="ui-panel"&gt;
-  &lt;div class="ui-panel-header"&gt;
-    &lt;h3 class="ui-panel-title"&gt;Default Panel&lt;/h3&gt;
-    &lt;div class="ui-panel-actions"&gt;
-      &lt;button class="ui-btn sm ghost secondary"&gt;Edit&lt;/button&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class="ui-panel-body"&gt;
-    Panels group related content with a header, body, and optional footer. This is the default style with a subtle shadow.
-  &lt;/div&gt;
-  &lt;div class="ui-panel-footer"&gt;
-    &lt;button class="ui-btn sm ghost secondary"&gt;Cancel&lt;/button&gt;
-    &lt;button class="ui-btn sm"&gt;Save&lt;/button&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</pre>
-          </details>
-        </div>
-
-        <div class="demo-subsection">
-          <h3>Borderless Panel</h3>
-          <div class="ui-panel borderless">
-            <div class="ui-panel-header">
-              <h3 class="ui-panel-title">Borderless Panel</h3>
-            </div>
-            <div class="ui-panel-body">
-              The <code>.borderless</code> variant removes the border and relies solely on shadow for separation.
-            </div>
-          </div>
-          <details class="demo-code">
-            <summary>Show code</summary>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;div class="ui-panel borderless"&gt;
-  &lt;div class="ui-panel-header"&gt;
-    &lt;h3 class="ui-panel-title"&gt;Borderless Panel&lt;/h3&gt;
-  &lt;/div&gt;
-  &lt;div class="ui-panel-body"&gt;
-    The .borderless variant removes the border and relies solely on shadow for separation.
-  &lt;/div&gt;
-&lt;/div&gt;</pre>
-          </details>
-        </div>
-      </div>
-
-      <div>
-        <div class="demo-subsection">
-          <h3>Raised Panel</h3>
-          <div class="ui-panel raised">
-            <div class="ui-panel-header">
-              <h3 class="ui-panel-title">Raised Panel</h3>
-            </div>
-            <div class="ui-panel-body">
-              This panel uses the <code>.raised</code> modifier for a more pronounced shadow, making it appear elevated from the page.
-            </div>
-          </div>
-          <details class="demo-code">
-            <summary>Show code</summary>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;div class="ui-panel raised"&gt;
-  &lt;div class="ui-panel-header"&gt;
-    &lt;h3 class="ui-panel-title"&gt;Raised Panel&lt;/h3&gt;
-  &lt;/div&gt;
-  &lt;div class="ui-panel-body"&gt;
-    This panel uses the .raised modifier for a more pronounced shadow, making it appear elevated from the page.
-  &lt;/div&gt;
-&lt;/div&gt;</pre>
-          </details>
-        </div>
-
-        <div class="demo-subsection">
-          <h3>Flat Panel</h3>
-          <div class="ui-panel flat">
-            <div class="ui-panel-header">
-              <h3 class="ui-panel-title">Flat Panel</h3>
-            </div>
-            <div class="ui-panel-body">
-              The <code>.flat</code> variant removes the shadow entirely, keeping only the border for a minimal look.
-            </div>
-          </div>
-          <details class="demo-code">
-            <summary>Show code</summary>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;div class="ui-panel flat"&gt;
-  &lt;div class="ui-panel-header"&gt;
-    &lt;h3 class="ui-panel-title"&gt;Flat Panel&lt;/h3&gt;
-  &lt;/div&gt;
-  &lt;div class="ui-panel-body"&gt;
-    The .flat variant removes the shadow entirely, keeping only the border for a minimal look.
-  &lt;/div&gt;
-&lt;/div&gt;</pre>
-          </details>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="demo-section" id="cards">
-    <h2>Cards</h2>
-
-    <div class="demo-subsection">
-      <h3>Card variants</h3>
-      <div class="grid-3">
-        <div class="ui-card">
-          <div class="ui-card-body">
-            <h4 class="ui-card-title">Simple card</h4>
-            <p class="ui-card-text">A basic card with just a body. Good for small content blocks.</p>
-          </div>
-        </div>
-
-        <div class="ui-card">
-          <div class="ui-card-header">Featured</div>
-          <div class="ui-card-body">
-            <h4 class="ui-card-title">With header</h4>
-            <p class="ui-card-text">Cards can have a header section for labels or titles.</p>
-          </div>
-          <div class="ui-card-footer">
-            <button class="ui-btn sm ghost">Cancel</button>
-            <button class="ui-btn sm">Save</button>
-          </div>
-        </div>
-
-        <div class="ui-card elevated">
-          <div class="ui-card-body">
-            <h4 class="ui-card-title">Elevated</h4>
-            <p class="ui-card-text">Uses shadow instead of border for a lifted look.</p>
-          </div>
-        </div>
-      </div>
-      <details class="demo-code">
-        <summary>Show code</summary>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;div class="ui-card"&gt;
-  &lt;div class="ui-card-body"&gt;
-    &lt;h4 class="ui-card-title"&gt;Simple card&lt;/h4&gt;
-    &lt;p class="ui-card-text"&gt;A basic card with just a body. Good for small content blocks.&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="ui-card"&gt;
-  &lt;div class="ui-card-header"&gt;Featured&lt;/div&gt;
-  &lt;div class="ui-card-body"&gt;
-    &lt;h4 class="ui-card-title"&gt;With header&lt;/h4&gt;
-    &lt;p class="ui-card-text"&gt;Cards can have a header section for labels or titles.&lt;/p&gt;
-  &lt;/div&gt;
-  &lt;div class="ui-card-footer"&gt;
-    &lt;button class="ui-btn sm ghost"&gt;Cancel&lt;/button&gt;
-    &lt;button class="ui-btn sm"&gt;Save&lt;/button&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="ui-card elevated"&gt;
-  &lt;div class="ui-card-body"&gt;
-    &lt;h4 class="ui-card-title"&gt;Elevated&lt;/h4&gt;
-    &lt;p class="ui-card-text"&gt;Uses shadow instead of border for a lifted look.&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</pre>
-      </details>
-    </div>
-  </div>
-
-  <!-- Badges, Tags & Alerts -->
-  <div class="demo-section" id="badges">
-    <h2>Badges</h2>
-
-    <div class="demo-subsection">
-      <h3>Default</h3>
-      <div class="ui-row sm">
-        <span class="ui-badge">Primary</span>
-        <span class="ui-badge secondary">Secondary</span>
-        <span class="ui-badge success">Success</span>
-        <span class="ui-badge danger">Danger</span>
-        <span class="ui-badge warning">Warning</span>
-      </div>
-      <details class="demo-code">
-        <summary>Show code</summary>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;span class="ui-badge"&gt;Primary&lt;/span&gt;
-&lt;span class="ui-badge secondary"&gt;Secondary&lt;/span&gt;
-&lt;span class="ui-badge success"&gt;Success&lt;/span&gt;
-&lt;span class="ui-badge danger"&gt;Danger&lt;/span&gt;
-&lt;span class="ui-badge warning"&gt;Warning&lt;/span&gt;</pre>
-      </details>
-    </div>
-
-    <div class="demo-subsection">
-      <h3>Styles</h3>
-      <div class="ui-stack sm">
-        <div class="ui-row sm">
-          <span class="ui-badge solid">Solid</span>
-          <span class="ui-badge solid success">Success</span>
-          <span class="ui-badge solid danger">Danger</span>
-          <span class="ui-badge solid warning">Warning</span>
-        </div>
-        <div class="ui-row sm">
-          <span class="ui-badge outline">Outline</span>
-          <span class="ui-badge outline success">Success</span>
-          <span class="ui-badge outline danger">Danger</span>
-          <span class="ui-badge outline warning">Warning</span>
-        </div>
-        <div class="ui-row sm">
-          <span class="ui-badge dot">With dot</span>
-          <span class="ui-badge dot success">Online</span>
-          <span class="ui-badge dot danger">Offline</span>
-        </div>
-      </div>
-      <details class="demo-code">
-        <summary>Show code</summary>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;div class="ui-row sm"&gt;
-  &lt;span class="ui-badge solid"&gt;Solid&lt;/span&gt;
-  &lt;span class="ui-badge solid success"&gt;Success&lt;/span&gt;
-  &lt;span class="ui-badge solid danger"&gt;Danger&lt;/span&gt;
-  &lt;span class="ui-badge solid warning"&gt;Warning&lt;/span&gt;
-&lt;/div&gt;
-&lt;div class="ui-row sm"&gt;
-  &lt;span class="ui-badge outline"&gt;Outline&lt;/span&gt;
-  &lt;span class="ui-badge outline success"&gt;Success&lt;/span&gt;
-  &lt;span class="ui-badge outline danger"&gt;Danger&lt;/span&gt;
-  &lt;span class="ui-badge outline warning"&gt;Warning&lt;/span&gt;
-&lt;/div&gt;
-&lt;div class="ui-row sm"&gt;
-  &lt;span class="ui-badge dot"&gt;With dot&lt;/span&gt;
-  &lt;span class="ui-badge dot success"&gt;Online&lt;/span&gt;
-  &lt;span class="ui-badge dot danger"&gt;Offline&lt;/span&gt;
-&lt;/div&gt;</pre>
-      </details>
-    </div>
-
-    <div class="demo-subsection">
-      <h3>Sizes</h3>
-      <div class="ui-row sm">
-        <span class="ui-badge sm">Small</span>
-        <span class="ui-badge">Default</span>
-        <span class="ui-badge lg">Large</span>
-      </div>
-      <details class="demo-code">
-        <summary>Show code</summary>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;span class="ui-badge sm"&gt;Small&lt;/span&gt;
-&lt;span class="ui-badge"&gt;Default&lt;/span&gt;
-&lt;span class="ui-badge lg"&gt;Large&lt;/span&gt;</pre>
-      </details>
-    </div>
-  </div>
-
   <div class="demo-section" id="tags">
     <h2>Tags</h2>
 
@@ -2676,215 +2991,6 @@ document.addEventListener('click', e =&gt; {
 
   </div>
 
-  <div class="demo-section" id="dots">
-    <h2>Status Dots</h2>
-
-    <div class="demo-subsection">
-      <h3>Colors</h3>
-      <div class="ui-row sm">
-        <span class="ui-dot"></span>
-        <span class="ui-dot primary"></span>
-        <span class="ui-dot success"></span>
-        <span class="ui-dot danger"></span>
-        <span class="ui-dot warning"></span>
-      </div>
-      <details class="demo-code">
-        <summary>Show code</summary>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;span class="ui-dot"&gt;&lt;/span&gt;
-&lt;span class="ui-dot primary"&gt;&lt;/span&gt;
-&lt;span class="ui-dot success"&gt;&lt;/span&gt;
-&lt;span class="ui-dot danger"&gt;&lt;/span&gt;
-&lt;span class="ui-dot warning"&gt;&lt;/span&gt;</pre>
-      </details>
-    </div>
-
-    <div class="demo-subsection">
-      <h3>Sizes</h3>
-      <div class="ui-row sm" style="align-items:center">
-        <span class="ui-dot success sm"></span>
-        <span class="ui-dot success"></span>
-        <span class="ui-dot success lg"></span>
-      </div>
-      <details class="demo-code">
-        <summary>Show code</summary>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;span class="ui-dot success sm"&gt;&lt;/span&gt;
-&lt;span class="ui-dot success"&gt;&lt;/span&gt;
-&lt;span class="ui-dot success lg"&gt;&lt;/span&gt;</pre>
-      </details>
-    </div>
-
-    <div class="demo-subsection">
-      <h3>With text &amp; pulse</h3>
-      <div class="ui-stack sm">
-        <div class="ui-row sm"><span class="ui-dot success"></span> Online</div>
-        <div class="ui-row sm"><span class="ui-dot danger pulse"></span> Recording</div>
-        <div class="ui-row sm"><span class="ui-dot warning"></span> Away</div>
-        <div class="ui-row sm"><span class="ui-dot"></span> Offline</div>
-      </div>
-      <details class="demo-code">
-        <summary>Show code</summary>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;div class="ui-row sm"&gt;&lt;span class="ui-dot success"&gt;&lt;/span&gt; Online&lt;/div&gt;
-&lt;div class="ui-row sm"&gt;&lt;span class="ui-dot danger pulse"&gt;&lt;/span&gt; Recording&lt;/div&gt;
-&lt;div class="ui-row sm"&gt;&lt;span class="ui-dot warning"&gt;&lt;/span&gt; Away&lt;/div&gt;
-&lt;div class="ui-row sm"&gt;&lt;span class="ui-dot"&gt;&lt;/span&gt; Offline&lt;/div&gt;</pre>
-      </details>
-    </div>
-  </div>
-
-  <!-- Numbered Badge (Corner Badge) -->
-  <div class="demo-section" id="numbered-badge">
-    <h2>Numbered Badge</h2>
-
-    <div class="demo-subsection">
-      <h3>On buttons</h3>
-      <div class="ui-row">
-        <span class="ui-badge-corner">
-          <button class="ui-btn outline"><i class="bi bi-bell"></i> Notifications</button>
-          <span class="ui-count">3</span>
-        </span>
-        <span class="ui-badge-corner">
-          <button class="ui-btn outline secondary"><i class="bi bi-envelope"></i> Mail</button>
-          <span class="ui-count primary">12</span>
-        </span>
-        <span class="ui-badge-corner">
-          <button class="ui-btn outline"><i class="bi bi-cart"></i> Cart</button>
-          <span class="ui-count success">99+</span>
-        </span>
-      </div>
-      <details class="demo-code">
-        <summary>Show code</summary>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;!-- Single digit = circle, multi-digit = pill --&gt;
-&lt;span class="ui-badge-corner"&gt;
-  &lt;button class="ui-btn outline"&gt;&lt;i class="bi bi-bell"&gt;&lt;/i&gt; Notifications&lt;/button&gt;
-  &lt;span class="ui-count"&gt;3&lt;/span&gt;
-&lt;/span&gt;
-
-&lt;!-- Multi-digit: pill shape (default) --&gt;
-&lt;span class="ui-badge-corner"&gt;
-  &lt;button class="ui-btn outline secondary"&gt;&lt;i class="bi bi-envelope"&gt;&lt;/i&gt; Mail&lt;/button&gt;
-  &lt;span class="ui-count primary"&gt;12&lt;/span&gt;
-&lt;/span&gt;
-
-&lt;span class="ui-badge-corner"&gt;
-  &lt;button class="ui-btn outline"&gt;&lt;i class="bi bi-cart"&gt;&lt;/i&gt; Cart&lt;/button&gt;
-  &lt;span class="ui-count success"&gt;99+&lt;/span&gt;
-&lt;/span&gt;</pre>
-      </details>
-    </div>
-
-    <div class="demo-subsection">
-      <h3>On icon buttons &amp; corner positions</h3>
-      <div class="ui-row lg">
-        <span class="ui-badge-corner">
-          <button class="ui-btn icon outline"><i class="bi bi-bell"></i></button>
-          <span class="ui-count">5</span>
-        </span>
-        <span class="ui-badge-corner">
-          <button class="ui-btn icon outline secondary"><i class="bi bi-chat"></i></button>
-          <span class="ui-count top-left primary">2</span>
-        </span>
-        <span class="ui-badge-corner">
-          <button class="ui-btn icon outline"><i class="bi bi-heart"></i></button>
-          <span class="ui-count bottom-right success">8</span>
-        </span>
-        <span class="ui-badge-corner">
-          <button class="ui-btn icon outline secondary"><i class="bi bi-gear"></i></button>
-          <span class="ui-count dot"></span>
-        </span>
-      </div>
-      <details class="demo-code">
-        <summary>Show code</summary>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;!-- Top-right (default) --&gt;
-&lt;span class="ui-badge-corner"&gt;
-  &lt;button class="ui-btn icon outline"&gt;&lt;i class="bi bi-bell"&gt;&lt;/i&gt;&lt;/button&gt;
-  &lt;span class="ui-count"&gt;5&lt;/span&gt;
-&lt;/span&gt;
-
-&lt;!-- Top-left --&gt;
-&lt;span class="ui-badge-corner"&gt;
-  &lt;button class="ui-btn icon outline secondary"&gt;&lt;i class="bi bi-chat"&gt;&lt;/i&gt;&lt;/button&gt;
-  &lt;span class="ui-count top-left primary"&gt;2&lt;/span&gt;
-&lt;/span&gt;
-
-&lt;!-- Bottom-right --&gt;
-&lt;span class="ui-badge-corner"&gt;
-  &lt;button class="ui-btn icon outline"&gt;&lt;i class="bi bi-heart"&gt;&lt;/i&gt;&lt;/button&gt;
-  &lt;span class="ui-count bottom-right success"&gt;8&lt;/span&gt;
-&lt;/span&gt;
-
-&lt;!-- Dot-only (no number) --&gt;
-&lt;span class="ui-badge-corner"&gt;
-  &lt;button class="ui-btn icon outline secondary"&gt;&lt;i class="bi bi-gear"&gt;&lt;/i&gt;&lt;/button&gt;
-  &lt;span class="ui-count dot"&gt;&lt;/span&gt;
-&lt;/span&gt;</pre>
-      </details>
-    </div>
-
-    <div class="demo-subsection">
-      <h3>Color variants</h3>
-      <div class="ui-row lg">
-        <span class="ui-badge-corner">
-          <button class="ui-btn icon outline"><i class="bi bi-bell"></i></button>
-          <span class="ui-count">3</span>
-        </span>
-        <span class="ui-badge-corner">
-          <button class="ui-btn icon outline"><i class="bi bi-bell"></i></button>
-          <span class="ui-count primary">3</span>
-        </span>
-        <span class="ui-badge-corner">
-          <button class="ui-btn icon outline"><i class="bi bi-bell"></i></button>
-          <span class="ui-count success">3</span>
-        </span>
-        <span class="ui-badge-corner">
-          <button class="ui-btn icon outline"><i class="bi bi-bell"></i></button>
-          <span class="ui-count warning">3</span>
-        </span>
-        <span class="ui-badge-corner">
-          <button class="ui-btn icon outline"><i class="bi bi-bell"></i></button>
-          <span class="ui-count secondary">3</span>
-        </span>
-      </div>
-      <details class="demo-code">
-        <summary>Show code</summary>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;!-- danger (default) --&gt;
-&lt;span class="ui-badge-corner"&gt;
-  &lt;button class="ui-btn icon outline"&gt;&lt;i class="bi bi-bell"&gt;&lt;/i&gt;&lt;/button&gt;
-  &lt;span class="ui-count"&gt;3&lt;/span&gt;
-&lt;/span&gt;
-
-&lt;!-- primary --&gt;
-&lt;span class="ui-badge-corner"&gt;
-  &lt;button class="ui-btn icon outline"&gt;&lt;i class="bi bi-bell"&gt;&lt;/i&gt;&lt;/button&gt;
-  &lt;span class="ui-count primary"&gt;3&lt;/span&gt;
-&lt;/span&gt;
-
-&lt;!-- success --&gt;
-&lt;span class="ui-badge-corner"&gt;
-  &lt;button class="ui-btn icon outline"&gt;&lt;i class="bi bi-bell"&gt;&lt;/i&gt;&lt;/button&gt;
-  &lt;span class="ui-count success"&gt;3&lt;/span&gt;
-&lt;/span&gt;
-
-&lt;!-- warning --&gt;
-&lt;span class="ui-badge-corner"&gt;
-  &lt;button class="ui-btn icon outline"&gt;&lt;i class="bi bi-bell"&gt;&lt;/i&gt;&lt;/button&gt;
-  &lt;span class="ui-count warning"&gt;3&lt;/span&gt;
-&lt;/span&gt;
-
-&lt;!-- secondary --&gt;
-&lt;span class="ui-badge-corner"&gt;
-  &lt;button class="ui-btn icon outline"&gt;&lt;i class="bi bi-bell"&gt;&lt;/i&gt;&lt;/button&gt;
-  &lt;span class="ui-count secondary"&gt;3&lt;/span&gt;
-&lt;/span&gt;</pre>
-      </details>
-    </div>
-  </div>
-
   <div class="demo-section" id="tooltips">
     <h2>Tooltips</h2>
 
@@ -2926,225 +3032,6 @@ document.addEventListener('click', e =&gt; {
 &lt;span class="ui-badge solid ui-tooltip" data-tooltip="5 new messages"&gt;Inbox&lt;/span&gt;
 
 &lt;code class="ui-tooltip bottom" data-tooltip="Click to copy"&gt;ui.css&lt;/code&gt;</pre>
-      </details>
-    </div>
-  </div>
-
-  <div class="demo-section" id="avatars">
-    <h2>Avatars</h2>
-
-    <div class="demo-subsection">
-      <h3>Sizes & types</h3>
-      <div class="ui-row">
-        <div class="ui-avatar sm">S</div>
-        <div class="ui-avatar">AB</div>
-        <div class="ui-avatar lg">CD</div>
-        <div class="ui-avatar xl">EF</div>
-        <div class="ui-avatar square lg">SQ</div>
-      </div>
-      <details class="demo-code">
-        <summary>Show code</summary>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;div class="ui-avatar sm"&gt;S&lt;/div&gt;
-&lt;div class="ui-avatar"&gt;AB&lt;/div&gt;
-&lt;div class="ui-avatar lg"&gt;CD&lt;/div&gt;
-&lt;div class="ui-avatar xl"&gt;EF&lt;/div&gt;
-&lt;div class="ui-avatar square lg"&gt;SQ&lt;/div&gt;</pre>
-      </details>
-    </div>
-
-    <div class="demo-subsection">
-      <h3>Status indicators</h3>
-      <div class="ui-row">
-        <div class="ui-avatar">JD<span class="ui-avatar-status online"></span></div>
-        <div class="ui-avatar">AK<span class="ui-avatar-status away"></span></div>
-        <div class="ui-avatar">MR<span class="ui-avatar-status busy"></span></div>
-        <div class="ui-avatar">LS<span class="ui-avatar-status offline"></span></div>
-      </div>
-      <details class="demo-code">
-        <summary>Show code</summary>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;div class="ui-avatar"&gt;JD&lt;span class="ui-avatar-status online"&gt;&lt;/span&gt;&lt;/div&gt;
-&lt;div class="ui-avatar"&gt;AK&lt;span class="ui-avatar-status away"&gt;&lt;/span&gt;&lt;/div&gt;
-&lt;div class="ui-avatar"&gt;MR&lt;span class="ui-avatar-status busy"&gt;&lt;/span&gt;&lt;/div&gt;
-&lt;div class="ui-avatar"&gt;LS&lt;span class="ui-avatar-status offline"&gt;&lt;/span&gt;&lt;/div&gt;</pre>
-      </details>
-    </div>
-
-    <div class="demo-subsection">
-      <h3>Avatar group</h3>
-      <div class="ui-avatar-group">
-        <div class="ui-avatar">A</div>
-        <div class="ui-avatar">B</div>
-        <div class="ui-avatar">C</div>
-        <div class="ui-avatar">D</div>
-        <div class="ui-avatar" style="background:var(--ui-bg-subtle); color:var(--ui-text-muted);">+3</div>
-      </div>
-      <details class="demo-code">
-        <summary>Show code</summary>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;div class="ui-avatar-group"&gt;
-  &lt;div class="ui-avatar"&gt;A&lt;/div&gt;
-  &lt;div class="ui-avatar"&gt;B&lt;/div&gt;
-  &lt;div class="ui-avatar"&gt;C&lt;/div&gt;
-  &lt;div class="ui-avatar"&gt;+3&lt;/div&gt;
-&lt;/div&gt;</pre>
-      </details>
-    </div>
-  </div>
-
-  <div class="demo-section" id="accordions">
-    <h2>Accordions</h2>
-
-    <div class="demo-subsection">
-      <h3>Collapsible sections</h3>
-      <div class="ui-accordion">
-        <details open>
-          <summary>What is this UI library?</summary>
-          <div class="ui-accordion-body">A lightweight, CSS-first component library using custom properties for theming. No JavaScript framework required.</div>
-        </details>
-        <details>
-          <summary>How do I customize colors?</summary>
-          <div class="ui-accordion-body">Override the CSS custom properties (e.g., <code>--ui-primary</code>) on your root element, or use the theme configurator on this page.</div>
-        </details>
-        <details>
-          <summary>Does it support dark mode?</summary>
-          <div class="ui-accordion-body">Yes. Add <code>data-theme="dark"</code> to your <code>&lt;html&gt;</code> element, or use the system preference toggle.</div>
-        </details>
-      </div>
-      <details class="demo-code">
-        <summary>Show code</summary>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;div class="ui-accordion"&gt;
-  &lt;details open&gt;
-    &lt;summary&gt;What is this UI library?&lt;/summary&gt;
-    &lt;div class="ui-accordion-body"&gt;A lightweight, CSS-first component library using custom properties for theming. No JavaScript framework required.&lt;/div&gt;
-  &lt;/details&gt;
-  &lt;details&gt;
-    &lt;summary&gt;How do I customize colors?&lt;/summary&gt;
-    &lt;div class="ui-accordion-body"&gt;Override the CSS custom properties (e.g., --ui-primary) on your root element, or use the theme configurator on this page.&lt;/div&gt;
-  &lt;/details&gt;
-  &lt;details&gt;
-    &lt;summary&gt;Does it support dark mode?&lt;/summary&gt;
-    &lt;div class="ui-accordion-body"&gt;Yes. Add data-theme="dark" to your html element, or use the system preference toggle.&lt;/div&gt;
-  &lt;/details&gt;
-&lt;/div&gt;</pre>
-      </details>
-    </div>
-  </div>
-
-  <!-- ═══ Navigation ═══ -->
-
-  <div class="demo-section" id="tabs">
-    <h2>Tabs</h2>
-
-    <div class="demo-subsection">
-      <h3>Default tabs</h3>
-      <div class="ui-tabs" id="demo-tabs-1">
-        <div class="ui-tab-list">
-          <button class="ui-tab active" onclick="switchTab('demo-tabs-1', 0)">Overview</button>
-          <button class="ui-tab" onclick="switchTab('demo-tabs-1', 1)">Features</button>
-          <button class="ui-tab" onclick="switchTab('demo-tabs-1', 2)">Pricing</button>
-          <button class="ui-tab" disabled>Disabled</button>
-        </div>
-        <div class="ui-tab-panel active">This is the overview panel. Tabs organize content into separate views where only one is visible at a time.</div>
-        <div class="ui-tab-panel">Features include responsive design, dark mode support, and configurable colors via CSS custom properties.</div>
-        <div class="ui-tab-panel">Pricing plans are available for teams of all sizes. Contact us for enterprise options.</div>
-      </div>
-      <details class="demo-code">
-        <summary>Show code</summary>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;div class="ui-tabs" id="demo-tabs-1"&gt;
-  &lt;div class="ui-tab-list"&gt;
-    &lt;button class="ui-tab active" onclick="switchTab('demo-tabs-1', 0)"&gt;Overview&lt;/button&gt;
-    &lt;button class="ui-tab" onclick="switchTab('demo-tabs-1', 1)"&gt;Features&lt;/button&gt;
-    &lt;button class="ui-tab" onclick="switchTab('demo-tabs-1', 2)"&gt;Pricing&lt;/button&gt;
-    &lt;button class="ui-tab" disabled&gt;Disabled&lt;/button&gt;
-  &lt;/div&gt;
-  &lt;div class="ui-tab-panel active"&gt;This is the overview panel. Tabs organize content into separate views where only one is visible at a time.&lt;/div&gt;
-  &lt;div class="ui-tab-panel"&gt;Features include responsive design, dark mode support, and configurable colors via CSS custom properties.&lt;/div&gt;
-  &lt;div class="ui-tab-panel"&gt;Pricing plans are available for teams of all sizes. Contact us for enterprise options.&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;script&gt;
-function switchTab(tabsId, index) {
-  const tabs = document.getElementById(tabsId);
-  tabs.querySelectorAll('.ui-tab-list .ui-tab').forEach((t, i) =&gt; t.classList.toggle('active', i === index));
-  tabs.querySelectorAll('.ui-tab-panel').forEach((p, i) =&gt; p.classList.toggle('active', i === index));
-}
-&lt;/script&gt;</pre>
-      </details>
-    </div>
-
-    <div class="demo-subsection">
-      <h3>Pill tabs</h3>
-      <div class="ui-tabs" id="demo-tabs-2">
-        <div class="ui-tab-list pills">
-          <button class="ui-tab active" onclick="switchTab('demo-tabs-2', 0)">All</button>
-          <button class="ui-tab" onclick="switchTab('demo-tabs-2', 1)">Active</button>
-          <button class="ui-tab" onclick="switchTab('demo-tabs-2', 2)">Archived</button>
-        </div>
-        <div class="ui-tab-panel active">Showing all items in the list.</div>
-        <div class="ui-tab-panel">Showing only active items.</div>
-        <div class="ui-tab-panel">Showing archived items.</div>
-      </div>
-      <details class="demo-code">
-        <summary>Show code</summary>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;div class="ui-tabs" id="demo-tabs-2"&gt;
-  &lt;div class="ui-tab-list pills"&gt;
-    &lt;button class="ui-tab active" onclick="switchTab('demo-tabs-2', 0)"&gt;All&lt;/button&gt;
-    &lt;button class="ui-tab" onclick="switchTab('demo-tabs-2', 1)"&gt;Active&lt;/button&gt;
-    &lt;button class="ui-tab" onclick="switchTab('demo-tabs-2', 2)"&gt;Archived&lt;/button&gt;
-  &lt;/div&gt;
-  &lt;div class="ui-tab-panel active"&gt;Showing all items in the list.&lt;/div&gt;
-  &lt;div class="ui-tab-panel"&gt;Showing only active items.&lt;/div&gt;
-  &lt;div class="ui-tab-panel"&gt;Showing archived items.&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;script&gt;
-function switchTab(tabsId, index) {
-  const tabs = document.getElementById(tabsId);
-  tabs.querySelectorAll('.ui-tab-list .ui-tab').forEach((t, i) =&gt; t.classList.toggle('active', i === index));
-  tabs.querySelectorAll('.ui-tab-panel').forEach((p, i) =&gt; p.classList.toggle('active', i === index));
-}
-&lt;/script&gt;</pre>
-      </details>
-    </div>
-
-    <div class="demo-subsection">
-      <h3>Boxed tabs</h3>
-      <div class="ui-tabs" id="demo-tabs-3">
-        <div class="ui-tab-list boxed">
-          <button class="ui-tab active" onclick="switchTab('demo-tabs-3', 0)">HTML</button>
-          <button class="ui-tab" onclick="switchTab('demo-tabs-3', 1)">CSS</button>
-          <button class="ui-tab" onclick="switchTab('demo-tabs-3', 2)">JavaScript</button>
-        </div>
-        <div class="ui-tab-panel active">HTML provides the structure and content of a webpage.</div>
-        <div class="ui-tab-panel">CSS handles the visual presentation and layout.</div>
-        <div class="ui-tab-panel">JavaScript adds interactivity and dynamic behavior.</div>
-      </div>
-      <details class="demo-code">
-        <summary>Show code</summary>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;div class="ui-tabs" id="demo-tabs-3"&gt;
-  &lt;div class="ui-tab-list boxed"&gt;
-    &lt;button class="ui-tab active" onclick="switchTab('demo-tabs-3', 0)"&gt;HTML&lt;/button&gt;
-    &lt;button class="ui-tab" onclick="switchTab('demo-tabs-3', 1)"&gt;CSS&lt;/button&gt;
-    &lt;button class="ui-tab" onclick="switchTab('demo-tabs-3', 2)"&gt;JavaScript&lt;/button&gt;
-  &lt;/div&gt;
-  &lt;div class="ui-tab-panel active"&gt;HTML provides the structure and content of a webpage.&lt;/div&gt;
-  &lt;div class="ui-tab-panel"&gt;CSS handles the visual presentation and layout.&lt;/div&gt;
-  &lt;div class="ui-tab-panel"&gt;JavaScript adds interactivity and dynamic behavior.&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;script&gt;
-function switchTab(tabsId, index) {
-  const tabs = document.getElementById(tabsId);
-  tabs.querySelectorAll('.ui-tab-list .ui-tab').forEach((t, i) =&gt; t.classList.toggle('active', i === index));
-  tabs.querySelectorAll('.ui-tab-panel').forEach((p, i) =&gt; p.classList.toggle('active', i === index));
-}
-&lt;/script&gt;</pre>
       </details>
     </div>
   </div>
@@ -3294,6 +3181,120 @@ function switchTab(tabsId, index) {
 
   <!-- ═══ Feedback ═══ -->
 
+  <div class="demo-section" id="tabs">
+    <h2>Tabs</h2>
+
+    <div class="demo-subsection">
+      <h3>Default tabs</h3>
+      <div class="ui-tabs" id="demo-tabs-1">
+        <div class="ui-tab-list">
+          <button class="ui-tab active" onclick="switchTab('demo-tabs-1', 0)">Overview</button>
+          <button class="ui-tab" onclick="switchTab('demo-tabs-1', 1)">Features</button>
+          <button class="ui-tab" onclick="switchTab('demo-tabs-1', 2)">Pricing</button>
+          <button class="ui-tab" disabled>Disabled</button>
+        </div>
+        <div class="ui-tab-panel active">This is the overview panel. Tabs organize content into separate views where only one is visible at a time.</div>
+        <div class="ui-tab-panel">Features include responsive design, dark mode support, and configurable colors via CSS custom properties.</div>
+        <div class="ui-tab-panel">Pricing plans are available for teams of all sizes. Contact us for enterprise options.</div>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-tabs" id="demo-tabs-1"&gt;
+  &lt;div class="ui-tab-list"&gt;
+    &lt;button class="ui-tab active" onclick="switchTab('demo-tabs-1', 0)"&gt;Overview&lt;/button&gt;
+    &lt;button class="ui-tab" onclick="switchTab('demo-tabs-1', 1)"&gt;Features&lt;/button&gt;
+    &lt;button class="ui-tab" onclick="switchTab('demo-tabs-1', 2)"&gt;Pricing&lt;/button&gt;
+    &lt;button class="ui-tab" disabled&gt;Disabled&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="ui-tab-panel active"&gt;This is the overview panel. Tabs organize content into separate views where only one is visible at a time.&lt;/div&gt;
+  &lt;div class="ui-tab-panel"&gt;Features include responsive design, dark mode support, and configurable colors via CSS custom properties.&lt;/div&gt;
+  &lt;div class="ui-tab-panel"&gt;Pricing plans are available for teams of all sizes. Contact us for enterprise options.&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+function switchTab(tabsId, index) {
+  const tabs = document.getElementById(tabsId);
+  tabs.querySelectorAll('.ui-tab-list .ui-tab').forEach((t, i) =&gt; t.classList.toggle('active', i === index));
+  tabs.querySelectorAll('.ui-tab-panel').forEach((p, i) =&gt; p.classList.toggle('active', i === index));
+}
+&lt;/script&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Pill tabs</h3>
+      <div class="ui-tabs" id="demo-tabs-2">
+        <div class="ui-tab-list pills">
+          <button class="ui-tab active" onclick="switchTab('demo-tabs-2', 0)">All</button>
+          <button class="ui-tab" onclick="switchTab('demo-tabs-2', 1)">Active</button>
+          <button class="ui-tab" onclick="switchTab('demo-tabs-2', 2)">Archived</button>
+        </div>
+        <div class="ui-tab-panel active">Showing all items in the list.</div>
+        <div class="ui-tab-panel">Showing only active items.</div>
+        <div class="ui-tab-panel">Showing archived items.</div>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-tabs" id="demo-tabs-2"&gt;
+  &lt;div class="ui-tab-list pills"&gt;
+    &lt;button class="ui-tab active" onclick="switchTab('demo-tabs-2', 0)"&gt;All&lt;/button&gt;
+    &lt;button class="ui-tab" onclick="switchTab('demo-tabs-2', 1)"&gt;Active&lt;/button&gt;
+    &lt;button class="ui-tab" onclick="switchTab('demo-tabs-2', 2)"&gt;Archived&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="ui-tab-panel active"&gt;Showing all items in the list.&lt;/div&gt;
+  &lt;div class="ui-tab-panel"&gt;Showing only active items.&lt;/div&gt;
+  &lt;div class="ui-tab-panel"&gt;Showing archived items.&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+function switchTab(tabsId, index) {
+  const tabs = document.getElementById(tabsId);
+  tabs.querySelectorAll('.ui-tab-list .ui-tab').forEach((t, i) =&gt; t.classList.toggle('active', i === index));
+  tabs.querySelectorAll('.ui-tab-panel').forEach((p, i) =&gt; p.classList.toggle('active', i === index));
+}
+&lt;/script&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Boxed tabs</h3>
+      <div class="ui-tabs" id="demo-tabs-3">
+        <div class="ui-tab-list boxed">
+          <button class="ui-tab active" onclick="switchTab('demo-tabs-3', 0)">HTML</button>
+          <button class="ui-tab" onclick="switchTab('demo-tabs-3', 1)">CSS</button>
+          <button class="ui-tab" onclick="switchTab('demo-tabs-3', 2)">JavaScript</button>
+        </div>
+        <div class="ui-tab-panel active">HTML provides the structure and content of a webpage.</div>
+        <div class="ui-tab-panel">CSS handles the visual presentation and layout.</div>
+        <div class="ui-tab-panel">JavaScript adds interactivity and dynamic behavior.</div>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-tabs" id="demo-tabs-3"&gt;
+  &lt;div class="ui-tab-list boxed"&gt;
+    &lt;button class="ui-tab active" onclick="switchTab('demo-tabs-3', 0)"&gt;HTML&lt;/button&gt;
+    &lt;button class="ui-tab" onclick="switchTab('demo-tabs-3', 1)"&gt;CSS&lt;/button&gt;
+    &lt;button class="ui-tab" onclick="switchTab('demo-tabs-3', 2)"&gt;JavaScript&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="ui-tab-panel active"&gt;HTML provides the structure and content of a webpage.&lt;/div&gt;
+  &lt;div class="ui-tab-panel"&gt;CSS handles the visual presentation and layout.&lt;/div&gt;
+  &lt;div class="ui-tab-panel"&gt;JavaScript adds interactivity and dynamic behavior.&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+function switchTab(tabsId, index) {
+  const tabs = document.getElementById(tabsId);
+  tabs.querySelectorAll('.ui-tab-list .ui-tab').forEach((t, i) =&gt; t.classList.toggle('active', i === index));
+  tabs.querySelectorAll('.ui-tab-panel').forEach((p, i) =&gt; p.classList.toggle('active', i === index));
+}
+&lt;/script&gt;</pre>
+      </details>
+    </div>
+  </div>
+
   <div class="demo-section" id="alerts">
     <h2>Alerts</h2>
 
@@ -3312,177 +3313,6 @@ function switchTab(tabsId, index) {
 &lt;div class="ui-alert success"&gt;Operation completed successfully.&lt;/div&gt;
 &lt;div class="ui-alert warning"&gt;Please review your changes before saving.&lt;/div&gt;
 &lt;div class="ui-alert danger"&gt;An error occurred while processing your request.&lt;/div&gt;</pre>
-      </details>
-    </div>
-  </div>
-
-  <div class="demo-section" id="toasts">
-    <h2>Toasts</h2>
-
-    <div class="demo-subsection">
-      <h3>Variants & position</h3>
-      <div class="ui-row">
-        <select class="ui-select" id="toast-position" style="width:auto;">
-          <option value="bottom-right">bottom-right</option>
-          <option value="top-right">top-right</option>
-          <option value="top-left">top-left</option>
-          <option value="bottom-left">bottom-left</option>
-          <option value="top-center">top-center</option>
-          <option value="bottom-center">bottom-center</option>
-        </select>
-      </div>
-      <div class="ui-row" style="margin-top:0.75rem;">
-        <button class="ui-btn sm" onclick="showToast('info', document.getElementById('toast-position').value)">Info</button>
-        <button class="ui-btn sm success" onclick="showToast('success', document.getElementById('toast-position').value)">Success</button>
-        <button class="ui-btn sm danger" onclick="showToast('danger', document.getElementById('toast-position').value)">Danger</button>
-        <button class="ui-btn sm warning" onclick="showToast('warning', document.getElementById('toast-position').value)">Warning</button>
-      </div>
-      <details class="demo-code" data-readonly>
-        <summary>Show code</summary>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;script&gt;
-// Container is created on the fly per position — no HTML needed
-function getToastContainer(position = 'bottom-right') {
-  const id = `ui-toast-${position}`;
-  let c = document.getElementById(id);
-  if (!c) {
-    c = document.createElement('div');
-    c.id = id;
-    c.className = `ui-toast-container ${position}`;
-    document.body.appendChild(c);
-  }
-  return c;
-}
-
-// type: 'info' | 'success' | 'danger' | 'warning'
-// position: 'bottom-right' | 'top-right' | 'top-left' | 'bottom-left' | 'top-center' | 'bottom-center'
-function showToast(type, message, position) {
-  const icons = {
-    info: 'bi-info-circle', success: 'bi-check-circle',
-    danger: 'bi-exclamation-circle', warning: 'bi-exclamation-triangle',
-  };
-  const toast = document.createElement('div');
-  toast.className = `ui-toast ${type}`;
-  toast.innerHTML = `
-    &lt;i class="ui-toast-icon bi ${icons[type]}"&gt;&lt;/i&gt;
-    &lt;span class="ui-toast-body"&gt;${message}&lt;/span&gt;
-    &lt;button class="ui-toast-close"
-      onclick="this.closest('.ui-toast').remove()"&gt;&amp;times;&lt;/button&gt;`;
-  getToastContainer(position).appendChild(toast);
-  setTimeout(() =&gt; toast.parentNode &amp;&amp; toast.remove(), 4000);
-}
-
-// Usage:
-showToast('success', 'Changes saved!', 'top-right');
-showToast('danger', 'Something went wrong.'); // defaults to bottom-right
-&lt;/script&gt;</pre>
-      </details>
-    </div>
-  </div>
-
-  <div class="demo-section" id="progress">
-    <h2>Progress Bars</h2>
-
-    <div class="demo-subsection">
-      <h3>Sizes & colors</h3>
-      <div class="ui-stack" style="gap: 1rem;">
-        <div class="ui-progress sm"><div class="ui-progress-bar" style="width:25%"></div></div>
-        <div class="ui-progress"><div class="ui-progress-bar" style="width:50%"></div></div>
-        <div class="ui-progress lg"><div class="ui-progress-bar success" style="width:75%"></div></div>
-        <div class="ui-progress"><div class="ui-progress-bar danger" style="width:40%"></div></div>
-        <div class="ui-progress"><div class="ui-progress-bar warning" style="width:60%"></div></div>
-      </div>
-      <details class="demo-code">
-        <summary>Show code</summary>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;div class="ui-progress sm"&gt;&lt;div class="ui-progress-bar" style="width:25%"&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;div class="ui-progress"&gt;&lt;div class="ui-progress-bar" style="width:50%"&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;div class="ui-progress lg"&gt;&lt;div class="ui-progress-bar success" style="width:75%"&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;div class="ui-progress"&gt;&lt;div class="ui-progress-bar danger" style="width:40%"&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;div class="ui-progress"&gt;&lt;div class="ui-progress-bar warning" style="width:60%"&gt;&lt;/div&gt;&lt;/div&gt;</pre>
-      </details>
-    </div>
-
-    <div class="demo-subsection">
-      <h3>Striped & animated</h3>
-      <div class="ui-stack" style="gap: 1rem;">
-        <div class="ui-progress"><div class="ui-progress-bar striped" style="width:55%"></div></div>
-        <div class="ui-progress"><div class="ui-progress-bar striped animated success" style="width:70%"></div></div>
-      </div>
-      <details class="demo-code">
-        <summary>Show code</summary>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;div class="ui-progress"&gt;
-  &lt;div class="ui-progress-bar striped" style="width:55%"&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="ui-progress"&gt;
-  &lt;div class="ui-progress-bar striped animated success" style="width:70%"&gt;&lt;/div&gt;
-&lt;/div&gt;</pre>
-      </details>
-    </div>
-
-    <div class="demo-subsection">
-      <h3>With label</h3>
-      <div class="ui-progress ui-progress-labeled"><div class="ui-progress-bar" style="width:68%">68%</div></div>
-      <details class="demo-code">
-        <summary>Show code</summary>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;div class="ui-progress ui-progress-labeled"&gt;
-  &lt;div class="ui-progress-bar" style="width:68%"&gt;68%&lt;/div&gt;
-&lt;/div&gt;</pre>
-      </details>
-    </div>
-  </div>
-
-  <div class="demo-section" id="skeletons">
-    <h2>Skeletons</h2>
-
-    <div class="demo-subsection">
-      <h3>Loading placeholders</h3>
-      <div class="ui-stack" style="gap: 0.75rem;">
-        <div class="ui-skeleton heading"></div>
-        <div class="ui-skeleton text"></div>
-        <div class="ui-skeleton text" style="width:80%"></div>
-        <div class="ui-skeleton text" style="width:60%"></div>
-        <div class="ui-skeleton circle" style="width:3rem; height:3rem;"></div>
-        <div class="ui-skeleton rounded" style="width:8rem; height:5rem;"></div>
-      </div>
-      <details class="demo-code">
-        <summary>Show code</summary>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;div class="ui-skeleton heading"&gt;&lt;/div&gt;
-&lt;div class="ui-skeleton text"&gt;&lt;/div&gt;
-&lt;div class="ui-skeleton text" style="width:80%"&gt;&lt;/div&gt;
-&lt;div class="ui-skeleton text" style="width:60%"&gt;&lt;/div&gt;
-&lt;div class="ui-skeleton circle" style="width:3rem; height:3rem;"&gt;&lt;/div&gt;
-&lt;div class="ui-skeleton rounded" style="width:8rem; height:5rem;"&gt;&lt;/div&gt;</pre>
-      </details>
-    </div>
-
-    <div class="demo-subsection">
-      <h3>Card skeleton</h3>
-      <div class="ui-stack" style="max-width:20rem;">
-        <div class="ui-card">
-          <div class="ui-skeleton" style="width:100%; aspect-ratio:16/9; border-radius:0;"></div>
-          <div class="ui-card-body">
-            <div class="ui-skeleton heading" style="margin-bottom:0.375rem;"></div>
-            <div class="ui-skeleton text" style="margin-bottom:0.375rem;"></div>
-            <div class="ui-skeleton text" style="width:70%"></div>
-          </div>
-        </div>
-      </div>
-      <details class="demo-code">
-        <summary>Show code</summary>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;div class="ui-card"&gt;
-  &lt;div class="ui-skeleton" style="width:100%; aspect-ratio:16/9; border-radius:0;"&gt;&lt;/div&gt;
-  &lt;div class="ui-card-body"&gt;
-    &lt;div class="ui-skeleton heading" style="margin-bottom:0.375rem;"&gt;&lt;/div&gt;
-    &lt;div class="ui-skeleton text" style="margin-bottom:0.375rem;"&gt;&lt;/div&gt;
-    &lt;div class="ui-skeleton text" style="width:70%"&gt;&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</pre>
       </details>
     </div>
   </div>
@@ -3638,55 +3468,173 @@ document.getElementById('native-dialog').addEventListener('click', e =&gt; {
 
   <!-- ═══ Utilities ═══ -->
 
-  <div class="demo-section" id="layout">
-    <h2>Layout Utilities</h2>
+  <div class="demo-section" id="progress">
+    <h2>Progress Bars</h2>
+
     <div class="demo-subsection">
-      <h3>Stack & Row</h3>
-      <div class="grid-2">
-        <div class="ui-panel flat">
-          <div class="ui-panel-header"><h3 class="ui-panel-title">.ui-stack</h3></div>
-          <div class="ui-panel-body">
-            <div class="ui-stack sm">
-              <div class="ui-alert">Item 1</div>
-              <div class="ui-alert">Item 2</div>
-              <div class="ui-alert">Item 3</div>
-            </div>
-          </div>
-        </div>
-        <div class="ui-panel flat">
-          <div class="ui-panel-header"><h3 class="ui-panel-title">.ui-row</h3></div>
-          <div class="ui-panel-body">
-            <div class="ui-row sm">
-              <span class="ui-badge">Tag 1</span>
-              <span class="ui-badge secondary">Tag 2</span>
-              <span class="ui-badge success">Tag 3</span>
-            </div>
+      <h3>Sizes & colors</h3>
+      <div class="ui-stack" style="gap: 1rem;">
+        <div class="ui-progress sm"><div class="ui-progress-bar" style="width:25%"></div></div>
+        <div class="ui-progress"><div class="ui-progress-bar" style="width:50%"></div></div>
+        <div class="ui-progress lg"><div class="ui-progress-bar success" style="width:75%"></div></div>
+        <div class="ui-progress"><div class="ui-progress-bar danger" style="width:40%"></div></div>
+        <div class="ui-progress"><div class="ui-progress-bar warning" style="width:60%"></div></div>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-progress sm"&gt;&lt;div class="ui-progress-bar" style="width:25%"&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class="ui-progress"&gt;&lt;div class="ui-progress-bar" style="width:50%"&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class="ui-progress lg"&gt;&lt;div class="ui-progress-bar success" style="width:75%"&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class="ui-progress"&gt;&lt;div class="ui-progress-bar danger" style="width:40%"&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class="ui-progress"&gt;&lt;div class="ui-progress-bar warning" style="width:60%"&gt;&lt;/div&gt;&lt;/div&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Striped & animated</h3>
+      <div class="ui-stack" style="gap: 1rem;">
+        <div class="ui-progress"><div class="ui-progress-bar striped" style="width:55%"></div></div>
+        <div class="ui-progress"><div class="ui-progress-bar striped animated success" style="width:70%"></div></div>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-progress"&gt;
+  &lt;div class="ui-progress-bar striped" style="width:55%"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="ui-progress"&gt;
+  &lt;div class="ui-progress-bar striped animated success" style="width:70%"&gt;&lt;/div&gt;
+&lt;/div&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>With label</h3>
+      <div class="ui-progress ui-progress-labeled"><div class="ui-progress-bar" style="width:68%">68%</div></div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-progress ui-progress-labeled"&gt;
+  &lt;div class="ui-progress-bar" style="width:68%"&gt;68%&lt;/div&gt;
+&lt;/div&gt;</pre>
+      </details>
+    </div>
+  </div>
+
+  <div class="demo-section" id="skeletons">
+    <h2>Skeletons</h2>
+
+    <div class="demo-subsection">
+      <h3>Loading placeholders</h3>
+      <div class="ui-stack" style="gap: 0.75rem;">
+        <div class="ui-skeleton heading"></div>
+        <div class="ui-skeleton text"></div>
+        <div class="ui-skeleton text" style="width:80%"></div>
+        <div class="ui-skeleton text" style="width:60%"></div>
+        <div class="ui-skeleton circle" style="width:3rem; height:3rem;"></div>
+        <div class="ui-skeleton rounded" style="width:8rem; height:5rem;"></div>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-skeleton heading"&gt;&lt;/div&gt;
+&lt;div class="ui-skeleton text"&gt;&lt;/div&gt;
+&lt;div class="ui-skeleton text" style="width:80%"&gt;&lt;/div&gt;
+&lt;div class="ui-skeleton text" style="width:60%"&gt;&lt;/div&gt;
+&lt;div class="ui-skeleton circle" style="width:3rem; height:3rem;"&gt;&lt;/div&gt;
+&lt;div class="ui-skeleton rounded" style="width:8rem; height:5rem;"&gt;&lt;/div&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Card skeleton</h3>
+      <div class="ui-stack" style="max-width:20rem;">
+        <div class="ui-card">
+          <div class="ui-skeleton" style="width:100%; aspect-ratio:16/9; border-radius:0;"></div>
+          <div class="ui-card-body">
+            <div class="ui-skeleton heading" style="margin-bottom:0.375rem;"></div>
+            <div class="ui-skeleton text" style="margin-bottom:0.375rem;"></div>
+            <div class="ui-skeleton text" style="width:70%"></div>
           </div>
         </div>
       </div>
       <details class="demo-code">
         <summary>Show code</summary>
         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;div class="ui-panel flat"&gt;
-  &lt;div class="ui-panel-header"&gt;&lt;h3 class="ui-panel-title"&gt;.ui-stack&lt;/h3&gt;&lt;/div&gt;
-  &lt;div class="ui-panel-body"&gt;
-    &lt;div class="ui-stack sm"&gt;
-      &lt;div class="ui-alert"&gt;Item 1&lt;/div&gt;
-      &lt;div class="ui-alert"&gt;Item 2&lt;/div&gt;
-      &lt;div class="ui-alert"&gt;Item 3&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="ui-panel flat"&gt;
-  &lt;div class="ui-panel-header"&gt;&lt;h3 class="ui-panel-title"&gt;.ui-row&lt;/h3&gt;&lt;/div&gt;
-  &lt;div class="ui-panel-body"&gt;
-    &lt;div class="ui-row sm"&gt;
-      &lt;span class="ui-badge"&gt;Tag 1&lt;/span&gt;
-      &lt;span class="ui-badge secondary"&gt;Tag 2&lt;/span&gt;
-      &lt;span class="ui-badge success"&gt;Tag 3&lt;/span&gt;
-    &lt;/div&gt;
+<pre>&lt;div class="ui-card"&gt;
+  &lt;div class="ui-skeleton" style="width:100%; aspect-ratio:16/9; border-radius:0;"&gt;&lt;/div&gt;
+  &lt;div class="ui-card-body"&gt;
+    &lt;div class="ui-skeleton heading" style="margin-bottom:0.375rem;"&gt;&lt;/div&gt;
+    &lt;div class="ui-skeleton text" style="margin-bottom:0.375rem;"&gt;&lt;/div&gt;
+    &lt;div class="ui-skeleton text" style="width:70%"&gt;&lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</pre>
+      </details>
+    </div>
+  </div>
+
+  <div class="demo-section" id="toasts">
+    <h2>Toasts</h2>
+
+    <div class="demo-subsection">
+      <h3>Variants & position</h3>
+      <div class="ui-row">
+        <select class="ui-select" id="toast-position" style="width:auto;">
+          <option value="bottom-right">bottom-right</option>
+          <option value="top-right">top-right</option>
+          <option value="top-left">top-left</option>
+          <option value="bottom-left">bottom-left</option>
+          <option value="top-center">top-center</option>
+          <option value="bottom-center">bottom-center</option>
+        </select>
+      </div>
+      <div class="ui-row" style="margin-top:0.75rem;">
+        <button class="ui-btn sm" onclick="showToast('info', document.getElementById('toast-position').value)">Info</button>
+        <button class="ui-btn sm success" onclick="showToast('success', document.getElementById('toast-position').value)">Success</button>
+        <button class="ui-btn sm danger" onclick="showToast('danger', document.getElementById('toast-position').value)">Danger</button>
+        <button class="ui-btn sm warning" onclick="showToast('warning', document.getElementById('toast-position').value)">Warning</button>
+      </div>
+      <details class="demo-code" data-readonly>
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;script&gt;
+// Container is created on the fly per position — no HTML needed
+function getToastContainer(position = 'bottom-right') {
+  const id = `ui-toast-${position}`;
+  let c = document.getElementById(id);
+  if (!c) {
+    c = document.createElement('div');
+    c.id = id;
+    c.className = `ui-toast-container ${position}`;
+    document.body.appendChild(c);
+  }
+  return c;
+}
+
+// type: 'info' | 'success' | 'danger' | 'warning'
+// position: 'bottom-right' | 'top-right' | 'top-left' | 'bottom-left' | 'top-center' | 'bottom-center'
+function showToast(type, message, position) {
+  const icons = {
+    info: 'bi-info-circle', success: 'bi-check-circle',
+    danger: 'bi-exclamation-circle', warning: 'bi-exclamation-triangle',
+  };
+  const toast = document.createElement('div');
+  toast.className = `ui-toast ${type}`;
+  toast.innerHTML = `
+    &lt;i class="ui-toast-icon bi ${icons[type]}"&gt;&lt;/i&gt;
+    &lt;span class="ui-toast-body"&gt;${message}&lt;/span&gt;
+    &lt;button class="ui-toast-close"
+      onclick="this.closest('.ui-toast').remove()"&gt;&amp;times;&lt;/button&gt;`;
+  getToastContainer(position).appendChild(toast);
+  setTimeout(() =&gt; toast.parentNode &amp;&amp; toast.remove(), 4000);
+}
+
+// Usage:
+showToast('success', 'Changes saved!', 'top-right');
+showToast('danger', 'Something went wrong.'); // defaults to bottom-right
+&lt;/script&gt;</pre>
       </details>
     </div>
   </div>
@@ -3752,6 +3700,59 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
       </details>
     </div>
   </div>
+  <div class="demo-section" id="layout">
+    <h2>Layout Utilities</h2>
+    <div class="demo-subsection">
+      <h3>Stack & Row</h3>
+      <div class="grid-2">
+        <div class="ui-panel flat">
+          <div class="ui-panel-header"><h3 class="ui-panel-title">.ui-stack</h3></div>
+          <div class="ui-panel-body">
+            <div class="ui-stack sm">
+              <div class="ui-alert">Item 1</div>
+              <div class="ui-alert">Item 2</div>
+              <div class="ui-alert">Item 3</div>
+            </div>
+          </div>
+        </div>
+        <div class="ui-panel flat">
+          <div class="ui-panel-header"><h3 class="ui-panel-title">.ui-row</h3></div>
+          <div class="ui-panel-body">
+            <div class="ui-row sm">
+              <span class="ui-badge">Tag 1</span>
+              <span class="ui-badge secondary">Tag 2</span>
+              <span class="ui-badge success">Tag 3</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-panel flat"&gt;
+  &lt;div class="ui-panel-header"&gt;&lt;h3 class="ui-panel-title"&gt;.ui-stack&lt;/h3&gt;&lt;/div&gt;
+  &lt;div class="ui-panel-body"&gt;
+    &lt;div class="ui-stack sm"&gt;
+      &lt;div class="ui-alert"&gt;Item 1&lt;/div&gt;
+      &lt;div class="ui-alert"&gt;Item 2&lt;/div&gt;
+      &lt;div class="ui-alert"&gt;Item 3&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="ui-panel flat"&gt;
+  &lt;div class="ui-panel-header"&gt;&lt;h3 class="ui-panel-title"&gt;.ui-row&lt;/h3&gt;&lt;/div&gt;
+  &lt;div class="ui-panel-body"&gt;
+    &lt;div class="ui-row sm"&gt;
+      &lt;span class="ui-badge"&gt;Tag 1&lt;/span&gt;
+      &lt;span class="ui-badge secondary"&gt;Tag 2&lt;/span&gt;
+      &lt;span class="ui-badge success"&gt;Tag 3&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+      </details>
+    </div>
+  </div>
+
 
 </div>
 </div>
