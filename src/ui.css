@@ -692,6 +692,115 @@
   }
 }
 
+/* --- Input with icon --- */
+
+.ui-input-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  & > .ui-input {
+    width: 100%;
+  }
+
+  /* Icon element (left by default) */
+  & > i,
+  & > svg,
+  & > .ui-input-icon-left {
+    position: absolute;
+    left: 0.75rem;
+    color: var(--ui-text-muted);
+    font-size: 1rem;
+    pointer-events: none;
+    line-height: 1;
+  }
+
+  & > .ui-input-icon-right {
+    position: absolute;
+    right: 0.75rem;
+    left: auto;
+    color: var(--ui-text-muted);
+    font-size: 1rem;
+    pointer-events: none;
+    line-height: 1;
+  }
+
+  /* Pad the input to make room for icons */
+  &:has(> i, > svg, > .ui-input-icon-left) > .ui-input {
+    padding-left: 2.375rem;
+  }
+
+  &:has(> .ui-input-icon-right) > .ui-input {
+    padding-right: 2.375rem;
+  }
+
+  /* Both icons */
+  &:has(> i, > svg, > .ui-input-icon-left):has(> .ui-input-icon-right) > .ui-input {
+    padding-left: 2.375rem;
+    padding-right: 2.375rem;
+  }
+
+  /* Clickable icon (button) */
+  & > button.ui-input-icon-right,
+  & > button.ui-input-icon-left {
+    pointer-events: auto;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    color: var(--ui-text-muted);
+    transition: color var(--ui-transition);
+
+    &:hover {
+      color: var(--ui-text);
+    }
+  }
+
+  /* Size variants */
+  &.sm > i,
+  &.sm > svg,
+  &.sm > .ui-input-icon-left,
+  &.sm > .ui-input-icon-right {
+    font-size: 0.875rem;
+    left: 0.5rem;
+  }
+
+  &.sm > .ui-input-icon-right {
+    left: auto;
+    right: 0.5rem;
+  }
+
+  &.sm:has(> i, > svg, > .ui-input-icon-left) > .ui-input {
+    padding-left: 1.75rem;
+  }
+
+  &.sm:has(> .ui-input-icon-right) > .ui-input {
+    padding-right: 1.75rem;
+  }
+
+  &.lg > i,
+  &.lg > svg,
+  &.lg > .ui-input-icon-left,
+  &.lg > .ui-input-icon-right {
+    font-size: 1.125rem;
+    left: 1rem;
+  }
+
+  &.lg > .ui-input-icon-right {
+    left: auto;
+    right: 1rem;
+  }
+
+  &.lg:has(> i, > svg, > .ui-input-icon-left) > .ui-input {
+    padding-left: 2.75rem;
+  }
+
+  &.lg:has(> .ui-input-icon-right) > .ui-input {
+    padding-right: 2.75rem;
+  }
+}
+
 /* --- Checkbox / Radio --- */
 
 .ui-checkbox,
@@ -1246,6 +1355,189 @@
     border: none;
     box-shadow: var(--ui-shadow);
   }
+}
+
+/* ============================================
+   Table
+   ============================================ */
+
+.ui-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-family: var(--ui-font);
+  font-size: var(--ui-font-size);
+  line-height: var(--ui-line-height);
+  color: var(--ui-text);
+  background: var(--ui-surface);
+  border: 1px solid var(--ui-border);
+  border-radius: var(--ui-radius-lg);
+  overflow: hidden;
+
+  /* --- Head --- */
+
+  & thead {
+    background: var(--ui-bg-subtle);
+
+    & th {
+      padding: 0.625rem 1rem;
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--ui-text-muted);
+      text-align: left;
+      border-bottom: 1px solid var(--ui-border);
+      white-space: nowrap;
+      user-select: none;
+    }
+  }
+
+  /* --- Body --- */
+
+  & tbody {
+
+    & tr {
+      transition: background var(--ui-transition);
+
+      &:not(:last-child) > td {
+        border-bottom: 1px solid var(--ui-border);
+      }
+    }
+
+    & td {
+      padding: 0.625rem 1rem;
+      vertical-align: middle;
+    }
+  }
+
+  /* --- Footer --- */
+
+  & tfoot {
+    background: var(--ui-bg-subtle);
+
+    & td {
+      padding: 0.625rem 1rem;
+      border-top: 1px solid var(--ui-border);
+      font-size: 0.8125rem;
+      color: var(--ui-text-muted);
+    }
+  }
+
+  /* --- Sortable columns --- */
+
+  & th.sortable {
+    cursor: pointer;
+    transition: color var(--ui-transition), background var(--ui-transition);
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--ui-text);
+        background: color-mix(in srgb, var(--ui-border) 40%, var(--ui-bg-subtle));
+      }
+    }
+
+    &:active {
+      background: color-mix(in srgb, var(--ui-border) 60%, var(--ui-bg-subtle));
+    }
+
+    /* Sort indicator */
+    & .sort-icon {
+      display: inline-flex;
+      vertical-align: middle;
+      margin-left: 0.25rem;
+      opacity: 0.3;
+      transition: opacity var(--ui-transition), transform var(--ui-transition);
+    }
+
+    &:hover .sort-icon {
+      opacity: 0.6;
+    }
+
+    &.asc .sort-icon,
+    &.desc .sort-icon {
+      opacity: 1;
+      color: var(--ui-primary);
+    }
+
+    &.desc .sort-icon {
+      transform: rotate(180deg);
+    }
+  }
+
+  /* --- Hoverable rows --- */
+
+  &.hoverable tbody tr {
+    @media (hover: hover) {
+      &:hover {
+        background: var(--ui-primary-light);
+      }
+    }
+  }
+
+  /* --- Striped rows --- */
+
+  &.striped tbody tr:nth-child(even) {
+    background: var(--ui-bg-subtle);
+  }
+
+  &.striped.hoverable tbody tr {
+    @media (hover: hover) {
+      &:hover {
+        background: var(--ui-primary-light);
+      }
+    }
+  }
+
+  /* --- Compact --- */
+
+  &.compact {
+    & thead th { padding: 0.375rem 0.75rem; }
+    & tbody td { padding: 0.375rem 0.75rem; }
+    & tfoot td { padding: 0.375rem 0.75rem; }
+  }
+
+  /* --- Borderless --- */
+
+  &.borderless {
+    border: none;
+    border-radius: 0;
+
+    & thead th { border-bottom: 2px solid var(--ui-border); }
+    & tbody tr:not(:last-child) > td { border-bottom: 1px solid color-mix(in srgb, var(--ui-border) 50%, transparent); }
+    & tfoot td { border-top: 2px solid var(--ui-border); }
+  }
+
+  /* --- Nested elements reset --- */
+
+  & .ui-checkbox,
+  & .ui-radio {
+    margin: 0;
+    min-height: auto;
+  }
+
+  & .ui-input,
+  & .ui-select {
+    width: auto;
+    min-width: 0;
+  }
+
+  & .ui-btn.sm {
+    font-size: 0.75rem;
+  }
+
+  & .ui-badge,
+  & .ui-tag {
+    vertical-align: middle;
+  }
+}
+
+/* Responsive wrapper */
+.ui-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: var(--ui-radius-lg);
 }
 
 /* ============================================
