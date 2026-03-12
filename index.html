@@ -3316,13 +3316,14 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
     const root = document.documentElement.style;
     Object.entries(defaults).forEach(([name, hex]) => {
       document.getElementById(`cfg-${name}`).value = hex;
-      root.setProperty(`--ui-${name}`, hex);
+      root.removeProperty(`--ui-${name}`);
       if (semanticColors.includes(name)) {
         root.removeProperty(`--ui-${name}-text`);
       }
     });
-    root.setProperty('--ui-surface', defaults.bg);
-    root.setProperty('--ui-bg-subtle', adjustBgSubtle(defaults.bg));
+    // Let CSS handle surface/bg-subtle (they differ from --ui-bg in dark mode)
+    root.removeProperty('--ui-surface');
+    root.removeProperty('--ui-bg-subtle');
   }
 
   // Theme mode: 'system' | 'light' | 'dark'
@@ -3351,21 +3352,29 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
     localStorage.setItem('ui-theme-mode', mode);
 
     const root = document.documentElement.style;
+    let bgCustomized = false;
     Object.entries(defaults).forEach(([name, hex]) => {
       const picker = document.getElementById(`cfg-${name}`);
       if (preserveCustom && picker.value !== prevDefaults[name]) {
         applyColor(name, picker.value);
+        if (name === 'bg') bgCustomized = true;
       } else {
         picker.value = hex;
-        root.setProperty(`--ui-${name}`, hex);
+        root.removeProperty(`--ui-${name}`);
         if (semanticColors.includes(name)) {
           root.removeProperty(`--ui-${name}-text`);
         }
       }
     });
-    const bgPicker = document.getElementById('cfg-bg');
-    root.setProperty('--ui-surface', bgPicker.value);
-    root.setProperty('--ui-bg-subtle', adjustBgSubtle(bgPicker.value));
+    if (bgCustomized) {
+      const bgPicker = document.getElementById('cfg-bg');
+      root.setProperty('--ui-surface', bgPicker.value);
+      root.setProperty('--ui-bg-subtle', adjustBgSubtle(bgPicker.value));
+    } else {
+      // Let CSS handle surface/bg-subtle (they differ from --ui-bg in dark mode)
+      root.removeProperty('--ui-surface');
+      root.removeProperty('--ui-bg-subtle');
+    }
   }
 
   // Initialize
