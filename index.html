@@ -2867,9 +2867,25 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
   const darkToggle = document.getElementById('dark-mode-toggle');
   darkToggle.addEventListener('change', () => {
     const isDark = darkToggle.checked;
-    document.documentElement.setAttribute('data-theme', isDark ? 'dark' : '');
+    const prevDefaults = defaults;
     defaults = isDark ? darkDefaults : lightDefaults;
-    resetTheme();
+    document.documentElement.setAttribute('data-theme', isDark ? 'dark' : '');
+
+    const root = document.documentElement.style;
+    Object.entries(defaults).forEach(([name, hex]) => {
+      const picker = document.getElementById(`cfg-${name}`);
+      const wasDefault = picker.value === prevDefaults[name];
+      if (wasDefault) {
+        picker.value = hex;
+        applyColor(name, hex);
+      } else {
+        // Re-apply the user's custom color so derived vars update
+        applyColor(name, picker.value);
+      }
+    });
+    const bgPicker = document.getElementById('cfg-bg');
+    root.setProperty('--ui-surface', bgPicker.value);
+    root.setProperty('--ui-bg-subtle', adjustBgSubtle(bgPicker.value));
   });
 
   // Tab switcher
