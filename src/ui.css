@@ -279,12 +279,20 @@
       background: color-mix(in srgb, var(--ui-primary) 8%, transparent);
     }
 
+    &:active {
+      background: color-mix(in srgb, var(--ui-primary) 15%, transparent);
+    }
+
     &.secondary {
       border-color: var(--ui-secondary);
       color: var(--ui-secondary);
 
       &:hover {
         background: var(--ui-secondary-light);
+      }
+
+      &:active {
+        background: color-mix(in srgb, var(--ui-secondary) 20%, transparent);
       }
     }
 
@@ -295,6 +303,10 @@
       &:hover {
         background: var(--ui-danger-light);
       }
+
+      &:active {
+        background: color-mix(in srgb, var(--ui-danger) 20%, transparent);
+      }
     }
 
     &.success {
@@ -303,6 +315,10 @@
 
       &:hover {
         background: var(--ui-success-light);
+      }
+
+      &:active {
+        background: color-mix(in srgb, var(--ui-success) 20%, transparent);
       }
     }
   }
@@ -317,11 +333,19 @@
       background: var(--ui-primary-light);
     }
 
+    &:active {
+      background: color-mix(in srgb, var(--ui-primary) 15%, transparent);
+    }
+
     &.secondary {
       color: var(--ui-secondary);
 
       &:hover {
         background: var(--ui-secondary-light);
+      }
+
+      &:active {
+        background: color-mix(in srgb, var(--ui-secondary) 20%, transparent);
       }
     }
 
@@ -330,6 +354,10 @@
 
       &:hover {
         background: var(--ui-danger-light);
+      }
+
+      &:active {
+        background: color-mix(in srgb, var(--ui-danger) 20%, transparent);
       }
     }
   }
@@ -650,7 +678,7 @@
     border-radius: var(--ui-radius-sm);
     background: var(--ui-bg);
     flex-shrink: 0;
-    transition: background var(--ui-transition), border-color var(--ui-transition), box-shadow var(--ui-transition);
+    transition: background var(--ui-transition), border-color var(--ui-transition);
 
     /* Checkmark */
     &::after {
@@ -832,7 +860,7 @@
     border-radius: var(--ui-radius);
     cursor: pointer;
     white-space: nowrap;
-    transition: border-color var(--ui-transition), box-shadow var(--ui-transition);
+    transition: border-color var(--ui-transition);
 
     &:hover {
       border-color: var(--ui-text-muted);
