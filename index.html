@@ -3305,8 +3305,8 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
     const r = parseInt(bgHex.slice(1,3), 16);
     const g = parseInt(bgHex.slice(3,5), 16);
     const b = parseInt(bgHex.slice(5,7), 16);
-    const shift = isDark ? 12 : -8;
-    const adj = v => Math.max(0, Math.min(255, v + shift));
+    const shift = isDark ? 12 : 8;
+    const adj = v => Math.max(0, Math.min(255, v - shift));
     return '#' + [r,g,b].map(v => adj(v).toString(16).padStart(2,'0')).join('');
   }
 
@@ -3393,8 +3393,6 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
     danger:  { icon: 'bi-exclamation-circle', text: 'Something went wrong.' },
     warning: { icon: 'bi-exclamation-triangle', text: 'Please check your input.' },
   };
-
-  const toastPositions = ['bottom-right', 'top-right', 'top-left', 'bottom-left', 'top-center', 'bottom-center'];
 
   function getToastContainer(position) {
     const pos = position || 'bottom-right';
