@@ -515,14 +515,36 @@
     }
   }
 
+  /* Unchecked hover/active */
   &:hover .ui-toggle-track {
-    filter: brightness(0.95);
+    background: color-mix(in srgb, var(--ui-border) 80%, var(--ui-text));
+  }
+
+  &:active:not(:has(input:disabled)) .ui-toggle-track {
+    background: color-mix(in srgb, var(--ui-border) 65%, var(--ui-text));
+  }
+
+  /* Checked hover/active */
+  &:hover input:checked + .ui-toggle-track {
+    background: var(--ui-primary-hover);
+  }
+
+  &:active:not(:has(input:disabled)) input:checked + .ui-toggle-track {
+    background: var(--ui-primary-active);
   }
 
   /* Variants */
   &.success input:checked + .ui-toggle-track { background: var(--ui-success); }
-  &.danger  input:checked + .ui-toggle-track { background: var(--ui-danger); }
+  &.success:hover input:checked + .ui-toggle-track { background: var(--ui-success-hover); }
+  &.success:active:not(:has(input:disabled)) input:checked + .ui-toggle-track { background: var(--ui-success-active); }
+
+  &.danger input:checked + .ui-toggle-track { background: var(--ui-danger); }
+  &.danger:hover input:checked + .ui-toggle-track { background: var(--ui-danger-hover); }
+  &.danger:active:not(:has(input:disabled)) input:checked + .ui-toggle-track { background: var(--ui-danger-active); }
+
   &.warning input:checked + .ui-toggle-track { background: var(--ui-warning); }
+  &.warning:hover input:checked + .ui-toggle-track { background: var(--ui-warning-hover); }
+  &.warning:active:not(:has(input:disabled)) input:checked + .ui-toggle-track { background: var(--ui-warning-active); }
 
   /* Sizes */
   &.sm {
@@ -739,8 +761,27 @@
     }
   }
 
+  /* Unchecked hover/active */
   &:hover input:not(:disabled) {
     border-color: var(--ui-primary);
+  }
+
+  &:active input:not(:disabled) {
+    border-color: var(--ui-primary);
+    background: color-mix(in srgb, var(--ui-bg) 80%, var(--ui-text));
+  }
+
+  /* Checked hover/active */
+  &:hover input:checked:not(:disabled),
+  &:hover input:indeterminate:not(:disabled) {
+    background: var(--ui-primary-hover);
+    border-color: var(--ui-primary-hover);
+  }
+
+  &:active input:checked:not(:disabled),
+  &:active input:indeterminate:not(:disabled) {
+    background: var(--ui-primary-active);
+    border-color: var(--ui-primary-active);
   }
 
   /* Disabled */
@@ -753,15 +794,21 @@
   /* Color variants */
   &.success {
     & input:checked { background: var(--ui-success); border-color: var(--ui-success); }
-    &:hover input:not(:disabled) { border-color: var(--ui-success); }
+    &:hover input:checked:not(:disabled) { background: var(--ui-success-hover); border-color: var(--ui-success-hover); }
+    &:active input:checked:not(:disabled) { background: var(--ui-success-active); border-color: var(--ui-success-active); }
+    &:hover input:not(:checked):not(:disabled) { border-color: var(--ui-success); }
   }
   &.danger {
     & input:checked { background: var(--ui-danger); border-color: var(--ui-danger); }
-    &:hover input:not(:disabled) { border-color: var(--ui-danger); }
+    &:hover input:checked:not(:disabled) { background: var(--ui-danger-hover); border-color: var(--ui-danger-hover); }
+    &:active input:checked:not(:disabled) { background: var(--ui-danger-active); border-color: var(--ui-danger-active); }
+    &:hover input:not(:checked):not(:disabled) { border-color: var(--ui-danger); }
   }
   &.warning {
     & input:checked { background: var(--ui-warning); border-color: var(--ui-warning); }
-    &:hover input:not(:disabled) { border-color: var(--ui-warning); }
+    &:hover input:checked:not(:disabled) { background: var(--ui-warning-hover); border-color: var(--ui-warning-hover); }
+    &:active input:checked:not(:disabled) { background: var(--ui-warning-active); border-color: var(--ui-warning-active); }
+    &:hover input:not(:checked):not(:disabled) { border-color: var(--ui-warning); }
   }
 
   /* Sizes */
