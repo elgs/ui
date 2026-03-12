@@ -390,37 +390,40 @@
       <hr class="demo-nav-divider">
       <div class="demo-nav-label">Form controls</div>
       <a href="#buttons">Buttons</a>
-      <a href="#toggles">Toggles</a>
-      <a href="#checkboxes">Checkboxes & Radios</a>
-      <a href="#inputs">Inputs</a>
+      <a href="#checkboxes">Checkboxes</a>
       <a href="#dropdowns">Dropdowns</a>
+      <a href="#inputs">Inputs</a>
+      <a href="#radios">Radios</a>
       <a href="#sliders">Sliders</a>
+      <a href="#toggles">Toggles</a>
       <hr class="demo-nav-divider">
       <div class="demo-nav-label">Data display</div>
-      <a href="#tables">Tables</a>
-      <a href="#panels">Panels</a>
-      <a href="#cards">Cards</a>
-      <a href="#badges">Badges, Tags & Alerts</a>
-      <a href="#dots">Status Dots</a>
-      <a href="#numbered-badge">Numbered Badge</a>
-      <a href="#tooltips">Tooltips</a>
-      <a href="#avatars">Avatars</a>
       <a href="#accordions">Accordions</a>
+      <a href="#avatars">Avatars</a>
+      <a href="#badges">Badges</a>
+      <a href="#cards">Cards</a>
+      <a href="#numbered-badge">Numbered Badge</a>
+      <a href="#panels">Panels</a>
+      <a href="#dots">Status Dots</a>
+      <a href="#tables">Tables</a>
+      <a href="#tags">Tags</a>
+      <a href="#tooltips">Tooltips</a>
       <hr class="demo-nav-divider">
       <div class="demo-nav-label">Navigation</div>
-      <a href="#tabs">Tabs</a>
       <a href="#breadcrumbs">Breadcrumbs</a>
       <a href="#pagination">Pagination</a>
+      <a href="#tabs">Tabs</a>
       <hr class="demo-nav-divider">
       <div class="demo-nav-label">Feedback</div>
-      <a href="#toasts">Toasts</a>
+      <a href="#alerts">Alerts</a>
+      <a href="#dialogs">Dialogs</a>
       <a href="#progress">Progress</a>
       <a href="#skeletons">Skeletons</a>
-      <a href="#dialogs">Dialogs</a>
+      <a href="#toasts">Toasts</a>
       <hr class="demo-nav-divider">
-      <a href="#layout">Layout Utilities</a>
       <a href="#config">Configuration</a>
       <a href="#dark-mode">Dark Mode</a>
+      <a href="#layout">Layout Utilities</a>
     </div>
   </nav>
 
@@ -786,37 +789,35 @@ btn.classList.remove('loading'); // stop
   </div>
 
   <div class="demo-section" id="checkboxes">
-    <h2>Checkboxes & Radios</h2>
+    <h2>Checkboxes</h2>
 
-    <div class="grid-2">
-      <div>
-        <div class="demo-subsection">
-          <h3>Checkboxes</h3>
-          <div class="ui-stack sm">
-            <label class="ui-checkbox">
-              <input type="checkbox" checked>
-              Checked
-            </label>
-            <label class="ui-checkbox">
-              <input type="checkbox">
-              Unchecked
-            </label>
-            <label class="ui-checkbox">
-              <input type="checkbox" id="indeterminate-cb">
-              Indeterminate
-            </label>
-            <label class="ui-checkbox">
-              <input type="checkbox" checked disabled>
-              Disabled (checked)
-            </label>
-            <label class="ui-checkbox">
-              <input type="checkbox" disabled>
-              Disabled (unchecked)
-            </label>
-          </div>
-          <details class="demo-code">
-            <summary>Show code</summary>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+    <div class="demo-subsection">
+      <h3>Default</h3>
+      <div class="ui-stack sm">
+        <label class="ui-checkbox">
+          <input type="checkbox" checked>
+          Checked
+        </label>
+        <label class="ui-checkbox">
+          <input type="checkbox">
+          Unchecked
+        </label>
+        <label class="ui-checkbox">
+          <input type="checkbox" id="indeterminate-cb">
+          Indeterminate
+        </label>
+        <label class="ui-checkbox">
+          <input type="checkbox" checked disabled>
+          Disabled (checked)
+        </label>
+        <label class="ui-checkbox">
+          <input type="checkbox" disabled>
+          Disabled (unchecked)
+        </label>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 <pre>&lt;label class="ui-checkbox"&gt;
   &lt;input type="checkbox" checked&gt;
   Checked
@@ -842,32 +843,32 @@ btn.classList.remove('loading'); // stop
 // Indeterminate is a JS-only property, cannot be set via HTML
 document.getElementById('indeterminate-cb').indeterminate = true;
 &lt;/script&gt;</pre>
-          </details>
-        </div>
+      </details>
+    </div>
 
-        <div class="demo-subsection">
-          <h3>Checkbox colors</h3>
-          <div class="ui-row">
-            <label class="ui-checkbox">
-              <input type="checkbox" checked>
-              Primary
-            </label>
-            <label class="ui-checkbox success">
-              <input type="checkbox" checked>
-              Success
-            </label>
-            <label class="ui-checkbox danger">
-              <input type="checkbox" checked>
-              Danger
-            </label>
-            <label class="ui-checkbox warning">
-              <input type="checkbox" checked>
-              Warning
-            </label>
-          </div>
-          <details class="demo-code">
-            <summary>Show code</summary>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+    <div class="demo-subsection">
+      <h3>Colors</h3>
+      <div class="ui-row">
+        <label class="ui-checkbox">
+          <input type="checkbox" checked>
+          Primary
+        </label>
+        <label class="ui-checkbox success">
+          <input type="checkbox" checked>
+          Success
+        </label>
+        <label class="ui-checkbox danger">
+          <input type="checkbox" checked>
+          Danger
+        </label>
+        <label class="ui-checkbox warning">
+          <input type="checkbox" checked>
+          Warning
+        </label>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 <pre>&lt;label class="ui-checkbox"&gt;
   &lt;input type="checkbox" checked&gt;
   Primary
@@ -884,28 +885,28 @@ document.getElementById('indeterminate-cb').indeterminate = true;
   &lt;input type="checkbox" checked&gt;
   Warning
 &lt;/label&gt;</pre>
-          </details>
-        </div>
+      </details>
+    </div>
 
-        <div class="demo-subsection">
-          <h3>Checkbox sizes</h3>
-          <div class="ui-row">
-            <label class="ui-checkbox sm">
-              <input type="checkbox" checked>
-              Small
-            </label>
-            <label class="ui-checkbox">
-              <input type="checkbox" checked>
-              Default
-            </label>
-            <label class="ui-checkbox lg">
-              <input type="checkbox" checked>
-              Large
-            </label>
-          </div>
-          <details class="demo-code">
-            <summary>Show code</summary>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+    <div class="demo-subsection">
+      <h3>Sizes</h3>
+      <div class="ui-row">
+        <label class="ui-checkbox sm">
+          <input type="checkbox" checked>
+          Small
+        </label>
+        <label class="ui-checkbox">
+          <input type="checkbox" checked>
+          Default
+        </label>
+        <label class="ui-checkbox lg">
+          <input type="checkbox" checked>
+          Large
+        </label>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 <pre>&lt;label class="ui-checkbox sm"&gt;
   &lt;input type="checkbox" checked&gt;
   Small
@@ -918,34 +919,36 @@ document.getElementById('indeterminate-cb').indeterminate = true;
   &lt;input type="checkbox" checked&gt;
   Large
 &lt;/label&gt;</pre>
-          </details>
-        </div>
-      </div>
+      </details>
+    </div>
+  </div>
 
-      <div>
-        <div class="demo-subsection">
-          <h3>Radio buttons</h3>
-          <div class="ui-stack sm">
-            <label class="ui-radio">
-              <input type="radio" name="demo-radio-1" checked>
-              Option one
-            </label>
-            <label class="ui-radio">
-              <input type="radio" name="demo-radio-1">
-              Option two
-            </label>
-            <label class="ui-radio">
-              <input type="radio" name="demo-radio-1">
-              Option three
-            </label>
-            <label class="ui-radio">
-              <input type="radio" name="demo-radio-disabled" disabled>
-              Disabled
-            </label>
-          </div>
-          <details class="demo-code">
-            <summary>Show code</summary>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+  <div class="demo-section" id="radios">
+    <h2>Radios</h2>
+
+    <div class="demo-subsection">
+      <h3>Default</h3>
+      <div class="ui-stack sm">
+        <label class="ui-radio">
+          <input type="radio" name="demo-radio-1" checked>
+          Option one
+        </label>
+        <label class="ui-radio">
+          <input type="radio" name="demo-radio-1">
+          Option two
+        </label>
+        <label class="ui-radio">
+          <input type="radio" name="demo-radio-1">
+          Option three
+        </label>
+        <label class="ui-radio">
+          <input type="radio" name="demo-radio-disabled" disabled>
+          Disabled
+        </label>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 <pre>&lt;label class="ui-radio"&gt;
   &lt;input type="radio" name="demo-radio-1" checked&gt;
   Option one
@@ -962,32 +965,32 @@ document.getElementById('indeterminate-cb').indeterminate = true;
   &lt;input type="radio" name="demo-radio-disabled" disabled&gt;
   Disabled
 &lt;/label&gt;</pre>
-          </details>
-        </div>
+      </details>
+    </div>
 
-        <div class="demo-subsection">
-          <h3>Radio colors</h3>
-          <div class="ui-row">
-            <label class="ui-radio">
-              <input type="radio" name="demo-radio-color" checked>
-              Primary
-            </label>
-            <label class="ui-radio success">
-              <input type="radio" name="demo-radio-color-s" checked>
-              Success
-            </label>
-            <label class="ui-radio danger">
-              <input type="radio" name="demo-radio-color-d" checked>
-              Danger
-            </label>
-            <label class="ui-radio warning">
-              <input type="radio" name="demo-radio-color-w" checked>
-              Warning
-            </label>
-          </div>
-          <details class="demo-code">
-            <summary>Show code</summary>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+    <div class="demo-subsection">
+      <h3>Colors</h3>
+      <div class="ui-row">
+        <label class="ui-radio">
+          <input type="radio" name="demo-radio-color" checked>
+          Primary
+        </label>
+        <label class="ui-radio success">
+          <input type="radio" name="demo-radio-color-s" checked>
+          Success
+        </label>
+        <label class="ui-radio danger">
+          <input type="radio" name="demo-radio-color-d" checked>
+          Danger
+        </label>
+        <label class="ui-radio warning">
+          <input type="radio" name="demo-radio-color-w" checked>
+          Warning
+        </label>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 <pre>&lt;label class="ui-radio"&gt;
   &lt;input type="radio" name="demo-radio-color" checked&gt;
   Primary
@@ -1004,28 +1007,28 @@ document.getElementById('indeterminate-cb').indeterminate = true;
   &lt;input type="radio" name="demo-radio-color-w" checked&gt;
   Warning
 &lt;/label&gt;</pre>
-          </details>
-        </div>
+      </details>
+    </div>
 
-        <div class="demo-subsection">
-          <h3>Radio sizes</h3>
-          <div class="ui-row">
-            <label class="ui-radio sm">
-              <input type="radio" name="demo-radio-sz-s" checked>
-              Small
-            </label>
-            <label class="ui-radio">
-              <input type="radio" name="demo-radio-sz" checked>
-              Default
-            </label>
-            <label class="ui-radio lg">
-              <input type="radio" name="demo-radio-sz-l" checked>
-              Large
-            </label>
-          </div>
-          <details class="demo-code">
-            <summary>Show code</summary>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+    <div class="demo-subsection">
+      <h3>Sizes</h3>
+      <div class="ui-row">
+        <label class="ui-radio sm">
+          <input type="radio" name="demo-radio-sz-s" checked>
+          Small
+        </label>
+        <label class="ui-radio">
+          <input type="radio" name="demo-radio-sz" checked>
+          Default
+        </label>
+        <label class="ui-radio lg">
+          <input type="radio" name="demo-radio-sz-l" checked>
+          Large
+        </label>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 <pre>&lt;label class="ui-radio sm"&gt;
   &lt;input type="radio" name="demo-radio-sz-s" checked&gt;
   Small
@@ -1038,9 +1041,7 @@ document.getElementById('indeterminate-cb').indeterminate = true;
   &lt;input type="radio" name="demo-radio-sz-l" checked&gt;
   Large
 &lt;/label&gt;</pre>
-          </details>
-        </div>
-      </div>
+      </details>
     </div>
   </div>
 
@@ -2549,10 +2550,10 @@ document.addEventListener('click', e =&gt; {
 
   <!-- Badges, Tags & Alerts -->
   <div class="demo-section" id="badges">
-    <h2>Badges, Tags & Alerts</h2>
+    <h2>Badges</h2>
 
     <div class="demo-subsection">
-      <h3>Badges</h3>
+      <h3>Default</h3>
       <div class="ui-row sm">
         <span class="ui-badge">Primary</span>
         <span class="ui-badge secondary">Secondary</span>
@@ -2572,7 +2573,7 @@ document.addEventListener('click', e =&gt; {
     </div>
 
     <div class="demo-subsection">
-      <h3>Badge styles</h3>
+      <h3>Styles</h3>
       <div class="ui-stack sm">
         <div class="ui-row sm">
           <span class="ui-badge solid">Solid</span>
@@ -2616,7 +2617,7 @@ document.addEventListener('click', e =&gt; {
     </div>
 
     <div class="demo-subsection">
-      <h3>Badge sizes</h3>
+      <h3>Sizes</h3>
       <div class="ui-row sm">
         <span class="ui-badge sm">Small</span>
         <span class="ui-badge">Default</span>
@@ -2630,9 +2631,13 @@ document.addEventListener('click', e =&gt; {
 &lt;span class="ui-badge lg"&gt;Large&lt;/span&gt;</pre>
       </details>
     </div>
+  </div>
+
+  <div class="demo-section" id="tags">
+    <h2>Tags</h2>
 
     <div class="demo-subsection">
-      <h3>Tags (dismissible)</h3>
+      <h3>Default</h3>
       <div class="ui-row sm">
         <span class="ui-tag">Default <button class="ui-tag-close" onclick="this.parentElement.remove()">&times;</button></span>
         <span class="ui-tag primary">Primary <button class="ui-tag-close" onclick="this.parentElement.remove()">&times;</button></span>
@@ -2652,7 +2657,7 @@ document.addEventListener('click', e =&gt; {
     </div>
 
     <div class="demo-subsection">
-      <h3>Tag sizes</h3>
+      <h3>Sizes</h3>
       <div class="ui-row sm">
         <span class="ui-tag sm">Small <button class="ui-tag-close" onclick="this.parentElement.remove()">&times;</button></span>
         <span class="ui-tag">Default <button class="ui-tag-close" onclick="this.parentElement.remove()">&times;</button></span>
@@ -2669,23 +2674,6 @@ document.addEventListener('click', e =&gt; {
       </details>
     </div>
 
-    <div class="demo-subsection">
-      <h3>Alerts</h3>
-      <div class="ui-stack sm">
-        <div class="ui-alert">This is an informational alert.</div>
-        <div class="ui-alert success">Operation completed successfully.</div>
-        <div class="ui-alert warning">Please review your changes before saving.</div>
-        <div class="ui-alert danger">An error occurred while processing your request.</div>
-      </div>
-      <details class="demo-code">
-        <summary>Show code</summary>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;div class="ui-alert"&gt;This is an informational alert.&lt;/div&gt;
-&lt;div class="ui-alert success"&gt;Operation completed successfully.&lt;/div&gt;
-&lt;div class="ui-alert warning"&gt;Please review your changes before saving.&lt;/div&gt;
-&lt;div class="ui-alert danger"&gt;An error occurred while processing your request.&lt;/div&gt;</pre>
-      </details>
-    </div>
   </div>
 
   <div class="demo-section" id="dots">
@@ -3305,6 +3293,28 @@ function switchTab(tabsId, index) {
 
 
   <!-- ═══ Feedback ═══ -->
+
+  <div class="demo-section" id="alerts">
+    <h2>Alerts</h2>
+
+    <div class="demo-subsection">
+      <h3>Default</h3>
+      <div class="ui-stack sm">
+        <div class="ui-alert">This is an informational alert.</div>
+        <div class="ui-alert success">Operation completed successfully.</div>
+        <div class="ui-alert warning">Please review your changes before saving.</div>
+        <div class="ui-alert danger">An error occurred while processing your request.</div>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-alert"&gt;This is an informational alert.&lt;/div&gt;
+&lt;div class="ui-alert success"&gt;Operation completed successfully.&lt;/div&gt;
+&lt;div class="ui-alert warning"&gt;Please review your changes before saving.&lt;/div&gt;
+&lt;div class="ui-alert danger"&gt;An error occurred while processing your request.&lt;/div&gt;</pre>
+      </details>
+    </div>
+  </div>
 
   <div class="demo-section" id="toasts">
     <h2>Toasts</h2>
