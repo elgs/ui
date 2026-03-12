@@ -224,6 +224,10 @@
       background: var(--ui-success-hover);
     }
 
+    &:active {
+      background: var(--ui-success-active);
+    }
+
     &:focus-visible {
       outline-color: var(--ui-success);
     }
@@ -234,6 +238,10 @@
 
     &:hover {
       background: var(--ui-danger-hover);
+    }
+
+    &:active {
+      background: var(--ui-danger-active);
     }
 
     &:focus-visible {
@@ -247,6 +255,11 @@
 
     &:hover {
       background: var(--ui-warning-hover);
+      color: var(--ui-text-inverse);
+    }
+
+    &:active {
+      background: var(--ui-warning-active);
       color: var(--ui-text-inverse);
     }
 
