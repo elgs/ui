@@ -272,6 +272,31 @@
       border-color: rgba(255,255,255,0.1);
     }
     /* Sticky source button */
+    .demo-theme-fab {
+      position: fixed;
+      bottom: 4.5rem;
+      right: 1.5rem;
+      z-index: 1000;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: var(--ui-radius-full);
+      border: 1px solid var(--ui-border);
+      background: var(--ui-surface);
+      color: var(--ui-text);
+      font-size: 1.125rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: background var(--ui-transition), transform 0.15s, box-shadow 0.15s;
+    }
+    .demo-theme-fab:hover {
+      background: var(--ui-bg-subtle);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+
     .source-toggle {
       position: fixed;
       bottom: 1.5rem;
@@ -339,6 +364,10 @@
   </style>
 </head>
 <body>
+
+<button class="demo-theme-fab" id="theme-fab" title="Theme: system">
+  <i class="bi bi-circle-half"></i>
+</button>
 
 <div class="demo-page">
 
@@ -421,11 +450,6 @@
       </div>
       <div class="ui-row sm">
         <button class="ui-btn sm ghost secondary" onclick="resetTheme()">Reset to defaults</button>
-        <label class="ui-toggle">
-          <input type="checkbox" id="dark-mode-toggle">
-          <span class="ui-toggle-track"></span>
-          Dark mode
-        </label>
       </div>
     </div>
   </div>
@@ -2853,39 +2877,80 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
     return '#' + [r,g,b].map(v => clamp(v).toString(16).padStart(2,'0')).join('');
   }
 
+  const semanticColors = ['primary', 'secondary', 'success', 'danger', 'warning'];
+
   function resetTheme() {
     const root = document.documentElement.style;
     Object.entries(defaults).forEach(([name, hex]) => {
       document.getElementById(`cfg-${name}`).value = hex;
-      applyColor(name, hex);
+      root.setProperty(`--ui-${name}`, hex);
+      if (semanticColors.includes(name)) {
+        root.removeProperty(`--ui-${name}-text`);
+      }
     });
     root.setProperty('--ui-surface', defaults.bg);
     root.setProperty('--ui-bg-subtle', adjustBgSubtle(defaults.bg));
   }
 
-  // Dark mode toggle
-  const darkToggle = document.getElementById('dark-mode-toggle');
-  darkToggle.addEventListener('change', () => {
-    const isDark = darkToggle.checked;
+  // Theme mode: 'system' | 'light' | 'dark'
+  const themeFab = document.getElementById('theme-fab');
+  const fabIcons = {
+    system: '<i class="bi bi-circle-half"></i>',
+    light:  '<i class="bi bi-sun-fill"></i>',
+    dark:   '<i class="bi bi-moon-fill"></i>',
+  };
+  const modeOrder = ['system', 'light', 'dark'];
+
+  function resolveMode(mode) {
+    if (mode === 'system') {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    return mode;
+  }
+
+  function applyMode(mode, preserveCustom) {
+    const isDark = resolveMode(mode) === 'dark';
     const prevDefaults = defaults;
     defaults = isDark ? darkDefaults : lightDefaults;
     document.documentElement.setAttribute('data-theme', isDark ? 'dark' : '');
+    themeFab.innerHTML = fabIcons[mode];
+    themeFab.title = 'Theme: ' + mode;
+    localStorage.setItem('ui-theme-mode', mode);
 
     const root = document.documentElement.style;
     Object.entries(defaults).forEach(([name, hex]) => {
       const picker = document.getElementById(`cfg-${name}`);
-      const wasDefault = picker.value === prevDefaults[name];
-      if (wasDefault) {
-        picker.value = hex;
-        applyColor(name, hex);
-      } else {
-        // Re-apply the user's custom color so derived vars update
+      if (preserveCustom && picker.value !== prevDefaults[name]) {
         applyColor(name, picker.value);
+      } else {
+        picker.value = hex;
+        root.setProperty(`--ui-${name}`, hex);
+        if (semanticColors.includes(name)) {
+          root.removeProperty(`--ui-${name}-text`);
+        }
       }
     });
     const bgPicker = document.getElementById('cfg-bg');
     root.setProperty('--ui-surface', bgPicker.value);
     root.setProperty('--ui-bg-subtle', adjustBgSubtle(bgPicker.value));
+  }
+
+  // Initialize
+  const savedMode = localStorage.getItem('ui-theme-mode') || 'system';
+  applyMode(savedMode, false);
+
+  // Follow system changes when in system mode
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    if ((localStorage.getItem('ui-theme-mode') || 'system') === 'system') {
+      applyMode('system', false);
+    }
+  });
+
+  // Cycle: system → light → dark → system
+  themeFab.addEventListener('click', () => {
+    const current = localStorage.getItem('ui-theme-mode') || 'system';
+    const next = modeOrder[(modeOrder.indexOf(current) + 1) % 3];
+    applyMode(next, true);
   });
 
   // Tab switcher
