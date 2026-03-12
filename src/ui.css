@@ -345,7 +345,7 @@
     }
 
     &:active {
-      background: color-mix(in srgb, var(--ui-primary) 15%, transparent);
+      background: color-mix(in srgb, var(--ui-primary) 25%, transparent);
     }
 
     &.secondary {
@@ -356,7 +356,7 @@
       }
 
       &:active {
-        background: color-mix(in srgb, var(--ui-secondary) 20%, transparent);
+        background: color-mix(in srgb, var(--ui-secondary) 30%, transparent);
       }
     }
 
@@ -368,7 +368,7 @@
       }
 
       &:active {
-        background: color-mix(in srgb, var(--ui-danger) 20%, transparent);
+        background: color-mix(in srgb, var(--ui-danger) 30%, transparent);
       }
     }
   }
