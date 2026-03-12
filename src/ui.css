@@ -79,6 +79,10 @@
   --ui-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
   --ui-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
 
+  /* --- Tooltip --- */
+  --ui-tooltip-bg: #4b5563;
+  --ui-tooltip-text: #fff;
+
   /* --- Typography --- */
   --ui-font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --ui-font-mono: ui-monospace, "Cascadia Code", "Fira Code", monospace;
@@ -133,6 +137,9 @@
   --ui-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
   --ui-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
   --ui-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+
+  --ui-tooltip-bg: #e4e6eb;
+  --ui-tooltip-text: #1a1d26;
 }
 
 /* ============================================
@@ -1683,6 +1690,13 @@ dialog.ui-dialog {
     color: var(--ui-text-inverse);
   }
 
+  &:focus-visible {
+    outline: 2px solid var(--ui-primary);
+    outline-offset: 2px;
+    position: relative;
+    z-index: 1;
+  }
+
   &:disabled {
     opacity: 0.4;
     cursor: not-allowed;
@@ -1696,6 +1710,11 @@ dialog.ui-dialog {
   }
 }
 
+/* Color variants */
+.ui-pagination.success .ui-page.active { background: var(--ui-success); }
+.ui-pagination.danger  .ui-page.active { background: var(--ui-danger); }
+.ui-pagination.secondary .ui-page.active { background: var(--ui-secondary); }
+
 /* Outlined variant */
 .ui-pagination.outline .ui-page {
   border-color: var(--ui-border);
@@ -1706,6 +1725,10 @@ dialog.ui-dialog {
     color: var(--ui-text-inverse);
   }
 }
+
+.ui-pagination.outline.success .ui-page.active { border-color: var(--ui-success); background: var(--ui-success); }
+.ui-pagination.outline.danger  .ui-page.active { border-color: var(--ui-danger); background: var(--ui-danger); }
+.ui-pagination.outline.secondary .ui-page.active { border-color: var(--ui-secondary); background: var(--ui-secondary); }
 
 /* Sizes */
 .ui-pagination.sm .ui-page {
@@ -1742,8 +1765,8 @@ dialog.ui-dialog {
     font-weight: 500;
     line-height: 1.4;
     white-space: nowrap;
-    color: var(--ui-text-inverse);
-    background: color-mix(in srgb, var(--ui-text) 60%, var(--ui-secondary));
+    color: var(--ui-tooltip-text);
+    background: var(--ui-tooltip-bg);
     border-radius: var(--ui-radius-sm);
     box-shadow: var(--ui-shadow);
     pointer-events: none;
@@ -1847,6 +1870,27 @@ dialog.ui-dialog {
     bottom: -0.375rem;
     right: auto;
     left: -0.375rem;
+  }
+
+  /* Sizes */
+  &.sm {
+    min-width: 0.875rem;
+    height: 0.875rem;
+    font-size: 0.5625rem;
+    line-height: 0.875rem;
+    padding: 0 0.25rem;
+    top: -0.25rem;
+    right: -0.25rem;
+  }
+
+  &.lg {
+    min-width: 1.375rem;
+    height: 1.375rem;
+    font-size: 0.75rem;
+    line-height: 1.375rem;
+    padding: 0 0.375rem;
+    top: -0.5rem;
+    right: -0.5rem;
   }
 
   /* Dot-only (no number) */
