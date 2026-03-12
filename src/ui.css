@@ -544,7 +544,7 @@
   border: 1px solid var(--ui-border);
   border-radius: var(--ui-radius);
   color: var(--ui-text);
-  transition: border-color var(--ui-transition), box-shadow var(--ui-transition);
+  transition: border-color var(--ui-transition);
 
   &::placeholder {
     color: var(--ui-text-muted);
@@ -989,7 +989,7 @@
     border-radius: var(--ui-radius);
     outline: none;
     box-sizing: border-box;
-    transition: border-color var(--ui-transition), box-shadow var(--ui-transition);
+    transition: border-color var(--ui-transition);
 
     &:focus {
       border-color: var(--ui-primary);
