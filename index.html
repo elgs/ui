@@ -6,7 +6,7 @@
   <title>UI CSS — One file. Every component. Any framework.</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="src/ui.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="src/icons.css">
   <style>
     *, *::before, *::after { box-sizing: border-box; }
     body { margin: 0; font-family: var(--ui-font); color: var(--ui-text); background: var(--ui-bg); -webkit-font-smoothing: antialiased; }
@@ -346,8 +346,8 @@
 </head>
 <body>
 
-  <button class="theme-toggle" onclick="document.documentElement.toggleAttribute('data-theme') || document.documentElement.setAttribute('data-theme', document.documentElement.getAttribute('data-theme') ? '' : 'dark')" aria-label="Toggle theme">
-    <i class="bi bi-circle-half"></i>
+  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Theme: system">
+    <i class="ui-icon ui-icon-monitor"></i>
   </button>
 
   <!-- ==================== HERO ==================== -->
@@ -357,15 +357,15 @@
     <p>28 components. Dark mode. Fully themeable. Zero JavaScript. Zero dependencies. Works with every framework — or none at all.</p>
     <div class="hero-actions">
       <a href="docs.html" class="ui-btn lg">
-        <i class="bi bi-grid-3x3-gap"></i> Browse Components
+        <i class="ui-icon ui-icon-grid"></i> Browse Components
       </a>
       <a href="https://github.com/elgs/ui" class="ui-btn outline lg">
-        <i class="bi bi-github"></i> GitHub
+        <i class="ui-icon ui-icon-github"></i> GitHub
       </a>
     </div>
     <div class="install-snippet" onclick="navigator.clipboard.writeText('&lt;link rel=&quot;stylesheet&quot; href=&quot;ui.css&quot;&gt;')">
       <code>&lt;link rel="stylesheet" href="<strong>ui.css</strong>"&gt;</code>
-      <i class="bi bi-clipboard" style="font-size:0.85rem"></i>
+      <i class="ui-icon ui-icon-copy" style="font-size:0.85rem"></i>
     </div>
   </section>
 
@@ -400,42 +400,42 @@
     <div class="features">
       <div class="feature-card">
         <div class="feature-icon" style="background: var(--ui-primary)">
-          <i class="bi bi-file-earmark-code"></i>
+          <i class="ui-icon ui-icon-file"></i>
         </div>
         <h3>One file. That's it.</h3>
         <p>Drop a single CSS file into any project. No build step, no config, no package manager. Link it and go.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon" style="background: var(--ui-success)">
-          <i class="bi bi-puzzle"></i>
+          <i class="ui-icon ui-icon-grid"></i>
         </div>
         <h3>Framework agnostic</h3>
         <p>React, Vue, Svelte, Angular, HTMX, vanilla HTML — it doesn't matter. Plain CSS classes work everywhere.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon" style="background: var(--ui-warning)">
-          <i class="bi bi-moon-stars"></i>
+          <i class="ui-icon ui-icon-moon"></i>
         </div>
         <h3>Dark mode built in</h3>
         <p>Toggle with a single data attribute. Every component, every color, every shadow — all calibrated for both themes.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon" style="background: var(--ui-danger)">
-          <i class="bi bi-palette"></i>
+          <i class="ui-icon ui-icon-zap"></i>
         </div>
         <h3>Fully themeable</h3>
         <p>Override a few CSS custom properties and the entire library adapts. Hover, active, and light variants are derived automatically via <code>color-mix()</code>.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon" style="background: var(--ui-secondary)">
-          <i class="bi bi-phone"></i>
+          <i class="ui-icon ui-icon-phone"></i>
         </div>
         <h3>Mobile-first responsive</h3>
         <p>Touch-optimized hit targets, hover-only effects on hover-capable devices, and fluid sizing from phone to desktop.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon" style="background: color-mix(in srgb, var(--ui-primary) 70%, var(--ui-success))">
-          <i class="bi bi-universal-access"></i>
+          <i class="ui-icon ui-icon-shield"></i>
         </div>
         <h3>Accessibility ready</h3>
         <p>Focus-visible outlines, proper disabled states, screen-reader-friendly markup patterns, and WCAG-aware contrast ratios.</p>
@@ -628,8 +628,8 @@
     <h2>Start building in 10 seconds</h2>
     <p>Add one line to your HTML. Start using classes. Ship something beautiful.</p>
     <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap">
-      <a href="docs.html" class="ui-btn lg"><i class="bi bi-book"></i> Documentation</a>
-      <a href="https://github.com/elgs/ui" class="ui-btn outline lg"><i class="bi bi-github"></i> View Source</a>
+      <a href="docs.html" class="ui-btn lg"><i class="ui-icon ui-icon-file"></i> Documentation</a>
+      <a href="https://github.com/elgs/ui" class="ui-btn outline lg"><i class="ui-icon ui-icon-github"></i> View Source</a>
     </div>
   </section>
 
@@ -638,18 +638,6 @@
     <p>UI CSS — Open source. MIT License.</p>
   </footer>
 
-  <script>
-    // Theme toggle
-    const toggle = document.querySelector('.theme-toggle');
-    toggle.addEventListener('click', () => {
-      const html = document.documentElement;
-      const isDark = html.getAttribute('data-theme') === 'dark';
-      if (isDark) {
-        html.removeAttribute('data-theme');
-      } else {
-        html.setAttribute('data-theme', 'dark');
-      }
-    });
-  </script>
+  <script src="src/theme.js"></script>
 </body>
 </html>
