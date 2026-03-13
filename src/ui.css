@@ -442,6 +442,9 @@
 
   /* --- Icon-only --- */
 
+  /* Padding calculated to keep icon buttons square at the same height as text buttons:
+     default: (0.5rem * 2 + 0.875rem * 1.5 - 1em) / 2 ≈ 0.71875rem
+     sm:      (0.25rem * 2 + 0.8125rem * 1.5 - 1em) / 2 ≈ 0.453125rem */
   &.icon {
     line-height: 1;
     padding: 0.71875rem;
@@ -676,7 +679,7 @@
     height: 100%;
     border-radius: 50%;
     background: currentColor;
-    animation: ui-pulse var(--_speed) ease-in-out infinite;
+    animation: ui-spinner-pulse-anim var(--_speed) ease-in-out infinite;
   }
 
   &.success { --_color: var(--ui-success); }
@@ -692,7 +695,7 @@
   &.fast { --_speed: 0.5s; }
 }
 
-@keyframes ui-pulse {
+@keyframes ui-spinner-pulse-anim {
   0%, 100% { opacity: 0.2; transform: scale(0.6); }
   50% { opacity: 1; transform: scale(1); }
 }
@@ -753,17 +756,22 @@
    ============================================ */
 
 .ui-btn-group {
+  --_group-radius: var(--ui-radius);
   display: inline-flex;
+
+  &.sm {
+    --_group-radius: var(--ui-radius-sm);
+  }
 
   &>.ui-btn {
     border-radius: 0;
 
     &:first-child {
-      border-radius: var(--ui-radius) 0 0 var(--ui-radius);
+      border-radius: var(--_group-radius) 0 0 var(--_group-radius);
     }
 
     &:last-child {
-      border-radius: 0 var(--ui-radius) var(--ui-radius) 0;
+      border-radius: 0 var(--_group-radius) var(--_group-radius) 0;
     }
 
     &+.ui-btn {
@@ -974,6 +982,7 @@
   &.sm {
     padding: 0.25rem 0.5rem;
     font-size: 0.8125rem;
+    border-radius: var(--ui-radius-sm);
   }
 
   &.lg {
@@ -3319,10 +3328,6 @@ dialog.ui-dialog {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-  }
-
-  &.flat {
-    box-shadow: none;
   }
 
   &.elevated {
