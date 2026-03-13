@@ -2678,6 +2678,7 @@ dialog.ui-dialog {
   border-radius: var(--ui-radius);
   box-shadow: var(--ui-shadow-lg);
   color: var(--ui-text);
+  font-family: var(--ui-font);
   font-size: var(--ui-font-size);
   pointer-events: auto;
   animation: ui-toast-in 0.25s ease;
@@ -2810,6 +2811,7 @@ dialog.ui-dialog {
       display: flex;
       align-items: center;
       justify-content: center;
+      font-family: var(--ui-font);
       font-size: 0.6875rem;
       font-weight: 600;
       color: #ffffff;
@@ -2883,6 +2885,7 @@ dialog.ui-dialog {
   border-radius: var(--ui-radius-full);
   background: var(--ui-primary-light);
   color: var(--ui-primary);
+  font-family: var(--ui-font);
   font-weight: 600;
   font-size: 0.875rem;
   flex-shrink: 0;
@@ -2987,6 +2990,7 @@ dialog.ui-dialog {
   display: flex;
   align-items: center;
   gap: 0.25rem;
+  font-family: var(--ui-font);
   font-size: var(--ui-font-size);
   color: var(--ui-text-muted);
   list-style: none;
@@ -3034,6 +3038,7 @@ dialog.ui-dialog {
   border: 1px solid var(--ui-border);
   border-radius: var(--ui-radius-lg);
   overflow: hidden;
+  font-family: var(--ui-font);
 
   & .ui-card-img {
     width: 100%;
