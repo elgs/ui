@@ -507,19 +507,31 @@
   color: var(--_color);
   vertical-align: middle;
   flex-shrink: 0;
-}
 
-/* --- Ring (default) --- */
+  /* --- Ring (default) --- */
 
-.ui-spinner::after {
-  content: "";
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: conic-gradient(transparent 120deg, currentColor 120deg);
-  mask: radial-gradient(farthest-side, transparent calc(100% - max(2px, 12%)), #000 calc(100% - max(2px, 12%) + 0.5px));
-  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - max(2px, 12%)), #000 calc(100% - max(2px, 12%) + 0.5px));
-  animation: ui-spin var(--_speed) linear infinite;
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(transparent 120deg, currentColor 120deg);
+    mask: radial-gradient(farthest-side, transparent calc(100% - max(2px, 12%)), #000 calc(100% - max(2px, 12%) + 0.5px));
+    -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - max(2px, 12%)), #000 calc(100% - max(2px, 12%) + 0.5px));
+    animation: ui-spin var(--_speed) linear infinite;
+  }
+
+  &.success { --_color: var(--ui-success); }
+  &.danger  { --_color: var(--ui-danger); }
+  &.warning { --_color: var(--ui-warning); }
+  &.secondary { --_color: var(--ui-secondary); }
+
+  &.sm { --_size: 1em; }
+  &.lg { --_size: 2.5em; }
+  &.xl { --_size: 3.5em; }
+
+  &.slow { --_speed: 1.4s; }
+  &.fast { --_speed: 0.35s; }
 }
 
 /* --- Dots --- */
@@ -582,6 +594,18 @@
     background-image: var(--_g), var(--_g), var(--_g), var(--_g), var(--_g), var(--_g), var(--_g), var(--_g);
     background-position: 0% center, 14.29% center, 28.57% center, 42.86% center, 57.14% center, 71.43% center, 85.71% center, 100% center;
   }
+
+  &.success { --_color: var(--ui-success); }
+  &.danger  { --_color: var(--ui-danger); }
+  &.warning { --_color: var(--ui-warning); }
+  &.secondary { --_color: var(--ui-secondary); }
+
+  &.sm { --_d: 6px; --_gap: 4px; }
+  &.lg { --_d: 12px; --_gap: 7px; }
+  &.xl { --_d: 16px; --_gap: 9px; }
+
+  &.slow { --_speed: 2s; }
+  &.fast { --_speed: 0.6s; }
 }
 
 @keyframes ui-dots-wave {
@@ -609,16 +633,21 @@
   color: var(--_color);
   overflow: hidden;
   flex-shrink: 0;
-}
 
-.ui-spinner-bar::after {
-  content: "";
-  display: block;
-  width: 40%;
-  height: 100%;
-  border-radius: inherit;
-  background: currentColor;
-  animation: ui-bar-slide var(--_speed) ease-in-out infinite;
+  &::after {
+    content: "";
+    display: block;
+    width: 40%;
+    height: 100%;
+    border-radius: inherit;
+    background: currentColor;
+    animation: ui-bar-slide var(--_speed) ease-in-out infinite;
+  }
+
+  &.success { --_color: var(--ui-success); }
+  &.danger  { --_color: var(--ui-danger); }
+  &.warning { --_color: var(--ui-warning); }
+  &.secondary { --_color: var(--ui-secondary); }
 }
 
 @keyframes ui-bar-slide {
@@ -639,16 +668,28 @@
   color: var(--_color);
   vertical-align: middle;
   flex-shrink: 0;
-}
 
-.ui-spinner-pulse::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: currentColor;
-  animation: ui-pulse var(--_speed) ease-in-out infinite;
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: currentColor;
+    animation: ui-pulse var(--_speed) ease-in-out infinite;
+  }
+
+  &.success { --_color: var(--ui-success); }
+  &.danger  { --_color: var(--ui-danger); }
+  &.warning { --_color: var(--ui-warning); }
+  &.secondary { --_color: var(--ui-secondary); }
+
+  &.sm { --_size: 1em; }
+  &.lg { --_size: 2.5em; }
+  &.xl { --_size: 3.5em; }
+
+  &.slow { --_speed: 2s; }
+  &.fast { --_speed: 0.5s; }
 }
 
 @keyframes ui-pulse {
@@ -669,64 +710,35 @@
   vertical-align: middle;
   flex-shrink: 0;
   position: relative;
-}
 
-.ui-spinner-dual::before,
-.ui-spinner-dual::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  border: 2.5px solid transparent;
-}
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2.5px solid transparent;
+  }
 
-.ui-spinner-dual::before {
-  border-top-color: currentColor;
-  animation: ui-spin var(--_speed) linear infinite;
-}
+  &::before {
+    border-top-color: currentColor;
+    animation: ui-spin var(--_speed) linear infinite;
+  }
 
-.ui-spinner-dual::after {
-  border-bottom-color: color-mix(in srgb, currentColor 45%, transparent);
-  animation: ui-spin var(--_speed) linear infinite reverse;
-}
+  &::after {
+    border-bottom-color: color-mix(in srgb, currentColor 45%, transparent);
+    animation: ui-spin var(--_speed) linear infinite reverse;
+  }
 
-/* --- Spinner modifiers --- */
-
-:is(.ui-spinner, .ui-spinner-dots, .ui-spinner-bar, .ui-spinner-pulse, .ui-spinner-dual) {
   &.success { --_color: var(--ui-success); }
   &.danger  { --_color: var(--ui-danger); }
   &.warning { --_color: var(--ui-warning); }
   &.secondary { --_color: var(--ui-secondary); }
-}
 
-:is(.ui-spinner, .ui-spinner-pulse, .ui-spinner-dual) {
   &.sm { --_size: 1em; }
   &.lg { --_size: 2.5em; }
   &.xl { --_size: 3.5em; }
-}
 
-.ui-spinner-dots {
-  &.sm { --_d: 6px; --_gap: 4px; }
-  &.lg { --_d: 12px; --_gap: 7px; }
-  &.xl { --_d: 16px; --_gap: 9px; }
-}
-
-.ui-spinner {
-  &.slow { --_speed: 1.4s; }
-  &.fast { --_speed: 0.35s; }
-}
-
-.ui-spinner-dots {
-  &.slow { --_speed: 2s; }
-  &.fast { --_speed: 0.6s; }
-}
-
-.ui-spinner-pulse {
-  &.slow { --_speed: 2s; }
-  &.fast { --_speed: 0.5s; }
-}
-
-.ui-spinner-dual {
   &.slow { --_speed: 1.6s; }
   &.fast { --_speed: 0.4s; }
 }
@@ -735,27 +747,6 @@
   --_color: currentColor;
 }
 
-/* --- Skeleton shimmer --- */
-
-.ui-skeleton {
-  --_speed: 1.5s;
-  display: block;
-  height: 1em;
-  border-radius: var(--ui-radius);
-  background: linear-gradient(
-    90deg,
-    color-mix(in srgb, var(--ui-text) 8%, transparent) 25%,
-    color-mix(in srgb, var(--ui-text) 16%, transparent) 50%,
-    color-mix(in srgb, var(--ui-text) 8%, transparent) 75%
-  );
-  background-size: 200% 100%;
-  animation: ui-shimmer var(--_speed) ease-in-out infinite;
-}
-
-@keyframes ui-shimmer {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
-}
 
 /* ============================================
    Button group
@@ -1404,23 +1395,6 @@
   }
 }
 
-/* Legacy fallback */
-.ui-check {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: var(--ui-font);
-  font-size: var(--ui-font-size);
-  cursor: pointer;
-
-  & input[type="checkbox"],
-  & input[type="radio"] {
-    width: 1rem;
-    height: 1rem;
-    accent-color: var(--ui-primary);
-    cursor: pointer;
-  }
-}
 
 /* ============================================
    Dropdown
@@ -3100,6 +3074,8 @@ dialog.ui-dialog {
    ============================================ */
 
 .ui-skeleton {
+  display: block;
+  height: 1em;
   background: var(--ui-bg-subtle);
   border-radius: var(--ui-radius);
   animation: ui-skeleton-pulse 1.5s ease-in-out infinite;
