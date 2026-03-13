@@ -36,7 +36,7 @@
   --ui-primary: #2095f3;
   --ui-primary-hover: color-mix(in srgb, var(--ui-primary) 80%, #000);
   --ui-primary-active: color-mix(in srgb, var(--ui-primary) 65%, #000);
-  --ui-primary-light: color-mix(in srgb, var(--ui-primary) 15%, #fff);
+  --ui-primary-light: color-mix(in srgb, var(--ui-primary) 12%, #fff);
   --ui-primary-text: #ffffff;
 
   --ui-secondary: #8590a2;
@@ -108,7 +108,7 @@
   --ui-primary: #4dabf7;
   --ui-primary-hover: color-mix(in srgb, var(--ui-primary) 80%, #fff);
   --ui-primary-active: color-mix(in srgb, var(--ui-primary) 65%, #fff);
-  --ui-primary-light: color-mix(in srgb, var(--ui-primary) 15%, #000);
+  --ui-primary-light: color-mix(in srgb, var(--ui-primary) 12%, #000);
   --ui-primary-text: #ffffff;
 
   --ui-secondary: #8590a2;
@@ -291,11 +291,11 @@
     color: var(--ui-primary);
 
     &:hover {
-      background: color-mix(in srgb, var(--ui-primary) 8%, transparent);
+      background: var(--ui-primary-light);
     }
 
     &:active {
-      background: color-mix(in srgb, var(--ui-primary) 15%, transparent);
+      background: color-mix(in srgb, var(--ui-primary) 20%, transparent);
     }
 
     &.secondary {
@@ -362,7 +362,7 @@
     }
 
     &:active {
-      background: color-mix(in srgb, var(--ui-primary) 25%, transparent);
+      background: color-mix(in srgb, var(--ui-primary) 30%, transparent);
     }
 
     &.secondary {
@@ -485,6 +485,10 @@
       animation: ui-spin 0.6s linear infinite;
       flex-shrink: 0;
     }
+  }
+
+  & :is(.ui-spinner, .ui-spinner-dots, .ui-spinner-bar, .ui-spinner-pulse, .ui-spinner-dual) {
+    --_color: currentColor;
   }
 }
 
@@ -625,6 +629,10 @@
   width: 100%;
   height: var(--_height);
   border-radius: var(--_height);
+  background: color-mix(in srgb, currentColor 15%, transparent);
+  color: var(--_color);
+  overflow: hidden;
+  flex-shrink: 0;
 
   &.sm { --_height: 2px; }
   &.lg { --_height: 5px; }
@@ -632,10 +640,6 @@
 
   &.slow { --_speed: 2.5s; }
   &.fast { --_speed: 0.8s; }
-  background: color-mix(in srgb, currentColor 15%, transparent);
-  color: var(--_color);
-  overflow: hidden;
-  flex-shrink: 0;
 
   &::after {
     content: "";
@@ -746,10 +750,6 @@
   &.fast { --_speed: 0.4s; }
 }
 
-.ui-btn :is(.ui-spinner, .ui-spinner-dots, .ui-spinner-bar, .ui-spinner-pulse, .ui-spinner-dual) {
-  --_color: currentColor;
-}
-
 
 /* ============================================
    Button group
@@ -853,42 +853,52 @@
   }
 
   /* Variants */
-  &.success input:checked+.ui-toggle-track {
-    background: var(--ui-success);
-  }
-
-  &.danger input:checked+.ui-toggle-track {
-    background: var(--ui-danger);
-  }
-
-  &.warning input:checked+.ui-toggle-track {
-    background: var(--ui-warning);
-  }
-
-  @media (hover: hover) {
-    &.success:hover input:checked+.ui-toggle-track {
-      background: var(--ui-success-hover);
+  &.success {
+    & input:checked+.ui-toggle-track {
+      background: var(--ui-success);
     }
 
-    &.danger:hover input:checked+.ui-toggle-track {
-      background: var(--ui-danger-hover);
+    @media (hover: hover) {
+      &:hover input:checked+.ui-toggle-track {
+        background: var(--ui-success-hover);
+      }
     }
 
-    &.warning:hover input:checked+.ui-toggle-track {
-      background: var(--ui-warning-hover);
+    &:active:not(:has(input:disabled)) input:checked+.ui-toggle-track {
+      background: var(--ui-success-active);
     }
   }
 
-  &.success:active:not(:has(input:disabled)) input:checked+.ui-toggle-track {
-    background: var(--ui-success-active);
+  &.danger {
+    & input:checked+.ui-toggle-track {
+      background: var(--ui-danger);
+    }
+
+    @media (hover: hover) {
+      &:hover input:checked+.ui-toggle-track {
+        background: var(--ui-danger-hover);
+      }
+    }
+
+    &:active:not(:has(input:disabled)) input:checked+.ui-toggle-track {
+      background: var(--ui-danger-active);
+    }
   }
 
-  &.danger:active:not(:has(input:disabled)) input:checked+.ui-toggle-track {
-    background: var(--ui-danger-active);
-  }
+  &.warning {
+    & input:checked+.ui-toggle-track {
+      background: var(--ui-warning);
+    }
 
-  &.warning:active:not(:has(input:disabled)) input:checked+.ui-toggle-track {
-    background: var(--ui-warning-active);
+    @media (hover: hover) {
+      &:hover input:checked+.ui-toggle-track {
+        background: var(--ui-warning-hover);
+      }
+    }
+
+    &:active:not(:has(input:disabled)) input:checked+.ui-toggle-track {
+      background: var(--ui-warning-active);
+    }
   }
 
   /* Sizes */
@@ -977,6 +987,14 @@
 
   &.error {
     border-color: var(--ui-danger);
+
+    &:hover {
+      border-color: var(--ui-danger-hover);
+    }
+
+    &:focus {
+      border-color: var(--ui-danger);
+    }
   }
 
   &.sm {
@@ -1259,67 +1277,92 @@
 
   /* Color variants */
   &.success {
-    & input:checked {
+    & input:checked,
+    & input:indeterminate {
       background: var(--ui-success);
       border-color: var(--ui-success);
     }
 
-    &:active input:checked:not(:disabled) {
+    @media (hover: hover) {
+      &:hover input:checked:not(:disabled) {
+        background: var(--ui-success-hover);
+        border-color: var(--ui-success-hover);
+      }
+
+      &:hover input:not(:checked):not(:disabled) {
+        border-color: var(--ui-success);
+      }
+    }
+
+    &:active input:not(:disabled) {
+      border-color: var(--ui-success);
+      background: color-mix(in srgb, var(--ui-bg) 80%, var(--ui-text));
+    }
+
+    &:active input:checked:not(:disabled),
+    &:active input:indeterminate:not(:disabled) {
       background: var(--ui-success-active);
       border-color: var(--ui-success-active);
     }
   }
 
   &.danger {
-    & input:checked {
+    & input:checked,
+    & input:indeterminate {
       background: var(--ui-danger);
       border-color: var(--ui-danger);
     }
 
-    &:active input:checked:not(:disabled) {
+    @media (hover: hover) {
+      &:hover input:checked:not(:disabled) {
+        background: var(--ui-danger-hover);
+        border-color: var(--ui-danger-hover);
+      }
+
+      &:hover input:not(:checked):not(:disabled) {
+        border-color: var(--ui-danger);
+      }
+    }
+
+    &:active input:not(:disabled) {
+      border-color: var(--ui-danger);
+      background: color-mix(in srgb, var(--ui-bg) 80%, var(--ui-text));
+    }
+
+    &:active input:checked:not(:disabled),
+    &:active input:indeterminate:not(:disabled) {
       background: var(--ui-danger-active);
       border-color: var(--ui-danger-active);
     }
   }
 
   &.warning {
-    & input:checked {
+    & input:checked,
+    & input:indeterminate {
       background: var(--ui-warning);
       border-color: var(--ui-warning);
     }
 
-    &:active input:checked:not(:disabled) {
+    @media (hover: hover) {
+      &:hover input:checked:not(:disabled) {
+        background: var(--ui-warning-hover);
+        border-color: var(--ui-warning-hover);
+      }
+
+      &:hover input:not(:checked):not(:disabled) {
+        border-color: var(--ui-warning);
+      }
+    }
+
+    &:active input:not(:disabled) {
+      border-color: var(--ui-warning);
+      background: color-mix(in srgb, var(--ui-bg) 80%, var(--ui-text));
+    }
+
+    &:active input:checked:not(:disabled),
+    &:active input:indeterminate:not(:disabled) {
       background: var(--ui-warning-active);
       border-color: var(--ui-warning-active);
-    }
-  }
-
-  @media (hover: hover) {
-    &.success:hover input:checked:not(:disabled) {
-      background: var(--ui-success-hover);
-      border-color: var(--ui-success-hover);
-    }
-
-    &.success:hover input:not(:checked):not(:disabled) {
-      border-color: var(--ui-success);
-    }
-
-    &.danger:hover input:checked:not(:disabled) {
-      background: var(--ui-danger-hover);
-      border-color: var(--ui-danger-hover);
-    }
-
-    &.danger:hover input:not(:checked):not(:disabled) {
-      border-color: var(--ui-danger);
-    }
-
-    &.warning:hover input:checked:not(:disabled) {
-      background: var(--ui-warning-hover);
-      border-color: var(--ui-warning-hover);
-    }
-
-    &.warning:hover input:not(:checked):not(:disabled) {
-      border-color: var(--ui-warning);
     }
   }
 
@@ -1398,12 +1441,11 @@
     border-color: var(--ui-primary);
 
     &::after {
-      background: #fff;
+      background: var(--ui-primary-text);
       transform: scale(1);
     }
   }
 }
-
 
 /* ============================================
    Dropdown
@@ -2400,7 +2442,7 @@ dialog.ui-dialog {
   font-size: var(--ui-font-size);
   line-height: var(--ui-line-height);
   background: var(--ui-primary-light);
-  color: var(--ui-primary-active, var(--ui-primary));
+  color: var(--ui-primary);
   border: 1px solid var(--ui-primary);
 
   &.success {
@@ -2604,74 +2646,71 @@ dialog.ui-dialog {
   }
 
   /* Color variants */
-  &.success .ui-page.active {
-    background: var(--ui-success);
-    color: var(--ui-success-text);
-  }
+  &.success {
+    & .ui-page.active {
+      background: var(--ui-success);
+      color: var(--ui-success-text);
 
-  &.danger .ui-page.active {
-    background: var(--ui-danger);
-    color: var(--ui-danger-text);
-  }
-
-  &.secondary .ui-page.active {
-    background: var(--ui-secondary);
-    color: var(--ui-secondary-text);
-  }
-
-  @media (hover: hover) {
-    &.success .ui-page.active:hover {
-      background: var(--ui-success-hover);
-    }
-
-    &.danger .ui-page.active:hover {
-      background: var(--ui-danger-hover);
-    }
-
-    &.secondary .ui-page.active:hover {
-      background: var(--ui-secondary-hover);
+      @media (hover: hover) {
+        &:hover { background: var(--ui-success-hover); }
+      }
+      &:active { background: var(--ui-success-active); }
     }
   }
 
-  &.success .ui-page.active:active {
-    background: var(--ui-success-active);
+  &.danger {
+    & .ui-page.active {
+      background: var(--ui-danger);
+      color: var(--ui-danger-text);
+
+      @media (hover: hover) {
+        &:hover { background: var(--ui-danger-hover); }
+      }
+      &:active { background: var(--ui-danger-active); }
+    }
   }
 
-  &.danger .ui-page.active:active {
-    background: var(--ui-danger-active);
-  }
+  &.secondary {
+    & .ui-page.active {
+      background: var(--ui-secondary);
+      color: var(--ui-secondary-text);
 
-  &.secondary .ui-page.active:active {
-    background: var(--ui-secondary-active);
+      @media (hover: hover) {
+        &:hover { background: var(--ui-secondary-hover); }
+      }
+      &:active { background: var(--ui-secondary-active); }
+    }
   }
 
   /* Outlined variant */
-  &.outline .ui-page {
-    border-color: var(--ui-border);
+  &.outline {
+    & .ui-page {
+      border-color: var(--ui-border);
 
-    &.active {
-      border-color: var(--ui-primary);
-      background: var(--ui-primary);
-      color: var(--ui-primary-text);
+      &.active {
+        border-color: var(--ui-primary);
+        background: var(--ui-primary);
+        color: var(--ui-primary-text);
+      }
     }
-  }
 
-  &.outline.success .ui-page.active {
-    border-color: var(--ui-success);
-    background: var(--ui-success);
-    color: var(--ui-success-text);
-  }
+    &.success .ui-page.active {
+      border-color: var(--ui-success);
+      background: var(--ui-success);
+      color: var(--ui-success-text);
+    }
 
-  &.outline.danger .ui-page.active {
-    border-color: var(--ui-danger);
-    background: var(--ui-danger);
-    color: var(--ui-danger-text);
-  }
+    &.danger .ui-page.active {
+      border-color: var(--ui-danger);
+      background: var(--ui-danger);
+      color: var(--ui-danger-text);
+    }
 
-  &.outline.secondary .ui-page.active {
-    border-color: var(--ui-secondary);
-    background: var(--ui-secondary);
-    color: var(--ui-secondary-text);
+    &.secondary .ui-page.active {
+      border-color: var(--ui-secondary);
+      background: var(--ui-secondary);
+      color: var(--ui-secondary-text);
+    }
   }
 
   /* Sizes */
@@ -2726,40 +2765,46 @@ dialog.ui-dialog {
   }
 
   /* Positions */
-  &.bottom::after {
-    bottom: auto;
-    top: calc(100% + 0.375rem);
-    transform: translateX(-50%) translateY(-4px);
+  &.bottom {
+    &::after {
+      bottom: auto;
+      top: calc(100% + 0.375rem);
+      transform: translateX(-50%) translateY(-4px);
+    }
+
+    &:hover::after,
+    &:focus-visible::after {
+      transform: translateX(-50%) translateY(0);
+    }
   }
 
-  &.bottom:hover::after,
-  &.bottom:focus-visible::after {
-    transform: translateX(-50%) translateY(0);
+  &.left {
+    &::after {
+      bottom: auto;
+      top: 50%;
+      left: auto;
+      right: calc(100% + 0.375rem);
+      transform: translateY(-50%) translateX(4px);
+    }
+
+    &:hover::after,
+    &:focus-visible::after {
+      transform: translateY(-50%) translateX(0);
+    }
   }
 
-  &.left::after {
-    bottom: auto;
-    top: 50%;
-    left: auto;
-    right: calc(100% + 0.375rem);
-    transform: translateY(-50%) translateX(4px);
-  }
+  &.right {
+    &::after {
+      bottom: auto;
+      top: 50%;
+      left: calc(100% + 0.375rem);
+      transform: translateY(-50%) translateX(-4px);
+    }
 
-  &.left:hover::after,
-  &.left:focus-visible::after {
-    transform: translateY(-50%) translateX(0);
-  }
-
-  &.right::after {
-    bottom: auto;
-    top: 50%;
-    left: calc(100% + 0.375rem);
-    transform: translateY(-50%) translateX(-4px);
-  }
-
-  &.right:hover::after,
-  &.right:focus-visible::after {
-    transform: translateY(-50%) translateX(0);
+    &:hover::after,
+    &:focus-visible::after {
+      transform: translateY(-50%) translateX(0);
+    }
   }
 }
 
@@ -3063,7 +3108,7 @@ dialog.ui-dialog {
       font-family: var(--ui-font);
       font-size: 0.6875rem;
       font-weight: 600;
-      color: #ffffff;
+      color: var(--ui-primary-text);
     }
   }
 }
