@@ -3978,7 +3978,7 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
   </div>
   <div class="demo-section" id="icons">
     <h2>Icons</h2>
-    <p style="color:var(--ui-text-muted);margin-bottom:1.5rem">236 built-in icons via CSS <code>mask-image</code>. No icon font, no external dependency. Icons inherit <code>currentColor</code> and scale with <code>font-size</code>.</p>
+    <p style="color:var(--ui-text-muted);margin-bottom:1.5rem">259 built-in icons via CSS <code>mask-image</code>. No icon font, no external dependency. Icons inherit <code>currentColor</code> and scale with <code>font-size</code>.</p>
 
     <div class="demo-subsection">
       <h3>Usage</h3>
@@ -4074,6 +4074,14 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
             <span class="ui-row"><i class="ui-icon ui-icon-menu"></i> menu</span>
             <span class="ui-row"><i class="ui-icon ui-icon-more-horizontal"></i> more-horizontal</span>
             <span class="ui-row"><i class="ui-icon ui-icon-more-vertical"></i> more-vertical</span>
+            <span class="ui-row"><i class="ui-icon ui-icon-ellipsis"></i> ellipsis</span>
+            <span class="ui-row"><i class="ui-icon ui-icon-sidebar"></i> sidebar</span>
+            <span class="ui-row"><i class="ui-icon ui-icon-panel-left"></i> panel-left</span>
+            <span class="ui-row"><i class="ui-icon ui-icon-panel-right"></i> panel-right</span>
+            <span class="ui-row"><i class="ui-icon ui-icon-split"></i> split</span>
+            <span class="ui-row"><i class="ui-icon ui-icon-grip-vertical"></i> grip-vertical</span>
+            <span class="ui-row"><i class="ui-icon ui-icon-grip-horizontal"></i> grip-horizontal</span>
+            <span class="ui-row"><i class="ui-icon ui-icon-pin"></i> pin</span>
             <span class="ui-row"><i class="ui-icon ui-icon-corner-down-left"></i> corner-down-left</span>
             <span class="ui-row"><i class="ui-icon ui-icon-corner-up-right"></i> corner-up-right</span>
             <span class="ui-row"><i class="ui-icon ui-icon-trending-up"></i> trending-up</span>
@@ -4129,6 +4137,7 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
             <span class="ui-row"><i class="ui-icon ui-icon-users"></i> users</span>
             <span class="ui-row"><i class="ui-icon ui-icon-mail"></i> mail</span>
             <span class="ui-row"><i class="ui-icon ui-icon-bell"></i> bell</span>
+            <span class="ui-row"><i class="ui-icon ui-icon-bell-off"></i> bell-off</span>
             <span class="ui-row"><i class="ui-icon ui-icon-calendar"></i> calendar</span>
             <span class="ui-row"><i class="ui-icon ui-icon-clock"></i> clock</span>
             <span class="ui-row"><i class="ui-icon ui-icon-star"></i> star</span>
@@ -4137,7 +4146,11 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
             <span class="ui-row"><i class="ui-icon ui-icon-tag"></i> tag</span>
             <span class="ui-row"><i class="ui-icon ui-icon-image"></i> image</span>
             <span class="ui-row"><i class="ui-icon ui-icon-file"></i> file</span>
+            <span class="ui-row"><i class="ui-icon ui-icon-file-text"></i> file-text</span>
+            <span class="ui-row"><i class="ui-icon ui-icon-file-code"></i> file-code</span>
+            <span class="ui-row"><i class="ui-icon ui-icon-file-image"></i> file-image</span>
             <span class="ui-row"><i class="ui-icon ui-icon-folder"></i> folder</span>
+            <span class="ui-row"><i class="ui-icon ui-icon-folder-open"></i> folder-open</span>
             <span class="ui-row"><i class="ui-icon ui-icon-message"></i> message</span>
             <span class="ui-row"><i class="ui-icon ui-icon-phone"></i> phone</span>
             <span class="ui-row"><i class="ui-icon ui-icon-map-pin"></i> map-pin</span>
@@ -4164,8 +4177,11 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
             <span class="ui-row"><i class="ui-icon ui-icon-minimize"></i> minimize</span>
             <span class="ui-row"><i class="ui-icon ui-icon-grid"></i> grid</span>
             <span class="ui-row"><i class="ui-icon ui-icon-list"></i> list</span>
-            <span class="ui-row"><i class="ui-icon ui-icon-bar-chart"></i> bar-chart</span>
-            <span class="ui-row"><i class="ui-icon ui-icon-pie-chart"></i> pie-chart</span>
+            <span class="ui-row"><i class="ui-icon ui-icon-chart-bar"></i> chart-bar</span>
+            <span class="ui-row"><i class="ui-icon ui-icon-chart-pie"></i> chart-pie</span>
+            <span class="ui-row"><i class="ui-icon ui-icon-chart-line"></i> chart-line</span>
+            <span class="ui-row"><i class="ui-icon ui-icon-chart-area"></i> chart-area</span>
+            <span class="ui-row"><i class="ui-icon ui-icon-table"></i> table</span>
             <span class="ui-row"><i class="ui-icon ui-icon-zap"></i> zap</span>
           </div>
         </div>
@@ -4242,6 +4258,7 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
             <span class="ui-row"><i class="ui-icon ui-icon-radio"></i> radio</span>
             <span class="ui-row"><i class="ui-icon ui-icon-rss"></i> rss</span>
             <span class="ui-row"><i class="ui-icon ui-icon-voicemail"></i> voicemail</span>
+            <span class="ui-row"><i class="ui-icon ui-icon-chat"></i> chat</span>
             <span class="ui-row"><i class="ui-icon ui-icon-at-sign"></i> at-sign</span>
             <span class="ui-row"><i class="ui-icon ui-icon-hash"></i> hash</span>
           </div>
@@ -4265,6 +4282,8 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
             <span class="ui-row"><i class="ui-icon ui-icon-heading"></i> heading</span>
             <span class="ui-row"><i class="ui-icon ui-icon-type"></i> type</span>
             <span class="ui-row"><i class="ui-icon ui-icon-quote"></i> quote</span>
+            <span class="ui-row"><i class="ui-icon ui-icon-paragraph"></i> paragraph</span>
+            <span class="ui-row"><i class="ui-icon ui-icon-text-cursor"></i> text-cursor</span>
           </div>
         </div>
         <div class="icon-category">
@@ -4298,6 +4317,11 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
             <span class="ui-row"><i class="ui-icon ui-icon-percent"></i> percent</span>
             <span class="ui-row"><i class="ui-icon ui-icon-wallet"></i> wallet</span>
             <span class="ui-row"><i class="ui-icon ui-icon-store"></i> store</span>
+            <span class="ui-row"><i class="ui-icon ui-icon-receipt"></i> receipt</span>
+            <span class="ui-row"><i class="ui-icon ui-icon-bank"></i> bank</span>
+            <span class="ui-row"><i class="ui-icon ui-icon-coins"></i> coins</span>
+            <span class="ui-row"><i class="ui-icon ui-icon-barcode"></i> barcode</span>
+            <span class="ui-row"><i class="ui-icon ui-icon-qr-code"></i> qr-code</span>
           </div>
         </div>
         <div class="icon-category">
@@ -4339,6 +4363,8 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
             <span class="ui-row"><i class="ui-icon ui-icon-crosshair"></i> crosshair</span>
             <span class="ui-row"><i class="ui-icon ui-icon-thumbs-up"></i> thumbs-up</span>
             <span class="ui-row"><i class="ui-icon ui-icon-thumbs-down"></i> thumbs-down</span>
+            <span class="ui-row"><i class="ui-icon ui-icon-wand"></i> wand</span>
+            <span class="ui-row"><i class="ui-icon ui-icon-sparkles"></i> sparkles</span>
           </div>
         </div>
         <div class="icon-category">
@@ -4362,9 +4388,27 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
           </div>
         </div>
         <div class="icon-category">
+          <div class="icon-category-header">Development</div>
+          <div class="icon-category-items">
+            <span class="ui-row"><i class="ui-icon ui-icon-git-branch"></i> git-branch</span>
+            <span class="ui-row"><i class="ui-icon ui-icon-git-merge"></i> git-merge</span>
+            <span class="ui-row"><i class="ui-icon ui-icon-git-pull-request"></i> git-pull-request</span>
+            <span class="ui-row"><i class="ui-icon ui-icon-git-commit"></i> git-commit</span>
+            <span class="ui-row"><i class="ui-icon ui-icon-bug"></i> bug</span>
+            <span class="ui-row"><i class="ui-icon ui-icon-container"></i> container</span>
+            <span class="ui-row"><i class="ui-icon ui-icon-brackets"></i> brackets</span>
+          </div>
+        </div>
+        <div class="icon-category">
           <div class="icon-category-header">Brands</div>
           <div class="icon-category-items">
             <span class="ui-row"><i class="ui-icon ui-icon-github"></i> github</span>
+            <span class="ui-row"><i class="ui-icon ui-icon-twitter"></i> twitter</span>
+            <span class="ui-row"><i class="ui-icon ui-icon-linkedin"></i> linkedin</span>
+            <span class="ui-row"><i class="ui-icon ui-icon-facebook"></i> facebook</span>
+            <span class="ui-row"><i class="ui-icon ui-icon-instagram"></i> instagram</span>
+            <span class="ui-row"><i class="ui-icon ui-icon-youtube"></i> youtube</span>
+            <span class="ui-row"><i class="ui-icon ui-icon-discord"></i> discord</span>
           </div>
         </div>
 
