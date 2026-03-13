@@ -492,6 +492,272 @@
 }
 
 /* ============================================
+   Spinners
+   ============================================ */
+
+.ui-spinner {
+  --_size: 1.5em;
+  --_color: var(--ui-primary);
+  --_speed: 0.7s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--_size);
+  height: var(--_size);
+  color: var(--_color);
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+/* --- Ring (default) --- */
+
+.ui-spinner::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: conic-gradient(transparent 120deg, currentColor 120deg);
+  mask: radial-gradient(farthest-side, transparent calc(100% - max(2px, 12%)), #000 calc(100% - max(2px, 12%) + 0.5px));
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - max(2px, 12%)), #000 calc(100% - max(2px, 12%) + 0.5px));
+  animation: ui-spin var(--_speed) linear infinite;
+}
+
+/* --- Dots --- */
+
+.ui-spinner-dots {
+  --_d: 8px;
+  --_gap: 5px;
+  --_color: var(--ui-primary);
+  --_speed: 1.2s;
+  --_g: radial-gradient(circle calc(var(--_d) / 2), currentColor 95%, transparent);
+  display: inline-block;
+  color: var(--_color);
+  vertical-align: middle;
+  flex-shrink: 0;
+  height: var(--_d);
+  background-size: var(--_d) var(--_d);
+  background-repeat: no-repeat;
+
+  /* Default: 3 dots */
+  width: calc(3 * var(--_d) + 2 * var(--_gap));
+  background-image: var(--_g), var(--_g), var(--_g);
+  background-position: 0% center, 50% center, 100% center;
+
+  -webkit-mask: linear-gradient(90deg, #0004, #000 25%, #000 75%, #0004) right / 300% 100%;
+  mask: linear-gradient(90deg, #0004, #000 25%, #000 75%, #0004) right / 300% 100%;
+  animation: ui-dots-wave var(--_speed) ease-in-out infinite alternate;
+
+  &.dots-2 {
+    width: calc(2 * var(--_d) + 1 * var(--_gap));
+    background-image: var(--_g), var(--_g);
+    background-position: 0% center, 100% center;
+  }
+
+  &.dots-4 {
+    width: calc(4 * var(--_d) + 3 * var(--_gap));
+    background-image: var(--_g), var(--_g), var(--_g), var(--_g);
+    background-position: 0% center, 33.33% center, 66.67% center, 100% center;
+  }
+
+  &.dots-5 {
+    width: calc(5 * var(--_d) + 4 * var(--_gap));
+    background-image: var(--_g), var(--_g), var(--_g), var(--_g), var(--_g);
+    background-position: 0% center, 25% center, 50% center, 75% center, 100% center;
+  }
+
+  &.dots-6 {
+    width: calc(6 * var(--_d) + 5 * var(--_gap));
+    background-image: var(--_g), var(--_g), var(--_g), var(--_g), var(--_g), var(--_g);
+    background-position: 0% center, 20% center, 40% center, 60% center, 80% center, 100% center;
+  }
+
+  &.dots-7 {
+    width: calc(7 * var(--_d) + 6 * var(--_gap));
+    background-image: var(--_g), var(--_g), var(--_g), var(--_g), var(--_g), var(--_g), var(--_g);
+    background-position: 0% center, 16.67% center, 33.33% center, 50% center, 66.67% center, 83.33% center, 100% center;
+  }
+
+  &.dots-8 {
+    width: calc(8 * var(--_d) + 7 * var(--_gap));
+    background-image: var(--_g), var(--_g), var(--_g), var(--_g), var(--_g), var(--_g), var(--_g), var(--_g);
+    background-position: 0% center, 14.29% center, 28.57% center, 42.86% center, 57.14% center, 71.43% center, 85.71% center, 100% center;
+  }
+}
+
+@keyframes ui-dots-wave {
+  to { -webkit-mask-position: left; mask-position: left; }
+}
+
+/* --- Bar --- */
+
+.ui-spinner-bar {
+  --_color: var(--ui-primary);
+  --_speed: 1.5s;
+  --_height: 3px;
+  display: block;
+  width: 100%;
+  height: var(--_height);
+  border-radius: var(--_height);
+
+  &.sm { --_height: 2px; }
+  &.lg { --_height: 5px; }
+  &.xl { --_height: 8px; }
+
+  &.slow { --_speed: 2.5s; }
+  &.fast { --_speed: 0.8s; }
+  background: color-mix(in srgb, currentColor 15%, transparent);
+  color: var(--_color);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.ui-spinner-bar::after {
+  content: "";
+  display: block;
+  width: 40%;
+  height: 100%;
+  border-radius: inherit;
+  background: currentColor;
+  animation: ui-bar-slide var(--_speed) ease-in-out infinite;
+}
+
+@keyframes ui-bar-slide {
+  0% { transform: translateX(-100%); }
+  50% { transform: translateX(200%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* --- Pulse --- */
+
+.ui-spinner-pulse {
+  --_size: 1.5em;
+  --_color: var(--ui-primary);
+  --_speed: 1s;
+  display: inline-block;
+  width: var(--_size);
+  height: var(--_size);
+  color: var(--_color);
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+.ui-spinner-pulse::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: currentColor;
+  animation: ui-pulse var(--_speed) ease-in-out infinite;
+}
+
+@keyframes ui-pulse {
+  0%, 100% { opacity: 0.2; transform: scale(0.6); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+/* --- Dual Ring --- */
+
+.ui-spinner-dual {
+  --_size: 1.5em;
+  --_color: var(--ui-primary);
+  --_speed: 0.8s;
+  display: inline-block;
+  width: var(--_size);
+  height: var(--_size);
+  color: var(--_color);
+  vertical-align: middle;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.ui-spinner-dual::before,
+.ui-spinner-dual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2.5px solid transparent;
+}
+
+.ui-spinner-dual::before {
+  border-top-color: currentColor;
+  animation: ui-spin var(--_speed) linear infinite;
+}
+
+.ui-spinner-dual::after {
+  border-bottom-color: color-mix(in srgb, currentColor 45%, transparent);
+  animation: ui-spin var(--_speed) linear infinite reverse;
+}
+
+/* --- Spinner modifiers --- */
+
+:is(.ui-spinner, .ui-spinner-dots, .ui-spinner-bar, .ui-spinner-pulse, .ui-spinner-dual) {
+  &.success { --_color: var(--ui-success); }
+  &.danger  { --_color: var(--ui-danger); }
+  &.warning { --_color: var(--ui-warning); }
+  &.secondary { --_color: var(--ui-secondary); }
+}
+
+:is(.ui-spinner, .ui-spinner-pulse, .ui-spinner-dual) {
+  &.sm { --_size: 1em; }
+  &.lg { --_size: 2.5em; }
+  &.xl { --_size: 3.5em; }
+}
+
+.ui-spinner-dots {
+  &.sm { --_d: 6px; --_gap: 4px; }
+  &.lg { --_d: 12px; --_gap: 7px; }
+  &.xl { --_d: 16px; --_gap: 9px; }
+}
+
+.ui-spinner {
+  &.slow { --_speed: 1.4s; }
+  &.fast { --_speed: 0.35s; }
+}
+
+.ui-spinner-dots {
+  &.slow { --_speed: 2s; }
+  &.fast { --_speed: 0.6s; }
+}
+
+.ui-spinner-pulse {
+  &.slow { --_speed: 2s; }
+  &.fast { --_speed: 0.5s; }
+}
+
+.ui-spinner-dual {
+  &.slow { --_speed: 1.6s; }
+  &.fast { --_speed: 0.4s; }
+}
+
+.ui-btn :is(.ui-spinner, .ui-spinner-dots, .ui-spinner-bar, .ui-spinner-pulse, .ui-spinner-dual) {
+  --_color: currentColor;
+}
+
+/* --- Skeleton shimmer --- */
+
+.ui-skeleton {
+  --_speed: 1.5s;
+  display: block;
+  height: 1em;
+  border-radius: var(--ui-radius);
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--ui-text) 8%, transparent) 25%,
+    color-mix(in srgb, var(--ui-text) 16%, transparent) 50%,
+    color-mix(in srgb, var(--ui-text) 8%, transparent) 75%
+  );
+  background-size: 200% 100%;
+  animation: ui-shimmer var(--_speed) ease-in-out infinite;
+}
+
+@keyframes ui-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ============================================
    Button group
    ============================================ */
 
