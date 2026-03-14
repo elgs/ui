@@ -147,6 +147,81 @@
   padding: 0;
   margin: 0;
   list-style: none;
+
+  /* --- Reverse (bottom to top) --- */
+
+  &.reverse {
+    display: flex;
+    flex-direction: column-reverse;
+
+    & .ui-timeline-item {
+      &:not(:last-child)::before {
+        display: none;
+      }
+
+      &:not(:first-child)::before {
+        content: "";
+        position: absolute;
+        left: calc(0.625rem - 0.5px);
+        top: 1.5rem;
+        bottom: 0;
+        width: 1px;
+        background: var(--ui-border);
+      }
+    }
+  }
+
+  /* --- Sizes --- */
+
+  &.sm {
+    & .ui-timeline-item {
+      padding-bottom: 1rem;
+
+      &:not(:last-child)::before {
+        left: calc(0.5rem - 0.5px);
+      }
+    }
+
+    & .ui-timeline-dot {
+      width: 1rem;
+      height: 1rem;
+      font-size: 0.5rem;
+
+      & .ui-icon {
+        font-size: 0.625rem;
+      }
+    }
+
+    & .ui-timeline-title {
+      font-size: 0.8125rem;
+    }
+  }
+
+  &.lg {
+    & .ui-timeline-item {
+      padding-bottom: 2rem;
+      gap: 1rem;
+
+      &:not(:last-child)::before {
+        left: calc(0.875rem - 0.5px);
+        top: 2rem;
+      }
+    }
+
+    & .ui-timeline-dot {
+      width: 1.75rem;
+      height: 1.75rem;
+      font-size: 0.75rem;
+
+      & .ui-icon {
+        font-size: 1rem;
+      }
+    }
+
+    & .ui-timeline-title {
+      font-size: 1rem;
+    }
+  }
 }
 
 .ui-timeline-item {
@@ -259,81 +334,6 @@
   }
 }
 
-/* --- Timeline reverse (bottom to top) --- */
-
-.ui-timeline.reverse {
-  display: flex;
-  flex-direction: column-reverse;
-
-  & .ui-timeline-item {
-    &:not(:last-child)::before {
-      display: none;
-    }
-
-    &:not(:first-child)::before {
-      content: "";
-      position: absolute;
-      left: calc(0.625rem - 0.5px);
-      top: 1.5rem;
-      bottom: 0;
-      width: 1px;
-      background: var(--ui-border);
-    }
-  }
-}
-
-/* --- Timeline sizes --- */
-
-.ui-timeline.sm {
-  & .ui-timeline-item {
-    padding-bottom: 1rem;
-
-    &:not(:last-child)::before {
-      left: calc(0.5rem - 0.5px);
-    }
-  }
-
-  & .ui-timeline-dot {
-    width: 1rem;
-    height: 1rem;
-    font-size: 0.5rem;
-
-    & .ui-icon {
-      font-size: 0.625rem;
-    }
-  }
-
-  & .ui-timeline-title {
-    font-size: 0.8125rem;
-  }
-}
-
-.ui-timeline.lg {
-  & .ui-timeline-item {
-    padding-bottom: 2rem;
-    gap: 1rem;
-
-    &:not(:last-child)::before {
-      left: calc(0.875rem - 0.5px);
-      top: 2rem;
-    }
-  }
-
-  & .ui-timeline-dot {
-    width: 1.75rem;
-    height: 1.75rem;
-    font-size: 0.75rem;
-
-    & .ui-icon {
-      font-size: 1rem;
-    }
-  }
-
-  & .ui-timeline-title {
-    font-size: 1rem;
-  }
-}
-
 
 /* ============================================
    Stepper — Multi-step progress
@@ -342,10 +342,104 @@
 .ui-stepper {
   display: flex;
   align-items: flex-start;
-  gap: 0;
   counter-reset: ui-step;
   font-family: var(--ui-font);
   font-size: var(--ui-font-size);
+
+  /* --- Vertical layout --- */
+
+  &.vertical {
+    flex-direction: column;
+
+    & .ui-step {
+      flex-direction: row;
+      flex: none;
+      align-items: flex-start;
+      padding-bottom: 1.5rem;
+
+      &:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        left: calc(1rem - 1px);
+        right: auto;
+        top: 2rem;
+        bottom: 0;
+        width: 2px;
+        height: auto;
+      }
+
+      & .ui-step-content {
+        text-align: left;
+        margin-top: 0;
+        margin-left: 0.625rem;
+      }
+    }
+
+    /* --- Vertical reverse (bottom to top) --- */
+
+    &.reverse {
+      flex-direction: column-reverse;
+
+      & .ui-step {
+        &:not(:last-child)::after {
+          display: none;
+        }
+
+        &:not(:first-child)::after {
+          content: "";
+          position: absolute;
+          left: calc(1rem - 1px);
+          right: auto;
+          top: 2rem;
+          bottom: 0;
+          width: 2px;
+          height: auto;
+        }
+      }
+    }
+  }
+
+  /* --- Sizes --- */
+
+  &.sm {
+    & .ui-step-indicator {
+      width: 1.5rem;
+      height: 1.5rem;
+      font-size: 0.6875rem;
+
+      & .ui-icon {
+        font-size: 0.875rem;
+      }
+    }
+
+    & .ui-step-title {
+      font-size: 0.8125rem;
+    }
+
+    & .ui-step-description {
+      font-size: 0.75rem;
+    }
+  }
+
+  &.lg {
+    & .ui-step-indicator {
+      width: 2.5rem;
+      height: 2.5rem;
+      font-size: 0.9375rem;
+
+      & .ui-icon {
+        font-size: 1.375rem;
+      }
+    }
+
+    & .ui-step-title {
+      font-size: 1rem;
+    }
+
+    & .ui-step-description {
+      font-size: 0.875rem;
+    }
+  }
 }
 
 .ui-step {
@@ -370,13 +464,12 @@
     color: var(--ui-text-muted);
     flex-shrink: 0;
     z-index: 1;
+    transition: background var(--ui-transition), border-color var(--ui-transition),
+      color var(--ui-transition);
 
     & .ui-icon {
       font-size: 1.125rem;
     }
-
-    transition: background var(--ui-transition), border-color var(--ui-transition),
-      color var(--ui-transition);
 
     &:empty::before {
       content: counter(ui-step);
@@ -446,101 +539,6 @@
     & .ui-step-title {
       color: var(--ui-danger);
     }
-  }
-}
-
-/* --- Stepper vertical layout --- */
-
-.ui-stepper.vertical {
-  flex-direction: column;
-
-  & .ui-step {
-    flex-direction: row;
-    flex: none;
-    align-items: flex-start;
-    padding-bottom: 1.5rem;
-
-    &:not(:last-child)::after {
-      content: "";
-      position: absolute;
-      left: calc(1rem - 1px);
-      right: auto;
-      top: 2rem;
-      bottom: 0;
-      width: 2px;
-      height: auto;
-    }
-
-    & .ui-step-content {
-      text-align: left;
-      margin-top: 0;
-      margin-left: 0.625rem;
-    }
-  }
-}
-
-/* --- Stepper reverse (bottom to top) --- */
-
-.ui-stepper.vertical.reverse {
-  flex-direction: column-reverse;
-
-  & .ui-step {
-    &:not(:last-child)::after {
-      display: none;
-    }
-
-    &:not(:first-child)::after {
-      content: "";
-      position: absolute;
-      left: calc(1rem - 1px);
-      right: auto;
-      top: 2rem;
-      bottom: 0;
-      width: 2px;
-      height: auto;
-    }
-  }
-}
-
-/* --- Stepper sizes --- */
-
-.ui-stepper.sm {
-  & .ui-step-indicator {
-    width: 1.5rem;
-    height: 1.5rem;
-    font-size: 0.6875rem;
-
-    & .ui-icon {
-      font-size: 0.875rem;
-    }
-  }
-
-  & .ui-step-title {
-    font-size: 0.8125rem;
-  }
-
-  & .ui-step-description {
-    font-size: 0.75rem;
-  }
-}
-
-.ui-stepper.lg {
-  & .ui-step-indicator {
-    width: 2.5rem;
-    height: 2.5rem;
-    font-size: 0.9375rem;
-
-    & .ui-icon {
-      font-size: 1.375rem;
-    }
-  }
-
-  & .ui-step-title {
-    font-size: 1rem;
-  }
-
-  & .ui-step-description {
-    font-size: 0.875rem;
   }
 }
 
@@ -618,16 +616,16 @@
       background: var(--ui-bg-subtle);
       color: var(--ui-text);
     }
-  }
 
-  /* Floating copy button (no header) */
-  & .ui-code-copy.floating {
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-    opacity: 0;
-    transition: opacity var(--ui-transition), background var(--ui-transition),
-      color var(--ui-transition);
+    /* Floating copy button (no header) */
+    &.floating {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      opacity: 0;
+      transition: opacity var(--ui-transition), background var(--ui-transition),
+        color var(--ui-transition);
+    }
   }
 
   &:hover .ui-code-copy.floating {
@@ -667,7 +665,6 @@
       min-width: 0;
       flex: 1;
     }
-
   }
 
   /* --- Sizes --- */
@@ -844,10 +841,6 @@
   /* --- Side-by-side mode --- */
 
   &.side-by-side {
-    & table {
-      table-layout: fixed;
-    }
-
     & .ui-diff-left,
     & .ui-diff-right {
       width: 50%;
@@ -1260,4 +1253,3 @@
     opacity: 1;
   }
 }
-
