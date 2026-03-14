@@ -83,7 +83,7 @@
 
     /* Dark mode toggle */
     .demo-theme-fab {
-      position: fixed; bottom: 4.5rem; right: 1.5rem; z-index: 1000;
+      position: fixed; bottom: 5.5rem; right: 1.5rem; z-index: 1000;
       width: 2.5rem; height: 2.5rem; border-radius: var(--ui-radius-full);
       border: 1px solid var(--ui-border); background: var(--ui-surface);
       color: var(--ui-text); font-size: 1.125rem;
@@ -96,23 +96,6 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.2);
     }
 
-    /* View source button */
-    .source-toggle {
-      position: fixed;
-      bottom: 1.5rem;
-      right: 1.5rem;
-      z-index: 999;
-      padding: 0.625rem 1rem;
-      font-size: 0.8125rem;
-      font-weight: 600;
-      border-radius: 2rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      transition: transform 0.15s, box-shadow 0.15s;
-    }
-    .source-toggle:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-    }
     #source-dialog {
       width: min(64rem, calc(100vw - 2rem));
       max-height: calc(100vh - 2rem);
@@ -277,9 +260,6 @@
       <hr class="demo-nav-divider">
       <div class="demo-nav-label">Feedback</div>
       <a href="#popover">Popover</a>
-      <hr class="demo-nav-divider">
-      <div class="demo-nav-label">Utilities</div>
-      <a href="#fab">FAB</a>
       <hr class="demo-nav-divider">
       <a href="ui.html">UI Library</a>
     </div>
@@ -1266,87 +1246,14 @@ document.addEventListener('click', e =&gt; {
         </div>
       </section>
 
-      <!-- ============ FAB ============ -->
-      <section class="demo-section" id="fab">
-        <h2>FAB</h2>
-
-        <div class="demo-card">
-          <h3>Variants</h3>
-          <div id="live-fab-variants" class="flex-row">
-            <button class="ui-fab"><i class="ui-icon ui-icon-plus"></i></button>
-            <button class="ui-fab secondary"><i class="ui-icon ui-icon-edit"></i></button>
-            <button class="ui-fab success"><i class="ui-icon ui-icon-check"></i></button>
-            <button class="ui-fab danger"><i class="ui-icon ui-icon-trash"></i></button>
-          </div>
-          <details class="demo-code" data-live-target="live-fab-variants">
-            <summary>Show code</summary>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;button class="ui-fab"&gt;
-  &lt;i class="ui-icon ui-icon-plus"&gt;&lt;/i&gt;
-&lt;/button&gt;
-&lt;button class="ui-fab secondary"&gt;
-  &lt;i class="ui-icon ui-icon-edit"&gt;&lt;/i&gt;
-&lt;/button&gt;
-&lt;button class="ui-fab success"&gt;
-  &lt;i class="ui-icon ui-icon-check"&gt;&lt;/i&gt;
-&lt;/button&gt;
-&lt;button class="ui-fab danger"&gt;
-  &lt;i class="ui-icon ui-icon-trash"&gt;&lt;/i&gt;
-&lt;/button&gt;</pre>
-          </details>
-        </div>
-
-        <div class="demo-card">
-          <h3>Sizes</h3>
-          <div id="live-fab-sizes" class="flex-row" style="align-items:flex-end">
-            <button class="ui-fab sm"><i class="ui-icon ui-icon-plus"></i></button>
-            <button class="ui-fab"><i class="ui-icon ui-icon-plus"></i></button>
-            <button class="ui-fab lg"><i class="ui-icon ui-icon-plus"></i></button>
-          </div>
-          <details class="demo-code" data-live-target="live-fab-sizes">
-            <summary>Show code</summary>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;button class="ui-fab sm"&gt;
-  &lt;i class="ui-icon ui-icon-plus"&gt;&lt;/i&gt;
-&lt;/button&gt;
-&lt;button class="ui-fab"&gt;
-  &lt;i class="ui-icon ui-icon-plus"&gt;&lt;/i&gt;
-&lt;/button&gt;
-&lt;button class="ui-fab lg"&gt;
-  &lt;i class="ui-icon ui-icon-plus"&gt;&lt;/i&gt;
-&lt;/button&gt;</pre>
-          </details>
-        </div>
-
-        <div class="demo-card">
-          <h3>Extended</h3>
-          <div id="live-fab-extended" class="flex-row">
-            <button class="ui-fab extended"><i class="ui-icon ui-icon-plus"></i> Create</button>
-            <button class="ui-fab extended success"><i class="ui-icon ui-icon-send"></i> Send</button>
-            <button class="ui-fab extended danger"><i class="ui-icon ui-icon-trash"></i> Delete</button>
-          </div>
-          <details class="demo-code" data-live-target="live-fab-extended">
-            <summary>Show code</summary>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;button class="ui-fab extended"&gt;
-  &lt;i class="ui-icon ui-icon-plus"&gt;&lt;/i&gt; Create
-&lt;/button&gt;
-&lt;button class="ui-fab extended success"&gt;
-  &lt;i class="ui-icon ui-icon-send"&gt;&lt;/i&gt; Send
-&lt;/button&gt;
-&lt;button class="ui-fab extended danger"&gt;
-  &lt;i class="ui-icon ui-icon-trash"&gt;&lt;/i&gt; Delete
-&lt;/button&gt;</pre>
-          </details>
-        </div>
-      </section>
-
     </div>
   </main>
 </div>
 
 <!-- Sticky source button -->
-<button class="ui-btn source-toggle" onclick="openSourceDialog()">View uix.css</button>
+<button class="ui-fab extended fixed bottom-right" onclick="openSourceDialog()">
+  <i class="ui-icon ui-icon-code"></i> View uix.css
+</button>
 
 <!-- Source dialog -->
 <dialog class="ui-dialog" id="source-dialog">
