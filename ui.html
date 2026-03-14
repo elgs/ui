@@ -309,22 +309,6 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.2);
     }
 
-    .source-toggle {
-      position: fixed;
-      bottom: 1.5rem;
-      right: 1.5rem;
-      z-index: 999;
-      padding: 0.625rem 1rem;
-      font-size: 0.8125rem;
-      font-weight: 600;
-      border-radius: 2rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      transition: transform 0.15s, box-shadow 0.15s;
-    }
-    .source-toggle:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-    }
     /* Source dialog */
     #source-dialog {
       width: min(64rem, calc(100vw - 2rem));
@@ -4220,7 +4204,9 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
 </dialog>
 
 <!-- Sticky source button -->
-<button class="ui-btn source-toggle" onclick="openSourceDialog()">View ui.css</button>
+<button class="ui-fab extended sm fixed bottom-right" onclick="openSourceDialog()">
+  <i class="ui-icon ui-icon-code"></i> View ui.css
+</button>
 
 <!-- Source dialog -->
 <dialog class="ui-dialog" id="source-dialog">
