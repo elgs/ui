@@ -376,6 +376,7 @@
       <a href="#buttons">Buttons</a>
       <a href="#checkboxes">Checkboxes</a>
       <a href="#dropdowns">Dropdowns</a>
+      <a href="#fab">FAB</a>
       <a href="#inputs">Inputs</a>
       <a href="#radios">Radios</a>
       <a href="#sliders">Sliders</a>
@@ -391,7 +392,6 @@
       <a href="#dots">Status Dots</a>
       <a href="#tables">Tables</a>
       <a href="#tags">Tags</a>
-      <a href="#tooltips">Tooltips</a>
       <hr class="demo-nav-divider">
       <div class="demo-nav-label">Navigation</div>
       <a href="#breadcrumbs">Breadcrumbs</a>
@@ -405,11 +405,11 @@
       <a href="#skeletons">Skeletons</a>
       <a href="#spinners">Spinners</a>
       <a href="#toasts">Toasts</a>
+      <a href="#tooltips">Tooltips</a>
       <hr class="demo-nav-divider">
       <div class="demo-nav-label">Utilities</div>
       <a href="#config">Configuration</a>
       <a href="#dark-mode">Dark Mode</a>
-      <a href="#fab">FAB</a>
       <a href="#icons">Icons</a>
       <a href="#layout">Layout Utilities</a>
       <hr class="demo-nav-divider">
@@ -1175,6 +1175,80 @@ document.addEventListener('click', e =&gt; {
   }
 });
 &lt;/script&gt;</pre>
+      </details>
+    </div>
+  </div>
+
+  <div class="demo-section" id="fab">
+    <h2>FAB</h2>
+
+    <div class="demo-subsection">
+      <h3>Variants</h3>
+      <div class="ui-row">
+        <button class="ui-fab"><i class="ui-icon ui-icon-plus"></i></button>
+        <button class="ui-fab secondary"><i class="ui-icon ui-icon-edit"></i></button>
+        <button class="ui-fab success"><i class="ui-icon ui-icon-check"></i></button>
+        <button class="ui-fab danger"><i class="ui-icon ui-icon-trash"></i></button>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;button class="ui-fab"&gt;
+  &lt;i class="ui-icon ui-icon-plus"&gt;&lt;/i&gt;
+&lt;/button&gt;
+&lt;button class="ui-fab secondary"&gt;
+  &lt;i class="ui-icon ui-icon-edit"&gt;&lt;/i&gt;
+&lt;/button&gt;
+&lt;button class="ui-fab success"&gt;
+  &lt;i class="ui-icon ui-icon-check"&gt;&lt;/i&gt;
+&lt;/button&gt;
+&lt;button class="ui-fab danger"&gt;
+  &lt;i class="ui-icon ui-icon-trash"&gt;&lt;/i&gt;
+&lt;/button&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Sizes</h3>
+      <div class="ui-row" style="align-items:flex-end">
+        <button class="ui-fab sm"><i class="ui-icon ui-icon-plus"></i></button>
+        <button class="ui-fab"><i class="ui-icon ui-icon-plus"></i></button>
+        <button class="ui-fab lg"><i class="ui-icon ui-icon-plus"></i></button>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;button class="ui-fab sm"&gt;
+  &lt;i class="ui-icon ui-icon-plus"&gt;&lt;/i&gt;
+&lt;/button&gt;
+&lt;button class="ui-fab"&gt;
+  &lt;i class="ui-icon ui-icon-plus"&gt;&lt;/i&gt;
+&lt;/button&gt;
+&lt;button class="ui-fab lg"&gt;
+  &lt;i class="ui-icon ui-icon-plus"&gt;&lt;/i&gt;
+&lt;/button&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Extended</h3>
+      <div class="ui-row">
+        <button class="ui-fab extended sm"><i class="ui-icon ui-icon-plus"></i> Create</button>
+        <button class="ui-fab extended success"><i class="ui-icon ui-icon-send"></i> Send</button>
+        <button class="ui-fab extended danger lg"><i class="ui-icon ui-icon-trash"></i> Delete</button>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;button class="ui-fab extended sm"&gt;
+  &lt;i class="ui-icon ui-icon-plus"&gt;&lt;/i&gt; Create
+&lt;/button&gt;
+&lt;button class="ui-fab extended success"&gt;
+  &lt;i class="ui-icon ui-icon-send"&gt;&lt;/i&gt; Send
+&lt;/button&gt;
+&lt;button class="ui-fab extended danger lg"&gt;
+  &lt;i class="ui-icon ui-icon-trash"&gt;&lt;/i&gt; Delete
+&lt;/button&gt;</pre>
       </details>
     </div>
   </div>
@@ -2992,51 +3066,6 @@ document.addEventListener('click', e =&gt; {
 
   </div>
 
-  <div class="demo-section" id="tooltips">
-    <h2>Tooltips</h2>
-
-    <div class="demo-subsection">
-      <h3>Positions</h3>
-      <div class="ui-row" style="padding: 2rem 0;">
-        <button class="ui-btn sm outline ui-tooltip" data-tooltip="Tooltip on top">Top</button>
-        <button class="ui-btn sm outline ui-tooltip bottom" data-tooltip="Tooltip on bottom">Bottom</button>
-        <button class="ui-btn sm outline ui-tooltip left" data-tooltip="Tooltip on left">Left</button>
-        <button class="ui-btn sm outline ui-tooltip right" data-tooltip="Tooltip on right">Right</button>
-      </div>
-      <details class="demo-code">
-        <summary>Show code</summary>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;button class="ui-btn sm outline ui-tooltip" data-tooltip="Tooltip on top"&gt;Top&lt;/button&gt;
-
-&lt;button class="ui-btn sm outline ui-tooltip bottom" data-tooltip="Tooltip on bottom"&gt;Bottom&lt;/button&gt;
-
-&lt;button class="ui-btn sm outline ui-tooltip left" data-tooltip="Tooltip on left"&gt;Left&lt;/button&gt;
-
-&lt;button class="ui-btn sm outline ui-tooltip right" data-tooltip="Tooltip on right"&gt;Right&lt;/button&gt;</pre>
-      </details>
-    </div>
-
-    <div class="demo-subsection">
-      <h3>On different elements</h3>
-      <div class="ui-row" style="padding: 1rem 0;">
-        <button class="ui-btn icon sm ui-tooltip" data-tooltip="Edit this item"><i class="ui-icon ui-icon-edit"></i></button>
-        <span class="ui-badge solid ui-tooltip" data-tooltip="5 new messages">Inbox</span>
-        <code class="ui-tooltip bottom" data-tooltip="Click to copy" style="padding:0.25rem 0.5rem; background:var(--ui-bg-subtle); border-radius:var(--ui-radius-sm); font-size:0.8125rem; cursor:pointer;">ui.css</code>
-      </div>
-      <details class="demo-code">
-        <summary>Show code</summary>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;button class="ui-btn icon sm ui-tooltip" data-tooltip="Edit this item"&gt;
-  &lt;i class="ui-icon ui-icon-edit"&gt;&lt;/i&gt;
-&lt;/button&gt;
-
-&lt;span class="ui-badge solid ui-tooltip" data-tooltip="5 new messages"&gt;Inbox&lt;/span&gt;
-
-&lt;code class="ui-tooltip bottom" data-tooltip="Click to copy"&gt;ui.css&lt;/code&gt;</pre>
-      </details>
-    </div>
-  </div>
-
   <div class="demo-section" id="breadcrumbs">
     <h2>Breadcrumbs</h2>
 
@@ -3868,6 +3897,51 @@ showToast('danger', 'Something went wrong.'); // defaults to bottom-right
     </div>
   </div>
 
+  <div class="demo-section" id="tooltips">
+    <h2>Tooltips</h2>
+
+    <div class="demo-subsection">
+      <h3>Positions</h3>
+      <div class="ui-row" style="padding: 2rem 0;">
+        <button class="ui-btn sm outline ui-tooltip" data-tooltip="Tooltip on top">Top</button>
+        <button class="ui-btn sm outline ui-tooltip bottom" data-tooltip="Tooltip on bottom">Bottom</button>
+        <button class="ui-btn sm outline ui-tooltip left" data-tooltip="Tooltip on left">Left</button>
+        <button class="ui-btn sm outline ui-tooltip right" data-tooltip="Tooltip on right">Right</button>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;button class="ui-btn sm outline ui-tooltip" data-tooltip="Tooltip on top"&gt;Top&lt;/button&gt;
+
+&lt;button class="ui-btn sm outline ui-tooltip bottom" data-tooltip="Tooltip on bottom"&gt;Bottom&lt;/button&gt;
+
+&lt;button class="ui-btn sm outline ui-tooltip left" data-tooltip="Tooltip on left"&gt;Left&lt;/button&gt;
+
+&lt;button class="ui-btn sm outline ui-tooltip right" data-tooltip="Tooltip on right"&gt;Right&lt;/button&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>On different elements</h3>
+      <div class="ui-row" style="padding: 1rem 0;">
+        <button class="ui-btn icon sm ui-tooltip" data-tooltip="Edit this item"><i class="ui-icon ui-icon-edit"></i></button>
+        <span class="ui-badge solid ui-tooltip" data-tooltip="5 new messages">Inbox</span>
+        <code class="ui-tooltip bottom" data-tooltip="Click to copy" style="padding:0.25rem 0.5rem; background:var(--ui-bg-subtle); border-radius:var(--ui-radius-sm); font-size:0.8125rem; cursor:pointer;">ui.css</code>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;button class="ui-btn icon sm ui-tooltip" data-tooltip="Edit this item"&gt;
+  &lt;i class="ui-icon ui-icon-edit"&gt;&lt;/i&gt;
+&lt;/button&gt;
+
+&lt;span class="ui-badge solid ui-tooltip" data-tooltip="5 new messages"&gt;Inbox&lt;/span&gt;
+
+&lt;code class="ui-tooltip bottom" data-tooltip="Click to copy"&gt;ui.css&lt;/code&gt;</pre>
+      </details>
+    </div>
+  </div>
+
   <div class="demo-section" id="config">
     <h2>Color Configuration</h2>
     <div class="demo-subsection">
@@ -4054,81 +4128,6 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</pre>
-      </details>
-    </div>
-  </div>
-
-  <!-- ============ FAB ============ -->
-  <div class="demo-section" id="fab">
-    <h2>FAB</h2>
-
-    <div class="demo-subsection">
-      <h3>Variants</h3>
-      <div class="ui-row">
-        <button class="ui-fab"><i class="ui-icon ui-icon-plus"></i></button>
-        <button class="ui-fab secondary"><i class="ui-icon ui-icon-edit"></i></button>
-        <button class="ui-fab success"><i class="ui-icon ui-icon-check"></i></button>
-        <button class="ui-fab danger"><i class="ui-icon ui-icon-trash"></i></button>
-      </div>
-      <details class="demo-code">
-        <summary>Show code</summary>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;button class="ui-fab"&gt;
-  &lt;i class="ui-icon ui-icon-plus"&gt;&lt;/i&gt;
-&lt;/button&gt;
-&lt;button class="ui-fab secondary"&gt;
-  &lt;i class="ui-icon ui-icon-edit"&gt;&lt;/i&gt;
-&lt;/button&gt;
-&lt;button class="ui-fab success"&gt;
-  &lt;i class="ui-icon ui-icon-check"&gt;&lt;/i&gt;
-&lt;/button&gt;
-&lt;button class="ui-fab danger"&gt;
-  &lt;i class="ui-icon ui-icon-trash"&gt;&lt;/i&gt;
-&lt;/button&gt;</pre>
-      </details>
-    </div>
-
-    <div class="demo-subsection">
-      <h3>Sizes</h3>
-      <div class="ui-row" style="align-items:flex-end">
-        <button class="ui-fab sm"><i class="ui-icon ui-icon-plus"></i></button>
-        <button class="ui-fab"><i class="ui-icon ui-icon-plus"></i></button>
-        <button class="ui-fab lg"><i class="ui-icon ui-icon-plus"></i></button>
-      </div>
-      <details class="demo-code">
-        <summary>Show code</summary>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;button class="ui-fab sm"&gt;
-  &lt;i class="ui-icon ui-icon-plus"&gt;&lt;/i&gt;
-&lt;/button&gt;
-&lt;button class="ui-fab"&gt;
-  &lt;i class="ui-icon ui-icon-plus"&gt;&lt;/i&gt;
-&lt;/button&gt;
-&lt;button class="ui-fab lg"&gt;
-  &lt;i class="ui-icon ui-icon-plus"&gt;&lt;/i&gt;
-&lt;/button&gt;</pre>
-      </details>
-    </div>
-
-    <div class="demo-subsection">
-      <h3>Extended</h3>
-      <div class="ui-row">
-        <button class="ui-fab extended sm"><i class="ui-icon ui-icon-plus"></i> Create</button>
-        <button class="ui-fab extended success"><i class="ui-icon ui-icon-send"></i> Send</button>
-        <button class="ui-fab extended danger lg"><i class="ui-icon ui-icon-trash"></i> Delete</button>
-      </div>
-      <details class="demo-code">
-        <summary>Show code</summary>
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;button class="ui-fab extended sm"&gt;
-  &lt;i class="ui-icon ui-icon-plus"&gt;&lt;/i&gt; Create
-&lt;/button&gt;
-&lt;button class="ui-fab extended success"&gt;
-  &lt;i class="ui-icon ui-icon-send"&gt;&lt;/i&gt; Send
-&lt;/button&gt;
-&lt;button class="ui-fab extended danger lg"&gt;
-  &lt;i class="ui-icon ui-icon-trash"&gt;&lt;/i&gt; Delete
-&lt;/button&gt;</pre>
       </details>
     </div>
   </div>
