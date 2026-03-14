@@ -37,6 +37,13 @@
     }
     .demo-nav a:hover { color: var(--ui-text); background: var(--ui-bg-subtle); }
     .demo-nav a.active { color: var(--ui-primary); background: var(--ui-primary-light); font-weight: 500; }
+    .demo-nav-divider {
+      height: 0; border: none; border-top: 1px solid var(--ui-border); margin: 0.5rem 0.5rem;
+    }
+    .demo-nav-label {
+      font-size: 0.6875rem; font-weight: 700; color: var(--ui-text);
+      text-transform: uppercase; letter-spacing: 0.06em; padding: 0.625rem 0.5rem 0.25rem;
+    }
     .demo-main { flex: 1; min-width: 0; }
     .demo-layout { max-width: 56rem; margin: 0 auto; padding: 2rem 2.5rem; }
     @media (max-width: 860px) {
@@ -75,15 +82,19 @@
     .mt-1 { margin-top: 1rem; }
 
     /* Dark mode toggle */
-    .theme-toggle {
-      position: fixed; top: 1rem; right: 1rem; z-index: 999;
-      display: inline-flex; align-items: center; justify-content: center;
-      width: 2.25rem; height: 2.25rem; border-radius: var(--ui-radius-full);
+    .demo-theme-fab {
+      position: fixed; bottom: 4.5rem; right: 1.5rem; z-index: 1000;
+      width: 2.5rem; height: 2.5rem; border-radius: var(--ui-radius-full);
       border: 1px solid var(--ui-border); background: var(--ui-surface);
-      color: var(--ui-text); cursor: pointer; font-size: 1.125rem;
-      transition: background 0.15s;
+      color: var(--ui-text); font-size: 1.125rem;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: background var(--ui-transition), transform 0.15s, box-shadow 0.15s;
     }
-    .theme-toggle:hover { background: var(--ui-bg-subtle); }
+    .demo-theme-fab:hover {
+      background: var(--ui-bg-subtle); transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
 
     /* View source button */
     .source-toggle {
@@ -245,25 +256,34 @@
 </head>
 <body>
 
-<button class="theme-toggle" id="theme-toggle" title="Theme: system">
+<button class="demo-theme-fab" id="theme-fab" title="Theme: system">
   <i class="ui-icon ui-icon-monitor"></i>
 </button>
 
 <div class="demo-page">
-  <aside class="demo-sidebar">
-    <div class="demo-sidebar-title">UIX Components</div>
-    <nav class="demo-nav">
+  <nav class="demo-sidebar">
+    <a href="index.html" class="demo-sidebar-title" style="text-decoration:none;color:inherit;display:flex;align-items:center;gap:0.5rem"><img src="favicon.svg" alt="UIX" style="width:1.75rem;height:1.75rem"> UIX Library</a>
+    <div class="demo-nav" id="demo-nav">
+      <div class="demo-nav-label">Form controls</div>
       <a href="#input-otp">Input OTP</a>
+      <hr class="demo-nav-divider">
+      <div class="demo-nav-label">Data display</div>
       <a href="#timeline">Timeline</a>
       <a href="#stepper">Stepper</a>
       <a href="#code-block">Code Block</a>
       <a href="#diff">Diff</a>
-      <a href="#popover">Popover</a>
       <a href="#empty-state">Empty State</a>
       <a href="#chat-bubble">Chat Bubble</a>
+      <hr class="demo-nav-divider">
+      <div class="demo-nav-label">Feedback</div>
+      <a href="#popover">Popover</a>
+      <hr class="demo-nav-divider">
+      <div class="demo-nav-label">Utilities</div>
       <a href="#fab">FAB</a>
-    </nav>
-  </aside>
+      <hr class="demo-nav-divider">
+      <a href="ui.html">UI Library</a>
+    </div>
+  </nav>
 
   <main class="demo-main">
     <div class="demo-layout">
@@ -1342,7 +1362,7 @@ document.addEventListener('click', e =&gt; {
 
 <script>
   // Theme toggle: system → light → dark → system
-  var themeBtn = document.getElementById('theme-toggle');
+  var themeFab = document.getElementById('theme-fab');
   var themeIcons = {
     system: 'ui-icon ui-icon-monitor',
     light: 'ui-icon ui-icon-sun',
@@ -1364,21 +1384,30 @@ document.addEventListener('click', e =&gt; {
     } else {
       document.documentElement.removeAttribute('data-theme');
     }
-    themeBtn.querySelector('.ui-icon').className = themeIcons[mode];
-    themeBtn.title = 'Theme: ' + mode;
-    localStorage.setItem('uix-theme-mode', mode);
+    themeFab.querySelector('.ui-icon').className = themeIcons[mode];
+    themeFab.title = 'Theme: ' + mode;
+    localStorage.setItem('ui-theme-mode', mode);
   }
 
-  applyTheme(localStorage.getItem('uix-theme-mode') || 'system');
+  applyTheme(localStorage.getItem('ui-theme-mode') || 'system');
+
+  // Restore custom colors from ui.html theme configurator
+  try {
+    var savedColors = JSON.parse(localStorage.getItem('ui-custom-colors') || '{}');
+    var root = document.documentElement.style;
+    Object.entries(savedColors).forEach(function(entry) {
+      root.setProperty('--ui-' + entry[0], entry[1]);
+    });
+  } catch(e) {}
 
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function() {
-    if ((localStorage.getItem('uix-theme-mode') || 'system') === 'system') {
+    if ((localStorage.getItem('ui-theme-mode') || 'system') === 'system') {
       applyTheme('system');
     }
   });
 
-  themeBtn.addEventListener('click', function() {
-    var current = localStorage.getItem('uix-theme-mode') || 'system';
+  themeFab.addEventListener('click', function() {
+    var current = localStorage.getItem('ui-theme-mode') || 'system';
     var next = themeModes[(themeModes.indexOf(current) + 1) % 3];
     applyTheme(next);
   });

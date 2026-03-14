@@ -180,6 +180,10 @@
     z-index: 1;
     font-size: 0.625rem;
 
+    & .ui-icon {
+      font-size: 0.75rem;
+    }
+
     &.primary {
       background: var(--ui-primary-light);
       border-color: var(--ui-primary);
@@ -293,6 +297,10 @@
     width: 1rem;
     height: 1rem;
     font-size: 0.5rem;
+
+    & .ui-icon {
+      font-size: 0.625rem;
+    }
   }
 
   & .ui-timeline-title {
@@ -315,6 +323,10 @@
     width: 1.75rem;
     height: 1.75rem;
     font-size: 0.75rem;
+
+    & .ui-icon {
+      font-size: 1rem;
+    }
   }
 
   & .ui-timeline-title {
@@ -358,6 +370,11 @@
     color: var(--ui-text-muted);
     flex-shrink: 0;
     z-index: 1;
+
+    & .ui-icon {
+      font-size: 1.125rem;
+    }
+
     transition: background var(--ui-transition), border-color var(--ui-transition),
       color var(--ui-transition);
 
@@ -492,6 +509,10 @@
     width: 1.5rem;
     height: 1.5rem;
     font-size: 0.6875rem;
+
+    & .ui-icon {
+      font-size: 0.875rem;
+    }
   }
 
   & .ui-step-title {
@@ -508,6 +529,10 @@
     width: 2.5rem;
     height: 2.5rem;
     font-size: 0.9375rem;
+
+    & .ui-icon {
+      font-size: 1.375rem;
+    }
   }
 
   & .ui-step-title {
