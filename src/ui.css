@@ -1209,46 +1209,48 @@
   }
 
   /* Size variants */
-  &.sm>i,
-  &.sm>svg,
-  &.sm>.ui-input-icon-left,
-  &.sm>.ui-input-icon-right {
-    font-size: 0.875rem;
-    left: 0.5rem;
+  &.sm {
+    &>i,
+    &>svg,
+    &>.ui-input-icon-left {
+      font-size: 0.875rem;
+      left: 0.5rem;
+    }
+
+    &>.ui-input-icon-right {
+      font-size: 0.875rem;
+      right: 0.5rem;
+    }
+
+    &:has(> i, > svg, > .ui-input-icon-left)>.ui-input {
+      padding-left: 1.75rem;
+    }
+
+    &:has(> .ui-input-icon-right)>.ui-input {
+      padding-right: 1.75rem;
+    }
   }
 
-  &.sm>.ui-input-icon-right {
-    left: auto;
-    right: 0.5rem;
-  }
+  &.lg {
+    &>i,
+    &>svg,
+    &>.ui-input-icon-left {
+      font-size: 1.125rem;
+      left: 1rem;
+    }
 
-  &.sm:has(> i, > svg, > .ui-input-icon-left)>.ui-input {
-    padding-left: 1.75rem;
-  }
+    &>.ui-input-icon-right {
+      font-size: 1.125rem;
+      right: 1rem;
+    }
 
-  &.sm:has(> .ui-input-icon-right)>.ui-input {
-    padding-right: 1.75rem;
-  }
+    &:has(> i, > svg, > .ui-input-icon-left)>.ui-input {
+      padding-left: 2.75rem;
+    }
 
-  &.lg>i,
-  &.lg>svg,
-  &.lg>.ui-input-icon-left,
-  &.lg>.ui-input-icon-right {
-    font-size: 1.125rem;
-    left: 1rem;
-  }
-
-  &.lg>.ui-input-icon-right {
-    left: auto;
-    right: 1rem;
-  }
-
-  &.lg:has(> i, > svg, > .ui-input-icon-left)>.ui-input {
-    padding-left: 2.75rem;
-  }
-
-  &.lg:has(> .ui-input-icon-right)>.ui-input {
-    padding-right: 2.75rem;
+    &:has(> .ui-input-icon-right)>.ui-input {
+      padding-right: 2.75rem;
+    }
   }
 }
 
