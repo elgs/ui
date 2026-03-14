@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Icons — UI Library</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="src/ui.css">
+  <link rel="stylesheet" href="src/icons.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--ui-bg);
+      font-family: var(--ui-font);
+      color: var(--ui-text);
+    }
+
+    .page {
+      max-width: 80rem;
+      margin: 0 auto;
+      padding: 2rem 2.5rem 4rem;
+    }
+
+    .page-header {
+      margin-bottom: 2rem;
+    }
+    .page-header h1 {
+      margin: 0 0 0.25rem;
+      font-size: 1.75rem;
+    }
+    .page-header p {
+      margin: 0;
+      color: var(--ui-text-muted);
+    }
+    .page-header a {
+      color: var(--ui-primary);
+      text-decoration: none;
+    }
+    .page-header a:hover {
+      text-decoration: underline;
+    }
+
+    .icon-toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--ui-bg);
+      padding: 1rem 0;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .icon-toolbar .search-wrap {
+      position: relative;
+      flex: 1;
+      max-width: 28rem;
+    }
+    .icon-count {
+      font-size: 0.8rem;
+      color: var(--ui-text-muted);
+      white-space: nowrap;
+    }
+
+    #icon-grid {
+      font-size: 0.8rem;
+    }
+    #icon-grid .ui-icon {
+      opacity: 0.55;
+      transition: opacity 150ms ease;
+      font-size: 1.15rem;
+    }
+    #icon-grid span:hover .ui-icon {
+      opacity: 1;
+    }
+    #icon-grid span {
+      cursor: pointer;
+      border-radius: var(--ui-radius);
+      transition: background 150ms ease;
+    }
+    #icon-grid span:hover {
+      background: var(--ui-bg-subtle);
+    }
+    #icon-grid span.copied {
+      background: var(--ui-success-bg);
+    }
+
+    .icon-category-header {
+      grid-column: 1 / -1;
+      padding: 0.75rem 0 0.25rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ui-text-muted);
+      border-bottom: 1px solid var(--ui-border);
+      margin-bottom: 0.25rem;
+    }
+    .icon-category-items {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 0.25rem;
+    }
+    .icon-category-items > span {
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem;
+    }
+
+    #icon-no-results {
+      display: none;
+      text-align: center;
+      padding: 3rem;
+      color: var(--ui-text-muted);
+    }
+
+    .icon-toast {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(100%);
+      background: var(--ui-text);
+      color: var(--ui-bg);
+      padding: 0.5rem 1rem;
+      border-radius: var(--ui-radius);
+      font-size: 0.8rem;
+      opacity: 0;
+      transition: transform 250ms ease, opacity 250ms ease;
+      pointer-events: none;
+      z-index: 100;
+    }
+    .icon-toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="page-header">
+      <h1>Icons</h1>
+      <p>438 icons — pure CSS via <code>mask-image</code>. Click any icon to copy its class name. <a href="docs.html#icons">Back to docs</a></p>
+    </div>
+
+    <div class="icon-toolbar">
+      <div class="search-wrap">
+        <i class="ui-icon ui-icon-search" style="position:absolute;left:0.75rem;top:50%;transform:translateY(-50%);color:var(--ui-text-muted);font-size:1rem;pointer-events:none"></i>
+        <input class="ui-input" id="icon-filter" type="text" placeholder="Filter icons..." style="padding-left:2.25rem;padding-right:2.25rem" oninput="filterIcons(this.value)" autofocus>
+        <button id="icon-filter-clear" onclick="clearIconFilter()" style="display:none;position:absolute;right:0.5rem;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--ui-text-muted);font-size:1rem;padding:0.25rem;line-height:1" title="Clear"><i class="ui-icon ui-icon-x"></i></button>
+      </div>
+      <span class="icon-count" id="icon-count">438 icons</span>
+    </div>
+
+    <div id="icon-no-results">No icons match your search.</div>
+    <div id="icon-grid">
+        <div class="icon-category">
+          <div class="icon-category-header"> Navigation & Arrows </div>
+          <div class="icon-category-items">
+            <span class="ui-row" data-icon="arrow-up"><i class="ui-icon ui-icon-arrow-up"></i> arrow-up</span>
+            <span class="ui-row" data-icon="arrow-down"><i class="ui-icon ui-icon-arrow-down"></i> arrow-down</span>
+            <span class="ui-row" data-icon="arrow-left"><i class="ui-icon ui-icon-arrow-left"></i> arrow-left</span>
+            <span class="ui-row" data-icon="arrow-right"><i class="ui-icon ui-icon-arrow-right"></i> arrow-right</span>
+            <span class="ui-row" data-icon="arrow-up-right"><i class="ui-icon ui-icon-arrow-up-right"></i> arrow-up-right</span>
+            <span class="ui-row" data-icon="arrow-down-left"><i class="ui-icon ui-icon-arrow-down-left"></i> arrow-down-left</span>
+            <span class="ui-row" data-icon="arrow-up-left"><i class="ui-icon ui-icon-arrow-up-left"></i> arrow-up-left</span>
+            <span class="ui-row" data-icon="arrow-down-right"><i class="ui-icon ui-icon-arrow-down-right"></i> arrow-down-right</span>
+            <span class="ui-row" data-icon="arrow-up-down"><i class="ui-icon ui-icon-arrow-up-down"></i> arrow-up-down</span>
+            <span class="ui-row" data-icon="arrow-right-left"><i class="ui-icon ui-icon-arrow-right-left"></i> arrow-right-left</span>
+            <span class="ui-row" data-icon="chevron-up"><i class="ui-icon ui-icon-chevron-up"></i> chevron-up</span>
+            <span class="ui-row" data-icon="chevron-down"><i class="ui-icon ui-icon-chevron-down"></i> chevron-down</span>
+            <span class="ui-row" data-icon="chevron-left"><i class="ui-icon ui-icon-chevron-left"></i> chevron-left</span>
+            <span class="ui-row" data-icon="chevron-right"><i class="ui-icon ui-icon-chevron-right"></i> chevron-right</span>
+            <span class="ui-row" data-icon="chevron-up-down"><i class="ui-icon ui-icon-chevron-up-down"></i> chevron-up-down</span>
+            <span class="ui-row" data-icon="chevrons-up"><i class="ui-icon ui-icon-chevrons-up"></i> chevrons-up</span>
+            <span class="ui-row" data-icon="chevrons-down"><i class="ui-icon ui-icon-chevrons-down"></i> chevrons-down</span>
+            <span class="ui-row" data-icon="chevrons-left"><i class="ui-icon ui-icon-chevrons-left"></i> chevrons-left</span>
+            <span class="ui-row" data-icon="chevrons-right"><i class="ui-icon ui-icon-chevrons-right"></i> chevrons-right</span>
+            <span class="ui-row" data-icon="corner-up-right"><i class="ui-icon ui-icon-corner-up-right"></i> corner-up-right</span>
+            <span class="ui-row" data-icon="corner-down-left"><i class="ui-icon ui-icon-corner-down-left"></i> corner-down-left</span>
+            <span class="ui-row" data-icon="corner-down-right"><i class="ui-icon ui-icon-corner-down-right"></i> corner-down-right</span>
+            <span class="ui-row" data-icon="corner-up-left"><i class="ui-icon ui-icon-corner-up-left"></i> corner-up-left</span>
+            <span class="ui-row" data-icon="external-link"><i class="ui-icon ui-icon-external-link"></i> external-link</span>
+            <span class="ui-row" data-icon="trending-up"><i class="ui-icon ui-icon-trending-up"></i> trending-up</span>
+            <span class="ui-row" data-icon="trending-down"><i class="ui-icon ui-icon-trending-down"></i> trending-down</span>
+          </div>
+        </div>
+        <div class="icon-category">
+          <div class="icon-category-header"> UI & Layout </div>
+          <div class="icon-category-items">
+            <span class="ui-row" data-icon="menu"><i class="ui-icon ui-icon-menu"></i> menu</span>
+            <span class="ui-row" data-icon="more-horizontal"><i class="ui-icon ui-icon-more-horizontal"></i> more-horizontal</span>
+            <span class="ui-row" data-icon="more-vertical"><i class="ui-icon ui-icon-more-vertical"></i> more-vertical</span>
+            <span class="ui-row" data-icon="ellipsis"><i class="ui-icon ui-icon-ellipsis"></i> ellipsis</span>
+            <span class="ui-row" data-icon="sidebar"><i class="ui-icon ui-icon-sidebar"></i> sidebar</span>
+            <span class="ui-row" data-icon="panel-left"><i class="ui-icon ui-icon-panel-left"></i> panel-left</span>
+            <span class="ui-row" data-icon="panel-right"><i class="ui-icon ui-icon-panel-right"></i> panel-right</span>
+            <span class="ui-row" data-icon="panel-top"><i class="ui-icon ui-icon-panel-top"></i> panel-top</span>
+            <span class="ui-row" data-icon="panel-bottom"><i class="ui-icon ui-icon-panel-bottom"></i> panel-bottom</span>
+            <span class="ui-row" data-icon="panel-left-close"><i class="ui-icon ui-icon-panel-left-close"></i> panel-left-close</span>
+            <span class="ui-row" data-icon="panel-left-open"><i class="ui-icon ui-icon-panel-left-open"></i> panel-left-open</span>
+            <span class="ui-row" data-icon="panel-right-close"><i class="ui-icon ui-icon-panel-right-close"></i> panel-right-close</span>
+            <span class="ui-row" data-icon="panel-right-open"><i class="ui-icon ui-icon-panel-right-open"></i> panel-right-open</span>
+            <span class="ui-row" data-icon="grip-vertical"><i class="ui-icon ui-icon-grip-vertical"></i> grip-vertical</span>
+            <span class="ui-row" data-icon="grip-horizontal"><i class="ui-icon ui-icon-grip-horizontal"></i> grip-horizontal</span>
+            <span class="ui-row" data-icon="pin"><i class="ui-icon ui-icon-pin"></i> pin</span>
+            <span class="ui-row" data-icon="split"><i class="ui-icon ui-icon-split"></i> split</span>
+            <span class="ui-row" data-icon="columns"><i class="ui-icon ui-icon-columns"></i> columns</span>
+            <span class="ui-row" data-icon="rows"><i class="ui-icon ui-icon-rows"></i> rows</span>
+            <span class="ui-row" data-icon="layout-grid"><i class="ui-icon ui-icon-layout-grid"></i> layout-grid</span>
+            <span class="ui-row" data-icon="layout-list"><i class="ui-icon ui-icon-layout-list"></i> layout-list</span>
+            <span class="ui-row" data-icon="grid"><i class="ui-icon ui-icon-grid"></i> grid</span>
+            <span class="ui-row" data-icon="list"><i class="ui-icon ui-icon-list"></i> list</span>
+            <span class="ui-row" data-icon="fullscreen"><i class="ui-icon ui-icon-fullscreen"></i> fullscreen</span>
+            <span class="ui-row" data-icon="shrink"><i class="ui-icon ui-icon-shrink"></i> shrink</span>
+            <span class="ui-row" data-icon="maximize"><i class="ui-icon ui-icon-maximize"></i> maximize</span>
+            <span class="ui-row" data-icon="minimize"><i class="ui-icon ui-icon-minimize"></i> minimize</span>
+            <span class="ui-row" data-icon="eye"><i class="ui-icon ui-icon-eye"></i> eye</span>
+            <span class="ui-row" data-icon="eye-off"><i class="ui-icon ui-icon-eye-off"></i> eye-off</span>
+            <span class="ui-row" data-icon="crosshair"><i class="ui-icon ui-icon-crosshair"></i> crosshair</span>
+            <span class="ui-row" data-icon="sliders-horizontal"><i class="ui-icon ui-icon-sliders-horizontal"></i> sliders-horizontal</span>
+            <span class="ui-row" data-icon="sliders-vertical"><i class="ui-icon ui-icon-sliders-vertical"></i> sliders-vertical</span>
+            <span class="ui-row" data-icon="separator-horizontal"><i class="ui-icon ui-icon-separator-horizontal"></i> separator-horizontal</span>
+            <span class="ui-row" data-icon="separator-vertical"><i class="ui-icon ui-icon-separator-vertical"></i> separator-vertical</span>
+            <span class="ui-row" data-icon="toggle-left"><i class="ui-icon ui-icon-toggle-left"></i> toggle-left</span>
+            <span class="ui-row" data-icon="toggle-right"><i class="ui-icon ui-icon-toggle-right"></i> toggle-right</span>
+            <span class="ui-row" data-icon="blocks"><i class="ui-icon ui-icon-blocks"></i> blocks</span>
+          </div>
+        </div>
+        <div class="icon-category">
+          <div class="icon-category-header"> Actions </div>
+          <div class="icon-category-items">
+            <span class="ui-row" data-icon="check"><i class="ui-icon ui-icon-check"></i> check</span>
+            <span class="ui-row" data-icon="x"><i class="ui-icon ui-icon-x"></i> x</span>
+            <span class="ui-row" data-icon="plus"><i class="ui-icon ui-icon-plus"></i> plus</span>
+            <span class="ui-row" data-icon="minus"><i class="ui-icon ui-icon-minus"></i> minus</span>
+            <span class="ui-row" data-icon="search"><i class="ui-icon ui-icon-search"></i> search</span>
+            <span class="ui-row" data-icon="filter"><i class="ui-icon ui-icon-filter"></i> filter</span>
+            <span class="ui-row" data-icon="sort"><i class="ui-icon ui-icon-sort"></i> sort</span>
+            <span class="ui-row" data-icon="funnel"><i class="ui-icon ui-icon-funnel"></i> funnel</span>
+            <span class="ui-row" data-icon="edit"><i class="ui-icon ui-icon-edit"></i> edit</span>
+            <span class="ui-row" data-icon="trash"><i class="ui-icon ui-icon-trash"></i> trash</span>
+            <span class="ui-row" data-icon="copy"><i class="ui-icon ui-icon-copy"></i> copy</span>
+            <span class="ui-row" data-icon="download"><i class="ui-icon ui-icon-download"></i> download</span>
+            <span class="ui-row" data-icon="upload"><i class="ui-icon ui-icon-upload"></i> upload</span>
+            <span class="ui-row" data-icon="share"><i class="ui-icon ui-icon-share"></i> share</span>
+            <span class="ui-row" data-icon="refresh"><i class="ui-icon ui-icon-refresh"></i> refresh</span>
+            <span class="ui-row" data-icon="save"><i class="ui-icon ui-icon-save"></i> save</span>
+            <span class="ui-row" data-icon="print"><i class="ui-icon ui-icon-print"></i> print</span>
+            <span class="ui-row" data-icon="send"><i class="ui-icon ui-icon-send"></i> send</span>
+            <span class="ui-row" data-icon="link"><i class="ui-icon ui-icon-link"></i> link</span>
+            <span class="ui-row" data-icon="log-in"><i class="ui-icon ui-icon-log-in"></i> log-in</span>
+            <span class="ui-row" data-icon="log-out"><i class="ui-icon ui-icon-log-out"></i> log-out</span>
+            <span class="ui-row" data-icon="undo"><i class="ui-icon ui-icon-undo"></i> undo</span>
+            <span class="ui-row" data-icon="redo"><i class="ui-icon ui-icon-redo"></i> redo</span>
+            <span class="ui-row" data-icon="rotate-cw"><i class="ui-icon ui-icon-rotate-cw"></i> rotate-cw</span>
+            <span class="ui-row" data-icon="rotate-ccw"><i class="ui-icon ui-icon-rotate-ccw"></i> rotate-ccw</span>
+            <span class="ui-row" data-icon="move"><i class="ui-icon ui-icon-move"></i> move</span>
+            <span class="ui-row" data-icon="reply"><i class="ui-icon ui-icon-reply"></i> reply</span>
+            <span class="ui-row" data-icon="forward"><i class="ui-icon ui-icon-forward"></i> forward</span>
+            <span class="ui-row" data-icon="folder-plus"><i class="ui-icon ui-icon-folder-plus"></i> folder-plus</span>
+            <span class="ui-row" data-icon="file-plus"><i class="ui-icon ui-icon-file-plus"></i> file-plus</span>
+            <span class="ui-row" data-icon="clipboard-check"><i class="ui-icon ui-icon-clipboard-check"></i> clipboard-check</span>
+            <span class="ui-row" data-icon="wand"><i class="ui-icon ui-icon-wand"></i> wand</span>
+            <span class="ui-row" data-icon="sparkles"><i class="ui-icon ui-icon-sparkles"></i> sparkles</span>
+            <span class="ui-row" data-icon="power"><i class="ui-icon ui-icon-power"></i> power</span>
+          </div>
+        </div>
+        <div class="icon-category">
+          <div class="icon-category-header"> Status & Feedback </div>
+          <div class="icon-category-items">
+            <span class="ui-row" data-icon="info"><i class="ui-icon ui-icon-info"></i> info</span>
+            <span class="ui-row" data-icon="alert-circle"><i class="ui-icon ui-icon-alert-circle"></i> alert-circle</span>
+            <span class="ui-row" data-icon="alert-triangle"><i class="ui-icon ui-icon-alert-triangle"></i> alert-triangle</span>
+            <span class="ui-row" data-icon="check-circle"><i class="ui-icon ui-icon-check-circle"></i> check-circle</span>
+            <span class="ui-row" data-icon="x-circle"><i class="ui-icon ui-icon-x-circle"></i> x-circle</span>
+            <span class="ui-row" data-icon="help-circle"><i class="ui-icon ui-icon-help-circle"></i> help-circle</span>
+            <span class="ui-row" data-icon="circle-check"><i class="ui-icon ui-icon-circle-check"></i> circle-check</span>
+            <span class="ui-row" data-icon="circle-x"><i class="ui-icon ui-icon-circle-x"></i> circle-x</span>
+            <span class="ui-row" data-icon="circle-dot"><i class="ui-icon ui-icon-circle-dot"></i> circle-dot</span>
+            <span class="ui-row" data-icon="circle-dashed"><i class="ui-icon ui-icon-circle-dashed"></i> circle-dashed</span>
+            <span class="ui-row" data-icon="circle-alert"><i class="ui-icon ui-icon-circle-alert"></i> circle-alert</span>
+            <span class="ui-row" data-icon="ban"><i class="ui-icon ui-icon-ban"></i> ban</span>
+            <span class="ui-row" data-icon="badge-check"><i class="ui-icon ui-icon-badge-check"></i> badge-check</span>
+            <span class="ui-row" data-icon="loader"><i class="ui-icon ui-icon-loader"></i> loader</span>
+            <span class="ui-row" data-icon="loader-circle"><i class="ui-icon ui-icon-loader-circle"></i> loader-circle</span>
+            <span class="ui-row" data-icon="plus-circle"><i class="ui-icon ui-icon-plus-circle"></i> plus-circle</span>
+            <span class="ui-row" data-icon="minus-circle"><i class="ui-icon ui-icon-minus-circle"></i> minus-circle</span>
+            <span class="ui-row" data-icon="bell"><i class="ui-icon ui-icon-bell"></i> bell</span>
+            <span class="ui-row" data-icon="bell-off"><i class="ui-icon ui-icon-bell-off"></i> bell-off</span>
+            <span class="ui-row" data-icon="thumbs-up"><i class="ui-icon ui-icon-thumbs-up"></i> thumbs-up</span>
+            <span class="ui-row" data-icon="thumbs-down"><i class="ui-icon ui-icon-thumbs-down"></i> thumbs-down</span>
+            <span class="ui-row" data-icon="smile"><i class="ui-icon ui-icon-smile"></i> smile</span>
+            <span class="ui-row" data-icon="frown"><i class="ui-icon ui-icon-frown"></i> frown</span>
+            <span class="ui-row" data-icon="meh"><i class="ui-icon ui-icon-meh"></i> meh</span>
+          </div>
+        </div>
+        <div class="icon-category">
+          <div class="icon-category-header"> Text & Editing </div>
+          <div class="icon-category-items">
+            <span class="ui-row" data-icon="bold"><i class="ui-icon ui-icon-bold"></i> bold</span>
+            <span class="ui-row" data-icon="italic"><i class="ui-icon ui-icon-italic"></i> italic</span>
+            <span class="ui-row" data-icon="underline"><i class="ui-icon ui-icon-underline"></i> underline</span>
+            <span class="ui-row" data-icon="strikethrough"><i class="ui-icon ui-icon-strikethrough"></i> strikethrough</span>
+            <span class="ui-row" data-icon="heading"><i class="ui-icon ui-icon-heading"></i> heading</span>
+            <span class="ui-row" data-icon="heading-1"><i class="ui-icon ui-icon-heading-1"></i> heading-1</span>
+            <span class="ui-row" data-icon="heading-2"><i class="ui-icon ui-icon-heading-2"></i> heading-2</span>
+            <span class="ui-row" data-icon="heading-3"><i class="ui-icon ui-icon-heading-3"></i> heading-3</span>
+            <span class="ui-row" data-icon="type"><i class="ui-icon ui-icon-type"></i> type</span>
+            <span class="ui-row" data-icon="quote"><i class="ui-icon ui-icon-quote"></i> quote</span>
+            <span class="ui-row" data-icon="pilcrow"><i class="ui-icon ui-icon-pilcrow"></i> pilcrow</span>
+            <span class="ui-row" data-icon="paragraph"><i class="ui-icon ui-icon-paragraph"></i> paragraph</span>
+            <span class="ui-row" data-icon="align-left"><i class="ui-icon ui-icon-align-left"></i> align-left</span>
+            <span class="ui-row" data-icon="align-center"><i class="ui-icon ui-icon-align-center"></i> align-center</span>
+            <span class="ui-row" data-icon="align-right"><i class="ui-icon ui-icon-align-right"></i> align-right</span>
+            <span class="ui-row" data-icon="align-justify"><i class="ui-icon ui-icon-align-justify"></i> align-justify</span>
+            <span class="ui-row" data-icon="text-cursor"><i class="ui-icon ui-icon-text-cursor"></i> text-cursor</span>
+            <span class="ui-row" data-icon="highlighter"><i class="ui-icon ui-icon-highlighter"></i> highlighter</span>
+            <span class="ui-row" data-icon="eraser"><i class="ui-icon ui-icon-eraser"></i> eraser</span>
+            <span class="ui-row" data-icon="subscript"><i class="ui-icon ui-icon-subscript"></i> subscript</span>
+            <span class="ui-row" data-icon="superscript"><i class="ui-icon ui-icon-superscript"></i> superscript</span>
+            <span class="ui-row" data-icon="spell-check"><i class="ui-icon ui-icon-spell-check"></i> spell-check</span>
+            <span class="ui-row" data-icon="wrap-text"><i class="ui-icon ui-icon-wrap-text"></i> wrap-text</span>
+            <span class="ui-row" data-icon="list-ordered"><i class="ui-icon ui-icon-list-ordered"></i> list-ordered</span>
+            <span class="ui-row" data-icon="list-checks"><i class="ui-icon ui-icon-list-checks"></i> list-checks</span>
+            <span class="ui-row" data-icon="list-filter"><i class="ui-icon ui-icon-list-filter"></i> list-filter</span>
+            <span class="ui-row" data-icon="list-plus"><i class="ui-icon ui-icon-list-plus"></i> list-plus</span>
+            <span class="ui-row" data-icon="list-minus"><i class="ui-icon ui-icon-list-minus"></i> list-minus</span>
+          </div>
+        </div>
+        <div class="icon-category">
+          <div class="icon-category-header"> Files & Documents </div>
+          <div class="icon-category-items">
+            <span class="ui-row" data-icon="file"><i class="ui-icon ui-icon-file"></i> file</span>
+            <span class="ui-row" data-icon="file-text"><i class="ui-icon ui-icon-file-text"></i> file-text</span>
+            <span class="ui-row" data-icon="file-code"><i class="ui-icon ui-icon-file-code"></i> file-code</span>
+            <span class="ui-row" data-icon="file-image"><i class="ui-icon ui-icon-file-image"></i> file-image</span>
+            <span class="ui-row" data-icon="file-search"><i class="ui-icon ui-icon-file-search"></i> file-search</span>
+            <span class="ui-row" data-icon="file-check"><i class="ui-icon ui-icon-file-check"></i> file-check</span>
+            <span class="ui-row" data-icon="file-x"><i class="ui-icon ui-icon-file-x"></i> file-x</span>
+            <span class="ui-row" data-icon="file-down"><i class="ui-icon ui-icon-file-down"></i> file-down</span>
+            <span class="ui-row" data-icon="file-up"><i class="ui-icon ui-icon-file-up"></i> file-up</span>
+            <span class="ui-row" data-icon="file-spreadsheet"><i class="ui-icon ui-icon-file-spreadsheet"></i> file-spreadsheet</span>
+            <span class="ui-row" data-icon="file-json"><i class="ui-icon ui-icon-file-json"></i> file-json</span>
+            <span class="ui-row" data-icon="files"><i class="ui-icon ui-icon-files"></i> files</span>
+            <span class="ui-row" data-icon="folder"><i class="ui-icon ui-icon-folder"></i> folder</span>
+            <span class="ui-row" data-icon="folder-open"><i class="ui-icon ui-icon-folder-open"></i> folder-open</span>
+            <span class="ui-row" data-icon="book"><i class="ui-icon ui-icon-book"></i> book</span>
+            <span class="ui-row" data-icon="book-open"><i class="ui-icon ui-icon-book-open"></i> book-open</span>
+            <span class="ui-row" data-icon="notebook"><i class="ui-icon ui-icon-notebook"></i> notebook</span>
+            <span class="ui-row" data-icon="newspaper"><i class="ui-icon ui-icon-newspaper"></i> newspaper</span>
+            <span class="ui-row" data-icon="clipboard"><i class="ui-icon ui-icon-clipboard"></i> clipboard</span>
+            <span class="ui-row" data-icon="scroll-text"><i class="ui-icon ui-icon-scroll-text"></i> scroll-text</span>
+            <span class="ui-row" data-icon="sticky-note"><i class="ui-icon ui-icon-sticky-note"></i> sticky-note</span>
+            <span class="ui-row" data-icon="table"><i class="ui-icon ui-icon-table"></i> table</span>
+            <span class="ui-row" data-icon="inbox"><i class="ui-icon ui-icon-inbox"></i> inbox</span>
+            <span class="ui-row" data-icon="archive"><i class="ui-icon ui-icon-archive"></i> archive</span>
+          </div>
+        </div>
+        <div class="icon-category">
+          <div class="icon-category-header"> Media & Playback </div>
+          <div class="icon-category-items">
+            <span class="ui-row" data-icon="play"><i class="ui-icon ui-icon-play"></i> play</span>
+            <span class="ui-row" data-icon="pause"><i class="ui-icon ui-icon-pause"></i> pause</span>
+            <span class="ui-row" data-icon="stop-circle"><i class="ui-icon ui-icon-stop-circle"></i> stop-circle</span>
+            <span class="ui-row" data-icon="play-circle"><i class="ui-icon ui-icon-play-circle"></i> play-circle</span>
+            <span class="ui-row" data-icon="pause-circle"><i class="ui-icon ui-icon-pause-circle"></i> pause-circle</span>
+            <span class="ui-row" data-icon="skip-forward"><i class="ui-icon ui-icon-skip-forward"></i> skip-forward</span>
+            <span class="ui-row" data-icon="skip-back"><i class="ui-icon ui-icon-skip-back"></i> skip-back</span>
+            <span class="ui-row" data-icon="fast-forward"><i class="ui-icon ui-icon-fast-forward"></i> fast-forward</span>
+            <span class="ui-row" data-icon="rewind"><i class="ui-icon ui-icon-rewind"></i> rewind</span>
+            <span class="ui-row" data-icon="repeat"><i class="ui-icon ui-icon-repeat"></i> repeat</span>
+            <span class="ui-row" data-icon="shuffle"><i class="ui-icon ui-icon-shuffle"></i> shuffle</span>
+            <span class="ui-row" data-icon="volume"><i class="ui-icon ui-icon-volume"></i> volume</span>
+            <span class="ui-row" data-icon="volume-1"><i class="ui-icon ui-icon-volume-1"></i> volume-1</span>
+            <span class="ui-row" data-icon="volume-2"><i class="ui-icon ui-icon-volume-2"></i> volume-2</span>
+            <span class="ui-row" data-icon="volume-x"><i class="ui-icon ui-icon-volume-x"></i> volume-x</span>
+            <span class="ui-row" data-icon="audio-lines"><i class="ui-icon ui-icon-audio-lines"></i> audio-lines</span>
+            <span class="ui-row" data-icon="music"><i class="ui-icon ui-icon-music"></i> music</span>
+            <span class="ui-row" data-icon="mic"><i class="ui-icon ui-icon-mic"></i> mic</span>
+            <span class="ui-row" data-icon="mic-off"><i class="ui-icon ui-icon-mic-off"></i> mic-off</span>
+            <span class="ui-row" data-icon="headphones"><i class="ui-icon ui-icon-headphones"></i> headphones</span>
+            <span class="ui-row" data-icon="video"><i class="ui-icon ui-icon-video"></i> video</span>
+            <span class="ui-row" data-icon="video-off"><i class="ui-icon ui-icon-video-off"></i> video-off</span>
+            <span class="ui-row" data-icon="camera"><i class="ui-icon ui-icon-camera"></i> camera</span>
+            <span class="ui-row" data-icon="aperture"><i class="ui-icon ui-icon-aperture"></i> aperture</span>
+            <span class="ui-row" data-icon="crop"><i class="ui-icon ui-icon-crop"></i> crop</span>
+            <span class="ui-row" data-icon="zoom-in"><i class="ui-icon ui-icon-zoom-in"></i> zoom-in</span>
+            <span class="ui-row" data-icon="zoom-out"><i class="ui-icon ui-icon-zoom-out"></i> zoom-out</span>
+            <span class="ui-row" data-icon="zoom-fit"><i class="ui-icon ui-icon-zoom-fit"></i> zoom-fit</span>
+            <span class="ui-row" data-icon="film"><i class="ui-icon ui-icon-film"></i> film</span>
+            <span class="ui-row" data-icon="image"><i class="ui-icon ui-icon-image"></i> image</span>
+          </div>
+        </div>
+        <div class="icon-category">
+          <div class="icon-category-header"> Data & Charts </div>
+          <div class="icon-category-items">
+            <span class="ui-row" data-icon="chart-bar"><i class="ui-icon ui-icon-chart-bar"></i> chart-bar</span>
+            <span class="ui-row" data-icon="chart-pie"><i class="ui-icon ui-icon-chart-pie"></i> chart-pie</span>
+            <span class="ui-row" data-icon="chart-line"><i class="ui-icon ui-icon-chart-line"></i> chart-line</span>
+            <span class="ui-row" data-icon="chart-area"><i class="ui-icon ui-icon-chart-area"></i> chart-area</span>
+            <span class="ui-row" data-icon="chart-scatter"><i class="ui-icon ui-icon-chart-scatter"></i> chart-scatter</span>
+            <span class="ui-row" data-icon="activity"><i class="ui-icon ui-icon-activity"></i> activity</span>
+            <span class="ui-row" data-icon="database"><i class="ui-icon ui-icon-database"></i> database</span>
+          </div>
+        </div>
+        <div class="icon-category">
+          <div class="icon-category-header"> People & Identity </div>
+          <div class="icon-category-items">
+            <span class="ui-row" data-icon="user"><i class="ui-icon ui-icon-user"></i> user</span>
+            <span class="ui-row" data-icon="users"><i class="ui-icon ui-icon-users"></i> users</span>
+            <span class="ui-row" data-icon="users-plus"><i class="ui-icon ui-icon-users-plus"></i> users-plus</span>
+            <span class="ui-row" data-icon="user-check"><i class="ui-icon ui-icon-user-check"></i> user-check</span>
+            <span class="ui-row" data-icon="user-x"><i class="ui-icon ui-icon-user-x"></i> user-x</span>
+            <span class="ui-row" data-icon="user-minus"><i class="ui-icon ui-icon-user-minus"></i> user-minus</span>
+            <span class="ui-row" data-icon="user-cog"><i class="ui-icon ui-icon-user-cog"></i> user-cog</span>
+            <span class="ui-row" data-icon="contact"><i class="ui-icon ui-icon-contact"></i> contact</span>
+            <span class="ui-row" data-icon="circle-user"><i class="ui-icon ui-icon-circle-user"></i> circle-user</span>
+            <span class="ui-row" data-icon="baby"><i class="ui-icon ui-icon-baby"></i> baby</span>
+            <span class="ui-row" data-icon="hand"><i class="ui-icon ui-icon-hand"></i> hand</span>
+          </div>
+        </div>
+        <div class="icon-category">
+          <div class="icon-category-header"> Communication </div>
+          <div class="icon-category-items">
+            <span class="ui-row" data-icon="mail"><i class="ui-icon ui-icon-mail"></i> mail</span>
+            <span class="ui-row" data-icon="message"><i class="ui-icon ui-icon-message"></i> message</span>
+            <span class="ui-row" data-icon="message-circle"><i class="ui-icon ui-icon-message-circle"></i> message-circle</span>
+            <span class="ui-row" data-icon="message-square"><i class="ui-icon ui-icon-message-square"></i> message-square</span>
+            <span class="ui-row" data-icon="message-square-plus"><i class="ui-icon ui-icon-message-square-plus"></i> message-square-plus</span>
+            <span class="ui-row" data-icon="messages-square"><i class="ui-icon ui-icon-messages-square"></i> messages-square</span>
+            <span class="ui-row" data-icon="phone"><i class="ui-icon ui-icon-phone"></i> phone</span>
+            <span class="ui-row" data-icon="phone-call"><i class="ui-icon ui-icon-phone-call"></i> phone-call</span>
+            <span class="ui-row" data-icon="phone-incoming"><i class="ui-icon ui-icon-phone-incoming"></i> phone-incoming</span>
+            <span class="ui-row" data-icon="phone-outgoing"><i class="ui-icon ui-icon-phone-outgoing"></i> phone-outgoing</span>
+            <span class="ui-row" data-icon="megaphone"><i class="ui-icon ui-icon-megaphone"></i> megaphone</span>
+            <span class="ui-row" data-icon="chat"><i class="ui-icon ui-icon-chat"></i> chat</span>
+            <span class="ui-row" data-icon="radio"><i class="ui-icon ui-icon-radio"></i> radio</span>
+            <span class="ui-row" data-icon="rss"><i class="ui-icon ui-icon-rss"></i> rss</span>
+            <span class="ui-row" data-icon="voicemail"><i class="ui-icon ui-icon-voicemail"></i> voicemail</span>
+            <span class="ui-row" data-icon="screen-share"><i class="ui-icon ui-icon-screen-share"></i> screen-share</span>
+          </div>
+        </div>
+        <div class="icon-category">
+          <div class="icon-category-header"> Commerce & Finance </div>
+          <div class="icon-category-items">
+            <span class="ui-row" data-icon="shopping-cart"><i class="ui-icon ui-icon-shopping-cart"></i> shopping-cart</span>
+            <span class="ui-row" data-icon="shopping-bag"><i class="ui-icon ui-icon-shopping-bag"></i> shopping-bag</span>
+            <span class="ui-row" data-icon="credit-card"><i class="ui-icon ui-icon-credit-card"></i> credit-card</span>
+            <span class="ui-row" data-icon="dollar-sign"><i class="ui-icon ui-icon-dollar-sign"></i> dollar-sign</span>
+            <span class="ui-row" data-icon="circle-dollar-sign"><i class="ui-icon ui-icon-circle-dollar-sign"></i> circle-dollar-sign</span>
+            <span class="ui-row" data-icon="percent"><i class="ui-icon ui-icon-percent"></i> percent</span>
+            <span class="ui-row" data-icon="badge-percent"><i class="ui-icon ui-icon-badge-percent"></i> badge-percent</span>
+            <span class="ui-row" data-icon="wallet"><i class="ui-icon ui-icon-wallet"></i> wallet</span>
+            <span class="ui-row" data-icon="store"><i class="ui-icon ui-icon-store"></i> store</span>
+            <span class="ui-row" data-icon="receipt"><i class="ui-icon ui-icon-receipt"></i> receipt</span>
+            <span class="ui-row" data-icon="ticket"><i class="ui-icon ui-icon-ticket"></i> ticket</span>
+            <span class="ui-row" data-icon="banknote"><i class="ui-icon ui-icon-banknote"></i> banknote</span>
+            <span class="ui-row" data-icon="hand-coins"><i class="ui-icon ui-icon-hand-coins"></i> hand-coins</span>
+            <span class="ui-row" data-icon="piggy-bank"><i class="ui-icon ui-icon-piggy-bank"></i> piggy-bank</span>
+            <span class="ui-row" data-icon="barcode"><i class="ui-icon ui-icon-barcode"></i> barcode</span>
+            <span class="ui-row" data-icon="qr-code"><i class="ui-icon ui-icon-qr-code"></i> qr-code</span>
+            <span class="ui-row" data-icon="bank"><i class="ui-icon ui-icon-bank"></i> bank</span>
+            <span class="ui-row" data-icon="coins"><i class="ui-icon ui-icon-coins"></i> coins</span>
+            <span class="ui-row" data-icon="tag"><i class="ui-icon ui-icon-tag"></i> tag</span>
+          </div>
+        </div>
+        <div class="icon-category">
+          <div class="icon-category-header"> Security & Auth </div>
+          <div class="icon-category-items">
+            <span class="ui-row" data-icon="lock"><i class="ui-icon ui-icon-lock"></i> lock</span>
+            <span class="ui-row" data-icon="unlock"><i class="ui-icon ui-icon-unlock"></i> unlock</span>
+            <span class="ui-row" data-icon="shield"><i class="ui-icon ui-icon-shield"></i> shield</span>
+            <span class="ui-row" data-icon="shield-check"><i class="ui-icon ui-icon-shield-check"></i> shield-check</span>
+            <span class="ui-row" data-icon="shield-alert"><i class="ui-icon ui-icon-shield-alert"></i> shield-alert</span>
+            <span class="ui-row" data-icon="shield-off"><i class="ui-icon ui-icon-shield-off"></i> shield-off</span>
+            <span class="ui-row" data-icon="shield-question"><i class="ui-icon ui-icon-shield-question"></i> shield-question</span>
+            <span class="ui-row" data-icon="key"><i class="ui-icon ui-icon-key"></i> key</span>
+            <span class="ui-row" data-icon="key-round"><i class="ui-icon ui-icon-key-round"></i> key-round</span>
+            <span class="ui-row" data-icon="face-id"><i class="ui-icon ui-icon-face-id"></i> face-id</span>
+            <span class="ui-row" data-icon="fingerprint"><i class="ui-icon ui-icon-fingerprint"></i> fingerprint</span>
+            <span class="ui-row" data-icon="passkey"><i class="ui-icon ui-icon-passkey"></i> passkey</span>
+            <span class="ui-row" data-icon="scan"><i class="ui-icon ui-icon-scan"></i> scan</span>
+            <span class="ui-row" data-icon="scan-face"><i class="ui-icon ui-icon-scan-face"></i> scan-face</span>
+          </div>
+        </div>
+        <div class="icon-category">
+          <div class="icon-category-header"> Development & Code </div>
+          <div class="icon-category-items">
+            <span class="ui-row" data-icon="code"><i class="ui-icon ui-icon-code"></i> code</span>
+            <span class="ui-row" data-icon="code-xml"><i class="ui-icon ui-icon-code-xml"></i> code-xml</span>
+            <span class="ui-row" data-icon="terminal"><i class="ui-icon ui-icon-terminal"></i> terminal</span>
+            <span class="ui-row" data-icon="brackets"><i class="ui-icon ui-icon-brackets"></i> brackets</span>
+            <span class="ui-row" data-icon="git-branch"><i class="ui-icon ui-icon-git-branch"></i> git-branch</span>
+            <span class="ui-row" data-icon="git-commit"><i class="ui-icon ui-icon-git-commit"></i> git-commit</span>
+            <span class="ui-row" data-icon="git-merge"><i class="ui-icon ui-icon-git-merge"></i> git-merge</span>
+            <span class="ui-row" data-icon="git-pull-request"><i class="ui-icon ui-icon-git-pull-request"></i> git-pull-request</span>
+            <span class="ui-row" data-icon="git-fork"><i class="ui-icon ui-icon-git-fork"></i> git-fork</span>
+            <span class="ui-row" data-icon="git-compare"><i class="ui-icon ui-icon-git-compare"></i> git-compare</span>
+            <span class="ui-row" data-icon="bug"><i class="ui-icon ui-icon-bug"></i> bug</span>
+            <span class="ui-row" data-icon="cpu"><i class="ui-icon ui-icon-cpu"></i> cpu</span>
+            <span class="ui-row" data-icon="server"><i class="ui-icon ui-icon-server"></i> server</span>
+            <span class="ui-row" data-icon="hard-drive"><i class="ui-icon ui-icon-hard-drive"></i> hard-drive</span>
+            <span class="ui-row" data-icon="container"><i class="ui-icon ui-icon-container"></i> container</span>
+            <span class="ui-row" data-icon="component"><i class="ui-icon ui-icon-component"></i> component</span>
+            <span class="ui-row" data-icon="route"><i class="ui-icon ui-icon-route"></i> route</span>
+            <span class="ui-row" data-icon="binary"><i class="ui-icon ui-icon-binary"></i> binary</span>
+            <span class="ui-row" data-icon="test-tube"><i class="ui-icon ui-icon-test-tube"></i> test-tube</span>
+            <span class="ui-row" data-icon="flask"><i class="ui-icon ui-icon-flask"></i> flask</span>
+            <span class="ui-row" data-icon="workflow"><i class="ui-icon ui-icon-workflow"></i> workflow</span>
+            <span class="ui-row" data-icon="network"><i class="ui-icon ui-icon-network"></i> network</span>
+          </div>
+        </div>
+        <div class="icon-category">
+          <div class="icon-category-header"> Devices & Hardware </div>
+          <div class="icon-category-items">
+            <span class="ui-row" data-icon="monitor"><i class="ui-icon ui-icon-monitor"></i> monitor</span>
+            <span class="ui-row" data-icon="laptop"><i class="ui-icon ui-icon-laptop"></i> laptop</span>
+            <span class="ui-row" data-icon="smartphone"><i class="ui-icon ui-icon-smartphone"></i> smartphone</span>
+            <span class="ui-row" data-icon="tablet"><i class="ui-icon ui-icon-tablet"></i> tablet</span>
+            <span class="ui-row" data-icon="tv"><i class="ui-icon ui-icon-tv"></i> tv</span>
+            <span class="ui-row" data-icon="watch"><i class="ui-icon ui-icon-watch"></i> watch</span>
+            <span class="ui-row" data-icon="speaker"><i class="ui-icon ui-icon-speaker"></i> speaker</span>
+            <span class="ui-row" data-icon="gamepad"><i class="ui-icon ui-icon-gamepad"></i> gamepad</span>
+            <span class="ui-row" data-icon="mouse"><i class="ui-icon ui-icon-mouse"></i> mouse</span>
+            <span class="ui-row" data-icon="pointer"><i class="ui-icon ui-icon-pointer"></i> pointer</span>
+            <span class="ui-row" data-icon="plug"><i class="ui-icon ui-icon-plug"></i> plug</span>
+            <span class="ui-row" data-icon="battery"><i class="ui-icon ui-icon-battery"></i> battery</span>
+            <span class="ui-row" data-icon="battery-low"><i class="ui-icon ui-icon-battery-low"></i> battery-low</span>
+            <span class="ui-row" data-icon="battery-medium"><i class="ui-icon ui-icon-battery-medium"></i> battery-medium</span>
+            <span class="ui-row" data-icon="battery-full"><i class="ui-icon ui-icon-battery-full"></i> battery-full</span>
+            <span class="ui-row" data-icon="battery-charging"><i class="ui-icon ui-icon-battery-charging"></i> battery-charging</span>
+          </div>
+        </div>
+        <div class="icon-category">
+          <div class="icon-category-header"> Connectivity </div>
+          <div class="icon-category-items">
+            <span class="ui-row" data-icon="wifi"><i class="ui-icon ui-icon-wifi"></i> wifi</span>
+            <span class="ui-row" data-icon="wifi-low"><i class="ui-icon ui-icon-wifi-low"></i> wifi-low</span>
+            <span class="ui-row" data-icon="wifi-medium"><i class="ui-icon ui-icon-wifi-medium"></i> wifi-medium</span>
+            <span class="ui-row" data-icon="wifi-off"><i class="ui-icon ui-icon-wifi-off"></i> wifi-off</span>
+            <span class="ui-row" data-icon="bluetooth"><i class="ui-icon ui-icon-bluetooth"></i> bluetooth</span>
+            <span class="ui-row" data-icon="cast"><i class="ui-icon ui-icon-cast"></i> cast</span>
+            <span class="ui-row" data-icon="signal"><i class="ui-icon ui-icon-signal"></i> signal</span>
+            <span class="ui-row" data-icon="signal-low"><i class="ui-icon ui-icon-signal-low"></i> signal-low</span>
+            <span class="ui-row" data-icon="signal-medium"><i class="ui-icon ui-icon-signal-medium"></i> signal-medium</span>
+            <span class="ui-row" data-icon="signal-off"><i class="ui-icon ui-icon-signal-off"></i> signal-off</span>
+            <span class="ui-row" data-icon="cloud"><i class="ui-icon ui-icon-cloud"></i> cloud</span>
+            <span class="ui-row" data-icon="cloud-rain"><i class="ui-icon ui-icon-cloud-rain"></i> cloud-rain</span>
+            <span class="ui-row" data-icon="cloud-snow"><i class="ui-icon ui-icon-cloud-snow"></i> cloud-snow</span>
+            <span class="ui-row" data-icon="cloud-lightning"><i class="ui-icon ui-icon-cloud-lightning"></i> cloud-lightning</span>
+            <span class="ui-row" data-icon="cloud-upload"><i class="ui-icon ui-icon-cloud-upload"></i> cloud-upload</span>
+            <span class="ui-row" data-icon="cloud-download"><i class="ui-icon ui-icon-cloud-download"></i> cloud-download</span>
+            <span class="ui-row" data-icon="cloud-off"><i class="ui-icon ui-icon-cloud-off"></i> cloud-off</span>
+            <span class="ui-row" data-icon="globe"><i class="ui-icon ui-icon-globe"></i> globe</span>
+          </div>
+        </div>
+        <div class="icon-category">
+          <div class="icon-category-header"> Time & Calendar </div>
+          <div class="icon-category-items">
+            <span class="ui-row" data-icon="calendar"><i class="ui-icon ui-icon-calendar"></i> calendar</span>
+            <span class="ui-row" data-icon="calendar-days"><i class="ui-icon ui-icon-calendar-days"></i> calendar-days</span>
+            <span class="ui-row" data-icon="calendar-check"><i class="ui-icon ui-icon-calendar-check"></i> calendar-check</span>
+            <span class="ui-row" data-icon="calendar-x"><i class="ui-icon ui-icon-calendar-x"></i> calendar-x</span>
+            <span class="ui-row" data-icon="calendar-plus"><i class="ui-icon ui-icon-calendar-plus"></i> calendar-plus</span>
+            <span class="ui-row" data-icon="calendar-range"><i class="ui-icon ui-icon-calendar-range"></i> calendar-range</span>
+            <span class="ui-row" data-icon="calendar-clock"><i class="ui-icon ui-icon-calendar-clock"></i> calendar-clock</span>
+            <span class="ui-row" data-icon="clock"><i class="ui-icon ui-icon-clock"></i> clock</span>
+            <span class="ui-row" data-icon="timer"><i class="ui-icon ui-icon-timer"></i> timer</span>
+            <span class="ui-row" data-icon="stopwatch"><i class="ui-icon ui-icon-stopwatch"></i> stopwatch</span>
+            <span class="ui-row" data-icon="hourglass"><i class="ui-icon ui-icon-hourglass"></i> hourglass</span>
+            <span class="ui-row" data-icon="alarm-clock"><i class="ui-icon ui-icon-alarm-clock"></i> alarm-clock</span>
+          </div>
+        </div>
+        <div class="icon-category">
+          <div class="icon-category-header"> Weather & Nature </div>
+          <div class="icon-category-items">
+            <span class="ui-row" data-icon="sun"><i class="ui-icon ui-icon-sun"></i> sun</span>
+            <span class="ui-row" data-icon="moon"><i class="ui-icon ui-icon-moon"></i> moon</span>
+            <span class="ui-row" data-icon="sunrise"><i class="ui-icon ui-icon-sunrise"></i> sunrise</span>
+            <span class="ui-row" data-icon="sunset"><i class="ui-icon ui-icon-sunset"></i> sunset</span>
+            <span class="ui-row" data-icon="wind"><i class="ui-icon ui-icon-wind"></i> wind</span>
+            <span class="ui-row" data-icon="snowflake"><i class="ui-icon ui-icon-snowflake"></i> snowflake</span>
+            <span class="ui-row" data-icon="thermometer"><i class="ui-icon ui-icon-thermometer"></i> thermometer</span>
+            <span class="ui-row" data-icon="droplet"><i class="ui-icon ui-icon-droplet"></i> droplet</span>
+            <span class="ui-row" data-icon="droplets"><i class="ui-icon ui-icon-droplets"></i> droplets</span>
+            <span class="ui-row" data-icon="leaf"><i class="ui-icon ui-icon-leaf"></i> leaf</span>
+            <span class="ui-row" data-icon="sprout"><i class="ui-icon ui-icon-sprout"></i> sprout</span>
+            <span class="ui-row" data-icon="mountain"><i class="ui-icon ui-icon-mountain"></i> mountain</span>
+            <span class="ui-row" data-icon="waves"><i class="ui-icon ui-icon-waves"></i> waves</span>
+          </div>
+        </div>
+        <div class="icon-category">
+          <div class="icon-category-header"> Maps & Transportation </div>
+          <div class="icon-category-items">
+            <span class="ui-row" data-icon="map-pin"><i class="ui-icon ui-icon-map-pin"></i> map-pin</span>
+            <span class="ui-row" data-icon="map"><i class="ui-icon ui-icon-map"></i> map</span>
+            <span class="ui-row" data-icon="compass"><i class="ui-icon ui-icon-compass"></i> compass</span>
+            <span class="ui-row" data-icon="plane"><i class="ui-icon ui-icon-plane"></i> plane</span>
+            <span class="ui-row" data-icon="rocket"><i class="ui-icon ui-icon-rocket"></i> rocket</span>
+            <span class="ui-row" data-icon="bike"><i class="ui-icon ui-icon-bike"></i> bike</span>
+            <span class="ui-row" data-icon="car"><i class="ui-icon ui-icon-car"></i> car</span>
+            <span class="ui-row" data-icon="bus"><i class="ui-icon ui-icon-bus"></i> bus</span>
+            <span class="ui-row" data-icon="taxi"><i class="ui-icon ui-icon-taxi"></i> taxi</span>
+            <span class="ui-row" data-icon="truck"><i class="ui-icon ui-icon-truck"></i> truck</span>
+            <span class="ui-row" data-icon="sign-stop"><i class="ui-icon ui-icon-sign-stop"></i> sign-stop</span>
+            <span class="ui-row" data-icon="sign-yield"><i class="ui-icon ui-icon-sign-yield"></i> sign-yield</span>
+            <span class="ui-row" data-icon="sign-caution"><i class="ui-icon ui-icon-sign-caution"></i> sign-caution</span>
+            <span class="ui-row" data-icon="sign-no-entry"><i class="ui-icon ui-icon-sign-no-entry"></i> sign-no-entry</span>
+            <span class="ui-row" data-icon="sign-parking"><i class="ui-icon ui-icon-sign-parking"></i> sign-parking</span>
+            <span class="ui-row" data-icon="sign-one-way"><i class="ui-icon ui-icon-sign-one-way"></i> sign-one-way</span>
+            <span class="ui-row" data-icon="traffic-light"><i class="ui-icon ui-icon-traffic-light"></i> traffic-light</span>
+            <span class="ui-row" data-icon="traffic-cone"><i class="ui-icon ui-icon-traffic-cone"></i> traffic-cone</span>
+          </div>
+        </div>
+        <div class="icon-category">
+          <div class="icon-category-header"> Shapes & Symbols </div>
+          <div class="icon-category-items">
+            <span class="ui-row" data-icon="circle"><i class="ui-icon ui-icon-circle"></i> circle</span>
+            <span class="ui-row" data-icon="square"><i class="ui-icon ui-icon-square"></i> square</span>
+            <span class="ui-row" data-icon="triangle"><i class="ui-icon ui-icon-triangle"></i> triangle</span>
+            <span class="ui-row" data-icon="diamond"><i class="ui-icon ui-icon-diamond"></i> diamond</span>
+            <span class="ui-row" data-icon="hexagon"><i class="ui-icon ui-icon-hexagon"></i> hexagon</span>
+            <span class="ui-row" data-icon="octagon"><i class="ui-icon ui-icon-octagon"></i> octagon</span>
+            <span class="ui-row" data-icon="divide"><i class="ui-icon ui-icon-divide"></i> divide</span>
+            <span class="ui-row" data-icon="infinity"><i class="ui-icon ui-icon-infinity"></i> infinity</span>
+            <span class="ui-row" data-icon="at-sign"><i class="ui-icon ui-icon-at-sign"></i> at-sign</span>
+            <span class="ui-row" data-icon="target"><i class="ui-icon ui-icon-target"></i> target</span>
+            <span class="ui-row" data-icon="hash"><i class="ui-icon ui-icon-hash"></i> hash</span>
+            <span class="ui-row" data-icon="command"><i class="ui-icon ui-icon-command"></i> command</span>
+          </div>
+        </div>
+        <div class="icon-category">
+          <div class="icon-category-header"> Brands & Social </div>
+          <div class="icon-category-items">
+            <span class="ui-row" data-icon="github"><i class="ui-icon ui-icon-github"></i> github</span>
+            <span class="ui-row" data-icon="twitter"><i class="ui-icon ui-icon-twitter"></i> twitter</span>
+            <span class="ui-row" data-icon="linkedin"><i class="ui-icon ui-icon-linkedin"></i> linkedin</span>
+            <span class="ui-row" data-icon="facebook"><i class="ui-icon ui-icon-facebook"></i> facebook</span>
+            <span class="ui-row" data-icon="instagram"><i class="ui-icon ui-icon-instagram"></i> instagram</span>
+            <span class="ui-row" data-icon="youtube"><i class="ui-icon ui-icon-youtube"></i> youtube</span>
+            <span class="ui-row" data-icon="discord"><i class="ui-icon ui-icon-discord"></i> discord</span>
+            <span class="ui-row" data-icon="dribbble"><i class="ui-icon ui-icon-dribbble"></i> dribbble</span>
+            <span class="ui-row" data-icon="twitch"><i class="ui-icon ui-icon-twitch"></i> twitch</span>
+          </div>
+        </div>
+        <div class="icon-category">
+          <div class="icon-category-header"> Business & Places </div>
+          <div class="icon-category-items">
+            <span class="ui-row" data-icon="home"><i class="ui-icon ui-icon-home"></i> home</span>
+            <span class="ui-row" data-icon="briefcase"><i class="ui-icon ui-icon-briefcase"></i> briefcase</span>
+            <span class="ui-row" data-icon="building"><i class="ui-icon ui-icon-building"></i> building</span>
+            <span class="ui-row" data-icon="hospital"><i class="ui-icon ui-icon-hospital"></i> hospital</span>
+            <span class="ui-row" data-icon="factory"><i class="ui-icon ui-icon-factory"></i> factory</span>
+            <span class="ui-row" data-icon="landmark"><i class="ui-icon ui-icon-landmark"></i> landmark</span>
+            <span class="ui-row" data-icon="warehouse"><i class="ui-icon ui-icon-warehouse"></i> warehouse</span>
+            <span class="ui-row" data-icon="crown"><i class="ui-icon ui-icon-crown"></i> crown</span>
+            <span class="ui-row" data-icon="graduation-cap"><i class="ui-icon ui-icon-graduation-cap"></i> graduation-cap</span>
+            <span class="ui-row" data-icon="award"><i class="ui-icon ui-icon-award"></i> award</span>
+            <span class="ui-row" data-icon="trophy"><i class="ui-icon ui-icon-trophy"></i> trophy</span>
+          </div>
+        </div>
+        <div class="icon-category">
+          <div class="icon-category-header"> Science & Animals </div>
+          <div class="icon-category-items">
+            <span class="ui-row" data-icon="atom"><i class="ui-icon ui-icon-atom"></i> atom</span>
+            <span class="ui-row" data-icon="microscope"><i class="ui-icon ui-icon-microscope"></i> microscope</span>
+            <span class="ui-row" data-icon="telescope"><i class="ui-icon ui-icon-telescope"></i> telescope</span>
+            <span class="ui-row" data-icon="paw-print"><i class="ui-icon ui-icon-paw-print"></i> paw-print</span>
+            <span class="ui-row" data-icon="cat"><i class="ui-icon ui-icon-cat"></i> cat</span>
+            <span class="ui-row" data-icon="dog"><i class="ui-icon ui-icon-dog"></i> dog</span>
+            <span class="ui-row" data-icon="bird"><i class="ui-icon ui-icon-bird"></i> bird</span>
+          </div>
+        </div>
+        <div class="icon-category">
+          <div class="icon-category-header"> Objects & Misc </div>
+          <div class="icon-category-items">
+            <span class="ui-row" data-icon="star"><i class="ui-icon ui-icon-star"></i> star</span>
+            <span class="ui-row" data-icon="heart"><i class="ui-icon ui-icon-heart"></i> heart</span>
+            <span class="ui-row" data-icon="bookmark"><i class="ui-icon ui-icon-bookmark"></i> bookmark</span>
+            <span class="ui-row" data-icon="flag"><i class="ui-icon ui-icon-flag"></i> flag</span>
+            <span class="ui-row" data-icon="gift"><i class="ui-icon ui-icon-gift"></i> gift</span>
+            <span class="ui-row" data-icon="scissors"><i class="ui-icon ui-icon-scissors"></i> scissors</span>
+            <span class="ui-row" data-icon="paperclip"><i class="ui-icon ui-icon-paperclip"></i> paperclip</span>
+            <span class="ui-row" data-icon="package"><i class="ui-icon ui-icon-package"></i> package</span>
+            <span class="ui-row" data-icon="layers"><i class="ui-icon ui-icon-layers"></i> layers</span>
+            <span class="ui-row" data-icon="palette"><i class="ui-icon ui-icon-palette"></i> palette</span>
+            <span class="ui-row" data-icon="brush"><i class="ui-icon ui-icon-brush"></i> brush</span>
+            <span class="ui-row" data-icon="paint-bucket"><i class="ui-icon ui-icon-paint-bucket"></i> paint-bucket</span>
+            <span class="ui-row" data-icon="ruler"><i class="ui-icon ui-icon-ruler"></i> ruler</span>
+            <span class="ui-row" data-icon="anchor"><i class="ui-icon ui-icon-anchor"></i> anchor</span>
+            <span class="ui-row" data-icon="flame"><i class="ui-icon ui-icon-flame"></i> flame</span>
+            <span class="ui-row" data-icon="lamp"><i class="ui-icon ui-icon-lamp"></i> lamp</span>
+            <span class="ui-row" data-icon="lightbulb"><i class="ui-icon ui-icon-lightbulb"></i> lightbulb</span>
+            <span class="ui-row" data-icon="coffee"><i class="ui-icon ui-icon-coffee"></i> coffee</span>
+            <span class="ui-row" data-icon="utensils"><i class="ui-icon ui-icon-utensils"></i> utensils</span>
+            <span class="ui-row" data-icon="puzzle"><i class="ui-icon ui-icon-puzzle"></i> puzzle</span>
+            <span class="ui-row" data-icon="glasses"><i class="ui-icon ui-icon-glasses"></i> glasses</span>
+            <span class="ui-row" data-icon="ribbon"><i class="ui-icon ui-icon-ribbon"></i> ribbon</span>
+            <span class="ui-row" data-icon="siren"><i class="ui-icon ui-icon-siren"></i> siren</span>
+            <span class="ui-row" data-icon="sword"><i class="ui-icon ui-icon-sword"></i> sword</span>
+            <span class="ui-row" data-icon="construction"><i class="ui-icon ui-icon-construction"></i> construction</span>
+            <span class="ui-row" data-icon="zap"><i class="ui-icon ui-icon-zap"></i> zap</span>
+            <span class="ui-row" data-icon="calculator"><i class="ui-icon ui-icon-calculator"></i> calculator</span>
+            <span class="ui-row" data-icon="wrench"><i class="ui-icon ui-icon-wrench"></i> wrench</span>
+            <span class="ui-row" data-icon="settings"><i class="ui-icon ui-icon-settings"></i> settings</span>
+            <span class="ui-row" data-icon="bot"><i class="ui-icon ui-icon-bot"></i> bot</span>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="icon-toast" id="icon-toast">Copied!</div>
+
+  <script src="theme.js"></script>
+  <script>
+  function filterIcons(query) {
+    var grid = document.getElementById('icon-grid');
+    var noResults = document.getElementById('icon-no-results');
+    var clearBtn = document.getElementById('icon-filter-clear');
+    var countEl = document.getElementById('icon-count');
+    var q = query.toLowerCase().trim();
+    clearBtn.style.display = q ? '' : 'none';
+    var totalVisible = 0;
+    grid.querySelectorAll('.icon-category').forEach(function(cat) {
+      var catVisible = 0;
+      cat.querySelectorAll('.icon-category-items > span').forEach(function(item) {
+        var match = !q || item.textContent.trim().toLowerCase().includes(q);
+        item.style.display = match ? '' : 'none';
+        if (match) catVisible++;
+      });
+      cat.style.display = catVisible > 0 ? '' : 'none';
+      totalVisible += catVisible;
+    });
+    noResults.style.display = totalVisible === 0 ? '' : 'none';
+    countEl.textContent = q ? totalVisible + ' matching' : '438 icons';
+  }
+
+  function clearIconFilter() {
+    var input = document.getElementById('icon-filter');
+    input.value = '';
+    filterIcons('');
+    input.focus();
+  }
+
+  // Click to copy icon class name
+  document.getElementById('icon-grid').addEventListener('click', function(e) {
+    var span = e.target.closest('span[data-icon]');
+    if (!span) return;
+    var name = span.getAttribute('data-icon');
+    var text = 'ui-icon-' + name;
+    navigator.clipboard.writeText(text).then(function() {
+      span.classList.add('copied');
+      var toast = document.getElementById('icon-toast');
+      toast.textContent = 'Copied: ' + text;
+      toast.classList.add('show');
+      setTimeout(function() {
+        span.classList.remove('copied');
+        toast.classList.remove('show');
+      }, 1500);
+    });
+  });
+
+  // Keyboard shortcut: focus search with /
+  document.addEventListener('keydown', function(e) {
+    if (e.key === '/' && document.activeElement.tagName !== 'INPUT') {
+      e.preventDefault();
+      document.getElementById('icon-filter').focus();
+    }
+    if (e.key === 'Escape') {
+      clearIconFilter();
+      document.getElementById('icon-filter').blur();
+    }
+  });
+  </script>
+</body>
+</html>
