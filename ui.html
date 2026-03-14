@@ -282,30 +282,28 @@
     .demo-code pre[contenteditable]:hover:not(:focus) {
       border-color: rgba(255,255,255,0.1);
     }
-    /* Sticky source button */
-    .demo-theme-fab {
+    /* Theme toggle */
+    .theme-toggle {
       position: fixed;
-      bottom: 4.5rem;
-      right: 1.5rem;
-      z-index: 1000;
-      width: 2.5rem;
-      height: 2.5rem;
+      top: 1rem;
+      right: 1rem;
+      z-index: 100;
+      width: 40px;
+      height: 40px;
       border-radius: var(--ui-radius-full);
       border: 1px solid var(--ui-border);
       background: var(--ui-surface);
       color: var(--ui-text);
-      font-size: 1.125rem;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      transition: background var(--ui-transition), transform 0.15s, box-shadow 0.15s;
+      font-size: 1.1rem;
+      box-shadow: var(--ui-shadow-sm);
+      transition: background var(--ui-transition), border-color var(--ui-transition);
     }
-    .demo-theme-fab:hover {
-      background: var(--ui-bg-subtle);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    .theme-toggle:hover {
+      border-color: var(--ui-primary);
     }
 
     /* Source dialog */
@@ -360,7 +358,7 @@
 </head>
 <body>
 
-<button class="demo-theme-fab" id="theme-fab" title="Theme: system">
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Theme: system">
   <i class="ui-icon ui-icon-monitor"></i>
 </button>
 
@@ -4384,7 +4382,7 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
   }
 
   // Theme mode: 'system' | 'light' | 'dark'
-  const themeFab = document.getElementById('theme-fab');
+  const themeFab = document.getElementById('theme-toggle');
   const fabIcons = {
     system: '<i class="ui-icon ui-icon-monitor"></i>',
     light:  '<i class="ui-icon ui-icon-sun"></i>',
