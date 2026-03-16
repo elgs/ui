@@ -318,6 +318,7 @@
   <div class="ui-autocomplete right" id="theme-bar">
     <i class="ui-icon ui-icon-search ui-autocomplete-icon"></i>
     <input class="ui-autocomplete-input" type="text" placeholder="Search themes...">
+    <button class="ui-autocomplete-clear" type="button"><i class="ui-icon ui-icon-x"></i></button>
     <div class="ui-autocomplete-menu">
       <button class="ui-dropdown-item active" data-theme="" data-color="#2095f3">
         <span class="theme-swatch" style="background:#2095f3"></span> Default
@@ -1439,11 +1440,13 @@ document.addEventListener('click', e =&gt; {
       var query = input.value.toLowerCase();
       var visible = 0;
       items.forEach(function(item) {
+        item.classList.remove('focused');
         var match = item.textContent.toLowerCase().includes(query);
         item.classList.toggle('hidden', !match);
         if (match) visible++;
       });
       emptyMsg.style.display = visible === 0 ? 'block' : 'none';
+      bar.classList.toggle('has-value', !!input.value);
       bar.classList.add('open');
     }
 
@@ -1452,31 +1455,82 @@ document.addEventListener('click', e =&gt; {
       items.forEach(function(item) {
         item.classList.toggle('active', item.dataset.theme === (name || ''));
       });
-      input.value = '';
-      items.forEach(function(item) { item.classList.remove('hidden'); });
+      input.value = name ? name.charAt(0).toUpperCase() + name.slice(1) : 'Default';
+      bar.classList.toggle('has-value', !!name);
+      items.forEach(function(item) { item.classList.remove('hidden', 'focused'); });
       emptyMsg.style.display = 'none';
       bar.classList.remove('open');
     }
 
     input.addEventListener('input', filterThemes);
-    input.addEventListener('focus', function() { bar.classList.add('open'); });
+    input.addEventListener('focus', function() { input.value = ''; bar.classList.add('open'); });
 
     items.forEach(function(item) {
       item.addEventListener('click', function() { selectTheme(item.dataset.theme); });
     });
 
+    bar.querySelector('.ui-autocomplete-clear').addEventListener('click', function() { selectTheme(''); });
+
     if (saved) {
+      input.value = saved.charAt(0).toUpperCase() + saved.slice(1);
+      bar.classList.add('has-value');
       items.forEach(function(item) {
         item.classList.toggle('active', item.dataset.theme === saved);
       });
     }
+
+    // Keyboard navigation
+    input.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        items.forEach(function(item) { item.classList.remove('focused', 'hidden'); });
+        input.value = '';
+        bar.classList.remove('has-value', 'open');
+        emptyMsg.style.display = 'none';
+        return;
+      }
+
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        if (!bar.classList.contains('open')) bar.classList.add('open');
+      } else if (!bar.classList.contains('open')) {
+        return;
+      }
+      var visible = Array.from(bar.querySelectorAll('.ui-dropdown-item:not(.hidden)'));
+      if (!visible.length) return;
+      var current = bar.querySelector('.ui-dropdown-item.focused');
+      var idx = current ? visible.indexOf(current) : -1;
+
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        if (current) current.classList.remove('focused');
+        idx = idx < visible.length - 1 ? idx + 1 : 0;
+        visible[idx].classList.add('focused');
+        visible[idx].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        if (current) current.classList.remove('focused');
+        idx = idx > 0 ? idx - 1 : visible.length - 1;
+        visible[idx].classList.add('focused');
+        visible[idx].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter') {
+        e.preventDefault();
+        if (current) selectTheme(current.dataset.theme);
+      }
+    });
+
+    // Prevent focus loss when clicking inside menu or clear button
+    bar.addEventListener('mousedown', function(e) {
+      if (e.target.closest('.ui-autocomplete-menu') || e.target.closest('.ui-autocomplete-clear')) {
+        e.preventDefault();
+      }
+    });
 
     // Close when clicking outside
     document.addEventListener('click', function(e) {
       if (!bar.contains(e.target)) {
         bar.classList.remove('open');
         input.value = '';
-        items.forEach(function(item) { item.classList.remove('hidden'); });
+        bar.classList.remove('has-value');
+        items.forEach(function(item) { item.classList.remove('hidden', 'focused'); });
         emptyMsg.style.display = 'none';
       }
     });

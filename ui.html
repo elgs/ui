@@ -428,6 +428,7 @@
   <div class="ui-autocomplete right" id="theme-switcher">
     <i class="ui-icon ui-icon-search ui-autocomplete-icon"></i>
     <input class="ui-autocomplete-input" type="text" placeholder="Search themes...">
+    <button class="ui-autocomplete-clear" type="button"><i class="ui-icon ui-icon-x"></i></button>
     <div class="ui-autocomplete-menu">
       <button class="ui-dropdown-item active" data-theme="" data-color="#2095f3">
         <span class="theme-swatch" style="background:#2095f3"></span> Default
@@ -1083,6 +1084,7 @@ function selectDropdownItem(btn) {
         <div class="ui-autocomplete" id="demo-ac-1">
           <i class="ui-icon ui-icon-search ui-autocomplete-icon"></i>
           <input class="ui-autocomplete-input" type="text" placeholder="Search countries..." oninput="filterAutocomplete('demo-ac-1')" onfocus="this.closest('.ui-autocomplete').classList.add('open')">
+          <button class="ui-autocomplete-clear" type="button" onclick="clearAutocomplete(this)"><i class="ui-icon ui-icon-x"></i></button>
           <div class="ui-autocomplete-menu">
             <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">Australia</button>
             <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">Austria</button>
@@ -1103,6 +1105,7 @@ function selectDropdownItem(btn) {
         <div class="ui-autocomplete" id="demo-ac-2">
           <i class="ui-icon ui-icon-user ui-autocomplete-icon"></i>
           <input class="ui-autocomplete-input" type="text" placeholder="Assign to..." oninput="filterAutocomplete('demo-ac-2')" onfocus="this.closest('.ui-autocomplete').classList.add('open')">
+          <button class="ui-autocomplete-clear" type="button" onclick="clearAutocomplete(this)"><i class="ui-icon ui-icon-x"></i></button>
           <div class="ui-autocomplete-menu">
             <button class="ui-dropdown-item" onclick="pickAutocomplete(this)"><i class="ui-icon ui-icon-user"></i> Alice Johnson</button>
             <button class="ui-dropdown-item" onclick="pickAutocomplete(this)"><i class="ui-icon ui-icon-user"></i> Bob Smith</button>
@@ -1119,6 +1122,7 @@ function selectDropdownItem(btn) {
 <pre>&lt;div class="ui-autocomplete" id="demo-ac-1"&gt;
   &lt;i class="ui-icon ui-icon-search ui-autocomplete-icon"&gt;&lt;/i&gt;
   &lt;input class="ui-autocomplete-input" type="text" placeholder="Search countries..." oninput="filterAutocomplete('demo-ac-1')" onfocus="this.closest('.ui-autocomplete').classList.add('open')"&gt;
+  &lt;button class="ui-autocomplete-clear" type="button" onclick="clearAutocomplete(this)"&gt;&lt;i class="ui-icon ui-icon-x"&gt;&lt;/i&gt;&lt;/button&gt;
   &lt;div class="ui-autocomplete-menu"&gt;
     &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;Australia&lt;/button&gt;
     &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;Austria&lt;/button&gt;
@@ -1139,6 +1143,7 @@ function selectDropdownItem(btn) {
 &lt;div class="ui-autocomplete" id="demo-ac-2"&gt;
   &lt;i class="ui-icon ui-icon-user ui-autocomplete-icon"&gt;&lt;/i&gt;
   &lt;input class="ui-autocomplete-input" type="text" placeholder="Assign to..." oninput="filterAutocomplete('demo-ac-2')" onfocus="this.closest('.ui-autocomplete').classList.add('open')"&gt;
+  &lt;button class="ui-autocomplete-clear" type="button" onclick="clearAutocomplete(this)"&gt;&lt;i class="ui-icon ui-icon-x"&gt;&lt;/i&gt;&lt;/button&gt;
   &lt;div class="ui-autocomplete-menu"&gt;
     &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;&lt;i class="ui-icon ui-icon-user"&gt;&lt;/i&gt; Alice Johnson&lt;/button&gt;
     &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;&lt;i class="ui-icon ui-icon-user"&gt;&lt;/i&gt; Bob Smith&lt;/button&gt;
@@ -1172,6 +1177,19 @@ function pickAutocomplete(btn) {
   ac.querySelector('.ui-autocomplete-input').value = btn.textContent.trim();
   ac.querySelectorAll('.ui-dropdown-item.focused').forEach(i =&gt; i.classList.remove('focused'));
   ac.classList.remove('open');
+  ac.classList.add('has-value');
+}
+
+// Clear the input and reset
+function clearAutocomplete(btn) {
+  const ac = btn.closest('.ui-autocomplete');
+  const input = ac.querySelector('.ui-autocomplete-input');
+  input.value = '';
+  ac.classList.remove('has-value');
+  ac.querySelectorAll('.ui-dropdown-item').forEach(i =&gt; i.classList.remove('hidden', 'focused'));
+  ac.querySelector('.ui-autocomplete-empty').style.display = 'none';
+  ac.classList.remove('open');
+  input.focus();
 }
 
 // Keyboard: Arrow Up/Down to navigate, Enter to pick, Escape to close
@@ -1219,6 +1237,7 @@ document.addEventListener('click', e =&gt; {
         <div class="ui-autocomplete sm" id="demo-ac-sm">
           <i class="ui-icon ui-icon-search ui-autocomplete-icon"></i>
           <input class="ui-autocomplete-input" type="text" placeholder="Small..." oninput="filterAutocomplete('demo-ac-sm')" onfocus="this.closest('.ui-autocomplete').classList.add('open')">
+          <button class="ui-autocomplete-clear" type="button" onclick="clearAutocomplete(this)"><i class="ui-icon ui-icon-x"></i></button>
           <div class="ui-autocomplete-menu">
             <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">Australia</button>
             <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">Brazil</button>
@@ -1230,6 +1249,7 @@ document.addEventListener('click', e =&gt; {
         <div class="ui-autocomplete" id="demo-ac-def">
           <i class="ui-icon ui-icon-search ui-autocomplete-icon"></i>
           <input class="ui-autocomplete-input" type="text" placeholder="Default..." oninput="filterAutocomplete('demo-ac-def')" onfocus="this.closest('.ui-autocomplete').classList.add('open')">
+          <button class="ui-autocomplete-clear" type="button" onclick="clearAutocomplete(this)"><i class="ui-icon ui-icon-x"></i></button>
           <div class="ui-autocomplete-menu">
             <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">Australia</button>
             <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">Brazil</button>
@@ -1241,6 +1261,7 @@ document.addEventListener('click', e =&gt; {
         <div class="ui-autocomplete lg" id="demo-ac-lg">
           <i class="ui-icon ui-icon-search ui-autocomplete-icon"></i>
           <input class="ui-autocomplete-input" type="text" placeholder="Large..." oninput="filterAutocomplete('demo-ac-lg')" onfocus="this.closest('.ui-autocomplete').classList.add('open')">
+          <button class="ui-autocomplete-clear" type="button" onclick="clearAutocomplete(this)"><i class="ui-icon ui-icon-x"></i></button>
           <div class="ui-autocomplete-menu">
             <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">Australia</button>
             <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">Brazil</button>
@@ -1256,6 +1277,7 @@ document.addEventListener('click', e =&gt; {
 <pre>&lt;div class="ui-autocomplete sm" id="my-ac-sm"&gt;
   &lt;i class="ui-icon ui-icon-search ui-autocomplete-icon"&gt;&lt;/i&gt;
   &lt;input class="ui-autocomplete-input" type="text" placeholder="Small..." oninput="filterAutocomplete('my-ac-sm')" onfocus="this.closest('.ui-autocomplete').classList.add('open')"&gt;
+  &lt;button class="ui-autocomplete-clear" type="button" onclick="clearAutocomplete(this)"&gt;&lt;i class="ui-icon ui-icon-x"&gt;&lt;/i&gt;&lt;/button&gt;
   &lt;div class="ui-autocomplete-menu"&gt;
     &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;Australia&lt;/button&gt;
     &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;Brazil&lt;/button&gt;
@@ -1268,6 +1290,7 @@ document.addEventListener('click', e =&gt; {
 &lt;div class="ui-autocomplete" id="my-ac"&gt;
   &lt;i class="ui-icon ui-icon-search ui-autocomplete-icon"&gt;&lt;/i&gt;
   &lt;input class="ui-autocomplete-input" type="text" placeholder="Default..." oninput="filterAutocomplete('my-ac')" onfocus="this.closest('.ui-autocomplete').classList.add('open')"&gt;
+  &lt;button class="ui-autocomplete-clear" type="button" onclick="clearAutocomplete(this)"&gt;&lt;i class="ui-icon ui-icon-x"&gt;&lt;/i&gt;&lt;/button&gt;
   &lt;div class="ui-autocomplete-menu"&gt;
     &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;Australia&lt;/button&gt;
     &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;Brazil&lt;/button&gt;
@@ -1280,6 +1303,7 @@ document.addEventListener('click', e =&gt; {
 &lt;div class="ui-autocomplete lg" id="my-ac-lg"&gt;
   &lt;i class="ui-icon ui-icon-search ui-autocomplete-icon"&gt;&lt;/i&gt;
   &lt;input class="ui-autocomplete-input" type="text" placeholder="Large..." oninput="filterAutocomplete('my-ac-lg')" onfocus="this.closest('.ui-autocomplete').classList.add('open')"&gt;
+  &lt;button class="ui-autocomplete-clear" type="button" onclick="clearAutocomplete(this)"&gt;&lt;i class="ui-icon ui-icon-x"&gt;&lt;/i&gt;&lt;/button&gt;
   &lt;div class="ui-autocomplete-menu"&gt;
     &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;Australia&lt;/button&gt;
     &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;Brazil&lt;/button&gt;
@@ -1308,6 +1332,18 @@ function pickAutocomplete(btn) {
   const ac = btn.closest('.ui-autocomplete');
   ac.querySelector('.ui-autocomplete-input').value = btn.textContent.trim();
   ac.classList.remove('open');
+  ac.classList.add('has-value');
+}
+
+function clearAutocomplete(btn) {
+  const ac = btn.closest('.ui-autocomplete');
+  const input = ac.querySelector('.ui-autocomplete-input');
+  input.value = '';
+  ac.classList.remove('has-value');
+  ac.querySelectorAll('.ui-dropdown-item').forEach(i =&gt; i.classList.remove('hidden'));
+  ac.querySelector('.ui-autocomplete-empty').style.display = 'none';
+  ac.classList.remove('open');
+  input.focus();
 }
 
 // Close on outside click
@@ -4693,24 +4729,29 @@ document.documentElement.removeAttribute('data-ui-gradient');</pre>
     themeItems.forEach(item => {
       item.classList.toggle('active', item.dataset.theme === (name || ''));
     });
-    themeInput.value = '';
-    themeItems.forEach(item => item.classList.remove('hidden'));
+    themeInput.value = name ? name.charAt(0).toUpperCase() + name.slice(1) : 'Default';
+    themeSwitcher.classList.toggle('has-value', !!name);
+    themeItems.forEach(item => item.classList.remove('hidden', 'focused'));
     themeEmpty.style.display = 'none';
     themeSwitcher.classList.remove('open');
     resetTheme();
   }
 
   themeInput.addEventListener('input', filterThemes);
-  themeInput.addEventListener('focus', () => themeSwitcher.classList.add('open'));
+  themeInput.addEventListener('focus', () => { themeInput.value = ''; themeSwitcher.classList.add('open'); });
 
   themeItems.forEach(item => {
     item.addEventListener('click', () => switchTheme(item.dataset.theme));
   });
 
+  themeSwitcher.querySelector('.ui-autocomplete-clear').addEventListener('click', () => switchTheme(''));
+
   // Restore saved theme
   const savedThemeName = localStorage.getItem('ui-theme') || '';
   if (savedThemeName) {
     document.documentElement.setAttribute('data-ui-theme', savedThemeName);
+    themeInput.value = savedThemeName.charAt(0).toUpperCase() + savedThemeName.slice(1);
+    themeSwitcher.classList.add('has-value');
     themeItems.forEach(item => {
       item.classList.toggle('active', item.dataset.theme === savedThemeName);
     });
@@ -4817,7 +4858,7 @@ document.documentElement.removeAttribute('data-ui-gradient');</pre>
       document.querySelectorAll('.ui-dropdown.open').forEach(d => d.classList.remove('open'));
     }
     if (!e.target.closest('#theme-switcher')) {
-      themeSwitcher.classList.remove('open');
+      themeSwitcher.classList.remove('open', 'has-value');
       themeInput.value = '';
       themeItems.forEach(item => item.classList.remove('hidden'));
       themeEmpty.style.display = 'none';
@@ -4855,15 +4896,45 @@ document.documentElement.removeAttribute('data-ui-gradient');</pre>
 
   function pickAutocomplete(btn) {
     const ac = btn.closest('.ui-autocomplete');
-    ac.querySelector('.ui-autocomplete-input').value = btn.textContent.trim();
+    const input = ac.querySelector('.ui-autocomplete-input');
+    input.value = btn.textContent.trim();
     acClearFocus(ac);
     ac.classList.remove('open');
+    ac.classList.add('has-value');
+  }
+
+  function clearAutocomplete(btn) {
+    const ac = btn.closest('.ui-autocomplete');
+    const input = ac.querySelector('.ui-autocomplete-input');
+    input.value = '';
+    ac.classList.remove('has-value');
+    ac.querySelectorAll('.ui-dropdown-item').forEach(i => i.classList.remove('hidden', 'focused'));
+    ac.querySelector('.ui-autocomplete-empty').style.display = 'none';
+    ac.classList.remove('open');
+    input.focus();
   }
 
   // Keyboard navigation for autocomplete
   document.addEventListener('keydown', e => {
     const ac = e.target.closest('.ui-autocomplete');
-    if (!ac || !ac.classList.contains('open')) return;
+    if (!ac) return;
+
+    if (e.key === 'Escape') {
+      const input = ac.querySelector('.ui-autocomplete-input');
+      acClearFocus(ac);
+      ac.classList.remove('open');
+      input.value = '';
+      ac.classList.remove('has-value');
+      ac.querySelectorAll('.ui-dropdown-item').forEach(i => i.classList.remove('hidden'));
+      ac.querySelector('.ui-autocomplete-empty').style.display = 'none';
+      return;
+    }
+
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+      if (!ac.classList.contains('open')) ac.classList.add('open');
+    } else if (!ac.classList.contains('open')) {
+      return;
+    }
 
     const items = acGetVisible(ac);
     if (!items.length) return;
@@ -4885,10 +4956,20 @@ document.documentElement.removeAttribute('data-ui-gradient');</pre>
       items[idx].scrollIntoView({ block: 'nearest' });
     } else if (e.key === 'Enter') {
       e.preventDefault();
-      if (current) pickAutocomplete(current);
-    } else if (e.key === 'Escape') {
-      acClearFocus(ac);
-      ac.classList.remove('open');
+      if (current) {
+        if (ac.id === 'theme-switcher') {
+          current.click();
+        } else {
+          pickAutocomplete(current);
+        }
+      }
+    }
+  });
+
+  // Prevent focus loss when clicking inside autocomplete menus or clear buttons
+  document.addEventListener('mousedown', e => {
+    if (e.target.closest('.ui-autocomplete-menu') || e.target.closest('.ui-autocomplete-clear')) {
+      e.preventDefault();
     }
   });
 
@@ -4900,6 +4981,12 @@ document.documentElement.removeAttribute('data-ui-gradient');</pre>
         ac.classList.remove('open');
       });
     }
+  });
+
+  // Toggle has-value class on autocomplete inputs
+  document.addEventListener('input', e => {
+    const ac = e.target.closest('.ui-autocomplete');
+    if (ac) ac.classList.toggle('has-value', !!e.target.value);
   });
 
   // Set indeterminate checkbox
