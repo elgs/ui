@@ -108,6 +108,80 @@
       gap: 0.5rem;
       padding: 0.5rem;
     }
+    .icon-category-items > span.active {
+      background: var(--ui-bg-subtle);
+
+      .ui-icon { opacity: 1; }
+    }
+
+    .icon-usage {
+      grid-column: 1 / -1;
+      border-radius: var(--ui-radius);
+      overflow: hidden;
+      animation: icon-usage-in 150ms ease;
+
+      .icon-preview {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 3rem;
+        background: var(--ui-bg-subtle);
+        border: 1px solid var(--ui-border);
+        border-bottom: none;
+        border-radius: var(--ui-radius) var(--ui-radius) 0 0;
+
+        .ui-icon {
+          width: 8rem;
+          height: 8rem;
+          opacity: 1;
+        }
+      }
+
+      .icon-usage-code {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: #1e293b;
+        padding: 0.5rem 0.75rem;
+        border-radius: 0 0 var(--ui-radius) var(--ui-radius);
+      }
+
+      code {
+        flex: 1;
+        font-family: var(--ui-font-mono);
+        font-size: 0.8125rem;
+        line-height: 1.6;
+        color: #e2e8f0;
+        user-select: all;
+
+        .hl-bkt { color: #94a3b8; }
+        .hl-tag { color: #7dd3fc; }
+        .hl-atn { color: #c4b5fd; }
+        .hl-atv { color: #86efac; }
+      }
+
+      button {
+        background: rgba(255,255,255,0.1);
+        border: none;
+        border-radius: var(--ui-radius-sm);
+        cursor: pointer;
+        color: #94a3b8;
+        font-family: var(--ui-font);
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+        white-space: nowrap;
+
+        &:hover {
+          background: rgba(255,255,255,0.2);
+          color: #e2e8f0;
+        }
+      }
+    }
+
+    @keyframes icon-usage-in {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
     #icon-no-results {
       display: none;
@@ -116,25 +190,6 @@
       color: var(--ui-text-muted);
     }
 
-    .icon-toast {
-      position: fixed;
-      bottom: 1.5rem;
-      left: 50%;
-      transform: translateX(-50%) translateY(100%);
-      background: var(--ui-text);
-      color: var(--ui-bg);
-      padding: 0.5rem 1rem;
-      border-radius: var(--ui-radius);
-      font-size: 0.8rem;
-      opacity: 0;
-      transition: transform 250ms ease, opacity 250ms ease;
-      pointer-events: none;
-      z-index: 100;
-    }
-    .icon-toast.show {
-      transform: translateX(-50%) translateY(0);
-      opacity: 1;
-    }
   </style>
 </head>
 <body>
@@ -711,11 +766,11 @@
     </div>
   </div>
 
-  <div class="icon-toast" id="icon-toast">Copied!</div>
 
   <script src="theme.js"></script>
   <script>
   function filterIcons(query) {
+    clearActiveIcon();
     var grid = document.getElementById('icon-grid');
     var noResults = document.getElementById('icon-no-results');
     var clearBtn = document.getElementById('icon-filter-clear');
@@ -744,22 +799,63 @@
     input.focus();
   }
 
-  // Click to copy icon class name
-  document.getElementById('icon-grid').addEventListener('click', function(e) {
+  // Click to show usage code below icon
+  var grid = document.getElementById('icon-grid');
+
+  function clearActiveIcon() {
+    grid.querySelectorAll('.icon-usage').forEach(function(el) { el.remove(); });
+    grid.querySelectorAll('span.active').forEach(function(el) { el.classList.remove('active'); });
+  }
+
+  function copyText(text, btn) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function() {
+        btn.textContent = 'Copied!';
+        setTimeout(function() { btn.textContent = 'Copy'; }, 1500);
+      }).catch(function() { copyFallback(text, btn); });
+    } else {
+      copyFallback(text, btn);
+    }
+  }
+
+  function copyFallback(text, btn) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0';
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    btn.textContent = 'Copied!';
+    setTimeout(function() { btn.textContent = 'Copy'; }, 1500);
+  }
+
+  grid.addEventListener('click', function(e) {
+    // Handle copy button inside usage row
+    var copyBtn = e.target.closest('.icon-usage button');
+    if (copyBtn) {
+      var code = copyBtn.closest('.icon-usage').querySelector('code').textContent;
+      copyText(code, copyBtn);
+      return;
+    }
+
     var span = e.target.closest('span[data-icon]');
     if (!span) return;
+
+    var wasActive = span.classList.contains('active');
+
+    // Remove any existing usage row and active state across all categories
+    clearActiveIcon();
+
+    if (wasActive) return;
+
+    // Show usage row after the clicked icon
     var name = span.getAttribute('data-icon');
-    var text = 'ui-icon-' + name;
-    navigator.clipboard.writeText(text).then(function() {
-      span.classList.add('copied');
-      var toast = document.getElementById('icon-toast');
-      toast.textContent = 'Copied: ' + text;
-      toast.classList.add('show');
-      setTimeout(function() {
-        span.classList.remove('copied');
-        toast.classList.remove('show');
-      }, 1500);
-    });
+    var usage = document.createElement('div');
+    usage.className = 'icon-usage';
+    usage.innerHTML = '<div class="icon-preview"><i class="ui-icon ui-icon-' + name + '"></i></div><div class="icon-usage-code"><code><span class="hl-bkt">&lt;</span><span class="hl-tag">i</span> <span class="hl-atn">class</span><span class="hl-bkt">=</span><span class="hl-atv">"ui-icon ui-icon-' + name + '"</span><span class="hl-bkt">&gt;&lt;/</span><span class="hl-tag">i</span><span class="hl-bkt">&gt;</span></code><button>Copy</button></div>';
+    span.classList.add('active');
+    span.after(usage);
   });
 
   // Keyboard shortcut: focus search with /
