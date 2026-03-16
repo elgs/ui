@@ -34,30 +34,140 @@
     document.documentElement.setAttribute('data-ui-gradient', '');
   </script>
 </head>
-<div class="ui-chat">
-  <div class="ui-chat-message">
-    <div class="ui-chat-avatar" data-initial="A"></div>
-    <div class="ui-chat-group">
-      <div class="ui-chat-meta">
-        <span class="ui-chat-name">Alice</span>
-        <span class="ui-chat-time">10:30 AM</span>
-      </div>
-      <div class="ui-chat-bubble">Hey, have you seen the new design specs?</div>
+<body>
+  <div class="ui-autocomplete sm" id="my-ac-sm">
+    <i class="ui-icon ui-icon-search ui-autocomplete-icon"></i>
+    <input class="ui-autocomplete-input" type="text" placeholder="Small..." oninput="filterAutocomplete('my-ac-sm')"
+      onfocus="this.closest('.ui-autocomplete').classList.add('open')">
+    <button class="ui-autocomplete-clear" type="button" onclick="clearAutocomplete(this)"><i
+        class="ui-icon ui-icon-x"></i></button>
+    <div class="ui-autocomplete-menu">
+      <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">Australia</button>
+      <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">Brazil</button>
+      <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">Canada</button>
+      <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">France</button>
+      <span class="ui-autocomplete-empty">No results found</span>
     </div>
   </div>
-  <div class="ui-chat-message sent">
-    <div class="ui-chat-group">
-      <div class="ui-chat-meta">
-        <span class="ui-chat-time">10:31 AM</span>
-      </div>
-      <div class="ui-chat-bubble">Yes! They look great.</div>
+
+  <div class="ui-autocomplete" id="my-ac">
+    <i class="ui-icon ui-icon-search ui-autocomplete-icon"></i>
+    <input class="ui-autocomplete-input" type="text" placeholder="Default..." oninput="filterAutocomplete('my-ac')"
+      onfocus="this.closest('.ui-autocomplete').classList.add('open')">
+    <button class="ui-autocomplete-clear" type="button" onclick="clearAutocomplete(this)"><i
+        class="ui-icon ui-icon-x"></i></button>
+    <div class="ui-autocomplete-menu">
+      <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">Australia</button>
+      <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">Brazil</button>
+      <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">Canada</button>
+      <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">France</button>
+      <span class="ui-autocomplete-empty">No results found</span>
     </div>
   </div>
-  <div class="ui-chat-message typing">
-    <div class="ui-chat-avatar" data-initial="A"></div>
-    <div class="ui-chat-group">
-      <div class="ui-chat-bubble"></div>
+
+  <div class="ui-autocomplete lg" id="my-ac-lg">
+    <i class="ui-icon ui-icon-search ui-autocomplete-icon"></i>
+    <input class="ui-autocomplete-input" type="text" placeholder="Large..." oninput="filterAutocomplete('my-ac-lg')"
+      onfocus="this.closest('.ui-autocomplete').classList.add('open')">
+    <button class="ui-autocomplete-clear" type="button" onclick="clearAutocomplete(this)"><i
+        class="ui-icon ui-icon-x"></i></button>
+    <div class="ui-autocomplete-menu">
+      <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">Australia</button>
+      <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">Brazil</button>
+      <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">Canada</button>
+      <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">France</button>
+      <span class="ui-autocomplete-empty">No results found</span>
     </div>
   </div>
-</div>
+
+  <script>
+    function filterAutocomplete(id) {
+      const ac = document.getElementById(id);
+      const query = ac.querySelector('.ui-autocomplete-input').value.toLowerCase();
+      const items = ac.querySelectorAll('.ui-dropdown-item');
+      let visible = 0;
+      items.forEach(item => {
+        const match = item.textContent.toLowerCase().includes(query);
+        item.classList.toggle('hidden', !match);
+        if (match) visible++;
+      });
+      ac.querySelector('.ui-autocomplete-empty').style.display = visible === 0 ? 'block' : 'none';
+      ac.classList.toggle('has-value', !!ac.querySelector('.ui-autocomplete-input').value);
+      ac.classList.add('open');
+    }
+
+    function pickAutocomplete(btn) {
+      const ac = btn.closest('.ui-autocomplete');
+      ac.querySelector('.ui-autocomplete-input').value = btn.textContent.trim();
+      ac.classList.remove('open');
+      ac.classList.add('has-value');
+    }
+
+    function clearAutocomplete(btn) {
+      const ac = btn.closest('.ui-autocomplete');
+      const input = ac.querySelector('.ui-autocomplete-input');
+      input.value = '';
+      ac.classList.remove('has-value');
+      ac.querySelectorAll('.ui-dropdown-item').forEach(i => i.classList.remove('hidden'));
+      ac.querySelector('.ui-autocomplete-empty').style.display = 'none';
+      ac.classList.remove('open');
+    }
+
+    // Prevent focus loss when clicking menu items or clear button
+    document.addEventListener('mousedown', e => {
+      if (e.target.closest('.ui-autocomplete-menu') || e.target.closest('.ui-autocomplete-clear')) {
+        e.preventDefault();
+      }
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', e => {
+      const ac = e.target.closest('.ui-autocomplete');
+      if (!ac) return;
+
+      if (e.key === 'Escape') {
+        ac.querySelector('.ui-autocomplete-input').value = '';
+        ac.classList.remove('has-value', 'open');
+        ac.querySelectorAll('.ui-dropdown-item').forEach(i => i.classList.remove('hidden', 'focused'));
+        ac.querySelector('.ui-autocomplete-empty').style.display = 'none';
+        return;
+      }
+
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        if (!ac.classList.contains('open')) ac.classList.add('open');
+      } else if (!ac.classList.contains('open')) {
+        return;
+      }
+
+      const items = [...ac.querySelectorAll('.ui-dropdown-item:not(.hidden)')];
+      if (!items.length) return;
+      const current = ac.querySelector('.ui-dropdown-item.focused');
+      let idx = current ? items.indexOf(current) : -1;
+
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        if (current) current.classList.remove('focused');
+        idx = idx < items.length - 1 ? idx + 1 : 0;
+        items[idx].classList.add('focused');
+        items[idx].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        if (current) current.classList.remove('focused');
+        idx = idx > 0 ? idx - 1 : items.length - 1;
+        items[idx].classList.add('focused');
+        items[idx].scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter' && current) {
+        e.preventDefault();
+        pickAutocomplete(current);
+      }
+    });
+
+    // Close on outside click
+    document.addEventListener('click', e => {
+      if (!e.target.closest('.ui-autocomplete')) {
+        document.querySelectorAll('.ui-autocomplete.open').forEach(ac => ac.classList.remove('open'));
+      }
+    });
+  </script>
+</body>
 </html>
