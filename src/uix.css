@@ -1280,21 +1280,21 @@
 
   /* --- Stepper --- */
 
-  & .ui-step.completed .ui-step-indicator {
-    background: linear-gradient(135deg, var(--ui-primary), var(--ui-primary-hover));
+  & .ui-step.completed {
+    & .ui-step-indicator {
+      background: linear-gradient(135deg, var(--ui-primary), var(--ui-primary-hover));
+    }
+
+    &::after {
+      background: linear-gradient(90deg, var(--ui-primary), var(--ui-primary-hover));
+    }
   }
 
-  & .ui-step.completed::after {
-    background: linear-gradient(90deg, var(--ui-primary), var(--ui-primary-hover));
-  }
-
-  /* --- Chat avatar --- */
+  /* --- Chat --- */
 
   & .ui-chat-avatar[data-initial] {
     background: linear-gradient(135deg, var(--ui-primary), var(--ui-primary-hover));
   }
-
-  /* --- Chat sent bubble --- */
 
   & .ui-chat-message.sent .ui-chat-bubble {
     background: linear-gradient(135deg, var(--ui-primary), var(--ui-primary-hover));
