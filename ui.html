@@ -4254,6 +4254,30 @@ showToast('danger', 'Something went wrong.'); // defaults to bottom-right
 &lt;code class="ui-tooltip bottom" data-tooltip="Click to copy"&gt;ui.css&lt;/code&gt;</pre>
       </details>
     </div>
+
+    <div class="demo-subsection">
+      <h3>With delay</h3>
+      <div class="ui-row" style="padding: 2rem 0;">
+        <button class="ui-btn sm outline ui-tooltip" data-tooltip="I appear after 1s" style="--ui-tooltip-delay: 1s;">Delayed</button>
+        <button class="ui-btn sm outline ui-tooltip" data-tooltip="I appear immediately">Instant</button>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;!-- Apply globally via :root or :host --&gt;
+&lt;style&gt;
+  :root {
+    --ui-tooltip-delay: 1s;
+  }
+&lt;/style&gt;
+
+&lt;!-- Or override on an individual element --&gt;
+&lt;button class="ui-btn outline ui-tooltip" data-tooltip="I appear after 1s"
+  style="--ui-tooltip-delay: 1s;"&gt;Delayed&lt;/button&gt;
+
+&lt;button class="ui-btn outline ui-tooltip" data-tooltip="I appear immediately"&gt;Instant&lt;/button&gt;</pre>
+      </details>
+    </div>
   </div>
 
   <div class="demo-section" id="config">
