@@ -113,8 +113,47 @@
       margin: 0 auto;
       padding: 2rem 2.5rem;
     }
+    .demo-menu-toggle {
+      display: none;
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      z-index: 1000;
+      width: 2.75rem;
+      height: 2.75rem;
+      border-radius: 50%;
+      border: 1px solid var(--ui-border);
+      background: var(--ui-bg);
+      color: var(--ui-text);
+      font-size: 1.25rem;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
     @media (max-width: 860px) {
-      .demo-sidebar { display: none; }
+      .demo-menu-toggle { display: flex; }
+      .demo-sidebar {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 999;
+        width: 16rem;
+        height: 100vh;
+        box-shadow: 2px 0 12px rgba(0,0,0,0.15);
+
+        &.open { display: block; }
+      }
+      .demo-sidebar-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 998;
+        background: rgba(0,0,0,0.3);
+
+        &.open { display: block; }
+      }
       .demo-layout { padding: 1.5rem 1.25rem; }
     }
 
@@ -513,9 +552,11 @@
 </div>
 
 <div class="demo-page">
+  <div class="demo-sidebar-overlay" id="sidebar-overlay"></div>
+  <button class="demo-menu-toggle" id="menu-toggle"><i class="ui-icon ui-icon-menu"></i></button>
 
   <!-- Sidebar navigation -->
-  <nav class="demo-sidebar">
+  <nav class="demo-sidebar" id="demo-sidebar">
     <a href="index.html" class="demo-sidebar-title" style="text-decoration:none;color:inherit;display:flex;align-items:center;gap:0.5rem"><img src="favicon.svg" alt="UI" style="width:1.75rem;height:1.75rem"> UI Library</a>
     <div class="demo-nav" id="demo-nav">
       <a href="#theme">Theme</a>
@@ -5472,6 +5513,18 @@ document.documentElement.removeAttribute('data-ui-gradient');</pre>
     });
   });
 
+</script>
+<script>
+  (function() {
+    var toggle = document.getElementById('menu-toggle');
+    var sidebar = document.getElementById('demo-sidebar');
+    var overlay = document.getElementById('sidebar-overlay');
+    function open() { sidebar.classList.add('open'); overlay.classList.add('open'); }
+    function close() { sidebar.classList.remove('open'); overlay.classList.remove('open'); }
+    toggle.addEventListener('click', function() { sidebar.classList.contains('open') ? close() : open(); });
+    overlay.addEventListener('click', close);
+    sidebar.addEventListener('click', function(e) { if (e.target.tagName === 'A') close(); });
+  })();
 </script>
 
 </body>
