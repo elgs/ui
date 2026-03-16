@@ -1,0 +1,52 @@
+/*
+   UI Library Theme — Saturn
+
+   Usage:
+   1. Include after ui.css:  <link rel="stylesheet" href="themes/saturn.css">
+   2. Activate:              <html data-ui-theme="saturn">
+      or via JS:             __uiTheme.setTheme('saturn')
+
+   Warm gold & amber — inspired by Saturn's banded atmosphere.
+*/
+
+[data-ui-theme="saturn"] {
+  --ui-primary: #b8860b;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #8a7d68;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #5a8c3c;
+  --ui-success-text: #ffffff;
+  --ui-danger: #b83a2a;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #cc9520;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #faf8f2;
+  --ui-bg-subtle: #f2ede2;
+  --ui-surface: #ffffff;
+  --ui-border: #d6cdb8;
+  --ui-text: #2a2418;
+  --ui-text-muted: #7a7060;
+  --ui-text-inverse: #ffffff;
+}
+
+[data-ui-theme="saturn"][data-theme="dark"] {
+  --ui-primary: #daa520;
+  --ui-primary-text: #1a1d26;
+  --ui-secondary: #b0a48a;
+  --ui-secondary-text: #1a1d26;
+  --ui-success: #7ab85a;
+  --ui-success-text: #1a1d26;
+  --ui-danger: #e06050;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #e8b830;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #181410;
+  --ui-bg-subtle: #100e0a;
+  --ui-surface: #262018;
+  --ui-border: #3e3528;
+  --ui-text: #e8e0d0;
+  --ui-text-muted: #9a8e78;
+  --ui-text-inverse: #181410;
+}

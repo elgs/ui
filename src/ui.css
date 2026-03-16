@@ -131,6 +131,7 @@
 
   /* --- Transitions --- */
   --ui-transition: 150ms ease;
+
 }
 
 /* ============================================
@@ -618,6 +619,209 @@
 @keyframes ui-spin {
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* ============================================
+   Gradient mode — toggled via data-ui-gradient
+   ============================================ */
+
+[data-ui-gradient] {
+
+  /* --- Buttons (solid only) --- */
+
+  & .ui-btn:not(.outline, .ghost, :disabled) {
+    background: linear-gradient(135deg, var(--ui-primary), var(--ui-primary-hover));
+
+    &:hover {
+      background: linear-gradient(135deg, var(--ui-primary-hover), var(--ui-primary-active));
+    }
+
+    &.secondary {
+      background: linear-gradient(135deg, var(--ui-secondary), var(--ui-secondary-hover));
+
+      &:hover {
+        background: linear-gradient(135deg, var(--ui-secondary-hover), var(--ui-secondary-active));
+      }
+    }
+
+    &.success {
+      background: linear-gradient(135deg, var(--ui-success), var(--ui-success-hover));
+
+      &:hover {
+        background: linear-gradient(135deg, var(--ui-success-hover), var(--ui-success-active));
+      }
+    }
+
+    &.danger {
+      background: linear-gradient(135deg, var(--ui-danger), var(--ui-danger-hover));
+
+      &:hover {
+        background: linear-gradient(135deg, var(--ui-danger-hover), var(--ui-danger-active));
+      }
+    }
+
+    &.warning {
+      background: linear-gradient(135deg, var(--ui-warning), var(--ui-warning-hover));
+
+      &:hover {
+        background: linear-gradient(135deg, var(--ui-warning-hover), var(--ui-warning-active));
+      }
+    }
+  }
+
+  /* --- Toggles --- */
+
+  & .ui-toggle input:checked + .ui-toggle-track {
+    background: linear-gradient(135deg, var(--ui-primary), var(--ui-primary-hover));
+  }
+
+  & .ui-toggle.success input:checked + .ui-toggle-track {
+    background: linear-gradient(135deg, var(--ui-success), var(--ui-success-hover));
+  }
+
+  & .ui-toggle.danger input:checked + .ui-toggle-track {
+    background: linear-gradient(135deg, var(--ui-danger), var(--ui-danger-hover));
+  }
+
+  & .ui-toggle.warning input:checked + .ui-toggle-track {
+    background: linear-gradient(135deg, var(--ui-warning), var(--ui-warning-hover));
+  }
+
+  /* --- Checkboxes --- */
+
+  & .ui-checkbox input:checked,
+  & .ui-checkbox input:indeterminate {
+    background: linear-gradient(135deg, var(--ui-primary), var(--ui-primary-hover));
+  }
+
+  & .ui-checkbox.success input:checked,
+  & .ui-checkbox.success input:indeterminate {
+    background: linear-gradient(135deg, var(--ui-success), var(--ui-success-hover));
+  }
+
+  & .ui-checkbox.danger input:checked,
+  & .ui-checkbox.danger input:indeterminate {
+    background: linear-gradient(135deg, var(--ui-danger), var(--ui-danger-hover));
+  }
+
+  & .ui-checkbox.warning input:checked,
+  & .ui-checkbox.warning input:indeterminate {
+    background: linear-gradient(135deg, var(--ui-warning), var(--ui-warning-hover));
+  }
+
+  /* --- Radio buttons --- */
+
+  & .ui-radio input:checked {
+    background: linear-gradient(135deg, var(--ui-primary), var(--ui-primary-hover));
+  }
+
+  /* --- Tags (solid) --- */
+
+  & .ui-tag.solid {
+    background: linear-gradient(135deg, var(--ui-primary), var(--ui-primary-hover));
+
+    &.secondary {
+      background: linear-gradient(135deg, var(--ui-secondary), var(--ui-secondary-hover));
+    }
+
+    &.success {
+      background: linear-gradient(135deg, var(--ui-success), var(--ui-success-hover));
+    }
+
+    &.danger {
+      background: linear-gradient(135deg, var(--ui-danger), var(--ui-danger-hover));
+    }
+
+    &.warning {
+      background: linear-gradient(135deg, var(--ui-warning), var(--ui-warning-hover));
+    }
+  }
+
+  /* --- Pagination active --- */
+
+  & .ui-pagination .ui-page.active {
+    background: linear-gradient(135deg, var(--ui-primary), var(--ui-primary-hover));
+  }
+
+  & .ui-pagination.success .ui-page.active {
+    background: linear-gradient(135deg, var(--ui-success), var(--ui-success-hover));
+  }
+
+  & .ui-pagination.danger .ui-page.active {
+    background: linear-gradient(135deg, var(--ui-danger), var(--ui-danger-hover));
+  }
+
+  & .ui-pagination.secondary .ui-page.active {
+    background: linear-gradient(135deg, var(--ui-secondary), var(--ui-secondary-hover));
+  }
+
+  /* --- Corner badge --- */
+
+  & .ui-badge-corner .ui-count {
+    background: linear-gradient(135deg, var(--ui-danger), var(--ui-danger-hover));
+
+    &.primary {
+      background: linear-gradient(135deg, var(--ui-primary), var(--ui-primary-hover));
+    }
+
+    &.secondary {
+      background: linear-gradient(135deg, var(--ui-secondary), var(--ui-secondary-hover));
+    }
+
+    &.success {
+      background: linear-gradient(135deg, var(--ui-success), var(--ui-success-hover));
+    }
+
+    &.warning {
+      background: linear-gradient(135deg, var(--ui-warning), var(--ui-warning-hover));
+    }
+  }
+
+  /* --- Progress bar --- */
+
+  & .ui-progress .ui-progress-bar {
+    background: linear-gradient(90deg, var(--ui-primary), var(--ui-primary-hover));
+
+    &.success {
+      background: linear-gradient(90deg, var(--ui-success), var(--ui-success-hover));
+    }
+
+    &.danger {
+      background: linear-gradient(90deg, var(--ui-danger), var(--ui-danger-hover));
+    }
+
+    &.warning {
+      background: linear-gradient(90deg, var(--ui-warning), var(--ui-warning-hover));
+    }
+  }
+
+  /* --- Range/slider thumb --- */
+
+  & .ui-range::-webkit-slider-thumb {
+    background: linear-gradient(135deg, var(--ui-primary), var(--ui-primary-hover));
+  }
+
+  & .ui-range::-moz-range-thumb {
+    background: linear-gradient(135deg, var(--ui-primary), var(--ui-primary-hover));
+  }
+
+  /* --- Status dots --- */
+
+  & .ui-dot.primary {
+    background: linear-gradient(135deg, var(--ui-primary), var(--ui-primary-hover));
+  }
+
+  & .ui-dot.success {
+    background: linear-gradient(135deg, var(--ui-success), var(--ui-success-hover));
+  }
+
+  & .ui-dot.danger {
+    background: linear-gradient(135deg, var(--ui-danger), var(--ui-danger-hover));
+  }
+
+  & .ui-dot.warning {
+    background: linear-gradient(135deg, var(--ui-warning), var(--ui-warning-hover));
   }
 }
 

@@ -1,0 +1,52 @@
+/*
+   UI Library Theme — Jupiter
+
+   Usage:
+   1. Include after ui.css:  <link rel="stylesheet" href="themes/jupiter.css">
+   2. Activate:              <html data-ui-theme="jupiter">
+      or via JS:             __uiTheme.setTheme('jupiter')
+
+   Bold russet & cream — inspired by Jupiter's stormy bands.
+*/
+
+[data-ui-theme="jupiter"] {
+  --ui-primary: #a0522d;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #7e7266;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #5e8c4a;
+  --ui-success-text: #ffffff;
+  --ui-danger: #b53030;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #c88828;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #f8f4ee;
+  --ui-bg-subtle: #eee8dc;
+  --ui-surface: #ffffff;
+  --ui-border: #d2c4b0;
+  --ui-text: #2e2218;
+  --ui-text-muted: #78685a;
+  --ui-text-inverse: #ffffff;
+}
+
+[data-ui-theme="jupiter"][data-theme="dark"] {
+  --ui-primary: #cc7a4a;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #a89888;
+  --ui-secondary-text: #1a1d26;
+  --ui-success: #7aaa60;
+  --ui-success-text: #1a1d26;
+  --ui-danger: #d85c4a;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #e0a840;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #1a1410;
+  --ui-bg-subtle: #120e0a;
+  --ui-surface: #2a221a;
+  --ui-border: #44382a;
+  --ui-text: #e4dcd0;
+  --ui-text-muted: #988878;
+  --ui-text-inverse: #1a1410;
+}

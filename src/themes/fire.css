@@ -1,0 +1,52 @@
+/*
+   UI Library Theme — Fire
+
+   Usage:
+   1. Include after ui.css:  <link rel="stylesheet" href="themes/fire.css">
+   2. Activate:              <html data-ui-theme="fire">
+      or via JS:             __uiTheme.setTheme('fire')
+
+   Blazing orange & ember — intense heat and flame.
+*/
+
+[data-ui-theme="fire"] {
+  --ui-primary: #d94e10;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #a0724e;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #5a8c3a;
+  --ui-success-text: #ffffff;
+  --ui-danger: #b82020;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #e8a020;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #fdf6f0;
+  --ui-bg-subtle: #f8ece0;
+  --ui-surface: #ffffff;
+  --ui-border: #e0c8b0;
+  --ui-text: #2e1a0a;
+  --ui-text-muted: #886048;
+  --ui-text-inverse: #ffffff;
+}
+
+[data-ui-theme="fire"][data-theme="dark"] {
+  --ui-primary: #f07020;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #c09070;
+  --ui-secondary-text: #1a1d26;
+  --ui-success: #78a858;
+  --ui-success-text: #1a1d26;
+  --ui-danger: #e04030;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #f0b830;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #1c1008;
+  --ui-bg-subtle: #140a04;
+  --ui-surface: #2c1c10;
+  --ui-border: #4a3020;
+  --ui-text: #f0e0cc;
+  --ui-text-muted: #a08060;
+  --ui-text-inverse: #1c1008;
+}

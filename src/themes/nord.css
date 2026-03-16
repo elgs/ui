@@ -1,0 +1,52 @@
+/*
+   UI Library Theme — Nord
+
+   Usage:
+   1. Include after ui.css:  <link rel="stylesheet" href="themes/nord.css">
+   2. Activate:              <html data-ui-theme="nord">
+      or via JS:             __uiTheme.setTheme('nord')
+
+   Cool arctic palette inspired by the polar landscape.
+*/
+
+[data-ui-theme="nord"] {
+  --ui-primary: #5e81ac;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #7b8ea0;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #a3be8c;
+  --ui-success-text: #1a1d26;
+  --ui-danger: #bf616a;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #ebcb8b;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #eceff4;
+  --ui-bg-subtle: #e5e9f0;
+  --ui-surface: #ffffff;
+  --ui-border: #d8dee9;
+  --ui-text: #2e3440;
+  --ui-text-muted: #6a7384;
+  --ui-text-inverse: #ffffff;
+}
+
+[data-ui-theme="nord"][data-theme="dark"] {
+  --ui-primary: #88c0d0;
+  --ui-primary-text: #2e3440;
+  --ui-secondary: #81a1c1;
+  --ui-secondary-text: #2e3440;
+  --ui-success: #a3be8c;
+  --ui-success-text: #2e3440;
+  --ui-danger: #bf616a;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #ebcb8b;
+  --ui-warning-text: #2e3440;
+
+  --ui-bg: #2e3440;
+  --ui-bg-subtle: #272c36;
+  --ui-surface: #3b4252;
+  --ui-border: #434c5e;
+  --ui-text: #eceff4;
+  --ui-text-muted: #8890a0;
+  --ui-text-inverse: #2e3440;
+}

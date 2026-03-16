@@ -1253,3 +1253,50 @@
     opacity: 1;
   }
 }
+
+/* ============================================
+   Gradient mode — toggled via data-ui-gradient
+   ============================================ */
+
+[data-ui-gradient] {
+
+  /* --- Timeline (solid) --- */
+
+  & .ui-timeline-item .ui-timeline-dot.solid {
+    background: linear-gradient(135deg, var(--ui-primary), var(--ui-primary-hover));
+
+    &.success {
+      background: linear-gradient(135deg, var(--ui-success), var(--ui-success-hover));
+    }
+
+    &.danger {
+      background: linear-gradient(135deg, var(--ui-danger), var(--ui-danger-hover));
+    }
+
+    &.warning {
+      background: linear-gradient(135deg, var(--ui-warning), var(--ui-warning-hover));
+    }
+  }
+
+  /* --- Stepper --- */
+
+  & .ui-step.completed .ui-step-indicator {
+    background: linear-gradient(135deg, var(--ui-primary), var(--ui-primary-hover));
+  }
+
+  & .ui-step.completed::after {
+    background: linear-gradient(90deg, var(--ui-primary), var(--ui-primary-hover));
+  }
+
+  /* --- Chat avatar --- */
+
+  & .ui-chat-avatar[data-initial] {
+    background: linear-gradient(135deg, var(--ui-primary), var(--ui-primary-hover));
+  }
+
+  /* --- Chat sent bubble --- */
+
+  & .ui-chat-message.sent .ui-chat-bubble {
+    background: linear-gradient(135deg, var(--ui-primary), var(--ui-primary-hover));
+  }
+}

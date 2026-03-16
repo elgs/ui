@@ -1,0 +1,52 @@
+/*
+   UI Library Theme — Ice
+
+   Usage:
+   1. Include after ui.css:  <link rel="stylesheet" href="themes/ice.css">
+   2. Activate:              <html data-ui-theme="ice">
+      or via JS:             __uiTheme.setTheme('ice')
+
+   Crisp cyan & frost — glacial clarity.
+*/
+
+[data-ui-theme="ice"] {
+  --ui-primary: #0891b2;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #6898a8;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #059669;
+  --ui-success-text: #ffffff;
+  --ui-danger: #c03040;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #ca8a18;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #f0f9fc;
+  --ui-bg-subtle: #e0f0f6;
+  --ui-surface: #ffffff;
+  --ui-border: #b8d8e8;
+  --ui-text: #0c2a38;
+  --ui-text-muted: #4a7888;
+  --ui-text-inverse: #ffffff;
+}
+
+[data-ui-theme="ice"][data-theme="dark"] {
+  --ui-primary: #22d3ee;
+  --ui-primary-text: #1a1d26;
+  --ui-secondary: #7cc0d0;
+  --ui-secondary-text: #1a1d26;
+  --ui-success: #34d399;
+  --ui-success-text: #1a1d26;
+  --ui-danger: #f07080;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #e8c040;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #0a1820;
+  --ui-bg-subtle: #061218;
+  --ui-surface: #122838;
+  --ui-border: #1e3e50;
+  --ui-text: #d8f0f8;
+  --ui-text-muted: #6aa8c0;
+  --ui-text-inverse: #0a1820;
+}

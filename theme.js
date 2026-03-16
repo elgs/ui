@@ -85,7 +85,7 @@
     try { localStorage.setItem('ui-theme-mode', mode); } catch(e) {}
     applyCustomColors(isDark);
     // Update toggle button icon
-    var btn = document.querySelector('.theme-toggle');
+    var btn = document.getElementById('theme-toggle');
     if (btn) {
       btn.innerHTML = themeIcons[mode] || themeIcons.system;
       btn.title = 'Theme: ' + mode;
@@ -130,7 +130,7 @@
   } catch(e) {}
 
   // Bind toggle button
-  var btn = document.querySelector('.theme-toggle');
+  var btn = document.getElementById('theme-toggle');
   if (btn) {
     btn.addEventListener('click', function() {
       var current = window.__uiThemeMode || 'system';

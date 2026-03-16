@@ -1,0 +1,52 @@
+/*
+   UI Library Theme — Mars
+
+   Usage:
+   1. Include after ui.css:  <link rel="stylesheet" href="themes/mars.css">
+   2. Activate:              <html data-ui-theme="mars">
+      or via JS:             __uiTheme.setTheme('mars')
+
+   Iron red & dusty ochre — inspired by the Martian surface.
+*/
+
+[data-ui-theme="mars"] {
+  --ui-primary: #b03020;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #8c6e5a;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #6a8a42;
+  --ui-success-text: #ffffff;
+  --ui-danger: #922020;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #c48830;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #faf5f0;
+  --ui-bg-subtle: #f0e6da;
+  --ui-surface: #ffffff;
+  --ui-border: #d4bca8;
+  --ui-text: #301a12;
+  --ui-text-muted: #7a6050;
+  --ui-text-inverse: #ffffff;
+}
+
+[data-ui-theme="mars"][data-theme="dark"] {
+  --ui-primary: #d05040;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #a8907a;
+  --ui-secondary-text: #1a1d26;
+  --ui-success: #88aa5c;
+  --ui-success-text: #1a1d26;
+  --ui-danger: #c04040;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #daa048;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #1c1210;
+  --ui-bg-subtle: #140c0a;
+  --ui-surface: #2c1e18;
+  --ui-border: #483024;
+  --ui-text: #e4d8cc;
+  --ui-text-muted: #987868;
+  --ui-text-inverse: #1c1210;
+}

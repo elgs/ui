@@ -1,0 +1,52 @@
+/*
+   UI Library Theme — Mercury
+
+   Usage:
+   1. Include after ui.css:  <link rel="stylesheet" href="themes/mercury.css">
+   2. Activate:              <html data-ui-theme="mercury">
+      or via JS:             __uiTheme.setTheme('mercury')
+
+   Silvery monochrome — inspired by Mercury's cratered surface.
+*/
+
+[data-ui-theme="mercury"] {
+  --ui-primary: #6a6e78;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #8a8d94;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #5a9a6a;
+  --ui-success-text: #ffffff;
+  --ui-danger: #b84848;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #b89840;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #f2f3f5;
+  --ui-bg-subtle: #e8e9ec;
+  --ui-surface: #ffffff;
+  --ui-border: #cccdd2;
+  --ui-text: #22242a;
+  --ui-text-muted: #6c6e76;
+  --ui-text-inverse: #ffffff;
+}
+
+[data-ui-theme="mercury"][data-theme="dark"] {
+  --ui-primary: #9a9ea8;
+  --ui-primary-text: #1a1d26;
+  --ui-secondary: #787c86;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #70b880;
+  --ui-success-text: #1a1d26;
+  --ui-danger: #d06060;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #d0b050;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #18191c;
+  --ui-bg-subtle: #101114;
+  --ui-surface: #242628;
+  --ui-border: #383a3e;
+  --ui-text: #dcdde0;
+  --ui-text-muted: #848690;
+  --ui-text-inverse: #18191c;
+}

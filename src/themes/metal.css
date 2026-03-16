@@ -8,9 +8,9 @@
 */
 
 [data-ui-theme="metal"] {
-  --ui-primary: #6b7280;
+  --ui-primary: #7a8694;
   --ui-primary-text: #ffffff;
-  --ui-secondary: #9ca3af;
+  --ui-secondary: #a0aab6;
   --ui-secondary-text: #ffffff;
   --ui-success: #4ade80;
   --ui-success-text: #1a1d26;
@@ -19,38 +19,38 @@
   --ui-warning: #fbbf24;
   --ui-warning-text: #1a1d26;
 
-  --ui-bg: #f3f4f6;
-  --ui-bg-subtle: #e5e7eb;
+  --ui-bg: #f4f5f7;
+  --ui-bg-subtle: #e8eaee;
   --ui-surface: #ffffff;
-  --ui-border: #c5c9d2;
-  --ui-text: #1f2937;
-  --ui-text-muted: #6b7280;
+  --ui-border: #c8ced6;
+  --ui-text: #1c2530;
+  --ui-text-muted: #6e7a88;
   --ui-text-inverse: #ffffff;
 
-  --ui-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.08);
-  --ui-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.08);
-  --ui-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.12), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --ui-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --ui-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --ui-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.08);
 }
 
 [data-ui-theme="metal"][data-theme="dark"] {
-  --ui-primary: #9ca3af;
-  --ui-primary-text: #111218;
-  --ui-secondary: #6b7280;
+  --ui-primary: #a4b0be;
+  --ui-primary-text: #101418;
+  --ui-secondary: #6e7a88;
   --ui-secondary-text: #ffffff;
   --ui-success: #4ade80;
-  --ui-success-text: #111218;
+  --ui-success-text: #101418;
   --ui-danger: #fb7185;
   --ui-danger-text: #ffffff;
   --ui-warning: #fbbf24;
-  --ui-warning-text: #111218;
+  --ui-warning-text: #101418;
 
-  --ui-bg: #18191d;
-  --ui-bg-subtle: #111218;
-  --ui-surface: #24262c;
-  --ui-border: #3a3d45;
-  --ui-text: #d1d5db;
-  --ui-text-muted: #737982;
-  --ui-text-inverse: #18191d;
+  --ui-bg: #151820;
+  --ui-bg-subtle: #0e1118;
+  --ui-surface: #1e2230;
+  --ui-border: #333a48;
+  --ui-text: #d4dae4;
+  --ui-text-muted: #7a8598;
+  --ui-text-inverse: #151820;
 
   --ui-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
   --ui-shadow: 0 1px 3px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.4);

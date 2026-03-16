@@ -1,0 +1,52 @@
+/*
+   UI Library Theme — Olive
+
+   Usage:
+   1. Include after ui.css:  <link rel="stylesheet" href="themes/olive.css">
+   2. Activate:              <html data-ui-theme="olive">
+      or via JS:             __uiTheme.setTheme('olive')
+
+   Earthy olive green — warm Mediterranean tones.
+*/
+
+[data-ui-theme="olive"] {
+  --ui-primary: #6b7a2e;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #8a8868;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #4a8a3a;
+  --ui-success-text: #ffffff;
+  --ui-danger: #a83830;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #b89028;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #f8f8f0;
+  --ui-bg-subtle: #f0f0e4;
+  --ui-surface: #ffffff;
+  --ui-border: #d0d0b8;
+  --ui-text: #282818;
+  --ui-text-muted: #6a6a50;
+  --ui-text-inverse: #ffffff;
+}
+
+[data-ui-theme="olive"][data-theme="dark"] {
+  --ui-primary: #98aa48;
+  --ui-primary-text: #1a1d26;
+  --ui-secondary: #a0a080;
+  --ui-secondary-text: #1a1d26;
+  --ui-success: #68a850;
+  --ui-success-text: #1a1d26;
+  --ui-danger: #cc5848;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #d0aa40;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #141410;
+  --ui-bg-subtle: #0c0c08;
+  --ui-surface: #222218;
+  --ui-border: #383828;
+  --ui-text: #e0e0cc;
+  --ui-text-muted: #8a8a6a;
+  --ui-text-inverse: #141410;
+}

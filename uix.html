@@ -11,6 +11,23 @@
   <link rel="stylesheet" href="src/themes/forest.css">
   <link rel="stylesheet" href="src/themes/rose.css">
   <link rel="stylesheet" href="src/themes/metal.css">
+  <link rel="stylesheet" href="src/themes/desert.css">
+  <link rel="stylesheet" href="src/themes/neptune.css">
+  <link rel="stylesheet" href="src/themes/saturn.css">
+  <link rel="stylesheet" href="src/themes/jupiter.css">
+  <link rel="stylesheet" href="src/themes/mars.css">
+  <link rel="stylesheet" href="src/themes/nord.css">
+  <link rel="stylesheet" href="src/themes/mercury.css">
+  <link rel="stylesheet" href="src/themes/gold.css">
+  <link rel="stylesheet" href="src/themes/silver.css">
+  <link rel="stylesheet" href="src/themes/copper.css">
+  <link rel="stylesheet" href="src/themes/fire.css">
+  <link rel="stylesheet" href="src/themes/ice.css">
+
+
+  <link rel="stylesheet" href="src/themes/wood.css">
+  <link rel="stylesheet" href="src/themes/olive.css">
+
   <link rel="stylesheet" href="src/uix.css">
   <style>
 
@@ -96,34 +113,22 @@
       gap: 0.5rem;
     }
 
-    .theme-bar {
-      display: flex;
-      gap: 0.25rem;
-      padding: 0.25rem;
-      border-radius: var(--ui-radius-full);
-      border: 1px solid var(--ui-border);
-      background: var(--ui-surface);
-      box-shadow: var(--ui-shadow-sm);
+    #theme-bar {
+      & .ui-dropdown-menu {
+        max-height: min(70vh, 36rem);
+        overflow-y: auto;
+      }
 
-      & button {
-        padding: 0.25rem 0.625rem;
+      & .theme-swatch {
+        width: 0.75rem;
+        height: 0.75rem;
         border-radius: var(--ui-radius-full);
-        border: none;
-        background: transparent;
-        color: var(--ui-text-muted);
-        font-family: var(--ui-font);
-        font-size: 0.75rem;
-        cursor: pointer;
-        transition: background var(--ui-transition), color var(--ui-transition);
+        border: 1px solid var(--ui-border);
+        flex-shrink: 0;
+      }
 
-        &:hover {
-          color: var(--ui-text);
-        }
-
-        &.active {
-          background: var(--ui-primary);
-          color: var(--ui-primary-text);
-        }
+      & .ui-dropdown-item.active {
+        background: color-mix(in srgb, var(--ui-primary) 10%, transparent);
       }
     }
 
@@ -131,7 +136,7 @@
       width: 36px;
       height: 36px;
       border-radius: var(--ui-radius-full);
-      border: 1px solid var(--ui-border);
+      border: 1px solid var(--ui-primary);
       background: var(--ui-surface);
       color: var(--ui-text);
       display: flex;
@@ -139,12 +144,26 @@
       justify-content: center;
       cursor: pointer;
       font-size: 1.1rem;
-      box-shadow: var(--ui-shadow-sm);
       transition: background var(--ui-transition), border-color var(--ui-transition);
 
       &:hover {
-        border-color: var(--ui-primary);
+        border-color: var(--ui-primary-hover);
       }
+
+    }
+
+    #gradient-toggle {
+      border: none;
+      background: var(--ui-primary);
+      box-shadow: none;
+
+      &:hover {
+        opacity: 0.85;
+      }
+    }
+
+    [data-ui-gradient] #gradient-toggle {
+      background: linear-gradient(135deg, var(--ui-primary), var(--ui-primary-hover));
     }
 
     #source-dialog {
@@ -291,13 +310,75 @@
 <body>
 
 <div class="theme-controls-fixed">
-  <div class="theme-bar" id="theme-bar">
-    <button class="active" data-theme-name="">Default</button>
-    <button data-theme-name="ocean">Ocean</button>
-    <button data-theme-name="forest">Forest</button>
-    <button data-theme-name="rose">Rose</button>
-    <button data-theme-name="metal">Metal</button>
+  <div class="ui-dropdown right" id="theme-bar">
+    <button class="ui-dropdown-toggle" onclick="this.closest('.ui-dropdown').classList.toggle('open')">
+      <span class="theme-swatch" id="theme-swatch"></span> <span id="theme-label">Default</span>
+    </button>
+    <div class="ui-dropdown-menu">
+      <button class="ui-dropdown-item active" data-theme="">
+        <span class="theme-swatch" style="background:#2095f3"></span> Default
+      </button>
+      <button class="ui-dropdown-item" data-theme="ocean">
+        <span class="theme-swatch" style="background:#0077b6"></span> Ocean
+      </button>
+      <button class="ui-dropdown-item" data-theme="forest">
+        <span class="theme-swatch" style="background:#2d6a4f"></span> Forest
+      </button>
+      <button class="ui-dropdown-item" data-theme="rose">
+        <span class="theme-swatch" style="background:#be185d"></span> Rose
+      </button>
+      <button class="ui-dropdown-item" data-theme="metal">
+        <span class="theme-swatch" style="background:#7a8694"></span> Metal
+      </button>
+      <button class="ui-dropdown-item" data-theme="desert">
+        <span class="theme-swatch" style="background:#c2703e"></span> Desert
+      </button>
+      <button class="ui-dropdown-item" data-theme="neptune">
+        <span class="theme-swatch" style="background:#1b3a8c"></span> Neptune
+      </button>
+      <button class="ui-dropdown-item" data-theme="saturn">
+        <span class="theme-swatch" style="background:#b8860b"></span> Saturn
+      </button>
+      <button class="ui-dropdown-item" data-theme="jupiter">
+        <span class="theme-swatch" style="background:#a0522d"></span> Jupiter
+      </button>
+      <button class="ui-dropdown-item" data-theme="mars">
+        <span class="theme-swatch" style="background:#b03020"></span> Mars
+      </button>
+      <button class="ui-dropdown-item" data-theme="nord">
+        <span class="theme-swatch" style="background:#5e81ac"></span> Nord
+      </button>
+      <button class="ui-dropdown-item" data-theme="mercury">
+        <span class="theme-swatch" style="background:#6a6e78"></span> Mercury
+      </button>
+      <button class="ui-dropdown-item" data-theme="gold">
+        <span class="theme-swatch" style="background:#b8962e"></span> Gold
+      </button>
+      <button class="ui-dropdown-item" data-theme="silver">
+        <span class="theme-swatch" style="background:#6e7a88"></span> Silver
+      </button>
+      <button class="ui-dropdown-item" data-theme="copper">
+        <span class="theme-swatch" style="background:#b06838"></span> Copper
+      </button>
+      <button class="ui-dropdown-item" data-theme="fire">
+        <span class="theme-swatch" style="background:#d94e10"></span> Fire
+      </button>
+      <button class="ui-dropdown-item" data-theme="ice">
+        <span class="theme-swatch" style="background:#0891b2"></span> Ice
+      </button>
+
+
+      <button class="ui-dropdown-item" data-theme="wood">
+        <span class="theme-swatch" style="background:#7a5230"></span> Wood
+      </button>
+      <button class="ui-dropdown-item" data-theme="olive">
+        <span class="theme-swatch" style="background:#6b7a2e"></span> Olive
+      </button>
+
+    </div>
   </div>
+  <button class="theme-toggle" id="gradient-toggle" aria-label="Toggle gradient" title="Toggle gradient">
+      </button>
   <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Theme: system">
     <i class="ui-icon ui-icon-monitor"></i>
   </button>
@@ -1332,15 +1413,52 @@ document.addEventListener('click', e =&gt; {
   // Theme bar
   (function() {
     var bar = document.getElementById('theme-bar');
-    var btns = bar.querySelectorAll('button');
+    var items = bar.querySelectorAll('.ui-dropdown-item');
+    var swatch = document.getElementById('theme-swatch');
+    var label = document.getElementById('theme-label');
     var saved = localStorage.getItem('ui-theme') || '';
-    btns.forEach(function(b) {
-      if (b.dataset.themeName === saved) b.classList.add('active');
-      else if (saved) b.classList.remove('active');
-      b.addEventListener('click', function() {
-        window.__uiTheme.setTheme(b.dataset.themeName);
-        btns.forEach(function(x) { x.classList.toggle('active', x.dataset.themeName === b.dataset.themeName); });
+
+    function updateToggle(item) {
+      swatch.style.background = item.querySelector('.theme-swatch').style.background;
+      label.textContent = item.textContent.trim();
+    }
+
+    function selectTheme(name) {
+      window.__uiTheme.setTheme(name);
+      items.forEach(function(item) {
+        var isActive = item.dataset.theme === (name || '');
+        item.classList.toggle('active', isActive);
+        if (isActive) updateToggle(item);
       });
+      bar.classList.remove('open');
+    }
+
+    items.forEach(function(item) {
+      item.addEventListener('click', function() { selectTheme(item.dataset.theme); });
+    });
+
+    if (saved) {
+      items.forEach(function(item) {
+        var isActive = item.dataset.theme === saved;
+        item.classList.toggle('active', isActive);
+        if (isActive) updateToggle(item);
+      });
+    } else {
+      swatch.style.background = '#2095f3';
+    }
+  })();
+
+  // Gradient toggle
+  (function() {
+    var btn = document.getElementById('gradient-toggle');
+    if (localStorage.getItem('ui-gradient') === '1') {
+      document.documentElement.setAttribute('data-ui-gradient', '');
+      btn.classList.add('active');
+    }
+    btn.addEventListener('click', function() {
+      var on = document.documentElement.toggleAttribute('data-ui-gradient');
+      btn.classList.toggle('active', on);
+      localStorage.setItem('ui-gradient', on ? '1' : '0');
     });
   })();
 

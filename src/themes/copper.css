@@ -1,0 +1,52 @@
+/*
+   UI Library Theme — Copper
+
+   Usage:
+   1. Include after ui.css:  <link rel="stylesheet" href="themes/copper.css">
+   2. Activate:              <html data-ui-theme="copper">
+      or via JS:             __uiTheme.setTheme('copper')
+
+   Warm copper & patina — burnished metallic glow.
+*/
+
+[data-ui-theme="copper"] {
+  --ui-primary: #b06838;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #8c7a6a;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #5a8a50;
+  --ui-success-text: #ffffff;
+  --ui-danger: #a83028;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #c08830;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #faf6f2;
+  --ui-bg-subtle: #f0e8e0;
+  --ui-surface: #ffffff;
+  --ui-border: #d8c8b4;
+  --ui-text: #2c2018;
+  --ui-text-muted: #7a6858;
+  --ui-text-inverse: #ffffff;
+}
+
+[data-ui-theme="copper"][data-theme="dark"] {
+  --ui-primary: #d08850;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #a89480;
+  --ui-secondary-text: #1a1d26;
+  --ui-success: #72a862;
+  --ui-success-text: #1a1d26;
+  --ui-danger: #cc5848;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #d8a040;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #1c1612;
+  --ui-bg-subtle: #140e0a;
+  --ui-surface: #2a221c;
+  --ui-border: #44362a;
+  --ui-text: #e4d8cc;
+  --ui-text-muted: #98846e;
+  --ui-text-inverse: #1c1612;
+}

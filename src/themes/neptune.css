@@ -1,0 +1,53 @@
+/*
+   UI Library Theme — Neptune
+
+   Usage:
+   1. Include after ui.css:  <link rel="stylesheet" href="themes/neptune.css">
+   2. Activate:              <html data-ui-theme="neptune">
+      or via JS:             __uiTheme.setTheme('neptune')
+
+   Deep blue — inspired by the planet's atmosphere.
+   Distinct from Ocean's lighter aquatic palette.
+*/
+
+[data-ui-theme="neptune"] {
+  --ui-primary: #1b3a8c;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #546a9e;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #28855a;
+  --ui-success-text: #ffffff;
+  --ui-danger: #c0392b;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #d4a017;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #f0f4fa;
+  --ui-bg-subtle: #e2e8f4;
+  --ui-surface: #ffffff;
+  --ui-border: #b8c5dc;
+  --ui-text: #0e1a33;
+  --ui-text-muted: #52627e;
+  --ui-text-inverse: #ffffff;
+}
+
+[data-ui-theme="neptune"][data-theme="dark"] {
+  --ui-primary: #4a80e0;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #7a98c4;
+  --ui-secondary-text: #1a1d26;
+  --ui-success: #48b87a;
+  --ui-success-text: #1a1d26;
+  --ui-danger: #e86050;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #e8c044;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #0a1020;
+  --ui-bg-subtle: #060c18;
+  --ui-surface: #132040;
+  --ui-border: #1e3460;
+  --ui-text: #d4def0;
+  --ui-text-muted: #6882a8;
+  --ui-text-inverse: #0a1020;
+}

@@ -1,0 +1,52 @@
+/*
+   UI Library Theme — Gold
+
+   Usage:
+   1. Include after ui.css:  <link rel="stylesheet" href="themes/gold.css">
+   2. Activate:              <html data-ui-theme="gold">
+      or via JS:             __uiTheme.setTheme('gold')
+
+   Rich gold & champagne — luxurious metallic warmth.
+*/
+
+[data-ui-theme="gold"] {
+  --ui-primary: #b8962e;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #9a8a68;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #5c8c48;
+  --ui-success-text: #ffffff;
+  --ui-danger: #b83830;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #c49428;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #fbf9f2;
+  --ui-bg-subtle: #f4f0e4;
+  --ui-surface: #ffffff;
+  --ui-border: #ddd4ba;
+  --ui-text: #2c2610;
+  --ui-text-muted: #7a7058;
+  --ui-text-inverse: #ffffff;
+}
+
+[data-ui-theme="gold"][data-theme="dark"] {
+  --ui-primary: #d4b044;
+  --ui-primary-text: #1a1d26;
+  --ui-secondary: #b0a080;
+  --ui-secondary-text: #1a1d26;
+  --ui-success: #78aa5a;
+  --ui-success-text: #1a1d26;
+  --ui-danger: #d05848;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #dab040;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #1a1710;
+  --ui-bg-subtle: #12100a;
+  --ui-surface: #28221a;
+  --ui-border: #403828;
+  --ui-text: #e8e0cc;
+  --ui-text-muted: #9a8e70;
+  --ui-text-inverse: #1a1710;
+}

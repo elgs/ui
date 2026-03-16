@@ -1,0 +1,52 @@
+/*
+   UI Library Theme — Wood
+
+   Usage:
+   1. Include after ui.css:  <link rel="stylesheet" href="themes/wood.css">
+   2. Activate:              <html data-ui-theme="wood">
+      or via JS:             __uiTheme.setTheme('wood')
+
+   Warm walnut & oak — rich natural grain tones.
+*/
+
+[data-ui-theme="wood"] {
+  --ui-primary: #7a5230;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #8a7a68;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #5c8040;
+  --ui-success-text: #ffffff;
+  --ui-danger: #a83828;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #b88c2e;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #faf7f2;
+  --ui-bg-subtle: #f0eae0;
+  --ui-surface: #ffffff;
+  --ui-border: #d4c4ae;
+  --ui-text: #2e2218;
+  --ui-text-muted: #786850;
+  --ui-text-inverse: #ffffff;
+}
+
+[data-ui-theme="wood"][data-theme="dark"] {
+  --ui-primary: #a87850;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #a09080;
+  --ui-secondary-text: #1a1d26;
+  --ui-success: #78a058;
+  --ui-success-text: #1a1d26;
+  --ui-danger: #c85848;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #d0a840;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #181210;
+  --ui-bg-subtle: #100c08;
+  --ui-surface: #261e18;
+  --ui-border: #3e3228;
+  --ui-text: #e0d4c8;
+  --ui-text-muted: #988870;
+  --ui-text-inverse: #181210;
+}
