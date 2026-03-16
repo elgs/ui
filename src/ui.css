@@ -57,7 +57,7 @@
    3. Activate via HTML attribute or JS:
 
       <html data-ui-theme="my-theme">
-      __uiTheme.setTheme('my-theme')
+      document.documentElement.setAttribute('data-ui-theme', 'my-theme')
 
    Only override the properties you need. Everything else
    inherits from the defaults. See src/themes/ for examples.

@@ -457,6 +457,7 @@
       <hr class="demo-nav-divider">
       <div class="demo-nav-label">Utilities</div>
       <a href="#config">Configuration</a>
+      <a href="#custom-themes">Custom Themes</a>
       <a href="#dark-mode">Dark Mode</a>
       <a href="#icons">Icons</a>
       <a href="#layout">Layout Utilities</a>
@@ -3989,7 +3990,7 @@ showToast('danger', 'Something went wrong.'); // defaults to bottom-right
     <h2>Color Configuration</h2>
     <div class="demo-subsection">
       <h3>Override via CSS custom properties</h3>
-      <details class="demo-code" open style="border-top:none; padding-top:0;">
+      <details class="demo-code" data-readonly open style="border-top:none; padding-top:0;">
         <summary>Show code</summary>
         <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 <pre>&lt;!-- Include the stylesheet --&gt;
@@ -4024,7 +4025,7 @@ showToast('danger', 'Something went wrong.'); // defaults to bottom-right
       <p style="font-size:0.8125rem; color:var(--ui-text-muted); margin:0 0 0.75rem;">
         Set <code style="font-size:inherit;">data-theme="dark"</code> on <code style="font-size:inherit;">&lt;html&gt;</code>. The library includes a full set of dark-appropriate variables.
       </p>
-      <details class="demo-code" open style="border-top:none; padding-top:0;">
+      <details class="demo-code" data-readonly open style="border-top:none; padding-top:0;">
       <summary>Show code</summary>
       <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 <pre>&lt;!-- Enable dark mode via data attribute --&gt;
@@ -4046,6 +4047,111 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
       </details>
     </div>
   </div>
+  <div class="demo-section" id="custom-themes">
+    <h2>Custom Themes</h2>
+    <div class="demo-subsection">
+      <h3>Create a theme in a separate CSS file</h3>
+      <p style="font-size:0.8125rem; color:var(--ui-text-muted); margin:0 0 0.75rem;">
+        Define your theme with <code style="font-size:inherit;">[data-ui-theme="name"]</code> selectors. Only override the properties you need &mdash; everything else inherits from the defaults. Hover, active, and light variants are derived automatically via <code style="font-size:inherit;">color-mix()</code>.
+      </p>
+      <details class="demo-code" data-readonly data-lang="css" open style="border-top:none; padding-top:0;">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>/* my-theme.css */
+
+/* Light mode overrides */
+[data-ui-theme="my-theme"] {
+  --ui-primary: #6d28d9;
+  --ui-primary-text: #ffffff;
+  --ui-success: #059669;
+  --ui-danger: #dc2626;
+
+  --ui-bg: #faf5ff;
+  --ui-bg-subtle: #f3e8ff;
+  --ui-surface: #ffffff;
+  --ui-border: #e0c6f5;
+  --ui-text: #2e1065;
+  --ui-text-muted: #7c3aed;
+}
+
+/* Dark mode overrides */
+[data-ui-theme="my-theme"][data-theme="dark"] {
+  --ui-primary: #a78bfa;
+  --ui-primary-text: #ffffff;
+  --ui-success: #34d399;
+  --ui-danger: #fb7185;
+
+  --ui-bg: #1a0533;
+  --ui-bg-subtle: #130425;
+  --ui-surface: #2a1045;
+  --ui-border: #3d1a60;
+  --ui-text: #e9d5ff;
+  --ui-text-muted: #b08adb;
+}</pre>
+      </details>
+    </div>
+    <div class="demo-subsection">
+      <h3>Include &amp; activate</h3>
+      <details class="demo-code" data-readonly open style="border-top:none; padding-top:0;">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;!-- 1. Include after ui.css --&gt;
+&lt;link rel="stylesheet" href="ui.css"&gt;
+&lt;link rel="stylesheet" href="my-theme.css"&gt;
+
+&lt;!-- 2. Activate via attribute --&gt;
+&lt;html data-ui-theme="my-theme"&gt;
+
+&lt;!-- Or toggle via JavaScript --&gt;
+&lt;script&gt;
+// Apply theme
+document.documentElement.setAttribute('data-ui-theme', 'my-theme');
+
+// Revert to default
+document.documentElement.removeAttribute('data-ui-theme');
+&lt;/script&gt;</pre>
+      </details>
+    </div>
+    <div class="demo-subsection">
+      <h3>Available properties</h3>
+      <p style="font-size:0.8125rem; color:var(--ui-text-muted); margin:0 0 0.75rem;">
+        These are the properties you can override in a theme file. All are optional.
+      </p>
+      <details class="demo-code" data-readonly data-lang="css" style="border-top:none; padding-top:0;">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>/* Semantic colors (hover/active/light auto-derived) */
+--ui-primary         --ui-primary-text
+--ui-secondary       --ui-secondary-text
+--ui-success         --ui-success-text
+--ui-danger          --ui-danger-text
+--ui-warning         --ui-warning-text
+
+/* Neutrals */
+--ui-bg              --ui-bg-subtle
+--ui-surface         --ui-border
+--ui-text            --ui-text-muted
+--ui-text-inverse    --ui-overlay
+
+/* Sizing &amp; shape */
+--ui-radius-sm       --ui-radius
+--ui-radius-lg       --ui-radius-full
+
+/* Shadows */
+--ui-shadow-sm       --ui-shadow
+--ui-shadow-lg       --ui-shadow-xl
+
+/* Typography */
+--ui-font            --ui-font-mono
+--ui-font-size       --ui-line-height
+
+/* Misc */
+--ui-tooltip-bg      --ui-tooltip-text
+--ui-select-arrow    --ui-transition</pre>
+      </details>
+    </div>
+  </div>
+
   <div class="demo-section" id="icons">
     <h2>Icons</h2>
     <p style="color:var(--ui-text-muted);margin-bottom:1.5rem">438 built-in icons via CSS <code>mask-image</code>. No icon font, no external dependency. Icons inherit <code>currentColor</code> and scale with <code>font-size</code>.</p>
@@ -4261,6 +4367,7 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
   </div>
 </dialog>
 
+<script src="theme.js"></script>
 <script>
   // Clipboard helper — appends textarea to the dialog if inside one,
   // so showModal() focus trapping doesn't block selection.
@@ -4472,103 +4579,15 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
     });
   }
 
-  // Theme mode: 'system' | 'light' | 'dark'
-  const themeFab = document.getElementById('theme-toggle');
-  const fabIcons = {
-    system: '<i class="ui-icon ui-icon-monitor"></i>',
-    light:  '<i class="ui-icon ui-icon-sun"></i>',
-    dark:   '<i class="ui-icon ui-icon-moon"></i>',
-  };
-  const modeOrder = ['system', 'light', 'dark'];
+  // Sync pickers when theme.js changes the mode (light/dark/system toggle)
+  const isDark = () => document.documentElement.getAttribute('data-theme') === 'dark';
+  defaults = isDark() ? darkDefaults : lightDefaults;
+  syncPickers();
 
-  function resolveMode(mode) {
-    if (mode === 'system') {
-      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    }
-    return mode;
-  }
-
-  function applyMode(mode, preserveCustom) {
-    const isDark = resolveMode(mode) === 'dark';
-    const prevDefaults = defaults;
-    defaults = isDark ? darkDefaults : lightDefaults;
-    if (isDark) {
-      document.documentElement.setAttribute('data-theme', 'dark');
-    } else {
-      document.documentElement.removeAttribute('data-theme');
-    }
-    themeFab.innerHTML = fabIcons[mode];
-    themeFab.title = 'Theme: ' + mode;
-    localStorage.setItem('ui-theme-mode', mode);
-
-    const root = document.documentElement.style;
-    let bgCustomized = false;
-    const computed = getComputedStyle(document.documentElement);
-    Object.keys(defaults).forEach(name => {
-      const picker = document.getElementById(`cfg-${name}`);
-      // Determine the theme's base value from computed style
-      const themeVal = computed.getPropertyValue(`--ui-${name}`).trim();
-      const prevBase = prevDefaults[name];
-      if (preserveCustom && picker.value !== prevBase) {
-        applyColor(name, picker.value);
-        if (name === 'bg') bgCustomized = true;
-      } else {
-        root.removeProperty(`--ui-${name}`);
-        if (semanticColors.includes(name)) {
-          root.removeProperty(`--ui-${name}-text`);
-        }
-      }
-    });
-    if (bgCustomized) {
-      const bgPicker = document.getElementById('cfg-bg');
-      root.setProperty('--ui-surface', bgPicker.value);
-      root.setProperty('--ui-bg-subtle', adjustBgSubtle(bgPicker.value));
-    } else {
-      root.removeProperty('--ui-surface');
-      root.removeProperty('--ui-bg-subtle');
-    }
-    if (preserveCustom) saveCustomColors();
+  new MutationObserver(() => {
+    defaults = isDark() ? darkDefaults : lightDefaults;
     syncPickers();
-  }
-
-  // Initialize
-  const savedMode = localStorage.getItem('ui-theme-mode') || 'system';
-  applyMode(savedMode, false);
-
-  // Restore custom colors from localStorage
-  const savedColors = localStorage.getItem('ui-custom-colors');
-  if (savedColors) {
-    try {
-      const colors = JSON.parse(savedColors);
-      Object.entries(colors).forEach(([name, hex]) => {
-        if (hex !== defaults[name]) {
-          const picker = document.getElementById(`cfg-${name}`);
-          if (picker) {
-            picker.value = hex;
-            applyColor(name, hex);
-          }
-          if (name === 'bg') {
-            document.documentElement.style.setProperty('--ui-surface', hex);
-            document.documentElement.style.setProperty('--ui-bg-subtle', adjustBgSubtle(hex));
-          }
-        }
-      });
-    } catch(e) {}
-  }
-
-  // Follow system changes when in system mode
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-    if ((localStorage.getItem('ui-theme-mode') || 'system') === 'system') {
-      applyMode('system', false);
-    }
-  });
-
-  // Cycle: system → light → dark → system
-  themeFab.addEventListener('click', () => {
-    const current = localStorage.getItem('ui-theme-mode') || 'system';
-    const next = modeOrder[(modeOrder.indexOf(current) + 1) % 3];
-    applyMode(next, true);
-  });
+  }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme', 'data-ui-theme'] });
 
   // Toast demo
   const toastMessages = {
@@ -4969,7 +4988,9 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
     // Make editable with syntax highlighting (unless readonly)
     pre.contentEditable = isReadonly ? 'false' : 'true';
     pre.spellcheck = false;
-    pre.innerHTML = highlightHTML(raw);
+    const lang = details && details.getAttribute('data-lang');
+    const highlighter = lang === 'css' ? highlightCSS : lang === 'js' ? highlightJS : highlightHTML;
+    pre.innerHTML = highlighter(raw);
     if (copyBtn) pre.appendChild(copyBtn);
 
     // Manual undo/redo stack (innerHTML replacement kills browser undo)
@@ -4990,7 +5011,7 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
     }
 
     function setContent(entry) {
-      pre.innerHTML = highlightHTML(entry.text);
+      pre.innerHTML = highlighter(entry.text);
       if (copyBtn) pre.appendChild(copyBtn);
       _restoreCursor(pre, entry.cursor);
       updateDemo(entry.text);
@@ -5003,7 +5024,7 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
       hlTimer = setTimeout(() => {
         const text = getCodeText();
         const pos = _saveCursor(pre);
-        pre.innerHTML = highlightHTML(text);
+        pre.innerHTML = highlighter(text);
         if (copyBtn) pre.appendChild(copyBtn);
         _restoreCursor(pre, pos);
       }, 500);
