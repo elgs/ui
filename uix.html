@@ -1485,7 +1485,7 @@ document.addEventListener('click', e =&gt; {
         item.classList.remove('focused');
         var match = item.textContent.toLowerCase().includes(query);
         item.classList.toggle('hidden', !match);
-        if (match) visible++;
+        if (match) ++visible;
       });
       emptyMsg.style.display = visible === 0 ? 'block' : 'none';
       bar.classList.toggle('has-value', !!input.value);
@@ -1801,7 +1801,7 @@ document.addEventListener('click', e =&gt; {
     pre.addEventListener('input', function() {
       var text = getCodeText();
       var cursor = _saveCursor(pre);
-      undoIdx++;
+      ++undoIdx;
       undoStack.length = undoIdx;
       undoStack.push({ text: text, cursor: cursor });
       updateDemo(text);
@@ -1853,12 +1853,12 @@ document.addEventListener('click', e =&gt; {
         e.preventDefault();
         if (e.shiftKey) {
           if (undoIdx < undoStack.length - 1) {
-            undoIdx++;
+            ++undoIdx;
             setContent(undoStack[undoIdx]);
           }
         } else {
           if (undoIdx > 0) {
-            undoIdx--;
+            --undoIdx;
             setContent(undoStack[undoIdx]);
           }
         }
@@ -1885,7 +1885,7 @@ document.addEventListener('click', e =&gt; {
 
   function updateActiveNav() {
     var current = '';
-    for (var i = 0; i < sections.length; i++) {
+    for (var i = 0; i < sections.length; ++i) {
       if (sections[i].getBoundingClientRect().top <= 100) {
         current = sections[i].id;
       }

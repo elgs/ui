@@ -83,7 +83,7 @@ function filterAutocomplete(id) {
   items.forEach(item => {
     const match = item.textContent.toLowerCase().includes(query);
     item.classList.toggle('hidden', !match);
-    if (match) visible++;
+    if (match) ++visible;
   });
   ac.querySelector('.ui-autocomplete-empty').style.display = visible === 0 ? 'block' : 'none';
   ac.classList.toggle('has-value', !!ac.querySelector('.ui-autocomplete-input').value);

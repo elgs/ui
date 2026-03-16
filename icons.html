@@ -783,7 +783,7 @@
       cat.querySelectorAll('.icon-category-items > span').forEach(function(item) {
         var match = !q || item.textContent.trim().toLowerCase().includes(q);
         item.style.display = match ? '' : 'none';
-        if (match) catVisible++;
+        if (match) ++catVisible;
       });
       cat.style.display = catVisible > 0 ? '' : 'none';
       totalVisible += catVisible;

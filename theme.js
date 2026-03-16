@@ -33,7 +33,7 @@
 
     // Clear previous custom properties
     var names = Object.keys(lightDefaults);
-    for (var i = 0; i < names.length; i++) {
+    for (var i = 0; i < names.length; ++i) {
       root.removeProperty('--ui-' + names[i]);
       if (semanticColors.indexOf(names[i]) !== -1) root.removeProperty('--ui-' + names[i] + '-text');
     }
@@ -49,7 +49,7 @@
       if (saved) {
         var colors = JSON.parse(saved);
         var keys = Object.keys(colors);
-        for (var j = 0; j < keys.length; j++) {
+        for (var j = 0; j < keys.length; ++j) {
           var name = keys[j];
           var hex = colors[name];
           if (hex !== defaults[name]) {
