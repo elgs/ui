@@ -5340,12 +5340,19 @@ document.documentElement.removeAttribute('data-ui-gradient');</pre>
     let undoIdx = 0;
 
     function updateDemo(text) {
-      if (demoTarget) {
-        demoTarget.innerHTML = _sanitize(text);
-      } else if (liveTargetId) {
-        const el = document.getElementById(liveTargetId);
-        if (el) el.innerHTML = _sanitize(text);
+      const target = demoTarget || (liveTargetId && document.getElementById(liveTargetId));
+      if (!target) return;
+      // Extract CSS custom properties from <style> blocks and apply to demo target
+      const styleRe = /<style[\s\S]*?<\/style>/gi;
+      let m;
+      while ((m = styleRe.exec(text)) !== null) {
+        const propRe = /(--[\w-]+)\s*:\s*([^;]+)/g;
+        let p;
+        while ((p = propRe.exec(m[0])) !== null) {
+          target.style.setProperty(p[1].trim(), p[2].trim());
+        }
       }
+      target.innerHTML = _sanitize(text);
       // Re-apply JS-only states lost during DOM rebuild
       const ic = document.getElementById('indeterminate-cb');
       if (ic) ic.indeterminate = true;
