@@ -1,0 +1,50 @@
+/*
+   UI Library Theme — Forest
+
+   Usage:
+   1. Include after ui.css:  <link rel="stylesheet" href="themes/forest.css">
+   2. Activate:              <html data-ui-theme="forest">
+      or via JS:             __uiTheme.setTheme('forest')
+*/
+
+[data-ui-theme="forest"] {
+  --ui-primary: #2d6a4f;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #7a8a6e;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #40916c;
+  --ui-success-text: #ffffff;
+  --ui-danger: #c1121f;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #e09f3e;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #f9faf7;
+  --ui-bg-subtle: #f0f2ec;
+  --ui-surface: #ffffff;
+  --ui-border: #d4dbc8;
+  --ui-text: #1b2a1b;
+  --ui-text-muted: #6b7a60;
+  --ui-text-inverse: #ffffff;
+}
+
+[data-ui-theme="forest"][data-theme="dark"] {
+  --ui-primary: #52b788;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #a3b18a;
+  --ui-secondary-text: #1a1d26;
+  --ui-success: #74c69d;
+  --ui-success-text: #ffffff;
+  --ui-danger: #ff6b6b;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #f4c95d;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #141e14;
+  --ui-bg-subtle: #0c150c;
+  --ui-surface: #1e2e1e;
+  --ui-border: #2e4430;
+  --ui-text: #dce8dc;
+  --ui-text-muted: #8a9e80;
+  --ui-text-inverse: #141e14;
+}

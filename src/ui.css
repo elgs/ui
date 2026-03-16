@@ -28,6 +28,39 @@
 
    Hover, active, and light variants are derived automatically
    via color-mix() — no need to set them manually.
+
+   ============================================
+   Custom Themes
+   ============================================
+
+   Create a separate CSS file for your theme — no need to edit ui.css.
+
+   1. Create a CSS file (e.g. themes/my-theme.css):
+
+      [data-ui-theme="my-theme"] {
+        --ui-primary: #6d28d9;
+        --ui-bg:      #faf5ff;
+        --ui-text:    #2e1065;
+      }
+
+      [data-ui-theme="my-theme"][data-theme="dark"] {
+        --ui-primary: #a78bfa;
+        --ui-bg:      #1a0533;
+        --ui-text:    #e9d5ff;
+      }
+
+   2. Include it after ui.css:
+
+      <link rel="stylesheet" href="ui.css">
+      <link rel="stylesheet" href="themes/my-theme.css">
+
+   3. Activate via HTML attribute or JS:
+
+      <html data-ui-theme="my-theme">
+      __uiTheme.setTheme('my-theme')
+
+   Only override the properties you need. Everything else
+   inherits from the defaults. See src/themes/ for examples.
    ============================================ */
 
 /* Use :root for document-level themes, or :host inside a Shadow DOM component. */

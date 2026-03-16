@@ -1,0 +1,50 @@
+/*
+   UI Library Theme — Rose
+
+   Usage:
+   1. Include after ui.css:  <link rel="stylesheet" href="themes/rose.css">
+   2. Activate:              <html data-ui-theme="rose">
+      or via JS:             __uiTheme.setTheme('rose')
+*/
+
+[data-ui-theme="rose"] {
+  --ui-primary: #be185d;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #a78baa;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #059669;
+  --ui-success-text: #ffffff;
+  --ui-danger: #dc2626;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #d97706;
+  --ui-warning-text: #ffffff;
+
+  --ui-bg: #fdf2f8;
+  --ui-bg-subtle: #fce7f3;
+  --ui-surface: #ffffff;
+  --ui-border: #f0c6d8;
+  --ui-text: #331a28;
+  --ui-text-muted: #9e7089;
+  --ui-text-inverse: #ffffff;
+}
+
+[data-ui-theme="rose"][data-theme="dark"] {
+  --ui-primary: #f472b6;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #c4a8c8;
+  --ui-secondary-text: #1a1d26;
+  --ui-success: #34d399;
+  --ui-success-text: #ffffff;
+  --ui-danger: #fb7185;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #fbbf24;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #1f0a18;
+  --ui-bg-subtle: #170712;
+  --ui-surface: #2e1428;
+  --ui-border: #4a2240;
+  --ui-text: #f0dce8;
+  --ui-text-muted: #b08aa0;
+  --ui-text-inverse: #1f0a18;
+}

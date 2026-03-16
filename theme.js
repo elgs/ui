@@ -40,6 +40,9 @@
     root.removeProperty('--ui-surface');
     root.removeProperty('--ui-bg-subtle');
 
+    // Skip custom color overrides when a named theme is active
+    if (html.getAttribute('data-ui-theme')) return;
+
     // Apply saved custom colors
     try {
       var saved = localStorage.getItem('ui-custom-colors');
@@ -89,6 +92,31 @@
     }
   }
 
+  // Named theme support
+  function setTheme(name) {
+    if (name) {
+      html.setAttribute('data-ui-theme', name);
+    } else {
+      html.removeAttribute('data-ui-theme');
+    }
+    try {
+      localStorage.setItem('ui-theme', name || '');
+      localStorage.removeItem('ui-custom-colors');
+    } catch(e) {}
+    // Re-apply current mode to clear inline overrides
+    applyThemeMode(window.__uiThemeMode || 'system');
+  }
+
+  function getTheme() {
+    return html.getAttribute('data-ui-theme') || '';
+  }
+
+  // Restore saved theme BEFORE applying mode so applyCustomColors sees it
+  try {
+    var savedTheme = localStorage.getItem('ui-theme');
+    if (savedTheme) html.setAttribute('data-ui-theme', savedTheme);
+  } catch(e) {}
+
   // Initialize on load
   var savedMode = 'system';
   try { savedMode = localStorage.getItem('ui-theme-mode') || 'system'; } catch(e) {}
@@ -121,5 +149,7 @@
     lightDefaults: lightDefaults,
     darkDefaults: darkDefaults,
     semanticColors: semanticColors,
+    setTheme: setTheme,
+    getTheme: getTheme,
   };
 })();

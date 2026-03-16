@@ -1,0 +1,58 @@
+/*
+   UI Library Theme — Metal
+
+   Usage:
+   1. Include after ui.css:  <link rel="stylesheet" href="themes/metal.css">
+   2. Activate:              <html data-ui-theme="metal">
+      or via JS:             __uiTheme.setTheme('metal')
+*/
+
+[data-ui-theme="metal"] {
+  --ui-primary: #6b7280;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #9ca3af;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #4ade80;
+  --ui-success-text: #1a1d26;
+  --ui-danger: #f87171;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #fbbf24;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #f3f4f6;
+  --ui-bg-subtle: #e5e7eb;
+  --ui-surface: #ffffff;
+  --ui-border: #c5c9d2;
+  --ui-text: #1f2937;
+  --ui-text-muted: #6b7280;
+  --ui-text-inverse: #ffffff;
+
+  --ui-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.08);
+  --ui-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.08);
+  --ui-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.12), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+[data-ui-theme="metal"][data-theme="dark"] {
+  --ui-primary: #9ca3af;
+  --ui-primary-text: #111218;
+  --ui-secondary: #6b7280;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #4ade80;
+  --ui-success-text: #111218;
+  --ui-danger: #fb7185;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #fbbf24;
+  --ui-warning-text: #111218;
+
+  --ui-bg: #18191d;
+  --ui-bg-subtle: #111218;
+  --ui-surface: #24262c;
+  --ui-border: #3a3d45;
+  --ui-text: #d1d5db;
+  --ui-text-muted: #737982;
+  --ui-text-inverse: #18191d;
+
+  --ui-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --ui-shadow: 0 1px 3px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.4);
+  --ui-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.4);
+}

@@ -7,6 +7,10 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="src/ui.css">
   <link rel="stylesheet" href="src/icons.css">
+  <link rel="stylesheet" href="src/themes/ocean.css">
+  <link rel="stylesheet" href="src/themes/forest.css">
+  <link rel="stylesheet" href="src/themes/rose.css">
+  <link rel="stylesheet" href="src/themes/metal.css">
   <style>
 
     *, *::before, *::after { box-sizing: border-box; }
@@ -282,14 +286,51 @@
     .demo-code pre[contenteditable]:hover:not(:focus) {
       border-color: rgba(255,255,255,0.1);
     }
-    /* Theme toggle */
-    .theme-toggle {
+    /* Theme controls (fixed top-right) */
+    .theme-controls-fixed {
       position: fixed;
       top: 1rem;
       right: 1rem;
       z-index: 100;
-      width: 40px;
-      height: 40px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .theme-bar {
+      display: flex;
+      gap: 0.25rem;
+      padding: 0.25rem;
+      border-radius: var(--ui-radius-full);
+      border: 1px solid var(--ui-border);
+      background: var(--ui-surface);
+      box-shadow: var(--ui-shadow-sm);
+
+      & button {
+        padding: 0.25rem 0.625rem;
+        border-radius: var(--ui-radius-full);
+        border: none;
+        background: transparent;
+        color: var(--ui-text-muted);
+        font-family: var(--ui-font);
+        font-size: 0.75rem;
+        cursor: pointer;
+        transition: background var(--ui-transition), color var(--ui-transition);
+
+        &:hover {
+          color: var(--ui-text);
+        }
+
+        &.active {
+          background: var(--ui-primary);
+          color: var(--ui-primary-text);
+        }
+      }
+    }
+
+    .theme-toggle {
+      width: 36px;
+      height: 36px;
       border-radius: var(--ui-radius-full);
       border: 1px solid var(--ui-border);
       background: var(--ui-surface);
@@ -301,9 +342,10 @@
       font-size: 1.1rem;
       box-shadow: var(--ui-shadow-sm);
       transition: background var(--ui-transition), border-color var(--ui-transition);
-    }
-    .theme-toggle:hover {
-      border-color: var(--ui-primary);
+
+      &:hover {
+        border-color: var(--ui-primary);
+      }
     }
 
     /* Source dialog */
@@ -358,9 +400,18 @@
 </head>
 <body>
 
-<button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Theme: system">
-  <i class="ui-icon ui-icon-monitor"></i>
-</button>
+<div class="theme-controls-fixed">
+  <div class="theme-bar" id="theme-switcher">
+    <button class="active" data-theme-name="">Default</button>
+    <button data-theme-name="ocean">Ocean</button>
+    <button data-theme-name="forest">Forest</button>
+    <button data-theme-name="rose">Rose</button>
+    <button data-theme-name="metal">Metal</button>
+  </div>
+  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Theme: system">
+    <i class="ui-icon ui-icon-monitor"></i>
+  </button>
+</div>
 
 <div class="demo-page">
 
@@ -4366,19 +4417,59 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
 
   const semanticColors = ['primary', 'secondary', 'success', 'danger', 'warning'];
 
+  // Named theme switching
+  const themeSwitcher = document.getElementById('theme-switcher');
+  const themeBtns = themeSwitcher.querySelectorAll('button');
+
+  function switchTheme(name) {
+    if (name) {
+      document.documentElement.setAttribute('data-ui-theme', name);
+    } else {
+      document.documentElement.removeAttribute('data-ui-theme');
+    }
+    localStorage.setItem('ui-theme', name || '');
+    themeBtns.forEach(b => b.classList.toggle('active', b.dataset.themeName === (name || '')));
+    resetTheme();
+  }
+
+  themeBtns.forEach(btn => {
+    btn.addEventListener('click', () => switchTheme(btn.dataset.themeName));
+  });
+
+  // Restore saved theme
+  const savedThemeName = localStorage.getItem('ui-theme') || '';
+  if (savedThemeName) {
+    document.documentElement.setAttribute('data-ui-theme', savedThemeName);
+    themeBtns.forEach(b => b.classList.toggle('active', b.dataset.themeName === savedThemeName));
+  }
+
   function resetTheme() {
     const root = document.documentElement.style;
-    Object.entries(defaults).forEach(([name, hex]) => {
-      document.getElementById(`cfg-${name}`).value = hex;
+    Object.keys(defaults).forEach(name => {
       root.removeProperty(`--ui-${name}`);
       if (semanticColors.includes(name)) {
         root.removeProperty(`--ui-${name}-text`);
       }
     });
-    // Let CSS handle surface/bg-subtle (they differ from --ui-bg in dark mode)
     root.removeProperty('--ui-surface');
     root.removeProperty('--ui-bg-subtle');
     localStorage.removeItem('ui-custom-colors');
+    syncPickers();
+  }
+
+  function syncPickers() {
+    const computed = getComputedStyle(document.documentElement);
+    Object.keys(defaults).forEach(name => {
+      const picker = document.getElementById(`cfg-${name}`);
+      if (picker) {
+        const val = computed.getPropertyValue(`--ui-${name}`).trim();
+        if (val.startsWith('#')) {
+          picker.value = val.length === 4
+            ? '#' + val[1] + val[1] + val[2] + val[2] + val[3] + val[3]
+            : val;
+        }
+      }
+    });
   }
 
   // Theme mode: 'system' | 'light' | 'dark'
@@ -4412,13 +4503,16 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
 
     const root = document.documentElement.style;
     let bgCustomized = false;
-    Object.entries(defaults).forEach(([name, hex]) => {
+    const computed = getComputedStyle(document.documentElement);
+    Object.keys(defaults).forEach(name => {
       const picker = document.getElementById(`cfg-${name}`);
-      if (preserveCustom && picker.value !== prevDefaults[name]) {
+      // Determine the theme's base value from computed style
+      const themeVal = computed.getPropertyValue(`--ui-${name}`).trim();
+      const prevBase = prevDefaults[name];
+      if (preserveCustom && picker.value !== prevBase) {
         applyColor(name, picker.value);
         if (name === 'bg') bgCustomized = true;
       } else {
-        picker.value = hex;
         root.removeProperty(`--ui-${name}`);
         if (semanticColors.includes(name)) {
           root.removeProperty(`--ui-${name}-text`);
@@ -4430,12 +4524,11 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
       root.setProperty('--ui-surface', bgPicker.value);
       root.setProperty('--ui-bg-subtle', adjustBgSubtle(bgPicker.value));
     } else {
-      // Let CSS handle surface/bg-subtle (they differ from --ui-bg in dark mode)
       root.removeProperty('--ui-surface');
       root.removeProperty('--ui-bg-subtle');
     }
-    // Save after all pickers are finalized (only on user-initiated toggle)
     if (preserveCustom) saveCustomColors();
+    syncPickers();
   }
 
   // Initialize

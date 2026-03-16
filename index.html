@@ -7,6 +7,10 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="src/ui.css">
   <link rel="stylesheet" href="src/icons.css">
+  <link rel="stylesheet" href="src/themes/ocean.css">
+  <link rel="stylesheet" href="src/themes/forest.css">
+  <link rel="stylesheet" href="src/themes/rose.css">
+  <link rel="stylesheet" href="src/themes/metal.css">
   <style>
     *, *::before, *::after { box-sizing: border-box; }
     body { margin: 0; font-family: var(--ui-font); color: var(--ui-text); background: var(--ui-bg); -webkit-font-smoothing: antialiased; }
@@ -312,14 +316,51 @@
       font-size: 0.85rem;
     }
 
-    /* ---- Theme toggle ---- */
-    .theme-toggle {
+    /* ---- Theme controls ---- */
+    .theme-controls-fixed {
       position: fixed;
       top: 1rem;
       right: 1rem;
       z-index: 100;
-      width: 40px;
-      height: 40px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .theme-bar {
+      display: flex;
+      gap: 0.25rem;
+      padding: 0.25rem;
+      border-radius: var(--ui-radius-full);
+      border: 1px solid var(--ui-border);
+      background: var(--ui-surface);
+      box-shadow: var(--ui-shadow-sm);
+
+      & button {
+        padding: 0.25rem 0.625rem;
+        border-radius: var(--ui-radius-full);
+        border: none;
+        background: transparent;
+        color: var(--ui-text-muted);
+        font-family: var(--ui-font);
+        font-size: 0.75rem;
+        cursor: pointer;
+        transition: background var(--ui-transition), color var(--ui-transition);
+
+        &:hover {
+          color: var(--ui-text);
+        }
+
+        &.active {
+          background: var(--ui-primary);
+          color: var(--ui-primary-text);
+        }
+      }
+    }
+
+    .theme-toggle {
+      width: 36px;
+      height: 36px;
       border-radius: var(--ui-radius-full);
       border: 1px solid var(--ui-border);
       background: var(--ui-surface);
@@ -331,9 +372,10 @@
       font-size: 1.1rem;
       box-shadow: var(--ui-shadow-sm);
       transition: background var(--ui-transition), border-color var(--ui-transition);
-    }
-    .theme-toggle:hover {
-      border-color: var(--ui-primary);
+
+      &:hover {
+        border-color: var(--ui-primary);
+      }
     }
 
     /* ---- Responsive ---- */
@@ -344,14 +386,25 @@
       .showcase-item { padding: 1rem; }
       .section { padding-left: 1rem; padding-right: 1rem; }
       .hero { min-height: 80vh; padding-left: 1rem; padding-right: 1rem; }
+      .theme-bar { display: none; }
+      .theme-controls-fixed { right: 0.75rem; top: 0.75rem; }
     }
   </style>
 </head>
 <body>
 
-  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Theme: system">
-    <i class="ui-icon ui-icon-monitor"></i>
-  </button>
+  <div class="theme-controls-fixed">
+    <div class="theme-bar" id="theme-bar">
+      <button class="active" data-theme-name="">Default</button>
+      <button data-theme-name="ocean">Ocean</button>
+      <button data-theme-name="forest">Forest</button>
+      <button data-theme-name="rose">Rose</button>
+      <button data-theme-name="metal">Metal</button>
+    </div>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Theme: system">
+      <i class="ui-icon ui-icon-monitor"></i>
+    </button>
+  </div>
 
   <!-- ==================== HERO ==================== -->
   <section class="hero">
@@ -653,5 +706,24 @@
   </footer>
 
   <script src="theme.js"></script>
+  <script>
+    (function() {
+      var bar = document.getElementById('theme-bar');
+      var btns = bar.querySelectorAll('button');
+      var saved = localStorage.getItem('ui-theme') || '';
+
+      btns.forEach(function(b) {
+        if (b.dataset.themeName === saved) {
+          b.classList.add('active');
+        } else if (saved && b.dataset.themeName !== saved) {
+          b.classList.remove('active');
+        }
+        b.addEventListener('click', function() {
+          window.__uiTheme.setTheme(b.dataset.themeName);
+          btns.forEach(function(x) { x.classList.toggle('active', x.dataset.themeName === b.dataset.themeName); });
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
