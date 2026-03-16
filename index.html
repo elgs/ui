@@ -95,26 +95,55 @@
     }
 
     /* ---- Install snippet ---- */
+    .install-snippets {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
     .install-snippet {
       display: inline-flex;
       align-items: center;
+      justify-content: space-between;
       gap: 0.75rem;
+      width: 26rem;
       background: var(--ui-bg-subtle);
       border: 1px solid var(--ui-border);
       border-radius: var(--ui-radius-lg);
       padding: 0.65rem 1rem;
       font-family: var(--ui-font-mono);
       font-size: 0.9rem;
-      margin-top: 1.5rem;
       color: var(--ui-text-muted);
-      cursor: pointer;
-      transition: border-color var(--ui-transition);
     }
-    .install-snippet:hover {
-      border-color: var(--ui-primary);
+    .install-snippet .copy-btn {
+      all: unset;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      padding: 0;
+      border-radius: var(--ui-radius);
+      cursor: pointer;
+      color: var(--ui-text-muted);
+      transition: color var(--ui-transition), background var(--ui-transition), transform var(--ui-transition);
+
+      &:hover {
+        color: var(--ui-primary);
+        background: var(--ui-bg-subtle);
+      }
+      &:active {
+        transform: scale(0.85);
+      }
     }
     .install-snippet code {
       color: var(--ui-text);
+
+      .hl-bracket { color: var(--ui-text-muted); }
+      .hl-tag { color: var(--ui-primary); }
+      .hl-attr { color: var(--ui-warning, #e5a00d); }
+      .hl-string { color: var(--ui-success, #22a06b); }
+      .hl-file { color: var(--ui-success, #22a06b); font-weight: 700; }
     }
 
     /* ---- Sections ---- */
@@ -509,7 +538,7 @@
   <section class="hero">
     <img src="favicon.svg" class="hero-logo" alt="UI CSS">
     <h1>Ship UI with <span class="gradient">one CSS file</span></h1>
-    <p>31 components. 23 themes. Dark mode. Gradient mode. Zero JavaScript. Zero dependencies. Works with every framework — or none at all.</p>
+    <p>Or 2 with icons. 31 components. 23 themes. Dark mode. Gradient mode. Zero JavaScript. Zero dependencies. Works with every framework — or none at all.</p>
     <div class="hero-actions">
       <a href="ui.html" class="ui-btn lg">
         <i class="ui-icon ui-icon-grid"></i> Browse Components
@@ -518,9 +547,15 @@
         <i class="ui-icon ui-icon-github"></i> GitHub
       </a>
     </div>
-    <div class="install-snippet" onclick="navigator.clipboard.writeText('&lt;link rel=&quot;stylesheet&quot; href=&quot;ui.css&quot;&gt;')">
-      <code>&lt;link rel="stylesheet" href="<strong>ui.css</strong>"&gt;</code>
-      <i class="ui-icon ui-icon-copy" style="font-size:0.85rem"></i>
+    <div class="install-snippets">
+      <div class="install-snippet" data-copy='<link rel="stylesheet" href="ui.css">'>
+        <code><span class="hl-bracket">&lt;</span><span class="hl-tag">link</span> <span class="hl-attr">rel</span>=<span class="hl-string">"stylesheet"</span> <span class="hl-attr">href</span>=<span class="hl-string">"<span class="hl-file">ui.css</span>"</span><span class="hl-bracket">&gt;</span></code>
+        <button class="copy-btn"><i class="ui-icon ui-icon-copy"></i></button>
+      </div>
+      <div class="install-snippet" data-copy='<link rel="stylesheet" href="icons.css">'>
+        <code><span class="hl-bracket">&lt;</span><span class="hl-tag">link</span> <span class="hl-attr">rel</span>=<span class="hl-string">"stylesheet"</span> <span class="hl-attr">href</span>=<span class="hl-string">"<span class="hl-file">icons.css</span>"</span><span class="hl-bracket">&gt;</span></code>
+        <button class="copy-btn"><i class="ui-icon ui-icon-copy"></i></button>
+      </div>
     </div>
   </section>
 
@@ -528,8 +563,8 @@
   <div class="section" style="padding-top:0">
     <div class="stats">
       <div class="stat">
-        <div class="stat-value">1</div>
-        <div class="stat-label">Single CSS file</div>
+        <div class="stat-value">2</div>
+        <div class="stat-label">CSS files with icons</div>
       </div>
       <div class="stat">
         <div class="stat-value">31</div>
@@ -932,6 +967,25 @@
         localStorage.setItem('ui-gradient', on ? '1' : '0');
       });
     })();
+  </script>
+  <script>
+    document.querySelectorAll('.install-snippet[data-copy]').forEach(function(el) {
+      el.querySelector('.copy-btn').addEventListener('click', function() {
+        var text = el.dataset.copy;
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text);
+        } else {
+          var ta = document.createElement('textarea');
+          ta.value = text;
+          ta.style.position = 'fixed';
+          ta.style.opacity = '0';
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+        }
+      });
+    });
   </script>
 </body>
 </html>
