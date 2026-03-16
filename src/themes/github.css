@@ -1,0 +1,52 @@
+/*
+   UI Library Theme — GitHub
+
+   Usage:
+   1. Include after ui.css:  <link rel="stylesheet" href="themes/github.css">
+   2. Activate:              <html data-ui-theme="github">
+      or via JS:             __uiTheme.setTheme('github')
+
+   Clean, professional palette inspired by GitHub's Primer design system.
+*/
+
+[data-ui-theme="github"] {
+  --ui-primary: #0969da;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #6e7781;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #1a7f37;
+  --ui-success-text: #ffffff;
+  --ui-danger: #cf222e;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #9a6700;
+  --ui-warning-text: #ffffff;
+
+  --ui-bg: #f6f8fa;
+  --ui-bg-subtle: #eaeef2;
+  --ui-surface: #ffffff;
+  --ui-border: #d1d9e0;
+  --ui-text: #1f2328;
+  --ui-text-muted: #656d76;
+  --ui-text-inverse: #ffffff;
+}
+
+[data-ui-theme="github"][data-theme="dark"] {
+  --ui-primary: #4493f8;
+  --ui-primary-text: #0d1117;
+  --ui-secondary: #8b949e;
+  --ui-secondary-text: #0d1117;
+  --ui-success: #3fb950;
+  --ui-success-text: #0d1117;
+  --ui-danger: #f85149;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #d29922;
+  --ui-warning-text: #0d1117;
+
+  --ui-bg: #0d1117;
+  --ui-bg-subtle: #010409;
+  --ui-surface: #161b22;
+  --ui-border: #30363d;
+  --ui-text: #e6edf3;
+  --ui-text-muted: #8b949e;
+  --ui-text-inverse: #0d1117;
+}
