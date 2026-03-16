@@ -1469,6 +1469,7 @@ document.addEventListener('click', e =&gt; {
 </dialog>
 
 <script src="theme.js"></script>
+<script src="shared.js"></script>
 <script>
   // Theme bar
   (function() {
@@ -1600,34 +1601,6 @@ document.addEventListener('click', e =&gt; {
       localStorage.setItem('ui-gradient', on ? '1' : '0');
     });
   })();
-
-  // Copy helpers
-  function copyText(text, btn) {
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      return navigator.clipboard.writeText(text);
-    }
-    var ta = document.createElement('textarea');
-    ta.value = text;
-    ta.style.cssText = 'position:fixed;left:-9999px';
-    document.body.appendChild(ta);
-    ta.focus(); ta.select();
-    document.execCommand('copy');
-    document.body.removeChild(ta);
-    return Promise.resolve();
-  }
-
-  function copyCode(btn) {
-    var pre = btn.closest('pre') || btn.closest('.demo-code').querySelector('pre');
-    var parent = btn.parentNode;
-    var next = btn.nextSibling;
-    btn.remove();
-    var text = pre.textContent;
-    if (parent) parent.insertBefore(btn, next);
-    copyText(text, btn).then(function() {
-      btn.textContent = 'Copied!';
-      setTimeout(function() { btn.textContent = 'Copy'; }, 1500);
-    });
-  }
 
   // ── Syntax highlighting & live editor ──
 
