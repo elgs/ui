@@ -1,0 +1,52 @@
+/*
+   UI Library Theme — Sky
+
+   Usage:
+   1. Include after ui.css:  <link rel="stylesheet" href="themes/sky.css">
+   2. Activate:              <html data-ui-theme="sky">
+      or via JS:             __uiTheme.setTheme('sky')
+
+   Clear sky blue — light, airy, and open.
+*/
+
+[data-ui-theme="sky"] {
+  --ui-primary: #38a8e8;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #7a9cb0;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #34b870;
+  --ui-success-text: #ffffff;
+  --ui-danger: #e84860;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #f0a830;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #f5fbff;
+  --ui-bg-subtle: #e8f4fc;
+  --ui-surface: #ffffff;
+  --ui-border: #c0dcea;
+  --ui-text: #152838;
+  --ui-text-muted: #608098;
+  --ui-text-inverse: #ffffff;
+}
+
+[data-ui-theme="sky"][data-theme="dark"] {
+  --ui-primary: #5cc0f0;
+  --ui-primary-text: #1a1d26;
+  --ui-secondary: #90b0c4;
+  --ui-secondary-text: #1a1d26;
+  --ui-success: #50d88a;
+  --ui-success-text: #1a1d26;
+  --ui-danger: #f07080;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #f8c048;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #0a1620;
+  --ui-bg-subtle: #060e16;
+  --ui-surface: #142030;
+  --ui-border: #243848;
+  --ui-text: #dce8f0;
+  --ui-text-muted: #7898b0;
+  --ui-text-inverse: #0a1620;
+}

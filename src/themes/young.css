@@ -1,0 +1,52 @@
+/*
+   UI Library Theme — Young
+
+   Usage:
+   1. Include after ui.css:  <link rel="stylesheet" href="themes/young.css">
+   2. Activate:              <html data-ui-theme="young">
+      or via JS:             __uiTheme.setTheme('young')
+
+   Vibrant orange & energetic — fresh and youthful.
+*/
+
+[data-ui-theme="young"] {
+  --ui-primary: #f27a1a;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #8a8a9a;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #2dba4e;
+  --ui-success-text: #ffffff;
+  --ui-danger: #e53e3e;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #eab308;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #fffaf5;
+  --ui-bg-subtle: #fff2e8;
+  --ui-surface: #ffffff;
+  --ui-border: #f0d8c0;
+  --ui-text: #2a1a0e;
+  --ui-text-muted: #8a7060;
+  --ui-text-inverse: #ffffff;
+}
+
+[data-ui-theme="young"][data-theme="dark"] {
+  --ui-primary: #ff8c2e;
+  --ui-primary-text: #1a1d26;
+  --ui-secondary: #9a9aaa;
+  --ui-secondary-text: #1a1d26;
+  --ui-success: #48d068;
+  --ui-success-text: #1a1d26;
+  --ui-danger: #ff6b6b;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #fbbf24;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #1a1208;
+  --ui-bg-subtle: #120c04;
+  --ui-surface: #2a1e10;
+  --ui-border: #483418;
+  --ui-text: #f5e8d8;
+  --ui-text-muted: #b09070;
+  --ui-text-inverse: #1a1208;
+}

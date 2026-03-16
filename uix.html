@@ -27,6 +27,10 @@
 
   <link rel="stylesheet" href="src/themes/wood.css">
   <link rel="stylesheet" href="src/themes/olive.css">
+  <link rel="stylesheet" href="src/themes/young.css">
+  <link rel="stylesheet" href="src/themes/midnight.css">
+  <link rel="stylesheet" href="src/themes/sunflower.css">
+  <link rel="stylesheet" href="src/themes/sky.css">
 
   <link rel="stylesheet" href="src/uix.css">
   <style>
@@ -163,7 +167,7 @@
     }
 
     [data-ui-gradient] #gradient-toggle {
-      background: linear-gradient(135deg, var(--ui-primary), var(--ui-primary-hover));
+      background: linear-gradient(315deg, var(--ui-primary), var(--ui-primary-hover));
     }
 
     #source-dialog {
@@ -321,65 +325,75 @@
       <button class="ui-dropdown-item" data-theme="ocean">
         <span class="theme-swatch" style="background:#0077b6"></span> Ocean
       </button>
-      <button class="ui-dropdown-item" data-theme="forest">
-        <span class="theme-swatch" style="background:#2d6a4f"></span> Forest
-      </button>
-      <button class="ui-dropdown-item" data-theme="rose">
-        <span class="theme-swatch" style="background:#be185d"></span> Rose
-      </button>
-      <button class="ui-dropdown-item" data-theme="metal">
-        <span class="theme-swatch" style="background:#7a8694"></span> Metal
-      </button>
-      <button class="ui-dropdown-item" data-theme="desert">
-        <span class="theme-swatch" style="background:#c2703e"></span> Desert
-      </button>
       <button class="ui-dropdown-item" data-theme="neptune">
         <span class="theme-swatch" style="background:#1b3a8c"></span> Neptune
       </button>
-      <button class="ui-dropdown-item" data-theme="saturn">
-        <span class="theme-swatch" style="background:#b8860b"></span> Saturn
-      </button>
-      <button class="ui-dropdown-item" data-theme="jupiter">
-        <span class="theme-swatch" style="background:#a0522d"></span> Jupiter
-      </button>
-      <button class="ui-dropdown-item" data-theme="mars">
-        <span class="theme-swatch" style="background:#b03020"></span> Mars
+      <button class="ui-dropdown-item" data-theme="midnight">
+        <span class="theme-swatch" style="background:#4338ca"></span> Midnight
       </button>
       <button class="ui-dropdown-item" data-theme="nord">
         <span class="theme-swatch" style="background:#5e81ac"></span> Nord
       </button>
-      <button class="ui-dropdown-item" data-theme="mercury">
-        <span class="theme-swatch" style="background:#6a6e78"></span> Mercury
+      <button class="ui-dropdown-item" data-theme="ice">
+        <span class="theme-swatch" style="background:#0891b2"></span> Ice
       </button>
-      <button class="ui-dropdown-item" data-theme="gold">
-        <span class="theme-swatch" style="background:#b8962e"></span> Gold
+      <button class="ui-dropdown-item" data-theme="sky">
+        <span class="theme-swatch" style="background:#38a8e8"></span> Sky
+      </button>
+      <button class="ui-dropdown-item" data-theme="metal">
+        <span class="theme-swatch" style="background:#7a8694"></span> Metal
       </button>
       <button class="ui-dropdown-item" data-theme="silver">
         <span class="theme-swatch" style="background:#6e7a88"></span> Silver
       </button>
-      <button class="ui-dropdown-item" data-theme="copper">
-        <span class="theme-swatch" style="background:#b06838"></span> Copper
+      <button class="ui-dropdown-item" data-theme="mercury">
+        <span class="theme-swatch" style="background:#6a6e78"></span> Mercury
       </button>
-      <button class="ui-dropdown-item" data-theme="fire">
-        <span class="theme-swatch" style="background:#d94e10"></span> Fire
-      </button>
-      <button class="ui-dropdown-item" data-theme="ice">
-        <span class="theme-swatch" style="background:#0891b2"></span> Ice
-      </button>
-
-
-      <button class="ui-dropdown-item" data-theme="wood">
-        <span class="theme-swatch" style="background:#7a5230"></span> Wood
+      <button class="ui-dropdown-item" data-theme="forest">
+        <span class="theme-swatch" style="background:#2d6a4f"></span> Forest
       </button>
       <button class="ui-dropdown-item" data-theme="olive">
         <span class="theme-swatch" style="background:#6b7a2e"></span> Olive
       </button>
+      <button class="ui-dropdown-item" data-theme="sunflower">
+        <span class="theme-swatch" style="background:#e6b800"></span> Sunflower
+      </button>
+      <button class="ui-dropdown-item" data-theme="gold">
+        <span class="theme-swatch" style="background:#b8962e"></span> Gold
+      </button>
+      <button class="ui-dropdown-item" data-theme="saturn">
+        <span class="theme-swatch" style="background:#b8860b"></span> Saturn
+      </button>
+      <button class="ui-dropdown-item" data-theme="desert">
+        <span class="theme-swatch" style="background:#c2703e"></span> Desert
+      </button>
+      <button class="ui-dropdown-item" data-theme="wood">
+        <span class="theme-swatch" style="background:#7a5230"></span> Wood
+      </button>
+      <button class="ui-dropdown-item" data-theme="copper">
+        <span class="theme-swatch" style="background:#b06838"></span> Copper
+      </button>
+      <button class="ui-dropdown-item" data-theme="jupiter">
+        <span class="theme-swatch" style="background:#a0522d"></span> Jupiter
+      </button>
+      <button class="ui-dropdown-item" data-theme="young">
+        <span class="theme-swatch" style="background:#f27a1a"></span> Young
+      </button>
+      <button class="ui-dropdown-item" data-theme="fire">
+        <span class="theme-swatch" style="background:#d94e10"></span> Fire
+      </button>
+      <button class="ui-dropdown-item" data-theme="mars">
+        <span class="theme-swatch" style="background:#b03020"></span> Mars
+      </button>
+      <button class="ui-dropdown-item" data-theme="rose">
+        <span class="theme-swatch" style="background:#be185d"></span> Rose
+      </button>
 
     </div>
   </div>
-  <button class="theme-toggle" id="gradient-toggle" aria-label="Toggle gradient" title="Toggle gradient">
+  <button class="theme-toggle ui-tooltip bottom" id="gradient-toggle" aria-label="Toggle gradient" data-tooltip="Gradient">
       </button>
-  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Theme: system">
+  <button class="theme-toggle ui-tooltip bottom" id="theme-toggle" aria-label="Toggle theme" data-tooltip="Theme: system">
     <i class="ui-icon ui-icon-monitor"></i>
   </button>
 </div>
@@ -1453,11 +1467,9 @@ document.addEventListener('click', e =&gt; {
     var btn = document.getElementById('gradient-toggle');
     if (localStorage.getItem('ui-gradient') === '1') {
       document.documentElement.setAttribute('data-ui-gradient', '');
-      btn.classList.add('active');
     }
     btn.addEventListener('click', function() {
       var on = document.documentElement.toggleAttribute('data-ui-gradient');
-      btn.classList.toggle('active', on);
       localStorage.setItem('ui-gradient', on ? '1' : '0');
     });
   })();

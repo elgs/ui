@@ -1,0 +1,52 @@
+/*
+   UI Library Theme — Sunflower
+
+   Usage:
+   1. Include after ui.css:  <link rel="stylesheet" href="themes/sunflower.css">
+   2. Activate:              <html data-ui-theme="sunflower">
+      or via JS:             __uiTheme.setTheme('sunflower')
+
+   Warm yellow & golden — bright and cheerful like a sunflower field.
+*/
+
+[data-ui-theme="sunflower"] {
+  --ui-primary: #e6b800;
+  --ui-primary-text: #1a1d26;
+  --ui-secondary: #8a7a58;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #4a9e3a;
+  --ui-success-text: #ffffff;
+  --ui-danger: #d94040;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #e88c10;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #fffef5;
+  --ui-bg-subtle: #fdf8e8;
+  --ui-surface: #ffffff;
+  --ui-border: #e8ddb8;
+  --ui-text: #2a2410;
+  --ui-text-muted: #887a50;
+  --ui-text-inverse: #ffffff;
+}
+
+[data-ui-theme="sunflower"][data-theme="dark"] {
+  --ui-primary: #ffd000;
+  --ui-primary-text: #1a1d26;
+  --ui-secondary: #a8986a;
+  --ui-secondary-text: #1a1d26;
+  --ui-success: #68b858;
+  --ui-success-text: #1a1d26;
+  --ui-danger: #f06060;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #f0a028;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #18150a;
+  --ui-bg-subtle: #100e06;
+  --ui-surface: #282210;
+  --ui-border: #403818;
+  --ui-text: #f0ecd0;
+  --ui-text-muted: #a09868;
+  --ui-text-inverse: #18150a;
+}

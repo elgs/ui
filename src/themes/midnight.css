@@ -1,0 +1,52 @@
+/*
+   UI Library Theme — Midnight
+
+   Usage:
+   1. Include after ui.css:  <link rel="stylesheet" href="themes/midnight.css">
+   2. Activate:              <html data-ui-theme="midnight">
+      or via JS:             __uiTheme.setTheme('midnight')
+
+   Deep indigo & violet — the quiet hours after dark.
+*/
+
+[data-ui-theme="midnight"] {
+  --ui-primary: #4338ca;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #7c7aa0;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #22c55e;
+  --ui-success-text: #ffffff;
+  --ui-danger: #ef4444;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #eab308;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #f5f3ff;
+  --ui-bg-subtle: #ede9fe;
+  --ui-surface: #ffffff;
+  --ui-border: #d4c8f0;
+  --ui-text: #1e1340;
+  --ui-text-muted: #6e60a0;
+  --ui-text-inverse: #ffffff;
+}
+
+[data-ui-theme="midnight"][data-theme="dark"] {
+  --ui-primary: #818cf8;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #9a98c0;
+  --ui-secondary-text: #1a1d26;
+  --ui-success: #4ade80;
+  --ui-success-text: #1a1d26;
+  --ui-danger: #fb7185;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #fbbf24;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #0e0a1a;
+  --ui-bg-subtle: #080510;
+  --ui-surface: #1a1430;
+  --ui-border: #2e2450;
+  --ui-text: #e4e0f0;
+  --ui-text-muted: #8880b0;
+  --ui-text-inverse: #0e0a1a;
+}

@@ -88,7 +88,7 @@
     var btn = document.getElementById('theme-toggle');
     if (btn) {
       btn.innerHTML = themeIcons[mode] || themeIcons.system;
-      btn.title = 'Theme: ' + mode;
+      btn.setAttribute('data-tooltip', 'Theme: ' + mode);
     }
   }
 

@@ -1263,18 +1263,18 @@
   /* --- Timeline (solid) --- */
 
   & .ui-timeline-item .ui-timeline-dot.solid {
-    background: linear-gradient(135deg, var(--ui-primary), var(--ui-primary-hover));
+    background: linear-gradient(315deg, var(--ui-primary), var(--ui-primary-hover));
 
     &.success {
-      background: linear-gradient(135deg, var(--ui-success), var(--ui-success-hover));
+      background: linear-gradient(315deg, var(--ui-success), var(--ui-success-hover));
     }
 
     &.danger {
-      background: linear-gradient(135deg, var(--ui-danger), var(--ui-danger-hover));
+      background: linear-gradient(315deg, var(--ui-danger), var(--ui-danger-hover));
     }
 
     &.warning {
-      background: linear-gradient(135deg, var(--ui-warning), var(--ui-warning-hover));
+      background: linear-gradient(315deg, var(--ui-warning), var(--ui-warning-hover));
     }
   }
 
@@ -1282,7 +1282,7 @@
 
   & .ui-step.completed {
     & .ui-step-indicator {
-      background: linear-gradient(135deg, var(--ui-primary), var(--ui-primary-hover));
+      background: linear-gradient(315deg, var(--ui-primary), var(--ui-primary-hover));
     }
 
     &::after {
@@ -1293,10 +1293,10 @@
   /* --- Chat --- */
 
   & .ui-chat-avatar[data-initial] {
-    background: linear-gradient(135deg, var(--ui-primary), var(--ui-primary-hover));
+    background: linear-gradient(315deg, var(--ui-primary), var(--ui-primary-hover));
   }
 
   & .ui-chat-message.sent .ui-chat-bubble {
-    background: linear-gradient(135deg, var(--ui-primary), var(--ui-primary-hover));
+    background: linear-gradient(315deg, var(--ui-primary), var(--ui-primary-hover));
   }
 }
