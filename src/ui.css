@@ -195,6 +195,10 @@
    Base reset for library elements
    ============================================ */
 
+[class*="ui-"] {
+  box-sizing: border-box;
+}
+
 .ui-btn,
 .ui-input,
 .ui-select,
@@ -202,7 +206,6 @@
   font-family: var(--ui-font);
   font-size: var(--ui-font-size);
   line-height: var(--ui-line-height);
-  box-sizing: border-box;
 }
 
 /* ============================================
