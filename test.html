@@ -92,7 +92,7 @@ document.addEventListener('keydown', e => {
     ac.querySelector('.ui-autocomplete-input').value = '';
     ac.classList.remove('has-value', 'open');
     ac.querySelectorAll('.ui-dropdown-item').forEach(i => i.classList.remove('hidden', 'focused'));
-    ac.querySelector('.ui-autocomplete-empty').style.display = 'none';
+    ac.querySelector('.ui-autocomplete-empty').classList.remove('visible');
     return;
   }
 

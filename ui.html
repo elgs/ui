@@ -1207,7 +1207,7 @@ function filterAutocomplete(id) {
     item.classList.toggle('hidden', !match);
     if (match) ++visible;
   });
-  ac.querySelector('.ui-autocomplete-empty').style.display = visible === 0 ? 'block' : 'none';
+  ac.querySelector('.ui-autocomplete-empty').classList.toggle('visible', visible === 0);
   ac.querySelectorAll('.ui-dropdown-item.focused').forEach(i =&gt; i.classList.remove('focused'));
   ac.classList.toggle('has-value', !!ac.querySelector('.ui-autocomplete-input').value);
   ac.classList.add('open');
@@ -1231,7 +1231,7 @@ function clearAutocomplete(btn) {
   input.value = '';
   ac.classList.remove('has-value');
   ac.querySelectorAll('.ui-dropdown-item').forEach(i =&gt; i.classList.remove('hidden', 'focused', 'selected'));
-  ac.querySelector('.ui-autocomplete-empty').style.display = 'none';
+  ac.querySelector('.ui-autocomplete-empty').classList.remove('visible');
   ac.classList.remove('open');
 }
 
@@ -1251,7 +1251,7 @@ document.addEventListener('keydown', e =&gt; {
     ac.querySelector('.ui-autocomplete-input').value = '';
     ac.classList.remove('has-value', 'open');
     ac.querySelectorAll('.ui-dropdown-item').forEach(i =&gt; i.classList.remove('hidden', 'focused'));
-    ac.querySelector('.ui-autocomplete-empty').style.display = 'none';
+    ac.querySelector('.ui-autocomplete-empty').classList.remove('visible');
     return;
   }
 
@@ -1397,7 +1397,7 @@ function filterAutocomplete(id) {
     item.classList.toggle('hidden', !match);
     if (match) ++visible;
   });
-  ac.querySelector('.ui-autocomplete-empty').style.display = visible === 0 ? 'block' : 'none';
+  ac.querySelector('.ui-autocomplete-empty').classList.toggle('visible', visible === 0);
   ac.classList.toggle('has-value', !!ac.querySelector('.ui-autocomplete-input').value);
   ac.classList.add('open');
 }
@@ -1418,7 +1418,7 @@ function clearAutocomplete(btn) {
   input.value = '';
   ac.classList.remove('has-value');
   ac.querySelectorAll('.ui-dropdown-item').forEach(i =&gt; i.classList.remove('hidden', 'focused', 'selected'));
-  ac.querySelector('.ui-autocomplete-empty').style.display = 'none';
+  ac.querySelector('.ui-autocomplete-empty').classList.remove('visible');
   ac.classList.remove('open');
 }
 
@@ -1438,7 +1438,7 @@ document.addEventListener('keydown', e =&gt; {
     ac.querySelector('.ui-autocomplete-input').value = '';
     ac.classList.remove('has-value', 'open');
     ac.querySelectorAll('.ui-dropdown-item').forEach(i =&gt; i.classList.remove('hidden', 'focused'));
-    ac.querySelector('.ui-autocomplete-empty').style.display = 'none';
+    ac.querySelector('.ui-autocomplete-empty').classList.remove('visible');
     return;
   }
 
@@ -4835,7 +4835,7 @@ document.documentElement.removeAttribute('data-ui-gradient');</pre>
       item.classList.toggle('hidden', !match);
       if (match) ++visible;
     });
-    themeEmpty.style.display = visible === 0 ? 'block' : 'none';
+    themeEmpty.classList.toggle('visible', visible === 0);
     themeSwitcher.classList.add('open');
   }
 
@@ -4852,7 +4852,7 @@ document.documentElement.removeAttribute('data-ui-gradient');</pre>
     themeInput.value = name ? name.charAt(0).toUpperCase() + name.slice(1) : 'Default';
     themeSwitcher.classList.toggle('has-value', !!name);
     themeItems.forEach(item => item.classList.remove('hidden', 'focused'));
-    themeEmpty.style.display = 'none';
+    themeEmpty.classList.remove('visible');
     themeSwitcher.classList.remove('open');
     resetTheme();
   }
@@ -4967,7 +4967,7 @@ document.documentElement.removeAttribute('data-ui-gradient');</pre>
       themeInput.value = t ? t.charAt(0).toUpperCase() + t.slice(1) : '';
       themeSwitcher.classList.toggle('has-value', !!t);
       themeItems.forEach(item => item.classList.remove('hidden'));
-      themeEmpty.style.display = 'none';
+      themeEmpty.classList.remove('visible');
     }
   });
 
@@ -4988,7 +4988,7 @@ document.documentElement.removeAttribute('data-ui-gradient');</pre>
       input.value = '';
       ac.classList.remove('has-value');
       ac.querySelectorAll('.ui-dropdown-item').forEach(i => i.classList.remove('hidden', 'selected'));
-      ac.querySelector('.ui-autocomplete-empty').style.display = 'none';
+      ac.querySelector('.ui-autocomplete-empty').classList.remove('visible');
       return;
     }
 

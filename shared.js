@@ -77,7 +77,7 @@ function filterAutocomplete(id) {
     item.classList.toggle('hidden', !match);
     if (match) ++visible;
   });
-  ac.querySelector('.ui-autocomplete-empty').style.display = visible === 0 ? 'block' : 'none';
+  ac.querySelector('.ui-autocomplete-empty').classList.toggle('visible', visible === 0);
   acClearFocus(ac);
   ac.classList.add('open');
 }
@@ -99,7 +99,7 @@ function clearAutocomplete(btn) {
   input.value = '';
   ac.classList.remove('has-value');
   ac.querySelectorAll('.ui-dropdown-item').forEach(i => i.classList.remove('hidden', 'focused', 'selected'));
-  ac.querySelector('.ui-autocomplete-empty').style.display = 'none';
+  ac.querySelector('.ui-autocomplete-empty').classList.remove('visible');
   ac.classList.remove('open');
   input.focus();
 }

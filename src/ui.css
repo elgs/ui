@@ -2100,6 +2100,10 @@
     color: var(--ui-text-muted);
     text-align: center;
     display: none;
+
+    &.visible {
+      display: block;
+    }
   }
 }
 

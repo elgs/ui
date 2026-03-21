@@ -1488,7 +1488,7 @@ document.addEventListener('click', e =&gt; {
         item.classList.toggle('hidden', !match);
         if (match) ++visible;
       });
-      emptyMsg.style.display = visible === 0 ? 'block' : 'none';
+      emptyMsg.classList.toggle('visible', visible === 0);
       bar.classList.toggle('has-value', !!input.value);
       bar.classList.add('open');
     }
@@ -1501,7 +1501,7 @@ document.addEventListener('click', e =&gt; {
       input.value = name ? name.charAt(0).toUpperCase() + name.slice(1) : 'Default';
       bar.classList.toggle('has-value', !!name);
       items.forEach(function(item) { item.classList.remove('hidden', 'focused'); });
-      emptyMsg.style.display = 'none';
+      emptyMsg.classList.remove('visible');
       bar.classList.remove('open');
     }
 
@@ -1528,7 +1528,7 @@ document.addEventListener('click', e =&gt; {
         items.forEach(function(item) { item.classList.remove('focused', 'hidden'); });
         input.value = '';
         bar.classList.remove('has-value', 'open');
-        emptyMsg.style.display = 'none';
+        emptyMsg.classList.remove('visible');
         return;
       }
 
@@ -1585,7 +1585,7 @@ document.addEventListener('click', e =&gt; {
         input.value = t ? t.charAt(0).toUpperCase() + t.slice(1) : '';
         bar.classList.toggle('has-value', !!t);
         items.forEach(function(item) { item.classList.remove('hidden', 'focused'); });
-        emptyMsg.style.display = 'none';
+        emptyMsg.classList.remove('visible');
       }
     });
   })();
