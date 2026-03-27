@@ -548,11 +548,11 @@
       </a>
     </div>
     <div class="install-snippets">
-      <div class="install-snippet" data-copy='<link rel="stylesheet" href="ui.css">'>
+      <div class="install-snippet" data-cdn-file="ui.css">
         <code><span class="hl-bracket">&lt;</span><span class="hl-tag">link</span> <span class="hl-attr">rel</span>=<span class="hl-string">"stylesheet"</span> <span class="hl-attr">href</span>=<span class="hl-string">"<span class="hl-file">ui.css</span>"</span><span class="hl-bracket">&gt;</span></code>
         <button class="copy-btn"><i class="ui-icon ui-icon-copy"></i></button>
       </div>
-      <div class="install-snippet" data-copy='<link rel="stylesheet" href="icons.css">'>
+      <div class="install-snippet" data-cdn-file="icons.css">
         <code><span class="hl-bracket">&lt;</span><span class="hl-tag">link</span> <span class="hl-attr">rel</span>=<span class="hl-string">"stylesheet"</span> <span class="hl-attr">href</span>=<span class="hl-string">"<span class="hl-file">icons.css</span>"</span><span class="hl-bracket">&gt;</span></code>
         <button class="copy-btn"><i class="ui-icon ui-icon-copy"></i></button>
       </div>
@@ -979,9 +979,10 @@
     })();
   </script>
   <script>
-    document.querySelectorAll('.install-snippet[data-copy]').forEach(function(el) {
-      el.querySelector('.copy-btn').addEventListener('click', function() {
-        var text = el.dataset.copy;
+    (function() {
+      var cdnBase = 'https://cdn.jsdelivr.net/gh/elgs/ui@';
+
+      function copyText(text) {
         if (navigator.clipboard && navigator.clipboard.writeText) {
           navigator.clipboard.writeText(text);
         } else {
@@ -994,8 +995,26 @@
           document.execCommand('copy');
           document.body.removeChild(ta);
         }
+      }
+
+      function updateSnippets(version) {
+        document.querySelectorAll('.install-snippet[data-cdn-file]').forEach(function(el) {
+          var file = el.dataset.cdnFile;
+          var url = cdnBase + version + '/src/' + file;
+          el.dataset.copy = '<link rel="stylesheet" href="' + url + '">';
+        });
+      }
+
+      document.querySelectorAll('.install-snippet[data-cdn-file]').forEach(function(el) {
+        el.querySelector('.copy-btn').addEventListener('click', function() {
+          copyText(el.dataset.copy);
+        });
       });
-    });
+
+      fetch('version.json')
+        .then(function(res) { return res.json(); })
+        .then(function(data) { updateSnippets(data.version); });
+    })();
   </script>
 </body>
 </html>
