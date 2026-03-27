@@ -4,6 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UI CSS — One file. Every component. Any framework.</title>
+  <meta name="description" content="A pure CSS component library that works with any framework. One file, every component, fully customizable with CSS custom properties.">
+  <link rel="canonical" href="https://uilib.dev/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://uilib.dev/">
+  <meta property="og:title" content="UI CSS — One file. Every component. Any framework.">
+  <meta property="og:description" content="A pure CSS component library that works with any framework. One file, every component, fully customizable with CSS custom properties.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="UI CSS — One file. Every component. Any framework.">
+  <meta name="twitter:description" content="A pure CSS component library that works with any framework. One file, every component, fully customizable with CSS custom properties.">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="src/ui.css">
   <link rel="stylesheet" href="src/icons.css">
@@ -96,18 +105,17 @@
 
     /* ---- Install snippet ---- */
     .install-snippets {
-      display: flex;
+      display: inline-flex;
       flex-direction: column;
-      align-items: center;
       gap: 0.5rem;
       margin-top: 1.5rem;
     }
     .install-snippet {
-      display: inline-flex;
+      display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 0.75rem;
-      width: 26rem;
+      white-space: nowrap;
       background: var(--ui-bg-subtle);
       border: 1px solid var(--ui-border);
       border-radius: var(--ui-radius-lg);
@@ -441,6 +449,7 @@
       .hero { min-height: 80vh; padding-left: 1rem; padding-right: 1rem; }
       #theme-bar { display: none; }
       .theme-controls-fixed { right: 0.75rem; top: 0.75rem; }
+      .install-snippet { white-space: normal; word-break: break-all; }
     }
   </style>
 </head>
@@ -1002,6 +1011,10 @@
           var file = el.dataset.cdnFile;
           var url = cdnBase + version + '/src/' + file;
           el.dataset.copy = '<link rel="stylesheet" href="' + url + '">';
+          var fileSpan = el.querySelector('.hl-file');
+          if (fileSpan) {
+            fileSpan.textContent = url;
+          }
         });
       }
 
