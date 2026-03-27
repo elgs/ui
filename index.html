@@ -124,6 +124,12 @@
       font-size: 0.9rem;
       color: var(--ui-text-muted);
     }
+    .install-snippet .copy-btns {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-shrink: 0;
+    }
     .install-snippet .copy-btn {
       all: unset;
       display: flex;
@@ -142,6 +148,9 @@
       }
       &:active {
         transform: scale(0.85);
+      }
+      &.copied {
+        color: var(--ui-success);
       }
     }
     .install-snippet code {
@@ -559,11 +568,17 @@
     <div class="install-snippets">
       <div class="install-snippet" data-cdn-file="ui.css">
         <code><span class="hl-bracket">&lt;</span><span class="hl-tag">link</span> <span class="hl-attr">rel</span>=<span class="hl-string">"stylesheet"</span> <span class="hl-attr">href</span>=<span class="hl-string">"<span class="hl-file">ui.css</span>"</span><span class="hl-bracket">&gt;</span></code>
-        <button class="copy-btn"><i class="ui-icon ui-icon-copy"></i></button>
+        <span class="copy-btns">
+          <button class="copy-btn" data-copy-type="tag" title="Copy link tag"><i class="ui-icon ui-icon-copy"></i></button>
+          <button class="copy-btn" data-copy-type="url" title="Copy URL"><i class="ui-icon ui-icon-link"></i></button>
+        </span>
       </div>
       <div class="install-snippet" data-cdn-file="icons.css">
         <code><span class="hl-bracket">&lt;</span><span class="hl-tag">link</span> <span class="hl-attr">rel</span>=<span class="hl-string">"stylesheet"</span> <span class="hl-attr">href</span>=<span class="hl-string">"<span class="hl-file">icons.css</span>"</span><span class="hl-bracket">&gt;</span></code>
-        <button class="copy-btn"><i class="ui-icon ui-icon-copy"></i></button>
+        <span class="copy-btns">
+          <button class="copy-btn" data-copy-type="tag" title="Copy link tag"><i class="ui-icon ui-icon-copy"></i></button>
+          <button class="copy-btn" data-copy-type="url" title="Copy URL"><i class="ui-icon ui-icon-link"></i></button>
+        </span>
       </div>
     </div>
   </section>
@@ -1010,7 +1025,8 @@
         document.querySelectorAll('.install-snippet[data-cdn-file]').forEach(function(el) {
           var file = el.dataset.cdnFile;
           var url = cdnBase + version + '/src/' + file;
-          el.dataset.copy = '<link rel="stylesheet" href="' + url + '">';
+          el.dataset.copyTag = '<link rel="stylesheet" href="' + url + '">';
+          el.dataset.copyUrl = url;
           var fileSpan = el.querySelector('.hl-file');
           if (fileSpan) {
             fileSpan.textContent = url;
@@ -1019,8 +1035,19 @@
       }
 
       document.querySelectorAll('.install-snippet[data-cdn-file]').forEach(function(el) {
-        el.querySelector('.copy-btn').addEventListener('click', function() {
-          copyText(el.dataset.copy);
+        el.querySelectorAll('.copy-btn').forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            var type = btn.dataset.copyType;
+            copyText(type === 'url' ? el.dataset.copyUrl : el.dataset.copyTag);
+            var icon = btn.querySelector('.ui-icon');
+            var origClass = icon.className;
+            icon.className = 'ui-icon ui-icon-check';
+            btn.classList.add('copied');
+            setTimeout(function() {
+              icon.className = origClass;
+              btn.classList.remove('copied');
+            }, 1500);
+          });
         });
       });
 
