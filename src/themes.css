@@ -1,0 +1,1221 @@
+/*
+   UI Library Theme — Copper
+
+   Usage:
+   1. Include after ui.css:  <link rel="stylesheet" href="themes/copper.css">
+   2. Activate:              <html data-ui-theme="copper">
+      or via JS:             __uiTheme.setTheme('copper')
+
+   Warm copper & patina — burnished metallic glow.
+*/
+
+[data-ui-theme="copper"] {
+  --ui-primary: #b06838;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #8c7a6a;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #5a8a50;
+  --ui-success-text: #ffffff;
+  --ui-danger: #a83028;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #c08830;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #faf6f2;
+  --ui-bg-subtle: #f0e8e0;
+  --ui-surface: #ffffff;
+  --ui-border: #d8c8b4;
+  --ui-text: #2c2018;
+  --ui-text-muted: #7a6858;
+  --ui-text-inverse: #ffffff;
+}
+
+[data-ui-theme="copper"][data-theme="dark"] {
+  --ui-primary: #d08850;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #a89480;
+  --ui-secondary-text: #1a1d26;
+  --ui-success: #72a862;
+  --ui-success-text: #1a1d26;
+  --ui-danger: #cc5848;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #d8a040;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #1c1612;
+  --ui-bg-subtle: #140e0a;
+  --ui-surface: #2a221c;
+  --ui-border: #44362a;
+  --ui-text: #e4d8cc;
+  --ui-text-muted: #98846e;
+  --ui-text-inverse: #1c1612;
+}
+
+/*
+   UI Library Theme — Desert
+
+   Usage:
+   1. Include after ui.css:  <link rel="stylesheet" href="themes/desert.css">
+   2. Activate:              <html data-ui-theme="desert">
+      or via JS:             __uiTheme.setTheme('desert')
+*/
+
+[data-ui-theme="desert"] {
+  --ui-primary: #c2703e;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #a0896e;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #7a9a5a;
+  --ui-success-text: #ffffff;
+  --ui-danger: #c44536;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #e8b84b;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #faf6f0;
+  --ui-bg-subtle: #f2ebe0;
+  --ui-surface: #ffffff;
+  --ui-border: #d9cdb8;
+  --ui-text: #3b2e1a;
+  --ui-text-muted: #8a7560;
+  --ui-text-inverse: #ffffff;
+}
+
+[data-ui-theme="desert"][data-theme="dark"] {
+  --ui-primary: #e09860;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #bfa882;
+  --ui-secondary-text: #1a1d26;
+  --ui-success: #9aba7a;
+  --ui-success-text: #1a1d26;
+  --ui-danger: #e06b5e;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #f0c86a;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #1e1710;
+  --ui-bg-subtle: #15100a;
+  --ui-surface: #2a2018;
+  --ui-border: #453626;
+  --ui-text: #e8dfd2;
+  --ui-text-muted: #a08e74;
+  --ui-text-inverse: #1e1710;
+}
+
+/*
+   UI Library Theme — Fire
+
+   Usage:
+   1. Include after ui.css:  <link rel="stylesheet" href="themes/fire.css">
+   2. Activate:              <html data-ui-theme="fire">
+      or via JS:             __uiTheme.setTheme('fire')
+
+   Blazing orange & ember — intense heat and flame.
+*/
+
+[data-ui-theme="fire"] {
+  --ui-primary: #d94e10;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #a0724e;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #5a8c3a;
+  --ui-success-text: #ffffff;
+  --ui-danger: #b82020;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #e8a020;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #fdf6f0;
+  --ui-bg-subtle: #f8ece0;
+  --ui-surface: #ffffff;
+  --ui-border: #e0c8b0;
+  --ui-text: #2e1a0a;
+  --ui-text-muted: #886048;
+  --ui-text-inverse: #ffffff;
+}
+
+[data-ui-theme="fire"][data-theme="dark"] {
+  --ui-primary: #f07020;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #c09070;
+  --ui-secondary-text: #1a1d26;
+  --ui-success: #78a858;
+  --ui-success-text: #1a1d26;
+  --ui-danger: #e04030;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #f0b830;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #1c1008;
+  --ui-bg-subtle: #140a04;
+  --ui-surface: #2c1c10;
+  --ui-border: #4a3020;
+  --ui-text: #f0e0cc;
+  --ui-text-muted: #a08060;
+  --ui-text-inverse: #1c1008;
+}
+
+/*
+   UI Library Theme — Forest
+
+   Usage:
+   1. Include after ui.css:  <link rel="stylesheet" href="themes/forest.css">
+   2. Activate:              <html data-ui-theme="forest">
+      or via JS:             __uiTheme.setTheme('forest')
+*/
+
+[data-ui-theme="forest"] {
+  --ui-primary: #2d6a4f;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #7a8a6e;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #40916c;
+  --ui-success-text: #ffffff;
+  --ui-danger: #c1121f;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #e09f3e;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #f9faf7;
+  --ui-bg-subtle: #f0f2ec;
+  --ui-surface: #ffffff;
+  --ui-border: #d4dbc8;
+  --ui-text: #1b2a1b;
+  --ui-text-muted: #6b7a60;
+  --ui-text-inverse: #ffffff;
+}
+
+[data-ui-theme="forest"][data-theme="dark"] {
+  --ui-primary: #52b788;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #a3b18a;
+  --ui-secondary-text: #1a1d26;
+  --ui-success: #74c69d;
+  --ui-success-text: #ffffff;
+  --ui-danger: #ff6b6b;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #f4c95d;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #141e14;
+  --ui-bg-subtle: #0c150c;
+  --ui-surface: #1e2e1e;
+  --ui-border: #2e4430;
+  --ui-text: #dce8dc;
+  --ui-text-muted: #8a9e80;
+  --ui-text-inverse: #141e14;
+}
+
+/*
+   UI Library Theme — GitHub
+
+   Usage:
+   1. Include after ui.css:  <link rel="stylesheet" href="themes/github.css">
+   2. Activate:              <html data-ui-theme="github">
+      or via JS:             __uiTheme.setTheme('github')
+
+   Clean, professional palette inspired by GitHub's Primer design system.
+*/
+
+[data-ui-theme="github"] {
+  --ui-primary: #0969da;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #6e7781;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #1a7f37;
+  --ui-success-text: #ffffff;
+  --ui-danger: #cf222e;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #9a6700;
+  --ui-warning-text: #ffffff;
+
+  --ui-bg: #f6f8fa;
+  --ui-bg-subtle: #eaeef2;
+  --ui-surface: #ffffff;
+  --ui-border: #d1d9e0;
+  --ui-text: #1f2328;
+  --ui-text-muted: #656d76;
+  --ui-text-inverse: #ffffff;
+}
+
+[data-ui-theme="github"][data-theme="dark"] {
+  --ui-primary: #4493f8;
+  --ui-primary-text: #0d1117;
+  --ui-secondary: #8b949e;
+  --ui-secondary-text: #0d1117;
+  --ui-success: #3fb950;
+  --ui-success-text: #0d1117;
+  --ui-danger: #f85149;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #d29922;
+  --ui-warning-text: #0d1117;
+
+  --ui-bg: #0d1117;
+  --ui-bg-subtle: #010409;
+  --ui-surface: #161b22;
+  --ui-border: #30363d;
+  --ui-text: #e6edf3;
+  --ui-text-muted: #8b949e;
+  --ui-text-inverse: #0d1117;
+}
+
+/*
+   UI Library Theme — Gold
+
+   Usage:
+   1. Include after ui.css:  <link rel="stylesheet" href="themes/gold.css">
+   2. Activate:              <html data-ui-theme="gold">
+      or via JS:             __uiTheme.setTheme('gold')
+
+   Rich gold & champagne — luxurious metallic warmth.
+*/
+
+[data-ui-theme="gold"] {
+  --ui-primary: #b8962e;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #9a8a68;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #5c8c48;
+  --ui-success-text: #ffffff;
+  --ui-danger: #b83830;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #c49428;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #fbf9f2;
+  --ui-bg-subtle: #f4f0e4;
+  --ui-surface: #ffffff;
+  --ui-border: #ddd4ba;
+  --ui-text: #2c2610;
+  --ui-text-muted: #7a7058;
+  --ui-text-inverse: #ffffff;
+}
+
+[data-ui-theme="gold"][data-theme="dark"] {
+  --ui-primary: #d4b044;
+  --ui-primary-text: #1a1d26;
+  --ui-secondary: #b0a080;
+  --ui-secondary-text: #1a1d26;
+  --ui-success: #78aa5a;
+  --ui-success-text: #1a1d26;
+  --ui-danger: #d05848;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #dab040;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #1a1710;
+  --ui-bg-subtle: #12100a;
+  --ui-surface: #28221a;
+  --ui-border: #403828;
+  --ui-text: #e8e0cc;
+  --ui-text-muted: #9a8e70;
+  --ui-text-inverse: #1a1710;
+}
+
+/*
+   UI Library Theme — Ice
+
+   Usage:
+   1. Include after ui.css:  <link rel="stylesheet" href="themes/ice.css">
+   2. Activate:              <html data-ui-theme="ice">
+      or via JS:             __uiTheme.setTheme('ice')
+
+   Crisp cyan & frost — glacial clarity.
+*/
+
+[data-ui-theme="ice"] {
+  --ui-primary: #0891b2;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #6898a8;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #059669;
+  --ui-success-text: #ffffff;
+  --ui-danger: #c03040;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #ca8a18;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #f0f9fc;
+  --ui-bg-subtle: #e0f0f6;
+  --ui-surface: #ffffff;
+  --ui-border: #b8d8e8;
+  --ui-text: #0c2a38;
+  --ui-text-muted: #4a7888;
+  --ui-text-inverse: #ffffff;
+}
+
+[data-ui-theme="ice"][data-theme="dark"] {
+  --ui-primary: #22d3ee;
+  --ui-primary-text: #1a1d26;
+  --ui-secondary: #7cc0d0;
+  --ui-secondary-text: #1a1d26;
+  --ui-success: #34d399;
+  --ui-success-text: #1a1d26;
+  --ui-danger: #f07080;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #e8c040;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #0a1820;
+  --ui-bg-subtle: #061218;
+  --ui-surface: #122838;
+  --ui-border: #1e3e50;
+  --ui-text: #d8f0f8;
+  --ui-text-muted: #6aa8c0;
+  --ui-text-inverse: #0a1820;
+}
+
+/*
+   UI Library Theme — Jupiter
+
+   Usage:
+   1. Include after ui.css:  <link rel="stylesheet" href="themes/jupiter.css">
+   2. Activate:              <html data-ui-theme="jupiter">
+      or via JS:             __uiTheme.setTheme('jupiter')
+
+   Bold russet & cream — inspired by Jupiter's stormy bands.
+*/
+
+[data-ui-theme="jupiter"] {
+  --ui-primary: #a0522d;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #7e7266;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #5e8c4a;
+  --ui-success-text: #ffffff;
+  --ui-danger: #b53030;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #c88828;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #f8f4ee;
+  --ui-bg-subtle: #eee8dc;
+  --ui-surface: #ffffff;
+  --ui-border: #d2c4b0;
+  --ui-text: #2e2218;
+  --ui-text-muted: #78685a;
+  --ui-text-inverse: #ffffff;
+}
+
+[data-ui-theme="jupiter"][data-theme="dark"] {
+  --ui-primary: #cc7a4a;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #a89888;
+  --ui-secondary-text: #1a1d26;
+  --ui-success: #7aaa60;
+  --ui-success-text: #1a1d26;
+  --ui-danger: #d85c4a;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #e0a840;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #1a1410;
+  --ui-bg-subtle: #120e0a;
+  --ui-surface: #2a221a;
+  --ui-border: #44382a;
+  --ui-text: #e4dcd0;
+  --ui-text-muted: #988878;
+  --ui-text-inverse: #1a1410;
+}
+
+/*
+   UI Library Theme — Mars
+
+   Usage:
+   1. Include after ui.css:  <link rel="stylesheet" href="themes/mars.css">
+   2. Activate:              <html data-ui-theme="mars">
+      or via JS:             __uiTheme.setTheme('mars')
+
+   Iron red & dusty ochre — inspired by the Martian surface.
+*/
+
+[data-ui-theme="mars"] {
+  --ui-primary: #b03020;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #8c6e5a;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #6a8a42;
+  --ui-success-text: #ffffff;
+  --ui-danger: #922020;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #c48830;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #faf5f0;
+  --ui-bg-subtle: #f0e6da;
+  --ui-surface: #ffffff;
+  --ui-border: #d4bca8;
+  --ui-text: #301a12;
+  --ui-text-muted: #7a6050;
+  --ui-text-inverse: #ffffff;
+}
+
+[data-ui-theme="mars"][data-theme="dark"] {
+  --ui-primary: #d05040;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #a8907a;
+  --ui-secondary-text: #1a1d26;
+  --ui-success: #88aa5c;
+  --ui-success-text: #1a1d26;
+  --ui-danger: #c04040;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #daa048;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #1c1210;
+  --ui-bg-subtle: #140c0a;
+  --ui-surface: #2c1e18;
+  --ui-border: #483024;
+  --ui-text: #e4d8cc;
+  --ui-text-muted: #987868;
+  --ui-text-inverse: #1c1210;
+}
+
+/*
+   UI Library Theme — Mercury
+
+   Usage:
+   1. Include after ui.css:  <link rel="stylesheet" href="themes/mercury.css">
+   2. Activate:              <html data-ui-theme="mercury">
+      or via JS:             __uiTheme.setTheme('mercury')
+
+   Silvery monochrome — inspired by Mercury's cratered surface.
+*/
+
+[data-ui-theme="mercury"] {
+  --ui-primary: #6a6e78;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #8a8d94;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #5a9a6a;
+  --ui-success-text: #ffffff;
+  --ui-danger: #b84848;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #b89840;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #f2f3f5;
+  --ui-bg-subtle: #e8e9ec;
+  --ui-surface: #ffffff;
+  --ui-border: #cccdd2;
+  --ui-text: #22242a;
+  --ui-text-muted: #6c6e76;
+  --ui-text-inverse: #ffffff;
+}
+
+[data-ui-theme="mercury"][data-theme="dark"] {
+  --ui-primary: #9a9ea8;
+  --ui-primary-text: #1a1d26;
+  --ui-secondary: #787c86;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #70b880;
+  --ui-success-text: #1a1d26;
+  --ui-danger: #d06060;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #d0b050;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #18191c;
+  --ui-bg-subtle: #101114;
+  --ui-surface: #242628;
+  --ui-border: #383a3e;
+  --ui-text: #dcdde0;
+  --ui-text-muted: #848690;
+  --ui-text-inverse: #18191c;
+}
+
+/*
+   UI Library Theme — Metal
+
+   Usage:
+   1. Include after ui.css:  <link rel="stylesheet" href="themes/metal.css">
+   2. Activate:              <html data-ui-theme="metal">
+      or via JS:             __uiTheme.setTheme('metal')
+*/
+
+[data-ui-theme="metal"] {
+  --ui-primary: #7a8694;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #a0aab6;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #4ade80;
+  --ui-success-text: #1a1d26;
+  --ui-danger: #f87171;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #fbbf24;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #f4f5f7;
+  --ui-bg-subtle: #e8eaee;
+  --ui-surface: #ffffff;
+  --ui-border: #c8ced6;
+  --ui-text: #1c2530;
+  --ui-text-muted: #6e7a88;
+  --ui-text-inverse: #ffffff;
+
+  --ui-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --ui-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --ui-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.08);
+}
+
+[data-ui-theme="metal"][data-theme="dark"] {
+  --ui-primary: #a4b0be;
+  --ui-primary-text: #101418;
+  --ui-secondary: #6e7a88;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #4ade80;
+  --ui-success-text: #101418;
+  --ui-danger: #fb7185;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #fbbf24;
+  --ui-warning-text: #101418;
+
+  --ui-bg: #151820;
+  --ui-bg-subtle: #0e1118;
+  --ui-surface: #1e2230;
+  --ui-border: #333a48;
+  --ui-text: #d4dae4;
+  --ui-text-muted: #7a8598;
+  --ui-text-inverse: #151820;
+
+  --ui-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --ui-shadow: 0 1px 3px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.4);
+  --ui-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.4);
+}
+
+/*
+   UI Library Theme — Midnight
+
+   Usage:
+   1. Include after ui.css:  <link rel="stylesheet" href="themes/midnight.css">
+   2. Activate:              <html data-ui-theme="midnight">
+      or via JS:             __uiTheme.setTheme('midnight')
+
+   Deep indigo & violet — the quiet hours after dark.
+*/
+
+[data-ui-theme="midnight"] {
+  --ui-primary: #4338ca;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #7c7aa0;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #22c55e;
+  --ui-success-text: #ffffff;
+  --ui-danger: #ef4444;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #eab308;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #f5f3ff;
+  --ui-bg-subtle: #ede9fe;
+  --ui-surface: #ffffff;
+  --ui-border: #d4c8f0;
+  --ui-text: #1e1340;
+  --ui-text-muted: #6e60a0;
+  --ui-text-inverse: #ffffff;
+}
+
+[data-ui-theme="midnight"][data-theme="dark"] {
+  --ui-primary: #818cf8;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #9a98c0;
+  --ui-secondary-text: #1a1d26;
+  --ui-success: #4ade80;
+  --ui-success-text: #1a1d26;
+  --ui-danger: #fb7185;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #fbbf24;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #0e0a1a;
+  --ui-bg-subtle: #080510;
+  --ui-surface: #1a1430;
+  --ui-border: #2e2450;
+  --ui-text: #e4e0f0;
+  --ui-text-muted: #8880b0;
+  --ui-text-inverse: #0e0a1a;
+}
+
+/*
+   UI Library Theme — Neptune
+
+   Usage:
+   1. Include after ui.css:  <link rel="stylesheet" href="themes/neptune.css">
+   2. Activate:              <html data-ui-theme="neptune">
+      or via JS:             __uiTheme.setTheme('neptune')
+
+   Deep blue — inspired by the planet's atmosphere.
+   Distinct from Ocean's lighter aquatic palette.
+*/
+
+[data-ui-theme="neptune"] {
+  --ui-primary: #1b3a8c;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #546a9e;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #28855a;
+  --ui-success-text: #ffffff;
+  --ui-danger: #c0392b;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #d4a017;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #f0f4fa;
+  --ui-bg-subtle: #e2e8f4;
+  --ui-surface: #ffffff;
+  --ui-border: #b8c5dc;
+  --ui-text: #0e1a33;
+  --ui-text-muted: #52627e;
+  --ui-text-inverse: #ffffff;
+}
+
+[data-ui-theme="neptune"][data-theme="dark"] {
+  --ui-primary: #4a80e0;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #7a98c4;
+  --ui-secondary-text: #1a1d26;
+  --ui-success: #48b87a;
+  --ui-success-text: #1a1d26;
+  --ui-danger: #e86050;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #e8c044;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #0a1020;
+  --ui-bg-subtle: #060c18;
+  --ui-surface: #132040;
+  --ui-border: #1e3460;
+  --ui-text: #d4def0;
+  --ui-text-muted: #6882a8;
+  --ui-text-inverse: #0a1020;
+}
+
+/*
+   UI Library Theme — Nord
+
+   Usage:
+   1. Include after ui.css:  <link rel="stylesheet" href="themes/nord.css">
+   2. Activate:              <html data-ui-theme="nord">
+      or via JS:             __uiTheme.setTheme('nord')
+
+   Cool arctic palette inspired by the polar landscape.
+*/
+
+[data-ui-theme="nord"] {
+  --ui-primary: #5e81ac;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #7b8ea0;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #a3be8c;
+  --ui-success-text: #1a1d26;
+  --ui-danger: #bf616a;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #ebcb8b;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #eceff4;
+  --ui-bg-subtle: #e5e9f0;
+  --ui-surface: #ffffff;
+  --ui-border: #d8dee9;
+  --ui-text: #2e3440;
+  --ui-text-muted: #6a7384;
+  --ui-text-inverse: #ffffff;
+}
+
+[data-ui-theme="nord"][data-theme="dark"] {
+  --ui-primary: #88c0d0;
+  --ui-primary-text: #2e3440;
+  --ui-secondary: #81a1c1;
+  --ui-secondary-text: #2e3440;
+  --ui-success: #a3be8c;
+  --ui-success-text: #2e3440;
+  --ui-danger: #bf616a;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #ebcb8b;
+  --ui-warning-text: #2e3440;
+
+  --ui-bg: #2e3440;
+  --ui-bg-subtle: #272c36;
+  --ui-surface: #3b4252;
+  --ui-border: #434c5e;
+  --ui-text: #eceff4;
+  --ui-text-muted: #8890a0;
+  --ui-text-inverse: #2e3440;
+}
+
+/*
+   UI Library Theme — Ocean
+
+   Usage:
+   1. Include after ui.css:  <link rel="stylesheet" href="themes/ocean.css">
+   2. Activate:              <html data-ui-theme="ocean">
+      or via JS:             __uiTheme.setTheme('ocean')
+
+   Only override the properties you want to change.
+   Hover / active / light variants are derived automatically via color-mix().
+*/
+
+[data-ui-theme="ocean"] {
+  --ui-primary: #0077b6;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #457b9d;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #06d6a0;
+  --ui-success-text: #ffffff;
+  --ui-danger: #ef476f;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #ffd166;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #f8fbff;
+  --ui-bg-subtle: #edf4fc;
+  --ui-surface: #ffffff;
+  --ui-border: #c8dce8;
+  --ui-text: #1d3557;
+  --ui-text-muted: #6b8299;
+  --ui-text-inverse: #ffffff;
+}
+
+[data-ui-theme="ocean"][data-theme="dark"] {
+  --ui-primary: #48cae4;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #8ab4c7;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #51cf96;
+  --ui-success-text: #ffffff;
+  --ui-danger: #ff7b8a;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #ffc048;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #0d1b2a;
+  --ui-bg-subtle: #071420;
+  --ui-surface: #1b2838;
+  --ui-border: #2a3f52;
+  --ui-text: #e0e8f0;
+  --ui-text-muted: #7a9ab5;
+  --ui-text-inverse: #0d1b2a;
+}
+
+/*
+   UI Library Theme — Olive
+
+   Usage:
+   1. Include after ui.css:  <link rel="stylesheet" href="themes/olive.css">
+   2. Activate:              <html data-ui-theme="olive">
+      or via JS:             __uiTheme.setTheme('olive')
+
+   Earthy olive green — warm Mediterranean tones.
+*/
+
+[data-ui-theme="olive"] {
+  --ui-primary: #6b7a2e;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #8a8868;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #4a8a3a;
+  --ui-success-text: #ffffff;
+  --ui-danger: #a83830;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #b89028;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #f8f8f0;
+  --ui-bg-subtle: #f0f0e4;
+  --ui-surface: #ffffff;
+  --ui-border: #d0d0b8;
+  --ui-text: #282818;
+  --ui-text-muted: #6a6a50;
+  --ui-text-inverse: #ffffff;
+}
+
+[data-ui-theme="olive"][data-theme="dark"] {
+  --ui-primary: #98aa48;
+  --ui-primary-text: #1a1d26;
+  --ui-secondary: #a0a080;
+  --ui-secondary-text: #1a1d26;
+  --ui-success: #68a850;
+  --ui-success-text: #1a1d26;
+  --ui-danger: #cc5848;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #d0aa40;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #141410;
+  --ui-bg-subtle: #0c0c08;
+  --ui-surface: #222218;
+  --ui-border: #383828;
+  --ui-text: #e0e0cc;
+  --ui-text-muted: #8a8a6a;
+  --ui-text-inverse: #141410;
+}
+
+/*
+   UI Library Theme — Rose
+
+   Usage:
+   1. Include after ui.css:  <link rel="stylesheet" href="themes/rose.css">
+   2. Activate:              <html data-ui-theme="rose">
+      or via JS:             __uiTheme.setTheme('rose')
+*/
+
+[data-ui-theme="rose"] {
+  --ui-primary: #be185d;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #a78baa;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #059669;
+  --ui-success-text: #ffffff;
+  --ui-danger: #dc2626;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #d97706;
+  --ui-warning-text: #ffffff;
+
+  --ui-bg: #fdf2f8;
+  --ui-bg-subtle: #fce7f3;
+  --ui-surface: #ffffff;
+  --ui-border: #f0c6d8;
+  --ui-text: #331a28;
+  --ui-text-muted: #9e7089;
+  --ui-text-inverse: #ffffff;
+}
+
+[data-ui-theme="rose"][data-theme="dark"] {
+  --ui-primary: #f472b6;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #c4a8c8;
+  --ui-secondary-text: #1a1d26;
+  --ui-success: #34d399;
+  --ui-success-text: #ffffff;
+  --ui-danger: #fb7185;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #fbbf24;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #1f0a18;
+  --ui-bg-subtle: #170712;
+  --ui-surface: #2e1428;
+  --ui-border: #4a2240;
+  --ui-text: #f0dce8;
+  --ui-text-muted: #b08aa0;
+  --ui-text-inverse: #1f0a18;
+}
+
+/*
+   UI Library Theme — Saturn
+
+   Usage:
+   1. Include after ui.css:  <link rel="stylesheet" href="themes/saturn.css">
+   2. Activate:              <html data-ui-theme="saturn">
+      or via JS:             __uiTheme.setTheme('saturn')
+
+   Warm gold & amber — inspired by Saturn's banded atmosphere.
+*/
+
+[data-ui-theme="saturn"] {
+  --ui-primary: #b8860b;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #8a7d68;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #5a8c3c;
+  --ui-success-text: #ffffff;
+  --ui-danger: #b83a2a;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #cc9520;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #faf8f2;
+  --ui-bg-subtle: #f2ede2;
+  --ui-surface: #ffffff;
+  --ui-border: #d6cdb8;
+  --ui-text: #2a2418;
+  --ui-text-muted: #7a7060;
+  --ui-text-inverse: #ffffff;
+}
+
+[data-ui-theme="saturn"][data-theme="dark"] {
+  --ui-primary: #daa520;
+  --ui-primary-text: #1a1d26;
+  --ui-secondary: #b0a48a;
+  --ui-secondary-text: #1a1d26;
+  --ui-success: #7ab85a;
+  --ui-success-text: #1a1d26;
+  --ui-danger: #e06050;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #e8b830;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #181410;
+  --ui-bg-subtle: #100e0a;
+  --ui-surface: #262018;
+  --ui-border: #3e3528;
+  --ui-text: #e8e0d0;
+  --ui-text-muted: #9a8e78;
+  --ui-text-inverse: #181410;
+}
+
+/*
+   UI Library Theme — Silver
+
+   Usage:
+   1. Include after ui.css:  <link rel="stylesheet" href="themes/silver.css">
+   2. Activate:              <html data-ui-theme="silver">
+      or via JS:             __uiTheme.setTheme('silver')
+
+   Polished silver — cool, bright metallic sheen.
+*/
+
+[data-ui-theme="silver"] {
+  --ui-primary: #6e7a88;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #8c929c;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #4e9068;
+  --ui-success-text: #ffffff;
+  --ui-danger: #b84450;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #b89838;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #f4f5f7;
+  --ui-bg-subtle: #eaecf0;
+  --ui-surface: #ffffff;
+  --ui-border: #cdd0d8;
+  --ui-text: #1e2028;
+  --ui-text-muted: #686e7a;
+  --ui-text-inverse: #ffffff;
+}
+
+[data-ui-theme="silver"][data-theme="dark"] {
+  --ui-primary: #a0aab8;
+  --ui-primary-text: #1a1d26;
+  --ui-secondary: #808892;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #68b080;
+  --ui-success-text: #1a1d26;
+  --ui-danger: #d06068;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #d0b448;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #1a1c20;
+  --ui-bg-subtle: #121418;
+  --ui-surface: #26282e;
+  --ui-border: #3a3e44;
+  --ui-text: #dee0e6;
+  --ui-text-muted: #888e98;
+  --ui-text-inverse: #1a1c20;
+}
+
+/*
+   UI Library Theme — Sky
+
+   Usage:
+   1. Include after ui.css:  <link rel="stylesheet" href="themes/sky.css">
+   2. Activate:              <html data-ui-theme="sky">
+      or via JS:             __uiTheme.setTheme('sky')
+
+   Clear sky blue — light, airy, and open.
+*/
+
+[data-ui-theme="sky"] {
+  --ui-primary: #38a8e8;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #7a9cb0;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #34b870;
+  --ui-success-text: #ffffff;
+  --ui-danger: #e84860;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #f0a830;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #f5fbff;
+  --ui-bg-subtle: #e8f4fc;
+  --ui-surface: #ffffff;
+  --ui-border: #c0dcea;
+  --ui-text: #152838;
+  --ui-text-muted: #608098;
+  --ui-text-inverse: #ffffff;
+}
+
+[data-ui-theme="sky"][data-theme="dark"] {
+  --ui-primary: #5cc0f0;
+  --ui-primary-text: #1a1d26;
+  --ui-secondary: #90b0c4;
+  --ui-secondary-text: #1a1d26;
+  --ui-success: #50d88a;
+  --ui-success-text: #1a1d26;
+  --ui-danger: #f07080;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #f8c048;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #0a1620;
+  --ui-bg-subtle: #060e16;
+  --ui-surface: #142030;
+  --ui-border: #243848;
+  --ui-text: #dce8f0;
+  --ui-text-muted: #7898b0;
+  --ui-text-inverse: #0a1620;
+}
+
+/*
+   UI Library Theme — Sunflower
+
+   Usage:
+   1. Include after ui.css:  <link rel="stylesheet" href="themes/sunflower.css">
+   2. Activate:              <html data-ui-theme="sunflower">
+      or via JS:             __uiTheme.setTheme('sunflower')
+
+   Warm yellow & golden — bright and cheerful like a sunflower field.
+*/
+
+[data-ui-theme="sunflower"] {
+  --ui-primary: #e6b800;
+  --ui-primary-text: #1a1d26;
+  --ui-secondary: #8a7a58;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #4a9e3a;
+  --ui-success-text: #ffffff;
+  --ui-danger: #d94040;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #e88c10;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #fffef5;
+  --ui-bg-subtle: #fdf8e8;
+  --ui-surface: #ffffff;
+  --ui-border: #e8ddb8;
+  --ui-text: #2a2410;
+  --ui-text-muted: #887a50;
+  --ui-text-inverse: #ffffff;
+}
+
+[data-ui-theme="sunflower"][data-theme="dark"] {
+  --ui-primary: #ffd000;
+  --ui-primary-text: #1a1d26;
+  --ui-secondary: #a8986a;
+  --ui-secondary-text: #1a1d26;
+  --ui-success: #68b858;
+  --ui-success-text: #1a1d26;
+  --ui-danger: #f06060;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #f0a028;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #18150a;
+  --ui-bg-subtle: #100e06;
+  --ui-surface: #282210;
+  --ui-border: #403818;
+  --ui-text: #f0ecd0;
+  --ui-text-muted: #a09868;
+  --ui-text-inverse: #18150a;
+}
+
+/*
+   UI Library Theme — Wood
+
+   Usage:
+   1. Include after ui.css:  <link rel="stylesheet" href="themes/wood.css">
+   2. Activate:              <html data-ui-theme="wood">
+      or via JS:             __uiTheme.setTheme('wood')
+
+   Warm walnut & oak — rich natural grain tones.
+*/
+
+[data-ui-theme="wood"] {
+  --ui-primary: #7a5230;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #8a7a68;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #5c8040;
+  --ui-success-text: #ffffff;
+  --ui-danger: #a83828;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #b88c2e;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #faf7f2;
+  --ui-bg-subtle: #f0eae0;
+  --ui-surface: #ffffff;
+  --ui-border: #d4c4ae;
+  --ui-text: #2e2218;
+  --ui-text-muted: #786850;
+  --ui-text-inverse: #ffffff;
+}
+
+[data-ui-theme="wood"][data-theme="dark"] {
+  --ui-primary: #a87850;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #a09080;
+  --ui-secondary-text: #1a1d26;
+  --ui-success: #78a058;
+  --ui-success-text: #1a1d26;
+  --ui-danger: #c85848;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #d0a840;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #181210;
+  --ui-bg-subtle: #100c08;
+  --ui-surface: #261e18;
+  --ui-border: #3e3228;
+  --ui-text: #e0d4c8;
+  --ui-text-muted: #988870;
+  --ui-text-inverse: #181210;
+}
+
+/*
+   UI Library Theme — Young
+
+   Usage:
+   1. Include after ui.css:  <link rel="stylesheet" href="themes/young.css">
+   2. Activate:              <html data-ui-theme="young">
+      or via JS:             __uiTheme.setTheme('young')
+
+   Vibrant orange & energetic — fresh and youthful.
+*/
+
+[data-ui-theme="young"] {
+  --ui-primary: #f27a1a;
+  --ui-primary-text: #ffffff;
+  --ui-secondary: #8a8a9a;
+  --ui-secondary-text: #ffffff;
+  --ui-success: #2dba4e;
+  --ui-success-text: #ffffff;
+  --ui-danger: #e53e3e;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #eab308;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #fffaf5;
+  --ui-bg-subtle: #fff2e8;
+  --ui-surface: #ffffff;
+  --ui-border: #f0d8c0;
+  --ui-text: #2a1a0e;
+  --ui-text-muted: #8a7060;
+  --ui-text-inverse: #ffffff;
+}
+
+[data-ui-theme="young"][data-theme="dark"] {
+  --ui-primary: #ff8c2e;
+  --ui-primary-text: #1a1d26;
+  --ui-secondary: #9a9aaa;
+  --ui-secondary-text: #1a1d26;
+  --ui-success: #48d068;
+  --ui-success-text: #1a1d26;
+  --ui-danger: #ff6b6b;
+  --ui-danger-text: #ffffff;
+  --ui-warning: #fbbf24;
+  --ui-warning-text: #1a1d26;
+
+  --ui-bg: #1a1208;
+  --ui-bg-subtle: #120c04;
+  --ui-surface: #2a1e10;
+  --ui-border: #483418;
+  --ui-text: #f5e8d8;
+  --ui-text-muted: #b09070;
+  --ui-text-inverse: #1a1208;
+}
+
