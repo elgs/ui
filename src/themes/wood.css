@@ -4,7 +4,7 @@
    Usage:
    1. Include after ui.css:  <link rel="stylesheet" href="themes/wood.css">
    2. Activate:              <html data-ui-theme="wood">
-      or via JS:             __uiTheme.setTheme('wood')
+      or via JS:             document.documentElement.dataset.uiTheme = 'wood'
 
    Warm walnut & oak — rich natural grain tones.
 */

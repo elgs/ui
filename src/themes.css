@@ -4,7 +4,7 @@
    Usage:
    1. Include after ui.css:  <link rel="stylesheet" href="themes/copper.css">
    2. Activate:              <html data-ui-theme="copper">
-      or via JS:             __uiTheme.setTheme('copper')
+      or via JS:             document.documentElement.dataset.uiTheme = 'copper'
 
    Warm copper & patina — burnished metallic glow.
 */
@@ -57,7 +57,7 @@
    Usage:
    1. Include after ui.css:  <link rel="stylesheet" href="themes/desert.css">
    2. Activate:              <html data-ui-theme="desert">
-      or via JS:             __uiTheme.setTheme('desert')
+      or via JS:             document.documentElement.dataset.uiTheme = 'desert'
 */
 
 [data-ui-theme="desert"] {
@@ -108,7 +108,7 @@
    Usage:
    1. Include after ui.css:  <link rel="stylesheet" href="themes/fire.css">
    2. Activate:              <html data-ui-theme="fire">
-      or via JS:             __uiTheme.setTheme('fire')
+      or via JS:             document.documentElement.dataset.uiTheme = 'fire'
 
    Blazing orange & ember — intense heat and flame.
 */
@@ -161,7 +161,7 @@
    Usage:
    1. Include after ui.css:  <link rel="stylesheet" href="themes/forest.css">
    2. Activate:              <html data-ui-theme="forest">
-      or via JS:             __uiTheme.setTheme('forest')
+      or via JS:             document.documentElement.dataset.uiTheme = 'forest'
 */
 
 [data-ui-theme="forest"] {
@@ -212,7 +212,7 @@
    Usage:
    1. Include after ui.css:  <link rel="stylesheet" href="themes/github.css">
    2. Activate:              <html data-ui-theme="github">
-      or via JS:             __uiTheme.setTheme('github')
+      or via JS:             document.documentElement.dataset.uiTheme = 'github'
 
    Clean, professional palette inspired by GitHub's Primer design system.
 */
@@ -265,7 +265,7 @@
    Usage:
    1. Include after ui.css:  <link rel="stylesheet" href="themes/gold.css">
    2. Activate:              <html data-ui-theme="gold">
-      or via JS:             __uiTheme.setTheme('gold')
+      or via JS:             document.documentElement.dataset.uiTheme = 'gold'
 
    Rich gold & champagne — luxurious metallic warmth.
 */
@@ -318,7 +318,7 @@
    Usage:
    1. Include after ui.css:  <link rel="stylesheet" href="themes/ice.css">
    2. Activate:              <html data-ui-theme="ice">
-      or via JS:             __uiTheme.setTheme('ice')
+      or via JS:             document.documentElement.dataset.uiTheme = 'ice'
 
    Crisp cyan & frost — glacial clarity.
 */
@@ -371,7 +371,7 @@
    Usage:
    1. Include after ui.css:  <link rel="stylesheet" href="themes/jupiter.css">
    2. Activate:              <html data-ui-theme="jupiter">
-      or via JS:             __uiTheme.setTheme('jupiter')
+      or via JS:             document.documentElement.dataset.uiTheme = 'jupiter'
 
    Bold russet & cream — inspired by Jupiter's stormy bands.
 */
@@ -424,7 +424,7 @@
    Usage:
    1. Include after ui.css:  <link rel="stylesheet" href="themes/mars.css">
    2. Activate:              <html data-ui-theme="mars">
-      or via JS:             __uiTheme.setTheme('mars')
+      or via JS:             document.documentElement.dataset.uiTheme = 'mars'
 
    Iron red & dusty ochre — inspired by the Martian surface.
 */
@@ -477,7 +477,7 @@
    Usage:
    1. Include after ui.css:  <link rel="stylesheet" href="themes/mercury.css">
    2. Activate:              <html data-ui-theme="mercury">
-      or via JS:             __uiTheme.setTheme('mercury')
+      or via JS:             document.documentElement.dataset.uiTheme = 'mercury'
 
    Silvery monochrome — inspired by Mercury's cratered surface.
 */
@@ -530,7 +530,7 @@
    Usage:
    1. Include after ui.css:  <link rel="stylesheet" href="themes/metal.css">
    2. Activate:              <html data-ui-theme="metal">
-      or via JS:             __uiTheme.setTheme('metal')
+      or via JS:             document.documentElement.dataset.uiTheme = 'metal'
 */
 
 [data-ui-theme="metal"] {
@@ -589,7 +589,7 @@
    Usage:
    1. Include after ui.css:  <link rel="stylesheet" href="themes/midnight.css">
    2. Activate:              <html data-ui-theme="midnight">
-      or via JS:             __uiTheme.setTheme('midnight')
+      or via JS:             document.documentElement.dataset.uiTheme = 'midnight'
 
    Deep indigo & violet — the quiet hours after dark.
 */
@@ -642,7 +642,7 @@
    Usage:
    1. Include after ui.css:  <link rel="stylesheet" href="themes/neptune.css">
    2. Activate:              <html data-ui-theme="neptune">
-      or via JS:             __uiTheme.setTheme('neptune')
+      or via JS:             document.documentElement.dataset.uiTheme = 'neptune'
 
    Deep blue — inspired by the planet's atmosphere.
    Distinct from Ocean's lighter aquatic palette.
@@ -696,7 +696,7 @@
    Usage:
    1. Include after ui.css:  <link rel="stylesheet" href="themes/nord.css">
    2. Activate:              <html data-ui-theme="nord">
-      or via JS:             __uiTheme.setTheme('nord')
+      or via JS:             document.documentElement.dataset.uiTheme = 'nord'
 
    Cool arctic palette inspired by the polar landscape.
 */
@@ -749,7 +749,7 @@
    Usage:
    1. Include after ui.css:  <link rel="stylesheet" href="themes/ocean.css">
    2. Activate:              <html data-ui-theme="ocean">
-      or via JS:             __uiTheme.setTheme('ocean')
+      or via JS:             document.documentElement.dataset.uiTheme = 'ocean'
 
    Only override the properties you want to change.
    Hover / active / light variants are derived automatically via color-mix().
@@ -803,7 +803,7 @@
    Usage:
    1. Include after ui.css:  <link rel="stylesheet" href="themes/olive.css">
    2. Activate:              <html data-ui-theme="olive">
-      or via JS:             __uiTheme.setTheme('olive')
+      or via JS:             document.documentElement.dataset.uiTheme = 'olive'
 
    Earthy olive green — warm Mediterranean tones.
 */
@@ -856,7 +856,7 @@
    Usage:
    1. Include after ui.css:  <link rel="stylesheet" href="themes/rose.css">
    2. Activate:              <html data-ui-theme="rose">
-      or via JS:             __uiTheme.setTheme('rose')
+      or via JS:             document.documentElement.dataset.uiTheme = 'rose'
 */
 
 [data-ui-theme="rose"] {
@@ -907,7 +907,7 @@
    Usage:
    1. Include after ui.css:  <link rel="stylesheet" href="themes/saturn.css">
    2. Activate:              <html data-ui-theme="saturn">
-      or via JS:             __uiTheme.setTheme('saturn')
+      or via JS:             document.documentElement.dataset.uiTheme = 'saturn'
 
    Warm gold & amber — inspired by Saturn's banded atmosphere.
 */
@@ -960,7 +960,7 @@
    Usage:
    1. Include after ui.css:  <link rel="stylesheet" href="themes/silver.css">
    2. Activate:              <html data-ui-theme="silver">
-      or via JS:             __uiTheme.setTheme('silver')
+      or via JS:             document.documentElement.dataset.uiTheme = 'silver'
 
    Polished silver — cool, bright metallic sheen.
 */
@@ -1013,7 +1013,7 @@
    Usage:
    1. Include after ui.css:  <link rel="stylesheet" href="themes/sky.css">
    2. Activate:              <html data-ui-theme="sky">
-      or via JS:             __uiTheme.setTheme('sky')
+      or via JS:             document.documentElement.dataset.uiTheme = 'sky'
 
    Clear sky blue — light, airy, and open.
 */
@@ -1066,7 +1066,7 @@
    Usage:
    1. Include after ui.css:  <link rel="stylesheet" href="themes/sunflower.css">
    2. Activate:              <html data-ui-theme="sunflower">
-      or via JS:             __uiTheme.setTheme('sunflower')
+      or via JS:             document.documentElement.dataset.uiTheme = 'sunflower'
 
    Warm yellow & golden — bright and cheerful like a sunflower field.
 */
@@ -1119,7 +1119,7 @@
    Usage:
    1. Include after ui.css:  <link rel="stylesheet" href="themes/wood.css">
    2. Activate:              <html data-ui-theme="wood">
-      or via JS:             __uiTheme.setTheme('wood')
+      or via JS:             document.documentElement.dataset.uiTheme = 'wood'
 
    Warm walnut & oak — rich natural grain tones.
 */
@@ -1172,7 +1172,7 @@
    Usage:
    1. Include after ui.css:  <link rel="stylesheet" href="themes/young.css">
    2. Activate:              <html data-ui-theme="young">
-      or via JS:             __uiTheme.setTheme('young')
+      or via JS:             document.documentElement.dataset.uiTheme = 'young'
 
    Vibrant orange & energetic — fresh and youthful.
 */
