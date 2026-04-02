@@ -143,31 +143,31 @@
   --ui-primary: #4dabf7;
   --ui-primary-hover: color-mix(in srgb, var(--ui-primary) 80%, #fff);
   --ui-primary-active: color-mix(in srgb, var(--ui-primary) 65%, #fff);
-  --ui-primary-light: color-mix(in srgb, var(--ui-primary) 12%, #1a1d26);
+  --ui-primary-light: color-mix(in srgb, var(--ui-primary) 20%, #1a1d26);
   --ui-primary-text: #ffffff;
 
   --ui-secondary: #8590a2;
   --ui-secondary-hover: color-mix(in srgb, var(--ui-secondary) 80%, #fff);
   --ui-secondary-active: color-mix(in srgb, var(--ui-secondary) 65%, #fff);
-  --ui-secondary-light: color-mix(in srgb, var(--ui-secondary) 12%, #1a1d26);
+  --ui-secondary-light: color-mix(in srgb, var(--ui-secondary) 20%, #1a1d26);
   --ui-secondary-text: #ffffff;
 
   --ui-success: #51cf96;
   --ui-success-hover: color-mix(in srgb, var(--ui-success) 80%, #fff);
   --ui-success-active: color-mix(in srgb, var(--ui-success) 65%, #fff);
-  --ui-success-light: color-mix(in srgb, var(--ui-success) 12%, #1a1d26);
+  --ui-success-light: color-mix(in srgb, var(--ui-success) 20%, #1a1d26);
   --ui-success-text: #ffffff;
 
   --ui-danger: #ff7b8a;
   --ui-danger-hover: color-mix(in srgb, var(--ui-danger) 80%, #fff);
   --ui-danger-active: color-mix(in srgb, var(--ui-danger) 65%, #fff);
-  --ui-danger-light: color-mix(in srgb, var(--ui-danger) 12%, #1a1d26);
+  --ui-danger-light: color-mix(in srgb, var(--ui-danger) 20%, #1a1d26);
   --ui-danger-text: #ffffff;
 
   --ui-warning: #ffc048;
   --ui-warning-hover: color-mix(in srgb, var(--ui-warning) 80%, #fff);
   --ui-warning-active: color-mix(in srgb, var(--ui-warning) 65%, #fff);
-  --ui-warning-light: color-mix(in srgb, var(--ui-warning) 12%, #1a1d26);
+  --ui-warning-light: color-mix(in srgb, var(--ui-warning) 20%, #1a1d26);
   --ui-warning-text: #1a1d26;
 
   --ui-bg: #1a1d26;
@@ -232,10 +232,7 @@
   background: var(--ui-primary);
   color: var(--ui-primary-text);
 
-  &:hover {
-    background: var(--ui-primary-hover);
-  }
-
+  &:hover,
   &:focus-visible {
     outline: none;
     background: var(--ui-primary-hover);
@@ -257,10 +254,7 @@
     background: var(--ui-secondary);
     color: var(--ui-secondary-text);
 
-    &:hover {
-      background: var(--ui-secondary-hover);
-    }
-
+    &:hover,
     &:focus-visible {
       background: var(--ui-secondary-hover);
     }
@@ -274,10 +268,7 @@
     background: var(--ui-success);
     color: var(--ui-success-text);
 
-    &:hover {
-      background: var(--ui-success-hover);
-    }
-
+    &:hover,
     &:focus-visible {
       background: var(--ui-success-hover);
     }
@@ -291,10 +282,7 @@
     background: var(--ui-danger);
     color: var(--ui-danger-text);
 
-    &:hover {
-      background: var(--ui-danger-hover);
-    }
-
+    &:hover,
     &:focus-visible {
       background: var(--ui-danger-hover);
     }
@@ -308,10 +296,7 @@
     background: var(--ui-warning);
     color: var(--ui-warning-text);
 
-    &:hover {
-      background: var(--ui-warning-hover);
-    }
-
+    &:hover,
     &:focus-visible {
       background: var(--ui-warning-hover);
     }
@@ -328,10 +313,7 @@
     border-color: var(--ui-primary);
     color: var(--ui-primary);
 
-    &:hover {
-      background: var(--ui-primary-light);
-    }
-
+    &:hover,
     &:focus-visible {
       background: var(--ui-primary-light);
     }
@@ -344,10 +326,7 @@
       border-color: var(--ui-secondary);
       color: var(--ui-secondary);
 
-      &:hover {
-        background: var(--ui-secondary-light);
-      }
-
+      &:hover,
       &:focus-visible {
         background: var(--ui-secondary-light);
       }
@@ -361,10 +340,7 @@
       border-color: var(--ui-danger);
       color: var(--ui-danger);
 
-      &:hover {
-        background: var(--ui-danger-light);
-      }
-
+      &:hover,
       &:focus-visible {
         background: var(--ui-danger-light);
       }
@@ -378,10 +354,7 @@
       border-color: var(--ui-success);
       color: var(--ui-success);
 
-      &:hover {
-        background: var(--ui-success-light);
-      }
-
+      &:hover,
       &:focus-visible {
         background: var(--ui-success-light);
       }
@@ -395,10 +368,7 @@
       border-color: var(--ui-warning);
       color: var(--ui-warning);
 
-      &:hover {
-        background: var(--ui-warning-light);
-      }
-
+      &:hover,
       &:focus-visible {
         background: var(--ui-warning-light);
       }
@@ -415,10 +385,7 @@
     background: transparent;
     color: var(--ui-primary);
 
-    &:hover {
-      background: var(--ui-primary-light);
-    }
-
+    &:hover,
     &:focus-visible {
       background: var(--ui-primary-light);
     }
@@ -430,10 +397,7 @@
     &.secondary {
       color: var(--ui-secondary);
 
-      &:hover {
-        background: var(--ui-secondary-light);
-      }
-
+      &:hover,
       &:focus-visible {
         background: var(--ui-secondary-light);
       }
@@ -446,10 +410,7 @@
     &.success {
       color: var(--ui-success);
 
-      &:hover {
-        background: var(--ui-success-light);
-      }
-
+      &:hover,
       &:focus-visible {
         background: var(--ui-success-light);
       }
@@ -462,10 +423,7 @@
     &.danger {
       color: var(--ui-danger);
 
-      &:hover {
-        background: var(--ui-danger-light);
-      }
-
+      &:hover,
       &:focus-visible {
         background: var(--ui-danger-light);
       }
@@ -478,10 +436,7 @@
     &.warning {
       color: var(--ui-warning);
 
-      &:hover {
-        background: var(--ui-warning-light);
-      }
-
+      &:hover,
       &:focus-visible {
         background: var(--ui-warning-light);
       }
