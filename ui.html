@@ -4342,10 +4342,13 @@ function toggleDarkMode() {
   html.setAttribute('data-theme', isDark ? '' : 'dark');
 }
 
-// Or detect system preference
-if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-  document.documentElement.setAttribute('data-theme', 'dark');
+// Or follow system preference
+var mq = window.matchMedia('(prefers-color-scheme: dark)');
+function applySystem() {
+  document.documentElement.setAttribute('data-theme', mq.matches ? 'dark' : '');
 }
+applySystem();
+mq.addEventListener('change', applySystem);
 &lt;/script&gt;</pre>
       </details>
     </div>
