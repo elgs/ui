@@ -205,7 +205,7 @@
   <div class="page">
     <div class="page-header">
       <h1>Icons</h1>
-      <p>440 icons — pure CSS via <code>mask-image</code>. Click any icon to copy its class name. <a href="ui.html#icons">Back to docs</a></p>
+      <p>446 icons — pure CSS via <code>mask-image</code>. Click any icon to copy its class name. <a href="ui.html#icons">Back to docs</a></p>
     </div>
 
     <div class="icon-toolbar">
@@ -214,7 +214,7 @@
         <input class="ui-input" id="icon-filter" type="text" placeholder="Filter icons..." style="padding-left:2.25rem;padding-right:2.25rem" oninput="filterIcons(this.value)" autofocus>
         <button id="icon-filter-clear" onclick="clearIconFilter()" style="display:none;position:absolute;right:0.5rem;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--ui-text-muted);font-size:1rem;padding:0.25rem;line-height:1" title="Clear"><i class="ui-icon ui-icon-x"></i></button>
       </div>
-      <span class="icon-count" id="icon-count">440 icons</span>
+      <span class="icon-count" id="icon-count">446 icons</span>
     </div>
 
     <div id="icon-no-results">No icons match your search.</div>
@@ -232,6 +232,8 @@
             <span class="ui-row" data-icon="arrow-down-right"><i class="ui-icon ui-icon-arrow-down-right"></i> arrow-down-right</span>
             <span class="ui-row" data-icon="arrow-up-down"><i class="ui-icon ui-icon-arrow-up-down"></i> arrow-up-down</span>
             <span class="ui-row" data-icon="arrow-right-left"><i class="ui-icon ui-icon-arrow-right-left"></i> arrow-right-left</span>
+            <span class="ui-row" data-icon="circle-arrow-up"><i class="ui-icon ui-icon-circle-arrow-up"></i> circle-arrow-up</span>
+            <span class="ui-row" data-icon="circle-arrow-down"><i class="ui-icon ui-icon-circle-arrow-down"></i> circle-arrow-down</span>
             <span class="ui-row" data-icon="chevron-up"><i class="ui-icon ui-icon-chevron-up"></i> chevron-up</span>
             <span class="ui-row" data-icon="chevron-down"><i class="ui-icon ui-icon-chevron-down"></i> chevron-down</span>
             <span class="ui-row" data-icon="chevron-left"><i class="ui-icon ui-icon-chevron-left"></i> chevron-left</span>
@@ -327,6 +329,8 @@
             <span class="ui-row" data-icon="folder-plus"><i class="ui-icon ui-icon-folder-plus"></i> folder-plus</span>
             <span class="ui-row" data-icon="file-plus"><i class="ui-icon ui-icon-file-plus"></i> file-plus</span>
             <span class="ui-row" data-icon="clipboard-check"><i class="ui-icon ui-icon-clipboard-check"></i> clipboard-check</span>
+            <span class="ui-row" data-icon="clipboard-paste"><i class="ui-icon ui-icon-clipboard-paste"></i> clipboard-paste</span>
+            <span class="ui-row" data-icon="square-check"><i class="ui-icon ui-icon-square-check"></i> square-check</span>
             <span class="ui-row" data-icon="wand"><i class="ui-icon ui-icon-wand"></i> wand</span>
             <span class="ui-row" data-icon="sparkles"><i class="ui-icon ui-icon-sparkles"></i> sparkles</span>
             <span class="ui-row" data-icon="power"><i class="ui-icon ui-icon-power"></i> power</span>
@@ -455,6 +459,7 @@
             <span class="ui-row" data-icon="zoom-in"><i class="ui-icon ui-icon-zoom-in"></i> zoom-in</span>
             <span class="ui-row" data-icon="zoom-out"><i class="ui-icon ui-icon-zoom-out"></i> zoom-out</span>
             <span class="ui-row" data-icon="zoom-fit"><i class="ui-icon ui-icon-zoom-fit"></i> zoom-fit</span>
+            <span class="ui-row" data-icon="clapperboard"><i class="ui-icon ui-icon-clapperboard"></i> clapperboard</span>
             <span class="ui-row" data-icon="film"><i class="ui-icon ui-icon-film"></i> film</span>
             <span class="ui-row" data-icon="image"><i class="ui-icon ui-icon-image"></i> image</span>
           </div>
@@ -548,6 +553,7 @@
             <span class="ui-row" data-icon="fingerprint"><i class="ui-icon ui-icon-fingerprint"></i> fingerprint</span>
             <span class="ui-row" data-icon="passkey"><i class="ui-icon ui-icon-passkey"></i> passkey</span>
             <span class="ui-row" data-icon="scan"><i class="ui-icon ui-icon-scan"></i> scan</span>
+            <span class="ui-row" data-icon="scan-line"><i class="ui-icon ui-icon-scan-line"></i> scan-line</span>
             <span class="ui-row" data-icon="scan-face"><i class="ui-icon ui-icon-scan-face"></i> scan-face</span>
           </div>
         </div>
@@ -619,6 +625,7 @@
             <span class="ui-row" data-icon="cloud-upload"><i class="ui-icon ui-icon-cloud-upload"></i> cloud-upload</span>
             <span class="ui-row" data-icon="cloud-download"><i class="ui-icon ui-icon-cloud-download"></i> cloud-download</span>
             <span class="ui-row" data-icon="cloud-off"><i class="ui-icon ui-icon-cloud-off"></i> cloud-off</span>
+            <span class="ui-row" data-icon="earth"><i class="ui-icon ui-icon-earth"></i> earth</span>
             <span class="ui-row" data-icon="globe"><i class="ui-icon ui-icon-globe"></i> globe</span>
           </div>
         </div>
@@ -800,7 +807,7 @@
       totalVisible += catVisible;
     });
     noResults.style.display = totalVisible === 0 ? '' : 'none';
-    countEl.textContent = q ? totalVisible + ' matching' : '440 icons';
+    countEl.textContent = q ? totalVisible + ' matching' : '446 icons';
   }
 
   function clearIconFilter() {
