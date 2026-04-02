@@ -205,7 +205,7 @@
   <div class="page">
     <div class="page-header">
       <h1>Icons</h1>
-      <p>438 icons — pure CSS via <code>mask-image</code>. Click any icon to copy its class name. <a href="ui.html#icons">Back to docs</a></p>
+      <p>440 icons — pure CSS via <code>mask-image</code>. Click any icon to copy its class name. <a href="ui.html#icons">Back to docs</a></p>
     </div>
 
     <div class="icon-toolbar">
@@ -214,7 +214,7 @@
         <input class="ui-input" id="icon-filter" type="text" placeholder="Filter icons..." style="padding-left:2.25rem;padding-right:2.25rem" oninput="filterIcons(this.value)" autofocus>
         <button id="icon-filter-clear" onclick="clearIconFilter()" style="display:none;position:absolute;right:0.5rem;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--ui-text-muted);font-size:1rem;padding:0.25rem;line-height:1" title="Clear"><i class="ui-icon ui-icon-x"></i></button>
       </div>
-      <span class="icon-count" id="icon-count">438 icons</span>
+      <span class="icon-count" id="icon-count">440 icons</span>
     </div>
 
     <div id="icon-no-results">No icons match your search.</div>
@@ -283,6 +283,7 @@
             <span class="ui-row" data-icon="eye"><i class="ui-icon ui-icon-eye"></i> eye</span>
             <span class="ui-row" data-icon="eye-off"><i class="ui-icon ui-icon-eye-off"></i> eye-off</span>
             <span class="ui-row" data-icon="crosshair"><i class="ui-icon ui-icon-crosshair"></i> crosshair</span>
+            <span class="ui-row" data-icon="sliders"><i class="ui-icon ui-icon-sliders"></i> sliders</span>
             <span class="ui-row" data-icon="sliders-horizontal"><i class="ui-icon ui-icon-sliders-horizontal"></i> sliders-horizontal</span>
             <span class="ui-row" data-icon="sliders-vertical"><i class="ui-icon ui-icon-sliders-vertical"></i> sliders-vertical</span>
             <span class="ui-row" data-icon="separator-horizontal"><i class="ui-icon ui-icon-separator-horizontal"></i> separator-horizontal</span>
@@ -381,6 +382,7 @@
             <span class="ui-row" data-icon="align-justify"><i class="ui-icon ui-icon-align-justify"></i> align-justify</span>
             <span class="ui-row" data-icon="text-cursor"><i class="ui-icon ui-icon-text-cursor"></i> text-cursor</span>
             <span class="ui-row" data-icon="highlighter"><i class="ui-icon ui-icon-highlighter"></i> highlighter</span>
+            <span class="ui-row" data-icon="feather"><i class="ui-icon ui-icon-feather"></i> feather</span>
             <span class="ui-row" data-icon="eraser"><i class="ui-icon ui-icon-eraser"></i> eraser</span>
             <span class="ui-row" data-icon="subscript"><i class="ui-icon ui-icon-subscript"></i> subscript</span>
             <span class="ui-row" data-icon="superscript"><i class="ui-icon ui-icon-superscript"></i> superscript</span>
@@ -798,7 +800,7 @@
       totalVisible += catVisible;
     });
     noResults.style.display = totalVisible === 0 ? '' : 'none';
-    countEl.textContent = q ? totalVisible + ' matching' : '438 icons';
+    countEl.textContent = q ? totalVisible + ' matching' : '440 icons';
   }
 
   function clearIconFilter() {
