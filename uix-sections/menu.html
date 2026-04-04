@@ -1,0 +1,181 @@
+      <section class="demo-section" id="menu">
+        <h2>Menu</h2>
+
+        <div class="demo-card">
+          <h3>Basic</h3>
+          <div class="flex-row gap-lg align-start">
+            <div id="live-menu-basic">
+              <nav class="ui-menu">
+                <a class="ui-menu-item active" href="#menu"><i class="ui-icon ui-icon-home"></i> Home</a>
+                <a class="ui-menu-item" href="#menu"><i class="ui-icon ui-icon-inbox"></i> Inbox <span class="ui-menu-badge">12</span></a>
+                <a class="ui-menu-item" href="#menu"><i class="ui-icon ui-icon-calendar"></i> Calendar</a>
+                <a class="ui-menu-item" href="#menu"><i class="ui-icon ui-icon-users"></i> Team</a>
+                <hr class="ui-menu-divider">
+                <a class="ui-menu-item" href="#menu"><i class="ui-icon ui-icon-settings"></i> Settings</a>
+              </nav>
+            </div>
+          </div>
+          <details class="demo-code" data-live-target="live-menu-basic">
+            <summary>Show code</summary>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;nav class="ui-menu"&gt;
+  &lt;a class="ui-menu-item active" href="#"&gt;&lt;i class="ui-icon ui-icon-home"&gt;&lt;/i&gt; Home&lt;/a&gt;
+  &lt;a class="ui-menu-item" href="#"&gt;&lt;i class="ui-icon ui-icon-inbox"&gt;&lt;/i&gt; Inbox &lt;span class="ui-menu-badge"&gt;12&lt;/span&gt;&lt;/a&gt;
+  &lt;a class="ui-menu-item" href="#"&gt;&lt;i class="ui-icon ui-icon-calendar"&gt;&lt;/i&gt; Calendar&lt;/a&gt;
+  &lt;a class="ui-menu-item" href="#"&gt;&lt;i class="ui-icon ui-icon-users"&gt;&lt;/i&gt; Team&lt;/a&gt;
+  &lt;hr class="ui-menu-divider"&gt;
+  &lt;a class="ui-menu-item" href="#"&gt;&lt;i class="ui-icon ui-icon-settings"&gt;&lt;/i&gt; Settings&lt;/a&gt;
+&lt;/nav&gt;</pre>
+          </details>
+        </div>
+
+        <div class="demo-card">
+          <h3>Section labels</h3>
+          <div id="live-menu-labels" class="max-w-md">
+            <nav class="ui-menu">
+              <div class="ui-menu-label">Main</div>
+              <a class="ui-menu-item active" href="#menu"><i class="ui-icon ui-icon-layout-grid"></i> Dashboard</a>
+              <a class="ui-menu-item" href="#menu"><i class="ui-icon ui-icon-chart-bar"></i> Analytics</a>
+              <a class="ui-menu-item" href="#menu"><i class="ui-icon ui-icon-package"></i> Products</a>
+              <div class="ui-menu-label">Account</div>
+              <a class="ui-menu-item" href="#menu"><i class="ui-icon ui-icon-user"></i> Profile</a>
+              <a class="ui-menu-item" href="#menu"><i class="ui-icon ui-icon-shield"></i> Security</a>
+              <hr class="ui-menu-divider">
+              <a class="ui-menu-item danger" href="#menu"><i class="ui-icon ui-icon-log-out"></i> Log out</a>
+            </nav>
+          </div>
+          <details class="demo-code" data-live-target="live-menu-labels">
+            <summary>Show code</summary>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;nav class="ui-menu"&gt;
+  &lt;div class="ui-menu-label"&gt;Main&lt;/div&gt;
+  &lt;a class="ui-menu-item active" href="#"&gt;&lt;i class="ui-icon ui-icon-layout-grid"&gt;&lt;/i&gt; Dashboard&lt;/a&gt;
+  &lt;a class="ui-menu-item" href="#"&gt;&lt;i class="ui-icon ui-icon-chart-bar"&gt;&lt;/i&gt; Analytics&lt;/a&gt;
+  &lt;a class="ui-menu-item" href="#"&gt;&lt;i class="ui-icon ui-icon-package"&gt;&lt;/i&gt; Products&lt;/a&gt;
+  &lt;div class="ui-menu-label"&gt;Account&lt;/div&gt;
+  &lt;a class="ui-menu-item" href="#"&gt;&lt;i class="ui-icon ui-icon-user"&gt;&lt;/i&gt; Profile&lt;/a&gt;
+  &lt;a class="ui-menu-item" href="#"&gt;&lt;i class="ui-icon ui-icon-shield"&gt;&lt;/i&gt; Security&lt;/a&gt;
+  &lt;hr class="ui-menu-divider"&gt;
+  &lt;a class="ui-menu-item danger" href="#"&gt;&lt;i class="ui-icon ui-icon-log-out"&gt;&lt;/i&gt; Log out&lt;/a&gt;
+&lt;/nav&gt;</pre>
+          </details>
+        </div>
+
+        <div class="demo-card">
+          <h3>Collapsible groups</h3>
+          <div id="live-menu-groups" class="max-w-md">
+            <nav class="ui-menu">
+              <a class="ui-menu-item active" href="#menu"><i class="ui-icon ui-icon-home"></i> Home</a>
+              <div class="ui-menu-group">
+                <button class="ui-menu-group-toggle" onclick="this.closest('.ui-menu-group').classList.toggle('collapsed')"><i class="ui-icon ui-icon-folder"></i> Projects</button>
+                <div class="ui-menu-group-items">
+                  <a class="ui-menu-item" href="#menu">Website redesign</a>
+                  <a class="ui-menu-item" href="#menu">Mobile app</a>
+                  <a class="ui-menu-item" href="#menu">API docs</a>
+                </div>
+              </div>
+              <div class="ui-menu-group collapsed">
+                <button class="ui-menu-group-toggle" onclick="this.closest('.ui-menu-group').classList.toggle('collapsed')"><i class="ui-icon ui-icon-star"></i> Favorites</button>
+                <div class="ui-menu-group-items">
+                  <a class="ui-menu-item" href="#menu">Design system</a>
+                  <a class="ui-menu-item" href="#menu">Components</a>
+                </div>
+              </div>
+              <hr class="ui-menu-divider">
+              <a class="ui-menu-item" href="#menu"><i class="ui-icon ui-icon-settings"></i> Settings</a>
+            </nav>
+          </div>
+          <details class="demo-code" data-live-target="live-menu-groups">
+            <summary>Show code</summary>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;nav class="ui-menu"&gt;
+  &lt;a class="ui-menu-item active" href="#"&gt;&lt;i class="ui-icon ui-icon-home"&gt;&lt;/i&gt; Home&lt;/a&gt;
+  &lt;div class="ui-menu-group"&gt;
+    &lt;button class="ui-menu-group-toggle" onclick="this.closest('.ui-menu-group').classList.toggle('collapsed')"&gt;&lt;i class="ui-icon ui-icon-folder"&gt;&lt;/i&gt; Projects&lt;/button&gt;
+    &lt;div class="ui-menu-group-items"&gt;
+      &lt;a class="ui-menu-item" href="#"&gt;Website redesign&lt;/a&gt;
+      &lt;a class="ui-menu-item" href="#"&gt;Mobile app&lt;/a&gt;
+      &lt;a class="ui-menu-item" href="#"&gt;API docs&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="ui-menu-group collapsed"&gt;
+    &lt;button class="ui-menu-group-toggle" onclick="this.closest('.ui-menu-group').classList.toggle('collapsed')"&gt;&lt;i class="ui-icon ui-icon-star"&gt;&lt;/i&gt; Favorites&lt;/button&gt;
+    &lt;div class="ui-menu-group-items"&gt;
+      &lt;a class="ui-menu-item" href="#"&gt;Design system&lt;/a&gt;
+      &lt;a class="ui-menu-item" href="#"&gt;Components&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;hr class="ui-menu-divider"&gt;
+  &lt;a class="ui-menu-item" href="#"&gt;&lt;i class="ui-icon ui-icon-settings"&gt;&lt;/i&gt; Settings&lt;/a&gt;
+&lt;/nav&gt;</pre>
+          </details>
+        </div>
+
+        <div class="demo-card">
+          <h3>Borderless</h3>
+          <div id="live-menu-borderless" class="max-w-sm">
+            <nav class="ui-menu borderless">
+              <a class="ui-menu-item" href="#menu"><i class="ui-icon ui-icon-home"></i> Home</a>
+              <a class="ui-menu-item active" href="#menu"><i class="ui-icon ui-icon-bell"></i> Notifications <span class="ui-menu-badge">3</span></a>
+              <a class="ui-menu-item" href="#menu"><i class="ui-icon ui-icon-mail"></i> Messages</a>
+              <a class="ui-menu-item" href="#menu"><i class="ui-icon ui-icon-search"></i> Search</a>
+            </nav>
+          </div>
+          <details class="demo-code" data-live-target="live-menu-borderless">
+            <summary>Show code</summary>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;nav class="ui-menu borderless"&gt;
+  &lt;a class="ui-menu-item" href="#"&gt;&lt;i class="ui-icon ui-icon-home"&gt;&lt;/i&gt; Home&lt;/a&gt;
+  &lt;a class="ui-menu-item active" href="#"&gt;&lt;i class="ui-icon ui-icon-bell"&gt;&lt;/i&gt; Notifications &lt;span class="ui-menu-badge"&gt;3&lt;/span&gt;&lt;/a&gt;
+  &lt;a class="ui-menu-item" href="#"&gt;&lt;i class="ui-icon ui-icon-mail"&gt;&lt;/i&gt; Messages&lt;/a&gt;
+  &lt;a class="ui-menu-item" href="#"&gt;&lt;i class="ui-icon ui-icon-search"&gt;&lt;/i&gt; Search&lt;/a&gt;
+&lt;/nav&gt;</pre>
+          </details>
+        </div>
+
+        <div class="demo-card">
+          <h3>Sizes</h3>
+          <div id="live-menu-sizes" class="flex-row gap-lg align-start">
+            <nav class="ui-menu sm">
+              <div class="ui-menu-label">Small</div>
+              <a class="ui-menu-item active" href="#menu"><i class="ui-icon ui-icon-home"></i> Home</a>
+              <a class="ui-menu-item" href="#menu"><i class="ui-icon ui-icon-inbox"></i> Inbox</a>
+              <a class="ui-menu-item" href="#menu"><i class="ui-icon ui-icon-settings"></i> Settings</a>
+            </nav>
+            <nav class="ui-menu">
+              <div class="ui-menu-label">Default</div>
+              <a class="ui-menu-item active" href="#menu"><i class="ui-icon ui-icon-home"></i> Home</a>
+              <a class="ui-menu-item" href="#menu"><i class="ui-icon ui-icon-inbox"></i> Inbox</a>
+              <a class="ui-menu-item" href="#menu"><i class="ui-icon ui-icon-settings"></i> Settings</a>
+            </nav>
+            <nav class="ui-menu lg">
+              <div class="ui-menu-label">Large</div>
+              <a class="ui-menu-item active" href="#menu"><i class="ui-icon ui-icon-home"></i> Home</a>
+              <a class="ui-menu-item" href="#menu"><i class="ui-icon ui-icon-inbox"></i> Inbox</a>
+              <a class="ui-menu-item" href="#menu"><i class="ui-icon ui-icon-settings"></i> Settings</a>
+            </nav>
+          </div>
+          <details class="demo-code" data-live-target="live-menu-sizes">
+            <summary>Show code</summary>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;nav class="ui-menu sm"&gt;
+  &lt;div class="ui-menu-label"&gt;Small&lt;/div&gt;
+  &lt;a class="ui-menu-item active" href="#"&gt;&lt;i class="ui-icon ui-icon-home"&gt;&lt;/i&gt; Home&lt;/a&gt;
+  &lt;a class="ui-menu-item" href="#"&gt;&lt;i class="ui-icon ui-icon-inbox"&gt;&lt;/i&gt; Inbox&lt;/a&gt;
+  &lt;a class="ui-menu-item" href="#"&gt;&lt;i class="ui-icon ui-icon-settings"&gt;&lt;/i&gt; Settings&lt;/a&gt;
+&lt;/nav&gt;
+&lt;nav class="ui-menu"&gt;
+  &lt;div class="ui-menu-label"&gt;Default&lt;/div&gt;
+  &lt;a class="ui-menu-item active" href="#"&gt;&lt;i class="ui-icon ui-icon-home"&gt;&lt;/i&gt; Home&lt;/a&gt;
+  &lt;a class="ui-menu-item" href="#"&gt;&lt;i class="ui-icon ui-icon-inbox"&gt;&lt;/i&gt; Inbox&lt;/a&gt;
+  &lt;a class="ui-menu-item" href="#"&gt;&lt;i class="ui-icon ui-icon-settings"&gt;&lt;/i&gt; Settings&lt;/a&gt;
+&lt;/nav&gt;
+&lt;nav class="ui-menu lg"&gt;
+  &lt;div class="ui-menu-label"&gt;Large&lt;/div&gt;
+  &lt;a class="ui-menu-item active" href="#"&gt;&lt;i class="ui-icon ui-icon-home"&gt;&lt;/i&gt; Home&lt;/a&gt;
+  &lt;a class="ui-menu-item" href="#"&gt;&lt;i class="ui-icon ui-icon-inbox"&gt;&lt;/i&gt; Inbox&lt;/a&gt;
+  &lt;a class="ui-menu-item" href="#"&gt;&lt;i class="ui-icon ui-icon-settings"&gt;&lt;/i&gt; Settings&lt;/a&gt;
+&lt;/nav&gt;</pre>
+          </details>
+        </div>
+      </section>

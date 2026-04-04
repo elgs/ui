@@ -1255,6 +1255,242 @@
 }
 
 /* ============================================
+   Menu — Vertical navigation sidebar
+   ============================================ */
+
+.ui-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  font-family: var(--ui-font);
+  font-size: var(--ui-font-size);
+  padding: 0.5rem;
+  min-width: 14rem;
+  background: var(--ui-surface);
+  border: 1px solid var(--ui-border);
+  border-radius: var(--ui-radius-lg);
+
+  /* --- Borderless variant --- */
+
+  &.borderless {
+    border: none;
+    background: none;
+    border-radius: 0;
+    padding: 0;
+  }
+}
+
+.ui-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4375rem 0.75rem;
+  font-family: var(--ui-font);
+  font-size: var(--ui-font-size);
+  color: var(--ui-text);
+  background: none;
+  border: none;
+  border-radius: var(--ui-radius-sm);
+  cursor: pointer;
+  text-decoration: none;
+  text-align: left;
+  width: 100%;
+  white-space: nowrap;
+  transition: background var(--ui-transition), color var(--ui-transition);
+
+  & .ui-icon {
+    font-size: 1.125rem;
+    color: var(--ui-text-muted);
+    flex-shrink: 0;
+    transition: color var(--ui-transition);
+  }
+
+  & .ui-menu-badge {
+    margin-left: auto;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--ui-text-muted);
+    min-width: 1.25rem;
+    text-align: center;
+  }
+
+  &:hover {
+    background: var(--ui-bg-subtle);
+
+    & .ui-icon {
+      color: var(--ui-text);
+    }
+  }
+
+  &.active {
+    background: var(--ui-primary-light);
+    color: var(--ui-primary);
+    font-weight: 500;
+
+    & .ui-icon {
+      color: var(--ui-primary);
+    }
+
+    & .ui-menu-badge {
+      color: var(--ui-primary);
+    }
+  }
+
+  &:disabled,
+  &[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  /* --- Danger item --- */
+
+  &.danger {
+    color: var(--ui-danger);
+
+    & .ui-icon {
+      color: var(--ui-danger);
+    }
+
+    &:hover {
+      background: color-mix(in srgb, var(--ui-danger) 8%, transparent);
+    }
+  }
+}
+
+.ui-menu-label {
+  display: block;
+  padding: 0.625rem 0.75rem 0.25rem;
+  font-family: var(--ui-font);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--ui-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.ui-menu-divider {
+  height: 0;
+  border: none;
+  border-top: 1px solid var(--ui-border);
+  margin: 0.375rem 0;
+}
+
+/* Collapsible group */
+.ui-menu-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+
+  & .ui-menu-group-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4375rem 0.75rem;
+    font-family: var(--ui-font);
+    font-size: var(--ui-font-size);
+    font-weight: 500;
+    color: var(--ui-text);
+    background: none;
+    border: none;
+    border-radius: var(--ui-radius-sm);
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    white-space: nowrap;
+    transition: background var(--ui-transition);
+
+    &::after {
+      content: "";
+      display: block;
+      margin-left: auto;
+      width: 1rem;
+      height: 1rem;
+      background: currentColor;
+      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      opacity: 0.4;
+      transition: transform var(--ui-transition);
+      flex-shrink: 0;
+    }
+
+    &:hover {
+      background: var(--ui-bg-subtle);
+    }
+  }
+
+  & .ui-menu-group-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+    padding-left: 0.75rem;
+  }
+
+  &.collapsed {
+    & .ui-menu-group-toggle::after {
+      transform: rotate(-90deg);
+    }
+
+    & .ui-menu-group-items {
+      display: none;
+    }
+  }
+}
+
+/* --- Sizes --- */
+
+.ui-menu.sm {
+  padding: 0.375rem;
+  min-width: 11rem;
+  font-size: 0.8125rem;
+
+  & .ui-menu-item {
+    padding: 0.3125rem 0.625rem;
+    font-size: 0.8125rem;
+
+    & .ui-icon {
+      font-size: 1rem;
+    }
+  }
+
+  & .ui-menu-label {
+    padding: 0.5rem 0.625rem 0.1875rem;
+    font-size: 0.625rem;
+  }
+
+  & .ui-menu-group .ui-menu-group-toggle {
+    padding: 0.3125rem 0.625rem;
+    font-size: 0.8125rem;
+  }
+}
+
+.ui-menu.lg {
+  padding: 0.625rem;
+  min-width: 17rem;
+
+  & .ui-menu-item {
+    padding: 0.5625rem 0.875rem;
+    font-size: 0.9375rem;
+
+    & .ui-icon {
+      font-size: 1.25rem;
+    }
+  }
+
+  & .ui-menu-label {
+    padding: 0.75rem 0.875rem 0.3125rem;
+    font-size: 0.75rem;
+  }
+
+  & .ui-menu-group .ui-menu-group-toggle {
+    padding: 0.5625rem 0.875rem;
+    font-size: 0.9375rem;
+  }
+}
+
+
+/* ============================================
    Gradient mode — toggled via data-ui-gradient
    ============================================ */
 

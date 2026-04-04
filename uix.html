@@ -154,6 +154,9 @@
     .gap-sm { gap: 0.5rem; }
     .gap-lg { gap: 1.25rem; }
     .mt-1 { margin-top: 1rem; }
+    .align-start { align-items: flex-start; }
+    .max-w-sm { max-width: 14rem; }
+    .max-w-md { max-width: 16rem; }
 
     /* Theme controls (fixed top-right) */
     .theme-controls-fixed {
@@ -460,6 +463,9 @@
       <div class="demo-nav-label">Form controls</div>
       <a href="#input-otp">Input OTP</a>
       <hr class="demo-nav-divider">
+      <div class="demo-nav-label">Navigation</div>
+      <a href="#menu">Menu</a>
+      <hr class="demo-nav-divider">
       <div class="demo-nav-label">Data display</div>
       <a href="#timeline">Timeline</a>
       <a href="#stepper">Stepper</a>
@@ -513,7 +519,8 @@
 <script>
   // ── Section loader ──
   var uixSectionIds = [
-    'input-otp','timeline','stepper','code-block','diff',
+    'input-otp','menu',
+    'timeline','stepper','code-block','diff',
     'popover','empty-state','chat-bubble'
   ];
 
