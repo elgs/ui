@@ -67,7 +67,7 @@
             <nav class="ui-menu">
               <a class="ui-menu-item active" href="#menu"><i class="ui-icon ui-icon-home"></i> Home</a>
               <div class="ui-menu-group">
-                <button class="ui-menu-group-toggle" onclick="this.closest('.ui-menu-group').classList.toggle('collapsed')"><i class="ui-icon ui-icon-folder"></i> Projects</button>
+                <button class="ui-menu-group-toggle"><i class="ui-icon ui-icon-folder"></i> Projects</button>
                 <div class="ui-menu-group-items">
                   <a class="ui-menu-item" href="#menu">Website redesign</a>
                   <a class="ui-menu-item" href="#menu">Mobile app</a>
@@ -75,7 +75,7 @@
                 </div>
               </div>
               <div class="ui-menu-group collapsed">
-                <button class="ui-menu-group-toggle" onclick="this.closest('.ui-menu-group').classList.toggle('collapsed')"><i class="ui-icon ui-icon-star"></i> Favorites</button>
+                <button class="ui-menu-group-toggle"><i class="ui-icon ui-icon-star"></i> Favorites</button>
                 <div class="ui-menu-group-items">
                   <a class="ui-menu-item" href="#menu">Design system</a>
                   <a class="ui-menu-item" href="#menu">Components</a>
@@ -91,7 +91,7 @@
 <pre>&lt;nav class="ui-menu"&gt;
   &lt;a class="ui-menu-item active" href="#"&gt;&lt;i class="ui-icon ui-icon-home"&gt;&lt;/i&gt; Home&lt;/a&gt;
   &lt;div class="ui-menu-group"&gt;
-    &lt;button class="ui-menu-group-toggle" onclick="this.closest('.ui-menu-group').classList.toggle('collapsed')"&gt;&lt;i class="ui-icon ui-icon-folder"&gt;&lt;/i&gt; Projects&lt;/button&gt;
+    &lt;button class="ui-menu-group-toggle"&gt;&lt;i class="ui-icon ui-icon-folder"&gt;&lt;/i&gt; Projects&lt;/button&gt;
     &lt;div class="ui-menu-group-items"&gt;
       &lt;a class="ui-menu-item" href="#"&gt;Website redesign&lt;/a&gt;
       &lt;a class="ui-menu-item" href="#"&gt;Mobile app&lt;/a&gt;
@@ -99,7 +99,7 @@
     &lt;/div&gt;
   &lt;/div&gt;
   &lt;div class="ui-menu-group collapsed"&gt;
-    &lt;button class="ui-menu-group-toggle" onclick="this.closest('.ui-menu-group').classList.toggle('collapsed')"&gt;&lt;i class="ui-icon ui-icon-star"&gt;&lt;/i&gt; Favorites&lt;/button&gt;
+    &lt;button class="ui-menu-group-toggle"&gt;&lt;i class="ui-icon ui-icon-star"&gt;&lt;/i&gt; Favorites&lt;/button&gt;
     &lt;div class="ui-menu-group-items"&gt;
       &lt;a class="ui-menu-item" href="#"&gt;Design system&lt;/a&gt;
       &lt;a class="ui-menu-item" href="#"&gt;Components&lt;/a&gt;
@@ -107,7 +107,15 @@
   &lt;/div&gt;
   &lt;hr class="ui-menu-divider"&gt;
   &lt;a class="ui-menu-item" href="#"&gt;&lt;i class="ui-icon ui-icon-settings"&gt;&lt;/i&gt; Settings&lt;/a&gt;
-&lt;/nav&gt;</pre>
+&lt;/nav&gt;
+
+&lt;script&gt;
+document.querySelectorAll('.ui-menu-group-toggle').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    btn.closest('.ui-menu-group').classList.toggle('collapsed');
+  });
+});
+&lt;/script&gt;</pre>
           </details>
         </div>
 

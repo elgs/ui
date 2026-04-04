@@ -911,6 +911,12 @@
       });
     });
 
+    // Menu group toggle (event delegation survives innerHTML updates)
+    document.addEventListener('click', function(e) {
+      var toggle = e.target.closest('.ui-menu-group-toggle');
+      if (toggle) toggle.closest('.ui-menu-group').classList.toggle('collapsed');
+    });
+
     // Popover toggle & dismiss (event delegation survives innerHTML updates)
     var popoverTarget = document.getElementById('live-popover-pos');
     if (popoverTarget) {
