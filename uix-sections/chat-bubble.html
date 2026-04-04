@@ -1,0 +1,65 @@
+      <section class="demo-section" id="chat-bubble">
+        <h2>Chat Bubble</h2>
+
+        <div class="demo-card">
+          <h3>Conversation</h3>
+          <div id="live-chat" class="chat-demo">
+            <div class="ui-chat">
+              <div class="ui-chat-message">
+                <div class="ui-chat-avatar" data-initial="A"></div>
+                <div class="ui-chat-group">
+                  <div class="ui-chat-meta">
+                    <span class="ui-chat-name">Alice</span>
+                    <span class="ui-chat-time">10:30 AM</span>
+                  </div>
+                  <div class="ui-chat-bubble">Hey, have you seen the new design specs?</div>
+                </div>
+              </div>
+              <div class="ui-chat-message sent">
+                <div class="ui-chat-group">
+                  <div class="ui-chat-meta">
+                    <span class="ui-chat-time">10:31 AM</span>
+                  </div>
+                  <div class="ui-chat-bubble">Yes! They look great.</div>
+                </div>
+              </div>
+              <div class="ui-chat-message typing">
+                <div class="ui-chat-avatar" data-initial="A"></div>
+                <div class="ui-chat-group">
+                  <div class="ui-chat-bubble"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <details class="demo-code" data-live-target="live-chat">
+            <summary>Show code</summary>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-chat"&gt;
+  &lt;div class="ui-chat-message"&gt;
+    &lt;div class="ui-chat-avatar" data-initial="A"&gt;&lt;/div&gt;
+    &lt;div class="ui-chat-group"&gt;
+      &lt;div class="ui-chat-meta"&gt;
+        &lt;span class="ui-chat-name"&gt;Alice&lt;/span&gt;
+        &lt;span class="ui-chat-time"&gt;10:30 AM&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class="ui-chat-bubble"&gt;Hey, have you seen the new design specs?&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="ui-chat-message sent"&gt;
+    &lt;div class="ui-chat-group"&gt;
+      &lt;div class="ui-chat-meta"&gt;
+        &lt;span class="ui-chat-time"&gt;10:31 AM&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class="ui-chat-bubble"&gt;Yes! They look great.&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="ui-chat-message typing"&gt;
+    &lt;div class="ui-chat-avatar" data-initial="A"&gt;&lt;/div&gt;
+    &lt;div class="ui-chat-group"&gt;
+      &lt;div class="ui-chat-bubble"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+          </details>
+        </div>
+      </section>

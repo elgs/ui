@@ -1,0 +1,104 @@
+  <div class="demo-section" id="custom-themes">
+    <h2>Custom Themes</h2>
+    <div class="demo-subsection">
+      <h3>Create a theme in a separate CSS file</h3>
+      <p style="font-size:0.8125rem; color:var(--ui-text-muted); margin:0 0 0.75rem;">
+        Define your theme with <code style="font-size:inherit;">[data-ui-theme="name"]</code> selectors. Only override the properties you need &mdash; everything else inherits from the defaults. Hover, active, and light variants are derived automatically via <code style="font-size:inherit;">color-mix()</code>.
+      </p>
+      <details class="demo-code" data-readonly data-lang="css" open style="border-top:none; padding-top:0;">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>/* my-theme.css */
+
+/* Light mode overrides */
+[data-ui-theme="my-theme"] {
+  --ui-primary: #6d28d9;
+  --ui-primary-text: #ffffff;
+  --ui-success: #059669;
+  --ui-danger: #dc2626;
+
+  --ui-bg: #faf5ff;
+  --ui-bg-subtle: #f3e8ff;
+  --ui-surface: #ffffff;
+  --ui-border: #e0c6f5;
+  --ui-text: #2e1065;
+  --ui-text-muted: #7c3aed;
+}
+
+/* Dark mode overrides */
+[data-ui-theme="my-theme"][data-theme="dark"] {
+  --ui-primary: #a78bfa;
+  --ui-primary-text: #ffffff;
+  --ui-success: #34d399;
+  --ui-danger: #fb7185;
+
+  --ui-bg: #1a0533;
+  --ui-bg-subtle: #130425;
+  --ui-surface: #2a1045;
+  --ui-border: #3d1a60;
+  --ui-text: #e9d5ff;
+  --ui-text-muted: #b08adb;
+}</pre>
+      </details>
+    </div>
+    <div class="demo-subsection">
+      <h3>Include &amp; activate</h3>
+      <details class="demo-code" data-readonly open style="border-top:none; padding-top:0;">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;!-- 1. Include after ui.css --&gt;
+&lt;link rel="stylesheet" href="ui.css"&gt;
+&lt;link rel="stylesheet" href="my-theme.css"&gt;
+
+&lt;!-- 2. Activate via attribute --&gt;
+&lt;html data-ui-theme="my-theme"&gt;
+
+&lt;!-- Or toggle via JavaScript --&gt;
+&lt;script&gt;
+// Apply theme
+document.documentElement.setAttribute('data-ui-theme', 'my-theme');
+
+// Revert to default
+document.documentElement.removeAttribute('data-ui-theme');
+&lt;/script&gt;</pre>
+      </details>
+    </div>
+    <div class="demo-subsection">
+      <h3>Available properties</h3>
+      <p style="font-size:0.8125rem; color:var(--ui-text-muted); margin:0 0 0.75rem;">
+        These are the properties you can override in a theme file. All are optional.
+      </p>
+      <details class="demo-code" data-readonly data-lang="css" style="border-top:none; padding-top:0;" open>
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>/* Semantic colors (hover/active/light auto-derived) */
+--ui-primary         --ui-primary-text
+--ui-secondary       --ui-secondary-text
+--ui-success         --ui-success-text
+--ui-danger          --ui-danger-text
+--ui-warning         --ui-warning-text
+
+/* Neutrals */
+--ui-bg              --ui-bg-subtle
+--ui-surface         --ui-border
+--ui-text            --ui-text-muted
+--ui-text-inverse    --ui-overlay
+
+/* Sizing &amp; shape */
+--ui-radius-sm       --ui-radius
+--ui-radius-lg       --ui-radius-full
+
+/* Shadows */
+--ui-shadow-sm       --ui-shadow
+--ui-shadow-lg       --ui-shadow-xl
+
+/* Typography */
+--ui-font            --ui-font-mono
+--ui-font-size       --ui-line-height
+
+/* Misc */
+--ui-tooltip-bg      --ui-tooltip-text
+--ui-select-arrow    --ui-transition</pre>
+      </details>
+    </div>
+  </div>

@@ -1,0 +1,134 @@
+  <div class="demo-section" id="checkboxes">
+    <h2>Checkboxes</h2>
+
+    <div class="demo-subsection">
+      <h3>Default</h3>
+      <div class="ui-stack sm">
+        <label class="ui-checkbox">
+          <input type="checkbox" checked>
+          Checked
+        </label>
+        <label class="ui-checkbox">
+          <input type="checkbox">
+          Unchecked
+        </label>
+        <label class="ui-checkbox">
+          <input type="checkbox" id="indeterminate-cb">
+          Indeterminate
+        </label>
+        <label class="ui-checkbox">
+          <input type="checkbox" checked disabled>
+          Disabled (checked)
+        </label>
+        <label class="ui-checkbox">
+          <input type="checkbox" disabled>
+          Disabled (unchecked)
+        </label>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;label class="ui-checkbox"&gt;
+  &lt;input type="checkbox" checked&gt;
+  Checked
+&lt;/label&gt;
+&lt;label class="ui-checkbox"&gt;
+  &lt;input type="checkbox"&gt;
+  Unchecked
+&lt;/label&gt;
+&lt;label class="ui-checkbox"&gt;
+  &lt;input type="checkbox" id="indeterminate-cb"&gt;
+  Indeterminate
+&lt;/label&gt;
+&lt;label class="ui-checkbox"&gt;
+  &lt;input type="checkbox" checked disabled&gt;
+  Disabled (checked)
+&lt;/label&gt;
+&lt;label class="ui-checkbox"&gt;
+  &lt;input type="checkbox" disabled&gt;
+  Disabled (unchecked)
+&lt;/label&gt;
+
+&lt;script&gt;
+// Indeterminate is a JS-only property, cannot be set via HTML
+document.getElementById('indeterminate-cb').indeterminate = true;
+&lt;/script&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Colors</h3>
+      <div class="ui-row">
+        <label class="ui-checkbox">
+          <input type="checkbox" checked>
+          Primary
+        </label>
+        <label class="ui-checkbox success">
+          <input type="checkbox" checked>
+          Success
+        </label>
+        <label class="ui-checkbox danger">
+          <input type="checkbox" checked>
+          Danger
+        </label>
+        <label class="ui-checkbox warning">
+          <input type="checkbox" checked>
+          Warning
+        </label>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;label class="ui-checkbox"&gt;
+  &lt;input type="checkbox" checked&gt;
+  Primary
+&lt;/label&gt;
+&lt;label class="ui-checkbox success"&gt;
+  &lt;input type="checkbox" checked&gt;
+  Success
+&lt;/label&gt;
+&lt;label class="ui-checkbox danger"&gt;
+  &lt;input type="checkbox" checked&gt;
+  Danger
+&lt;/label&gt;
+&lt;label class="ui-checkbox warning"&gt;
+  &lt;input type="checkbox" checked&gt;
+  Warning
+&lt;/label&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Sizes</h3>
+      <div class="ui-row">
+        <label class="ui-checkbox sm">
+          <input type="checkbox" checked>
+          Small
+        </label>
+        <label class="ui-checkbox">
+          <input type="checkbox" checked>
+          Default
+        </label>
+        <label class="ui-checkbox lg">
+          <input type="checkbox" checked>
+          Large
+        </label>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;label class="ui-checkbox sm"&gt;
+  &lt;input type="checkbox" checked&gt;
+  Small
+&lt;/label&gt;
+&lt;label class="ui-checkbox"&gt;
+  &lt;input type="checkbox" checked&gt;
+  Default
+&lt;/label&gt;
+&lt;label class="ui-checkbox lg"&gt;
+  &lt;input type="checkbox" checked&gt;
+  Large
+&lt;/label&gt;</pre>
+      </details>
+    </div>
+  </div>

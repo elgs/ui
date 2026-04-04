@@ -1,0 +1,63 @@
+  <div class="demo-section" id="toasts">
+    <h2>Toasts</h2>
+
+    <div class="demo-subsection">
+      <h3>Variants & position</h3>
+      <div class="ui-row">
+        <select class="ui-select" id="toast-position" style="width:auto;">
+          <option value="bottom-right">bottom-right</option>
+          <option value="top-right">top-right</option>
+          <option value="top-left">top-left</option>
+          <option value="bottom-left">bottom-left</option>
+          <option value="top-center">top-center</option>
+          <option value="bottom-center">bottom-center</option>
+        </select>
+      </div>
+      <div class="ui-row" style="margin-top:0.75rem;">
+        <button class="ui-btn sm" onclick="showToast('info', document.getElementById('toast-position').value)">Info</button>
+        <button class="ui-btn sm success" onclick="showToast('success', document.getElementById('toast-position').value)">Success</button>
+        <button class="ui-btn sm danger" onclick="showToast('danger', document.getElementById('toast-position').value)">Danger</button>
+        <button class="ui-btn sm warning" onclick="showToast('warning', document.getElementById('toast-position').value)">Warning</button>
+      </div>
+      <details class="demo-code" data-readonly>
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;script&gt;
+// Container is created on the fly per position — no HTML needed
+function getToastContainer(position = 'bottom-right') {
+  const id = `ui-toast-${position}`;
+  let c = document.getElementById(id);
+  if (!c) {
+    c = document.createElement('div');
+    c.id = id;
+    c.className = `ui-toast-container ${position}`;
+    document.body.appendChild(c);
+  }
+  return c;
+}
+
+// type: 'info' | 'success' | 'danger' | 'warning'
+// position: 'bottom-right' | 'top-right' | 'top-left' | 'bottom-left' | 'top-center' | 'bottom-center'
+function showToast(type, message, position) {
+  const icons = {
+    info: 'ui-icon-info', success: 'ui-icon-check-circle',
+    danger: 'ui-icon-alert-circle', warning: 'ui-icon-alert-triangle',
+  };
+  const toast = document.createElement('div');
+  toast.className = `ui-toast ${type}`;
+  toast.innerHTML = `
+    &lt;i class="ui-toast-icon ui-icon ${icons[type]}"&gt;&lt;/i&gt;
+    &lt;span class="ui-toast-body"&gt;${message}&lt;/span&gt;
+    &lt;button class="ui-toast-close"
+      onclick="this.closest('.ui-toast').remove()"&gt;&amp;times;&lt;/button&gt;`;
+  getToastContainer(position).appendChild(toast);
+  setTimeout(() =&gt; toast.parentNode &amp;&amp; toast.remove(), 4000);
+}
+
+// Usage:
+showToast('success', 'Changes saved!', 'top-right');
+showToast('danger', 'Something went wrong.'); // defaults to bottom-right
+&lt;/script&gt;</pre>
+      </details>
+    </div>
+  </div>

@@ -1,0 +1,195 @@
+      <section class="demo-section" id="stepper">
+        <h2>Stepper</h2>
+
+        <div class="demo-card">
+          <h3>Horizontal</h3>
+          <div id="live-stepper">
+            <div class="ui-stepper">
+              <div class="ui-step completed">
+                <div class="ui-step-indicator"><i class="ui-icon ui-icon-check"></i></div>
+                <div class="ui-step-content">
+                  <div class="ui-step-title">Account</div>
+                  <div class="ui-step-description">Create your account</div>
+                </div>
+              </div>
+              <div class="ui-step active">
+                <div class="ui-step-indicator"></div>
+                <div class="ui-step-content">
+                  <div class="ui-step-title">Profile</div>
+                  <div class="ui-step-description">Set up your profile</div>
+                </div>
+              </div>
+              <div class="ui-step">
+                <div class="ui-step-indicator"></div>
+                <div class="ui-step-content">
+                  <div class="ui-step-title">Review</div>
+                  <div class="ui-step-description">Confirm details</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <details class="demo-code" data-live-target="live-stepper">
+            <summary>Show code</summary>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-stepper"&gt;
+  &lt;div class="ui-step completed"&gt;
+    &lt;div class="ui-step-indicator"&gt;
+      &lt;i class="ui-icon ui-icon-check"&gt;&lt;/i&gt;
+    &lt;/div&gt;
+    &lt;div class="ui-step-content"&gt;
+      &lt;div class="ui-step-title"&gt;Account&lt;/div&gt;
+      &lt;div class="ui-step-description"&gt;Create your account&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="ui-step active"&gt;
+    &lt;div class="ui-step-indicator"&gt;&lt;/div&gt;
+    &lt;div class="ui-step-content"&gt;
+      &lt;div class="ui-step-title"&gt;Profile&lt;/div&gt;
+      &lt;div class="ui-step-description"&gt;Set up your profile&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="ui-step"&gt;
+    &lt;div class="ui-step-indicator"&gt;&lt;/div&gt;
+    &lt;div class="ui-step-content"&gt;
+      &lt;div class="ui-step-title"&gt;Review&lt;/div&gt;
+      &lt;div class="ui-step-description"&gt;Confirm details&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+          </details>
+        </div>
+
+        <div class="demo-card">
+          <h3>Vertical</h3>
+          <div id="live-stepper-v">
+            <div class="ui-stepper vertical">
+              <div class="ui-step completed">
+                <div class="ui-step-indicator"><i class="ui-icon ui-icon-check"></i></div>
+                <div class="ui-step-content">
+                  <div class="ui-step-title">Select plan</div>
+                  <div class="ui-step-description">Choose a subscription tier</div>
+                </div>
+              </div>
+              <div class="ui-step completed">
+                <div class="ui-step-indicator"><i class="ui-icon ui-icon-check"></i></div>
+                <div class="ui-step-content">
+                  <div class="ui-step-title">Payment</div>
+                  <div class="ui-step-description">Enter billing information</div>
+                </div>
+              </div>
+              <div class="ui-step error">
+                <div class="ui-step-indicator"><i class="ui-icon ui-icon-alert-circle"></i></div>
+                <div class="ui-step-content">
+                  <div class="ui-step-title">Verification</div>
+                  <div class="ui-step-description">Identity check failed</div>
+                </div>
+              </div>
+              <div class="ui-step">
+                <div class="ui-step-indicator"></div>
+                <div class="ui-step-content">
+                  <div class="ui-step-title">Complete</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <details class="demo-code" data-live-target="live-stepper-v">
+            <summary>Show code</summary>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-stepper vertical"&gt;
+  &lt;div class="ui-step completed"&gt;
+    &lt;div class="ui-step-indicator"&gt;
+      &lt;i class="ui-icon ui-icon-check"&gt;&lt;/i&gt;
+    &lt;/div&gt;
+    &lt;div class="ui-step-content"&gt;
+      &lt;div class="ui-step-title"&gt;Select plan&lt;/div&gt;
+      &lt;div class="ui-step-description"&gt;Choose a subscription tier&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="ui-step completed"&gt;
+    &lt;div class="ui-step-indicator"&gt;
+      &lt;i class="ui-icon ui-icon-check"&gt;&lt;/i&gt;
+    &lt;/div&gt;
+    &lt;div class="ui-step-content"&gt;
+      &lt;div class="ui-step-title"&gt;Payment&lt;/div&gt;
+      &lt;div class="ui-step-description"&gt;Enter billing information&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="ui-step error"&gt;
+    &lt;div class="ui-step-indicator"&gt;
+      &lt;i class="ui-icon ui-icon-alert-circle"&gt;&lt;/i&gt;
+    &lt;/div&gt;
+    &lt;div class="ui-step-content"&gt;
+      &lt;div class="ui-step-title"&gt;Verification&lt;/div&gt;
+      &lt;div class="ui-step-description"&gt;Identity check failed&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="ui-step"&gt;
+    &lt;div class="ui-step-indicator"&gt;&lt;/div&gt;
+    &lt;div class="ui-step-content"&gt;
+      &lt;div class="ui-step-title"&gt;Complete&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+          </details>
+        </div>
+
+        <div class="demo-card">
+          <h3>Vertical reverse (bottom to top)</h3>
+          <div id="live-stepper-vr">
+            <div class="ui-stepper vertical reverse">
+              <div class="ui-step completed">
+                <div class="ui-step-indicator"><i class="ui-icon ui-icon-check"></i></div>
+                <div class="ui-step-content">
+                  <div class="ui-step-title">Start</div>
+                  <div class="ui-step-description">Begin setup</div>
+                </div>
+              </div>
+              <div class="ui-step active">
+                <div class="ui-step-indicator"></div>
+                <div class="ui-step-content">
+                  <div class="ui-step-title">Review</div>
+                  <div class="ui-step-description">Confirm details</div>
+                </div>
+              </div>
+              <div class="ui-step">
+                <div class="ui-step-indicator"></div>
+                <div class="ui-step-content">
+                  <div class="ui-step-title">Complete</div>
+                  <div class="ui-step-description">All done</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <details class="demo-code" data-live-target="live-stepper-vr">
+            <summary>Show code</summary>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-stepper vertical reverse"&gt;
+  &lt;div class="ui-step completed"&gt;
+    &lt;div class="ui-step-indicator"&gt;
+      &lt;i class="ui-icon ui-icon-check"&gt;&lt;/i&gt;
+    &lt;/div&gt;
+    &lt;div class="ui-step-content"&gt;
+      &lt;div class="ui-step-title"&gt;Start&lt;/div&gt;
+      &lt;div class="ui-step-description"&gt;Begin setup&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="ui-step active"&gt;
+    &lt;div class="ui-step-indicator"&gt;&lt;/div&gt;
+    &lt;div class="ui-step-content"&gt;
+      &lt;div class="ui-step-title"&gt;Review&lt;/div&gt;
+      &lt;div class="ui-step-description"&gt;Confirm details&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="ui-step"&gt;
+    &lt;div class="ui-step-indicator"&gt;&lt;/div&gt;
+    &lt;div class="ui-step-content"&gt;
+      &lt;div class="ui-step-title"&gt;Complete&lt;/div&gt;
+      &lt;div class="ui-step-description"&gt;All done&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+          </details>
+        </div>
+      </section>
+
+      <!-- ============ CODE BLOCK ============ -->

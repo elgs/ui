@@ -1,0 +1,72 @@
+      <section class="demo-section" id="popover">
+        <h2>Popover</h2>
+
+        <div class="demo-card">
+          <h3>Positions</h3>
+          <div id="live-popover-pos" class="flex-row gap-lg">
+            <button class="ui-btn sm ui-popover bottom">
+              Bottom
+              <div class="ui-popover-content">
+                <p class="ui-popover-title">Popover title</p>
+                <p class="ui-popover-text">Some helpful context about this element.</p>
+              </div>
+            </button>
+            <button class="ui-btn sm ui-popover">
+              Top
+              <div class="ui-popover-content">
+                <p class="ui-popover-title">Top popover</p>
+                <p class="ui-popover-text">This one appears above the trigger.</p>
+              </div>
+            </button>
+            <button class="ui-btn sm ui-popover right">
+              Right
+              <div class="ui-popover-content">
+                <p class="ui-popover-text">Content to the right.</p>
+              </div>
+            </button>
+          </div>
+          <details class="demo-code" data-live-target="live-popover-pos">
+            <summary>Show code</summary>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;button class="ui-btn sm ui-popover bottom"&gt;
+  Bottom
+  &lt;div class="ui-popover-content"&gt;
+    &lt;p class="ui-popover-title"&gt;Popover title&lt;/p&gt;
+    &lt;p class="ui-popover-text"&gt;Some helpful context about this element.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/button&gt;
+&lt;button class="ui-btn sm ui-popover"&gt;
+  Top
+  &lt;div class="ui-popover-content"&gt;
+    &lt;p class="ui-popover-title"&gt;Top popover&lt;/p&gt;
+    &lt;p class="ui-popover-text"&gt;This one appears above the trigger.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/button&gt;
+&lt;button class="ui-btn sm ui-popover right"&gt;
+  Right
+  &lt;div class="ui-popover-content"&gt;
+    &lt;p class="ui-popover-text"&gt;Content to the right.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/button&gt;
+
+&lt;script&gt;
+// Toggle popover on button click
+document.querySelectorAll('.ui-popover').forEach(btn =&gt; {
+  btn.addEventListener('click', () =&gt; {
+    btn.classList.toggle('open');
+  });
+});
+
+// Dismiss when clicking outside
+document.addEventListener('click', e =&gt; {
+  document.querySelectorAll('.ui-popover.open').forEach(p =&gt; {
+    if (!p.contains(e.target)) p.classList.remove('open');
+  });
+});
+&lt;/script&gt;</pre>
+          </details>
+        </div>
+
+      </section>
+
+      <!-- ============ EMPTY STATE ============ -->

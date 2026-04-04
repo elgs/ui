@@ -1,0 +1,150 @@
+  <div class="demo-section" id="dialogs">
+    <h2>Dialogs</h2>
+
+    <div class="demo-subsection">
+      <h3>Default dialog</h3>
+      <div class="ui-row">
+        <button class="ui-btn" onclick="openDialog('demo-dialog')">Open Dialog</button>
+      </div>
+      <details class="demo-code" data-live-target="demo-dialog">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-dialog-backdrop" id="demo-dialog"&gt;
+  &lt;div class="ui-dialog"&gt;
+    &lt;div class="ui-dialog-header"&gt;
+      &lt;h3 class="ui-dialog-title"&gt;Confirm action&lt;/h3&gt;
+      &lt;button class="ui-dialog-close" onclick="closeDialog('demo-dialog')"&gt;&amp;times;&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class="ui-dialog-body"&gt;
+      &lt;p style="margin:0;"&gt;Are you sure you want to proceed? This action cannot be undone.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="ui-dialog-footer"&gt;
+      &lt;button class="ui-btn ghost secondary" onclick="closeDialog('demo-dialog')"&gt;Cancel&lt;/button&gt;
+      &lt;button class="ui-btn danger" onclick="closeDialog('demo-dialog')"&gt;Delete&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+function openDialog(id) {
+  document.getElementById(id).classList.add('open');
+}
+
+function closeDialog(id) {
+  document.getElementById(id).classList.remove('open');
+}
+
+// Close on backdrop click
+document.querySelectorAll('.ui-dialog-backdrop').forEach(backdrop =&gt; {
+  backdrop.addEventListener('click', e =&gt; {
+    if (e.target === backdrop) backdrop.classList.remove('open');
+  });
+});
+
+// Close on Escape
+document.addEventListener('keydown', e =&gt; {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.ui-dialog-backdrop.open').forEach(b =&gt; b.classList.remove('open'));
+  }
+});
+&lt;/script&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Large dialog</h3>
+      <div class="ui-row">
+        <button class="ui-btn secondary" onclick="openDialog('demo-dialog-lg')">Large Dialog</button>
+      </div>
+      <details class="demo-code" data-live-target="demo-dialog-lg">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-dialog-backdrop" id="demo-dialog-lg"&gt;
+  &lt;div class="ui-dialog lg"&gt;
+    &lt;div class="ui-dialog-header"&gt;
+      &lt;h3 class="ui-dialog-title"&gt;Edit profile&lt;/h3&gt;
+      &lt;button class="ui-dialog-close" onclick="closeDialog('demo-dialog-lg')"&gt;&amp;times;&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class="ui-dialog-body"&gt;
+      &lt;div class="ui-stack sm"&gt;
+        &lt;div class="ui-field"&gt;
+          &lt;label&gt;Display name&lt;/label&gt;
+          &lt;input class="ui-input" type="text" value="Jane Doe"&gt;
+        &lt;/div&gt;
+        &lt;div class="ui-field"&gt;
+          &lt;label&gt;Bio&lt;/label&gt;
+          &lt;textarea class="ui-textarea" placeholder="Tell us about yourself..."&gt;&lt;/textarea&gt;
+        &lt;/div&gt;
+        &lt;div class="ui-field"&gt;
+          &lt;label&gt;Role&lt;/label&gt;
+          &lt;select class="ui-select"&gt;
+            &lt;option&gt;Developer&lt;/option&gt;
+            &lt;option&gt;Designer&lt;/option&gt;
+            &lt;option&gt;Manager&lt;/option&gt;
+          &lt;/select&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="ui-dialog-footer"&gt;
+      &lt;button class="ui-btn ghost secondary" onclick="closeDialog('demo-dialog-lg')"&gt;Cancel&lt;/button&gt;
+      &lt;button class="ui-btn" onclick="closeDialog('demo-dialog-lg')"&gt;Save changes&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+function openDialog(id) {
+  document.getElementById(id).classList.add('open');
+}
+
+function closeDialog(id) {
+  document.getElementById(id).classList.remove('open');
+}
+&lt;/script&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Native &lt;dialog&gt; element</h3>
+      <div class="ui-row">
+        <button class="ui-btn outline" onclick="document.getElementById('native-dialog').showModal()">Native &lt;dialog&gt;</button>
+      </div>
+      <details class="demo-code" data-live-target="native-dialog">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;dialog class="ui-dialog" id="native-dialog"&gt;
+  &lt;div class="ui-dialog-header"&gt;
+    &lt;h3 class="ui-dialog-title"&gt;Native Dialog&lt;/h3&gt;
+    &lt;button class="ui-dialog-close" onclick="closeNativeDialog()"&gt;&amp;times;&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="ui-dialog-body"&gt;
+    &lt;p style="margin:0;"&gt;This uses the native &amp;lt;dialog&amp;gt; element with showModal(). It gets a browser-provided backdrop and focus trapping for free.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="ui-dialog-footer"&gt;
+    &lt;button class="ui-btn" onclick="closeNativeDialog()"&gt;Close&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/dialog&gt;
+
+&lt;script&gt;
+// Open with showModal() for browser-native focus trapping + backdrop
+document.getElementById('native-dialog').showModal();
+
+function closeNativeDialog() {
+  document.getElementById('native-dialog').close();
+}
+
+// Close on backdrop click
+document.getElementById('native-dialog').addEventListener('click', e =&gt; {
+  const d = e.currentTarget;
+  const rect = d.getBoundingClientRect();
+  if (e.clientX &lt; rect.left || e.clientX &gt; rect.right ||
+      e.clientY &lt; rect.top  || e.clientY &gt; rect.bottom) {
+    d.close();
+  }
+});
+&lt;/script&gt;</pre>
+      </details>
+    </div>
+  </div>
+
+  <!-- ═══ Utilities ═══ -->

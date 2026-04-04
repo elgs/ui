@@ -1,0 +1,149 @@
+  <div class="demo-section" id="numbered-badge">
+    <h2>Numbered Badge</h2>
+
+    <div class="demo-subsection">
+      <h3>On buttons</h3>
+      <div class="ui-row">
+        <span class="ui-badge-corner">
+          <button class="ui-btn outline"><i class="ui-icon ui-icon-bell"></i> Notifications</button>
+          <span class="ui-count">3</span>
+        </span>
+        <span class="ui-badge-corner">
+          <button class="ui-btn outline secondary"><i class="ui-icon ui-icon-mail"></i> Mail</button>
+          <span class="ui-count primary">12</span>
+        </span>
+        <span class="ui-badge-corner">
+          <button class="ui-btn outline"><i class="ui-icon ui-icon-shopping-cart"></i> Cart</button>
+          <span class="ui-count success">99+</span>
+        </span>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;!-- Single digit = circle, multi-digit = pill --&gt;
+&lt;span class="ui-badge-corner"&gt;
+  &lt;button class="ui-btn outline"&gt;&lt;i class="ui-icon ui-icon-bell"&gt;&lt;/i&gt; Notifications&lt;/button&gt;
+  &lt;span class="ui-count"&gt;3&lt;/span&gt;
+&lt;/span&gt;
+
+&lt;!-- Multi-digit: pill shape (default) --&gt;
+&lt;span class="ui-badge-corner"&gt;
+  &lt;button class="ui-btn outline secondary"&gt;&lt;i class="ui-icon ui-icon-mail"&gt;&lt;/i&gt; Mail&lt;/button&gt;
+  &lt;span class="ui-count primary"&gt;12&lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span class="ui-badge-corner"&gt;
+  &lt;button class="ui-btn outline"&gt;&lt;i class="ui-icon ui-icon-shopping-cart"&gt;&lt;/i&gt; Cart&lt;/button&gt;
+  &lt;span class="ui-count success"&gt;99+&lt;/span&gt;
+&lt;/span&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>On icon buttons &amp; corner positions</h3>
+      <div class="ui-row lg">
+        <span class="ui-badge-corner">
+          <button class="ui-btn icon outline"><i class="ui-icon ui-icon-bell"></i></button>
+          <span class="ui-count">5</span>
+        </span>
+        <span class="ui-badge-corner">
+          <button class="ui-btn icon outline secondary"><i class="ui-icon ui-icon-message"></i></button>
+          <span class="ui-count top-left primary">2</span>
+        </span>
+        <span class="ui-badge-corner">
+          <button class="ui-btn icon outline"><i class="ui-icon ui-icon-heart"></i></button>
+          <span class="ui-count bottom-right success">8</span>
+        </span>
+        <span class="ui-badge-corner">
+          <button class="ui-btn icon outline secondary"><i class="ui-icon ui-icon-settings"></i></button>
+          <span class="ui-count dot"></span>
+        </span>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;!-- Top-right (default) --&gt;
+&lt;span class="ui-badge-corner"&gt;
+  &lt;button class="ui-btn icon outline"&gt;&lt;i class="ui-icon ui-icon-bell"&gt;&lt;/i&gt;&lt;/button&gt;
+  &lt;span class="ui-count"&gt;5&lt;/span&gt;
+&lt;/span&gt;
+
+&lt;!-- Top-left --&gt;
+&lt;span class="ui-badge-corner"&gt;
+  &lt;button class="ui-btn icon outline secondary"&gt;&lt;i class="ui-icon ui-icon-message"&gt;&lt;/i&gt;&lt;/button&gt;
+  &lt;span class="ui-count top-left primary"&gt;2&lt;/span&gt;
+&lt;/span&gt;
+
+&lt;!-- Bottom-right --&gt;
+&lt;span class="ui-badge-corner"&gt;
+  &lt;button class="ui-btn icon outline"&gt;&lt;i class="ui-icon ui-icon-heart"&gt;&lt;/i&gt;&lt;/button&gt;
+  &lt;span class="ui-count bottom-right success"&gt;8&lt;/span&gt;
+&lt;/span&gt;
+
+&lt;!-- Dot-only (no number) --&gt;
+&lt;span class="ui-badge-corner"&gt;
+  &lt;button class="ui-btn icon outline secondary"&gt;&lt;i class="ui-icon ui-icon-settings"&gt;&lt;/i&gt;&lt;/button&gt;
+  &lt;span class="ui-count dot"&gt;&lt;/span&gt;
+&lt;/span&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Color variants</h3>
+      <div class="ui-row lg">
+        <span class="ui-badge-corner">
+          <button class="ui-btn icon outline"><i class="ui-icon ui-icon-bell"></i></button>
+          <span class="ui-count">3</span>
+        </span>
+        <span class="ui-badge-corner">
+          <button class="ui-btn icon outline"><i class="ui-icon ui-icon-bell"></i></button>
+          <span class="ui-count primary">3</span>
+        </span>
+        <span class="ui-badge-corner">
+          <button class="ui-btn icon outline"><i class="ui-icon ui-icon-bell"></i></button>
+          <span class="ui-count success">3</span>
+        </span>
+        <span class="ui-badge-corner">
+          <button class="ui-btn icon outline"><i class="ui-icon ui-icon-bell"></i></button>
+          <span class="ui-count warning">3</span>
+        </span>
+        <span class="ui-badge-corner">
+          <button class="ui-btn icon outline"><i class="ui-icon ui-icon-bell"></i></button>
+          <span class="ui-count secondary">3</span>
+        </span>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;!-- danger (default) --&gt;
+&lt;span class="ui-badge-corner"&gt;
+  &lt;button class="ui-btn icon outline"&gt;&lt;i class="ui-icon ui-icon-bell"&gt;&lt;/i&gt;&lt;/button&gt;
+  &lt;span class="ui-count"&gt;3&lt;/span&gt;
+&lt;/span&gt;
+
+&lt;!-- primary --&gt;
+&lt;span class="ui-badge-corner"&gt;
+  &lt;button class="ui-btn icon outline"&gt;&lt;i class="ui-icon ui-icon-bell"&gt;&lt;/i&gt;&lt;/button&gt;
+  &lt;span class="ui-count primary"&gt;3&lt;/span&gt;
+&lt;/span&gt;
+
+&lt;!-- success --&gt;
+&lt;span class="ui-badge-corner"&gt;
+  &lt;button class="ui-btn icon outline"&gt;&lt;i class="ui-icon ui-icon-bell"&gt;&lt;/i&gt;&lt;/button&gt;
+  &lt;span class="ui-count success"&gt;3&lt;/span&gt;
+&lt;/span&gt;
+
+&lt;!-- warning --&gt;
+&lt;span class="ui-badge-corner"&gt;
+  &lt;button class="ui-btn icon outline"&gt;&lt;i class="ui-icon ui-icon-bell"&gt;&lt;/i&gt;&lt;/button&gt;
+  &lt;span class="ui-count warning"&gt;3&lt;/span&gt;
+&lt;/span&gt;
+
+&lt;!-- secondary --&gt;
+&lt;span class="ui-badge-corner"&gt;
+  &lt;button class="ui-btn icon outline"&gt;&lt;i class="ui-icon ui-icon-bell"&gt;&lt;/i&gt;&lt;/button&gt;
+  &lt;span class="ui-count secondary"&gt;3&lt;/span&gt;
+&lt;/span&gt;</pre>
+      </details>
+    </div>
+  </div>

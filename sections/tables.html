@@ -1,0 +1,602 @@
+  <div class="demo-section" id="tables">
+    <h2>Tables</h2>
+
+    <div class="demo-subsection">
+      <h3>Default Table</h3>
+      <div class="ui-table-wrap">
+        <table class="ui-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Alice Chen</td>
+              <td>alice@example.com</td>
+              <td>Admin</td>
+              <td><span class="ui-badge success">Active</span></td>
+            </tr>
+            <tr>
+              <td>Bob Smith</td>
+              <td>bob@example.com</td>
+              <td>Editor</td>
+              <td><span class="ui-badge success">Active</span></td>
+            </tr>
+            <tr>
+              <td>Carol Wu</td>
+              <td>carol@example.com</td>
+              <td>Viewer</td>
+              <td><span class="ui-badge secondary">Inactive</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;table class="ui-table"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Name&lt;/th&gt;
+      &lt;th&gt;Email&lt;/th&gt;
+      &lt;th&gt;Role&lt;/th&gt;
+      &lt;th&gt;Status&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Alice Chen&lt;/td&gt;
+      &lt;td&gt;alice@example.com&lt;/td&gt;
+      &lt;td&gt;Admin&lt;/td&gt;
+      &lt;td&gt;&lt;span class="ui-badge success"&gt;Active&lt;/span&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Bob Smith&lt;/td&gt;
+      &lt;td&gt;bob@example.com&lt;/td&gt;
+      &lt;td&gt;Editor&lt;/td&gt;
+      &lt;td&gt;&lt;span class="ui-badge success"&gt;Active&lt;/span&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Carol Wu&lt;/td&gt;
+      &lt;td&gt;carol@example.com&lt;/td&gt;
+      &lt;td&gt;Viewer&lt;/td&gt;
+      &lt;td&gt;&lt;span class="ui-badge secondary"&gt;Inactive&lt;/span&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Sortable Columns</h3>
+      <div class="ui-table-wrap">
+        <table class="ui-table hoverable">
+          <thead>
+            <tr>
+              <th class="sortable asc">Name <span class="sort-icon"><i class="ui-icon ui-icon-chevron-up"></i></span></th>
+              <th class="sortable">Revenue <span class="sort-icon"><i class="ui-icon ui-icon-chevron-up"></i></span></th>
+              <th class="sortable">Growth <span class="sort-icon"><i class="ui-icon ui-icon-chevron-up"></i></span></th>
+              <th>Region</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Acme Corp</strong></td>
+              <td>$1,240,000</td>
+              <td><span style="color: var(--ui-success)">+12.5%</span></td>
+              <td>North America</td>
+            </tr>
+            <tr>
+              <td><strong>Globex Inc</strong></td>
+              <td>$980,000</td>
+              <td><span style="color: var(--ui-danger)">-3.2%</span></td>
+              <td>Europe</td>
+            </tr>
+            <tr>
+              <td><strong>Initech</strong></td>
+              <td>$2,100,000</td>
+              <td><span style="color: var(--ui-success)">+8.1%</span></td>
+              <td>Asia Pacific</td>
+            </tr>
+            <tr>
+              <td><strong>Stark Industries</strong></td>
+              <td>$5,600,000</td>
+              <td><span style="color: var(--ui-success)">+24.7%</span></td>
+              <td>Global</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;table class="ui-table hoverable"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th class="sortable asc"&gt;Name &lt;span class="sort-icon"&gt;&lt;i class="ui-icon ui-icon-chevron-up"&gt;&lt;/i&gt;&lt;/span&gt;&lt;/th&gt;
+      &lt;th class="sortable"&gt;Revenue &lt;span class="sort-icon"&gt;&lt;i class="ui-icon ui-icon-chevron-up"&gt;&lt;/i&gt;&lt;/span&gt;&lt;/th&gt;
+      &lt;th class="sortable"&gt;Growth &lt;span class="sort-icon"&gt;&lt;i class="ui-icon ui-icon-chevron-up"&gt;&lt;/i&gt;&lt;/span&gt;&lt;/th&gt;
+      &lt;th&gt;Region&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;Acme Corp&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;$1,240,000&lt;/td&gt;
+      &lt;td&gt;&lt;span style="color: var(--ui-success)"&gt;+12.5%&lt;/span&gt;&lt;/td&gt;
+      &lt;td&gt;North America&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;Globex Inc&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;$980,000&lt;/td&gt;
+      &lt;td&gt;&lt;span style="color: var(--ui-danger)"&gt;-3.2%&lt;/span&gt;&lt;/td&gt;
+      &lt;td&gt;Europe&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;Initech&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;$2,100,000&lt;/td&gt;
+      &lt;td&gt;&lt;span style="color: var(--ui-success)"&gt;+8.1%&lt;/span&gt;&lt;/td&gt;
+      &lt;td&gt;Asia Pacific&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;Stark Industries&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;$5,600,000&lt;/td&gt;
+      &lt;td&gt;&lt;span style="color: var(--ui-success)"&gt;+24.7%&lt;/span&gt;&lt;/td&gt;
+      &lt;td&gt;Global&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Striped &amp; Compact</h3>
+      <div class="ui-table-wrap">
+        <table class="ui-table striped compact hoverable">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Task</th>
+              <th>Priority</th>
+              <th>Due</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Update API documentation</td>
+              <td><span class="ui-badge warning">Medium</span></td>
+              <td>Mar 15</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Fix login redirect bug</td>
+              <td><span class="ui-badge danger">High</span></td>
+              <td>Mar 12</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Add export to CSV feature</td>
+              <td><span class="ui-badge">Normal</span></td>
+              <td>Mar 20</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Refactor auth middleware</td>
+              <td><span class="ui-badge warning">Medium</span></td>
+              <td>Mar 18</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Write integration tests</td>
+              <td><span class="ui-badge">Normal</span></td>
+              <td>Mar 22</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;table class="ui-table striped compact hoverable"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;#&lt;/th&gt;
+      &lt;th&gt;Task&lt;/th&gt;
+      &lt;th&gt;Priority&lt;/th&gt;
+      &lt;th&gt;Due&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;Update API documentation&lt;/td&gt;
+      &lt;td&gt;&lt;span class="ui-badge warning"&gt;Medium&lt;/span&gt;&lt;/td&gt;
+      &lt;td&gt;Mar 15&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;Fix login redirect bug&lt;/td&gt;
+      &lt;td&gt;&lt;span class="ui-badge danger"&gt;High&lt;/span&gt;&lt;/td&gt;
+      &lt;td&gt;Mar 12&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;Add export to CSV feature&lt;/td&gt;
+      &lt;td&gt;&lt;span class="ui-badge"&gt;Normal&lt;/span&gt;&lt;/td&gt;
+      &lt;td&gt;Mar 20&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;Refactor auth middleware&lt;/td&gt;
+      &lt;td&gt;&lt;span class="ui-badge warning"&gt;Medium&lt;/span&gt;&lt;/td&gt;
+      &lt;td&gt;Mar 18&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;Write integration tests&lt;/td&gt;
+      &lt;td&gt;&lt;span class="ui-badge"&gt;Normal&lt;/span&gt;&lt;/td&gt;
+      &lt;td&gt;Mar 22&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>With Nested Controls</h3>
+      <div class="ui-table-wrap">
+        <table class="ui-table">
+          <thead>
+            <tr>
+              <th style="width: 2.5rem"><label class="ui-checkbox"><input type="checkbox"></label></th>
+              <th>Product</th>
+              <th>Category</th>
+              <th>Price</th>
+              <th>Stock</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><label class="ui-checkbox"><input type="checkbox" checked></label></td>
+              <td><strong>Wireless Keyboard</strong></td>
+              <td>
+                <select class="ui-select sm" style="width: 8rem">
+                  <option>Electronics</option>
+                  <option>Accessories</option>
+                  <option>Peripherals</option>
+                </select>
+              </td>
+              <td><input class="ui-input sm" type="text" value="$79.99" style="width: 6rem"></td>
+              <td><span class="ui-badge success">In Stock</span></td>
+              <td>
+                <div style="display: flex; gap: 0.375rem">
+                  <button class="ui-btn sm ghost"><i class="ui-icon ui-icon-edit"></i></button>
+                  <button class="ui-btn sm ghost danger"><i class="ui-icon ui-icon-trash"></i></button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><label class="ui-checkbox"><input type="checkbox"></label></td>
+              <td><strong>USB-C Hub</strong></td>
+              <td>
+                <select class="ui-select sm" style="width: 8rem">
+                  <option>Accessories</option>
+                  <option>Electronics</option>
+                  <option>Peripherals</option>
+                </select>
+              </td>
+              <td><input class="ui-input sm" type="text" value="$49.99" style="width: 6rem"></td>
+              <td><span class="ui-badge warning">Low Stock</span></td>
+              <td>
+                <div style="display: flex; gap: 0.375rem">
+                  <button class="ui-btn sm ghost"><i class="ui-icon ui-icon-edit"></i></button>
+                  <button class="ui-btn sm ghost danger"><i class="ui-icon ui-icon-trash"></i></button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><label class="ui-checkbox"><input type="checkbox"></label></td>
+              <td><strong>Monitor Stand</strong></td>
+              <td>
+                <select class="ui-select sm" style="width: 8rem">
+                  <option>Furniture</option>
+                  <option>Accessories</option>
+                  <option>Office</option>
+                </select>
+              </td>
+              <td><input class="ui-input sm" type="text" value="$129.00" style="width: 6rem"></td>
+              <td><span class="ui-badge danger">Out of Stock</span></td>
+              <td>
+                <div style="display: flex; gap: 0.375rem">
+                  <button class="ui-btn sm ghost"><i class="ui-icon ui-icon-edit"></i></button>
+                  <button class="ui-btn sm ghost danger"><i class="ui-icon ui-icon-trash"></i></button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="6">3 products &middot; 1 selected</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;table class="ui-table"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style="width: 2.5rem"&gt;&lt;label class="ui-checkbox"&gt;&lt;input type="checkbox"&gt;&lt;/label&gt;&lt;/th&gt;
+      &lt;th&gt;Product&lt;/th&gt;
+      &lt;th&gt;Category&lt;/th&gt;
+      &lt;th&gt;Price&lt;/th&gt;
+      &lt;th&gt;Stock&lt;/th&gt;
+      &lt;th&gt;Actions&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;label class="ui-checkbox"&gt;&lt;input type="checkbox" checked&gt;&lt;/label&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;Wireless Keyboard&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;
+        &lt;select class="ui-select sm" style="width: 8rem"&gt;
+          &lt;option&gt;Electronics&lt;/option&gt;
+          &lt;option&gt;Accessories&lt;/option&gt;
+          &lt;option&gt;Peripherals&lt;/option&gt;
+        &lt;/select&gt;
+      &lt;/td&gt;
+      &lt;td&gt;&lt;input class="ui-input sm" type="text" value="$79.99" style="width: 6rem"&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;span class="ui-badge success"&gt;In Stock&lt;/span&gt;&lt;/td&gt;
+      &lt;td&gt;
+        &lt;div style="display: flex; gap: 0.375rem"&gt;
+          &lt;button class="ui-btn sm ghost"&gt;&lt;i class="ui-icon ui-icon-edit"&gt;&lt;/i&gt;&lt;/button&gt;
+          &lt;button class="ui-btn sm ghost danger"&gt;&lt;i class="ui-icon ui-icon-trash"&gt;&lt;/i&gt;&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;label class="ui-checkbox"&gt;&lt;input type="checkbox"&gt;&lt;/label&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;USB-C Hub&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;
+        &lt;select class="ui-select sm" style="width: 8rem"&gt;
+          &lt;option&gt;Accessories&lt;/option&gt;
+          &lt;option&gt;Electronics&lt;/option&gt;
+          &lt;option&gt;Peripherals&lt;/option&gt;
+        &lt;/select&gt;
+      &lt;/td&gt;
+      &lt;td&gt;&lt;input class="ui-input sm" type="text" value="$49.99" style="width: 6rem"&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;span class="ui-badge warning"&gt;Low Stock&lt;/span&gt;&lt;/td&gt;
+      &lt;td&gt;
+        &lt;div style="display: flex; gap: 0.375rem"&gt;
+          &lt;button class="ui-btn sm ghost"&gt;&lt;i class="ui-icon ui-icon-edit"&gt;&lt;/i&gt;&lt;/button&gt;
+          &lt;button class="ui-btn sm ghost danger"&gt;&lt;i class="ui-icon ui-icon-trash"&gt;&lt;/i&gt;&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;label class="ui-checkbox"&gt;&lt;input type="checkbox"&gt;&lt;/label&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;Monitor Stand&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;
+        &lt;select class="ui-select sm" style="width: 8rem"&gt;
+          &lt;option&gt;Furniture&lt;/option&gt;
+          &lt;option&gt;Accessories&lt;/option&gt;
+          &lt;option&gt;Office&lt;/option&gt;
+        &lt;/select&gt;
+      &lt;/td&gt;
+      &lt;td&gt;&lt;input class="ui-input sm" type="text" value="$129.00" style="width: 6rem"&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;span class="ui-badge danger"&gt;Out of Stock&lt;/span&gt;&lt;/td&gt;
+      &lt;td&gt;
+        &lt;div style="display: flex; gap: 0.375rem"&gt;
+          &lt;button class="ui-btn sm ghost"&gt;&lt;i class="ui-icon ui-icon-edit"&gt;&lt;/i&gt;&lt;/button&gt;
+          &lt;button class="ui-btn sm ghost danger"&gt;&lt;i class="ui-icon ui-icon-trash"&gt;&lt;/i&gt;&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+      &lt;td colspan="6"&gt;3 products &amp;middot; 1 selected&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Borderless</h3>
+      <div class="ui-table-wrap">
+        <table class="ui-table borderless hoverable">
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>This Week</th>
+              <th>Last Week</th>
+              <th>Change</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Page Views</td>
+              <td>24,521</td>
+              <td>21,340</td>
+              <td><span style="color: var(--ui-success)">+14.9%</span></td>
+            </tr>
+            <tr>
+              <td>Unique Visitors</td>
+              <td>8,742</td>
+              <td>7,891</td>
+              <td><span style="color: var(--ui-success)">+10.8%</span></td>
+            </tr>
+            <tr>
+              <td>Bounce Rate</td>
+              <td>34.2%</td>
+              <td>31.5%</td>
+              <td><span style="color: var(--ui-danger)">+2.7%</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;table class="ui-table borderless hoverable"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Metric&lt;/th&gt;
+      &lt;th&gt;This Week&lt;/th&gt;
+      &lt;th&gt;Last Week&lt;/th&gt;
+      &lt;th&gt;Change&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Page Views&lt;/td&gt;
+      &lt;td&gt;24,521&lt;/td&gt;
+      &lt;td&gt;21,340&lt;/td&gt;
+      &lt;td&gt;&lt;span style="color: var(--ui-success)"&gt;+14.9%&lt;/span&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Unique Visitors&lt;/td&gt;
+      &lt;td&gt;8,742&lt;/td&gt;
+      &lt;td&gt;7,891&lt;/td&gt;
+      &lt;td&gt;&lt;span style="color: var(--ui-success)"&gt;+10.8%&lt;/span&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Bounce Rate&lt;/td&gt;
+      &lt;td&gt;34.2%&lt;/td&gt;
+      &lt;td&gt;31.5%&lt;/td&gt;
+      &lt;td&gt;&lt;span style="color: var(--ui-danger)"&gt;+2.7%&lt;/span&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</pre>
+      </details>
+    </div>
+    <div class="demo-subsection">
+      <h3>With Pagination</h3>
+      <div id="table-pagination-demo">
+        <div class="ui-table-wrap">
+          <table class="ui-table hoverable">
+            <thead>
+              <tr>
+                <th class="sortable asc">Name <span class="sort-icon"><i class="ui-icon ui-icon-chevron-up"></i></span></th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Alice Chen</td>
+                <td>alice@example.com</td>
+                <td>Admin</td>
+                <td><span class="ui-badge success">Active</span></td>
+              </tr>
+              <tr>
+                <td>Bob Smith</td>
+                <td>bob@example.com</td>
+                <td>Editor</td>
+                <td><span class="ui-badge success">Active</span></td>
+              </tr>
+              <tr>
+                <td>Carol Wu</td>
+                <td>carol@example.com</td>
+                <td>Viewer</td>
+                <td><span class="ui-badge secondary">Inactive</span></td>
+              </tr>
+              <tr>
+                <td>David Park</td>
+                <td>david@example.com</td>
+                <td>Editor</td>
+                <td><span class="ui-badge success">Active</span></td>
+              </tr>
+              <tr>
+                <td>Eva Martinez</td>
+                <td>eva@example.com</td>
+                <td>Viewer</td>
+                <td><span class="ui-badge warning">Pending</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 1rem; font-size: 0.8125rem; color: var(--ui-text-muted)">
+          <span>Showing 1–5 of 48 users</span>
+          <nav class="ui-pagination">
+            <button class="ui-page" disabled>&lsaquo;</button>
+            <button class="ui-page active">1</button>
+            <button class="ui-page">2</button>
+            <button class="ui-page">3</button>
+            <span class="ui-page ellipsis">&hellip;</span>
+            <button class="ui-page">10</button>
+            <button class="ui-page">&rsaquo;</button>
+          </nav>
+        </div>
+      </div>
+      <details class="demo-code" data-live-target="table-pagination-demo">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-table-wrap"&gt;
+  &lt;table class="ui-table hoverable"&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th class="sortable asc"&gt;Name &lt;span class="sort-icon"&gt;&lt;i class="ui-icon ui-icon-chevron-up"&gt;&lt;/i&gt;&lt;/span&gt;&lt;/th&gt;
+        &lt;th&gt;Email&lt;/th&gt;
+        &lt;th&gt;Role&lt;/th&gt;
+        &lt;th&gt;Status&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Alice Chen&lt;/td&gt;
+        &lt;td&gt;alice@example.com&lt;/td&gt;
+        &lt;td&gt;Admin&lt;/td&gt;
+        &lt;td&gt;&lt;span class="ui-badge success"&gt;Active&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Bob Smith&lt;/td&gt;
+        &lt;td&gt;bob@example.com&lt;/td&gt;
+        &lt;td&gt;Editor&lt;/td&gt;
+        &lt;td&gt;&lt;span class="ui-badge success"&gt;Active&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Carol Wu&lt;/td&gt;
+        &lt;td&gt;carol@example.com&lt;/td&gt;
+        &lt;td&gt;Viewer&lt;/td&gt;
+        &lt;td&gt;&lt;span class="ui-badge secondary"&gt;Inactive&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;David Park&lt;/td&gt;
+        &lt;td&gt;david@example.com&lt;/td&gt;
+        &lt;td&gt;Editor&lt;/td&gt;
+        &lt;td&gt;&lt;span class="ui-badge success"&gt;Active&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Eva Martinez&lt;/td&gt;
+        &lt;td&gt;eva@example.com&lt;/td&gt;
+        &lt;td&gt;Viewer&lt;/td&gt;
+        &lt;td&gt;&lt;span class="ui-badge warning"&gt;Pending&lt;/span&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+&lt;div style="display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 1rem; font-size: 0.8125rem; color: var(--ui-text-muted)"&gt;
+  &lt;span&gt;Showing 1–5 of 48 users&lt;/span&gt;
+  &lt;nav class="ui-pagination"&gt;
+    &lt;button class="ui-page" disabled&gt;&amp;lsaquo;&lt;/button&gt;
+    &lt;button class="ui-page active"&gt;1&lt;/button&gt;
+    &lt;button class="ui-page"&gt;2&lt;/button&gt;
+    &lt;button class="ui-page"&gt;3&lt;/button&gt;
+    &lt;span class="ui-page ellipsis"&gt;&amp;hellip;&lt;/span&gt;
+    &lt;button class="ui-page"&gt;10&lt;/button&gt;
+    &lt;button class="ui-page"&gt;&amp;rsaquo;&lt;/button&gt;
+  &lt;/nav&gt;
+&lt;/div&gt;</pre>
+      </details>
+    </div>
+  </div>

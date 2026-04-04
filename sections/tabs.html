@@ -1,0 +1,113 @@
+  <div class="demo-section" id="tabs">
+    <h2>Tabs</h2>
+
+    <div class="demo-subsection">
+      <h3>Default tabs</h3>
+      <div class="ui-tabs" id="demo-tabs-1">
+        <div class="ui-tab-list">
+          <button class="ui-tab active" onclick="switchTab('demo-tabs-1', 0)">Overview</button>
+          <button class="ui-tab" onclick="switchTab('demo-tabs-1', 1)">Features</button>
+          <button class="ui-tab" onclick="switchTab('demo-tabs-1', 2)">Pricing</button>
+          <button class="ui-tab" disabled>Disabled</button>
+        </div>
+        <div class="ui-tab-panel active">This is the overview panel. Tabs organize content into separate views where only one is visible at a time.</div>
+        <div class="ui-tab-panel">Features include responsive design, dark mode support, and configurable colors via CSS custom properties.</div>
+        <div class="ui-tab-panel">Pricing plans are available for teams of all sizes. Contact us for enterprise options.</div>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-tabs" id="demo-tabs-1"&gt;
+  &lt;div class="ui-tab-list"&gt;
+    &lt;button class="ui-tab active" onclick="switchTab('demo-tabs-1', 0)"&gt;Overview&lt;/button&gt;
+    &lt;button class="ui-tab" onclick="switchTab('demo-tabs-1', 1)"&gt;Features&lt;/button&gt;
+    &lt;button class="ui-tab" onclick="switchTab('demo-tabs-1', 2)"&gt;Pricing&lt;/button&gt;
+    &lt;button class="ui-tab" disabled&gt;Disabled&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="ui-tab-panel active"&gt;This is the overview panel. Tabs organize content into separate views where only one is visible at a time.&lt;/div&gt;
+  &lt;div class="ui-tab-panel"&gt;Features include responsive design, dark mode support, and configurable colors via CSS custom properties.&lt;/div&gt;
+  &lt;div class="ui-tab-panel"&gt;Pricing plans are available for teams of all sizes. Contact us for enterprise options.&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+function switchTab(tabsId, index) {
+  const tabs = document.getElementById(tabsId);
+  tabs.querySelectorAll('.ui-tab-list .ui-tab').forEach((t, i) =&gt; t.classList.toggle('active', i === index));
+  tabs.querySelectorAll('.ui-tab-panel').forEach((p, i) =&gt; p.classList.toggle('active', i === index));
+}
+&lt;/script&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Pill tabs</h3>
+      <div class="ui-tabs" id="demo-tabs-2">
+        <div class="ui-tab-list pills">
+          <button class="ui-tab active" onclick="switchTab('demo-tabs-2', 0)">All</button>
+          <button class="ui-tab" onclick="switchTab('demo-tabs-2', 1)">Active</button>
+          <button class="ui-tab" onclick="switchTab('demo-tabs-2', 2)">Archived</button>
+        </div>
+        <div class="ui-tab-panel active">Showing all items in the list.</div>
+        <div class="ui-tab-panel">Showing only active items.</div>
+        <div class="ui-tab-panel">Showing archived items.</div>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-tabs" id="demo-tabs-2"&gt;
+  &lt;div class="ui-tab-list pills"&gt;
+    &lt;button class="ui-tab active" onclick="switchTab('demo-tabs-2', 0)"&gt;All&lt;/button&gt;
+    &lt;button class="ui-tab" onclick="switchTab('demo-tabs-2', 1)"&gt;Active&lt;/button&gt;
+    &lt;button class="ui-tab" onclick="switchTab('demo-tabs-2', 2)"&gt;Archived&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="ui-tab-panel active"&gt;Showing all items in the list.&lt;/div&gt;
+  &lt;div class="ui-tab-panel"&gt;Showing only active items.&lt;/div&gt;
+  &lt;div class="ui-tab-panel"&gt;Showing archived items.&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+function switchTab(tabsId, index) {
+  const tabs = document.getElementById(tabsId);
+  tabs.querySelectorAll('.ui-tab-list .ui-tab').forEach((t, i) =&gt; t.classList.toggle('active', i === index));
+  tabs.querySelectorAll('.ui-tab-panel').forEach((p, i) =&gt; p.classList.toggle('active', i === index));
+}
+&lt;/script&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Boxed tabs</h3>
+      <div class="ui-tabs" id="demo-tabs-3">
+        <div class="ui-tab-list boxed">
+          <button class="ui-tab active" onclick="switchTab('demo-tabs-3', 0)">HTML</button>
+          <button class="ui-tab" onclick="switchTab('demo-tabs-3', 1)">CSS</button>
+          <button class="ui-tab" onclick="switchTab('demo-tabs-3', 2)">JavaScript</button>
+        </div>
+        <div class="ui-tab-panel active">HTML provides the structure and content of a webpage.</div>
+        <div class="ui-tab-panel">CSS handles the visual presentation and layout.</div>
+        <div class="ui-tab-panel">JavaScript adds interactivity and dynamic behavior.</div>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-tabs" id="demo-tabs-3"&gt;
+  &lt;div class="ui-tab-list boxed"&gt;
+    &lt;button class="ui-tab active" onclick="switchTab('demo-tabs-3', 0)"&gt;HTML&lt;/button&gt;
+    &lt;button class="ui-tab" onclick="switchTab('demo-tabs-3', 1)"&gt;CSS&lt;/button&gt;
+    &lt;button class="ui-tab" onclick="switchTab('demo-tabs-3', 2)"&gt;JavaScript&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="ui-tab-panel active"&gt;HTML provides the structure and content of a webpage.&lt;/div&gt;
+  &lt;div class="ui-tab-panel"&gt;CSS handles the visual presentation and layout.&lt;/div&gt;
+  &lt;div class="ui-tab-panel"&gt;JavaScript adds interactivity and dynamic behavior.&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+function switchTab(tabsId, index) {
+  const tabs = document.getElementById(tabsId);
+  tabs.querySelectorAll('.ui-tab-list .ui-tab').forEach((t, i) =&gt; t.classList.toggle('active', i === index));
+  tabs.querySelectorAll('.ui-tab-panel').forEach((p, i) =&gt; p.classList.toggle('active', i === index));
+}
+&lt;/script&gt;</pre>
+      </details>
+    </div>
+  </div>

@@ -1,0 +1,264 @@
+  <div class="demo-section" id="inputs">
+    <h2>Inputs</h2>
+
+    <div class="demo-subsection">
+      <h3>Text inputs</h3>
+      <div class="ui-stack sm" style="max-width:24rem;">
+        <div class="ui-field">
+          <label>Name</label>
+          <input class="ui-input" type="text" placeholder="Jane Doe">
+        </div>
+        <div class="ui-field">
+          <label>Email</label>
+          <input class="ui-input" type="email" placeholder="jane@example.com">
+          <span class="ui-hint">We'll never share your email.</span>
+        </div>
+        <div class="ui-field">
+          <label>Password (error state)</label>
+          <input class="ui-input error" type="password" value="short">
+          <span class="ui-error-text">Password must be at least 8 characters.</span>
+        </div>
+        <div class="ui-field">
+          <label>Disabled</label>
+          <input class="ui-input" type="text" value="Can't edit this" disabled>
+        </div>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-field"&gt;
+  &lt;label&gt;Name&lt;/label&gt;
+  &lt;input class="ui-input" type="text" placeholder="Jane Doe"&gt;
+&lt;/div&gt;
+&lt;div class="ui-field"&gt;
+  &lt;label&gt;Email&lt;/label&gt;
+  &lt;input class="ui-input" type="email" placeholder="jane@example.com"&gt;
+  &lt;span class="ui-hint"&gt;We'll never share your email.&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="ui-field"&gt;
+  &lt;label&gt;Password (error state)&lt;/label&gt;
+  &lt;input class="ui-input error" type="password" value="short"&gt;
+  &lt;span class="ui-error-text"&gt;Password must be at least 8 characters.&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="ui-field"&gt;
+  &lt;label&gt;Disabled&lt;/label&gt;
+  &lt;input class="ui-input" type="text" value="Can't edit this" disabled&gt;
+&lt;/div&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Select &amp; Textarea</h3>
+      <div class="ui-stack sm" style="max-width:24rem;">
+        <div class="ui-field">
+          <label>Select</label>
+          <select class="ui-select">
+            <option>Option one</option>
+            <option>Option two</option>
+            <option>Option three</option>
+          </select>
+        </div>
+        <div class="ui-field">
+          <label>Textarea</label>
+          <textarea class="ui-textarea" placeholder="Write something..."></textarea>
+        </div>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-field"&gt;
+  &lt;label&gt;Select&lt;/label&gt;
+  &lt;select class="ui-select"&gt;
+    &lt;option&gt;Option one&lt;/option&gt;
+    &lt;option&gt;Option two&lt;/option&gt;
+    &lt;option&gt;Option three&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/div&gt;
+&lt;div class="ui-field"&gt;
+  &lt;label&gt;Textarea&lt;/label&gt;
+  &lt;textarea class="ui-textarea" placeholder="Write something..."&gt;&lt;/textarea&gt;
+&lt;/div&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Inline checkboxes &amp; radios</h3>
+      <div class="ui-stack sm" style="max-width:24rem;">
+        <div class="ui-row sm">
+          <label class="ui-checkbox">
+            <input type="checkbox" checked>
+            Remember me
+          </label>
+          <label class="ui-checkbox">
+            <input type="checkbox">
+            Subscribe
+          </label>
+        </div>
+        <div class="ui-row sm">
+          <label class="ui-radio">
+            <input type="radio" name="radio-demo" checked>
+            Option A
+          </label>
+          <label class="ui-radio">
+            <input type="radio" name="radio-demo">
+            Option B
+          </label>
+        </div>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-row sm"&gt;
+  &lt;label class="ui-checkbox"&gt;
+    &lt;input type="checkbox" checked&gt;
+      Remember me
+  &lt;/label&gt;
+  &lt;label class="ui-checkbox"&gt;
+    &lt;input type="checkbox"&gt;
+      Subscribe
+  &lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="ui-row sm"&gt;
+  &lt;label class="ui-radio"&gt;
+    &lt;input type="radio" name="radio-demo" checked&gt;
+      Option A
+  &lt;/label&gt;
+  &lt;label class="ui-radio"&gt;
+    &lt;input type="radio" name="radio-demo"&gt;
+      Option B
+  &lt;/label&gt;
+&lt;/div&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Input sizes</h3>
+      <div class="ui-stack sm" style="max-width:24rem;">
+        <input class="ui-input sm" placeholder="Small input">
+        <input class="ui-input" placeholder="Default input">
+        <input class="ui-input lg" placeholder="Large input">
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;input class="ui-input sm" placeholder="Small input"&gt;
+&lt;input class="ui-input" placeholder="Default input"&gt;
+&lt;input class="ui-input lg" placeholder="Large input"&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Inputs with icons</h3>
+      <div class="ui-stack sm" style="max-width:24rem;">
+        <div class="ui-field">
+          <label>Search</label>
+          <div class="ui-input-icon">
+            <i class="ui-icon ui-icon-search"></i>
+            <input class="ui-input" type="search" placeholder="Search..." oninput="this.nextElementSibling.style.display=this.value?'':'none'" id="demo-clearable">
+            <button class="ui-input-icon-right" style="display:none" onclick="const i=this.previousElementSibling;i.value='';i.focus();this.style.display='none'"><i class="ui-icon ui-icon-x"></i></button>
+          </div>
+        </div>
+        <div class="ui-field">
+          <label>Email</label>
+          <div class="ui-input-icon">
+            <i class="ui-icon ui-icon-mail"></i>
+            <input class="ui-input" type="email" placeholder="jane@example.com">
+          </div>
+        </div>
+        <div class="ui-field">
+          <label>Password</label>
+          <div class="ui-input-icon">
+            <i class="ui-icon ui-icon-lock"></i>
+            <input class="ui-input" type="password" placeholder="Enter password">
+            <button class="ui-input-icon-right" onclick="const i=this.previousElementSibling;i.type=i.type==='password'?'text':'password';this.querySelector('i').className=i.type==='password'?'ui-icon ui-icon-eye':'ui-icon ui-icon-eye-off'"><i class="ui-icon ui-icon-eye"></i></button>
+          </div>
+        </div>
+        <div class="ui-field">
+          <label>Website</label>
+          <div class="ui-input-icon">
+            <i class="ui-icon ui-icon-globe"></i>
+            <input class="ui-input" type="url" placeholder="https://example.com">
+            <span class="ui-input-icon-right"><i class="ui-icon ui-icon-external-link"></i></span>
+          </div>
+        </div>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;!-- Search with clearable button --&gt;
+&lt;div class="ui-field"&gt;
+  &lt;label&gt;Search&lt;/label&gt;
+  &lt;div class="ui-input-icon"&gt;
+    &lt;i class="ui-icon ui-icon-search"&gt;&lt;/i&gt;
+    &lt;input class="ui-input" type="search" placeholder="Search..."&gt;
+    &lt;button class="ui-input-icon-right"&gt;
+      &lt;i class="ui-icon ui-icon-x"&gt;&lt;/i&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="ui-field"&gt;
+  &lt;label&gt;Email&lt;/label&gt;
+  &lt;div class="ui-input-icon"&gt;
+    &lt;i class="ui-icon ui-icon-mail"&gt;&lt;/i&gt;
+    &lt;input class="ui-input" type="email" placeholder="jane@example.com"&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Password with show/hide toggle --&gt;
+&lt;div class="ui-field"&gt;
+  &lt;label&gt;Password&lt;/label&gt;
+  &lt;div class="ui-input-icon"&gt;
+    &lt;i class="ui-icon ui-icon-lock"&gt;&lt;/i&gt;
+    &lt;input class="ui-input" type="password" placeholder="Enter password"&gt;
+    &lt;button class="ui-input-icon-right"&gt;
+      &lt;i class="ui-icon ui-icon-eye"&gt;&lt;/i&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="ui-field"&gt;
+  &lt;label&gt;Website&lt;/label&gt;
+  &lt;div class="ui-input-icon"&gt;
+    &lt;i class="ui-icon ui-icon-globe"&gt;&lt;/i&gt;
+    &lt;input class="ui-input" type="url" placeholder="https://example.com"&gt;
+    &lt;span class="ui-input-icon-right"&gt;&lt;i class="ui-icon ui-icon-external-link"&gt;&lt;/i&gt;&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Icon input sizes</h3>
+      <div class="ui-stack sm" style="max-width:24rem;">
+        <div class="ui-input-icon sm">
+          <i class="ui-icon ui-icon-search"></i>
+          <input class="ui-input sm" type="search" placeholder="Small">
+        </div>
+        <div class="ui-input-icon">
+          <i class="ui-icon ui-icon-search"></i>
+          <input class="ui-input" type="search" placeholder="Default">
+        </div>
+        <div class="ui-input-icon lg">
+          <i class="ui-icon ui-icon-search"></i>
+          <input class="ui-input lg" type="search" placeholder="Large">
+        </div>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-input-icon sm"&gt;
+  &lt;i class="ui-icon ui-icon-search"&gt;&lt;/i&gt;
+  &lt;input class="ui-input sm" type="search" placeholder="Small"&gt;
+&lt;/div&gt;
+&lt;div class="ui-input-icon"&gt;
+  &lt;i class="ui-icon ui-icon-search"&gt;&lt;/i&gt;
+  &lt;input class="ui-input" type="search" placeholder="Default"&gt;
+&lt;/div&gt;
+&lt;div class="ui-input-icon lg"&gt;
+  &lt;i class="ui-icon ui-icon-search"&gt;&lt;/i&gt;
+  &lt;input class="ui-input lg" type="search" placeholder="Large"&gt;
+&lt;/div&gt;</pre>
+      </details>
+    </div>
+  </div>

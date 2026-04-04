@@ -1,0 +1,42 @@
+  <div class="demo-section" id="gradient-mode">
+    <h2>Gradient Mode</h2>
+    <div class="demo-subsection">
+      <h3>Overview</h3>
+      <p style="font-size:0.8125rem; color:var(--ui-text-muted); margin:0 0 0.75rem;">
+        Gradient mode adds a subtle diagonal gradient to all colored components &mdash; buttons, toggles, checkboxes, radios, tags, pagination, progress bars, badges, sliders, and status dots. It works with every theme and adapts automatically to light/dark mode.
+      </p>
+    </div>
+    <div class="demo-subsection">
+      <h3>Activate via HTML attribute</h3>
+      <details class="demo-code" data-readonly open style="border-top:none; padding-top:0;">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;!-- Enable gradient mode --&gt;
+&lt;html data-ui-gradient&gt;
+
+&lt;!-- Combine with a theme --&gt;
+&lt;html data-ui-theme="ocean" data-ui-gradient&gt;</pre>
+      </details>
+    </div>
+    <div class="demo-subsection">
+      <h3>Toggle via JavaScript</h3>
+      <details class="demo-code" data-readonly data-lang="js" open style="border-top:none; padding-top:0;">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>// Toggle gradient on/off
+document.documentElement.toggleAttribute('data-ui-gradient');
+
+// Turn on
+document.documentElement.setAttribute('data-ui-gradient', '');
+
+// Turn off
+document.documentElement.removeAttribute('data-ui-gradient');</pre>
+      </details>
+    </div>
+    <div class="demo-subsection">
+      <h3>Preview</h3>
+      <p style="font-size:0.8125rem; color:var(--ui-text-muted); margin:0 0 0.75rem;">
+        Click the gradient toggle button (colored circle) in the top-right corner to toggle gradient mode and see the effect on all components.
+      </p>
+    </div>
+  </div>

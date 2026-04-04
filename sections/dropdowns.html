@@ -1,0 +1,547 @@
+  <div class="demo-section" id="dropdowns">
+    <h2>Dropdowns</h2>
+
+    <div class="demo-subsection">
+      <h3>Basic dropdown</h3>
+      <div class="ui-row">
+        <div class="ui-dropdown" id="demo-dd-1">
+          <button class="ui-dropdown-toggle" onclick="toggleDropdown('demo-dd-1')">Actions</button>
+          <div class="ui-dropdown-menu">
+            <button class="ui-dropdown-item" onclick="toggleDropdown('demo-dd-1')"><i class="ui-icon ui-icon-edit"></i> Edit</button>
+            <button class="ui-dropdown-item" onclick="toggleDropdown('demo-dd-1')"><i class="ui-icon ui-icon-copy"></i> Duplicate</button>
+            <hr class="ui-dropdown-divider">
+            <button class="ui-dropdown-item" onclick="toggleDropdown('demo-dd-1')" style="color:var(--ui-danger)"><i class="ui-icon ui-icon-trash"></i> Delete</button>
+          </div>
+        </div>
+        <div class="ui-dropdown" id="demo-dd-2">
+          <button class="ui-dropdown-toggle" onclick="toggleDropdown('demo-dd-2')"><i class="ui-icon ui-icon-filter"></i> Filter by status</button>
+          <div class="ui-dropdown-menu">
+            <span class="ui-dropdown-label">Status</span>
+            <button class="ui-dropdown-item active" onclick="this.classList.toggle('active')"><i class="ui-icon ui-icon-check"></i> Active</button>
+            <button class="ui-dropdown-item" onclick="this.classList.toggle('active')"><i class="ui-icon ui-icon-clock"></i> Pending</button>
+            <button class="ui-dropdown-item" onclick="this.classList.toggle('active')"><i class="ui-icon ui-icon-folder"></i> Archived</button>
+            <hr class="ui-dropdown-divider">
+            <span class="ui-dropdown-label">Priority</span>
+            <button class="ui-dropdown-item" onclick="this.classList.toggle('active')"><i class="ui-icon ui-icon-tag"></i> High</button>
+            <button class="ui-dropdown-item" onclick="this.classList.toggle('active')"><i class="ui-icon ui-icon-tag"></i> Medium</button>
+            <button class="ui-dropdown-item" onclick="this.classList.toggle('active')"><i class="ui-icon ui-icon-tag"></i> Low</button>
+          </div>
+        </div>
+        <div class="ui-dropdown right" id="demo-dd-3">
+          <button class="ui-dropdown-toggle" onclick="toggleDropdown('demo-dd-3')"><i class="ui-icon ui-icon-sort"></i> Sort</button>
+          <div class="ui-dropdown-menu">
+            <button class="ui-dropdown-item active" onclick="selectDropdownItem(this)">Newest first</button>
+            <button class="ui-dropdown-item" onclick="selectDropdownItem(this)">Oldest first</button>
+            <button class="ui-dropdown-item" onclick="selectDropdownItem(this)">Name A–Z</button>
+            <button class="ui-dropdown-item" onclick="selectDropdownItem(this)">Name Z–A</button>
+          </div>
+        </div>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-dropdown" id="demo-dd-1"&gt;
+  &lt;button class="ui-dropdown-toggle" onclick="toggleDropdown('demo-dd-1')"&gt;Actions&lt;/button&gt;
+  &lt;div class="ui-dropdown-menu"&gt;
+    &lt;button class="ui-dropdown-item" onclick="toggleDropdown('demo-dd-1')"&gt;&lt;i class="ui-icon ui-icon-edit"&gt;&lt;/i&gt; Edit&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="toggleDropdown('demo-dd-1')"&gt;&lt;i class="ui-icon ui-icon-copy"&gt;&lt;/i&gt; Duplicate&lt;/button&gt;
+    &lt;hr class="ui-dropdown-divider"&gt;
+    &lt;button class="ui-dropdown-item" onclick="toggleDropdown('demo-dd-1')" style="color:var(--ui-danger)"&gt;&lt;i class="ui-icon ui-icon-trash"&gt;&lt;/i&gt; Delete&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="ui-dropdown" id="demo-dd-2"&gt;
+  &lt;button class="ui-dropdown-toggle" onclick="toggleDropdown('demo-dd-2')"&gt;&lt;i class="ui-icon ui-icon-filter"&gt;&lt;/i&gt; Filter by status&lt;/button&gt;
+  &lt;div class="ui-dropdown-menu"&gt;
+    &lt;span class="ui-dropdown-label"&gt;Status&lt;/span&gt;
+    &lt;button class="ui-dropdown-item active" onclick="this.classList.toggle('active')"&gt;&lt;i class="ui-icon ui-icon-check"&gt;&lt;/i&gt; Active&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="this.classList.toggle('active')"&gt;&lt;i class="ui-icon ui-icon-clock"&gt;&lt;/i&gt; Pending&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="this.classList.toggle('active')"&gt;&lt;i class="ui-icon ui-icon-folder"&gt;&lt;/i&gt; Archived&lt;/button&gt;
+    &lt;hr class="ui-dropdown-divider"&gt;
+    &lt;span class="ui-dropdown-label"&gt;Priority&lt;/span&gt;
+    &lt;button class="ui-dropdown-item" onclick="this.classList.toggle('active')"&gt;&lt;i class="ui-icon ui-icon-tag"&gt;&lt;/i&gt; High&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="this.classList.toggle('active')"&gt;&lt;i class="ui-icon ui-icon-tag"&gt;&lt;/i&gt; Medium&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="this.classList.toggle('active')"&gt;&lt;i class="ui-icon ui-icon-tag"&gt;&lt;/i&gt; Low&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="ui-dropdown right" id="demo-dd-3"&gt;
+  &lt;button class="ui-dropdown-toggle" onclick="toggleDropdown('demo-dd-3')"&gt;&lt;i class="ui-icon ui-icon-sort"&gt;&lt;/i&gt; Sort&lt;/button&gt;
+  &lt;div class="ui-dropdown-menu"&gt;
+    &lt;button class="ui-dropdown-item active" onclick="selectDropdownItem(this)"&gt;Newest first&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="selectDropdownItem(this)"&gt;Oldest first&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="selectDropdownItem(this)"&gt;Name A–Z&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="selectDropdownItem(this)"&gt;Name Z–A&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+function toggleDropdown(id) {
+  const dd = document.getElementById(id);
+  document.querySelectorAll('.ui-dropdown.open').forEach(d =&gt; {
+    if (d.id !== id) d.classList.remove('open');
+  });
+  dd.classList.toggle('open');
+}
+
+// Close on outside click
+document.addEventListener('click', e =&gt; {
+  if (!e.target.closest('.ui-dropdown')) {
+    document.querySelectorAll('.ui-dropdown.open').forEach(d =&gt; d.classList.remove('open'));
+  }
+});
+
+// Activate a single item (radio-style)
+function selectDropdownItem(btn) {
+  btn.closest('.ui-dropdown-menu').querySelectorAll('.ui-dropdown-item').forEach(i =&gt; i.classList.remove('active'));
+  btn.classList.add('active');
+}
+&lt;/script&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Searchable input dropdown</h3>
+      <div class="grid-2">
+        <div class="ui-autocomplete" id="demo-ac-1">
+          <i class="ui-icon ui-icon-search ui-autocomplete-icon"></i>
+          <input class="ui-autocomplete-input" type="text" placeholder="Search countries..." oninput="filterAutocomplete('demo-ac-1')" onfocus="this.closest('.ui-autocomplete').classList.add('open')">
+          <button class="ui-autocomplete-clear" type="button" onclick="clearAutocomplete(this)"><i class="ui-icon ui-icon-x"></i></button>
+          <div class="ui-autocomplete-menu">
+            <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">Australia</button>
+            <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">Austria</button>
+            <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">Brazil</button>
+            <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">Canada</button>
+            <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">Denmark</button>
+            <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">Finland</button>
+            <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">France</button>
+            <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">Germany</button>
+            <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">Japan</button>
+            <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">Norway</button>
+            <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">Sweden</button>
+            <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">United Kingdom</button>
+            <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">United States</button>
+            <span class="ui-autocomplete-empty">No results found</span>
+          </div>
+        </div>
+        <div class="ui-autocomplete" id="demo-ac-2">
+          <i class="ui-icon ui-icon-user ui-autocomplete-icon"></i>
+          <input class="ui-autocomplete-input" type="text" placeholder="Assign to..." oninput="filterAutocomplete('demo-ac-2')" onfocus="this.closest('.ui-autocomplete').classList.add('open')">
+          <button class="ui-autocomplete-clear" type="button" onclick="clearAutocomplete(this)"><i class="ui-icon ui-icon-x"></i></button>
+          <div class="ui-autocomplete-menu">
+            <button class="ui-dropdown-item" onclick="pickAutocomplete(this)"><i class="ui-icon ui-icon-user"></i> Alice Johnson</button>
+            <button class="ui-dropdown-item" onclick="pickAutocomplete(this)"><i class="ui-icon ui-icon-user"></i> Bob Smith</button>
+            <button class="ui-dropdown-item" onclick="pickAutocomplete(this)"><i class="ui-icon ui-icon-user"></i> Carol Williams</button>
+            <button class="ui-dropdown-item" onclick="pickAutocomplete(this)"><i class="ui-icon ui-icon-user"></i> David Brown</button>
+            <button class="ui-dropdown-item" onclick="pickAutocomplete(this)"><i class="ui-icon ui-icon-user"></i> Eve Davis</button>
+            <span class="ui-autocomplete-empty">No results found</span>
+          </div>
+        </div>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-autocomplete" id="demo-ac-1"&gt;
+  &lt;i class="ui-icon ui-icon-search ui-autocomplete-icon"&gt;&lt;/i&gt;
+  &lt;input class="ui-autocomplete-input" type="text" placeholder="Search countries..." oninput="filterAutocomplete('demo-ac-1')" onfocus="this.closest('.ui-autocomplete').classList.add('open')"&gt;
+  &lt;button class="ui-autocomplete-clear" type="button" onclick="clearAutocomplete(this)"&gt;&lt;i class="ui-icon ui-icon-x"&gt;&lt;/i&gt;&lt;/button&gt;
+  &lt;div class="ui-autocomplete-menu"&gt;
+    &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;Australia&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;Austria&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;Brazil&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;Canada&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;Denmark&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;Finland&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;France&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;Germany&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;Japan&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;Norway&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;Sweden&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;United Kingdom&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;United States&lt;/button&gt;
+    &lt;span class="ui-autocomplete-empty"&gt;No results found&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="ui-autocomplete" id="demo-ac-2"&gt;
+  &lt;i class="ui-icon ui-icon-user ui-autocomplete-icon"&gt;&lt;/i&gt;
+  &lt;input class="ui-autocomplete-input" type="text" placeholder="Assign to..." oninput="filterAutocomplete('demo-ac-2')" onfocus="this.closest('.ui-autocomplete').classList.add('open')"&gt;
+  &lt;button class="ui-autocomplete-clear" type="button" onclick="clearAutocomplete(this)"&gt;&lt;i class="ui-icon ui-icon-x"&gt;&lt;/i&gt;&lt;/button&gt;
+  &lt;div class="ui-autocomplete-menu"&gt;
+    &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;&lt;i class="ui-icon ui-icon-user"&gt;&lt;/i&gt; Alice Johnson&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;&lt;i class="ui-icon ui-icon-user"&gt;&lt;/i&gt; Bob Smith&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;&lt;i class="ui-icon ui-icon-user"&gt;&lt;/i&gt; Carol Williams&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;&lt;i class="ui-icon ui-icon-user"&gt;&lt;/i&gt; David Brown&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;&lt;i class="ui-icon ui-icon-user"&gt;&lt;/i&gt; Eve Davis&lt;/button&gt;
+    &lt;span class="ui-autocomplete-empty"&gt;No results found&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+// Filter items as user types
+function filterAutocomplete(id) {
+  const ac = document.getElementById(id);
+  const query = ac.querySelector('.ui-autocomplete-input').value.toLowerCase();
+  const items = ac.querySelectorAll('.ui-dropdown-item');
+  let visible = 0;
+  items.forEach(item =&gt; {
+    const match = item.textContent.toLowerCase().includes(query);
+    item.classList.toggle('hidden', !match);
+    if (match) ++visible;
+  });
+  ac.querySelector('.ui-autocomplete-empty').classList.toggle('visible', visible === 0);
+  ac.querySelectorAll('.ui-dropdown-item.focused').forEach(i =&gt; i.classList.remove('focused'));
+  ac.classList.toggle('has-value', !!ac.querySelector('.ui-autocomplete-input').value);
+  ac.classList.add('open');
+}
+
+// Select an item and close
+function pickAutocomplete(btn) {
+  const ac = btn.closest('.ui-autocomplete');
+  ac.querySelector('.ui-autocomplete-input').value = btn.textContent.trim();
+  ac.querySelectorAll('.ui-dropdown-item.focused').forEach(i =&gt; i.classList.remove('focused'));
+  ac.querySelectorAll('.ui-dropdown-item.selected').forEach(i =&gt; i.classList.remove('selected'));
+  btn.classList.add('selected');
+  ac.classList.remove('open');
+  ac.classList.add('has-value');
+}
+
+// Clear the input and reset
+function clearAutocomplete(btn) {
+  const ac = btn.closest('.ui-autocomplete');
+  const input = ac.querySelector('.ui-autocomplete-input');
+  input.value = '';
+  ac.classList.remove('has-value');
+  ac.querySelectorAll('.ui-dropdown-item').forEach(i =&gt; i.classList.remove('hidden', 'focused', 'selected'));
+  ac.querySelector('.ui-autocomplete-empty').classList.remove('visible');
+  ac.classList.remove('open');
+}
+
+// Prevent focus loss when clicking menu items or clear button
+document.addEventListener('mousedown', e =&gt; {
+  if (e.target.closest('.ui-autocomplete-menu') || e.target.closest('.ui-autocomplete-clear')) {
+    e.preventDefault();
+  }
+});
+
+// Keyboard navigation
+document.addEventListener('keydown', e =&gt; {
+  const ac = e.target.closest('.ui-autocomplete');
+  if (!ac) return;
+
+  if (e.key === 'Escape') {
+    ac.querySelector('.ui-autocomplete-input').value = '';
+    ac.classList.remove('has-value', 'open');
+    ac.querySelectorAll('.ui-dropdown-item').forEach(i =&gt; i.classList.remove('hidden', 'focused'));
+    ac.querySelector('.ui-autocomplete-empty').classList.remove('visible');
+    return;
+  }
+
+  if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+    if (!ac.classList.contains('open')) {
+      e.preventDefault();
+      ac.classList.add('open');
+      const selected = ac.querySelector('.ui-dropdown-item.selected');
+      if (selected &amp;&amp; !selected.classList.contains('hidden')) {
+        selected.classList.add('focused');
+        selected.scrollIntoView({ block: 'nearest' });
+      }
+      return;
+    }
+  } else if (!ac.classList.contains('open')) {
+    return;
+  }
+
+  const items = [...ac.querySelectorAll('.ui-dropdown-item:not(.hidden)')];
+  if (!items.length) return;
+  const current = ac.querySelector('.ui-dropdown-item.focused');
+  const selected = ac.querySelector('.ui-dropdown-item.selected');
+  let idx = current ? items.indexOf(current) : (selected ? items.indexOf(selected) : -1);
+
+  if (e.key === 'ArrowDown') {
+    e.preventDefault();
+    if (current) current.classList.remove('focused');
+    idx = idx &lt; items.length - 1 ? idx + 1 : 0;
+    items[idx].classList.add('focused');
+    items[idx].scrollIntoView({ block: 'nearest' });
+  } else if (e.key === 'ArrowUp') {
+    e.preventDefault();
+    if (current) current.classList.remove('focused');
+    idx = idx &gt; 0 ? idx - 1 : items.length - 1;
+    items[idx].classList.add('focused');
+    items[idx].scrollIntoView({ block: 'nearest' });
+  } else if (e.key === 'Enter' &amp;&amp; current) {
+    e.preventDefault();
+    pickAutocomplete(current);
+  }
+});
+
+// Close on outside click
+document.addEventListener('click', e =&gt; {
+  if (!e.target.closest('.ui-autocomplete')) {
+    document.querySelectorAll('.ui-autocomplete.open').forEach(ac =&gt; ac.classList.remove('open'));
+  }
+});
+&lt;/script&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Searchable dropdown sizes</h3>
+      <div class="ui-stack sm" style="max-width:20rem;">
+        <div class="ui-autocomplete sm" id="demo-ac-sm">
+          <i class="ui-icon ui-icon-search ui-autocomplete-icon"></i>
+          <input class="ui-autocomplete-input" type="text" placeholder="Small..." oninput="filterAutocomplete('demo-ac-sm')" onfocus="this.closest('.ui-autocomplete').classList.add('open')">
+          <button class="ui-autocomplete-clear" type="button" onclick="clearAutocomplete(this)"><i class="ui-icon ui-icon-x"></i></button>
+          <div class="ui-autocomplete-menu">
+            <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">Australia</button>
+            <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">Brazil</button>
+            <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">Canada</button>
+            <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">France</button>
+            <span class="ui-autocomplete-empty">No results found</span>
+          </div>
+        </div>
+        <div class="ui-autocomplete" id="demo-ac-def">
+          <i class="ui-icon ui-icon-search ui-autocomplete-icon"></i>
+          <input class="ui-autocomplete-input" type="text" placeholder="Default..." oninput="filterAutocomplete('demo-ac-def')" onfocus="this.closest('.ui-autocomplete').classList.add('open')">
+          <button class="ui-autocomplete-clear" type="button" onclick="clearAutocomplete(this)"><i class="ui-icon ui-icon-x"></i></button>
+          <div class="ui-autocomplete-menu">
+            <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">Australia</button>
+            <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">Brazil</button>
+            <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">Canada</button>
+            <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">France</button>
+            <span class="ui-autocomplete-empty">No results found</span>
+          </div>
+        </div>
+        <div class="ui-autocomplete lg" id="demo-ac-lg">
+          <i class="ui-icon ui-icon-search ui-autocomplete-icon"></i>
+          <input class="ui-autocomplete-input" type="text" placeholder="Large..." oninput="filterAutocomplete('demo-ac-lg')" onfocus="this.closest('.ui-autocomplete').classList.add('open')">
+          <button class="ui-autocomplete-clear" type="button" onclick="clearAutocomplete(this)"><i class="ui-icon ui-icon-x"></i></button>
+          <div class="ui-autocomplete-menu">
+            <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">Australia</button>
+            <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">Brazil</button>
+            <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">Canada</button>
+            <button class="ui-dropdown-item" onclick="pickAutocomplete(this)">France</button>
+            <span class="ui-autocomplete-empty">No results found</span>
+          </div>
+        </div>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-autocomplete sm" id="my-ac-sm"&gt;
+  &lt;i class="ui-icon ui-icon-search ui-autocomplete-icon"&gt;&lt;/i&gt;
+  &lt;input class="ui-autocomplete-input" type="text" placeholder="Small..." oninput="filterAutocomplete('my-ac-sm')" onfocus="this.closest('.ui-autocomplete').classList.add('open')"&gt;
+  &lt;button class="ui-autocomplete-clear" type="button" onclick="clearAutocomplete(this)"&gt;&lt;i class="ui-icon ui-icon-x"&gt;&lt;/i&gt;&lt;/button&gt;
+  &lt;div class="ui-autocomplete-menu"&gt;
+    &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;Australia&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;Brazil&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;Canada&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;France&lt;/button&gt;
+    &lt;span class="ui-autocomplete-empty"&gt;No results found&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="ui-autocomplete" id="my-ac"&gt;
+  &lt;i class="ui-icon ui-icon-search ui-autocomplete-icon"&gt;&lt;/i&gt;
+  &lt;input class="ui-autocomplete-input" type="text" placeholder="Default..." oninput="filterAutocomplete('my-ac')" onfocus="this.closest('.ui-autocomplete').classList.add('open')"&gt;
+  &lt;button class="ui-autocomplete-clear" type="button" onclick="clearAutocomplete(this)"&gt;&lt;i class="ui-icon ui-icon-x"&gt;&lt;/i&gt;&lt;/button&gt;
+  &lt;div class="ui-autocomplete-menu"&gt;
+    &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;Australia&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;Brazil&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;Canada&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;France&lt;/button&gt;
+    &lt;span class="ui-autocomplete-empty"&gt;No results found&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="ui-autocomplete lg" id="my-ac-lg"&gt;
+  &lt;i class="ui-icon ui-icon-search ui-autocomplete-icon"&gt;&lt;/i&gt;
+  &lt;input class="ui-autocomplete-input" type="text" placeholder="Large..." oninput="filterAutocomplete('my-ac-lg')" onfocus="this.closest('.ui-autocomplete').classList.add('open')"&gt;
+  &lt;button class="ui-autocomplete-clear" type="button" onclick="clearAutocomplete(this)"&gt;&lt;i class="ui-icon ui-icon-x"&gt;&lt;/i&gt;&lt;/button&gt;
+  &lt;div class="ui-autocomplete-menu"&gt;
+    &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;Australia&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;Brazil&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;Canada&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="pickAutocomplete(this)"&gt;France&lt;/button&gt;
+    &lt;span class="ui-autocomplete-empty"&gt;No results found&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+function filterAutocomplete(id) {
+  const ac = document.getElementById(id);
+  const query = ac.querySelector('.ui-autocomplete-input').value.toLowerCase();
+  const items = ac.querySelectorAll('.ui-dropdown-item');
+  let visible = 0;
+  items.forEach(item =&gt; {
+    const match = item.textContent.toLowerCase().includes(query);
+    item.classList.toggle('hidden', !match);
+    if (match) ++visible;
+  });
+  ac.querySelector('.ui-autocomplete-empty').classList.toggle('visible', visible === 0);
+  ac.classList.toggle('has-value', !!ac.querySelector('.ui-autocomplete-input').value);
+  ac.classList.add('open');
+}
+
+function pickAutocomplete(btn) {
+  const ac = btn.closest('.ui-autocomplete');
+  ac.querySelector('.ui-autocomplete-input').value = btn.textContent.trim();
+  ac.querySelectorAll('.ui-dropdown-item.focused').forEach(i =&gt; i.classList.remove('focused'));
+  ac.querySelectorAll('.ui-dropdown-item.selected').forEach(i =&gt; i.classList.remove('selected'));
+  btn.classList.add('selected');
+  ac.classList.remove('open');
+  ac.classList.add('has-value');
+}
+
+function clearAutocomplete(btn) {
+  const ac = btn.closest('.ui-autocomplete');
+  const input = ac.querySelector('.ui-autocomplete-input');
+  input.value = '';
+  ac.classList.remove('has-value');
+  ac.querySelectorAll('.ui-dropdown-item').forEach(i =&gt; i.classList.remove('hidden', 'focused', 'selected'));
+  ac.querySelector('.ui-autocomplete-empty').classList.remove('visible');
+  ac.classList.remove('open');
+}
+
+// Prevent focus loss when clicking menu items or clear button
+document.addEventListener('mousedown', e =&gt; {
+  if (e.target.closest('.ui-autocomplete-menu') || e.target.closest('.ui-autocomplete-clear')) {
+    e.preventDefault();
+  }
+});
+
+// Keyboard navigation
+document.addEventListener('keydown', e =&gt; {
+  const ac = e.target.closest('.ui-autocomplete');
+  if (!ac) return;
+
+  if (e.key === 'Escape') {
+    ac.querySelector('.ui-autocomplete-input').value = '';
+    ac.classList.remove('has-value', 'open');
+    ac.querySelectorAll('.ui-dropdown-item').forEach(i =&gt; i.classList.remove('hidden', 'focused'));
+    ac.querySelector('.ui-autocomplete-empty').classList.remove('visible');
+    return;
+  }
+
+  if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+    if (!ac.classList.contains('open')) {
+      e.preventDefault();
+      ac.classList.add('open');
+      const selected = ac.querySelector('.ui-dropdown-item.selected');
+      if (selected &amp;&amp; !selected.classList.contains('hidden')) {
+        selected.classList.add('focused');
+        selected.scrollIntoView({ block: 'nearest' });
+      }
+      return;
+    }
+  } else if (!ac.classList.contains('open')) {
+    return;
+  }
+
+  const items = [...ac.querySelectorAll('.ui-dropdown-item:not(.hidden)')];
+  if (!items.length) return;
+  const current = ac.querySelector('.ui-dropdown-item.focused');
+  const selected = ac.querySelector('.ui-dropdown-item.selected');
+  let idx = current ? items.indexOf(current) : (selected ? items.indexOf(selected) : -1);
+
+  if (e.key === 'ArrowDown') {
+    e.preventDefault();
+    if (current) current.classList.remove('focused');
+    idx = idx &lt; items.length - 1 ? idx + 1 : 0;
+    items[idx].classList.add('focused');
+    items[idx].scrollIntoView({ block: 'nearest' });
+  } else if (e.key === 'ArrowUp') {
+    e.preventDefault();
+    if (current) current.classList.remove('focused');
+    idx = idx &gt; 0 ? idx - 1 : items.length - 1;
+    items[idx].classList.add('focused');
+    items[idx].scrollIntoView({ block: 'nearest' });
+  } else if (e.key === 'Enter' &amp;&amp; current) {
+    e.preventDefault();
+    pickAutocomplete(current);
+  }
+});
+
+// Close on outside click
+document.addEventListener('click', e =&gt; {
+  if (!e.target.closest('.ui-autocomplete')) {
+    document.querySelectorAll('.ui-autocomplete.open').forEach(ac =&gt; ac.classList.remove('open'));
+  }
+});
+&lt;/script&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>Sizes</h3>
+      <div class="ui-row">
+        <div class="ui-dropdown sm" id="demo-dd-sm">
+          <button class="ui-dropdown-toggle" onclick="toggleDropdown('demo-dd-sm')">Small</button>
+          <div class="ui-dropdown-menu">
+            <button class="ui-dropdown-item" onclick="toggleDropdown('demo-dd-sm')">Option one</button>
+            <button class="ui-dropdown-item" onclick="toggleDropdown('demo-dd-sm')">Option two</button>
+            <button class="ui-dropdown-item" onclick="toggleDropdown('demo-dd-sm')">Option three</button>
+          </div>
+        </div>
+        <div class="ui-dropdown" id="demo-dd-md">
+          <button class="ui-dropdown-toggle" onclick="toggleDropdown('demo-dd-md')">Default</button>
+          <div class="ui-dropdown-menu">
+            <button class="ui-dropdown-item" onclick="toggleDropdown('demo-dd-md')">Option one</button>
+            <button class="ui-dropdown-item" onclick="toggleDropdown('demo-dd-md')">Option two</button>
+            <button class="ui-dropdown-item" onclick="toggleDropdown('demo-dd-md')">Option three</button>
+          </div>
+        </div>
+        <div class="ui-dropdown lg" id="demo-dd-lg">
+          <button class="ui-dropdown-toggle" onclick="toggleDropdown('demo-dd-lg')">Large</button>
+          <div class="ui-dropdown-menu">
+            <button class="ui-dropdown-item" onclick="toggleDropdown('demo-dd-lg')">Option one</button>
+            <button class="ui-dropdown-item" onclick="toggleDropdown('demo-dd-lg')">Option two</button>
+            <button class="ui-dropdown-item" onclick="toggleDropdown('demo-dd-lg')">Option three</button>
+          </div>
+        </div>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-dropdown sm" id="my-dropdown-sm"&gt;
+  &lt;button class="ui-dropdown-toggle" onclick="toggleDropdown('my-dropdown-sm')"&gt;Small&lt;/button&gt;
+  &lt;div class="ui-dropdown-menu"&gt;
+    &lt;button class="ui-dropdown-item" onclick="toggleDropdown('my-dropdown-sm')"&gt;Option one&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="toggleDropdown('my-dropdown-sm')"&gt;Option two&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="toggleDropdown('my-dropdown-sm')"&gt;Option three&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="ui-dropdown" id="my-dropdown"&gt;
+  &lt;button class="ui-dropdown-toggle" onclick="toggleDropdown('my-dropdown')"&gt;Default&lt;/button&gt;
+  &lt;div class="ui-dropdown-menu"&gt;
+    &lt;button class="ui-dropdown-item" onclick="toggleDropdown('my-dropdown')"&gt;Option one&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="toggleDropdown('my-dropdown')"&gt;Option two&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="toggleDropdown('my-dropdown')"&gt;Option three&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="ui-dropdown lg" id="my-dropdown-lg"&gt;
+  &lt;button class="ui-dropdown-toggle" onclick="toggleDropdown('my-dropdown-lg')"&gt;Large&lt;/button&gt;
+  &lt;div class="ui-dropdown-menu"&gt;
+    &lt;button class="ui-dropdown-item" onclick="toggleDropdown('my-dropdown-lg')"&gt;Option one&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="toggleDropdown('my-dropdown-lg')"&gt;Option two&lt;/button&gt;
+    &lt;button class="ui-dropdown-item" onclick="toggleDropdown('my-dropdown-lg')"&gt;Option three&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+function toggleDropdown(id) {
+  const dd = document.getElementById(id);
+  document.querySelectorAll('.ui-dropdown.open').forEach(d =&gt; {
+    if (d.id !== id) d.classList.remove('open');
+  });
+  dd.classList.toggle('open');
+}
+
+document.addEventListener('click', e =&gt; {
+  if (!e.target.closest('.ui-dropdown')) {
+    document.querySelectorAll('.ui-dropdown.open').forEach(d =&gt; d.classList.remove('open'));
+  }
+});
+&lt;/script&gt;</pre>
+      </details>
+    </div>

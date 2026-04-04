@@ -1,0 +1,127 @@
+      <section class="demo-section" id="code-block">
+        <h2>Code Block</h2>
+
+        <div class="demo-card">
+          <h3>With header</h3>
+          <div id="live-code-header">
+            <div class="ui-code">
+              <div class="ui-code-header">
+                <span class="ui-code-lang">javascript</span>
+                <button class="ui-code-copy"><i class="ui-icon ui-icon-copy"></i> Copy</button>
+              </div>
+              <pre><code>function greet(name) {
+  return `Hello, ${name}!`;
+}
+
+console.log(greet("World"));</code></pre>
+            </div>
+          </div>
+          <details class="demo-code" data-live-target="live-code-header">
+            <summary>Show code</summary>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-code"&gt;
+  &lt;div class="ui-code-header"&gt;
+    &lt;span class="ui-code-lang"&gt;javascript&lt;/span&gt;
+    &lt;button class="ui-code-copy"&gt;
+      &lt;i class="ui-icon ui-icon-copy"&gt;&lt;/i&gt; Copy
+    &lt;/button&gt;
+  &lt;/div&gt;
+  &lt;pre&gt;&lt;code&gt;function greet(name) {
+  return `Hello, ${name}!`;
+}
+
+console.log(greet("World"));&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</pre>
+          </details>
+        </div>
+
+        <div class="demo-card">
+          <h3>With filename &amp; line numbers</h3>
+          <div id="live-code-lines">
+            <div class="ui-code line-numbers">
+              <div class="ui-code-header">
+                <span class="ui-code-filename">src/utils.ts</span>
+                <button class="ui-code-copy"><i class="ui-icon ui-icon-copy"></i> Copy</button>
+              </div>
+              <div class="ui-code-body">
+                <div class="line-numbers-col"></div>
+                <pre><code>export type Result&lt;T&gt; =
+  | { ok: true; value: T }
+  | { ok: false; error: Error };
+
+export function unwrap&lt;T&gt;(r: Result&lt;T&gt;): T {
+  if (!r.ok) throw r.error;
+  return r.value;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+          <details class="demo-code" data-live-target="live-code-lines">
+            <summary>Show code</summary>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-code line-numbers"&gt;
+  &lt;div class="ui-code-header"&gt;
+    &lt;span class="ui-code-filename"&gt;src/utils.ts&lt;/span&gt;
+    &lt;button class="ui-code-copy"&gt;
+      &lt;i class="ui-icon ui-icon-copy"&gt;&lt;/i&gt; Copy
+    &lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="ui-code-body"&gt;
+    &lt;div class="line-numbers-col"&gt;&lt;/div&gt;
+    &lt;pre&gt;&lt;code&gt;export type Result&amp;lt;T&amp;gt; =
+  | { ok: true; value: T }
+  | { ok: false; error: Error };
+
+export function unwrap&amp;lt;T&amp;gt;(r: Result&amp;lt;T&amp;gt;): T {
+  if (!r.ok) throw r.error;
+  return r.value;
+}&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+document.querySelectorAll('.ui-code.line-numbers').forEach(function(block) {
+  var code = block.querySelector('pre code');
+  var col = block.querySelector('.line-numbers-col');
+  if (!code || !col) return;
+  var count = code.textContent.split('\n').length;
+  col.innerHTML = '&amp;lt;span&amp;gt;&amp;lt;/span&amp;gt;'.repeat(count);
+});
+&lt;/script&gt;</pre>
+          </details>
+        </div>
+
+        <div class="demo-card">
+          <h3>Floating copy &amp; inline code</h3>
+          <div id="live-code-float">
+            <div class="ui-code">
+              <button class="ui-code-copy floating"><i class="ui-icon ui-icon-copy"></i></button>
+              <pre><code>curl -X POST https://api.example.com/v1/data \
+  -H "Authorization: Bearer $TOKEN" \
+  -d '{"key": "value"}'</code></pre>
+            </div>
+            <p style="margin-top:1rem;font-size:var(--ui-font-size)">
+              Use <span class="ui-code-inline">npm install</span> to install dependencies,
+              then run <span class="ui-code-inline">npm start</span>.
+            </p>
+          </div>
+          <details class="demo-code" data-live-target="live-code-float">
+            <summary>Show code</summary>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-code"&gt;
+  &lt;button class="ui-code-copy floating"&gt;
+    &lt;i class="ui-icon ui-icon-copy"&gt;&lt;/i&gt;
+  &lt;/button&gt;
+  &lt;pre&gt;&lt;code&gt;curl -X POST https://api.example.com/v1/data \
+  -H "Authorization: Bearer $TOKEN" \
+  -d '{"key": "value"}'&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p style="margin-top:1rem;font-size:var(--ui-font-size)"&gt;
+  Use &lt;span class="ui-code-inline"&gt;npm install&lt;/span&gt; to install dependencies,
+  then run &lt;span class="ui-code-inline"&gt;npm start&lt;/span&gt;.
+&lt;/p&gt;</pre>
+          </details>
+        </div>
+      </section>
+
+      <!-- ============ DIFF ============ -->

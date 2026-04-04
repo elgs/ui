@@ -1,0 +1,32 @@
+  <div class="demo-section" id="dark-mode">
+    <h2>Dark Mode</h2>
+    <div class="demo-subsection">
+      <h3>Toggle with data-theme attribute</h3>
+      <p style="font-size:0.8125rem; color:var(--ui-text-muted); margin:0 0 0.75rem;">
+        Set <code style="font-size:inherit;">data-theme="dark"</code> on <code style="font-size:inherit;">&lt;html&gt;</code>. The library includes a full set of dark-appropriate variables.
+      </p>
+      <details class="demo-code" data-readonly open style="border-top:none; padding-top:0;">
+      <summary>Show code</summary>
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;!-- Enable dark mode via data attribute --&gt;
+&lt;html data-theme="dark"&gt;
+
+&lt;!-- Toggle with JavaScript --&gt;
+&lt;script&gt;
+function toggleDarkMode() {
+  const html = document.documentElement;
+  const isDark = html.getAttribute('data-theme') === 'dark';
+  html.setAttribute('data-theme', isDark ? '' : 'dark');
+}
+
+// Or follow system preference
+var mq = window.matchMedia('(prefers-color-scheme: dark)');
+function applySystem() {
+  document.documentElement.setAttribute('data-theme', mq.matches ? 'dark' : '');
+}
+applySystem();
+mq.addEventListener('change', applySystem);
+&lt;/script&gt;</pre>
+      </details>
+    </div>
+  </div>

@@ -1,0 +1,40 @@
+  <div class="demo-section" id="sliders">
+    <h2>Sliders</h2>
+
+    <div class="demo-subsection">
+      <h3>Sizes & colors</h3>
+      <div class="ui-stack" style="gap: 1.25rem;">
+        <input type="range" class="ui-range sm" value="30">
+        <input type="range" class="ui-range" value="50">
+        <input type="range" class="ui-range lg success" value="70">
+        <input type="range" class="ui-range danger" value="80">
+        <input type="range" class="ui-range" value="40" disabled>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;input type="range" class="ui-range sm" value="30"&gt;
+&lt;input type="range" class="ui-range" value="50"&gt;
+&lt;input type="range" class="ui-range lg success" value="70"&gt;
+&lt;input type="range" class="ui-range danger" value="80"&gt;
+&lt;input type="range" class="ui-range" value="40" disabled&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>With value display</h3>
+      <div class="ui-row" style="gap:1rem;">
+        <input type="range" class="ui-range" value="50" min="0" max="100" id="demo-range" oninput="document.getElementById('demo-range-val').textContent=this.value" style="flex:1;">
+        <span id="demo-range-val" style="min-width:2rem; text-align:right; font-weight:600; font-size:0.875rem;">50</span>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;input type="range" class="ui-range" value="50" min="0" max="100"
+  oninput="document.getElementById('demo-range-val').textContent=this.value"&gt;
+&lt;span id="demo-range-val"&gt;50&lt;/span&gt;</pre>
+      </details>
+    </div>
+  </div>
+
+  <!-- ═══ Data Display ═══ -->

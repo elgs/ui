@@ -1,0 +1,68 @@
+  <div class="demo-section" id="tooltips">
+    <h2>Tooltips</h2>
+
+    <div class="demo-subsection">
+      <h3>Positions</h3>
+      <div class="ui-row" style="padding: 2rem 0;">
+        <button class="ui-btn sm outline ui-tooltip" data-tooltip="Tooltip on top">Top</button>
+        <button class="ui-btn sm outline ui-tooltip bottom" data-tooltip="Tooltip on bottom">Bottom</button>
+        <button class="ui-btn sm outline ui-tooltip left" data-tooltip="Tooltip on left">Left</button>
+        <button class="ui-btn sm outline ui-tooltip right" data-tooltip="Tooltip on right">Right</button>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;button class="ui-btn sm outline ui-tooltip" data-tooltip="Tooltip on top"&gt;Top&lt;/button&gt;
+
+&lt;button class="ui-btn sm outline ui-tooltip bottom" data-tooltip="Tooltip on bottom"&gt;Bottom&lt;/button&gt;
+
+&lt;button class="ui-btn sm outline ui-tooltip left" data-tooltip="Tooltip on left"&gt;Left&lt;/button&gt;
+
+&lt;button class="ui-btn sm outline ui-tooltip right" data-tooltip="Tooltip on right"&gt;Right&lt;/button&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>On different elements</h3>
+      <div class="ui-row" style="padding: 1rem 0;">
+        <button class="ui-btn icon sm ui-tooltip" data-tooltip="Edit this item"><i class="ui-icon ui-icon-edit"></i></button>
+        <span class="ui-badge solid ui-tooltip" data-tooltip="5 new messages">Inbox</span>
+        <code class="ui-tooltip bottom" data-tooltip="Click to copy" style="padding:0.25rem 0.5rem; background:var(--ui-bg-subtle); border-radius:var(--ui-radius-sm); font-size:0.8125rem; cursor:pointer;">ui.css</code>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;button class="ui-btn icon sm ui-tooltip" data-tooltip="Edit this item"&gt;
+  &lt;i class="ui-icon ui-icon-edit"&gt;&lt;/i&gt;
+&lt;/button&gt;
+
+&lt;span class="ui-badge solid ui-tooltip" data-tooltip="5 new messages"&gt;Inbox&lt;/span&gt;
+
+&lt;code class="ui-tooltip bottom" data-tooltip="Click to copy"&gt;ui.css&lt;/code&gt;</pre>
+      </details>
+    </div>
+
+    <div class="demo-subsection">
+      <h3>With delay</h3>
+      <div class="ui-row" style="padding: 2rem 0;">
+        <button class="ui-btn sm outline ui-tooltip" data-tooltip="I appear after 1s" style="--ui-tooltip-delay: 1s;">Delayed</button>
+        <button class="ui-btn sm outline ui-tooltip" data-tooltip="I appear immediately">Instant</button>
+      </div>
+      <details class="demo-code">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;!-- Apply globally via :root or :host --&gt;
+&lt;style&gt;
+  :root {
+    --ui-tooltip-delay: 1s;
+  }
+&lt;/style&gt;
+
+&lt;!-- Or override on an individual element --&gt;
+&lt;button class="ui-btn outline ui-tooltip" data-tooltip="I appear after 1s"
+  style="--ui-tooltip-delay: 1s;"&gt;Delayed&lt;/button&gt;
+
+&lt;button class="ui-btn outline ui-tooltip" data-tooltip="I appear immediately"&gt;Instant&lt;/button&gt;</pre>
+      </details>
+    </div>
+  </div>

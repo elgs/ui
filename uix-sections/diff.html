@@ -1,0 +1,121 @@
+      <section class="demo-section" id="diff">
+        <h2>Diff</h2>
+
+        <div class="demo-card">
+          <h3>Unified diff</h3>
+          <div id="live-diff">
+            <div class="ui-diff">
+              <div class="ui-diff-header">
+                <span class="ui-diff-filename">src/config.ts</span>
+                <div class="ui-diff-stats">
+                  <span class="additions">+3</span>
+                  <span class="deletions">-2</span>
+                </div>
+              </div>
+              <table>
+                <tr class="ui-diff-line context">
+                  <td class="ui-diff-gutter">10</td>
+                  <td class="ui-diff-gutter">10</td>
+                  <td class="ui-diff-marker"></td>
+                  <td class="ui-diff-content">  port: 3000,</td>
+                </tr>
+                <tr class="ui-diff-line removed">
+                  <td class="ui-diff-gutter">11</td>
+                  <td class="ui-diff-gutter"></td>
+                  <td class="ui-diff-marker">-</td>
+                  <td class="ui-diff-content">  host: <span class="ui-diff-highlight">"localhost"</span>,</td>
+                </tr>
+                <tr class="ui-diff-line removed">
+                  <td class="ui-diff-gutter">12</td>
+                  <td class="ui-diff-gutter"></td>
+                  <td class="ui-diff-marker">-</td>
+                  <td class="ui-diff-content">  debug: false,</td>
+                </tr>
+                <tr class="ui-diff-line added">
+                  <td class="ui-diff-gutter"></td>
+                  <td class="ui-diff-gutter">11</td>
+                  <td class="ui-diff-marker">+</td>
+                  <td class="ui-diff-content">  host: <span class="ui-diff-highlight">"0.0.0.0"</span>,</td>
+                </tr>
+                <tr class="ui-diff-line added">
+                  <td class="ui-diff-gutter"></td>
+                  <td class="ui-diff-gutter">12</td>
+                  <td class="ui-diff-marker">+</td>
+                  <td class="ui-diff-content">  debug: true,</td>
+                </tr>
+                <tr class="ui-diff-line added">
+                  <td class="ui-diff-gutter"></td>
+                  <td class="ui-diff-gutter">13</td>
+                  <td class="ui-diff-marker">+</td>
+                  <td class="ui-diff-content">  logLevel: "verbose",</td>
+                </tr>
+                <tr class="ui-diff-line context">
+                  <td class="ui-diff-gutter">13</td>
+                  <td class="ui-diff-gutter">14</td>
+                  <td class="ui-diff-marker"></td>
+                  <td class="ui-diff-content">  cors: true,</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <details class="demo-code" data-live-target="live-diff">
+            <summary>Show code</summary>
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;div class="ui-diff"&gt;
+  &lt;div class="ui-diff-header"&gt;
+    &lt;span class="ui-diff-filename"&gt;src/config.ts&lt;/span&gt;
+    &lt;div class="ui-diff-stats"&gt;
+      &lt;span class="additions"&gt;+3&lt;/span&gt;
+      &lt;span class="deletions"&gt;-2&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;table&gt;
+    &lt;tr class="ui-diff-line context"&gt;
+      &lt;td class="ui-diff-gutter"&gt;10&lt;/td&gt;
+      &lt;td class="ui-diff-gutter"&gt;10&lt;/td&gt;
+      &lt;td class="ui-diff-marker"&gt;&lt;/td&gt;
+      &lt;td class="ui-diff-content"&gt;  port: 3000,&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr class="ui-diff-line removed"&gt;
+      &lt;td class="ui-diff-gutter"&gt;11&lt;/td&gt;
+      &lt;td class="ui-diff-gutter"&gt;&lt;/td&gt;
+      &lt;td class="ui-diff-marker"&gt;-&lt;/td&gt;
+      &lt;td class="ui-diff-content"&gt;  host: &lt;span class="ui-diff-highlight"&gt;"localhost"&lt;/span&gt;,&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr class="ui-diff-line removed"&gt;
+      &lt;td class="ui-diff-gutter"&gt;12&lt;/td&gt;
+      &lt;td class="ui-diff-gutter"&gt;&lt;/td&gt;
+      &lt;td class="ui-diff-marker"&gt;-&lt;/td&gt;
+      &lt;td class="ui-diff-content"&gt;  debug: false,&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr class="ui-diff-line added"&gt;
+      &lt;td class="ui-diff-gutter"&gt;&lt;/td&gt;
+      &lt;td class="ui-diff-gutter"&gt;11&lt;/td&gt;
+      &lt;td class="ui-diff-marker"&gt;+&lt;/td&gt;
+      &lt;td class="ui-diff-content"&gt;  host: &lt;span class="ui-diff-highlight"&gt;"0.0.0.0"&lt;/span&gt;,&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr class="ui-diff-line added"&gt;
+      &lt;td class="ui-diff-gutter"&gt;&lt;/td&gt;
+      &lt;td class="ui-diff-gutter"&gt;12&lt;/td&gt;
+      &lt;td class="ui-diff-marker"&gt;+&lt;/td&gt;
+      &lt;td class="ui-diff-content"&gt;  debug: true,&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr class="ui-diff-line added"&gt;
+      &lt;td class="ui-diff-gutter"&gt;&lt;/td&gt;
+      &lt;td class="ui-diff-gutter"&gt;13&lt;/td&gt;
+      &lt;td class="ui-diff-marker"&gt;+&lt;/td&gt;
+      &lt;td class="ui-diff-content"&gt;  logLevel: "verbose",&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr class="ui-diff-line context"&gt;
+      &lt;td class="ui-diff-gutter"&gt;13&lt;/td&gt;
+      &lt;td class="ui-diff-gutter"&gt;14&lt;/td&gt;
+      &lt;td class="ui-diff-marker"&gt;&lt;/td&gt;
+      &lt;td class="ui-diff-content"&gt;  cors: true,&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/div&gt;</pre>
+          </details>
+        </div>
+      </section>
+
+      <!-- ============ POPOVER ============ -->

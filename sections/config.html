@@ -1,0 +1,31 @@
+  <div class="demo-section" id="config">
+    <h2>Color Configuration</h2>
+    <div class="demo-subsection">
+      <h3>Override via CSS custom properties</h3>
+      <details class="demo-code" data-readonly open style="border-top:none; padding-top:0;">
+        <summary>Show code</summary>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>&lt;!-- Include the stylesheet --&gt;
+&lt;link rel="stylesheet" href="src/ui.css"&gt;
+
+&lt;!-- Override colors via CSS custom properties --&gt;
+&lt;style&gt;
+/* Use :root for the page, or :host inside a Shadow DOM component. */
+:root {
+  --ui-primary: #7c5cbf;
+  --ui-primary-hover: #6a4daa;
+  --ui-primary-active: #5a4195;
+  --ui-primary-light: #f3effa;
+
+  --ui-danger: #e85d75;
+  --ui-success: #2cb87a;
+
+  --ui-bg: #ffffff;
+  --ui-text: #1a1d26;
+  --ui-border: #e0e4ea;
+  --ui-radius: 8px;
+}
+&lt;/style&gt;</pre>
+      </details>
+    </div>
+  </div>

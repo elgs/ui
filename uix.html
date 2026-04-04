@@ -483,978 +483,9 @@
         <p>Extended component library &mdash; companion to ui.css</p>
       </div>
 
-      <!-- ============ INPUT OTP ============ -->
-      <section class="demo-section" id="input-otp">
-        <h2>Input OTP</h2>
 
-        <div class="demo-card">
-          <h3>Default</h3>
-          <div id="live-otp-default">
-            <div class="ui-otp">
-              <input class="ui-otp-slot" type="text" maxlength="1" value="4">
-              <input class="ui-otp-slot" type="text" maxlength="1" value="2">
-              <input class="ui-otp-slot" type="text" maxlength="1" value="0">
-              <div class="ui-otp-separator"></div>
-              <input class="ui-otp-slot" type="text" maxlength="1" placeholder="0">
-              <input class="ui-otp-slot" type="text" maxlength="1" placeholder="0">
-              <input class="ui-otp-slot" type="text" maxlength="1" placeholder="0">
-            </div>
-          </div>
-          <details class="demo-code" data-live-target="live-otp-default">
-            <summary>Show code</summary>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;div class="ui-otp"&gt;
-  &lt;input class="ui-otp-slot" type="text" maxlength="1" value="4"&gt;
-  &lt;input class="ui-otp-slot" type="text" maxlength="1" value="2"&gt;
-  &lt;input class="ui-otp-slot" type="text" maxlength="1" value="0"&gt;
-  &lt;div class="ui-otp-separator"&gt;&lt;/div&gt;
-  &lt;input class="ui-otp-slot" type="text" maxlength="1" placeholder="0"&gt;
-  &lt;input class="ui-otp-slot" type="text" maxlength="1" placeholder="0"&gt;
-  &lt;input class="ui-otp-slot" type="text" maxlength="1" placeholder="0"&gt;
-&lt;/div&gt;</pre>
-          </details>
-        </div>
-
-        <div class="demo-card">
-          <h3>Sizes</h3>
-          <div id="live-otp-sizes" style="display:flex;flex-direction:column;gap:0.75rem">
-            <div class="ui-otp sm">
-              <input class="ui-otp-slot" type="text" maxlength="1" placeholder="0">
-              <input class="ui-otp-slot" type="text" maxlength="1" placeholder="0">
-              <input class="ui-otp-slot" type="text" maxlength="1" placeholder="0">
-              <input class="ui-otp-slot" type="text" maxlength="1" placeholder="0">
-            </div>
-            <div class="ui-otp lg">
-              <input class="ui-otp-slot" type="text" maxlength="1" placeholder="0">
-              <input class="ui-otp-slot" type="text" maxlength="1" placeholder="0">
-              <input class="ui-otp-slot" type="text" maxlength="1" placeholder="0">
-              <input class="ui-otp-slot" type="text" maxlength="1" placeholder="0">
-            </div>
-          </div>
-          <details class="demo-code" data-live-target="live-otp-sizes">
-            <summary>Show code</summary>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;div class="ui-otp sm"&gt;
-  &lt;input class="ui-otp-slot" type="text" maxlength="1" placeholder="0"&gt;
-  &lt;input class="ui-otp-slot" type="text" maxlength="1" placeholder="0"&gt;
-  &lt;input class="ui-otp-slot" type="text" maxlength="1" placeholder="0"&gt;
-  &lt;input class="ui-otp-slot" type="text" maxlength="1" placeholder="0"&gt;
-&lt;/div&gt;
-&lt;div class="ui-otp lg"&gt;
-  &lt;input class="ui-otp-slot" type="text" maxlength="1" placeholder="0"&gt;
-  &lt;input class="ui-otp-slot" type="text" maxlength="1" placeholder="0"&gt;
-  &lt;input class="ui-otp-slot" type="text" maxlength="1" placeholder="0"&gt;
-  &lt;input class="ui-otp-slot" type="text" maxlength="1" placeholder="0"&gt;
-&lt;/div&gt;</pre>
-          </details>
-        </div>
-
-        <div class="demo-card">
-          <h3>Variants</h3>
-          <div id="live-otp-variants" style="display:flex;flex-direction:column;gap:0.75rem">
-            <div class="ui-otp underline">
-              <input class="ui-otp-slot" type="text" maxlength="1" value="A">
-              <input class="ui-otp-slot" type="text" maxlength="1" value="B">
-              <input class="ui-otp-slot" type="text" maxlength="1" placeholder="0">
-              <input class="ui-otp-slot" type="text" maxlength="1" placeholder="0">
-            </div>
-            <div class="ui-otp filled">
-              <input class="ui-otp-slot" type="text" maxlength="1" placeholder="0">
-              <input class="ui-otp-slot" type="text" maxlength="1" placeholder="0">
-              <input class="ui-otp-slot" type="text" maxlength="1" placeholder="0">
-              <input class="ui-otp-slot" type="text" maxlength="1" placeholder="0">
-            </div>
-          </div>
-          <details class="demo-code" data-live-target="live-otp-variants">
-            <summary>Show code</summary>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;div class="ui-otp underline"&gt;
-  &lt;input class="ui-otp-slot" type="text" maxlength="1" value="A"&gt;
-  &lt;input class="ui-otp-slot" type="text" maxlength="1" value="B"&gt;
-  &lt;input class="ui-otp-slot" type="text" maxlength="1" placeholder="0"&gt;
-  &lt;input class="ui-otp-slot" type="text" maxlength="1" placeholder="0"&gt;
-&lt;/div&gt;
-&lt;div class="ui-otp filled"&gt;
-  &lt;input class="ui-otp-slot" type="text" maxlength="1" placeholder="0"&gt;
-  &lt;input class="ui-otp-slot" type="text" maxlength="1" placeholder="0"&gt;
-  &lt;input class="ui-otp-slot" type="text" maxlength="1" placeholder="0"&gt;
-  &lt;input class="ui-otp-slot" type="text" maxlength="1" placeholder="0"&gt;
-&lt;/div&gt;</pre>
-          </details>
-        </div>
-
-        <div class="demo-card">
-          <h3>States</h3>
-          <div id="live-otp-states" style="display:flex;flex-direction:column;gap:0.75rem">
-            <div class="ui-otp error">
-              <input class="ui-otp-slot" type="text" maxlength="1" value="1">
-              <input class="ui-otp-slot" type="text" maxlength="1" value="2">
-              <input class="ui-otp-slot" type="text" maxlength="1" value="3">
-              <input class="ui-otp-slot" type="text" maxlength="1" value="4">
-            </div>
-            <div class="ui-otp success">
-              <input class="ui-otp-slot" type="text" maxlength="1" value="1">
-              <input class="ui-otp-slot" type="text" maxlength="1" value="2">
-              <input class="ui-otp-slot" type="text" maxlength="1" value="3">
-              <input class="ui-otp-slot" type="text" maxlength="1" value="4">
-            </div>
-          </div>
-          <details class="demo-code" data-live-target="live-otp-states">
-            <summary>Show code</summary>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;div class="ui-otp error"&gt;
-  &lt;input class="ui-otp-slot" type="text" maxlength="1" value="1"&gt;
-  &lt;input class="ui-otp-slot" type="text" maxlength="1" value="2"&gt;
-  &lt;input class="ui-otp-slot" type="text" maxlength="1" value="3"&gt;
-  &lt;input class="ui-otp-slot" type="text" maxlength="1" value="4"&gt;
-&lt;/div&gt;
-&lt;div class="ui-otp success"&gt;
-  &lt;input class="ui-otp-slot" type="text" maxlength="1" value="1"&gt;
-  &lt;input class="ui-otp-slot" type="text" maxlength="1" value="2"&gt;
-  &lt;input class="ui-otp-slot" type="text" maxlength="1" value="3"&gt;
-  &lt;input class="ui-otp-slot" type="text" maxlength="1" value="4"&gt;
-&lt;/div&gt;</pre>
-          </details>
-        </div>
-      </section>
-
-      <!-- ============ TIMELINE ============ -->
-      <section class="demo-section" id="timeline">
-        <h2>Timeline</h2>
-
-        <div class="demo-card">
-          <h3>Default</h3>
-          <div id="live-timeline">
-            <ul class="ui-timeline">
-              <li class="ui-timeline-item">
-                <div class="ui-timeline-dot solid">
-                  <i class="ui-icon ui-icon-check"></i>
-                </div>
-                <div class="ui-timeline-content">
-                  <div class="ui-timeline-title">Order confirmed</div>
-                  <div class="ui-timeline-time">Mar 12, 2026 — 10:30 AM</div>
-                  <div class="ui-timeline-body">Your order #2048 has been confirmed.</div>
-                </div>
-              </li>
-              <li class="ui-timeline-item">
-                <div class="ui-timeline-dot solid">
-                  <i class="ui-icon ui-icon-package"></i>
-                </div>
-                <div class="ui-timeline-content">
-                  <div class="ui-timeline-title">Shipped</div>
-                  <div class="ui-timeline-time">Mar 12, 2026 — 3:45 PM</div>
-                </div>
-              </li>
-              <li class="ui-timeline-item">
-                <div class="ui-timeline-dot"></div>
-                <div class="ui-timeline-content">
-                  <div class="ui-timeline-title">In transit</div>
-                  <div class="ui-timeline-time">Mar 13, 2026 — 9:00 AM</div>
-                </div>
-              </li>
-              <li class="ui-timeline-item">
-                <div class="ui-timeline-dot"></div>
-                <div class="ui-timeline-content">
-                  <div class="ui-timeline-title">Delivered</div>
-                  <div class="ui-timeline-time">Pending</div>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <details class="demo-code" data-live-target="live-timeline">
-            <summary>Show code</summary>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;ul class="ui-timeline"&gt;
-  &lt;li class="ui-timeline-item"&gt;
-    &lt;div class="ui-timeline-dot solid"&gt;
-      &lt;i class="ui-icon ui-icon-check"&gt;&lt;/i&gt;
-    &lt;/div&gt;
-    &lt;div class="ui-timeline-content"&gt;
-      &lt;div class="ui-timeline-title"&gt;Order confirmed&lt;/div&gt;
-      &lt;div class="ui-timeline-time"&gt;Mar 12, 2026 — 10:30 AM&lt;/div&gt;
-      &lt;div class="ui-timeline-body"&gt;Your order #2048 has been confirmed.&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li class="ui-timeline-item"&gt;
-    &lt;div class="ui-timeline-dot solid"&gt;
-      &lt;i class="ui-icon ui-icon-package"&gt;&lt;/i&gt;
-    &lt;/div&gt;
-    &lt;div class="ui-timeline-content"&gt;
-      &lt;div class="ui-timeline-title"&gt;Shipped&lt;/div&gt;
-      &lt;div class="ui-timeline-time"&gt;Mar 12, 2026 — 3:45 PM&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li class="ui-timeline-item"&gt;
-    &lt;div class="ui-timeline-dot"&gt;&lt;/div&gt;
-    &lt;div class="ui-timeline-content"&gt;
-      &lt;div class="ui-timeline-title"&gt;In transit&lt;/div&gt;
-      &lt;div class="ui-timeline-time"&gt;Mar 13, 2026 — 9:00 AM&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li class="ui-timeline-item"&gt;
-    &lt;div class="ui-timeline-dot"&gt;&lt;/div&gt;
-    &lt;div class="ui-timeline-content"&gt;
-      &lt;div class="ui-timeline-title"&gt;Delivered&lt;/div&gt;
-      &lt;div class="ui-timeline-time"&gt;Pending&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</pre>
-          </details>
-        </div>
-
-        <div class="demo-card">
-          <h3>Small</h3>
-          <div id="live-timeline-sm">
-            <ul class="ui-timeline sm">
-              <li class="ui-timeline-item">
-                <div class="ui-timeline-dot solid"></div>
-                <div class="ui-timeline-content">
-                  <div class="ui-timeline-title">Build passed</div>
-                  <div class="ui-timeline-time">2 min ago</div>
-                </div>
-              </li>
-              <li class="ui-timeline-item">
-                <div class="ui-timeline-dot solid"></div>
-                <div class="ui-timeline-content">
-                  <div class="ui-timeline-title">Test failed</div>
-                  <div class="ui-timeline-time">5 min ago</div>
-                </div>
-              </li>
-              <li class="ui-timeline-item">
-                <div class="ui-timeline-dot"></div>
-                <div class="ui-timeline-content">
-                  <div class="ui-timeline-title">Deploy started</div>
-                  <div class="ui-timeline-time">8 min ago</div>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <details class="demo-code" data-live-target="live-timeline-sm">
-            <summary>Show code</summary>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;ul class="ui-timeline sm"&gt;
-  &lt;li class="ui-timeline-item"&gt;
-    &lt;div class="ui-timeline-dot solid"&gt;&lt;/div&gt;
-    &lt;div class="ui-timeline-content"&gt;
-      &lt;div class="ui-timeline-title"&gt;Build passed&lt;/div&gt;
-      &lt;div class="ui-timeline-time"&gt;2 min ago&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li class="ui-timeline-item"&gt;
-    &lt;div class="ui-timeline-dot solid"&gt;&lt;/div&gt;
-    &lt;div class="ui-timeline-content"&gt;
-      &lt;div class="ui-timeline-title"&gt;Test failed&lt;/div&gt;
-      &lt;div class="ui-timeline-time"&gt;5 min ago&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li class="ui-timeline-item"&gt;
-    &lt;div class="ui-timeline-dot"&gt;&lt;/div&gt;
-    &lt;div class="ui-timeline-content"&gt;
-      &lt;div class="ui-timeline-title"&gt;Deploy started&lt;/div&gt;
-      &lt;div class="ui-timeline-time"&gt;8 min ago&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</pre>
-          </details>
-        </div>
-
-        <div class="demo-card">
-          <h3>Reverse (bottom to top)</h3>
-          <div id="live-timeline-reverse">
-            <ul class="ui-timeline reverse">
-              <li class="ui-timeline-item">
-                <div class="ui-timeline-dot solid"></div>
-                <div class="ui-timeline-content">
-                  <div class="ui-timeline-title">Commit pushed</div>
-                  <div class="ui-timeline-time">2:30 PM</div>
-                </div>
-              </li>
-              <li class="ui-timeline-item">
-                <div class="ui-timeline-dot solid"></div>
-                <div class="ui-timeline-content">
-                  <div class="ui-timeline-title">Tests passed</div>
-                  <div class="ui-timeline-time">2:45 PM</div>
-                </div>
-              </li>
-              <li class="ui-timeline-item">
-                <div class="ui-timeline-dot"></div>
-                <div class="ui-timeline-content">
-                  <div class="ui-timeline-title">Deployed to production</div>
-                  <div class="ui-timeline-time">3:00 PM</div>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <details class="demo-code" data-live-target="live-timeline-reverse">
-            <summary>Show code</summary>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;ul class="ui-timeline reverse"&gt;
-  &lt;li class="ui-timeline-item"&gt;
-    &lt;div class="ui-timeline-dot solid"&gt;&lt;/div&gt;
-    &lt;div class="ui-timeline-content"&gt;
-      &lt;div class="ui-timeline-title"&gt;Commit pushed&lt;/div&gt;
-      &lt;div class="ui-timeline-time"&gt;2:30 PM&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li class="ui-timeline-item"&gt;
-    &lt;div class="ui-timeline-dot solid"&gt;&lt;/div&gt;
-    &lt;div class="ui-timeline-content"&gt;
-      &lt;div class="ui-timeline-title"&gt;Tests passed&lt;/div&gt;
-      &lt;div class="ui-timeline-time"&gt;2:45 PM&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li class="ui-timeline-item"&gt;
-    &lt;div class="ui-timeline-dot"&gt;&lt;/div&gt;
-    &lt;div class="ui-timeline-content"&gt;
-      &lt;div class="ui-timeline-title"&gt;Deployed to production&lt;/div&gt;
-      &lt;div class="ui-timeline-time"&gt;3:00 PM&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</pre>
-          </details>
-        </div>
-      </section>
-
-      <!-- ============ STEPPER ============ -->
-      <section class="demo-section" id="stepper">
-        <h2>Stepper</h2>
-
-        <div class="demo-card">
-          <h3>Horizontal</h3>
-          <div id="live-stepper">
-            <div class="ui-stepper">
-              <div class="ui-step completed">
-                <div class="ui-step-indicator"><i class="ui-icon ui-icon-check"></i></div>
-                <div class="ui-step-content">
-                  <div class="ui-step-title">Account</div>
-                  <div class="ui-step-description">Create your account</div>
-                </div>
-              </div>
-              <div class="ui-step active">
-                <div class="ui-step-indicator"></div>
-                <div class="ui-step-content">
-                  <div class="ui-step-title">Profile</div>
-                  <div class="ui-step-description">Set up your profile</div>
-                </div>
-              </div>
-              <div class="ui-step">
-                <div class="ui-step-indicator"></div>
-                <div class="ui-step-content">
-                  <div class="ui-step-title">Review</div>
-                  <div class="ui-step-description">Confirm details</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <details class="demo-code" data-live-target="live-stepper">
-            <summary>Show code</summary>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;div class="ui-stepper"&gt;
-  &lt;div class="ui-step completed"&gt;
-    &lt;div class="ui-step-indicator"&gt;
-      &lt;i class="ui-icon ui-icon-check"&gt;&lt;/i&gt;
-    &lt;/div&gt;
-    &lt;div class="ui-step-content"&gt;
-      &lt;div class="ui-step-title"&gt;Account&lt;/div&gt;
-      &lt;div class="ui-step-description"&gt;Create your account&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class="ui-step active"&gt;
-    &lt;div class="ui-step-indicator"&gt;&lt;/div&gt;
-    &lt;div class="ui-step-content"&gt;
-      &lt;div class="ui-step-title"&gt;Profile&lt;/div&gt;
-      &lt;div class="ui-step-description"&gt;Set up your profile&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class="ui-step"&gt;
-    &lt;div class="ui-step-indicator"&gt;&lt;/div&gt;
-    &lt;div class="ui-step-content"&gt;
-      &lt;div class="ui-step-title"&gt;Review&lt;/div&gt;
-      &lt;div class="ui-step-description"&gt;Confirm details&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</pre>
-          </details>
-        </div>
-
-        <div class="demo-card">
-          <h3>Vertical</h3>
-          <div id="live-stepper-v">
-            <div class="ui-stepper vertical">
-              <div class="ui-step completed">
-                <div class="ui-step-indicator"><i class="ui-icon ui-icon-check"></i></div>
-                <div class="ui-step-content">
-                  <div class="ui-step-title">Select plan</div>
-                  <div class="ui-step-description">Choose a subscription tier</div>
-                </div>
-              </div>
-              <div class="ui-step completed">
-                <div class="ui-step-indicator"><i class="ui-icon ui-icon-check"></i></div>
-                <div class="ui-step-content">
-                  <div class="ui-step-title">Payment</div>
-                  <div class="ui-step-description">Enter billing information</div>
-                </div>
-              </div>
-              <div class="ui-step error">
-                <div class="ui-step-indicator"><i class="ui-icon ui-icon-alert-circle"></i></div>
-                <div class="ui-step-content">
-                  <div class="ui-step-title">Verification</div>
-                  <div class="ui-step-description">Identity check failed</div>
-                </div>
-              </div>
-              <div class="ui-step">
-                <div class="ui-step-indicator"></div>
-                <div class="ui-step-content">
-                  <div class="ui-step-title">Complete</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <details class="demo-code" data-live-target="live-stepper-v">
-            <summary>Show code</summary>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;div class="ui-stepper vertical"&gt;
-  &lt;div class="ui-step completed"&gt;
-    &lt;div class="ui-step-indicator"&gt;
-      &lt;i class="ui-icon ui-icon-check"&gt;&lt;/i&gt;
-    &lt;/div&gt;
-    &lt;div class="ui-step-content"&gt;
-      &lt;div class="ui-step-title"&gt;Select plan&lt;/div&gt;
-      &lt;div class="ui-step-description"&gt;Choose a subscription tier&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class="ui-step completed"&gt;
-    &lt;div class="ui-step-indicator"&gt;
-      &lt;i class="ui-icon ui-icon-check"&gt;&lt;/i&gt;
-    &lt;/div&gt;
-    &lt;div class="ui-step-content"&gt;
-      &lt;div class="ui-step-title"&gt;Payment&lt;/div&gt;
-      &lt;div class="ui-step-description"&gt;Enter billing information&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class="ui-step error"&gt;
-    &lt;div class="ui-step-indicator"&gt;
-      &lt;i class="ui-icon ui-icon-alert-circle"&gt;&lt;/i&gt;
-    &lt;/div&gt;
-    &lt;div class="ui-step-content"&gt;
-      &lt;div class="ui-step-title"&gt;Verification&lt;/div&gt;
-      &lt;div class="ui-step-description"&gt;Identity check failed&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class="ui-step"&gt;
-    &lt;div class="ui-step-indicator"&gt;&lt;/div&gt;
-    &lt;div class="ui-step-content"&gt;
-      &lt;div class="ui-step-title"&gt;Complete&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</pre>
-          </details>
-        </div>
-
-        <div class="demo-card">
-          <h3>Vertical reverse (bottom to top)</h3>
-          <div id="live-stepper-vr">
-            <div class="ui-stepper vertical reverse">
-              <div class="ui-step completed">
-                <div class="ui-step-indicator"><i class="ui-icon ui-icon-check"></i></div>
-                <div class="ui-step-content">
-                  <div class="ui-step-title">Start</div>
-                  <div class="ui-step-description">Begin setup</div>
-                </div>
-              </div>
-              <div class="ui-step active">
-                <div class="ui-step-indicator"></div>
-                <div class="ui-step-content">
-                  <div class="ui-step-title">Review</div>
-                  <div class="ui-step-description">Confirm details</div>
-                </div>
-              </div>
-              <div class="ui-step">
-                <div class="ui-step-indicator"></div>
-                <div class="ui-step-content">
-                  <div class="ui-step-title">Complete</div>
-                  <div class="ui-step-description">All done</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <details class="demo-code" data-live-target="live-stepper-vr">
-            <summary>Show code</summary>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;div class="ui-stepper vertical reverse"&gt;
-  &lt;div class="ui-step completed"&gt;
-    &lt;div class="ui-step-indicator"&gt;
-      &lt;i class="ui-icon ui-icon-check"&gt;&lt;/i&gt;
-    &lt;/div&gt;
-    &lt;div class="ui-step-content"&gt;
-      &lt;div class="ui-step-title"&gt;Start&lt;/div&gt;
-      &lt;div class="ui-step-description"&gt;Begin setup&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class="ui-step active"&gt;
-    &lt;div class="ui-step-indicator"&gt;&lt;/div&gt;
-    &lt;div class="ui-step-content"&gt;
-      &lt;div class="ui-step-title"&gt;Review&lt;/div&gt;
-      &lt;div class="ui-step-description"&gt;Confirm details&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class="ui-step"&gt;
-    &lt;div class="ui-step-indicator"&gt;&lt;/div&gt;
-    &lt;div class="ui-step-content"&gt;
-      &lt;div class="ui-step-title"&gt;Complete&lt;/div&gt;
-      &lt;div class="ui-step-description"&gt;All done&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</pre>
-          </details>
-        </div>
-      </section>
-
-      <!-- ============ CODE BLOCK ============ -->
-      <section class="demo-section" id="code-block">
-        <h2>Code Block</h2>
-
-        <div class="demo-card">
-          <h3>With header</h3>
-          <div id="live-code-header">
-            <div class="ui-code">
-              <div class="ui-code-header">
-                <span class="ui-code-lang">javascript</span>
-                <button class="ui-code-copy"><i class="ui-icon ui-icon-copy"></i> Copy</button>
-              </div>
-              <pre><code>function greet(name) {
-  return `Hello, ${name}!`;
-}
-
-console.log(greet("World"));</code></pre>
-            </div>
-          </div>
-          <details class="demo-code" data-live-target="live-code-header">
-            <summary>Show code</summary>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;div class="ui-code"&gt;
-  &lt;div class="ui-code-header"&gt;
-    &lt;span class="ui-code-lang"&gt;javascript&lt;/span&gt;
-    &lt;button class="ui-code-copy"&gt;
-      &lt;i class="ui-icon ui-icon-copy"&gt;&lt;/i&gt; Copy
-    &lt;/button&gt;
-  &lt;/div&gt;
-  &lt;pre&gt;&lt;code&gt;function greet(name) {
-  return `Hello, ${name}!`;
-}
-
-console.log(greet("World"));&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;</pre>
-          </details>
-        </div>
-
-        <div class="demo-card">
-          <h3>With filename &amp; line numbers</h3>
-          <div id="live-code-lines">
-            <div class="ui-code line-numbers">
-              <div class="ui-code-header">
-                <span class="ui-code-filename">src/utils.ts</span>
-                <button class="ui-code-copy"><i class="ui-icon ui-icon-copy"></i> Copy</button>
-              </div>
-              <div class="ui-code-body">
-                <div class="line-numbers-col"></div>
-                <pre><code>export type Result&lt;T&gt; =
-  | { ok: true; value: T }
-  | { ok: false; error: Error };
-
-export function unwrap&lt;T&gt;(r: Result&lt;T&gt;): T {
-  if (!r.ok) throw r.error;
-  return r.value;
-}</code></pre>
-              </div>
-            </div>
-          </div>
-          <details class="demo-code" data-live-target="live-code-lines">
-            <summary>Show code</summary>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;div class="ui-code line-numbers"&gt;
-  &lt;div class="ui-code-header"&gt;
-    &lt;span class="ui-code-filename"&gt;src/utils.ts&lt;/span&gt;
-    &lt;button class="ui-code-copy"&gt;
-      &lt;i class="ui-icon ui-icon-copy"&gt;&lt;/i&gt; Copy
-    &lt;/button&gt;
-  &lt;/div&gt;
-  &lt;div class="ui-code-body"&gt;
-    &lt;div class="line-numbers-col"&gt;&lt;/div&gt;
-    &lt;pre&gt;&lt;code&gt;export type Result&amp;lt;T&amp;gt; =
-  | { ok: true; value: T }
-  | { ok: false; error: Error };
-
-export function unwrap&amp;lt;T&amp;gt;(r: Result&amp;lt;T&amp;gt;): T {
-  if (!r.ok) throw r.error;
-  return r.value;
-}&lt;/code&gt;&lt;/pre&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;script&gt;
-document.querySelectorAll('.ui-code.line-numbers').forEach(function(block) {
-  var code = block.querySelector('pre code');
-  var col = block.querySelector('.line-numbers-col');
-  if (!code || !col) return;
-  var count = code.textContent.split('\n').length;
-  col.innerHTML = '&amp;lt;span&amp;gt;&amp;lt;/span&amp;gt;'.repeat(count);
-});
-&lt;/script&gt;</pre>
-          </details>
-        </div>
-
-        <div class="demo-card">
-          <h3>Floating copy &amp; inline code</h3>
-          <div id="live-code-float">
-            <div class="ui-code">
-              <button class="ui-code-copy floating"><i class="ui-icon ui-icon-copy"></i></button>
-              <pre><code>curl -X POST https://api.example.com/v1/data \
-  -H "Authorization: Bearer $TOKEN" \
-  -d '{"key": "value"}'</code></pre>
-            </div>
-            <p style="margin-top:1rem;font-size:var(--ui-font-size)">
-              Use <span class="ui-code-inline">npm install</span> to install dependencies,
-              then run <span class="ui-code-inline">npm start</span>.
-            </p>
-          </div>
-          <details class="demo-code" data-live-target="live-code-float">
-            <summary>Show code</summary>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;div class="ui-code"&gt;
-  &lt;button class="ui-code-copy floating"&gt;
-    &lt;i class="ui-icon ui-icon-copy"&gt;&lt;/i&gt;
-  &lt;/button&gt;
-  &lt;pre&gt;&lt;code&gt;curl -X POST https://api.example.com/v1/data \
-  -H "Authorization: Bearer $TOKEN" \
-  -d '{"key": "value"}'&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p style="margin-top:1rem;font-size:var(--ui-font-size)"&gt;
-  Use &lt;span class="ui-code-inline"&gt;npm install&lt;/span&gt; to install dependencies,
-  then run &lt;span class="ui-code-inline"&gt;npm start&lt;/span&gt;.
-&lt;/p&gt;</pre>
-          </details>
-        </div>
-      </section>
-
-      <!-- ============ DIFF ============ -->
-      <section class="demo-section" id="diff">
-        <h2>Diff</h2>
-
-        <div class="demo-card">
-          <h3>Unified diff</h3>
-          <div id="live-diff">
-            <div class="ui-diff">
-              <div class="ui-diff-header">
-                <span class="ui-diff-filename">src/config.ts</span>
-                <div class="ui-diff-stats">
-                  <span class="additions">+3</span>
-                  <span class="deletions">-2</span>
-                </div>
-              </div>
-              <table>
-                <tr class="ui-diff-line context">
-                  <td class="ui-diff-gutter">10</td>
-                  <td class="ui-diff-gutter">10</td>
-                  <td class="ui-diff-marker"></td>
-                  <td class="ui-diff-content">  port: 3000,</td>
-                </tr>
-                <tr class="ui-diff-line removed">
-                  <td class="ui-diff-gutter">11</td>
-                  <td class="ui-diff-gutter"></td>
-                  <td class="ui-diff-marker">-</td>
-                  <td class="ui-diff-content">  host: <span class="ui-diff-highlight">"localhost"</span>,</td>
-                </tr>
-                <tr class="ui-diff-line removed">
-                  <td class="ui-diff-gutter">12</td>
-                  <td class="ui-diff-gutter"></td>
-                  <td class="ui-diff-marker">-</td>
-                  <td class="ui-diff-content">  debug: false,</td>
-                </tr>
-                <tr class="ui-diff-line added">
-                  <td class="ui-diff-gutter"></td>
-                  <td class="ui-diff-gutter">11</td>
-                  <td class="ui-diff-marker">+</td>
-                  <td class="ui-diff-content">  host: <span class="ui-diff-highlight">"0.0.0.0"</span>,</td>
-                </tr>
-                <tr class="ui-diff-line added">
-                  <td class="ui-diff-gutter"></td>
-                  <td class="ui-diff-gutter">12</td>
-                  <td class="ui-diff-marker">+</td>
-                  <td class="ui-diff-content">  debug: true,</td>
-                </tr>
-                <tr class="ui-diff-line added">
-                  <td class="ui-diff-gutter"></td>
-                  <td class="ui-diff-gutter">13</td>
-                  <td class="ui-diff-marker">+</td>
-                  <td class="ui-diff-content">  logLevel: "verbose",</td>
-                </tr>
-                <tr class="ui-diff-line context">
-                  <td class="ui-diff-gutter">13</td>
-                  <td class="ui-diff-gutter">14</td>
-                  <td class="ui-diff-marker"></td>
-                  <td class="ui-diff-content">  cors: true,</td>
-                </tr>
-              </table>
-            </div>
-          </div>
-          <details class="demo-code" data-live-target="live-diff">
-            <summary>Show code</summary>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;div class="ui-diff"&gt;
-  &lt;div class="ui-diff-header"&gt;
-    &lt;span class="ui-diff-filename"&gt;src/config.ts&lt;/span&gt;
-    &lt;div class="ui-diff-stats"&gt;
-      &lt;span class="additions"&gt;+3&lt;/span&gt;
-      &lt;span class="deletions"&gt;-2&lt;/span&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;table&gt;
-    &lt;tr class="ui-diff-line context"&gt;
-      &lt;td class="ui-diff-gutter"&gt;10&lt;/td&gt;
-      &lt;td class="ui-diff-gutter"&gt;10&lt;/td&gt;
-      &lt;td class="ui-diff-marker"&gt;&lt;/td&gt;
-      &lt;td class="ui-diff-content"&gt;  port: 3000,&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr class="ui-diff-line removed"&gt;
-      &lt;td class="ui-diff-gutter"&gt;11&lt;/td&gt;
-      &lt;td class="ui-diff-gutter"&gt;&lt;/td&gt;
-      &lt;td class="ui-diff-marker"&gt;-&lt;/td&gt;
-      &lt;td class="ui-diff-content"&gt;  host: &lt;span class="ui-diff-highlight"&gt;"localhost"&lt;/span&gt;,&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr class="ui-diff-line removed"&gt;
-      &lt;td class="ui-diff-gutter"&gt;12&lt;/td&gt;
-      &lt;td class="ui-diff-gutter"&gt;&lt;/td&gt;
-      &lt;td class="ui-diff-marker"&gt;-&lt;/td&gt;
-      &lt;td class="ui-diff-content"&gt;  debug: false,&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr class="ui-diff-line added"&gt;
-      &lt;td class="ui-diff-gutter"&gt;&lt;/td&gt;
-      &lt;td class="ui-diff-gutter"&gt;11&lt;/td&gt;
-      &lt;td class="ui-diff-marker"&gt;+&lt;/td&gt;
-      &lt;td class="ui-diff-content"&gt;  host: &lt;span class="ui-diff-highlight"&gt;"0.0.0.0"&lt;/span&gt;,&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr class="ui-diff-line added"&gt;
-      &lt;td class="ui-diff-gutter"&gt;&lt;/td&gt;
-      &lt;td class="ui-diff-gutter"&gt;12&lt;/td&gt;
-      &lt;td class="ui-diff-marker"&gt;+&lt;/td&gt;
-      &lt;td class="ui-diff-content"&gt;  debug: true,&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr class="ui-diff-line added"&gt;
-      &lt;td class="ui-diff-gutter"&gt;&lt;/td&gt;
-      &lt;td class="ui-diff-gutter"&gt;13&lt;/td&gt;
-      &lt;td class="ui-diff-marker"&gt;+&lt;/td&gt;
-      &lt;td class="ui-diff-content"&gt;  logLevel: "verbose",&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr class="ui-diff-line context"&gt;
-      &lt;td class="ui-diff-gutter"&gt;13&lt;/td&gt;
-      &lt;td class="ui-diff-gutter"&gt;14&lt;/td&gt;
-      &lt;td class="ui-diff-marker"&gt;&lt;/td&gt;
-      &lt;td class="ui-diff-content"&gt;  cors: true,&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/table&gt;
-&lt;/div&gt;</pre>
-          </details>
-        </div>
-      </section>
-
-      <!-- ============ POPOVER ============ -->
-      <section class="demo-section" id="popover">
-        <h2>Popover</h2>
-
-        <div class="demo-card">
-          <h3>Positions</h3>
-          <div id="live-popover-pos" class="flex-row gap-lg">
-            <button class="ui-btn sm ui-popover bottom">
-              Bottom
-              <div class="ui-popover-content">
-                <p class="ui-popover-title">Popover title</p>
-                <p class="ui-popover-text">Some helpful context about this element.</p>
-              </div>
-            </button>
-            <button class="ui-btn sm ui-popover">
-              Top
-              <div class="ui-popover-content">
-                <p class="ui-popover-title">Top popover</p>
-                <p class="ui-popover-text">This one appears above the trigger.</p>
-              </div>
-            </button>
-            <button class="ui-btn sm ui-popover right">
-              Right
-              <div class="ui-popover-content">
-                <p class="ui-popover-text">Content to the right.</p>
-              </div>
-            </button>
-          </div>
-          <details class="demo-code" data-live-target="live-popover-pos">
-            <summary>Show code</summary>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;button class="ui-btn sm ui-popover bottom"&gt;
-  Bottom
-  &lt;div class="ui-popover-content"&gt;
-    &lt;p class="ui-popover-title"&gt;Popover title&lt;/p&gt;
-    &lt;p class="ui-popover-text"&gt;Some helpful context about this element.&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/button&gt;
-&lt;button class="ui-btn sm ui-popover"&gt;
-  Top
-  &lt;div class="ui-popover-content"&gt;
-    &lt;p class="ui-popover-title"&gt;Top popover&lt;/p&gt;
-    &lt;p class="ui-popover-text"&gt;This one appears above the trigger.&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/button&gt;
-&lt;button class="ui-btn sm ui-popover right"&gt;
-  Right
-  &lt;div class="ui-popover-content"&gt;
-    &lt;p class="ui-popover-text"&gt;Content to the right.&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/button&gt;
-
-&lt;script&gt;
-// Toggle popover on button click
-document.querySelectorAll('.ui-popover').forEach(btn =&gt; {
-  btn.addEventListener('click', () =&gt; {
-    btn.classList.toggle('open');
-  });
-});
-
-// Dismiss when clicking outside
-document.addEventListener('click', e =&gt; {
-  document.querySelectorAll('.ui-popover.open').forEach(p =&gt; {
-    if (!p.contains(e.target)) p.classList.remove('open');
-  });
-});
-&lt;/script&gt;</pre>
-          </details>
-        </div>
-
-      </section>
-
-      <!-- ============ EMPTY STATE ============ -->
-      <section class="demo-section" id="empty-state">
-        <h2>Empty State</h2>
-
-        <div class="demo-card">
-          <h3>Default</h3>
-          <div id="live-empty">
-            <div class="ui-empty">
-              <div class="ui-empty-icon"><i class="ui-icon ui-icon-inbox xl"></i></div>
-              <h3 class="ui-empty-title">No messages yet</h3>
-              <p class="ui-empty-description">When you receive messages, they will appear here. Start a conversation to get going.</p>
-              <div class="ui-empty-actions">
-                <button class="ui-btn primary"><i class="ui-icon ui-icon-plus"></i> New message</button>
-                <button class="ui-btn flat">Learn more</button>
-              </div>
-            </div>
-          </div>
-          <details class="demo-code" data-live-target="live-empty">
-            <summary>Show code</summary>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;div class="ui-empty"&gt;
-  &lt;div class="ui-empty-icon"&gt;
-    &lt;i class="ui-icon ui-icon-inbox xl"&gt;&lt;/i&gt;
-  &lt;/div&gt;
-  &lt;h3 class="ui-empty-title"&gt;No messages yet&lt;/h3&gt;
-  &lt;p class="ui-empty-description"&gt;When you receive messages, they will appear here. Start a conversation to get going.&lt;/p&gt;
-  &lt;div class="ui-empty-actions"&gt;
-    &lt;button class="ui-btn primary"&gt;
-      &lt;i class="ui-icon ui-icon-plus"&gt;&lt;/i&gt; New message
-    &lt;/button&gt;
-    &lt;button class="ui-btn flat"&gt;Learn more&lt;/button&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</pre>
-          </details>
-        </div>
-
-        <div class="demo-card">
-          <h3>Bordered</h3>
-          <div id="live-empty-bordered">
-            <div class="ui-empty bordered sm">
-              <div class="ui-empty-icon"><i class="ui-icon ui-icon-search xl"></i></div>
-              <h3 class="ui-empty-title">No results found</h3>
-              <p class="ui-empty-description">Try adjusting your search or filter to find what you're looking for.</p>
-            </div>
-          </div>
-          <details class="demo-code" data-live-target="live-empty-bordered">
-            <summary>Show code</summary>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;div class="ui-empty bordered sm"&gt;
-  &lt;div class="ui-empty-icon"&gt;
-    &lt;i class="ui-icon ui-icon-search xl"&gt;&lt;/i&gt;
-  &lt;/div&gt;
-  &lt;h3 class="ui-empty-title"&gt;No results found&lt;/h3&gt;
-  &lt;p class="ui-empty-description"&gt;Try adjusting your search or filter to find what you're looking for.&lt;/p&gt;
-&lt;/div&gt;</pre>
-          </details>
-        </div>
-      </section>
-
-      <!-- ============ CHAT BUBBLE ============ -->
-      <section class="demo-section" id="chat-bubble">
-        <h2>Chat Bubble</h2>
-
-        <div class="demo-card">
-          <h3>Conversation</h3>
-          <div id="live-chat" class="chat-demo">
-            <div class="ui-chat">
-              <div class="ui-chat-message">
-                <div class="ui-chat-avatar" data-initial="A"></div>
-                <div class="ui-chat-group">
-                  <div class="ui-chat-meta">
-                    <span class="ui-chat-name">Alice</span>
-                    <span class="ui-chat-time">10:30 AM</span>
-                  </div>
-                  <div class="ui-chat-bubble">Hey, have you seen the new design specs?</div>
-                </div>
-              </div>
-              <div class="ui-chat-message sent">
-                <div class="ui-chat-group">
-                  <div class="ui-chat-meta">
-                    <span class="ui-chat-time">10:31 AM</span>
-                  </div>
-                  <div class="ui-chat-bubble">Yes! They look great.</div>
-                </div>
-              </div>
-              <div class="ui-chat-message typing">
-                <div class="ui-chat-avatar" data-initial="A"></div>
-                <div class="ui-chat-group">
-                  <div class="ui-chat-bubble"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <details class="demo-code" data-live-target="live-chat">
-            <summary>Show code</summary>
-            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>&lt;div class="ui-chat"&gt;
-  &lt;div class="ui-chat-message"&gt;
-    &lt;div class="ui-chat-avatar" data-initial="A"&gt;&lt;/div&gt;
-    &lt;div class="ui-chat-group"&gt;
-      &lt;div class="ui-chat-meta"&gt;
-        &lt;span class="ui-chat-name"&gt;Alice&lt;/span&gt;
-        &lt;span class="ui-chat-time"&gt;10:30 AM&lt;/span&gt;
-      &lt;/div&gt;
-      &lt;div class="ui-chat-bubble"&gt;Hey, have you seen the new design specs?&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class="ui-chat-message sent"&gt;
-    &lt;div class="ui-chat-group"&gt;
-      &lt;div class="ui-chat-meta"&gt;
-        &lt;span class="ui-chat-time"&gt;10:31 AM&lt;/span&gt;
-      &lt;/div&gt;
-      &lt;div class="ui-chat-bubble"&gt;Yes! They look great.&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class="ui-chat-message typing"&gt;
-    &lt;div class="ui-chat-avatar" data-initial="A"&gt;&lt;/div&gt;
-    &lt;div class="ui-chat-group"&gt;
-      &lt;div class="ui-chat-bubble"&gt;&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</pre>
-          </details>
-        </div>
-      </section>
+      <!-- Sections loaded dynamically -->
+      <div id="sections-container"></div>
 
     </div>
   </main>
@@ -1480,478 +511,504 @@ document.addEventListener('click', e =&gt; {
 <script src="theme.js"></script>
 <script src="shared.js"></script>
 <script>
-  // Theme bar
-  (function() {
-    var bar = document.getElementById('theme-bar');
-    var input = bar.querySelector('.ui-autocomplete-input');
-    var items = bar.querySelectorAll('.ui-dropdown-item');
-    var emptyMsg = bar.querySelector('.ui-autocomplete-empty');
-    var saved = localStorage.getItem('ui-theme') || '';
+  // ── Section loader ──
+  var uixSectionIds = [
+    'input-otp','timeline','stepper','code-block','diff',
+    'popover','empty-state','chat-bubble'
+  ];
 
-    function filterThemes() {
-      var query = input.value.toLowerCase();
-      var visible = 0;
-      items.forEach(function(item) {
-        item.classList.remove('focused');
-        var match = item.textContent.toLowerCase().includes(query);
-        item.classList.toggle('hidden', !match);
-        if (match) ++visible;
-      });
-      emptyMsg.classList.toggle('visible', visible === 0);
-      bar.classList.toggle('has-value', !!input.value);
-      bar.classList.add('open');
-    }
+  (async function() {
+    // Load all sections in parallel
+    var container = document.getElementById('sections-container');
+    var htmls = await Promise.all(
+      uixSectionIds.map(function(id) { return fetch('uix-sections/' + id + '.html').then(function(r) { return r.text(); }); })
+    );
+    container.innerHTML = htmls.join('\n');
 
-    function selectTheme(name) {
-      window.__uiTheme.setTheme(name);
-      items.forEach(function(item) {
-        item.classList.toggle('active', item.dataset.theme === (name || ''));
-      });
-      input.value = name ? name.charAt(0).toUpperCase() + name.slice(1) : 'Default';
-      bar.classList.toggle('has-value', !!name);
-      items.forEach(function(item) { item.classList.remove('hidden', 'focused'); });
-      emptyMsg.classList.remove('visible');
-      bar.classList.remove('open');
-    }
+    // ── Initialize everything now that sections are in the DOM ──
 
-    input.addEventListener('input', filterThemes);
-    input.addEventListener('focus', function() { input.value = ''; bar.classList.add('open'); });
+    // Theme bar
+    (function() {
+      var bar = document.getElementById('theme-bar');
+      var input = bar.querySelector('.ui-autocomplete-input');
+      var items = bar.querySelectorAll('.ui-dropdown-item');
+      var emptyMsg = bar.querySelector('.ui-autocomplete-empty');
+      var saved = localStorage.getItem('ui-theme') || '';
 
-    items.forEach(function(item) {
-      item.addEventListener('click', function() { selectTheme(item.dataset.theme); });
-    });
-
-    bar.querySelector('.ui-autocomplete-clear').addEventListener('click', function() { selectTheme(''); });
-
-    if (saved) {
-      input.value = saved.charAt(0).toUpperCase() + saved.slice(1);
-      bar.classList.add('has-value');
-      items.forEach(function(item) {
-        item.classList.toggle('active', item.dataset.theme === saved);
-      });
-    }
-
-    // Keyboard navigation
-    input.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        items.forEach(function(item) { item.classList.remove('focused', 'hidden'); });
-        input.value = '';
-        bar.classList.remove('has-value', 'open');
-        emptyMsg.classList.remove('visible');
-        return;
+      function filterThemes() {
+        var query = input.value.toLowerCase();
+        var visible = 0;
+        items.forEach(function(item) {
+          item.classList.remove('focused');
+          var match = item.textContent.toLowerCase().includes(query);
+          item.classList.toggle('hidden', !match);
+          if (match) ++visible;
+        });
+        emptyMsg.classList.toggle('visible', visible === 0);
+        bar.classList.toggle('has-value', !!input.value);
+        bar.classList.add('open');
       }
 
-      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
-        if (!bar.classList.contains('open')) {
-          e.preventDefault();
-          bar.classList.add('open');
-          var active = bar.querySelector('.ui-dropdown-item.active');
-          if (active && !active.classList.contains('hidden')) {
-            active.classList.add('focused');
-            active.scrollIntoView({ block: 'nearest' });
-          }
-          return;
-        }
-      } else if (!bar.classList.contains('open')) {
-        return;
-      }
-      var visible = Array.from(bar.querySelectorAll('.ui-dropdown-item:not(.hidden)'));
-      if (!visible.length) return;
-      var current = bar.querySelector('.ui-dropdown-item.focused');
-      var active = bar.querySelector('.ui-dropdown-item.active');
-      var idx = current ? visible.indexOf(current) : (active ? visible.indexOf(active) : -1);
-
-      if (e.key === 'ArrowDown') {
-        e.preventDefault();
-        if (current) current.classList.remove('focused');
-        idx = idx < visible.length - 1 ? idx + 1 : 0;
-        visible[idx].classList.add('focused');
-        visible[idx].scrollIntoView({ block: 'nearest' });
-      } else if (e.key === 'ArrowUp') {
-        e.preventDefault();
-        if (current) current.classList.remove('focused');
-        idx = idx > 0 ? idx - 1 : visible.length - 1;
-        visible[idx].classList.add('focused');
-        visible[idx].scrollIntoView({ block: 'nearest' });
-      } else if (e.key === 'Enter') {
-        e.preventDefault();
-        if (current) selectTheme(current.dataset.theme);
-      }
-    });
-
-    // Prevent focus loss when clicking inside menu or clear button
-    bar.addEventListener('mousedown', function(e) {
-      if (e.target.closest('.ui-autocomplete-menu') || e.target.closest('.ui-autocomplete-clear')) {
-        e.preventDefault();
-      }
-    });
-
-    // Close when clicking outside
-    document.addEventListener('click', function(e) {
-      if (!bar.contains(e.target)) {
-        bar.classList.remove('open');
-        var t = localStorage.getItem('ui-theme') || '';
-        input.value = t ? t.charAt(0).toUpperCase() + t.slice(1) : '';
-        bar.classList.toggle('has-value', !!t);
+      function selectTheme(name) {
+        window.__uiTheme.setTheme(name);
+        items.forEach(function(item) {
+          item.classList.toggle('active', item.dataset.theme === (name || ''));
+        });
+        input.value = name ? name.charAt(0).toUpperCase() + name.slice(1) : 'Default';
+        bar.classList.toggle('has-value', !!name);
         items.forEach(function(item) { item.classList.remove('hidden', 'focused'); });
         emptyMsg.classList.remove('visible');
+        bar.classList.remove('open');
       }
-    });
-  })();
 
-  // Gradient toggle
-  (function() {
-    var btn = document.getElementById('gradient-toggle');
-    if (localStorage.getItem('ui-gradient') === '1') {
-      document.documentElement.setAttribute('data-ui-gradient', '');
-    }
-    btn.addEventListener('click', function() {
-      var on = document.documentElement.toggleAttribute('data-ui-gradient');
-      localStorage.setItem('ui-gradient', on ? '1' : '0');
-    });
-  })();
+      input.addEventListener('input', filterThemes);
+      input.addEventListener('focus', function() { input.value = ''; bar.classList.add('open'); });
 
-  // ── Syntax highlighting & live editor ──
+      items.forEach(function(item) {
+        item.addEventListener('click', function() { selectTheme(item.dataset.theme); });
+      });
 
-  var _esc = function(s) {
-    return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-  };
+      bar.querySelector('.ui-autocomplete-clear').addEventListener('click', function() { selectTheme(''); });
 
-  function _hlJS(code) {
-    return code.replace(
-      /(\/\/[^\n]*|\/\*[\s\S]*?\*\/)|('(?:[^'\\]|\\.)*'|"(?:[^"\\]|\\.)*"|`(?:[^`\\]|\\.)*`)|(\b(?:var|let|const|function|return|if|else|for|while|new|this|class|import|export|from|of|in|typeof|instanceof|null|undefined|true|false)\b)|(\b\d+(?:\.\d+)?\b)|(\.(?:forEach|querySelector|querySelectorAll|addEventListener|classList|toggle|remove|contains|closest|parentElement|target)\b)|(\=\>)/g,
-      function(m, cmt, str, kw, num, prop, arrow) {
-        if (cmt) return '<span class="hl-cmt">' + _esc(cmt) + '</span>';
-        if (str) return '<span class="hl-js-str">' + _esc(str) + '</span>';
-        if (kw) return '<span class="hl-key">' + _esc(kw) + '</span>';
-        if (num) return '<span class="hl-num">' + _esc(num) + '</span>';
-        if (prop) return '<span class="hl-prop">' + _esc(prop) + '</span>';
-        if (arrow) return '<span class="hl-op">' + _esc(arrow) + '</span>';
-        return _esc(m);
+      if (saved) {
+        input.value = saved.charAt(0).toUpperCase() + saved.slice(1);
+        bar.classList.add('has-value');
+        items.forEach(function(item) {
+          item.classList.toggle('active', item.dataset.theme === saved);
+        });
       }
-    );
-  }
 
-  function highlightHTML(raw) {
-    var out = '', i = 0;
-    while (i < raw.length) {
-      if (raw.startsWith('<!--', i)) {
-        var end = raw.indexOf('-->', i + 4);
-        var j = end < 0 ? raw.length : end + 3;
-        out += '<span class="hl-cmt">' + _esc(raw.slice(i, j)) + '</span>';
-        i = j;
-      } else if (raw.startsWith('<script', i)) {
-        var closeTag = raw.indexOf('>', i);
-        if (closeTag < 0) { out += _esc(raw.slice(i)); break; }
-        out += _hlTag(raw.slice(i, closeTag + 1));
-        var endTag = '<' + '/script>';
-        var scriptEnd = raw.indexOf(endTag, closeTag + 1);
-        if (scriptEnd < 0) {
-          out += _hlJS(raw.slice(closeTag + 1));
-          break;
+      // Keyboard navigation
+      input.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          items.forEach(function(item) { item.classList.remove('focused', 'hidden'); });
+          input.value = '';
+          bar.classList.remove('has-value', 'open');
+          emptyMsg.classList.remove('visible');
+          return;
         }
-        out += _hlJS(raw.slice(closeTag + 1, scriptEnd));
-        out += _hlTag(endTag);
-        i = scriptEnd + endTag.length;
-      } else if (raw[i] === '<') {
-        var end = raw.indexOf('>', i);
-        var j = end < 0 ? raw.length : end + 1;
-        out += _hlTag(raw.slice(i, j));
-        i = j;
-      } else {
-        var next = raw.indexOf('<', i);
-        var j = next < 0 ? raw.length : next;
-        out += _esc(raw.slice(i, j));
-        i = j;
+
+        if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+          if (!bar.classList.contains('open')) {
+            e.preventDefault();
+            bar.classList.add('open');
+            var active = bar.querySelector('.ui-dropdown-item.active');
+            if (active && !active.classList.contains('hidden')) {
+              active.classList.add('focused');
+              active.scrollIntoView({ block: 'nearest' });
+            }
+            return;
+          }
+        } else if (!bar.classList.contains('open')) {
+          return;
+        }
+        var visible = Array.from(bar.querySelectorAll('.ui-dropdown-item:not(.hidden)'));
+        if (!visible.length) return;
+        var current = bar.querySelector('.ui-dropdown-item.focused');
+        var active = bar.querySelector('.ui-dropdown-item.active');
+        var idx = current ? visible.indexOf(current) : (active ? visible.indexOf(active) : -1);
+
+        if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          if (current) current.classList.remove('focused');
+          idx = idx < visible.length - 1 ? idx + 1 : 0;
+          visible[idx].classList.add('focused');
+          visible[idx].scrollIntoView({ block: 'nearest' });
+        } else if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          if (current) current.classList.remove('focused');
+          idx = idx > 0 ? idx - 1 : visible.length - 1;
+          visible[idx].classList.add('focused');
+          visible[idx].scrollIntoView({ block: 'nearest' });
+        } else if (e.key === 'Enter') {
+          e.preventDefault();
+          if (current) selectTheme(current.dataset.theme);
+        }
+      });
+
+      // Prevent focus loss when clicking inside menu or clear button
+      bar.addEventListener('mousedown', function(e) {
+        if (e.target.closest('.ui-autocomplete-menu') || e.target.closest('.ui-autocomplete-clear')) {
+          e.preventDefault();
+        }
+      });
+
+      // Close when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!bar.contains(e.target)) {
+          bar.classList.remove('open');
+          var t = localStorage.getItem('ui-theme') || '';
+          input.value = t ? t.charAt(0).toUpperCase() + t.slice(1) : '';
+          bar.classList.toggle('has-value', !!t);
+          items.forEach(function(item) { item.classList.remove('hidden', 'focused'); });
+          emptyMsg.classList.remove('visible');
+        }
+      });
+    })();
+
+    // Gradient toggle
+    (function() {
+      var btn = document.getElementById('gradient-toggle');
+      if (localStorage.getItem('ui-gradient') === '1') {
+        document.documentElement.setAttribute('data-ui-gradient', '');
       }
-    }
-    return out;
-  }
+      btn.addEventListener('click', function() {
+        var on = document.documentElement.toggleAttribute('data-ui-gradient');
+        localStorage.setItem('ui-gradient', on ? '1' : '0');
+      });
+    })();
 
-  function _hlTag(tag) {
-    var m = tag.match(/^(<\/?)(\w[\w-]*)([^]*?)(\/?>)$/s);
-    if (!m) return _esc(tag);
-    var r = '<span class="hl-bkt">' + _esc(m[1]) + '</span>';
-    r += '<span class="hl-tag">' + _esc(m[2]) + '</span>';
-    r += m[3].replace(/([\w-:]+)(\s*=\s*"([^"]*)")?/g, function(_, name, eq, val) {
-      var s = '<span class="hl-atn">' + _esc(name) + '</span>';
-      if (eq !== undefined) s += '=<span class="hl-atv">"' + _esc(val) + '"</span>';
-      return s;
-    });
-    r += '<span class="hl-bkt">' + _esc(m[4]) + '</span>';
-    return r;
-  }
+    // ── Syntax highlighting & live editor ──
 
-  function _saveCursor(el) {
-    var sel = window.getSelection();
-    if (!sel.rangeCount) return 0;
-    var range = sel.getRangeAt(0);
-    var pre = range.cloneRange();
-    pre.selectNodeContents(el);
-    pre.setEnd(range.startContainer, range.startOffset);
-    return pre.toString().length;
-  }
+    var _esc = function(s) {
+      return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    };
 
-  function _restoreCursor(el, offset) {
-    var range = document.createRange();
-    var sel = window.getSelection();
-    var cur = 0;
-    var walk = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
-    var node;
-    while (node = walk.nextNode()) {
-      if (cur + node.length >= offset) {
-        range.setStart(node, offset - cur);
-        range.collapse(true);
-        sel.removeAllRanges();
-        sel.addRange(range);
-        return;
-      }
-      cur += node.length;
-    }
-    range.selectNodeContents(el);
-    range.collapse(false);
-    sel.removeAllRanges();
-    sel.addRange(range);
-  }
-
-  function _sanitize(html) {
-    return html
-      .replace(/<script[\s\S]*?<\/script>/gi, '')
-      .replace(/<style[\s\S]*?<\/style>/gi, '')
-      .replace(/<link[^>]*>/gi, '')
-      .replace(/<!--[\s\S]*?-->/g, '');
-  }
-
-  // Initialize all code blocks
-  document.querySelectorAll('.demo-code pre').forEach(function(pre) {
-    var raw = pre.textContent;
-
-    // Move copy button inside <pre> so it positions relative to the code area
-    var copyBtn = pre.parentElement.querySelector('.copy-btn');
-    if (copyBtn) pre.appendChild(copyBtn);
-
-    function getCodeText() {
-      if (copyBtn) copyBtn.remove();
-      var t = pre.textContent.replace(/\u200b/g, '');
-      if (copyBtn) pre.appendChild(copyBtn);
-      return t;
+    function _hlJS(code) {
+      return code.replace(
+        /(\/\/[^\n]*|\/\*[\s\S]*?\*\/)|('(?:[^'\\]|\\.)*'|"(?:[^"\\]|\\.)*"|`(?:[^`\\]|\\.)*`)|(\b(?:var|let|const|function|return|if|else|for|while|new|this|class|import|export|from|of|in|typeof|instanceof|null|undefined|true|false)\b)|(\b\d+(?:\.\d+)?\b)|(\.(?:forEach|querySelector|querySelectorAll|addEventListener|classList|toggle|remove|contains|closest|parentElement|target)\b)|(\=\>)/g,
+        function(m, cmt, str, kw, num, prop, arrow) {
+          if (cmt) return '<span class="hl-cmt">' + _esc(cmt) + '</span>';
+          if (str) return '<span class="hl-js-str">' + _esc(str) + '</span>';
+          if (kw) return '<span class="hl-key">' + _esc(kw) + '</span>';
+          if (num) return '<span class="hl-num">' + _esc(num) + '</span>';
+          if (prop) return '<span class="hl-prop">' + _esc(prop) + '</span>';
+          if (arrow) return '<span class="hl-op">' + _esc(arrow) + '</span>';
+          return _esc(m);
+        }
+      );
     }
 
-    var details = pre.closest('.demo-code');
-    var liveTargetId = details && details.getAttribute('data-live-target');
-
-    // Make editable with syntax highlighting
-    pre.contentEditable = 'true';
-    pre.spellcheck = false;
-    pre.innerHTML = highlightHTML(raw);
-    if (copyBtn) pre.appendChild(copyBtn);
-
-    // Manual undo/redo stack
-    var undoStack = [{ text: raw, cursor: 0 }];
-    var undoIdx = 0;
-
-    function updateDemo(text) {
-      if (liveTargetId) {
-        var el = document.getElementById(liveTargetId);
-        if (el) {
-          el.innerHTML = _sanitize(text);
-          initLineNumbers(el);
+    function highlightHTML(raw) {
+      var out = '', i = 0;
+      while (i < raw.length) {
+        if (raw.startsWith('<!--', i)) {
+          var end = raw.indexOf('-->', i + 4);
+          var j = end < 0 ? raw.length : end + 3;
+          out += '<span class="hl-cmt">' + _esc(raw.slice(i, j)) + '</span>';
+          i = j;
+        } else if (raw.startsWith('<script', i)) {
+          var closeTag = raw.indexOf('>', i);
+          if (closeTag < 0) { out += _esc(raw.slice(i)); break; }
+          out += _hlTag(raw.slice(i, closeTag + 1));
+          var endTag = '<' + '/script>';
+          var scriptEnd = raw.indexOf(endTag, closeTag + 1);
+          if (scriptEnd < 0) {
+            out += _hlJS(raw.slice(closeTag + 1));
+            break;
+          }
+          out += _hlJS(raw.slice(closeTag + 1, scriptEnd));
+          out += _hlTag(endTag);
+          i = scriptEnd + endTag.length;
+        } else if (raw[i] === '<') {
+          var end = raw.indexOf('>', i);
+          var j = end < 0 ? raw.length : end + 1;
+          out += _hlTag(raw.slice(i, j));
+          i = j;
+        } else {
+          var next = raw.indexOf('<', i);
+          var j = next < 0 ? raw.length : next;
+          out += _esc(raw.slice(i, j));
+          i = j;
         }
       }
+      return out;
     }
 
-    function setContent(entry) {
-      pre.innerHTML = highlightHTML(entry.text);
-      if (copyBtn) pre.appendChild(copyBtn);
-      _restoreCursor(pre, entry.cursor);
-      updateDemo(entry.text);
+    function _hlTag(tag) {
+      var m = tag.match(/^(<\/?)(\w[\w-]*)([^]*?)(\/?>)$/s);
+      if (!m) return _esc(tag);
+      var r = '<span class="hl-bkt">' + _esc(m[1]) + '</span>';
+      r += '<span class="hl-tag">' + _esc(m[2]) + '</span>';
+      r += m[3].replace(/([\w-:]+)(\s*=\s*"([^"]*)")?/g, function(_, name, eq, val) {
+        var s = '<span class="hl-atn">' + _esc(name) + '</span>';
+        if (eq !== undefined) s += '=<span class="hl-atv">"' + _esc(val) + '"</span>';
+        return s;
+      });
+      r += '<span class="hl-bkt">' + _esc(m[4]) + '</span>';
+      return r;
     }
 
-    // Debounced re-highlight
-    var hlTimer = null;
-    function scheduleHighlight() {
-      clearTimeout(hlTimer);
-      hlTimer = setTimeout(function() {
-        var text = getCodeText();
-        var pos = _saveCursor(pre);
-        pre.innerHTML = highlightHTML(text);
-        if (copyBtn) pre.appendChild(copyBtn);
-        _restoreCursor(pre, pos);
-      }, 500);
-    }
-
-    pre.addEventListener('input', function() {
-      var text = getCodeText();
-      var cursor = _saveCursor(pre);
-      ++undoIdx;
-      undoStack.length = undoIdx;
-      undoStack.push({ text: text, cursor: cursor });
-      updateDemo(text);
-      scheduleHighlight();
-    });
-
-    // Paste as plain text
-    pre.addEventListener('paste', function(e) {
-      e.preventDefault();
-      var text = e.clipboardData.getData('text/plain');
+    function _saveCursor(el) {
       var sel = window.getSelection();
-      if (!sel.rangeCount) return;
+      if (!sel.rangeCount) return 0;
       var range = sel.getRangeAt(0);
-      range.deleteContents();
-      range.insertNode(document.createTextNode(text));
+      var pre = range.cloneRange();
+      pre.selectNodeContents(el);
+      pre.setEnd(range.startContainer, range.startOffset);
+      return pre.toString().length;
+    }
+
+    function _restoreCursor(el, offset) {
+      var range = document.createRange();
+      var sel = window.getSelection();
+      var cur = 0;
+      var walk = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+      var node;
+      while (node = walk.nextNode()) {
+        if (cur + node.length >= offset) {
+          range.setStart(node, offset - cur);
+          range.collapse(true);
+          sel.removeAllRanges();
+          sel.addRange(range);
+          return;
+        }
+        cur += node.length;
+      }
+      range.selectNodeContents(el);
       range.collapse(false);
       sel.removeAllRanges();
       sel.addRange(range);
-      pre.dispatchEvent(new Event('input', { bubbles: true }));
-    });
+    }
 
-    // Keyboard handling
-    pre.addEventListener('keydown', function(e) {
-      if (e.key === 'Tab') {
+    function _sanitize(html) {
+      return html
+        .replace(/<script[\s\S]*?<\/script>/gi, '')
+        .replace(/<style[\s\S]*?<\/style>/gi, '')
+        .replace(/<link[^>]*>/gi, '')
+        .replace(/<!--[\s\S]*?-->/g, '');
+    }
+
+    // Auto-generate line number spans
+    function initLineNumbers(root) {
+      (root || document).querySelectorAll('.ui-code.line-numbers').forEach(function(block) {
+        var code = block.querySelector('pre code');
+        var col = block.querySelector('.line-numbers-col');
+        if (!code || !col) return;
+        var count = code.textContent.split('\n').length;
+        col.innerHTML = '<span></span>'.repeat(count);
+      });
+    }
+    initLineNumbers();
+
+    // Initialize all code blocks
+    document.querySelectorAll('.demo-code pre').forEach(function(pre) {
+      var raw = pre.textContent;
+
+      // Move copy button inside <pre> so it positions relative to the code area
+      var copyBtn = pre.parentElement.querySelector('.copy-btn');
+      if (copyBtn) pre.appendChild(copyBtn);
+
+      function getCodeText() {
+        if (copyBtn) copyBtn.remove();
+        var t = pre.textContent.replace(/\u200b/g, '');
+        if (copyBtn) pre.appendChild(copyBtn);
+        return t;
+      }
+
+      var details = pre.closest('.demo-code');
+      var liveTargetId = details && details.getAttribute('data-live-target');
+
+      // Make editable with syntax highlighting
+      pre.contentEditable = 'true';
+      pre.spellcheck = false;
+      pre.innerHTML = highlightHTML(raw);
+      if (copyBtn) pre.appendChild(copyBtn);
+
+      // Manual undo/redo stack
+      var undoStack = [{ text: raw, cursor: 0 }];
+      var undoIdx = 0;
+
+      function updateDemo(text) {
+        if (liveTargetId) {
+          var el = document.getElementById(liveTargetId);
+          if (el) {
+            el.innerHTML = _sanitize(text);
+            initLineNumbers(el);
+          }
+        }
+      }
+
+      function setContent(entry) {
+        pre.innerHTML = highlightHTML(entry.text);
+        if (copyBtn) pre.appendChild(copyBtn);
+        _restoreCursor(pre, entry.cursor);
+        updateDemo(entry.text);
+      }
+
+      // Debounced re-highlight
+      var hlTimer = null;
+      function scheduleHighlight() {
+        clearTimeout(hlTimer);
+        hlTimer = setTimeout(function() {
+          var text = getCodeText();
+          var pos = _saveCursor(pre);
+          pre.innerHTML = highlightHTML(text);
+          if (copyBtn) pre.appendChild(copyBtn);
+          _restoreCursor(pre, pos);
+        }, 500);
+      }
+
+      pre.addEventListener('input', function() {
+        var text = getCodeText();
+        var cursor = _saveCursor(pre);
+        ++undoIdx;
+        undoStack.length = undoIdx;
+        undoStack.push({ text: text, cursor: cursor });
+        updateDemo(text);
+        scheduleHighlight();
+      });
+
+      // Paste as plain text
+      pre.addEventListener('paste', function(e) {
         e.preventDefault();
+        var text = e.clipboardData.getData('text/plain');
         var sel = window.getSelection();
         if (!sel.rangeCount) return;
         var range = sel.getRangeAt(0);
         range.deleteContents();
-        range.insertNode(document.createTextNode('  '));
+        range.insertNode(document.createTextNode(text));
         range.collapse(false);
         sel.removeAllRanges();
         sel.addRange(range);
         pre.dispatchEvent(new Event('input', { bubbles: true }));
-      } else if (e.key === 'Enter') {
-        e.preventDefault();
-        var sel = window.getSelection();
-        if (!sel.rangeCount) return;
-        var range = sel.getRangeAt(0);
-        range.deleteContents();
-        var nl = document.createTextNode('\n\u200b');
-        range.insertNode(nl);
-        range.setStart(nl, 1);
-        range.collapse(true);
-        sel.removeAllRanges();
-        sel.addRange(range);
-        pre.dispatchEvent(new Event('input', { bubbles: true }));
-      } else if ((e.metaKey || e.ctrlKey) && e.key === 'z') {
-        e.preventDefault();
-        if (e.shiftKey) {
-          if (undoIdx < undoStack.length - 1) {
-            ++undoIdx;
-            setContent(undoStack[undoIdx]);
-          }
-        } else {
-          if (undoIdx > 0) {
-            --undoIdx;
-            setContent(undoStack[undoIdx]);
+      });
+
+      // Keyboard handling
+      pre.addEventListener('keydown', function(e) {
+        if (e.key === 'Tab') {
+          e.preventDefault();
+          var sel = window.getSelection();
+          if (!sel.rangeCount) return;
+          var range = sel.getRangeAt(0);
+          range.deleteContents();
+          range.insertNode(document.createTextNode('  '));
+          range.collapse(false);
+          sel.removeAllRanges();
+          sel.addRange(range);
+          pre.dispatchEvent(new Event('input', { bubbles: true }));
+        } else if (e.key === 'Enter') {
+          e.preventDefault();
+          var sel = window.getSelection();
+          if (!sel.rangeCount) return;
+          var range = sel.getRangeAt(0);
+          range.deleteContents();
+          var nl = document.createTextNode('\n\u200b');
+          range.insertNode(nl);
+          range.setStart(nl, 1);
+          range.collapse(true);
+          sel.removeAllRanges();
+          sel.addRange(range);
+          pre.dispatchEvent(new Event('input', { bubbles: true }));
+        } else if ((e.metaKey || e.ctrlKey) && e.key === 'z') {
+          e.preventDefault();
+          if (e.shiftKey) {
+            if (undoIdx < undoStack.length - 1) {
+              ++undoIdx;
+              setContent(undoStack[undoIdx]);
+            }
+          } else {
+            if (undoIdx > 0) {
+              --undoIdx;
+              setContent(undoStack[undoIdx]);
+            }
           }
         }
-      }
+      });
     });
-  });
 
-  // Popover toggle & dismiss (event delegation survives innerHTML updates)
-  document.getElementById('live-popover-pos').addEventListener('click', function(e) {
-    var popover = e.target.closest('.ui-popover');
-    if (popover) popover.classList.toggle('open');
-  });
-  document.addEventListener('click', function(e) {
-    document.querySelectorAll('.ui-popover.open').forEach(function(p) {
-      if (!p.contains(e.target)) p.classList.remove('open');
-    });
-  });
-
-  // Scroll spy for sidebar nav
-  var navLinks = document.querySelectorAll('.demo-nav a[href^="#"]');
-  var sections = [].map.call(navLinks, function(a) {
-    return document.getElementById(a.getAttribute('href').slice(1));
-  }).filter(Boolean);
-
-  function updateActiveNav() {
-    var current = '';
-    for (var i = 0; i < sections.length; ++i) {
-      if (sections[i].getBoundingClientRect().top <= 100) {
-        current = sections[i].id;
-      }
+    // Popover toggle & dismiss (event delegation survives innerHTML updates)
+    var popoverTarget = document.getElementById('live-popover-pos');
+    if (popoverTarget) {
+      popoverTarget.addEventListener('click', function(e) {
+        var popover = e.target.closest('.ui-popover');
+        if (popover) popover.classList.toggle('open');
+      });
     }
+    document.addEventListener('click', function(e) {
+      document.querySelectorAll('.ui-popover.open').forEach(function(p) {
+        if (!p.contains(e.target)) p.classList.remove('open');
+      });
+    });
+
+    // Scroll spy for sidebar nav
+    var navLinks = document.querySelectorAll('.demo-nav a[href^="#"]');
+    var sections = [].map.call(navLinks, function(a) {
+      return document.getElementById(a.getAttribute('href').slice(1));
+    }).filter(Boolean);
+
+    function updateActiveNav() {
+      var current = '';
+      for (var i = 0; i < sections.length; ++i) {
+        if (sections[i].getBoundingClientRect().top <= 100) {
+          current = sections[i].id;
+        }
+      }
+      navLinks.forEach(function(a) {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+      });
+    }
+    window.addEventListener('scroll', updateActiveNav, { passive: true });
+    updateActiveNav();
+
+    // Smooth scroll for nav links
     navLinks.forEach(function(a) {
-      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+      a.addEventListener('click', function(e) {
+        e.preventDefault();
+        var target = document.getElementById(a.getAttribute('href').slice(1));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
     });
-  }
-  window.addEventListener('scroll', updateActiveNav, { passive: true });
-  updateActiveNav();
 
-  // Smooth scroll for nav links
-  navLinks.forEach(function(a) {
-    a.addEventListener('click', function(e) {
-      e.preventDefault();
-      var target = document.getElementById(a.getAttribute('href').slice(1));
-      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-  });
-
-  // CSS syntax highlighter
-  function highlightCSS(text) {
-    var esc = function(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); };
-    return text.replace(
-      /(\/\*[\s\S]*?\*\/)|("[^"]*"|'[^']*')|([@][\w-]+)|([{};])|(:)((?:[^;{}\/]|\/(?!\*))*)(;)|([\w.#&:>\[\]=~*^|$@()-]+(?:\s*,\s*[\w.#&:>\[\]=~*^|$()-]+)*)\s*(?=\{)/g,
-      function(m, comment, str, atRule, brace, colon, value, semi, selector) {
-        if (comment) return '<span class="hl-cmt">' + esc(comment) + '</span>';
-        if (str) return '<span class="hl-str">' + esc(str) + '</span>';
-        if (atRule) return '<span class="hl-at">' + esc(atRule) + '</span>';
-        if (brace) return '<span class="hl-brace">' + esc(brace) + '</span>';
-        if (colon && value !== undefined) {
-          var highlighted = esc(value).replace(
-            /(-?[\d.]+)(rem|px|em|%|vh|vw|ms|s|deg|fr)\b/g,
-            '$1<span class="hl-unit">$2</span>'
-          );
-          return '<span class="hl-brace">:</span><span class="hl-val">' + highlighted + '</span><span class="hl-brace">;</span>';
+    // CSS syntax highlighter
+    function highlightCSS(text) {
+      var esc = function(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); };
+      return text.replace(
+        /(\/\*[\s\S]*?\*\/)|("[^"]*"|'[^']*')|([@][\w-]+)|([{};])|(:)((?:[^;{}\/]|\/(?!\*))*)(;)|([\w.#&:>\[\]=~*^|$@()-]+(?:\s*,\s*[\w.#&:>\[\]=~*^|$()-]+)*)\s*(?=\{)/g,
+        function(m, comment, str, atRule, brace, colon, value, semi, selector) {
+          if (comment) return '<span class="hl-cmt">' + esc(comment) + '</span>';
+          if (str) return '<span class="hl-str">' + esc(str) + '</span>';
+          if (atRule) return '<span class="hl-at">' + esc(atRule) + '</span>';
+          if (brace) return '<span class="hl-brace">' + esc(brace) + '</span>';
+          if (colon && value !== undefined) {
+            var highlighted = esc(value).replace(
+              /(-?[\d.]+)(rem|px|em|%|vh|vw|ms|s|deg|fr)\b/g,
+              '$1<span class="hl-unit">$2</span>'
+            );
+            return '<span class="hl-brace">:</span><span class="hl-val">' + highlighted + '</span><span class="hl-brace">;</span>';
+          }
+          if (selector) return '<span class="hl-sel">' + esc(selector) + '</span>';
+          return esc(m);
         }
-        if (selector) return '<span class="hl-sel">' + esc(selector) + '</span>';
-        return esc(m);
+      );
+    }
+
+    // View uix.css source dialog
+    var sourceCssCache = null;
+    window.openSourceDialog = function() {
+      var dialog = document.getElementById('source-dialog');
+      dialog.showModal();
+      if (sourceCssCache) {
+        document.getElementById('source-pre').innerHTML = highlightCSS(sourceCssCache);
+      } else {
+        fetch('src/uix.css')
+          .then(function(r) { return r.text(); })
+          .then(function(css) {
+            sourceCssCache = css;
+            document.getElementById('source-pre').innerHTML = highlightCSS(css);
+          })
+          .catch(function() {
+            document.getElementById('source-pre').textContent = 'Failed to load uix.css';
+          });
       }
-    );
-  }
+    };
 
-  // View uix.css source dialog
-  var sourceCssCache = null;
-  function openSourceDialog() {
-    var dialog = document.getElementById('source-dialog');
-    dialog.showModal();
-    if (sourceCssCache) {
-      document.getElementById('source-pre').innerHTML = highlightCSS(sourceCssCache);
-    } else {
-      fetch('src/uix.css')
-        .then(function(r) { return r.text(); })
-        .then(function(css) {
-          sourceCssCache = css;
-          document.getElementById('source-pre').innerHTML = highlightCSS(css);
-        })
-        .catch(function() {
-          document.getElementById('source-pre').textContent = 'Failed to load uix.css';
-        });
-    }
-  }
-
-  // Source dialog: close on backdrop click
-  document.getElementById('source-dialog').addEventListener('click', function(e) {
-    var d = e.currentTarget;
-    var rect = d.getBoundingClientRect();
-    if (e.clientX < rect.left || e.clientX > rect.right ||
-        e.clientY < rect.top || e.clientY > rect.bottom) {
-      d.close();
-    }
-  });
-
-  // Auto-generate line number spans
-  function initLineNumbers(root) {
-    (root || document).querySelectorAll('.ui-code.line-numbers').forEach(function(block) {
-      var code = block.querySelector('pre code');
-      var col = block.querySelector('.line-numbers-col');
-      if (!code || !col) return;
-      var count = code.textContent.split('\n').length;
-      col.innerHTML = '<span></span>'.repeat(count);
+    // Source dialog: close on backdrop click
+    document.getElementById('source-dialog').addEventListener('click', function(e) {
+      var d = e.currentTarget;
+      var rect = d.getBoundingClientRect();
+      if (e.clientX < rect.left || e.clientX > rect.right ||
+          e.clientY < rect.top || e.clientY > rect.bottom) {
+        d.close();
+      }
     });
-  }
-  initLineNumbers();
+
+    // Scroll to hash if present
+    if (location.hash) {
+      var target = document.getElementById(location.hash.slice(1));
+      if (target) target.scrollIntoView({ block: 'start' });
+    }
+  })();
 </script>
 <script>
   (function() {
