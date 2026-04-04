@@ -103,3 +103,45 @@ function clearAutocomplete(btn) {
   ac.classList.remove('open');
   input.focus();
 }
+
+// ── Install snippet: CDN copy buttons ──
+
+(function() {
+  const cdnBase = 'https://cdn.jsdelivr.net/gh/az-code-lab/ui@';
+
+  window.__uiUpdateSnippets = function(version) {
+    window.__uiCdnVersion = version;
+    document.querySelectorAll('.install-snippet[data-cdn-file]').forEach(el => {
+      const url = cdnBase + version + '/src/' + el.dataset.cdnFile;
+      el.dataset.copyTag = '<link rel="stylesheet" href="' + url + '">';
+      el.dataset.copyUrl = url;
+      const fileSpan = el.querySelector('.hl-file');
+      if (fileSpan) fileSpan.textContent = url;
+      el.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.dataset.tooltip = btn.dataset.copyType === 'url' ? url : el.dataset.copyTag;
+      });
+    });
+  };
+
+  document.querySelectorAll('.install-snippet[data-cdn-file]').forEach(el => {
+    el.querySelectorAll('.copy-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const type = btn.dataset.copyType;
+        copyText(type === 'url' ? el.dataset.copyUrl : el.dataset.copyTag, btn);
+        const icon = btn.querySelector('.ui-icon');
+        const origClass = icon.className;
+        icon.className = 'ui-icon ui-icon-check';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          icon.className = origClass;
+          btn.classList.remove('copied');
+        }, 1500);
+      });
+    });
+  });
+
+  fetch('version.json')
+    .then(r => r.json())
+    .then(data => window.__uiUpdateSnippets(data.version))
+    .catch(() => {});
+})();

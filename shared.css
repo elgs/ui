@@ -1,0 +1,59 @@
+.install-snippet {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  white-space: nowrap;
+  background: var(--ui-bg-subtle);
+  border: 1px solid var(--ui-border);
+  border-radius: var(--ui-radius-lg);
+  padding: 0.65rem 1rem;
+  font-family: var(--ui-font-mono);
+  font-size: 0.85rem;
+  color: var(--ui-text-muted);
+  margin-top: 0.75rem;
+
+  & .copy-btns {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+  }
+
+  & .copy-btn {
+    all: unset;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    padding: 0;
+    border-radius: var(--ui-radius);
+    cursor: pointer;
+    color: var(--ui-text-muted);
+    transition: color var(--ui-transition), background var(--ui-transition), transform var(--ui-transition);
+
+    &:hover {
+      color: var(--ui-primary);
+    }
+
+    &:active {
+      transform: scale(0.85);
+    }
+
+    &.copied {
+      color: var(--ui-success);
+    }
+  }
+
+  & code {
+    color: var(--ui-text);
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    & .hl-file {
+      color: var(--ui-success, #22a06b);
+      font-weight: 700;
+    }
+  }
+}
