@@ -15,6 +15,7 @@
   <meta name="twitter:description" content="Interactive demo of every UI CSS component — buttons, forms, tables, modals, and more.">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="src/ui.css">
+  <link rel="stylesheet" href="src/uix.css">
   <link rel="stylesheet" href="src/icons.css">
   <link rel="stylesheet" href="src/themes/ocean.css">
   <link rel="stylesheet" href="src/themes/forest.css">
@@ -73,43 +74,6 @@
       margin: 0 0 1rem;
       padding: 0 0.5rem;
       color: var(--ui-text);
-    }
-    .demo-nav {
-      display: flex;
-      flex-direction: column;
-      gap: 0.0625rem;
-    }
-    .demo-nav a {
-      display: block;
-      padding: 0.3125rem 0.5rem;
-      font-size: 0.8125rem;
-      color: var(--ui-text-muted);
-      text-decoration: none;
-      border-radius: var(--ui-radius-sm);
-      transition: color 0.15s, background 0.15s;
-    }
-    .demo-nav a:hover {
-      color: var(--ui-text);
-      background: var(--ui-bg-subtle);
-    }
-    .demo-nav a.active {
-      color: var(--ui-primary);
-      background: var(--ui-primary-light);
-      font-weight: 500;
-    }
-    .demo-nav-divider {
-      height: 0;
-      border: none;
-      border-top: 1px solid var(--ui-border);
-      margin: 0.5rem 0.5rem;
-    }
-    .demo-nav-label {
-      font-size: 0.6875rem;
-      font-weight: 700;
-      color: var(--ui-text);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      padding: 0.625rem 0.5rem 0.25rem;
     }
     .demo-main {
       flex: 1;
@@ -565,52 +529,52 @@
   <!-- Sidebar navigation -->
   <nav class="demo-sidebar" id="demo-sidebar">
     <a href="index.html" class="demo-sidebar-title" style="text-decoration:none;color:inherit;display:flex;align-items:center;gap:0.5rem"><img src="favicon.svg" alt="UI" style="width:1.75rem;height:1.75rem"> UI Library</a>
-    <div class="demo-nav" id="demo-nav">
-      <a href="#theme">Theme</a>
-      <hr class="demo-nav-divider">
-      <div class="demo-nav-label">Form controls</div>
-      <a href="#buttons">Buttons</a>
-      <a href="#checkboxes">Checkboxes</a>
-      <a href="#dropdowns">Dropdowns</a>
-      <a href="#inputs">Inputs</a>
-      <a href="#radios">Radios</a>
-      <a href="#sliders">Sliders</a>
-      <a href="#toggles">Toggles</a>
-      <hr class="demo-nav-divider">
-      <div class="demo-nav-label">Data display</div>
-      <a href="#accordions">Accordions</a>
-      <a href="#avatars">Avatars</a>
-      <a href="#badges">Badges</a>
-      <a href="#cards">Cards</a>
-      <a href="#numbered-badge">Numbered Badge</a>
-      <a href="#panels">Panels</a>
-      <a href="#dots">Status Dots</a>
-      <a href="#tables">Tables</a>
-      <a href="#tags">Tags</a>
-      <hr class="demo-nav-divider">
-      <div class="demo-nav-label">Navigation</div>
-      <a href="#breadcrumbs">Breadcrumbs</a>
-      <a href="#pagination">Pagination</a>
-      <a href="#tabs">Tabs</a>
-      <hr class="demo-nav-divider">
-      <div class="demo-nav-label">Feedback</div>
-      <a href="#alerts">Alerts</a>
-      <a href="#dialogs">Dialogs</a>
-      <a href="#progress">Progress</a>
-      <a href="#skeletons">Skeletons</a>
-      <a href="#spinners">Spinners</a>
-      <a href="#toasts">Toasts</a>
-      <a href="#tooltips">Tooltips</a>
-      <hr class="demo-nav-divider">
-      <div class="demo-nav-label">Utilities</div>
-      <a href="#config">Configuration</a>
-      <a href="#custom-themes">Custom Themes</a>
-      <a href="#dark-mode">Dark Mode</a>
-      <a href="#gradient-mode">Gradient Mode</a>
-      <a href="#icons">Icons</a>
-      <a href="#layout">Layout Utilities</a>
-      <hr class="demo-nav-divider">
-      <a href="uix.html">UIX Library</a>
+    <div class="ui-menu sm borderless" id="demo-nav">
+      <a class="ui-menu-item" href="#theme">Theme</a>
+      <hr class="ui-menu-divider">
+      <div class="ui-menu-label">Form controls</div>
+      <a class="ui-menu-item" href="#buttons">Buttons</a>
+      <a class="ui-menu-item" href="#checkboxes">Checkboxes</a>
+      <a class="ui-menu-item" href="#dropdowns">Dropdowns</a>
+      <a class="ui-menu-item" href="#inputs">Inputs</a>
+      <a class="ui-menu-item" href="#radios">Radios</a>
+      <a class="ui-menu-item" href="#sliders">Sliders</a>
+      <a class="ui-menu-item" href="#toggles">Toggles</a>
+      <hr class="ui-menu-divider">
+      <div class="ui-menu-label">Data display</div>
+      <a class="ui-menu-item" href="#accordions">Accordions</a>
+      <a class="ui-menu-item" href="#avatars">Avatars</a>
+      <a class="ui-menu-item" href="#badges">Badges</a>
+      <a class="ui-menu-item" href="#cards">Cards</a>
+      <a class="ui-menu-item" href="#numbered-badge">Numbered Badge</a>
+      <a class="ui-menu-item" href="#panels">Panels</a>
+      <a class="ui-menu-item" href="#dots">Status Dots</a>
+      <a class="ui-menu-item" href="#tables">Tables</a>
+      <a class="ui-menu-item" href="#tags">Tags</a>
+      <hr class="ui-menu-divider">
+      <div class="ui-menu-label">Navigation</div>
+      <a class="ui-menu-item" href="#breadcrumbs">Breadcrumbs</a>
+      <a class="ui-menu-item" href="#pagination">Pagination</a>
+      <a class="ui-menu-item" href="#tabs">Tabs</a>
+      <hr class="ui-menu-divider">
+      <div class="ui-menu-label">Feedback</div>
+      <a class="ui-menu-item" href="#alerts">Alerts</a>
+      <a class="ui-menu-item" href="#dialogs">Dialogs</a>
+      <a class="ui-menu-item" href="#progress">Progress</a>
+      <a class="ui-menu-item" href="#skeletons">Skeletons</a>
+      <a class="ui-menu-item" href="#spinners">Spinners</a>
+      <a class="ui-menu-item" href="#toasts">Toasts</a>
+      <a class="ui-menu-item" href="#tooltips">Tooltips</a>
+      <hr class="ui-menu-divider">
+      <div class="ui-menu-label">Utilities</div>
+      <a class="ui-menu-item" href="#config">Configuration</a>
+      <a class="ui-menu-item" href="#custom-themes">Custom Themes</a>
+      <a class="ui-menu-item" href="#dark-mode">Dark Mode</a>
+      <a class="ui-menu-item" href="#gradient-mode">Gradient Mode</a>
+      <a class="ui-menu-item" href="#icons">Icons</a>
+      <a class="ui-menu-item" href="#layout">Layout Utilities</a>
+      <hr class="ui-menu-divider">
+      <a class="ui-menu-item" href="uix.html">UIX Library</a>
     </div>
   </nav>
 
@@ -1481,7 +1445,7 @@
     });
 
     // Scroll spy for sidebar nav
-    const navLinks = document.querySelectorAll('.demo-nav a[href^="#"]');
+    const navLinks = document.querySelectorAll('#demo-nav .ui-menu-item[href^="#"]');
     const sections = [...navLinks].map(a => document.getElementById(a.getAttribute('href').slice(1))).filter(Boolean);
 
     function updateActiveNav() {

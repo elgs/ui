@@ -65,21 +65,6 @@
     .demo-sidebar-title {
       font-size: 0.875rem; font-weight: 700; margin: 0 0 1rem; padding: 0 0.5rem;
     }
-    .demo-nav { display: flex; flex-direction: column; gap: 0.0625rem; }
-    .demo-nav a {
-      display: block; padding: 0.3125rem 0.5rem; font-size: 0.8125rem;
-      color: var(--ui-text-muted); text-decoration: none;
-      border-radius: var(--ui-radius-sm); transition: color 0.15s, background 0.15s;
-    }
-    .demo-nav a:hover { color: var(--ui-text); background: var(--ui-bg-subtle); }
-    .demo-nav a.active { color: var(--ui-primary); background: var(--ui-primary-light); font-weight: 500; }
-    .demo-nav-divider {
-      height: 0; border: none; border-top: 1px solid var(--ui-border); margin: 0.5rem 0.5rem;
-    }
-    .demo-nav-label {
-      font-size: 0.6875rem; font-weight: 700; color: var(--ui-text);
-      text-transform: uppercase; letter-spacing: 0.06em; padding: 0.625rem 0.5rem 0.25rem;
-    }
     .demo-main { flex: 1; min-width: 0; }
     .demo-layout { max-width: 56rem; margin: 0 auto; padding: 2rem 2.5rem; }
     .demo-menu-toggle {
@@ -457,25 +442,25 @@
 
   <nav class="demo-sidebar" id="demo-sidebar">
     <a href="index.html" class="demo-sidebar-title" style="text-decoration:none;color:inherit;display:flex;align-items:center;gap:0.5rem"><img src="favicon.svg" alt="UIX" style="width:1.75rem;height:1.75rem"> UIX Library</a>
-    <div class="demo-nav" id="demo-nav">
-      <div class="demo-nav-label">Form controls</div>
-      <a href="#input-otp">Input OTP</a>
-      <hr class="demo-nav-divider">
-      <div class="demo-nav-label">Navigation</div>
-      <a href="#menu">Menu</a>
-      <hr class="demo-nav-divider">
-      <div class="demo-nav-label">Data display</div>
-      <a href="#timeline">Timeline</a>
-      <a href="#stepper">Stepper</a>
-      <a href="#code-block">Code Block</a>
-      <a href="#diff">Diff</a>
-      <a href="#empty-state">Empty State</a>
-      <a href="#chat-bubble">Chat Bubble</a>
-      <hr class="demo-nav-divider">
-      <div class="demo-nav-label">Feedback</div>
-      <a href="#popover">Popover</a>
-      <hr class="demo-nav-divider">
-      <a href="ui.html">UI Library</a>
+    <div class="ui-menu sm borderless" id="demo-nav">
+      <div class="ui-menu-label">Form controls</div>
+      <a class="ui-menu-item" href="#input-otp">Input OTP</a>
+      <hr class="ui-menu-divider">
+      <div class="ui-menu-label">Navigation</div>
+      <a class="ui-menu-item" href="#menu">Menu</a>
+      <hr class="ui-menu-divider">
+      <div class="ui-menu-label">Data display</div>
+      <a class="ui-menu-item" href="#timeline">Timeline</a>
+      <a class="ui-menu-item" href="#stepper">Stepper</a>
+      <a class="ui-menu-item" href="#code-block">Code Block</a>
+      <a class="ui-menu-item" href="#diff">Diff</a>
+      <a class="ui-menu-item" href="#empty-state">Empty State</a>
+      <a class="ui-menu-item" href="#chat-bubble">Chat Bubble</a>
+      <hr class="ui-menu-divider">
+      <div class="ui-menu-label">Feedback</div>
+      <a class="ui-menu-item" href="#popover">Popover</a>
+      <hr class="ui-menu-divider">
+      <a class="ui-menu-item" href="ui.html">UI Library</a>
     </div>
   </nav>
 
@@ -940,7 +925,7 @@
     });
 
     // Scroll spy for sidebar nav
-    var navLinks = document.querySelectorAll('.demo-nav a[href^="#"]');
+    var navLinks = document.querySelectorAll('#demo-nav .ui-menu-item[href^="#"]');
     var sections = [].map.call(navLinks, function(a) {
       return document.getElementById(a.getAttribute('href').slice(1));
     }).filter(Boolean);
