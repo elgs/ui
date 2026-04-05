@@ -4,7 +4,7 @@
   justify-content: space-between;
   gap: 0.75rem;
   white-space: nowrap;
-  background: var(--ui-bg-subtle);
+  background: var(--ui-surface);
   border: 1px solid var(--ui-border);
   border-radius: var(--ui-radius-lg);
   padding: 0.65rem 1rem;
