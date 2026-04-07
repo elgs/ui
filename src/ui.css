@@ -1371,6 +1371,16 @@
   background-repeat: no-repeat;
   background-position: right 0.75rem center;
   padding-right: 2.25rem;
+
+  &.sm {
+    background-position: right 0.5rem center;
+    padding-right: 1.75rem;
+  }
+
+  &.lg {
+    background-position: right 1rem center;
+    padding-right: 2.75rem;
+  }
 }
 
 /* --- Form field wrapper --- */
